@@ -114,7 +114,7 @@
 | PDC | PDC-Programs | Programs | 219 | 未着手 |
 | PDC | PDC-Communication | Communication | 220 | 未着手 |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：読み書きの順序と更新喪失、鍵による排他、２鍵の循環待ち |
-| PDC | PDC-Evaluation | Evaluation | 224 | 未着手 |
+| PDC | PDC-Evaluation | Evaluation | 224 | 一部試作：依頼66で固定量の並列化と逐次部分の限界 |
 | PDC | PDC-Algorithms | Algorithms | 225 | 未着手 |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |
 | SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 未着手 |
@@ -152,7 +152,7 @@
 | SF | SF-Foundations | Basic Concepts | 293 | 未着手 |
 | SF | SF-Resource | Resource Management | 294 | 未着手 |
 | SF | SF-Performance | System Performance | 294 | 一部試作：依頼25でキャッシュと時間的局所性 |
-| SF | SF-Evaluation | Performance Evaluation | 295 | 未着手 |
+| SF | SF-Evaluation | Performance Evaluation | 295 | 一部試作：依頼66で理想化した並列作業の時間を比較 |
 | SF | SF-Reliability | System Reliability | 296 | 未着手 |
 | SF | SF-Security | System Security | 297 | 未着手 |
 | SF | SF-Design | System Design | 297 | 未着手 |
