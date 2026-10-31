@@ -35,7 +35,7 @@
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 未着手 |
 | DM | DM-Core | Core Database System Concepts | 115 | 未着手 |
 | DM | DM-Modeling | Data Modeling | 116 | 未着手 |
-| DM | DM-Relational | Relational Databases | 117 | 未着手 |
+| DM | DM-Relational | Relational Databases | 117 | 一部試作：依頼67で更新異常と分解後の結合を比較 |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択と内部結合 |
 | DM | DM-Processing | Query Processing | 118 | 未着手 |
 | DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38・39で原子性・永続性・分離と競合直列化の固定例 |
