@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {oldPopulation,fitness,crossover,mutate,nextGeneration,createGenetic,geneticComplete,restoreGenetic} from '../src/genetic-search.js';
+test('all crossover points and each mutation flip reproduce expected candidate strings',()=>{assert.deepEqual([1,2,3].map(crossover),[['1011','0100'],['1111','0000'],['1101','0010']]);assert.deepEqual([0,1,2,3].map(i=>mutate('1111',i)),['0111','1011','1101','1110']);assert.equal(Math.max(...oldPopulation.map(fitness)),4);assert.deepEqual(nextGeneration(2,0,false),['0111','0000','0000','0000']);assert.deepEqual(nextGeneration(2,0,true),['0111','0000','0000','1111']);assert.throws(()=>crossover(0));});
+test('both comparisons and reflection are required and drafts are validated',()=>{const s=createGenetic();s.seen.without=true;s.seen.with=true;s.answer='balance';assert.equal(geneticComplete(s),false);s.checked=true;assert.equal(geneticComplete(s),true);assert.deepEqual(restoreGenetic(s),s);assert.throws(()=>restoreGenetic({...s,bit:4}));});
