@@ -9,7 +9,7 @@
 | 1 | CS Core / KA Core | 集合、関係、関数、濃度 | 依頼46で有限集合の演算、依頼401・402で有限集合の関係、403で可算と対角線論法の例。一般の証明は未対応 |
 | 2 | CS Core / KA Core | 再帰的な数学的定義 | 依頼33で並べ方の個数を小さい問題に帰着。一般の定義・漸化式は未対応 |
 | 3 | CS Core / KA Core | 帰納法、背理法などの証明法 | 依頼95で帰納法、依頼400で鳩の巣原理の背理法の固定例。一般の証明は未対応 |
-| 4 | CS Core / KA Core | 順列、組合せ、数え上げ、鳩の巣原理 | 依頼33で並べ方、46で包除、400で鳩の巣原理の固定例。一般の数え上げと証明は未対応 |
+| 4 | CS Core / KA Core | 順列、組合せ、数え上げ、鳩の巣原理 | 依頼33で並べ方、46で包除、400で鳩の巣原理、404で順列と組合せの固定例。一般の数え上げと証明は未対応 |
 | 5 | CS Core / KA Core | 合同算術 | 依頼19で３による余りの固定例。一般の計算は未対応 |
 | 6 | CS Core / KA Core | 論理、真理値表、演算、推論規則、標準形、述語論理 | 依頼06の２入力の真理値表、依頼72のモーダスポネンス・反例、依頼126の有限集合上の全称条件と空の条件の固定例。一般の論理式・述語・証明は未対応 |
 | 7 | CS Core / KA Core | グラフの基本 | 依頼08・21・32などで固定グラフを操作。一般の定義や構成は未対応 |
@@ -29,7 +29,7 @@
 | 3a–3f | CS Core | 証明法の識別・構造・適用・選択、再帰と帰納法、弱い帰納法と強い帰納法 | 依頼95で基底と帰納段階の固定例。他の証明法や強い帰納法は未対応 |
 | 4a | CS Core | 和・積・包除や数列による数え上げ | 依頼46で２集合の包除のみ |
 | 4b | CS Core | 鳩の巣原理を証明に適用 | 依頼400で４羽と３つの巣の固定例。他の問題への応用は未対応 |
-| 4c–4d | CS Core | 順列・組合せの計算と具体的な数え上げモデル | 依頼33で異なる物の並べ方の固定例。一般の組合せやモデル化は未対応 |
+| 4c–4d | CS Core | 順列・組合せの計算と具体的な数え上げモデル | 依頼33で並べ方、404で３人から２人を選ぶ順列と組合せの固定例。一般の数え上げは未対応 |
 | 5a | CS Core | 合同算術の計算 | 依頼19で３による余りのみ |
 | 5b | CS Core | 最大公約数とユークリッドの互除法 | 依頼96で二つの固定例。一般の場合や拡張互除法は未対応 |
 | 6a–6g | CS Core | 命題・述語論理への変換、妥当性、標準形、推論、応用と限界 | 依頼06・07の論理条件と依頼72の３命題による推論・反例。一般の論理式や証明は未対応 |
@@ -48,3 +48,5 @@
 依頼402は２人から３紋章への単射で非全射・単射でも全射でもない例、３人から２紋章への全射で非単射の例を構築する。２対３の全９関数と３対２の全８関数を検査。無限集合や一般の証明は未対応。[Discrete Mathematics for Computer Science](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_for_Computer_Science_(Fitch)/03%3A_Functions/3.01%3A_Functions)。
 
 依頼403は自然数と０以上の偶数を２倍で対応させ、４行４桁の模型で対角桁を反転する。画面の有限例とは別に、任意の無限一覧から各行と異なる無限列を構成する理由を示す。小数表記や実数への拡張、自由な証明は未対応。[Transition to Higher Mathematics](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_(Dumas_and_McCarthy)/06%3A_New_Page/6.03%3A_New_Page)。
+
+依頼404は３人から異なる２人を選び、役割なしの３組と先導・見張りを区別する６通りを列挙する。各組に２通りの役割が対応することを比べる。一般の公式や重複選択は未対応。[Applied Discrete Structures](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Applied_Discrete_Structures_(Doerr_and_Levasseur)/02%3A_Combinatorics/2.04%3A_Combinations_and_the_Binomial_Theorem)。
