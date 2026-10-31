@@ -52,7 +52,7 @@
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 未着手 |
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 未着手 |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 未着手 |
-| FPL | FPL-Types | Type Systems | 136 | 未着手 |
+| FPL | FPL-Types | Type Systems | 136 | 一部試作：依頼24で入力・出力の型と検査 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | 未着手 |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 未着手 |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 未着手 |
