@@ -7,7 +7,7 @@
 | AI | AI-Introduction | Fundamental Issues | 67 | 未着手 |
 | AI | AI-Search | Search | 68 | 一部試作：依頼08・21・42〜45・49で探索、対戦と制約充足の例 |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 未着手 |
-| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、既知と未使用の例での評価比較 |
+| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、訓練・未使用記録の比較と過学習の固定例 |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 未着手 |
 | AI | AI-LRR | Logical Representation and Reasoning | 76 | 未着手 |
 | AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 未着手 |
