@@ -136,7 +136,7 @@
 | SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
 | SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 未着手 |
 | SEC | SEC-Coding | Secure Coding | 259 | 依頼82で文字列連結と値のパラメータ化による検索の固定例。他は未対応。[詳細](sec-coding.md) |
-| SEC | SEC-Crypto | Cryptography | 260 | 一部試作：依頼58で XOR と鍵の再利用の固定例 |
+| SEC | SEC-Crypto | Cryptography | 260 | 一部試作：依頼58で XOR と鍵の再利用、依頼128で署名検証の固定模型 |
 | SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 未着手 |
 | SEC | SEC-Forensics | Digital Forensics | 262 | 未着手 |
 | SEC | SEC-Governance | Security Governance | 263 | 未着手 |
