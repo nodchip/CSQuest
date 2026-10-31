@@ -97,7 +97,7 @@
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
 | NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48の固定転送表と依頼61の最長接頭辞照合 |
 | NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調の固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
-| NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279で差し替え、認証、分離と門番の固定例。他の攻撃・対策は未対応。[詳細](nc-security.md) |
+| NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279・280で差し替え、認証、分離、門番と警報の固定例。他の攻撃・対策は未対応。[詳細](nc-security.md) |
 | NC | NC-Mobility | Mobility | 201 | 未着手 |
 | NC | NC-Emerging | Emerging Topics | 201 | 未着手 |
 | OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で仕事の切り替えと完了時刻の比較、53・54・77・105・133・151〜153に関連する固定例。OS の目的や機能の全体像と設計の体系的比較は未対応。[詳細](os-purpose.md) |
@@ -157,7 +157,7 @@
 | SF | SF-Performance | System Performance | 294 | 一部試作：依頼25でキャッシュと時間的局所性 |
 | SF | SF-Evaluation | Performance Evaluation | 295 | 一部試作：依頼66で理想化した並列作業の時間を比較 |
 | SF | SF-Reliability | System Reliability | 296 | 依頼10・35・62・106〜108・229で再送、途中停止、冗長符号、稼働記録と複製の固定例。他は未対応。[詳細](sf-reliability.md) |
-| SF | SF-Security | System Security | 297 | 依頼180・258などで攻撃と対策の固定例。侵入検知などは未対応。[詳細](sf-security-design.md) |
+| SF | SF-Security | System Security | 297 | 依頼180・258・280などで攻撃、対策と警報の固定例。一般的な侵入検知などは未対応。[詳細](sf-security-design.md) |
 | SF | SF-Design | System Design | 297 | 設計基準に関連する固定例。代表的システムの設計は未対応。[詳細](sf-security-design.md) |
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 依頼269で２ライセンスの限定的な比較。権利と犯罪などは未対応。[詳細](sf-security-design.md) |
 | SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 未着手 |
