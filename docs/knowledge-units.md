@@ -101,7 +101,7 @@
 | OS | OS-Principles | Principles of Operating System | 207 | 未着手 |
 | OS | OS-Concurrency | Concurrency | 208 | 未着手 |
 | OS | OS-Protection | Protection and Safety | 209 | 未着手 |
-| OS | OS-Scheduling | Scheduling | 209 | 未着手 |
+| OS | OS-Scheduling | Scheduling | 209 | 一部試作：先着順とラウンドロビン |
 | OS | OS-Process | Process Model | 210 | 未着手 |
 | OS | OS-Memory | Memory Management | 210 | 未着手 |
 | OS | OS-Devices | Device management | 211 | 未着手 |
