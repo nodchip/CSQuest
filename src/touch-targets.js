@@ -1,0 +1,8 @@
+export const touchTargetsLevel={id:'village-touch-targets',number:'394',kind:'touch-targets',name:'揺れる指と配達札',tag:'モバイルの操作しやすさ',title:'押しやすい配達札を作ろう',story:'配達帳の二つの札を押しやすくするため、指の位置が少しずれたときの結果を比べましょう。'};
+export const touchLayouts={small:{name:'小さく近い札',size:16,centers:[20,40]},wide:{name:'大きく離れた札',size:32,centers:[30,75]}};
+export const touchPoints={center:'左の札の中央',drift:'左の札から右へ13ずれた位置'};
+export function touchResult(layout,point){const l=touchLayouts[layout];if(!l||!Object.hasOwn(touchPoints,point))throw new RangeError('条件が不正です');const x=l.centers[0]+(point==='drift'?13:0),index=l.centers.findIndex(c=>x>=c-l.size/2&&x<c+l.size/2);return index===0?'左':index===1?'右':'空き';}
+export function createTouchTargets(){return {layout:'small',point:'center',observed:[],answer:null,checked:false};}
+export function observeTouchTargets(s){const key=`${s.layout}:${s.point}`;return {...s,observed:s.observed.includes(key)?[...s.observed]:[...s.observed,key],checked:false};}
+export function touchTargetsComplete(s){return ['small:center','small:drift','wide:center','wide:drift'].every(k=>s.observed.includes(k))&&s.answer==='size'&&s.checked;}
+export function restoreTouchTargets(s){const keys=Object.keys(touchLayouts).flatMap(l=>Object.keys(touchPoints).map(p=>`${l}:${p}`));if(!s||!Object.hasOwn(touchLayouts,s.layout)||!Object.hasOwn(touchPoints,s.point)||!Array.isArray(s.observed)||s.observed.length>keys.length||new Set(s.observed).size!==s.observed.length||!s.observed.every(k=>keys.includes(k))||![null,'size','perfect','guarantee'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {layout:s.layout,point:s.point,observed:[...s.observed],answer:s.answer,checked:s.checked};}

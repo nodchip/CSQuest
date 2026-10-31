@@ -167,7 +167,7 @@
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222でセンサー、アクチュエーター、閾値・量子化・標本化の固定模型。実機・リアルタイム・安全性等は未対応。原典の全項目の照合は未完了 |
 | SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の点と壁の衝突・トンネリングの固定例。他は未対応。[詳細](spd-game.md) |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノートの固定例。他は未対応。[詳細](spd-interactive.md) |
-| SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得の範囲・時間と手動の代替を比較。他は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し、依頼393で位置取得範囲の固定例。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で音を使えない条件の字幕の固定例。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
