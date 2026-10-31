@@ -1,0 +1,5 @@
+export const backoffLevel={id:'forest-backoff-slots',number:'276',kind:'backoff-slots',name:'再送の刻を選ぶ',tag:'衝突後の待機と確率',title:'伝令の再送を分けよう',story:'衝突した二人が、再送までの待ち時間をそれぞれ選びます。'};
+export function backoffResult(a,b){if(![0,1].includes(a)||![0,1].includes(b))throw new RangeError('待ち時間が不正です。');return [0,1].map(t=>a===t&&b===t?'collision':a===t?'a':b===t?'b':'idle');}
+export function createBackoff(){return {a:0,b:0,seen:[],answer:null,checked:false};}
+export function backoffComplete(s){return ['00','01','10','11'].every(k=>s.seen.includes(k))&&s.answer==='half'&&s.checked;}
+export function restoreBackoff(saved){const keys=['00','01','10','11'];if(!saved||![0,1].includes(saved.a)||![0,1].includes(saved.b)||!Array.isArray(saved.seen)||saved.seen.length>4||new Set(saved.seen).size!==saved.seen.length||!saved.seen.every(k=>keys.includes(k))||![null,'half','all'].includes(saved.answer)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');return {a:saved.a,b:saved.b,seen:[...saved.seen],answer:saved.answer,checked:saved.checked};}
