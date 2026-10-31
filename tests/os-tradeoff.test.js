@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {osTradeoffModes,createOsTradeoff,stepOsTrial,osTrialMetrics,osTradeoffComplete,restoreOsTradeoff} from '../src/os-tradeoff.js';
+
+test('both policies produce the described response and total time',()=>{const s=createOsTradeoff();for(const id of Object.keys(osTradeoffModes))for(const action of osTradeoffModes[id].steps)s.trials[id]=stepOsTrial(s.trials[id],action);assert.deepEqual(osTrialMetrics(s.trials.finish),{urgentCompletion:4,response:3,total:4,switches:0});assert.deepEqual(osTrialMetrics(s.trials.interrupt),{urgentCompletion:3,response:2,total:6,switches:2});assert.equal(osTradeoffComplete(s),false);s.answers={response:'interrupt',total:'finish'};s.checked=true;assert.equal(osTradeoffComplete(s),true);});
+test('wrong operations do not advance and history is validated on restore',()=>{const s=createOsTradeoff();assert.equal(stepOsTrial(s.trials.finish,'urgent').history.length,0);s.trials.finish=stepOsTrial(s.trials.finish,'work');const saved={selected:'finish',histories:{finish:s.trials.finish.history,interrupt:[]},answers:s.answers,checked:false};assert.equal(restoreOsTradeoff(saved).trials.finish.history.length,1);assert.throws(()=>restoreOsTradeoff({...saved,histories:{finish:['urgent'],interrupt:[]}}));});

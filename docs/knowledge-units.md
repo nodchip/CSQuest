@@ -100,7 +100,7 @@
 | NC | NC-Security | Network Security | 200 | 未着手 |
 | NC | NC-Mobility | Mobility | 201 | 未着手 |
 | NC | NC-Emerging | Emerging Topics | 201 | 未着手 |
-| OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼53・54・77・105・133・151〜153に関連する固定例。OS の目的や機能の全体像と設計の比較は未対応。[詳細](os-purpose.md) |
+| OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で仕事の切り替えと完了時刻の比較、53・54・77・105・133・151〜153に関連する固定例。OS の目的や機能の全体像と設計の体系的比較は未対応。[詳細](os-purpose.md) |
 | OS | OS-Principles | Principles of Operating System | 207 | 一部試作：依頼54で保護された装置とシステムコールの固定例 |
 | OS | OS-Concurrency | Concurrency | 208 | 未着手 |
 | OS | OS-Protection | Protection and Safety | 209 | 未着手 |
