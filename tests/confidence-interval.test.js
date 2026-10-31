@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {confidenceInterval,confidenceCoverage,createConfidence,confidenceReady,confidenceComplete,restoreConfidence} from '../src/confidence-interval.js';
+test('all 16 equally likely ordered samples yield exact location-independent coverage',()=>{for(const theta of [-100,0,4.5,100])for(const [w,expected] of [[0.5,10],[1,14]]){let total=0;for(let a=0;a<4;a++)for(let b=0;b<4;b++){const r=confidenceInterval(theta,a,b,w);assert.equal(r.mean,(r.x+r.y)/2);assert.equal(r.low,r.mean-w);assert.equal(r.high,r.mean+w);total+=Number(r.low<=theta&&theta<=r.high);}assert.equal(total,expected);assert.equal(confidenceCoverage(w),expected);}});
+test('both widths require a containing and missing sample, full survey and interpretation',()=>{const s=createConfidence();s.seen=['0,0,0.5','0,3,0.5','0,0,1','0,3,1'];assert.equal(confidenceReady(s),false);s.surveyed=true;assert.equal(confidenceReady(s),true);s.answer='procedure';s.checked=true;assert.equal(confidenceComplete(s),true);assert.deepEqual(restoreConfidence(s),s);s.seen.push('9,0,1');assert.throws(()=>restoreConfidence(s));});
