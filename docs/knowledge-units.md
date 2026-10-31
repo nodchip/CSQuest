@@ -21,7 +21,7 @@
 | AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：マージソート、二分探索木、探索、負の辺を含む最短路、最小全域木、トポロジカル順序、ハッシュ衝突など |
 | AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、依頼55で分割統治、依頼76で動的計画法と貪欲法の比較。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼88で冊数別の逐次・二分探索の比較回数と最大値。一般の分析は未対応 |
-| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件の固定例。他のモデルや一般の証明は未対応 |
+| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件、依頼154の正規表現の固定例。他のモデルや一般の証明は未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 依頼118で集団別の分類指標の固定例。他は未対応。[詳細](al-other-units.md) |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩と一桁の加算器 |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8 固定例 |
@@ -50,7 +50,7 @@
 | FPL | FPL-OOP | Object-Oriented Programming | 130 | 一部試作：依頼65で個体ごとの状態と種類別の動的な振る舞い |
 | FPL | FPL-Functional | Functional Programming | 131 | 一部試作：依頼51・52で列処理とクロージャの固定例 |
 | FPL | FPL-Logic | Logic Programming | 133 | 依頼146〜150で有限の項の単一化、事実・規則・問い合わせ、探索と戻り、再帰的な関係、カットの固定例。他は未対応。[詳細](fpl-logic.md) |
-| FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜153で処理の受け渡し、失敗、終了状態、環境変数の固定例。他は未対応。[詳細](fpl-scripting.md) |
+| FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜154で処理の受け渡し、失敗、終了状態、環境変数、正規表現の固定例。他は未対応。[詳細](fpl-scripting.md) |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 未着手 |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 未着手 |

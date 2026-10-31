@@ -1,0 +1,11 @@
+export const patternLevel={id:'archive-rune-pattern',number:'154',kind:'rune-pattern',name:'印を見分ける魔法の札',tag:'正規表現の基本',title:'印の並びを探そう',story:'書庫の巻物から、決まった並びの印を探します。札を組み合わせ、どの印に当てはまるか確かめましょう。'};
+export const runeWords=['A','AB','AC','ABC','ABB','ABX','XA','BA','ACB','XAB','BB','CBC','XB'];
+export const patternCases={contains:{name:'A を含む',goal:'どこかに A を含む印をすべて探す',expected:['A','AB','AC','ABC','ABB','ABX','XA','BA','ACB','XAB']},two:{name:'A から始まる２文字',goal:'A から始まり、後に１文字だけ続く印を探す',expected:['AB','AC']},group:{name:'A の後に B か C',goal:'A で始まり、残りが B または C の１文字以上だけの印を探す',expected:['AB','AC','ABC','ABB','ACB']}};
+const valid={start:['any','begin'],tail:['none','any','bc'],repeat:['one','zeroOrMore','oneOrMore'],end:['any','end']};
+export function createPatternTrial(id){if(!Object.hasOwn(patternCases,id))throw new RangeError('依頼が不正です。');return {id,start:'any',tail:'none',repeat:'one',end:'any',checked:false};}
+export function patternText(s){if(!Object.entries(valid).every(([key,values])=>values.includes(s[key])))throw new RangeError('札が不正です。');const prefix=s.start==='begin'?'^':'',tail=s.tail==='none'?'':s.tail==='any'?'.':'[BC]',repeat=s.tail==='none'?'':({one:'',zeroOrMore:'*',oneOrMore:'+'})[s.repeat];return `${prefix}A${tail}${repeat}${s.end==='end'?'$':''}`;}
+export function patternMatches(s){const pattern=new RegExp(patternText(s));return runeWords.filter(word=>pattern.test(word));}
+export function patternCorrect(s){return s.checked&&JSON.stringify(patternMatches(s))===JSON.stringify(patternCases[s.id].expected);}
+export function createPatterns(){return {selected:'contains',trials:Object.fromEntries(Object.keys(patternCases).map(id=>[id,createPatternTrial(id)]))};}
+export function patternsComplete(s){return Object.keys(patternCases).every(id=>patternCorrect(s.trials[id]));}
+export function restorePatterns(saved){if(!saved||!Object.hasOwn(patternCases,saved.selected)||!saved.trials)throw new RangeError('途中記録が不正です。');const r=createPatterns();r.selected=saved.selected;for(const id of Object.keys(patternCases)){const s=saved.trials[id];if(!s||!Object.entries(valid).every(([key,values])=>values.includes(s[key]))||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');r.trials[id]={id,start:s.start,tail:s.tail,repeat:s.repeat,end:s.end,checked:s.checked};}return r;}
