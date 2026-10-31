@@ -65,7 +65,7 @@
 | FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 呼出し・配列配置、依頼201・202の回収方式の固定例。実際の実行時機構は未対応。[詳細](fpl-execution-analysis.md#fpl-run-timenon-core) |
 | FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 未着手 |
 | FPL | FPL-Pragmatics | Language Pragmatics | 144 | 未着手 |
-| FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281で代入と条件分岐の操作的意味論の固定例。他は未対応。[詳細](fpl-formalism.md) |
+| FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281・282で操作的意味論と記号実行の固定例。他は未対応。[詳細](fpl-formalism.md) |
 | FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 未着手 |
 | FPL | FPL-Design | Design Principles of Programming Languages | 146 | 未着手 |
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 未着手 |
