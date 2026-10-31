@@ -25,7 +25,7 @@
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8 固定例 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行 |
 | AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104でキャッシュの局所性、ブロック、無効化の固定例。他は未対応。[詳細](ar-memory.md) |
-| AR | AR-IO | Interfacing and Communication | 105 | 未着手 |
+| AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知の固定例。他は未対応。[詳細](ar-io.md) |
 | AR | AR-Organization | Functional Organization | 106 | 未着手 |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 未着手 |
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 未着手 |
