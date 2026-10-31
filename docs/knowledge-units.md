@@ -58,7 +58,7 @@
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、依頼201〜203の回収・参照カウント・別名の固定例。実行時配置・一般のメモリ管理等は未対応。[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312で式の構造と解釈・翻訳の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 依頼75・154・199・306〜312などで構文木、正規表現、スコープ、引数渡しと副作用の固定例。他は未対応。[詳細](fpl-abstraction.md) |
-| FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75で優先順位と結合による構造の固定例。他は未対応。[詳細](fpl-syntax.md) |
+| FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75・313で式の構造と字句解析の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75で小さな抽象構文木を操作。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜208で制御フロー、到達定義・固定点、不要な書込みと別の効果の固定例。一般の解析は未対応。[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
 | FPL | FPL-Code | Code Generation | 142 | 命令・呼出し等と依頼207・208の書込み除去と効果保持の固定例。一般のコード生成は未対応。[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
