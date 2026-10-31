@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createAmortCredit,amortCreditStep,amortCreditComplete,restoreAmortCredit} from '../src/amortized-credit.js';
+test('three credits per insertion cover every actual operation including the ninth expansion',()=>{let s=createAmortCredit();for(let i=0;i<9;i++){s=amortCreditStep(s,'deposit');assert.equal(s.bank+s.copies+s.writes,s.charged);if(s.phase==='copy'){const wrong=amortCreditStep(s,'copy',0);assert.equal(wrong.history.length,s.history.length);s=amortCreditStep(s,'copy',s.size);}s=amortCreditStep(s,'insert');assert.ok(s.bank>=0);assert.equal(s.bank+s.copies+s.writes,s.charged);}assert.deepEqual([s.size,s.capacity,s.charged,s.copies,s.writes,s.bank],[9,16,27,15,9,3]);s.answer='bound';s.checked=true;assert.equal(amortCreditComplete(s),true);assert.deepEqual(restoreAmortCredit(s),s);s.history.push(['insert',0]);assert.throws(()=>restoreAmortCredit(s));});
+test('incorrect phase leaves the account unchanged',()=>{const s=createAmortCredit(),next=amortCreditStep(s,'insert');assert.equal(next.bank,0);assert.equal(next.history.length,0);assert.throws(()=>amortCreditStep(s,'unknown'));});
