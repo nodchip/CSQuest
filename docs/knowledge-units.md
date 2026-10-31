@@ -117,7 +117,7 @@
 | PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：更新喪失、排他と循環待ち、依頼90で二人のバリア同期 |
-| PDC | PDC-Evaluation | Evaluation | 224 | 依頼66で固定量の並列化、437で固定量・一人あたり固定の仕事量と効率、438で安全性と活性の模型。他は未対応。[詳細](pdc-evaluation.md) |
+| PDC | PDC-Evaluation | Evaluation | 224 | 依頼66で固定量の並列化、437で固定量・一人あたり固定の仕事量と効率、438で安全性と活性、439で時相論理の循環記録の模型。他は未対応。[詳細](pdc-evaluation.md) |
 | PDC | PDC-Algorithms | Algorithms | 225 | 依頼130・285で集約と並列累積和の固定例。他は未対応。[詳細](pdc-algorithms.md) |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |
 | SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 依頼79で待ち行列とスタックの選択・操作の固定例。他は未対応。[詳細](sdf-data-structures.md) |
