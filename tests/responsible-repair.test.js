@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {warningExpected,warningOld,warningFixed,createResponsibleRepair,responsibleRepairStep,restoreResponsibleRepair} from '../src/responsible-repair.js';
+test('the old rule misses the threshold, while the revised rule meets this finite specification',()=>{assert.deepEqual([2,3,4].map(warningExpected),[false,true,true]);assert.deepEqual([2,3,4].map(warningOld),[false,false,true]);assert.deepEqual([2,3,4].map(warningFixed),[false,true,true]);});
+test('early warning is allowed but evidence, precaution and verification are required before resuming',()=>{let s=createResponsibleRepair();s=responsibleRepairStep(s,'report');assert.equal(s.reported,'preliminary');assert.equal(responsibleRepairStep(s,'resume').done,false);s=responsibleRepairStep(s,'pause');s=responsibleRepairStep(s,'inspect');s=responsibleRepairStep(s,'verify');assert.equal(responsibleRepairStep(s,'resume').done,false);s=responsibleRepairStep(s,'report');s=responsibleRepairStep(s,'resume');assert.equal(s.done,true);assert.deepEqual(restoreResponsibleRepair(s),s);assert.throws(()=>restoreResponsibleRepair({...s,paused:false}));});
