@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {skinningWeights,skinningVertices,skinVertex,createSkinning,skinningComplete,restoreSkinning} from '../src/linear-skinning.js';
+test('weighted positions interpolate independently calculated transforms',()=>{for(const v of skinningVertices)for(const w of skinningWeights){const a=[v.x,0],b=[2,v.x-2],p=skinVertex(v.x,w);assert.deepEqual(p,{x:a[0]*(1-w)+b[0]*w,y:a[1]*(1-w)+b[1]*w});}});
+test('exactly one weight assignment reaches all four targets and needs a check',()=>{let count=0;for(const a of skinningWeights)for(const b of skinningWeights)for(const c of skinningWeights)for(const d of skinningWeights){const s={weights:[a,b,c,d],checked:true};if(skinningComplete(s)){count++;assert.deepEqual(s.weights,[0,0.25,0.75,1]);}}assert.equal(count,1);const s=createSkinning();s.weights=[0,0.25,0.75,1];assert.equal(skinningComplete(s),false);s.checked=true;assert.equal(skinningComplete(restoreSkinning(s)),true);assert.throws(()=>restoreSkinning({...s,weights:[0,0,0,0.5]}));});
