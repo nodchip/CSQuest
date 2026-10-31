@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createInteraction,interactionMove,interactionComplete,restoreInteraction} from '../src/interaction-path.js';
+test('both event sources update the same bounded position and collect persistent symbols',()=>{let s=createInteraction();s=interactionMove(s,'left','arrow');assert.equal(s.x,0);for(const [d,source] of [['right','activate'],['down','arrow'],['down','activate'],['right','arrow']])s=interactionMove(s,d,source);assert.deepEqual([s.x,s.y,s.first,s.second],[2,2,true,true]);s=interactionMove(s,'left','activate');assert.equal(s.second,true);s.answer='state';s.checked=true;assert.equal(interactionComplete(s),true);assert.deepEqual(restoreInteraction(s),s);});
+test('invalid input and malformed saves are rejected',()=>{const s=createInteraction();assert.throws(()=>interactionMove(s,'right','unknown'));assert.throws(()=>restoreInteraction({...s,x:3}));assert.equal(interactionComplete({...s,answer:'state',checked:true}),false);});

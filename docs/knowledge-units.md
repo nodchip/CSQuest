@@ -77,7 +77,7 @@
 | GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜185でキーフレームの緩急、平面２関節と線形ブレンドの固定例。３次元回転・実際のリグ制作・モーションキャプチャなどは未対応。[詳細](git-animation.md) |
 | GIT | GIT-Simulation | Simulation | 161 | 依頼209〜215で粒子・ばね、接触と衝突応答、ライフゲーム、濃度移流と高さ場の固定例。流体全体や一般の衝突応答等は未対応。[詳細](git-simulation.md) |
 | GIT | GIT-Immersion | Immersion | 161 | 依頼216〜218で２視点の視差、古い視点情報によるずれ、現実物体の遮蔽の固定例。実際の立体表示・追跡・安全性等は未対応。[詳細](git-immersion.md) |
-| GIT | GIT-Interaction | Interaction | 162 | 未着手 |
+| GIT | GIT-Interaction | Interaction | 162 | 依頼92・351で固定イベントと画面操作。他は未対応。[詳細](git-interaction.md) |
 | GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。他は未対応。[詳細](git-image.md) |
 | GIT | GIT-Physical | Tangible/Physical Computing | 164 | 依頼219〜222で光の読み取り、サーボの目標・移動、閾値・量子化・標本化の固定例。実際の回路や製作等は未対応。[詳細](git-physical.md) |
 | GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 未着手 |

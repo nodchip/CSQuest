@@ -1,0 +1,6 @@
+export const interactionLevel={id:'ruin-interaction-path',number:'351',kind:'interaction-path',name:'動く光と二つの合図',tag:'イベントと画面の状態',title:'光を導いて紋章を集めよう',story:'遺跡の光を動かして、二つの紋章をともします。届いた合図が、光の位置と画面をどう変えるか見てみましょう。'};
+export const interactionDirections={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
+export function createInteraction(){return {x:0,y:0,first:false,second:false,last:null,answer:null,checked:false};}
+export function interactionMove(s,direction,source){if(!Object.hasOwn(interactionDirections,direction)||!['arrow','activate'].includes(source))throw new RangeError('合図が不正です');const [dx,dy]=interactionDirections[direction],x=Math.max(0,Math.min(2,s.x+dx)),y=Math.max(0,Math.min(2,s.y+dy));return {...s,x,y,first:s.first||(x===1&&y===1),second:s.second||(x===2&&y===2),last:source,checked:false};}
+export function interactionComplete(s){return s.first&&s.second&&s.answer==='state'&&s.checked;}
+export function restoreInteraction(s){if(!s||!Number.isInteger(s.x)||s.x<0||s.x>2||!Number.isInteger(s.y)||s.y<0||s.y>2||typeof s.first!=='boolean'||typeof s.second!=='boolean'||![null,'arrow','activate'].includes(s.last)||![null,'state','independent'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {x:s.x,y:s.y,first:s.first,second:s.second,last:s.last,answer:s.answer,checked:s.checked};}
