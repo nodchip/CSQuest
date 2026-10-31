@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {periodicNext,periodicStep,createPeriodicTiming,periodicTimingComplete,restorePeriodicTiming} from '../src/periodic-timing.js';
+test('relative waiting accumulates variable work time while fixed releases follow the clock',()=>{let relative=[],absolute=[];for(const n of [0,4,9])relative=periodicStep('relative',relative,n);for(const n of [0,3,6])absolute=periodicStep('absolute',absolute,n);assert.deepEqual(relative,[0,4,9]);assert.deepEqual(absolute,[0,3,6]);assert.throws(()=>periodicStep('relative',[0],3));assert.throws(()=>periodicNext('absolute',absolute));const s=createPeriodicTiming();s.trials.relative.starts=relative;s.trials.absolute.starts=absolute;s.answer='anchor';s.checked=true;assert.ok(periodicTimingComplete(s));assert.deepEqual(restorePeriodicTiming(s),s);});
+test('restoration checks every start time and unfinished state',()=>{const s=createPeriodicTiming();s.trials.relative.starts=[0,3];assert.throws(()=>restorePeriodicTiming(s));s.trials.relative.starts=[0,4,9];s.trials.relative.guess=3;assert.throws(()=>restorePeriodicTiming(s));});
