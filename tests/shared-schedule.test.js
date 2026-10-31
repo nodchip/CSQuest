@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createScheduleSync,scheduleSyncStep,scheduleSyncComplete,restoreScheduleSync} from '../src/shared-schedule.js';
+test('conflict is rejected, the draft survives review, and a delayed older acknowledgement is not current state',()=>{let s=createScheduleSync();const act=a=>s=scheduleSyncStep(s,a);for(const a of ['editA','editB','sendA','sendB'])act(a);assert.deepEqual(s.server,{time:'８時',version:2});assert.equal(s.b.view,'９時');assert.equal(s.b.status,'競合：保存されていない');act('refreshB');assert.equal(s.b.view,'９時');act('retryB');act('replyA');assert.equal(s.a.base,2);assert.equal(s.server.version,3);assert.equal(scheduleSyncComplete(s),false);act('refreshA');assert.equal(s.a.view,'９時');assert.equal(scheduleSyncComplete(s),true);assert.deepEqual(restoreScheduleSync(s),s);});
+test('steps cannot skip review or replay invalid history',()=>{const s=createScheduleSync();assert.equal(scheduleSyncStep(s,'retryB').history.length,0);assert.throws(()=>restoreScheduleSync({history:['retryB']}));assert.throws(()=>scheduleSyncStep(s,'bad'));});
