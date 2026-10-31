@@ -170,5 +170,5 @@
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し、依頼393で位置取得範囲の固定例。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で音を使えない条件の字幕の固定例。他は未対応。[詳細](spd-sep.md) |
-| SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 依頼395で人に対する停止距離と検知遮蔽を比較。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Interactive | Interactive の社会・倫理（作業用名） | 312 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |

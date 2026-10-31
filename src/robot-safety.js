@@ -1,0 +1,9 @@
+export const robotSafetyLevel={id:'workshop-robot-safety',number:'395',kind:'robot-safety',name:'人が通る広場',tag:'ロボットの安全と検知',title:'自動人形の通り道を守ろう',story:'広場で運搬する自動人形を試します。人を見つけてから止まるまでの距離と、見通せない場合の判断を比べましょう。'};
+export const robotSpeeds={fast:'速い（毎秒２単位）',slow:'遅い（毎秒１単位）'};
+export const robotViews={clear:'見通せる',blocked:'センサーが遮られている'};
+export const robotPolicies={stop:'遮蔽時は発進しない',proceed:'遮蔽時も発進する'};
+export function robotSafetyOutcome(speed,view,policy){if(!Object.hasOwn(robotSpeeds,speed)||!Object.hasOwn(robotViews,view)||!Object.hasOwn(robotPolicies,policy))throw new RangeError('条件が不正です');if(view==='blocked')return {status:policy==='stop'?'hold':'unknown',distance:null};const v=speed==='fast'?2:1,distance=v+v*v/2;return {status:distance<=3?'stopped':'contact',distance};}
+export function createRobotSafety(){return {speed:'fast',view:'clear',policy:'stop',observed:[],answer:null,checked:false};}
+export function observeRobotSafety(s){const key=`${s.speed}:${s.view}:${s.policy}`;return {...s,observed:s.observed.includes(key)?[...s.observed]:[...s.observed,key],checked:false};}
+export function robotSafetyComplete(s){return ['fast:clear:stop','slow:clear:stop','slow:blocked:stop','slow:blocked:proceed'].every(k=>s.observed.includes(k))&&s.answer==='limits'&&s.checked;}
+export function restoreRobotSafety(s){const keys=Object.keys(robotSpeeds).flatMap(v=>Object.keys(robotViews).flatMap(w=>Object.keys(robotPolicies).map(p=>`${v}:${w}:${p}`)));if(!s||!Object.hasOwn(robotSpeeds,s.speed)||!Object.hasOwn(robotViews,s.view)||!Object.hasOwn(robotPolicies,s.policy)||!Array.isArray(s.observed)||s.observed.length>keys.length||new Set(s.observed).size!==s.observed.length||!s.observed.every(k=>keys.includes(k))||![null,'limits','sensor','slow'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {speed:s.speed,view:s.view,policy:s.policy,observed:[...s.observed],answer:s.answer,checked:s.checked};}
