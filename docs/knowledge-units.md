@@ -85,7 +85,7 @@
 | HCI | HCI-Evaluation | Evaluating the Design | 178 | 未着手 |
 | HCI | HCI-Design | System Design | 179 | 未着手 |
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 未着手 |
-| MSF | MSF-Discrete | Discrete Mathematics | 187 | 未着手 |
+| MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：依頼46で有限集合と包除の例 |
 | MSF | MSF-Probability | Probability | 188 | 一部試作：依頼20・41で条件付き確率と期待値の固定例 |
 | MSF | MSF-Statistics | Statistics | 190 | 未着手 |
 | MSF | MSF-Linear | Linear Algebra | 191 | 未着手 |
