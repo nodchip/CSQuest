@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {gaussianResult,createGaussian,gaussianTrialValid,gaussianComplete,restoreGaussian} from '../src/gaussian-likelihood.js';
+test('Gaussian relative likelihood agrees with independent fixed-variance errors and squared residuals',()=>{for(const [id,expected] of [['first',[0,5,3]],['second',[3,14,0]]])for(const [i,k] of ['A','B','C'].entries()){const result=gaussianResult(id,k);assert.equal(result.sse,expected[i]);assert.equal(result.relative,Math.exp(-expected[i]/2));assert.equal(result.rows.reduce((n,r)=>n+(r.y-r.predicted)**2,0),expected[i]);}});
+test('each data set requires all three candidates and a minimum before completion and restoration',()=>{const s=createGaussian();for(const [id,k] of [['first','A'],['second','C']]){s.trials[id]={candidate:k,tested:['A','B','C'],done:true};assert.ok(gaussianTrialValid(id,s.trials[id]));}s.answer='same';s.checked=true;assert.ok(gaussianComplete(s));assert.deepEqual(restoreGaussian(s),s);s.trials.first.candidate='B';assert.throws(()=>restoreGaussian(s));});
