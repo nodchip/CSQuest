@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {auditEvents,auditFields,createAudit,auditFieldsCorrect,auditCaseCorrect,auditComplete,restoreAudit} from '../src/audit-ledger.js';
+test('expected records match the independently stated filters',()=>{assert.deepEqual(auditEvents.filter(e=>e.outcome==='denied').map(e=>e.id),['E2']);assert.deepEqual(auditEvents.filter(e=>e.outcome==='allowed'&&e.count>10).map(e=>e.id),['E3']);});
+test('metadata, both reviews, and restrained conclusions are required',()=>{const s=createAudit();for(const id of Object.keys(auditFields))s.fields[id]=id!=='content';s.fieldsChecked=true;s.cases.denied={events:['E2'],reason:'limited',checked:true};s.cases.bulk={events:['E3'],reason:'review',checked:true};assert.equal(auditFieldsCorrect(s),true);assert.equal(auditCaseCorrect(s,'denied'),true);assert.equal(auditComplete(restoreAudit(s)),true);s.fields.content=true;assert.equal(auditComplete(s),false);s.fields.content=false;s.cases.bulk.reason='guilty';assert.equal(auditComplete(s),false);assert.throws(()=>restoreAudit({...s,cases:{...s.cases,denied:{...s.cases.denied,events:['E2','E2']}}}));});
