@@ -1,0 +1,8 @@
+export const effectLevel={id:'workshop-shared-side-effect',number:'307',kind:'shared-side-effect',name:'みんなの箱と精霊',tag:'大域状態と副作用',title:'同じ依頼を二度試そう',story:'工房の精霊に、箱の数から次の数を教えてもらいます。みんなの箱を書き換える方法と、数だけ渡す方法を比べましょう。'};
+export const effectModes={shared:{name:'みんなの箱を使う'},argument:{name:'数を渡して結果を受け取る'}};
+export const effectValues=[2,3,4];
+export function effectResult(mode,step){if(!Object.hasOwn(effectModes,mode)||![1,2].includes(step))throw new RangeError('入力が不正です');return mode==='shared'?{input:step+1,result:step+2,shared:step+2}:{input:2,result:3,shared:2};}
+export function createEffect(){return {mode:'shared',trials:Object.fromEntries(Object.keys(effectModes).map(mode=>[mode,{step:0,predictions:[null,null],checked:false}])),repair:null,finalChecked:false};}
+export function effectCorrect(mode,t){return t.step===2&&t.predictions.every((n,i)=>n===effectResult(mode,i+1).result);}
+export function effectComplete(s){return Object.keys(effectModes).every(mode=>s.trials[mode].checked&&effectCorrect(mode,s.trials[mode]))&&s.repair==='argument'&&s.finalChecked;}
+export function restoreEffect(saved){if(!saved||!Object.hasOwn(effectModes,saved.mode)||!saved.trials||![null,'argument','shared'].includes(saved.repair)||typeof saved.finalChecked!=='boolean')throw new RangeError('途中記録が不正です');const s=createEffect();s.mode=saved.mode;s.repair=saved.repair;s.finalChecked=saved.finalChecked;for(const mode of Object.keys(effectModes)){const t=saved.trials[mode];if(!t||![0,1,2].includes(t.step)||!Array.isArray(t.predictions)||t.predictions.length!==2||!t.predictions.every(n=>n===null||effectValues.includes(n))||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です');s.trials[mode]={step:t.step,predictions:[...t.predictions],checked:t.checked};}return s;}
