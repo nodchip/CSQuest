@@ -47,11 +47,12 @@ export const storyScenes=[
   {id:'beginning',threshold:0,title:'消えかけた道しるべ',speaker:'ギルド長 ミラ',text:'旅人たちを導く、ギルドの塔の灯りが弱くなっているの。各地から届く知らせも、少しずつ途切れがちになったわ。精霊のノノと一緒に、困っている人の声を聞いてくれない？'},
   {id:'first-light',threshold:1,title:'小さな知らせ',speaker:'精霊 ノノ',text:'見て、塔の灯りが少し明るくなった！ 助けた場所から届く知らせが、灯りに力を分けているみたい。次はどこへ行こう？'},
   {id:'connections',threshold:4,title:'つながる道',speaker:'ギルド長 ミラ',text:'各地で生まれた工夫が、別の場所にも届き始めたわ。一つのやり方が、別の困りごとを解く手がかりになることもあるのね。'},
-  {id:'beacon',threshold:8,title:'八つの知らせと塔の灯り',speaker:'精霊 ノノ',text:'八つの場所から知らせが届いたよ！ 塔の灯りが、また遠くまで道を照らしている。これで旅人たちも、助けを求める声を見つけやすくなるね。ミラと一緒に、これからも世界を巡ろう！'},
+  {id:'beacon',threshold:8,title:'八つの知らせと塔の仕掛け',speaker:'精霊 ノノ',text:'八つの場所から知らせが届いたよ！ 塔に集まった光を、上下二つの灯りへつなげよう。道が両方つながれば、旅人を導く灯りが戻るはず！'},
+  {id:'ending',threshold:8,title:'再び輝く道しるべ',speaker:'ギルド長 ミラ',text:'上下の灯りがともり、塔の光が道を照らし始めたわ。あなたが各地でつないだ縁が、この光をここまで運んでくれたのね。ノノと一緒に、これからもまだ知らない場所へ行きましょう。'},
 ];
-export function storyProgress(completed){
+export function storyProgress(completed,beaconComplete=false){
   const done=new Set(completed);
   const visited=regions.filter(region=>region.quests.some(id=>done.has(id)));
-  const scenes=storyScenes.filter(scene=>scene.threshold<=visited.length);
-  return {visited,scenes,current:scenes.at(-1),next:storyScenes.find(scene=>scene.threshold>visited.length)||null};
+  const scenes=storyScenes.filter(scene=>scene.threshold<=visited.length&&(scene.id!=='ending'||beaconComplete));
+  return {visited,scenes,current:scenes.at(-1),next:storyScenes.find(scene=>!scenes.includes(scene))||null,readyForFinale:visited.length===regions.length};
 }
