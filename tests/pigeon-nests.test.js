@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createPigeonNests,nestCounts,nestTrialValid,pigeonNestsComplete,restorePigeonNests} from '../src/pigeon-nests.js';
+test('any fourth nest repeats one of three distinct earlier nests',()=>{const s=createPigeonNests();s.trials.three={placements:[2,0,1],done:true};for(const fourth of [0,1,2]){const t={placements:[2,0,1,fourth],done:true};assert.equal(nestTrialValid('four',t),true);assert.equal(Math.max(...nestCounts(t)),2);}s.trials.four={placements:[2,0,1,0],done:true};s.answer='contradiction';s.checked=true;assert.equal(pigeonNestsComplete(s),true);assert.deepEqual(restorePigeonNests(s),s);});
+test('all 81 assignments of four birds have a repeated nest and forged completion is rejected',()=>{for(let n=0;n<81;n++){let v=n,placements=[];for(let i=0;i<4;i++){placements.push(v%3);v=Math.floor(v/3);}assert.ok(nestCounts({placements}).some(c=>c>=2));}const s=createPigeonNests();assert.equal(nestTrialValid('three',{placements:[0,0,1]}),false);assert.throws(()=>restorePigeonNests({...s,trials:{...s.trials,three:{placements:[0,0,1],done:true}}}));});

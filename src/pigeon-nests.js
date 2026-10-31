@@ -1,0 +1,8 @@
+export const pigeonNestsLevel={id:'forest-pigeon-nests',number:'400',kind:'pigeon-nests',name:'三つの巣と四羽の使い鳥',tag:'鳩の巣原理と背理法',title:'使い鳥を巣に案内しよう',story:'森の使い鳥を三つの巣に案内します。重ならない配置を試し、四羽目が来たときに何が必ず起きるか考えましょう。'};
+export const nestCases={three:{name:'三羽を案内',total:3},four:{name:'四羽を案内',total:4}};
+export function createNestTrial(){return {placements:[],done:false};}
+export function nestCounts(t){return [0,1,2].map(i=>t.placements.filter(x=>x===i).length);}
+export function nestTrialValid(id,t){return Object.hasOwn(nestCases,id)&&t.placements.length===nestCases[id].total&&new Set(t.placements.slice(0,3)).size===3&&(id==='three'||nestCounts(t).some(n=>n>=2));}
+export function createPigeonNests(){return {selected:'three',trials:{three:createNestTrial(),four:createNestTrial()},answer:null,checked:false};}
+export function pigeonNestsComplete(s){return Object.keys(nestCases).every(id=>s.trials[id].done&&nestTrialValid(id,s.trials[id]))&&s.answer==='contradiction'&&s.checked;}
+export function restorePigeonNests(s){if(!s||!Object.hasOwn(nestCases,s.selected)||!s.trials||![null,'contradiction','three','fixed'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createPigeonNests();n.selected=s.selected;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(nestCases)){const t=s.trials[id];if(!t||!Array.isArray(t.placements)||t.placements.length>nestCases[id].total||!t.placements.every(i=>[0,1,2].includes(i))||typeof t.done!=='boolean'||(t.done&&!nestTrialValid(id,t)))throw new RangeError('途中記録が不正です');n.trials[id]={placements:[...t.placements],done:t.done};}return n;}
