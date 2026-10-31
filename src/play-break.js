@@ -1,0 +1,8 @@
+export const playBreakLevel={id:'guild-play-break',number:'398',kind:'play-break',name:'休める冒険の設計',tag:'ゲーム設計と遊ぶ人の選択',title:'冒険を休めるようにしよう',story:'ギルドの訓練用ゲームで、旅人が途中で休みたいときの表示と進捗を比べましょう。'};
+export const breakDesigns={deadline:'制限時間と固定の通知',flexible:'中断保存と選べる通知'};
+export const breakActions={rest:'ここで休む',play:'もう１回遊ぶ'};
+export function playBreakOutcome(design,action){if(!Object.hasOwn(breakDesigns,design)||!Object.hasOwn(breakActions,action))throw new RangeError('条件が不正です');return {progress:action==='play'?4:design==='deadline'?0:3,reminder:design==='deadline'?'固定':'選べる'};}
+export function createPlayBreak(){return {design:'deadline',action:'rest',observed:[],answer:null,checked:false};}
+export function observePlayBreak(s){const key=`${s.design}:${s.action}`;return {...s,observed:s.observed.includes(key)?[...s.observed]:[...s.observed,key],checked:false};}
+export function playBreakComplete(s){return ['deadline:rest','deadline:play','flexible:rest','flexible:play'].every(k=>s.observed.includes(k))&&s.answer==='choice'&&s.checked;}
+export function restorePlayBreak(s){const keys=Object.keys(breakDesigns).flatMap(d=>Object.keys(breakActions).map(a=>`${d}:${a}`));if(!s||!Object.hasOwn(breakDesigns,s.design)||!Object.hasOwn(breakActions,s.action)||!Array.isArray(s.observed)||s.observed.length>keys.length||new Set(s.observed).size!==s.observed.length||!s.observed.every(k=>keys.includes(k))||![null,'choice','force','guarantee'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {design:s.design,action:s.action,observed:[...s.observed],answer:s.answer,checked:s.checked};}

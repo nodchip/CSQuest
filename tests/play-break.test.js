@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createPlayBreak,playBreakOutcome,observePlayBreak,playBreakComplete,restorePlayBreak} from '../src/play-break.js';
+test('rest has different progress and reminder consequences in the two designs',()=>{assert.deepEqual(playBreakOutcome('deadline','rest'),{progress:0,reminder:'固定'});assert.deepEqual(playBreakOutcome('flexible','rest'),{progress:3,reminder:'選べる'});assert.equal(playBreakOutcome('deadline','play').progress,4);assert.equal(playBreakOutcome('flexible','play').progress,4);let s=createPlayBreak();for(const design of ['deadline','flexible'])for(const action of ['rest','play']){s.design=design;s.action=action;s=observePlayBreak(s);}s.answer='choice';s.checked=true;assert.equal(playBreakComplete(s),true);assert.deepEqual(restorePlayBreak(s),s);});
+test('rejects invalid observations',()=>{const s=createPlayBreak();assert.throws(()=>playBreakOutcome('bad','rest'));assert.throws(()=>restorePlayBreak({...s,observed:['deadline:rest','deadline:rest']}));});
