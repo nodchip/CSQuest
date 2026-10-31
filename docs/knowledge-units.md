@@ -31,7 +31,7 @@
 | AR | AR-Organization | Functional Organization | 106 | 依頼158で３段階パイプラインのデータ依存、待機と転送の固定例。他は未対応。[詳細](ar-organization.md) |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 依頼159〜161で分岐予測、投機実行、時間・電力・エネルギー比較の固定例。他は未対応。[詳細](ar-performance-energy.md) |
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162・163で SIMD・MIMD と専用機械の費用比較の固定例。他は未対応。[詳細](ar-heterogeneity.md) |
-| AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜259で範囲と権限、乱数の情報源、個体差、構成証明、暗号文での乗算の固定例。他の範囲は未対応。[詳細](ar-security.md) |
+| AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜259で範囲と権限、乱数、個体差、構成証明、暗号文での乗算、依頼383で信頼の起点を仮定した起動検証の固定例。他は未対応。[詳細](ar-security.md) |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの重ね合わせ、H・Z と途中観測の固定例。他の範囲は未対応。[詳細](ar-quantum.md) |
 | AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |
@@ -100,7 +100,7 @@
 | NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279・280で差し替え、認証、分離、門番と警報の固定例。他の攻撃・対策は未対応。[詳細](nc-security.md) |
 | NC | NC-Mobility | Mobility | 201 | 依頼316〜318で保存・中継、無線 LAN の再接続とセルラー登録区域の固定例。他は未対応。[詳細](nc-mobility.md) |
 | NC | NC-Emerging | Emerging Topics | 201 | 依頼319〜322で SDN、NAT、負荷分散と CDN の固定模型。他は未対応。[詳細](nc-emerging.md) |
-| OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で切替え、依頼381で保護境界、依頼382で記録の仲介・同期・権限の固定例。OS の機能の全体像と体系的比較は未対応。[詳細](os-purpose.md) |
+| OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で切替え、依頼381で保護境界、依頼382で記録の仲介・同期・権限、依頼383で起動検証の固定例。OS の機能の全体像と体系的比較は未対応。[詳細](os-purpose.md) |
 | OS | OS-Principles | Principles of Operating System | 207 | 依頼54で保護とシステムコール、依頼381で一体型・分離型の保護境界と切替えの固定例。他は未対応。[詳細](os-principles.md) |
 | OS | OS-Concurrency | Concurrency | 208 | 依頼15・16・30・177〜179で更新喪失、排他、循環待ち、飢餓、セマフォとプロセス・スレッドの記録共有の固定例。実 OS の同期は未対応。[詳細](os-concurrency.md) |
 | OS | OS-Protection | Protection and Safety | 209 | 依頼11・54・180・181で権限、媒体・起動・受付の保護とバックアップの固定模型。実 OS の脆弱性や保護機構は未対応。[詳細](os-protection.md) |
