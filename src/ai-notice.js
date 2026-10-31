@@ -1,0 +1,6 @@
+export const aiNoticeLevel={id:'village-ai-notice',number:'397',kind:'ai-notice',name:'橋の知らせと文章精霊',tag:'AI 利用と編集の説明責任',title:'橋の知らせを確かめよう',story:'文章精霊が橋の案内を下書きしました。通る人を迷わせないよう、元の知らせを確認して案内板を整えましょう。'};
+export const noticeDrafts={ai:'橋はすでに通行できます。',verified:'橋は点検が終わるまで通行止めで、点検は明日の予定です。'};
+export function createAiNotice(){return {inspected:false,draft:null,source:false,disclosure:false,reviewed:false,published:false,answer:null,checked:false};}
+export function aiNoticeProblems(s){const out=[];if(!s.inspected)out.push('元の知らせを確認する');if(s.draft!=='verified')out.push('元の知らせに合う本文を選ぶ');if(!s.source)out.push('元の知らせを出典として添える');if(!s.disclosure)out.push('精霊の下書き利用を明記する');if(!s.reviewed)out.push('編集担当の確認を記録する');return out;}
+export function aiNoticeComplete(s){return s.published&&aiNoticeProblems(s).length===0&&s.answer==='accountability'&&s.checked;}
+export function restoreAiNotice(s){if(!s||typeof s.inspected!=='boolean'||![null,'ai','verified'].includes(s.draft)||typeof s.source!=='boolean'||typeof s.disclosure!=='boolean'||typeof s.reviewed!=='boolean'||typeof s.published!=='boolean'||![null,'accountability','machine','disclosure'].includes(s.answer)||typeof s.checked!=='boolean'||(s.reviewed&&!s.inspected)||(s.published&&aiNoticeProblems(s).length))throw new RangeError('途中記録が不正です');return {...s};}
