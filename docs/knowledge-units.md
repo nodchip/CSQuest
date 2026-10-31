@@ -22,7 +22,7 @@
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31で二状態の決定性オートマトンを構築。他のモデルは未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩 |
-| AR | AR-Representation | Machine-Level Data Representation | 103 | 未着手 |
+| AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：依頼36で４ビットの符号なし・２の補数と範囲超過 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 未着手 |
 | AR | AR-Memory | Memory Hierarchy | 104 | 未着手 |
 | AR | AR-IO | Interfacing and Communication | 105 | 未着手 |
