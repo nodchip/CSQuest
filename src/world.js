@@ -1,6 +1,6 @@
 // Regions describe where the existing quests take place; they do not lock access.
 export const regions=[
-  {id:'guild',name:'冒険者ギルド',icon:'⚑',description:'旅人が集まり、世界各地からの依頼を受ける場所。',quests:['guild-sign','guild-sets']},
+  {id:'guild',name:'冒険者ギルド',icon:'⚑',description:'旅人が集まり、世界各地からの依頼を受ける場所。',quests:['guild-sign','guild-sets','guild-revisions']},
   {id:'workshop',name:'精霊の工房',icon:'✦',description:'精霊や自動人形とともに、道具の動かし方を学ぶ。',quests:['sequence','branch','loop','two-paths','sorting','merge-stones','typed-spells','scout-automaton','rune-arrangements','stone-pipeline','multiplier-seals']},
   {id:'ruins',name:'灯火の遺跡',icon:'♜',description:'古い門と迷宮に残された、灯火と紋章の謎。',quests:['circuit','guardian','depth-ruins','ruin-emblem','memory-gate','number-lanterns','lantern-adder','guardian-strategy','stone-duel','lantern-constraints','light-vectors']},
   {id:'wilds',name:'霧の森と山道',icon:'⌖',description:'森と山を越え、調査隊と遠い村へ知らせを届ける。',quests:['forest-search','weighted-roads','message-delivery','village-bridges','guided-ruins','misleading-stars','routing-towers']},
@@ -23,7 +23,7 @@ export const learningTrails=[
   {id:'data',name:'台帳と仲間',description:'集合と問い合わせから、台帳の同時更新へ進みます。',quests:['guild-sets','herb-catalog','village-join','private-ledger','transfer-ledger','shared-ledger','ledger-order']},
   {id:'systems',name:'支える仕組み',description:'仕事の順番、共有、記憶と通信をたどります。',quests:['workshop-scheduling','waiting-workers','protected-gate','shared-counter','counter-lock','two-locks','archive-cache','page-frames','page-address','routing-towers','message-delivery']},
   {id:'reasoning',name:'推測と勝負',description:'鑑定や確率を考え、守護者との読み合いに挑みます。',quests:['crystal-neighbors','crystal-evaluation','lantern-signals','treasure-expectation','arrival-records','guardian-strategy','stone-duel']},
-  {id:'craft',name:'道具と暮らし',description:'案内や安全、試験、図形、自動人形を体験します。',quests:['guild-sign','castle-access','ward-tests','ruin-emblem','light-vectors','scout-automaton']},
+  {id:'craft',name:'道具と暮らし',description:'案内や安全、試験、図形、自動人形を体験します。',quests:['guild-sign','castle-access','ward-tests','guild-revisions','ruin-emblem','light-vectors','scout-automaton']},
 ];
 export function findTrail(id){return learningTrails.find(trail=>trail.id===id)||null;}
 export function trailQuests(trail,levels){

@@ -121,8 +121,8 @@
 | SDF | SDF-Algorithms | Algorithms | 232 | 未着手 |
 | SDF | SDF-Practices | Software Development Practices | 232 | 未着手 |
 | SDF | SDF-SEP | Society, Ethics, and the Profession | 233 | 未着手 |
-| SE | SE-Teamwork | Teamwork | 240 | 未着手 |
-| SE | SE-Tools | Tools and Environments | 241 | 未着手 |
+| SE | SE-Teamwork | Teamwork | 240 | 一部試作：依頼59で提示された関係者の希望を確認。実際の協働は未対応 |
+| SE | SE-Tools | Tools and Environments | 241 | 一部試作：依頼59で共通の元と２版の変更を比較 |
 | SE | SE-Requirements | Product Requirements | 242 | 未着手 |
 | SE | SE-Design | Software Design | 243 | 未着手 |
 | SE | SE-Construction | Software Construction | 245 | 未着手 |
