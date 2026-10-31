@@ -85,7 +85,7 @@
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 未着手 |
 | HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 一部試作：依頼22で三つの利用条件 |
 | HCI | HCI-Evaluation | Evaluating the Design | 178 | 一部試作：依頼60で架空４人の時間・観察と限定的な結論 |
-| HCI | HCI-Design | System Design | 179 | 未着手 |
+| HCI | HCI-Design | System Design | 179 | 依頼287で試作・観察・改善・再評価の固定例。他は未対応。[詳細](hci-design.md) |
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 未着手 |
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：有限集合、命題推論・反例、依頼95の数学的帰納法の固定例 |
 | MSF | MSF-Probability | Probability | 188 | 一部試作：条件付き確率、期待値と、依頼84で等確率の４札の分散 |
