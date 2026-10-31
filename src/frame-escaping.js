@@ -1,0 +1,8 @@
+export const frameEscapeLevel={id:'forest-frame-escaping',number:'277',kind:'frame-escaping',name:'区切りを守る封',tag:'フレームとエスケープ',title:'印を混同せずに届けよう',story:'伝令の本文に区切りと同じ印が混ざっています。'};
+export const framePayload=[0x41,0x7e,0x7d,0x42];
+export function makeEscapedFrame(escaped){if(!Array.isArray(escaped)||escaped.length!==4||!escaped.every(x=>typeof x==='boolean'))throw new RangeError('選択が不正です。');return [0x7e,...framePayload.flatMap((v,i)=>escaped[i]?[0x7d,v^0x20]:[v]),0x7e];}
+export function decodeEscapedFrame(frame){if(!Array.isArray(frame)||frame.length<2||frame[0]!==0x7e||frame.at(-1)!==0x7e)throw new RangeError('区切りが不正です。');const data=[];for(let i=1;i<frame.length-1;i++){let v=frame[i];if(v===0x7e)throw new RangeError('本文内に区切りがあります。');if(v===0x7d){i++;if(i>=frame.length-1||frame[i]===0x7e)throw new RangeError('エスケープが途中で終わっています。');v=frame[i]^0x20;}data.push(v);}return data;}
+export function frameEscapeResult(s){try{const wire=makeEscapedFrame(s.escaped),decoded=decodeEscapedFrame(wire);return {wire,decoded,correct:decoded.length===framePayload.length&&decoded.every((v,i)=>v===framePayload[i]),error:null};}catch(e){return {wire:makeEscapedFrame(s.escaped),decoded:null,correct:false,error:e.message};}}
+export function createFrameEscape(){return {escaped:[false,false,false,false],checked:false};}
+export function frameEscapeComplete(s){return s.checked&&frameEscapeResult(s).correct;}
+export function restoreFrameEscape(saved){if(!saved||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');makeEscapedFrame(saved.escaped);return {escaped:[...saved.escaped],checked:saved.checked};}
