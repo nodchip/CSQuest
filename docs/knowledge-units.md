@@ -1,6 +1,6 @@
 # CS2023 知識単位の目録
 
-出典: CS2023 目次（PDF 印字ページ番号）。トピック・学習成果単位への分解と照合は未実施。分野や単位が列挙されていることは、対応済みを意味しない。
+出典: CS2023 目次（PDF 印字ページ番号）。トピック・学習成果単位への分解と照合は一部のみ実施済みで、全単位分は未完了。分野や単位が列挙されていることは、対応済みを意味しない。
 
 | 分野 | 単位 | 名称 | 印字ページ | 状態 |
 |---|---|---|---:|---|
@@ -16,11 +16,11 @@
 | AI | AI-NLP | Natural Language Processing | 79 | 未着手 |
 | AI | AI-Robotics | Robotics | 80 | 未着手 |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 未着手 |
-| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：整列、幅優先探索、重み付き最短路 |
-| AL | AL-Strategies | Algorithmic Strategies | 90 | 未着手 |
-| AL | AL-Complexity | Complexity | 91 | 未着手 |
-| AL | AL-Models | Computational Models and Formal Languages | 93 | 未着手 |
-| AL | AL-SEP | Society, Ethics, and the Profession | 95 | 未着手 |
+| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：整列、幅優先・深さ優先探索、重み付き最短路、ハッシュ衝突 |
+| AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09で貪欲法の固定例。項目一覧化、ほとんど未着手 |
+| AL | AL-Complexity | Complexity | 91 | 項目一覧化、教材は未着手 |
+| AL | AL-Models | Computational Models and Formal Languages | 93 | 項目一覧化、教材は未着手 |
+| AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩 |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 未着手 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 未着手 |
