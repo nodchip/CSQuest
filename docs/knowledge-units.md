@@ -98,7 +98,7 @@
 | NC | NC-Mobility | Mobility | 201 | 未着手 |
 | NC | NC-Emerging | Emerging Topics | 201 | 未着手 |
 | OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 未着手 |
-| OS | OS-Principles | Principles of Operating System | 207 | 未着手 |
+| OS | OS-Principles | Principles of Operating System | 207 | 一部試作：依頼54で保護された装置とシステムコールの固定例 |
 | OS | OS-Concurrency | Concurrency | 208 | 未着手 |
 | OS | OS-Protection | Protection and Safety | 209 | 未着手 |
 | OS | OS-Scheduling | Scheduling | 209 | 一部試作：先着順とラウンドロビン |
