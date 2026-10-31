@@ -24,7 +24,7 @@
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩と一桁の加算器 |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8 固定例 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行 |
-| AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106でキャッシュの局所性、無効化と誤り訂正の固定例。他は未対応。[詳細](ar-memory.md) |
+| AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106・107でキャッシュの局所性、無効化と誤り訂正の固定例。他は未対応。[詳細](ar-memory.md) |
 | AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知の固定例。他は未対応。[詳細](ar-io.md) |
 | AR | AR-Organization | Functional Organization | 106 | 未着手 |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 未着手 |
@@ -153,7 +153,7 @@
 | SF | SF-Resource | Resource Management | 294 | 未着手 |
 | SF | SF-Performance | System Performance | 294 | 一部試作：依頼25でキャッシュと時間的局所性 |
 | SF | SF-Evaluation | Performance Evaluation | 295 | 一部試作：依頼66で理想化した並列作業の時間を比較 |
-| SF | SF-Reliability | System Reliability | 296 | 未着手 |
+| SF | SF-Reliability | System Reliability | 296 | 依頼10・35・62・106・107で再送、途中停止と冗長符号の固定例。他は未対応。[詳細](sf-reliability.md) |
 | SF | SF-Security | System Security | 297 | 未着手 |
 | SF | SF-Design | System Design | 297 | 未着手 |
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 未着手 |
