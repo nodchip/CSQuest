@@ -115,7 +115,7 @@
 | OS | OS-Faults | Fault tolerance | 214 | 未着手 |
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 未着手 |
 | PDC | PDC-Programs | Programs | 219 | 依頼130で２主体に分けた小計と集約の固定例。他は未対応。[詳細](pdc-programs.md) |
-| PDC | PDC-Communication | Communication | 220 | 依頼129で容量０・１の通信路の固定例。他は未対応。[詳細](pdc-communication.md) |
+| PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：更新喪失、排他と循環待ち、依頼90で二人のバリア同期 |
 | PDC | PDC-Evaluation | Evaluation | 224 | 一部試作：依頼66で固定量の並列化と逐次部分の限界 |
 | PDC | PDC-Algorithms | Algorithms | 225 | 未着手 |
