@@ -1,0 +1,7 @@
+export const circleLevel={id:'ruin-circle-collision',number:'210',kind:'circle-collision',name:'光の輪の見張り',tag:'円の衝突判定',title:'二つの輪を動かそう',story:'遺跡の灯火を二つの光の輪が守っています。小さい輪を動かし、離れる・接する・重なる配置を確かめましょう。'};
+export const circleCases={separate:{name:'離す',target:'separate'},touch:{name:'ちょうど接する',target:'touch'},overlap:{name:'重ねる',target:'overlap'}};
+export const circleLabels={separate:'離れている',touch:'ちょうど接している',overlap:'内部が重なっている'};
+export function circleStatus(x,y){if(!Number.isInteger(x)||!Number.isInteger(y)||x<0||x>4||y<0||y>3)throw new RangeError('座標が不正です。');const squared=x*x+y*y;return squared>9?'separate':squared===9?'touch':'overlap';}
+export function createCircle(){return {selected:'separate',trials:Object.fromEntries(Object.keys(circleCases).map(id=>[id,{x:3,y:1,checked:false}]))};}
+export function circleComplete(s){return Object.entries(circleCases).every(([id,c])=>s.trials[id].checked&&circleStatus(s.trials[id].x,s.trials[id].y)===c.target);}
+export function restoreCircle(saved){if(!saved||!Object.hasOwn(circleCases,saved.selected)||!saved.trials)throw new RangeError('途中記録が不正です。');const s=createCircle();s.selected=saved.selected;for(const [id,c] of Object.entries(circleCases)){const t=saved.trials[id];if(!t||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');const status=circleStatus(t.x,t.y);if(t.checked&&status!==c.target)throw new RangeError('途中記録が不正です。');s.trials[id]={x:t.x,y:t.y,checked:t.checked};}return s;}
