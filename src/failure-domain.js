@@ -1,0 +1,7 @@
+export const failureDomainLevel={id:'village-failure-domain',number:'238',kind:'failure-domain',name:'二つの倉庫を動かす灯り',tag:'冗長化と単一障害点',title:'倉庫に灯りを届けよう',story:'薬師の村は二つの倉庫を用意しました。どちらか一方が使えるよう、灯りの供給経路も見直しましょう。'};
+export const failureDesigns={shared:'二つの経路が共通の配電盤を通る',separate:'二つの経路が別々で共通の配電盤を使わない'};
+export const failureCases={serverA:{name:'倉庫Ａの装置が故障',required:true},serverB:{name:'倉庫Ｂの装置が故障',required:true},sourceA:{name:'Ａ側の電源が故障',required:true},panel:{name:'共通の配電盤が故障（存在する場合）',required:true},flood:{name:'洪水が両方の倉庫を停止',required:false}};
+export function failureResult(design,id){if(!Object.hasOwn(failureDesigns,design)||!Object.hasOwn(failureCases,id))throw new RangeError('設計か故障が不正です。');let a=true,b=true;if(id==='serverA'||id==='sourceA')a=false;if(id==='serverB')b=false;if(id==='panel'&&design==='shared')a=b=false;if(id==='flood')a=b=false;return {a,b,available:a||b};}
+export function createFailureDomain(){return {design:'shared',tested:Object.fromEntries(Object.keys(failureCases).map(id=>[id,false]))};}
+export function failureDomainComplete(s){return Object.keys(failureCases).every(id=>s.tested[id]&&(!failureCases[id].required||failureResult(s.design,id).available));}
+export function restoreFailureDomain(saved){if(!saved||!Object.hasOwn(failureDesigns,saved.design)||!saved.tested||!Object.keys(failureCases).every(id=>typeof saved.tested[id]==='boolean'))throw new RangeError('途中記録が不正です。');return {design:saved.design,tested:Object.fromEntries(Object.keys(failureCases).map(id=>[id,saved.tested[id]]))};}
