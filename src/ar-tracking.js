@@ -1,0 +1,8 @@
+export const arTrackingLevel={id:'ruin-ar-tracking',number:'217',kind:'ar-tracking',name:'石碑を示す魔法の印',tag:'視点追跡と重ね合わせ',title:'動いた視点で印を合わせよう',story:'旅人の眼鏡は石碑に魔法の印を重ねます。旅人が横に動いたとき、古い位置と新しい位置の記録を比べましょう。'};
+export const arTrackingCases={oneOld:{name:'１移動・古い記録',head:1,tracked:0},oneNew:{name:'１移動・新しい記録',head:1,tracked:1},twoOld:{name:'２移動・古い記録',head:2,tracked:0},twoNew:{name:'２移動・新しい記録',head:2,tracked:2}};
+export const arPositions=[0,1,2,3,4];
+export function arTrackingExpected(id){if(!Object.hasOwn(arTrackingCases,id))throw new RangeError('試行が不正です。');const c=arTrackingCases[id],stone=4-c.head,mark=4-c.tracked;return {stone,mark,aligned:stone===mark?'yes':'no'};}
+export function arTrackingCorrect(id,trial){const e=arTrackingExpected(id);return trial.stone===e.stone&&trial.mark===e.mark&&trial.aligned===e.aligned;}
+export function createArTracking(){return {selected:'oneOld',trials:Object.fromEntries(Object.keys(arTrackingCases).map(id=>[id,{stone:0,mark:0,aligned:'yes',checked:false}]))};}
+export function arTrackingComplete(s){return Object.keys(arTrackingCases).every(id=>s.trials[id].checked&&arTrackingCorrect(id,s.trials[id]));}
+export function restoreArTracking(saved){if(!saved||!Object.hasOwn(arTrackingCases,saved.selected)||!saved.trials)throw new RangeError('途中記録が不正です。');const s=createArTracking();s.selected=saved.selected;for(const id of Object.keys(arTrackingCases)){const t=saved.trials[id];if(!t||!arPositions.includes(t.stone)||!arPositions.includes(t.mark)||!['yes','no'].includes(t.aligned)||typeof t.checked!=='boolean'||(t.checked&&!arTrackingCorrect(id,t)))throw new RangeError('途中記録が不正です。');s.trials[id]={stone:t.stone,mark:t.mark,aligned:t.aligned,checked:t.checked};}return s;}
