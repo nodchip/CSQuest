@@ -130,7 +130,7 @@
 | SE | SE-Design | Software Design | 243 | 依頼223〜228で在庫操作の契約、部品の依存、伝言の順序、操作の組合せと記録方式の固定例。設計全般は未対応。[詳細](se-design.md) |
 | SE | SE-Construction | Software Construction | 245 | 未着手 |
 | SE | SE-Validation | Software Verification and Validation | 246 | 一部試作：依頼23で仕様に基づく有限の試験選択 |
-| SE | SE-Refactoring | Refactoring and Code Evolution | 249 | 依頼234・235で暗黙の順序依存と振る舞いを保つ重複整理の固定例。他は未対応。[詳細](se-refactoring.md) |
+| SE | SE-Refactoring | Refactoring and Code Evolution | 249 | 依頼234〜236で暗黙の順序依存、重複整理と版番号の固定例。他は未対応。[詳細](se-refactoring.md) |
 | SE | SE-Reliability | Software Reliability | 250 | 未着手 |
 | SE | SE-Formal | Formal Methods | 251 | 未着手 |
 | SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
