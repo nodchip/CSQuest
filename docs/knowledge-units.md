@@ -45,7 +45,7 @@
 | DM | DM-Distributed | Distributed Databases/Cloud Computing | 122 | 未着手 |
 | DM | DM-Unstructured | Semi-structured and Unstructured Databases | 122 | 未着手 |
 | DM | DM-SEP | Society, Ethics, and the Profession | 123 | 未着手 |
-| FPL | FPL-OOP | Object-Oriented Programming | 130 | 未着手 |
+| FPL | FPL-OOP | Object-Oriented Programming | 130 | 一部試作：依頼65で個体ごとの状態と種類別の動的な振る舞い |
 | FPL | FPL-Functional | Functional Programming | 131 | 一部試作：依頼51・52で列処理とクロージャの固定例 |
 | FPL | FPL-Logic | Logic Programming | 133 | 未着手 |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 未着手 |
