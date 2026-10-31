@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {secureWebCases,createSecureWebTrial,secureWebStep,createSecureWeb,secureWebComplete,restoreSecureWeb} from '../src/secure-web-journey.js';
+test('only the matching trusted certificate leads to an HTTP request',()=>{const s=createSecureWeb();for(const [id,c] of Object.entries(secureWebCases)){let t=createSecureWebTrial(id);assert.throws(()=>secureWebStep(t,'tcp'));for(const action of ['address','tcp'])t=secureWebStep(t,action);assert.throws(()=>secureWebStep(t,c.accept?'reject':'accept'));t=secureWebStep(t,c.accept?'accept':'reject');if(c.accept)t=secureWebStep(t,'get');else assert.throws(()=>secureWebStep(t,'get'));assert.equal(t.stage,'done');s.trials[id]=t;}s.answer='verify';s.checked=true;assert.ok(secureWebComplete(s));assert.deepEqual(restoreSecureWeb(s),s);});
+test('saved progress cannot bypass the certificate check',()=>{const s=createSecureWeb();s.trials.wrongName.history=['address','tcp','accept'];assert.throws(()=>restoreSecureWeb(s));});

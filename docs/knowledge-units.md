@@ -93,7 +93,7 @@
 | MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜305で内積、行基本変形、線形結合、基底と座標、固有方向、対角化、射影、直交化、主成分分析、PageRank、SVDと２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
 | MSF | MSF-Calculus | Calculus | 192 | 依頼116で一変数の導関数と勾配降下の固定例。他は未対応。[詳細](msf-calculus.md) |
 | NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送の固定例。他は未対応。[詳細](nc-fundamentals.md) |
-| NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の応答消失と再送、421で DNS の名前解決と期限付きキャッシュの固定模型。他は未対応。[詳細](nc-applications.md) |
+| NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET の固定模型。他は未対応。[詳細](nc-applications.md) |
 | NC | NC-Reliability | Reliability Support | 199 | 依頼10で消失・再送、422で送信窓・累積確認、423で混雑と AIMD、424で TCP 接続開始の固定例。他は未対応。[詳細](nc-reliability.md) |
 | NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48の固定転送表と依頼61の最長接頭辞照合 |
 | NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調の固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
@@ -136,7 +136,7 @@
 | SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
 | SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 依頼362で窓口停止の影響と不明点の固定例。他は未対応。[詳細](sec-society.md) |
 | SEC | SEC-Coding | Secure Coding | 259 | 依頼82で文字列連結と値のパラメータ化による検索の固定例。他は未対応。[詳細](sec-coding.md) |
-| SEC | SEC-Crypto | Cryptography | 260 | 依頼58・128・259〜264で鍵の再利用、署名、教材用 RSA、鍵交換、認証、再送防止と衝突確率の固定例。他は未対応。[詳細](sec-crypto.md) |
+| SEC | SEC-Crypto | Cryptography | 260 | 依頼58・128・259〜264で鍵の再利用、署名、教材用 RSA、鍵交換、認証と衝突確率、425で HTTPS の証明確認の固定例。他は未対応。[詳細](sec-crypto.md) |
 | SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 依頼328・329で脅威経路、対策の選択と修正前後の試験の固定模型。他は未対応。[詳細](sec-engineering.md) |
 | SEC | SEC-Forensics | Digital Forensics | 262 | 依頼195・286で監査、受け渡しと照合の固定例。他は未対応。[詳細](sec-forensics.md) |
 | SEC | SEC-Governance | Security Governance | 263 | 依頼353で復旧方針・保管・訓練の固定例。他は未対応。[詳細](sec-governance.md) |
