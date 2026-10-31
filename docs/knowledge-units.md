@@ -23,7 +23,7 @@
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩と一桁の加算器 |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：依頼36・37の４ビット整数と加算器、依頼68の小数の丸め |
-| AR | AR-Assembly | Assembly Level Machine Organization | 103 | 未着手 |
+| AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行 |
 | AR | AR-Memory | Memory Hierarchy | 104 | 未着手 |
 | AR | AR-IO | Interfacing and Communication | 105 | 未着手 |
 | AR | AR-Organization | Functional Organization | 106 | 未着手 |
