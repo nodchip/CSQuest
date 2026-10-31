@@ -33,3 +33,8 @@ test('optional learning trails cover every existing quest once and preserve thei
 test('the next suggestion is the earliest unfinished quest even when later ones were completed first',()=>{
   for(const trail of learningTrails){const items=trailQuests(trail,all);assert.deepEqual(nextTrailQuest(trail,all,[]),items[0]);assert.deepEqual(nextTrailQuest(trail,all,[items[0].level.id,items.at(-1).level.id]),items[1]);assert.equal(nextTrailQuest(trail,all,trail.quests),null);}
 });
+test('the linear algebra trail connects foundations to their applications',()=>{
+ const trail=findTrail('linear');assert.deepEqual(trail.quests,['light-vectors','ruin-vector-span','ruin-basis-coordinates','matrix-mirror','ruin-row-elimination','ruin-orthogonal-projection','ruin-gram-schmidt','ruin-eigen-directions','ruin-svd-axis','ruin-pca-axis','ruin-pagerank','ruin-bezier']);
+ assert.equal(learningTrails[0].id,'first-steps');
+ const completed=['light-vectors','ruin-vector-span'];assert.equal(nextTrailQuest(trail,all,completed).level.id,'ruin-basis-coordinates');
+});
