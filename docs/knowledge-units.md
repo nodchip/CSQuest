@@ -141,7 +141,7 @@
 | SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 未着手 |
 | SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 未着手 |
 | SEP | SEP-IP | Intellectual Property | 277 | 未着手 |
-| SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 未着手 |
+| SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き |
 | SEP | SEP-Communication | Communication | 279 | 未着手 |
 | SEP | SEP-Sustainability | Sustainability | 281 | 未着手 |
 | SEP | SEP-History | Computing History | 282 | 未着手 |
