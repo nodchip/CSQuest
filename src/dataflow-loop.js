@@ -1,0 +1,8 @@
+export const dataflowLoopLevel={id:'workshop-dataflow-loop',number:'206',kind:'dataflow-loop',name:'巡る道の札',tag:'反復とデータフロー解析',title:'変わらなくなるまで調べよう',story:'精霊の通る道が輪になっています。箱を書いた札を道に沿って運び、戻ってきた情報も合流させましょう。'};
+export const dataflowLoopNodes={test:'条件の地点',body:'繰り返しの書込み後',exit:'出口'};
+export function createDataflowLoop(){return {test:0,body:0,exit:0,history:[],done:false,message:'最初の札 A を条件の地点へ運びましょう。'};}
+export function dataflowLoopExpected(s,node){if(node==='test')return 1|s.body;if(node==='body')return s.test?2:0;if(node==='exit')return s.test;throw new RangeError('地点が不正です。');}
+export function dataflowLoopStable(s){return Object.keys(dataflowLoopNodes).every(node=>s[node]===dataflowLoopExpected(s,node));}
+export function dataflowLoopStep(s,action){if(s.done)return {...s,message:'この試行は終わっています。'};if(action==='finish'){if(!dataflowLoopStable(s))return {...s,message:'まだ更新できる地点があります。すべての道を確認しましょう。'};return {...s,done:true,history:[...s.history,action],message:'どの地点も変わらなくなりました。'};}
+ if(!Object.hasOwn(dataflowLoopNodes,action))throw new RangeError('操作が不正です。');const next=dataflowLoopExpected(s,action);if(next===s[action])return {...s,message:`${dataflowLoopNodes[action]}は今の情報では変わりません。ほかの地点も確認しましょう。`};return {...s,[action]:next,history:[...s.history,action],message:`${dataflowLoopNodes[action]}を更新しました。つながる地点にも情報を運びましょう。`};}
+export function restoreDataflowLoop(saved){if(!saved||!Array.isArray(saved.history)||saved.history.length>8)throw new RangeError('途中記録が不正です。');let s=createDataflowLoop();for(const action of saved.history){const n=dataflowLoopStep(s,action);if(n.history.length!==s.history.length+1)throw new RangeError('途中記録が不正です。');s=n;}return s;}
