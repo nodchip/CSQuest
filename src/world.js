@@ -1,7 +1,7 @@
 // Regions describe where the existing quests take place; they do not lock access.
 export const regions=[
   {id:'guild',name:'冒険者ギルド',icon:'⚑',description:'旅人が集まり、世界各地からの依頼を受ける場所。',quests:['guild-sign','guild-sets']},
-  {id:'workshop',name:'精霊の工房',icon:'✦',description:'精霊や自動人形とともに、道具の動かし方を学ぶ。',quests:['sequence','branch','loop','two-paths','sorting','typed-spells','scout-automaton','rune-arrangements','stone-pipeline','multiplier-seals']},
+  {id:'workshop',name:'精霊の工房',icon:'✦',description:'精霊や自動人形とともに、道具の動かし方を学ぶ。',quests:['sequence','branch','loop','two-paths','sorting','merge-stones','typed-spells','scout-automaton','rune-arrangements','stone-pipeline','multiplier-seals']},
   {id:'ruins',name:'灯火の遺跡',icon:'♜',description:'古い門と迷宮に残された、灯火と紋章の謎。',quests:['circuit','guardian','depth-ruins','ruin-emblem','memory-gate','number-lanterns','lantern-adder','guardian-strategy','stone-duel','lantern-constraints','light-vectors']},
   {id:'wilds',name:'霧の森と山道',icon:'⌖',description:'森と山を越え、調査隊と遠い村へ知らせを届ける。',quests:['forest-search','weighted-roads','message-delivery','village-bridges','guided-ruins','misleading-stars','routing-towers']},
   {id:'castle',name:'王城',icon:'⚔',description:'城門と通行の仕組みを守り、約束を確かめる。',quests:['castle-access','ward-tests','protected-gate']},
@@ -19,7 +19,7 @@ export function visibleQuests(levels,regionId){
 export const learningTrails=[
   {id:'first-steps',name:'精霊と始める',description:'順番、条件、繰り返しから、再帰やデータの処理へ進みます。',quests:['sequence','branch','loop','two-paths','rune-arrangements','typed-spells','stone-pipeline','multiplier-seals']},
   {id:'logic',name:'灯火と計算',description:'論理の灯火から、整数表現と加算回路へ進みます。',quests:['circuit','guardian','memory-gate','number-lanterns','lantern-adder']},
-  {id:'paths',name:'道と探索',description:'整列と探索から、最短路や条件を満たす探索へ進みます。',quests:['sorting','search-ledger','forest-search','depth-ruins','weighted-roads','village-bridges','hash-archive','guided-ruins','misleading-stars','lantern-constraints']},
+  {id:'paths',name:'道と探索',description:'整列と探索から、最短路や条件を満たす探索へ進みます。',quests:['sorting','merge-stones','search-ledger','forest-search','depth-ruins','weighted-roads','village-bridges','hash-archive','guided-ruins','misleading-stars','lantern-constraints']},
   {id:'data',name:'台帳と仲間',description:'集合と問い合わせから、台帳の同時更新へ進みます。',quests:['guild-sets','herb-catalog','village-join','private-ledger','transfer-ledger','shared-ledger','ledger-order']},
   {id:'systems',name:'支える仕組み',description:'仕事の順番、共有、記憶と通信をたどります。',quests:['workshop-scheduling','waiting-workers','protected-gate','shared-counter','counter-lock','two-locks','archive-cache','page-frames','page-address','routing-towers','message-delivery']},
   {id:'reasoning',name:'推測と勝負',description:'鑑定や確率を考え、守護者との読み合いに挑みます。',quests:['crystal-neighbors','crystal-evaluation','lantern-signals','treasure-expectation','arrival-records','guardian-strategy','stone-duel']},

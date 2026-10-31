@@ -16,8 +16,8 @@
 | AI | AI-NLP | Natural Language Processing | 79 | 未着手 |
 | AI | AI-Robotics | Robotics | 80 | 未着手 |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 未着手 |
-| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：整列、線形・二分・幅優先・深さ優先探索、重み付き最短路、最小全域木、ハッシュ衝突 |
-| AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32で貪欲法の固定例。項目一覧化、ほとんど未着手 |
+| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：マージソート、探索、最短路、最小全域木、ハッシュ衝突など |
+| AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32で貪欲法、依頼55で分割統治の固定例。ほとんど未着手 |
 | AL | AL-Complexity | Complexity | 91 | 依頼29で２つの探索の比較回数を比較。一般の分析は未対応 |
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31で二状態の決定性オートマトンを構築。他のモデルは未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
