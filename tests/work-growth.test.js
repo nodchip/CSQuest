@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {workCount,workGrowthCorrect,createWorkGrowth,restoreWorkGrowth,workGrowthComplete} from '../src/work-growth.js';
+test('the three mechanisms count single items, ordered pairs and halving rounds',()=>{assert.deepEqual(['linear','pairs','halve'].map(id=>[workCount(id,4),workCount(id,8)]),[[4,8],[16,64],[2,3]]);assert.throws(()=>workCount('pairs',7));});
+test('each prediction and growth comparison must be checked and drafts are copied',()=>{const s=createWorkGrowth();s.choices.linear={four:4,eight:8,growth:'double',checked:true};s.choices.pairs={four:16,eight:64,growth:'fourfold',checked:true};s.choices.halve={four:2,eight:3,growth:'plusone',checked:true};s.checked=true;assert.equal(workGrowthComplete(s),true);const copy=restoreWorkGrowth(s);copy.choices.pairs.growth='double';assert.equal(workGrowthCorrect('pairs',copy.choices.pairs),false);assert.equal(workGrowthComplete(s),true);assert.throws(()=>restoreWorkGrowth({...s,selected:'other'}));});
