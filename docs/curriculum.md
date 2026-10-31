@@ -13,7 +13,7 @@
 | HCI | ヒューマンコンピュータインタラクション | 一部試作：案内板の色以外の手がかり、キーボード操作、読み上げ用の名前。実利用者や規格に基づく評価は未対応 |
 | MSF | 数学と統計の基礎 | 一部試作：固定された有限集団での条件付き確率とベイズ的な割合の比較。分布、期待値、線形代数などは未対応 |
 | NC | ネットワークと通信 | 一部試作：データ・応答の消失、再送、重複排除。ネットワーク全体や TCP の実装は未対応 |
-| OS | オペレーティングシステム | 一部試作：先着順とラウンドロビンによる仕事の順番。プロセス、メモリなどは未対応 |
+| OS | オペレーティングシステム | 一部試作：先着順とラウンドロビンによる仕事の順番、FIFO と LRU によるページ置換。プロセス、アドレス変換などは未対応 |
 | PDC | 並列・分散コンピューティング | 一部試作：並行する読み書き、単一の鍵による排他、２鍵の循環待ち。実際のプログラムや分散処理は未対応 |
 | SDF | ソフトウェア開発の基礎 | 一部試作：順序、条件分岐、固定回数の繰り返し、再帰の固定例。SDF-Fundamentals pp. 230–231 の一部に関連。実際の言語でプログラムを書く学習成果は直接評価しない。 |
 | SE | ソフトウェア工学 | 一部試作：仕様と異なる動作を発見する有限の試験選択。試験計画、開発、実際のコードなどは未対応 |
@@ -22,4 +22,4 @@
 | SF | システムの基礎 | 一部試作：架空の容量２のキャッシュで時間的局所性と順序の影響を比較。実システムの階層、一貫性、仮想化は未対応 |
 | SPD | 専門プラットフォームの開発 | 一部試作：固定格子の自動人形で前方の観測と移動を操作。実機、プラットフォーム固有の開発、安全性は未対応 |
 
-知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [ai-ml.md](ai-ml.md)、[spd-robot.md](spd-robot.md)、[sep-privacy.md](sep-privacy.md)、[git-rendering.md](git-rendering.md)、[sf-performance.md](sf-performance.md)、[fpl-types.md](fpl-types.md)、[se-validation.md](se-validation.md)、[hci-accessibility.md](hci-accessibility.md)、[msf-probability.md](msf-probability.md)、[sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[al-other-units.md](al-other-units.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md)、[pdc-coordination.md](pdc-coordination.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
+知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [ai-ml.md](ai-ml.md)、[spd-robot.md](spd-robot.md)、[sep-privacy.md](sep-privacy.md)、[git-rendering.md](git-rendering.md)、[sf-performance.md](sf-performance.md)、[fpl-types.md](fpl-types.md)、[se-validation.md](se-validation.md)、[hci-accessibility.md](hci-accessibility.md)、[msf-probability.md](msf-probability.md)、[sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[al-other-units.md](al-other-units.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md)、[os-memory.md](os-memory.md)、[pdc-coordination.md](pdc-coordination.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。

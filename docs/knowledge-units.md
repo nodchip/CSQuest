@@ -103,7 +103,7 @@
 | OS | OS-Protection | Protection and Safety | 209 | 未着手 |
 | OS | OS-Scheduling | Scheduling | 209 | 一部試作：先着順とラウンドロビン |
 | OS | OS-Process | Process Model | 210 | 未着手 |
-| OS | OS-Memory | Memory Management | 210 | 未着手 |
+| OS | OS-Memory | Memory Management | 210 | 一部試作：依頼34で FIFO・LRU のページ置換 |
 | OS | OS-Devices | Device management | 211 | 未着手 |
 | OS | OS-Files | File Systems API and Implementation | 212 | 未着手 |
 | OS | OS-Advanced-Files | Advanced File systems | 212 | 未着手 |
