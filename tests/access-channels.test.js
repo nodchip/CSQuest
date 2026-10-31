@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {channelAssessment,createAccessChannels,runAccessChannels,accessChannelsComplete,restoreAccessChannels} from '../src/access-channels.js';
+test('the fictional residents use only their described channels across all combinations',()=>{const items=['web','reader','phone','desk'];for(let mask=0;mask<16;mask++){const selected=items.filter((_,i)=>mask&(1<<i)),r=channelAssessment(selected);assert.deepEqual(Object.values(r.access),[Boolean(mask&1),Boolean(mask&4),Boolean((mask&3)===3),Boolean(mask&8)]);assert.equal(r.cost,2*Number(Boolean(mask&1))+Number(Boolean(mask&2))+Number(Boolean(mask&4))+Number(Boolean(mask&8)));}});
+test('a gap must be observed before an assessed plan covers everyone within budget',()=>{let s=runAccessChannels(createAccessChannels());assert.equal(s.seenGap,true);s.selected=['web','reader','phone','desk'];s=runAccessChannels(s);assert.equal(accessChannelsComplete(s),false);s.checked=true;assert.equal(accessChannelsComplete(s),true);assert.deepEqual(restoreAccessChannels(s),s);assert.throws(()=>restoreAccessChannels({...s,selected:['web','web']}));});

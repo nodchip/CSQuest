@@ -1,0 +1,8 @@
+export const accessChannelsLevel={id:'village-access-channels',number:'358',kind:'access-channels',name:'届かない申請の声',tag:'社会的文脈と利用の格差',title:'みんなの申請経路を考えよう',story:'村は支援物資の申請を水晶だけで受け付ける予定です。住民の事情を聞き、申請できない人がいないか調べましょう。'};
+export const channelOptions={web:{name:'水晶での申請',cost:2},reader:{name:'読み上げ対応',cost:1},phone:{name:'音声の伝令',cost:1},desk:{name:'村の窓口',cost:1}};
+export const channelPeople={a:{name:'アオ',need:'水晶を使える'},b:{name:'ベル',need:'水晶がなく、遠方から音声の伝令なら使える'},c:{name:'セナ',need:'読み上げに対応した水晶なら使える'},d:{name:'ダン',need:'水晶と音声の伝令を使えないが、窓口へ行ける'}};
+export function channelAssessment(selected){if(!Array.isArray(selected)||new Set(selected).size!==selected.length||selected.some(k=>!Object.hasOwn(channelOptions,k)))throw new RangeError('選択が不正です');const has=k=>selected.includes(k);return {cost:selected.reduce((sum,k)=>sum+channelOptions[k].cost,0),access:{a:has('web'),b:has('phone'),c:has('web')&&has('reader'),d:has('desk')}};}
+export function createAccessChannels(){return {selected:['web'],seenGap:false,assessed:false,checked:false};}
+export function runAccessChannels(s){const result=channelAssessment(s.selected);return {...s,seenGap:s.seenGap||Object.values(result.access).some(v=>!v),assessed:true,checked:false};}
+export function accessChannelsComplete(s){const result=channelAssessment(s.selected);return s.seenGap&&s.assessed&&s.checked&&result.cost<=5&&Object.values(result.access).every(Boolean);}
+export function restoreAccessChannels(s){if(!s||typeof s.seenGap!=='boolean'||typeof s.assessed!=='boolean'||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');channelAssessment(s.selected);return {selected:[...s.selected],seenGap:s.seenGap,assessed:s.assessed,checked:s.checked};}
