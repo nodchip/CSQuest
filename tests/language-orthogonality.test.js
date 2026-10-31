@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {orthogonalResult,createOrthogonalLanguage,runOrthogonalLanguage,orthogonalLanguageComplete,restoreOrthogonalLanguage} from '../src/language-orthogonality.js';
+test('only a list returned under the old design is rejected',()=>{for(const l of ['old','consistent'])for(const k of ['number','list'])for(const c of ['store','return'])assert.equal(orthogonalResult(l,k,c),!(l==='old'&&k==='list'&&c==='return'));});
+test('all combinations and the comparison are required, and results are validated on restore',()=>{let s=createOrthogonalLanguage();for(const l of ['old','consistent'])for(const k of ['number','list'])for(const c of ['store','return']){s.language=l;s.kind=k;s.context=c;s=runOrthogonalLanguage(s);}s.answer='old';s.checked=true;assert.equal(orthogonalLanguageComplete(s),false);s.answer='consistent';assert.equal(orthogonalLanguageComplete(s),true);assert.deepEqual(restoreOrthogonalLanguage(s),s);assert.throws(()=>restoreOrthogonalLanguage({...s,result:false}));});
