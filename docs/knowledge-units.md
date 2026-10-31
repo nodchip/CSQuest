@@ -131,7 +131,7 @@
 | SE | SE-Construction | Software Construction | 245 | 未着手 |
 | SE | SE-Validation | Software Verification and Validation | 246 | 一部試作：依頼23で仕様に基づく有限の試験選択 |
 | SE | SE-Refactoring | Refactoring and Code Evolution | 249 | 依頼234〜237で暗黙の依存、重複整理、版番号と段階的移行の固定例。他は未対応。[詳細](se-refactoring.md) |
-| SE | SE-Reliability | Software Reliability | 250 | 依頼238で共通の単一障害点と共通原因の固定例。他は未対応。[詳細](se-reliability.md) |
+| SE | SE-Reliability | Software Reliability | 250 | 依頼238・239で共通の単一障害点と失敗枠の固定例。他は未対応。[詳細](se-reliability.md) |
 | SE | SE-Formal | Formal Methods | 251 | 未着手 |
 | SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
 | SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 未着手 |
