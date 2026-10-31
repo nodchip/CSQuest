@@ -73,7 +73,7 @@
 | GIT | GIT-Visualization | Visualization | 156 | 依頼111〜113で棒・点、軸範囲、条件別集計とヒストグラムの固定例。他は未対応。[詳細](git-visualization.md) |
 | GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26の２次元変換と依頼64の平行・透視投影 |
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
-| GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 未着手 |
+| GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 依頼186で固定された拡散光の明暗と３段階の非写実表現を比較。他の手法や描画 API は未対応。[詳細](git-shading.md) |
 | GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜185でキーフレームの緩急、平面２関節と線形ブレンドの固定例。３次元回転・実際のリグ制作・モーションキャプチャなどは未対応。[詳細](git-animation.md) |
 | GIT | GIT-Simulation | Simulation | 161 | 未着手 |
 | GIT | GIT-Immersion | Immersion | 161 | 未着手 |
