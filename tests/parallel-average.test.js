@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pairFor,combinePairs,pairMean,averagePartials,filterCorrect,createParallelAverage,parallelAverageComplete,restoreParallelAverage} from '../src/parallel-average.js';
+test('unequal groups require counts when combining their means',()=>{const p=averagePartials([1,2,3]);assert.deepEqual(p,[{sum:4,count:1},{sum:14,count:2}]);assert.equal((pairMean(p[0])+pairMean(p[1]))/2,5.5);assert.equal(pairMean(combinePairs(...p)),6);assert.equal(pairMean(pairFor([])),null);assert.equal(filterCorrect([0,1,2,3]),false);});
+test('pair aggregation agrees with the whole collection for every partition of a small data set',()=>{const values=[0,2,4,8];for(let mask=0;mask<16;mask++){const left=values.filter((_,i)=>mask&(1<<i)),right=values.filter((_,i)=>!(mask&(1<<i)));assert.deepEqual(combinePairs(pairFor(left),pairFor(right)),pairFor(values));}});
+test('all processing steps are needed and saved progress is checked',()=>{const s=createParallelAverage();Object.assign(s,{selected:[1,2,3],filtered:true,mapping:'pair',mapped:true,naiveTried:true,combined:true,answer:'weighted',checked:true});assert.ok(parallelAverageComplete(s));assert.deepEqual(restoreParallelAverage(s),s);assert.throws(()=>restoreParallelAverage({...s,selected:[0,1,2]}));assert.throws(()=>restoreParallelAverage({...s,mapped:false}));});
