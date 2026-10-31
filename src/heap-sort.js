@@ -1,0 +1,11 @@
+export const heapSortLevel={id:'archive-heap-sort',number:'165',kind:'heap-sort',name:'宝石の山を並べ替える',tag:'ヒープ整列',title:'一つの列で順に並べよう',story:'ばらばらの宝石を、同じ列の中で小さい順に並べます。最大の宝石を見つける山を作り、末尾から位置を確定しましょう。'};
+export const heapSortInitial=[4,1,6,2,5,3];
+export function createHeapSort(){return {values:heapSortInitial.slice(),active:heapSortInitial.length,phase:'build',buildIndex:Math.floor(heapSortInitial.length/2)-1,focus:Math.floor(heapSortInitial.length/2)-1,history:[],message:'末尾に近い親から、子と比べて山を整えましょう。'};}
+export function heapSortExpected(s){if(!['build','sift'].includes(s.phase))return null;const children=[2*s.focus+1,2*s.focus+2].filter(i=>i<s.active),larger=children.reduce((best,i)=>best===null||s.values[i]>s.values[best]?i:best,null);return larger!==null&&s.values[larger]>s.values[s.focus]?larger:null;}
+export function stepHeapSort(s,action){const n={...s,values:s.values.slice(),history:s.history.slice()};
+  if(typeof action==='string'&&/^swap:\d+$/.test(action)&&['build','sift'].includes(s.phase)){const target=Number(action.slice(5));if(target!==heapSortExpected(s))return {...s,message:'注目する値より大きい子のうち、最大の子を選びましょう。'};[n.values[s.focus],n.values[target]]=[n.values[target],n.values[s.focus]];n.focus=target;n.message='大きい子と交換しました。続けて子を比べましょう。';}
+  else if(action==='settle'&&['build','sift'].includes(s.phase)&&heapSortExpected(s)===null){if(s.phase==='build'&&s.buildIndex>0){n.buildIndex--;n.focus=n.buildIndex;n.message='次の親を整えましょう。';}else if(s.phase==='build'){n.phase='extract';n.focus=null;n.message='最大ヒープができました。根を未確定部分の末尾へ移しましょう。';}else if(s.active<=1){n.phase='done';n.focus=null;n.message='全ての位置が確定しました。';}else{n.phase='extract';n.focus=null;n.message='山を整えました。次の最大値を末尾へ移しましょう。';}}
+  else if(action==='extract'&&s.phase==='extract'&&s.active>1){const last=s.active-1;[n.values[0],n.values[last]]=[n.values[last],n.values[0]];n.active--;n.phase='sift';n.focus=0;n.message='最大値を末尾に確定し、残りの山を整えます。';}
+  else return {...s,message:'今の段階と、注目する値の子を確認しましょう。'};n.history.push(action);return n;
+}
+export function restoreHeapSort(saved){if(!saved||!Array.isArray(saved.history)||saved.history.length>50)throw new RangeError('途中記録が不正です。');let s=createHeapSort();for(const action of saved.history){const next=stepHeapSort(s,action);if(next.history.length!==s.history.length+1)throw new RangeError('途中記録が不正です。');s=next;}return s;}
