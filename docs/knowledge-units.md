@@ -42,7 +42,7 @@
 | DM | DM-Processing | Query Processing | 118 | 依頼89で複合索引の列順と候補範囲の固定例。他は未対応。[詳細](dm-processing.md) |
 | DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38・39で原子性・永続性・分離と競合直列化の固定例 |
 | DM | DM-NoSQL | NoSQL Systems | 120 | 依頼189〜193で鍵と文書、複製・分割・グラフと読み書きの重なりの固定模型。実製品や一般的な分散・整合性は未対応。[詳細](dm-nosql.md) |
-| DM | DM-Security | Data Security and Privacy | 121 | 依頼194・195で不要な収集、通信・閲覧の保護と監査記録の固定模型。実際の法令や DB の安全性は未対応。[詳細](dm-security.md) |
+| DM | DM-Security | Data Security and Privacy | 121 | 依頼194〜196で不要な収集、通信・閲覧、監査記録と集計からの推論の固定模型。実際の法令や DB の安全性は未対応。[詳細](dm-security.md) |
 | DM | DM-Analytics | Data Analytics | 121 | 依頼127で名寄せの固定例。可視化・分類・回帰・公平性などは別の固定例のみ。[詳細](dm-analytics.md) |
 | DM | DM-Distributed | Distributed Databases/Cloud Computing | 122 | 未着手 |
 | DM | DM-Unstructured | Semi-structured and Unstructured Databases | 122 | 依頼120で転置索引と TF-IDF の固定例。他は未対応。[詳細](dm-unstructured.md) |
