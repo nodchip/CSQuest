@@ -1,0 +1,9 @@
+export const correlationLevel={id:'village-correlated-failure',number:'241',kind:'correlated-failure',name:'二つの倉庫の運命',tag:'故障の独立性と信頼性',title:'二つが同時に止まる時を数えよう',story:'二つの倉庫が同じ割合で故障します。故障のつながり方によって、両方が止まる場合の数を比べましょう。'};
+export const correlationCases={independent:'別々の十面札',shared:'同じ十面札'};
+export const correlationChoices=[0,1,10,100];
+export function correlationRow(id,a){if(!Object.hasOwn(correlationCases,id)||!Number.isInteger(a)||a<0||a>9)throw new RangeError('札が不正です。');const row={neither:0,onlyA:0,onlyB:0,both:0};for(let b=0;b<10;b++){const failA=a===0,failB=(id==='independent'?b:a)===0;if(failA&&failB)row.both++;else if(failA)row.onlyA++;else if(failB)row.onlyB++;else row.neither++;}return row;}
+export function correlationTotals(id,rows=10){if(!Number.isInteger(rows)||rows<0||rows>10)throw new RangeError('行数が不正です。');const total={neither:0,onlyA:0,onlyB:0,both:0};for(let a=0;a<rows;a++){const row=correlationRow(id,a);for(const k of Object.keys(total))total[k]+=row[k];}return total;}
+export function createCorrelation(){return {selected:'independent',trials:Object.fromEntries(Object.keys(correlationCases).map(id=>[id,{rows:0,choice:null,checked:false}]))};}
+export function correlationTrialCorrect(t,id){return t.rows===10&&t.checked&&t.choice===correlationTotals(id).both;}
+export function correlationComplete(s){return Object.keys(correlationCases).every(id=>correlationTrialCorrect(s.trials[id],id));}
+export function restoreCorrelation(saved){if(!saved||!Object.hasOwn(correlationCases,saved.selected)||!saved.trials)throw new RangeError('途中記録が不正です。');const s=createCorrelation();s.selected=saved.selected;for(const id of Object.keys(correlationCases)){const t=saved.trials[id];if(!t||!Number.isInteger(t.rows)||t.rows<0||t.rows>10||(t.choice!==null&&!correlationChoices.includes(t.choice))||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');s.trials[id]={rows:t.rows,choice:t.choice,checked:t.checked};}return s;}
