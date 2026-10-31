@@ -31,7 +31,7 @@
 | AR | AR-Organization | Functional Organization | 106 | 依頼158で３段階パイプラインのデータ依存、待機と転送の固定例。他は未対応。[詳細](ar-organization.md) |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 依頼159〜161で分岐予測、投機実行、時間・電力・エネルギー比較の固定例。他は未対応。[詳細](ar-performance-energy.md) |
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162・163で SIMD・MIMD と専用機械の費用比較の固定例。他は未対応。[詳細](ar-heterogeneity.md) |
-| AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜258で範囲と権限、乱数の情報源、個体差、構成証明の固定例。他の範囲は未対応。[詳細](ar-security.md) |
+| AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜259で範囲と権限、乱数の情報源、個体差、構成証明、暗号文での乗算の固定例。他の範囲は未対応。[詳細](ar-security.md) |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの重ね合わせ、H・Z と途中観測の固定例。他の範囲は未対応。[詳細](ar-quantum.md) |
 | AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |

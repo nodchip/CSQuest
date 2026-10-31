@@ -1,0 +1,7 @@
+export const homomorphicLevel={id:'castle-encrypted-product',number:'259',kind:'homomorphic-product',name:'封じた数を掛け合わせる',tag:'暗号文のままの計算',title:'封を開けずに積を届けよう',story:'城の二つの数を封じたまま掛け合わせ、持ち主に結果を届けます。'};
+export const homomorphicCases={first:{name:'２と３',values:[2,3]},second:{name:'３と４',values:[3,4]}};
+export function modularPower(base,exponent,modulus){if(!Number.isInteger(base)||!Number.isInteger(exponent)||exponent<0||!Number.isInteger(modulus)||modulus<2)throw new RangeError('数が不正です。');let result=1;for(let i=0;i<exponent;i++)result=(result*base)%modulus;return result;}
+export function homomorphicResult(id){if(!Object.hasOwn(homomorphicCases,id))throw new RangeError('依頼が不正です。');const values=homomorphicCases[id].values,ciphertexts=values.map(n=>modularPower(n,3,55)),combined=(ciphertexts[0]*ciphertexts[1])%55;return {ciphertexts,combined,opened:modularPower(combined,27,55)};}
+export function createHomomorphic(){return {selected:'first',stages:{first:0,second:0}};}
+export function homomorphicComplete(s){return Object.keys(homomorphicCases).every(id=>s.stages[id]===3);}
+export function restoreHomomorphic(saved){if(!saved||!Object.hasOwn(homomorphicCases,saved.selected)||!saved.stages||!Object.keys(homomorphicCases).every(id=>Number.isInteger(saved.stages[id])&&saved.stages[id]>=0&&saved.stages[id]<=3))throw new RangeError('途中記録が不正です。');return {selected:saved.selected,stages:{first:saved.stages.first,second:saved.stages.second}};}
