@@ -72,7 +72,7 @@
 | GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 依頼83で三角形の中心標本と画素内４標本の固定例。他は未対応。[詳細](git-fundamentals.md) |
 | GIT | GIT-Visualization | Visualization | 156 | 依頼111〜113で棒・点、軸範囲、条件別集計とヒストグラムの固定例。他は未対応。[詳細](git-visualization.md) |
 | GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26の２次元変換と依頼64の平行・透視投影 |
-| GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143で２次ベジェ曲線と２次元形状の集合演算の固定例。他は未対応。[詳細](git-modeling.md) |
+| GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 未着手 |
 | GIT | GIT-Animation | Computer Animation | 160 | 未着手 |
 | GIT | GIT-Simulation | Simulation | 161 | 未着手 |

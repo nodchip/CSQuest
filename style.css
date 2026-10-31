@@ -74,3 +74,10 @@
 .bezier-diagram .bezier-control { fill: #243b2a; }
 .bezier-diagram .bezier-middle { fill: #ffdc35; stroke: #563f17; stroke-width: 2; }
 .bezier-diagram text { fill: #344d3b; font-size: 10px; }
+
+.tess-diagram { display: block; width: min(100%, 320px); height: auto; margin: 1rem 0; background: #f7faf3; border: 1px solid #ceddce; }
+.tess-cut { stroke: #426957; stroke-width: 2; }
+.tess-cut-0 { fill: #bcd9c5; } .tess-cut-1 { fill: #f1d3a4; } .tess-cut-2 { fill: #c4d5ee; }
+.tess-remaining { fill: #eef3e9; stroke: #426957; stroke-width: 2; }
+.tess-outline { fill: none; stroke: #294e39; stroke-width: 3; }
+.tess-point { fill: #233d2b; } .tess-diagram text { fill: #233d2b; font-size: 12px; font-weight: bold; }
