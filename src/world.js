@@ -4,7 +4,7 @@ export const regions=[
   {id:'workshop',name:'精霊の工房',icon:'✦',description:'精霊や自動人形とともに、道具の動かし方を学ぶ。',quests:['sequence','branch','loop','two-paths','sorting','merge-stones','typed-spells','scout-automaton','automaton-energy','rune-arrangements','stone-pipeline','multiplier-seals','lantern-spirits','instruction-engine','spell-syntax']},
   {id:'ruins',name:'灯火の遺跡',icon:'♜',description:'古い門と迷宮に残された、灯火と紋章の謎。',quests:['circuit','guardian','depth-ruins','ruin-emblem','memory-gate','number-lanterns','lantern-adder','guardian-strategy','stone-duel','lantern-constraints','light-vectors','lantern-projection','rounding-crystals','lantern-proof','moon-qubit','nested-gate']},
   {id:'wilds',name:'霧の森と山道',icon:'⌖',description:'森と山を越え、調査隊と遠い村へ知らせを届ける。',quests:['forest-search','weighted-roads','message-delivery','village-bridges','guided-ruins','misleading-stars','routing-towers','address-towers','layered-message','rain-observations']},
-  {id:'castle',name:'王城',icon:'⚔',description:'城門と通行の仕組みを守り、約束を確かめる。',quests:['castle-access','ward-tests','protected-gate','secret-lanterns']},
+  {id:'castle',name:'王城',icon:'⚔',description:'城門と通行の仕組みを守り、約束を確かめる。',quests:['castle-access','ward-tests','protected-gate','secret-lanterns','ledger-seals']},
   {id:'village',name:'薬師の村',icon:'✿',description:'薬草と台帳を手がかりに、村の暮らしを支える。',quests:['herb-catalog','village-join','private-ledger','transfer-ledger','shared-ledger','ledger-order','festival-order','village-choices','village-decomposition','village-coins']},
   {id:'forge',name:'宝石の工房',icon:'◈',description:'炉と記録を共有する精霊たちを手伝う。',quests:['workshop-scheduling','shared-counter','counter-lock','two-locks','waiting-workers','parallel-workshop']},
   {id:'archive',name:'鑑定士の書庫',icon:'⌗',description:'水晶の記録や魔導書を調べ、知識を届ける。',quests:['crystal-neighbors','crystal-evaluation','crystal-overfit','hash-archive','lantern-signals','archive-cache','search-ledger','search-invariant','tree-archive','page-frames','page-address','treasure-expectation','arrival-records','archive-file-links']},
@@ -23,7 +23,7 @@ export const learningTrails=[
   {id:'data',name:'台帳と仲間',description:'集合と問い合わせから、台帳の同時更新へ進みます。',quests:['guild-sets','herb-catalog','village-join','village-decomposition','private-ledger','village-choices','transfer-ledger','shared-ledger','ledger-order']},
   {id:'systems',name:'支える仕組み',description:'仕事の順番、共有、記憶と通信をたどります。',quests:['workshop-scheduling','waiting-workers','parallel-workshop','protected-gate','shared-counter','counter-lock','two-locks','archive-cache','page-frames','page-address','archive-file-links','routing-towers','address-towers','layered-message','message-delivery','guild-web-requests']},
   {id:'reasoning',name:'推測と勝負',description:'鑑定や確率を考え、守護者との読み合いに挑みます。',quests:['crystal-neighbors','crystal-evaluation','crystal-overfit','lantern-signals','rain-observations','treasure-expectation','arrival-records','guardian-strategy','stone-duel']},
-  {id:'craft',name:'道具と暮らし',description:'案内や安全、試験、図形、自動人形を体験します。',quests:['guild-sign','sign-study','castle-access','ward-tests','guild-revisions','ruin-emblem','light-vectors','lantern-projection','scout-automaton','automaton-energy']},
+  {id:'craft',name:'道具と暮らし',description:'案内や安全、試験、図形、自動人形を体験します。',quests:['guild-sign','sign-study','castle-access','ward-tests','ledger-seals','guild-revisions','ruin-emblem','light-vectors','lantern-projection','scout-automaton','automaton-energy']},
 ];
 export function findTrail(id){return learningTrails.find(trail=>trail.id===id)||null;}
 export function trailQuests(trail,levels){
