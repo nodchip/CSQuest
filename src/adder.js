@@ -31,11 +31,15 @@ export function addFour(parts,a,b){
   readBits(a);readBits(b);
   let carry=0;const result=[0,0,0,0],steps=[];
   for(let i=3;i>=0;i--){const input=carry,output=fullAdder(parts,a[i],b[i],carry);result[i]=output.sum;carry=output.carry;steps.push({position:i,a:a[i],b:b[i],input,...output});}
-  return {result,carry,steps,values:readBits(result)};
+  const signedOverflow=a[0]===b[0]&&result[0]!==a[0];
+  return {result,carry,steps,values:readBits(result),signedOverflow};
 }
-export function createAdder(){return {parts:Object.fromEntries(slots.map(({key})=>[key,'AND'])),tested:false};}
+export function createAdder(){return {parts:Object.fromEntries(slots.map(({key})=>[key,'AND'])),tested:false,operands:{a:[0,1,1,1],b:[0,0,0,1]}};}
 export function restoreAdder(saved){
   if(!saved||!saved.parts||typeof saved.tested!=='boolean'||slots.some(({key})=>!Object.hasOwn(adderGates,saved.parts[key])))throw new RangeError('途中記録が不正です。');
-  return {parts:Object.fromEntries(slots.map(({key})=>[key,saved.parts[key]])),tested:saved.tested};
+  const operands=saved.operands===undefined?createAdder().operands:saved.operands;
+  if(!operands)throw new RangeError('途中記録が不正です。');
+  readBits(operands.a);readBits(operands.b);
+  return {parts:Object.fromEntries(slots.map(({key})=>[key,saved.parts[key]])),tested:saved.tested,operands:{a:operands.a.slice(),b:operands.b.slice()}};
 }
 export function adderComplete(state){return state.tested&&testAdder(state.parts).every(row=>row.correct);}
