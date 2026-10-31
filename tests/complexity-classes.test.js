@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {complexityCases,complexityExpected,createComplexityClasses,complexityTrialValid,complexityClassesComplete,restoreComplexityClasses} from '../src/complexity-classes.js';
+test('P inclusion, NP completeness, and an NP-hard problem with unknown membership remain distinct',()=>{const s=createComplexityClasses();for(const id of Object.keys(complexityCases)){s.trials[id]={answers:{...complexityExpected[id]},done:true};assert.equal(complexityTrialValid(id,s.trials[id]),true);}s.answer='both';s.checked=true;assert.equal(complexityClassesComplete(s),true);assert.deepEqual(restoreComplexityClasses(s),s);});
+test('missing evidence is not mistaken for false or a proved classification',()=>{const s=createComplexityClasses();s.trials.unknown.answers={p:'unknown',np:'yes',hard:'yes',complete:'yes'};assert.equal(complexityTrialValid('unknown',s.trials.unknown),false);assert.throws(()=>restoreComplexityClasses({...s,trials:{...s.trials,unknown:{...s.trials.unknown,done:true}}}));});
