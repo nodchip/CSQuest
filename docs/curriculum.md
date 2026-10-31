@@ -12,7 +12,7 @@
 | GIT | グラフィックスと対話技術 | 未着手 |
 | HCI | ヒューマンコンピュータインタラクション | 未着手 |
 | MSF | 数学と統計の基礎 | 未着手 |
-| NC | ネットワークと通信 | 未着手 |
+| NC | ネットワークと通信 | 一部試作：データ・応答の消失、再送、重複排除。ネットワーク全体や TCP の実装は未対応 |
 | OS | オペレーティングシステム | 未着手 |
 | PDC | 並列・分散コンピューティング | 未着手 |
 | SDF | ソフトウェア開発の基礎 | 一部試作：順序、条件分岐、固定回数の繰り返し。SDF-Fundamentals pp. 230–231 の一部に関連。実際の言語でプログラムを書く学習成果は直接評価しない。 |
@@ -22,4 +22,4 @@
 | SF | システムの基礎 | 未着手 |
 | SPD | 専門プラットフォームの開発 | 未着手 |
 
-知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
+知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[nc-reliability.md](nc-reliability.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
