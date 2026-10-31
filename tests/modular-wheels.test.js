@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {modularCases,modularExpected,createModularWheels,modularStep,modularWheelsComplete,restoreModularWheels} from '../src/modular-wheels.js';
+test('both operations and moduli agree with direct arithmetic and preserve progress',()=>{const s=createModularWheels();for(const [id,c] of Object.entries(modularCases)){let t=s.trials[id];assert.equal(modularStep(id,t,(8%c.modulus+1)%c.modulus),null);for(let i=0;i<3;i++)t=modularStep(id,t,modularExpected(id,i));const [a,b,r]=t.answers;assert.equal(r,(c.operation==='add'?a+b:a*b)%c.modulus);s.trials[id]=t;}s.answer='reduce';s.checked=true;assert.equal(modularWheelsComplete(s),true);assert.deepEqual(restoreModularWheels(s),s);});
+test('incomplete or forged saved answers cannot advance',()=>{const s=createModularWheels();assert.throws(()=>restoreModularWheels({...s,trials:{...s.trials,add5:{answers:[4],choice:null}}}));assert.equal(modularStep('bad',s.trials.add5,0),null);});
