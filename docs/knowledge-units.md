@@ -30,7 +30,7 @@
 | AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知の固定例。他は未対応。[詳細](ar-io.md) |
 | AR | AR-Organization | Functional Organization | 106 | 依頼158で３段階パイプラインのデータ依存、待機と転送の固定例。他は未対応。[詳細](ar-organization.md) |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 依頼159〜161で分岐予測、投機実行、時間・電力・エネルギー比較の固定例。他は未対応。[詳細](ar-performance-energy.md) |
-| AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 未着手 |
+| AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162で SIMD・MIMD の固定例。他は未対応。[詳細](ar-heterogeneity.md) |
 | AR | AR-Security | Secure Processor Architectures | 107 | 未着手 |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの重ね合わせ、H・Z と途中観測の固定例。他の範囲は未対応。[詳細](ar-quantum.md) |
 | AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[詳細](sep-sustainability.md) |
@@ -114,7 +114,7 @@
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136で DB の先行ログ復旧の固定模型。OS の障害耐性は未対応。[詳細](os-faults.md) |
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 未着手 |
-| PDC | PDC-Programs | Programs | 219 | 依頼130で２主体に分けた小計と集約の固定例。他は未対応。[詳細](pdc-programs.md) |
+| PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：更新喪失、排他と循環待ち、依頼90で二人のバリア同期 |
 | PDC | PDC-Evaluation | Evaluation | 224 | 一部試作：依頼66で固定量の並列化と逐次部分の限界 |
