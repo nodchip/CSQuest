@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createNotebook,notebookRun,notebookMean,notebookFresh,notebookComplete,restoreNotebook} from '../src/notebook-state.js';
+test('rerunning a downstream cell can retain the old data until upstream cells run',()=>{let s=createNotebook();assert.equal(notebookRun(s,'mean').message,'missing-filter');for(const cell of ['filter','mean','chart'])s=notebookRun(s,cell);assert.equal(notebookMean(s.chart),4);s.selected='village';s=notebookRun(s,'mean');s=notebookRun(s,'chart');assert.equal(s.sawStale,true);assert.equal(notebookFresh(s),false);assert.equal(notebookMean(s.chart),4);for(const cell of ['filter','mean','chart'])s=notebookRun(s,cell);assert.equal(notebookMean(s.chart),6);s.checked=true;assert.equal(notebookComplete(s),true);assert.deepEqual(restoreNotebook(s),s);});
+test('missing steps and malformed saved data cannot complete the quest',()=>{const s=createNotebook();assert.equal(notebookRun(s,'chart').message,'missing-mean');assert.equal(notebookComplete({...s,checked:true}),false);assert.throws(()=>restoreNotebook({...s,filter:'unknown'}));});
