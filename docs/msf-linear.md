@@ -12,7 +12,7 @@
 | 4 | KA Core | 線形独立、張る空間、基底 | 依頼297で平面の独立な２本と従属する２本の固定例。一般の部分空間や次元は未対応 |
 | 5 | KA Core | 直交、射影、最小二乗、正規直交基底 | 依頼50で２本の直交、依頼115で１説明変数の二乗誤差の固定例。射影や一般の基底は未対応 |
 | 6 | KA Core | 多項式の線形結合とベジェ曲線 | 未着手 |
-| 7 | KA Core | 固有値と固有ベクトル | 未着手 |
+| 7 | KA Core | 固有値と固有ベクトル | 依頼298で４つの２次元変換と固有方向・固有値の固定例。一般的な計算や対角化は未対応 |
 | 8 | KA Core | PCA、SVD、PageRank、グラフィックスへの応用 | 未着手 |
 
 ## 例示学習成果
@@ -27,7 +27,7 @@
 | 4a–4j | KA Core | 部分空間、基底、座標、次元、生成、線形独立 | 依頼297で２本の線形結合、平面の基底と直線の固定例。一般の部分空間、座標変換や次元は未対応 |
 | 5a–5e | KA Core | グラム・シュミット、射影、直交補空間、最小二乗 | 依頼115で直線の二乗誤差を比較。一般の射影、正規方程式や証明は未対応 |
 | 6a–6e | KA Core | 多項式の線形結合、直交性、ベルンシュタイン多項式とベジェ曲線 | 未着手 |
-| 7a–7h | KA Core | 固有値・固有ベクトル、特性多項式、対角化 | 未着手 |
+| 7a–7h | KA Core | 固有値・固有ベクトル、特性多項式、対角化 | 依頼298で固有値０と零ベクトル、90度回転を含む固定例。特性多項式や対角化は未対応 |
 | 8a–8h | KA Core | PCA、次元削減、最小二乗、固有値問題、PageRank、SVD | 未着手 |
 
 依頼50は基準ベクトル (2,1) と (1,0)、(1,−2)、(−2,−1) を比較し、内積はそれぞれ２、０、−５。零ベクトルは使わず、向きや角度が定まらないことを解説する。内積の計算と選択肢をテストする。
@@ -37,3 +37,5 @@
 依頼296は実数の２変数・２行の３例で、入替え、行の足し引き、−１倍および偶数行の半分を操作する。解が１組、無数、存在しない場合を比べる。一般の行列や浮動小数点誤差は扱わない。参考：[A First Course in Linear Algebra: Gaussian Elimination](https://math.libretexts.org/Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_%28Kuttler%29/01%3A_Systems_of_Equations/1.03%3A_Gaussian_Elimination)。
 
 依頼297は整数係数を操作して２本の平面ベクトルの和を調べ、独立な基底と従属する２本による直線を比較する。到達不能の理由は有限回の試行ではなく、両成分が常に等しい性質による。任意次元の基底や自由な証明は未対応。参考：[MIT: Independence, basis, and dimension](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/0bbc30e3f1d7933ea07a2d2e9ab050d9_MIT18_06SCF11_Ses1.9sum.pdf)。
+
+依頼298は実数の２次元で拡大、射影、せん断と90度回転を４種類の入力に適用し、固有値または非該当を選ぶ。零入力は固有ベクトルでなく、零でない入力が零へ写る場合は固有値０となる。一般の計算、複素数や対角化は未対応。参考：[Interactive Linear Algebra: Eigenvalues and Eigenvectors](https://math.libretexts.org/Bookshelves/Linear_Algebra/Interactive_Linear_Algebra_%28Margalit_and_Rabinoff%29/05%3A_Eigenvalues_and_Eigenvectors/5.01%3A_Eigenvalues_and_Eigenvectors)。
