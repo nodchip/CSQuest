@@ -86,3 +86,4 @@
 .life-grid .lit,.life-grid button[aria-pressed="true"] { background:#315c48; color:#fff6c7; }
 .spring-diagram { max-width:100%; height:auto; }
 .terrain-diagram { max-width:100%; height:auto; }
+.stereo-diagram { display:block; max-width:100%; height:auto; }
