@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {normalInterval,createNormalInterval,normalReady,normalComplete,restoreNormalInterval} from '../src/normal-interval.js';
+test('known sigma normal interval uses standard error and translates with the sample mean',()=>{for(const [n,margin] of [[1,3.92],[4,1.96],[16,0.98]])for(const mean of [10,12]){const x=normalInterval(mean,n);assert.ok(Math.abs(x.margin-margin)<1e-12);assert.ok(Math.abs(x.low-(mean-margin))<1e-12);assert.ok(Math.abs(x.high-(mean+margin))<1e-12);}assert.throws(()=>normalInterval(10,0));});
+test('all comparisons and least-cost satisfying sample sizes are needed before completion',()=>{const s=createNormalInterval();s.seen=['10,1','10,4','10,16','12,1','12,4','12,16'];s.budget2=4;s.budget1=16;assert.equal(normalReady(s),true);s.answer='sampling';s.checked=true;assert.equal(normalComplete(s),true);assert.deepEqual(restoreNormalInterval(s),s);s.budget2=16;assert.equal(normalReady(s),false);s.seen.push('10,16');assert.throws(()=>restoreNormalInterval(s));});
