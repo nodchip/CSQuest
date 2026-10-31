@@ -1,0 +1,13 @@
+import {exhaustiveActual,exhaustiveExpected} from './contract-exhaustive.js';
+export const testFirstLevel={id:'village-test-first',number:'245',kind:'test-first',name:'試験から始める倉庫の修繕',tag:'テスト駆動開発の流れ',title:'約束を先に確かめよう',story:'村の薬草倉庫を直す前に、期待する動きを試験石に記録し、修繕後も同じ試験を繰り返しましょう。'};
+export const testFirstCases={normal:{name:'在庫３・依頼１',stock:3,amount:1},zero:{name:'在庫２・依頼０',stock:2,amount:0},exact:{name:'在庫２・依頼２',stock:2,amount:2}};
+export const testFirstRules={positive:'０個を不正として拒否',inclusive:'在庫と同じ数を許可'};
+export function createTestFirst(){return {selected:{normal:false,zero:false,exact:false},rules:{positive:false,inclusive:false},ran:false,sawRed:false,tidied:false,history:[],message:'まず試験石を選びましょう。'};}
+export function testFirstResult(s,id){if(!Object.hasOwn(testFirstCases,id))throw new RangeError('試験が不正です。');const c=testFirstCases[id],actual=exhaustiveActual(s.rules,c.stock,c.amount),expected=exhaustiveExpected(c.stock,c.amount);return {actual,expected,pass:actual.status===expected.status&&actual.remaining===expected.remaining};}
+export function stepTestFirst(s,action){if(s.history.length>=50||typeof action!=='string')throw new RangeError('操作が不正です。');const n={...s,selected:{...s.selected},rules:{...s.rules},history:[...s.history,action]};if(action.startsWith('test:')){const id=action.slice(5);if(!Object.hasOwn(testFirstCases,id))throw new RangeError('試験が不正です。');n.selected[id]=!n.selected[id];n.ran=false;n.tidied=false;n.message='試験を選び直しました。もう一度実行しましょう。';}
+ else if(action==='run'){const selected=Object.keys(testFirstCases).filter(id=>s.selected[id]);if(!selected.length)n.message='先に少なくとも一つの試験を選びましょう。';else{n.ran=true;const failed=selected.some(id=>!testFirstResult(s,id).pass);if(failed)n.sawRed=true;n.message=failed?'失敗した試験があります。結果を確かめましょう。':'選択した試験はすべて成功しました。';}}
+ else if(action.startsWith('rule:')){const id=action.slice(5);if(!Object.hasOwn(testFirstRules,id))throw new RangeError('規則が不正です。');if(!s.sawRed)n.message='先に失敗する試験を確認しましょう。';else{n.rules[id]=!n.rules[id];n.ran=false;n.tidied=false;n.message='規則を変更しました。試験をもう一度実行しましょう。';}}
+ else if(action==='tidy'){if(!s.sawRed||!s.ran||!Object.keys(testFirstCases).every(id=>s.selected[id]&&testFirstResult(s,id).pass))n.message='３つの試験を選び、すべて成功してから整理しましょう。';else{n.tidied=true;n.ran=false;n.message='重複した確認を整理しました。同じ試験でもう一度確かめましょう。';}}
+ else throw new RangeError('操作が不正です。');return n;}
+export function testFirstComplete(s){return s.sawRed&&s.tidied&&s.ran&&Object.keys(testFirstCases).every(id=>s.selected[id]&&testFirstResult(s,id).pass);}
+export function restoreTestFirst(saved){if(!saved||!Array.isArray(saved.history)||saved.history.length>50)throw new RangeError('途中記録が不正です。');let s=createTestFirst();for(const action of saved.history)s=stepTestFirst(s,action);return s;}
