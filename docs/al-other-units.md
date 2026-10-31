@@ -63,7 +63,7 @@
 | 12 | CS Core | NP 困難性・NP・NP 完全性の関係を説明。未着手 |
 | 13 | CS Core | NP 完全問題の例を説明。未着手 |
 | 14 | KA Core | 再帰の時間計算量に漸化式を使う。依頼409で書込み回数の固定例。実時間や一般の分析は未対応 |
-| 15 | KA Core | マスター定理を用いた基本的な漸化式の適用。依頼409で２分割・追加費用 n の固定例。他の条件は未対応 |
+| 15 | KA Core | マスター定理を用いた基本的な漸化式の適用。依頼409・410で２分割・追加費用 1・n・n² の固定例。他の条件は未対応 |
 | 16 | KA Core | O 記法で時間・領域の上界を与える。未着手 |
 | 17 | KA Core | Cook–Levin の定理と SAT の NP 完全性を説明。未着手 |
 | 18 | KA Core | P と NP を説明。未着手 |
@@ -166,3 +166,5 @@
 依頼344は昇順配列の最大値より大きい不在値を16回探索する処理を、4096・65536件で３回測り中央値を示す。各方式を16回事前実行し、測定順を交互にする。配列の準備は含めず、タイマー精度や実行環境による変動がある。比較回数は順次が4096・65536、二分が13・17で、時間の優劣を達成条件にはしない。参考：[MDN: performance.now()](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)。
 
 依頼409は n が２のべき、T(1)=1、T(n)=2T(n/2)+n の書込み模型。各段 n、段数 log₂ n＋１ から正確な費用 n(log₂ n＋１) を求め、Θ(n log n) とマスター定理の対応を確認する。端数、実時間や他の場合は未対応。[MIT: Recurrences](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec07.pdf)。
+
+依頼410は T(1)=1、T(n)=2T(n/2)+f(n) で、n を２のべきに限り f(n)=1・n・n² の三つを比較。８冊の各段と合計はそれぞれ 1,2,4,8→15、8,8,8,8→32、64,32,16,8→120。正確な費用はそれぞれ 2n−1、n(log₂ n＋1)、2n²−n。一般の漸化式や端数、実時間は扱わない。[MIT: Recurrences](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec07.pdf)。
