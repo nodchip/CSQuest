@@ -121,7 +121,7 @@
 | PDC | PDC-Algorithms | Algorithms | 225 | 未着手 |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |
 | SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 依頼79で待ち行列とスタックの選択・操作の固定例。他は未対応。[詳細](sdf-data-structures.md) |
-| SDF | SDF-Algorithms | Algorithms | 232 | 未着手 |
+| SDF | SDF-Algorithms | Algorithms | 232 | 依頼29・88などで探索や比較回数の固定例。一般的な時間・空間解析は未対応。[詳細](sdf-algorithms.md) |
 | SDF | SDF-Practices | Software Development Practices | 232 | 未着手 |
 | SDF | SDF-SEP | Society, Ethics, and the Profession | 233 | 未着手 |
 | SE | SE-Teamwork | Teamwork | 240 | 一部試作：依頼59で提示された関係者の希望を確認。実際の協働は未対応 |
