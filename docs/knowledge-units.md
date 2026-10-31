@@ -151,7 +151,7 @@
 | SF | SF-Overview | Overview of Computer Systems | 292 | 未着手 |
 | SF | SF-Foundations | Basic Concepts | 293 | 未着手 |
 | SF | SF-Resource | Resource Management | 294 | 未着手 |
-| SF | SF-Performance | System Performance | 294 | 未着手 |
+| SF | SF-Performance | System Performance | 294 | 一部試作：依頼25でキャッシュと時間的局所性 |
 | SF | SF-Evaluation | Performance Evaluation | 295 | 未着手 |
 | SF | SF-Reliability | System Reliability | 296 | 未着手 |
 | SF | SF-Security | System Security | 297 | 未着手 |
