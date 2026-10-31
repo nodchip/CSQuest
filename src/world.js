@@ -7,7 +7,7 @@ export const regions=[
   {id:'castle',name:'王城',icon:'⚔',description:'城門と通行の仕組みを守り、約束を確かめる。',quests:['castle-access','ward-tests']},
   {id:'village',name:'薬師の村',icon:'✿',description:'薬草と台帳を手がかりに、村の暮らしを支える。',quests:['herb-catalog','village-join','private-ledger','transfer-ledger','shared-ledger','ledger-order']},
   {id:'forge',name:'宝石の工房',icon:'◈',description:'炉と記録を共有する精霊たちを手伝う。',quests:['workshop-scheduling','shared-counter','counter-lock','two-locks']},
-  {id:'archive',name:'鑑定士の書庫',icon:'⌗',description:'水晶の記録や魔導書を調べ、知識を届ける。',quests:['crystal-neighbors','crystal-evaluation','hash-archive','lantern-signals','archive-cache','search-ledger','page-frames','page-address']},
+  {id:'archive',name:'鑑定士の書庫',icon:'⌗',description:'水晶の記録や魔導書を調べ、知識を届ける。',quests:['crystal-neighbors','crystal-evaluation','hash-archive','lantern-signals','archive-cache','search-ledger','page-frames','page-address','treasure-expectation']},
 ];
 export function findRegion(id){return regions.find(region=>region.id===id)||null;}
 export function visibleQuests(levels,regionId){
