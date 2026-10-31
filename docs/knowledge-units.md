@@ -19,7 +19,7 @@
 | AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：マージソート、二分探索木、探索、最短路、最小全域木、トポロジカル順序、ハッシュ衝突など |
 | AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32で貪欲法、依頼55で分割統治、依頼76で動的計画法と貪欲法の比較。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼29で２つの探索の比較回数を比較。一般の分析は未対応 |
-| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態機械と依頼69の不変条件の固定例。他のモデルや一般の証明は未対応 |
+| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件の固定例。他のモデルや一般の証明は未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩と一桁の加算器 |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：依頼36・37の４ビット整数と加算器、依頼68の小数の丸め |
