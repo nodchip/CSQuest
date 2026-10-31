@@ -52,7 +52,7 @@
 | FPL | FPL-Logic | Logic Programming | 133 | 依頼146〜150で有限の項の単一化、事実・規則・問い合わせ、探索と戻り、再帰的な関係、カットの固定例。他は未対応。[詳細](fpl-logic.md) |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜154で処理の受け渡し、失敗、終了状態、環境変数、正規表現の固定例。他は未対応。[詳細](fpl-scripting.md) |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
-| FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 未着手 |
+| FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156等で順序、同期、通信、分割集約の固定例。他は未対応。[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 未着手 |
 | FPL | FPL-Types | Type Systems | 136 | 一部試作：依頼24で入力・出力の型と検査 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | 未着手 |
