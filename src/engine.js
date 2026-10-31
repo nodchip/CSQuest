@@ -44,3 +44,15 @@ export function runScenarios(level, program) {
   }));
   return { success: cases.every(item => item.success), cases };
 }
+
+export function restoreWorkshop(level, saved) {
+  const count=level.scenarios?.length ?? 1;
+  if (!saved || !Array.isArray(saved.program) || saved.program.length>level.max ||
+      saved.program.some(command=>typeof command!=='string'||!level.available.includes(command)) ||
+      !Number.isInteger(saved.scenario) || saved.scenario<0 || saved.scenario>=count ||
+      typeof saved.executed!=='boolean' || (saved.executed && saved.program.length===0)) {
+    throw new RangeError('途中記録が不正です。');
+  }
+  const program=saved.program.slice();
+  return {program,scenario:saved.scenario,result:saved.executed?runScenarios(level,program):null};
+}
