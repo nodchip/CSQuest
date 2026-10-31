@@ -88,7 +88,7 @@
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：依頼46で有限集合と包除の例 |
 | MSF | MSF-Probability | Probability | 188 | 一部試作：依頼20・41で条件付き確率と期待値の固定例 |
 | MSF | MSF-Statistics | Statistics | 190 | 一部試作：依頼47で平均と中央値の比較 |
-| MSF | MSF-Linear | Linear Algebra | 191 | 未着手 |
+| MSF | MSF-Linear | Linear Algebra | 191 | 一部試作：依頼50で２次元の内積と向き |
 | NC | NC-Fundamentals | Fundamentals | 198 | 未着手 |
 | NC | NC-Applications | Networked Applications | 199 | 未着手 |
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
