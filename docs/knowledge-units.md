@@ -4,7 +4,7 @@
 
 | 分野 | 単位 | 名称 | 印字ページ | 状態 |
 |---|---|---|---:|---|
-| AI | AI-Introduction | Fundamental Issues | 67 | 未着手 |
+| AI | AI-Introduction | Fundamental Issues | 67 | 依頼109で部分観測と記憶に基づく行動の固定例。他は未対応。[詳細](ai-introduction.md) |
 | AI | AI-Search | Search | 68 | 一部試作：依頼08・21・42〜45・49・97で探索、対戦、枝刈りと制約充足の固定例 |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 依頼81・98・99で条件付き頻度、期待損失とマルコフ連鎖の固定例。他は未対応。[詳細](ai-krr.md) |
 | AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、訓練・未使用記録の比較と過学習の固定例 |
