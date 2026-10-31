@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createStairRecurrence,stairMove,stairRecord,stairCount,stairRecurrenceComplete,restoreStairRecurrence} from '../src/stair-recurrence.js';
+test('all three paths and recurrence counts are needed',()=>{let s=createStairRecurrence();assert.equal(stairRecord(s),null);for(const path of ['111','12','21']){for(const step of path)s=stairMove(s,Number(step));s=stairRecord(s);}assert.equal(stairCount(s,3),null);for(const value of [2,3,5,8,13])s=stairCount(s,value);s.answers={split:'last',base:'empty'};s.checked=true;assert.equal(stairRecurrenceComplete(s),true);assert.deepEqual(restoreStairRecurrence(s),s);});
+test('overshoot, repeated paths and forged saved progress fail',()=>{let s=createStairRecurrence();s=stairMove(s,2);assert.equal(stairMove(s,2),null);s=stairMove(s,1);s=stairRecord(s);s=stairMove(s,2);s=stairMove(s,1);assert.equal(stairRecord(s),null);assert.throws(()=>restoreStairRecurrence({...s,counts:[2,4]}));});

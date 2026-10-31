@@ -7,7 +7,7 @@
 | 番号 | 分類 | 内容と現状 |
 |---:|---|---|
 | 1 | CS Core / KA Core | 集合、関係、関数、濃度 | 依頼46で有限集合の演算、依頼401・402で有限集合の関係、403で可算と対角線論法の例。一般の証明は未対応 |
-| 2 | CS Core / KA Core | 再帰的な数学的定義 | 依頼33で並べ方の個数を小さい問題に帰着。一般の定義・漸化式は未対応 |
+| 2 | CS Core / KA Core | 再帰的な数学的定義 | 依頼33で並べ方、408で階段の道順の再帰的な数え上げ。一般の定義・漸化式は未対応 |
 | 3 | CS Core / KA Core | 帰納法、背理法などの証明法 | 依頼95・407で帰納法、依頼400で鳩の巣原理の背理法の固定例。一般の証明は未対応 |
 | 4 | CS Core / KA Core | 順列、組合せ、数え上げ、鳩の巣原理 | 依頼33で並べ方、46で包除、400で鳩の巣原理、404で順列と組合せの固定例。一般の数え上げと証明は未対応 |
 | 5 | CS Core / KA Core | 合同算術 | 依頼19で３による余り、405で５・７を法とする加算と乗算の固定例。一般の計算は未対応 |
@@ -24,7 +24,7 @@
 | 1c | CS Core | 具体例を適切なモデルに対応づけ解釈 | 依頼46で仲間と印を集合として解釈。一般のモデル化は未対応 |
 | 1d | CS Core | 有限集合の大きさと和・積・包除 | 依頼46で２集合の包除の一例。一般の計算、積の法則は未対応 |
 | 1e | CS Core | 有限・可算・非可算の区別 | 依頼403で自然数と偶数の対応、無限二進列の対角線論法の固定例。実数や一般の集合は未対応 |
-| 2a | CS Core | 再帰的な定義を適用 | 依頼33で並べ方の固定例。他の構造は未対応 |
+| 2a | CS Core | 再帰的な定義を適用 | 依頼33で並べ方、408で階段の再帰的な数え上げ。他の構造は未対応 |
 | 2b–2e | CS Core | 帰納法による証明、漸化式の解法・分析・閉形式 | 依頼95で奇数の和の帰納法を選択式で構成。一般の漸化式や証明は未対応 |
 | 3a–3f | CS Core | 証明法の識別・構造・適用・選択、再帰と帰納法、弱い帰納法と強い帰納法 | 依頼95で基底と帰納段階、407で強い帰納法の固定例。他の証明法や一般の証明は未対応 |
 | 4a | CS Core | 和・積・包除や数列による数え上げ | 依頼46で２集合の包除のみ |
@@ -56,3 +56,5 @@
 依頼406は２入力が異なる場合に真となる真理値表について、選言標準形と連言標準形を札で構築し全４入力を比較する。各形の全16選択を検査。一般の式の変換や証明は未対応。[Elementary Foundations](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Foundations%3A_An_Introduction_to_Topics_in_Discrete_Mathematics_(Sylvestre)/03%3A_Boolean_algebra/3.02%3A_Disjunctive_Normal_Form)。
 
 依頼407は長さ２と３の石板から４〜７を作り、２・３の基底と、２から k まで作れるという仮定から k−１ に２を足す強い帰納段階を選ぶ。有限の操作自体を一般の証明とはしない。自由記述や他の命題への適用は未対応。[Gentle Introduction to the Art of Mathematics](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Gentle_Introduction_to_the_Art_of_Mathematics_(Fields)/05%3A_Proof_Techniques_II_-_Induction/5.04%3A_The_Strong_Form_of_Mathematical_Induction)。
+
+依頼408は３段を１・２段ずつ進む３道順を列挙し、０段・１段を１通りとして２〜６段の数を直前の２つから求める。最後の移動による重ならない分類を扱う。一般の漸化式の解法や閉形式、自由な証明は未対応。[MIT: Recurrences](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/18b5495f7408055f9679e3afebb108ab_MIT6_042JF10_chap10.pdf)。
