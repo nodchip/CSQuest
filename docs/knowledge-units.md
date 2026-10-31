@@ -82,7 +82,7 @@
 | HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 未着手 |
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 未着手 |
 | HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 一部試作：依頼22で三つの利用条件 |
-| HCI | HCI-Evaluation | Evaluating the Design | 178 | 未着手 |
+| HCI | HCI-Evaluation | Evaluating the Design | 178 | 一部試作：依頼60で架空４人の時間・観察と限定的な結論 |
 | HCI | HCI-Design | System Design | 179 | 未着手 |
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 未着手 |
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：依頼46で有限集合と包除の例 |
