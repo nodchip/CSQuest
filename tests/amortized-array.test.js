@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {newAmortizedTrial,amortizedStep,createAmortized,restoreAmortized,amortizedComplete} from '../src/amortized-array.js';
+test('doubling and one-slot growth have different total copying costs',()=>{const s=createAmortized();for(const id of ['doubling','one']){let t=newAmortizedTrial();assert.equal(amortizedStep(id,t,'grow').history.length,0);while(t.size<8){if(t.size===t.capacity){assert.equal(amortizedStep(id,t,'insert').size,t.size);t=amortizedStep(id,t,'grow');}t=amortizedStep(id,t,'insert');}s.trials[id]=t;}assert.deepEqual([s.trials.doubling.copies,s.trials.one.copies],[7,28]);assert.deepEqual([s.trials.doubling.writes,s.trials.one.writes],[8,8]);s.answer='sequence';s.checked=true;assert.equal(amortizedComplete(s),true);assert.deepEqual(restoreAmortized(s),s);s.trials.doubling.history.push('insert');assert.throws(()=>restoreAmortized(s));});
+test('each doubling copy is bounded across longer prefixes by a geometric sum',()=>{for(let n=1;n<=256;n++){let size=0,cap=1,copies=0;while(size<n){if(size===cap){copies+=size;cap*=2;}size++;}assert.ok(copies<2*n);}});
