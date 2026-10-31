@@ -118,7 +118,7 @@
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：更新喪失、排他と循環待ち、依頼90で二人のバリア同期 |
 | PDC | PDC-Evaluation | Evaluation | 224 | 一部試作：依頼66で固定量の並列化と逐次部分の限界 |
-| PDC | PDC-Algorithms | Algorithms | 225 | 未着手 |
+| PDC | PDC-Algorithms | Algorithms | 225 | 依頼130・285で集約と並列累積和の固定例。他は未対応。[詳細](pdc-algorithms.md) |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |
 | SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 依頼79で待ち行列とスタックの選択・操作の固定例。他は未対応。[詳細](sdf-data-structures.md) |
 | SDF | SDF-Algorithms | Algorithms | 232 | 依頼29・88などで探索や比較回数の固定例。一般的な時間・空間解析は未対応。[詳細](sdf-algorithms.md) |
