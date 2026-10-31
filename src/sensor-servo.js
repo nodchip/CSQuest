@@ -1,0 +1,13 @@
+export const sensorServoLevel={id:'workshop-sensor-servo',number:'219',kind:'sensor-servo',name:'光に応える風見',tag:'センサーとアクチュエーター',title:'光を読んで羽根を動かそう',story:'工房の風見は光の強さに応じて羽根の向きを変えます。センサーを読み、目標を送り、羽根が届くまで動かしましょう。'};
+export const sensorServoCases={dark:{name:'暗い',reading:0,target:0},medium:{name:'中くらい',reading:1,target:90},bright:{name:'明るい',reading:2,target:180}};
+export const servoAngles=[0,90,180];
+export function createSensorServoTrial(id){if(!Object.hasOwn(sensorServoCases,id))throw new RangeError('試行が不正です。');return {id,reading:null,target:null,angle:90,history:[],done:false,message:'まずセンサーを読みましょう。'};}
+export function sensorServoStep(s,action){if(s.done)return {...s,message:'この試行は終わっています。'};if(s.history.length>=30)return {...s,message:'操作の上限です。この試行を最初からやり直しましょう。'};let n={...s,history:s.history.slice()};
+ if(action==='sample'){if(s.reading!==null)return {...s,message:'この試行のセンサーはすでに読みました。'};n.reading=sensorServoCases[s.id].reading;n.message=`光の強さ ${n.reading} を読みました。`;}
+ else if(typeof action==='number'&&servoAngles.includes(action)){if(s.reading===null)return {...s,message:'先にセンサーを読みましょう。'};if(s.target===action)return {...s,message:'その目標はすでに送られています。'};n.target=action;n.message=`目標 ${action} 度を送りました。実際の羽根はまだ ${s.angle} 度です。`;}
+ else if(action==='tick'){if(s.target===null)return {...s,message:'先に目標を送りましょう。'};if(s.angle===s.target)return {...s,message:'羽根は指定された目標に着いています。'};n.angle=s.angle+Math.sign(s.target-s.angle)*Math.min(90,Math.abs(s.target-s.angle));n.message=`羽根は ${n.angle} 度になりました。`;}
+ else if(action==='check'){if(s.reading===null||s.target===null)return {...s,message:'読み取りと目標の指定を先に行いましょう。'};if(s.angle!==s.target)return {...s,message:'羽根が目標に届くまで動かしましょう。'};if(s.target!==sensorServoCases[s.id].target)return {...s,message:'羽根は目標に着きましたが、光の強さに合う目標を選び直しましょう。'};n.done=true;n.message='光の強さに合う向きに羽根が着きました。';}
+ else throw new RangeError('操作が不正です。');n.history.push(action);return n;}
+export function createSensorServo(){return {selected:'dark',trials:Object.fromEntries(Object.keys(sensorServoCases).map(id=>[id,createSensorServoTrial(id)]))};}
+export function sensorServoComplete(s){return Object.keys(sensorServoCases).every(id=>s.trials[id].done);}
+export function restoreSensorServo(saved){if(!saved||!Object.hasOwn(sensorServoCases,saved.selected)||!saved.histories)throw new RangeError('途中記録が不正です。');const s=createSensorServo();s.selected=saved.selected;for(const id of Object.keys(sensorServoCases)){const history=saved.histories[id];if(!Array.isArray(history)||history.length>30)throw new RangeError('途中記録が不正です。');for(const a of history){const n=sensorServoStep(s.trials[id],a);if(n.history.length!==s.trials[id].history.length+1)throw new RangeError('途中記録が不正です。');s.trials[id]=n;}}return s;}
