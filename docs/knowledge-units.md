@@ -17,14 +17,14 @@
 | AI | AI-Robotics | Robotics | 80 | 未着手 |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 未着手 |
 | AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：マージソート、二分探索木、探索、最短路、最小全域木、トポロジカル順序、ハッシュ衝突など |
-| AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32で貪欲法、依頼55で分割統治、依頼76で動的計画法と貪欲法の比較。一般的分析などは未対応 |
+| AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、依頼55で分割統治、依頼76で動的計画法と貪欲法の比較。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼88で冊数別の逐次・二分探索の比較回数と最大値。一般の分析は未対応 |
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件の固定例。他のモデルや一般の証明は未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩と一桁の加算器 |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8 固定例 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行 |
-| AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106・107でキャッシュの局所性、無効化と誤り訂正の固定例。他は未対応。[詳細](ar-memory.md) |
+| AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106・107・110でキャッシュ、誤り訂正と圧縮の固定例。他は未対応。[詳細](ar-memory.md) |
 | AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知の固定例。他は未対応。[詳細](ar-io.md) |
 | AR | AR-Organization | Functional Organization | 106 | 未着手 |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 未着手 |
