@@ -85,3 +85,4 @@
 .life-grid span,.life-grid button { display:grid; place-items:center; aspect-ratio:1; min-width:0; padding:0; border:1px solid #aac2ad; background:#f2f5e9; color:#375845; font-size:22px; }
 .life-grid .lit,.life-grid button[aria-pressed="true"] { background:#315c48; color:#fff6c7; }
 .spring-diagram { max-width:100%; height:auto; }
+.terrain-diagram { max-width:100%; height:auto; }
