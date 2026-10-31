@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mobileRetryTrial,createMobileRetry,mobileRetryAdvance,mobileRetryComplete,restoreMobileRetry} from '../src/mobile-retry.js';
+test('lost acknowledgement does not mean the server failed, and retry identity changes duplicate effects',()=>{for(const id of ['same','fresh']){assert.equal(mobileRetryTrial(id,2).count,0);assert.equal(mobileRetryTrial(id,3).count,1);assert.equal(mobileRetryTrial(id,3).local,'送信待ち');assert.equal(mobileRetryTrial(id,4).count,id==='same'?1:2);}});
+test('both cases and the correct reflection are required; drafts preserve phases',()=>{let s=createMobileRetry();for(let i=0;i<4;i++)s=mobileRetryAdvance(s);s.selected='fresh';for(let i=0;i<4;i++)s=mobileRetryAdvance(s);s.answer='fresh';s.checked=true;assert.equal(mobileRetryComplete(s),false);s.answer='same';assert.equal(mobileRetryComplete(s),true);assert.deepEqual(restoreMobileRetry(s),s);assert.throws(()=>restoreMobileRetry({...s,phases:{same:5,fresh:0}}));});

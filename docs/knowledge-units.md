@@ -162,7 +162,7 @@
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 依頼269で２ライセンスの限定的な比較。権利と犯罪などは未対応。[詳細](sf-security-design.md) |
 | SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 未着手 |
 | SPD | SPD-Web | Web Platforms | 303 | 一部試作：依頼62で受付 API と再送の固定例 |
-| SPD | SPD-Mobile | Mobile Platforms | 303 | 未着手 |
+| SPD | SPD-Mobile | Mobile Platforms | 303 | 依頼354で圏外の保留と再送の固定例。他は未対応。[詳細](spd-mobile.md) |
 | SPD | SPD-Robot | Robot Platforms | 304 | 一部試作：依頼28の観測・移動と依頼71の地形・充電を考慮した移動 |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222でセンサー、アクチュエーター、閾値・量子化・標本化の固定模型。実機・リアルタイム・安全性等は未対応。原典の全項目の照合は未完了 |
 | SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の点と壁の衝突・トンネリングの固定例。他は未対応。[詳細](spd-game.md) |

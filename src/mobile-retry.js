@@ -1,0 +1,7 @@
+export const mobileRetryLevel={id:'guild-mobile-retry',number:'354',kind:'mobile-retry',name:'途切れた伝令の再送',tag:'モバイル同期と再試行',title:'薬草の届け先を間違えず記録しよう',story:'携帯水晶の伝令が途切れる街道で、薬草１束の配達を記録します。受け取った返事が失われたとき、再送をどう扱うか調べましょう。'};
+export const mobileRetryCases={same:{name:'同じ依頼番号で再送',retryKey:'A'},fresh:{name:'新しい依頼番号で再送',retryKey:'B'}};
+export function mobileRetryTrial(id,phase=0){if(!Object.hasOwn(mobileRetryCases,id)||!Number.isInteger(phase)||phase<0||phase>4)throw new RangeError('状態が不正です');return {phase,local:phase===0?'未記録':phase===4?'確認済み':'送信待ち',online:phase>=2,count:phase<3?0:phase===4&&id==='fresh'?2:1,keys:phase<3?[]:phase===4&&id==='fresh'?['A','B']:['A']};}
+export function createMobileRetry(){return {selected:'same',phases:{same:0,fresh:0},answer:null,checked:false};}
+export function mobileRetryAdvance(s){const id=s.selected,phase=s.phases[id];if(phase>=4)return s;return {...s,phases:{...s.phases,[id]:phase+1},checked:false};}
+export function mobileRetryComplete(s){return Object.keys(mobileRetryCases).every(id=>s.phases[id]===4)&&s.answer==='same'&&s.checked;}
+export function restoreMobileRetry(s){if(!s||!Object.hasOwn(mobileRetryCases,s.selected)||!s.phases||Object.keys(mobileRetryCases).some(id=>!Number.isInteger(s.phases[id])||s.phases[id]<0||s.phases[id]>4)||![null,'same','fresh'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {selected:s.selected,phases:{same:s.phases.same,fresh:s.phases.fresh},answer:s.answer,checked:s.checked};}
