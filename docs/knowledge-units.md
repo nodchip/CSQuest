@@ -87,7 +87,7 @@
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 未着手 |
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：有限集合、命題推論・反例、依頼95の数学的帰納法の固定例 |
 | MSF | MSF-Probability | Probability | 188 | 一部試作：条件付き確率、期待値と、依頼84で等確率の４札の分散 |
-| MSF | MSF-Statistics | Statistics | 190 | 一部試作：依頼47で平均と中央値の比較 |
+| MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜114で代表値、分散、条件別集計、度数と四分位範囲の固定例。他は未対応。[詳細](msf-statistics.md) |
 | MSF | MSF-Linear | Linear Algebra | 191 | 一部試作：２次元の内積と向き、依頼86で２×２行列による線形変換 |
 | NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層、カプセル化と中継時の区間別アドレスの固定例。他は未対応。[詳細](nc-fundamentals.md) |
 | NC | NC-Applications | Networked Applications | 199 | 一部試作：依頼62で POST の受付後の応答消失と再送 |
