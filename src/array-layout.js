@@ -1,0 +1,11 @@
+export const arrayLayoutLevel={id:'archive-array-layout',number:'173',kind:'array-layout',name:'石板を記憶の棚へ',tag:'多次元配列の配置',title:'行と列を順に並べよう',story:'３行３列の石板を一列の棚に収めます。行を先に並べる方法と列を先に並べる方法で、同じ印の位置を比べましょう。'};
+export const arrayLayoutModes={row:'行を先に並べる',column:'列を先に並べる'};
+export const arrayLayoutCells=['A','B','C','D','E','F','G','H','I'];
+export const arrayLayoutBase=100;
+export function arrayLayoutOrder(mode){if(!Object.hasOwn(arrayLayoutModes,mode))throw new RangeError('方式が不正です。');return mode==='row'?[0,1,2,3,4,5,6,7,8]:[0,3,6,1,4,7,2,5,8];}
+export function createArrayLayoutTrial(mode){arrayLayoutOrder(mode);return {mode,history:[],answer:'',checked:false,message:'次に棚へ置く石板の位置を選びましょう。'};}
+export function stepArrayLayout(s,index){if(!Number.isInteger(index)||index<0||index>=9)throw new RangeError('位置が不正です。');const order=arrayLayoutOrder(s.mode);if(index!==order[s.history.length])return {...s,checked:false,message:s.history.length===9?'石板は全て棚に置きました。':'選んだ並べ方で、次に置く位置を確認しましょう。'};return {...s,history:[...s.history,index],checked:false,message:`${arrayLayoutCells[index]} を棚へ置きました。`};}
+export function arrayLayoutCorrect(s){return s.checked&&s.history.length===9&&s.answer===String(arrayLayoutBase+arrayLayoutOrder(s.mode).indexOf(7));}
+export function createArrayLayoutSet(){return {selected:'row',trials:Object.fromEntries(Object.keys(arrayLayoutModes).map(mode=>[mode,createArrayLayoutTrial(mode)]))};}
+export function arrayLayoutComplete(s){return Object.keys(arrayLayoutModes).every(mode=>arrayLayoutCorrect(s.trials[mode]));}
+export function restoreArrayLayout(saved){if(!saved||!Object.hasOwn(arrayLayoutModes,saved.selected)||!saved.trials)throw new RangeError('途中記録が不正です。');const r=createArrayLayoutSet();r.selected=saved.selected;for(const mode of Object.keys(arrayLayoutModes)){const t=saved.trials[mode];if(!t||!Array.isArray(t.history)||t.history.length>9||!['','105','106','107'].includes(t.answer)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');let s=r.trials[mode];for(const index of t.history){const next=stepArrayLayout(s,index);if(next.history.length!==s.history.length+1)throw new RangeError('途中記録が不正です。');s=next;}s.answer=t.answer;s.checked=t.checked;r.trials[mode]=s;}return r;}
