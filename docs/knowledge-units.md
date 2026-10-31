@@ -38,7 +38,7 @@
 | DM | DM-Relational | Relational Databases | 117 | 未着手 |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択と内部結合 |
 | DM | DM-Processing | Query Processing | 118 | 未着手 |
-| DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35で原子性と永続性の固定例 |
+| DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38で原子性・永続性・分離の固定例 |
 | DM | DM-NoSQL | NoSQL Systems | 120 | 未着手 |
 | DM | DM-Security | Data Security and Privacy | 121 | 未着手 |
 | DM | DM-Analytics | Data Analytics | 121 | 未着手 |
