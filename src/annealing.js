@@ -1,0 +1,8 @@
+import {terrain} from './hill-climbing.js';
+export const annealingLevel={id:'forest-annealing',number:'373',kind:'annealing',name:'冷めゆく星見の灯',tag:'焼きなまし法',title:'時には下り、別の山頂を探そう',story:'星読みの精霊が別の探索法を試します。灯の温度と抽選を使い、少し見晴らしの悪い地点へ移るか決めましょう。'};
+export const annealingTrials={cold:[{from:'C',to:'B',temperature:1,sample:.3}],warm:[{from:'C',to:'B',temperature:4,sample:.3},{from:'B',to:'A',temperature:4,sample:.3},{from:'A',to:'D',temperature:2,sample:.3},{from:'D',to:'E',temperature:1,sample:.3}]};
+export function acceptProbability(from,to,temperature){if(!Object.hasOwn(terrain,from)||!Object.hasOwn(terrain,to)||!terrain[from].neighbors.includes(to)||!(temperature>0))throw new RangeError('提案が不正です');return Math.min(1,Math.exp((terrain[to].score-terrain[from].score)/temperature));}
+export function accepts(step){return step.sample<acceptProbability(step.from,step.to,step.temperature);}
+export function createAnnealing(){return {trial:'cold',progress:{cold:0,warm:0},answer:null,checked:false};}
+export function annealingComplete(s){return s.progress.cold===annealingTrials.cold.length&&s.progress.warm===annealingTrials.warm.length&&s.answer==='chance'&&s.checked;}
+export function restoreAnnealing(s){if(!s||!Object.hasOwn(annealingTrials,s.trial)||!s.progress||![null,'chance','guarantee','always'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');let n=createAnnealing();n.trial=s.trial;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(annealingTrials)){const p=s.progress[id];if(!Number.isInteger(p)||p<0||p>annealingTrials[id].length)throw new RangeError('途中記録が不正です');n.progress[id]=p;}return n;}

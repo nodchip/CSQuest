@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {acceptProbability,annealingTrials,accepts,createAnnealing,annealingComplete,restoreAnnealing} from '../src/annealing.js';
+test('temperature changes acceptance probability, not the proposed move or draw',()=>{const [cold]=annealingTrials.cold,[warm]=annealingTrials.warm;assert.ok(Math.abs(acceptProbability('C','B',1)-Math.exp(-2))<1e-12);assert.ok(Math.abs(acceptProbability('C','B',4)-Math.exp(-.5))<1e-12);assert.equal(cold.sample,warm.sample);assert.equal(accepts(cold),false);assert.equal(accepts(warm),true);assert.deepEqual(annealingTrials.warm.map(accepts),[true,true,true,true]);assert.equal(acceptProbability('D','E',1),1);assert.throws(()=>acceptProbability('C','E',1));});
+test('both scenarios and reflection must be completed, and invalid saved progress is rejected',()=>{const s=createAnnealing();s.progress={cold:1,warm:4};s.answer='chance';assert.equal(annealingComplete(s),false);s.checked=true;assert.equal(annealingComplete(s),true);assert.deepEqual(restoreAnnealing(s),s);assert.throws(()=>restoreAnnealing({...s,progress:{cold:2,warm:4}}));});
