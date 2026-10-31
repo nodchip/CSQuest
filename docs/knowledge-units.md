@@ -54,10 +54,10 @@
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 未着手 |
 | FPL | FPL-Types | Type Systems | 136 | 一部試作：依頼24で入力・出力の型と検査 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | 未着手 |
-| FPL | FPL-Translation | Language Translation and Execution | 139 | 未着手 |
+| FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75で優先順位・括弧・左結合による式の構造の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 未着手 |
-| FPL | FPL-Syntax | Syntax Analysis | 141 | 未着手 |
-| FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 未着手 |
+| FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75で優先順位と結合による構造の固定例。他は未対応。[詳細](fpl-syntax.md) |
+| FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75で小さな抽象構文木を操作。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 未着手 |
 | FPL | FPL-Code | Code Generation | 142 | 未着手 |
 | FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 未着手 |
