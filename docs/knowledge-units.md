@@ -85,7 +85,7 @@
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 依頼63・289で関係者と選択画面の固定例。他は未対応。[詳細](hci-accountability.md) |
 | HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 一部試作：依頼22で三つの利用条件 |
 | HCI | HCI-Evaluation | Evaluating the Design | 178 | 一部試作：依頼60で架空４人の時間・観察と限定的な結論 |
-| HCI | HCI-Design | System Design | 179 | 依頼287・288で反復設計と同期表示の固定例。他は未対応。[詳細](hci-design.md) |
+| HCI | HCI-Design | System Design | 179 | 依頼287・288で反復設計と同期表示、427で利用条件と予算の固定比較。他は未対応。[詳細](hci-design.md) |
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 依頼359で架空の参加者と試作品を比較。他は未対応。[詳細](hci-society.md) |
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：有限集合、命題推論・反例、依頼95の帰納法、依頼400の鳩の巣原理、401・402の関係と関数、403の可算と対角線論法、404の順列・組合せ、405の合同算術、406の論理標準形、407の強い帰納法、408の再帰的な数え上げ、409の再帰木の固定例 |
 | MSF | MSF-Probability | Probability | 188 | 一部試作：条件付き確率、期待値と、依頼84で等確率の４札の分散 |

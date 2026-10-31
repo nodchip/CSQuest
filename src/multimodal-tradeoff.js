@@ -1,0 +1,8 @@
+export const multimodalLevel={id:'guild-multimodal-tradeoff',number:'427',kind:'multimodal-tradeoff',name:'旅人の案内と四つの道具',tag:'利用条件と設計の制約',title:'案内の使い方を選ぼう',story:'ギルドは場所や状況の違う旅人に案内を届けます。限られた予算で入出力を選び、使えない場面を調べましょう。'};
+export const modalOptions={touch:'押す入力',voice:'声の入力',screen:'文字の表示',audio:'イヤホンへの音声'};
+export const modalCases={market:{name:'人の多い市場',input:'touch',output:'screen'},hands:{name:'手と目がふさがる旅人',input:'voice',output:'audio'},sun:{name:'画面が読みにくい日差し',input:'touch',output:'audio'}};
+export function modalResults(chosen){return Object.fromEntries(Object.entries(modalCases).map(([id,c])=>[id,{input:chosen.includes(c.input),output:chosen.includes(c.output)}]));}
+export function modalShortfall(chosen,budget){const r=Object.values(modalResults(chosen));return budget===3&&chosen.length<=budget&&chosen.some(x=>['touch','voice'].includes(x))&&chosen.some(x=>['screen','audio'].includes(x))&&r.some(x=>!x.input||!x.output);}
+export function createMultimodal(){return {chosen:[],budget:3,shortfall:false,tested:false,answer:null,checked:false};}
+export function multimodalComplete(s){return s.shortfall&&s.budget===4&&s.chosen.length===4&&s.tested&&Object.values(modalResults(s.chosen)).every(r=>r.input&&r.output)&&s.answer==='tradeoff'&&s.checked;}
+export function restoreMultimodal(s){if(!s||!Array.isArray(s.chosen)||s.chosen.length>4||new Set(s.chosen).size!==s.chosen.length||!s.chosen.every(x=>Object.hasOwn(modalOptions,x))||![3,4].includes(s.budget)||typeof s.shortfall!=='boolean'||s.budget===4&&!s.shortfall||typeof s.tested!=='boolean'||s.tested&&s.chosen.length>s.budget||![null,'tradeoff','one','proof'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {...s,chosen:[...s.chosen]};}
