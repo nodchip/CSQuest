@@ -6,7 +6,7 @@
 
 | 番号 | 分類 | 内容と現状 |
 |---:|---|---|
-| 1 | CS Core / KA Core | 集合、関係、関数、濃度 | 依頼46で有限集合の演算、依頼401で３対３の関係・関数・単射・全射の固定例。無限集合や一般の証明は未対応 |
+| 1 | CS Core / KA Core | 集合、関係、関数、濃度 | 依頼46で有限集合の演算、依頼401で３対３の関係、402で異なる有限集合間の単射・全射の固定例。無限集合や一般の証明は未対応 |
 | 2 | CS Core / KA Core | 再帰的な数学的定義 | 依頼33で並べ方の個数を小さい問題に帰着。一般の定義・漸化式は未対応 |
 | 3 | CS Core / KA Core | 帰納法、背理法などの証明法 | 依頼95で帰納法、依頼400で鳩の巣原理の背理法の固定例。一般の証明は未対応 |
 | 4 | CS Core / KA Core | 順列、組合せ、数え上げ、鳩の巣原理 | 依頼33で並べ方、46で包除、400で鳩の巣原理の固定例。一般の数え上げと証明は未対応 |
@@ -44,3 +44,5 @@
 依頼400では３羽を３つの巣に別々に配置し、４羽目はどの巣でも重なることを確かめる。どの巣も１羽以下なら最大３羽という背理法を選ぶ。４羽の配置81通りをテストしたが、一般の証明を記述・評価するものではない。[MIT の講義ノート](https://math.mit.edu/~goemans/18310S15/pigeonholenotes.pdf)。
 
 依頼401では３人と３つの紋章の関係を構築し、関数・単射・全射と、線が０本または２本のため関数でない例を比較する。全512関係を独立した定義で検査した。無限集合、異なる大きさの集合や一般の証明は未対応。[Discrete Mathematics for Computer Science](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_for_Computer_Science_(Fitch)/03%3A_Functions/3.01%3A_Functions)。
+
+依頼402は２人から３紋章への単射で非全射・単射でも全射でもない例、３人から２紋章への全射で非単射の例を構築する。２対３の全９関数と３対２の全８関数を検査。無限集合や一般の証明は未対応。[Discrete Mathematics for Computer Science](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_for_Computer_Science_(Fitch)/03%3A_Functions/3.01%3A_Functions)。
