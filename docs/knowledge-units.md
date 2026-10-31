@@ -160,7 +160,7 @@
 | SF | SF-Security | System Security | 297 | 依頼180・258・280などで攻撃、対策と警報の固定例。一般的な侵入検知などは未対応。[詳細](sf-security-design.md) |
 | SF | SF-Design | System Design | 297 | 設計基準に関連する固定例。代表的システムの設計は未対応。[詳細](sf-security-design.md) |
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 依頼269で２ライセンスの限定的な比較。権利と犯罪などは未対応。[詳細](sf-security-design.md) |
-| SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 未着手 |
+| SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 依頼356で通信量・資源・遅れの固定例。他は未対応。[詳細](spd-common.md) |
 | SPD | SPD-Web | Web Platforms | 303 | 一部試作：依頼62で受付 API と再送の固定例 |
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 依頼354で圏外の保留と再送の固定例。他は未対応。[詳細](spd-mobile.md) |
 | SPD | SPD-Robot | Robot Platforms | 304 | 一部試作：依頼28の観測・移動と依頼71の地形・充電を考慮した移動 |

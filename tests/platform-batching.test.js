@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {batchingStats,batchingCorrect,createBatching,batchingComplete,restoreBatching} from '../src/platform-batching.js';
+test('eight observations trade energy for delay at each batch size',()=>{assert.deepEqual([1,2,4].map(b=>{const s=batchingStats(b,8);return [s.calls,s.energy,s.maxDelay,s.delivered]}),[[8,32,0,8],[4,20,1,8],[2,14,3,8]]);assert.deepEqual(batchingStats(4,3),{tick:3,calls:0,pending:3,energy:3,maxDelay:0,delivered:0});});
+test('each scenario applies its own delay and energy constraints and restores valid state',()=>{const s=createBatching();s.trials.alarm={batch:1,tick:8,checked:true};s.trials.report={batch:4,tick:8,checked:true};assert.equal(batchingComplete(s),true);assert.equal(batchingCorrect('alarm',s.trials.report),false);assert.equal(batchingCorrect('report',s.trials.alarm),false);assert.deepEqual(restoreBatching(s),s);assert.throws(()=>restoreBatching({...s,trials:{...s.trials,alarm:{batch:3,tick:0,checked:false}}}));});
