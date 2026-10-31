@@ -1,0 +1,12 @@
+export const closureLevel={id:'forest-transitive-closure',number:'170',kind:'transitive-closure',name:'通れる道をつなぐ',tag:'推移閉包',title:'経由できる道を調べよう',story:'片道の道が書かれた地図から、途中の村を経由して届く組合せを調べます。'};
+export const closureNodes=['A','B','C','D'];
+export const closureCases={chain:{name:'谷へ向かう道',edges:[[0,1],[1,2],[2,3],[0,3]]},cycle:{name:'巡る森の道',edges:[[0,1],[1,2],[2,0],[2,3]]}};
+const copy=matrix=>matrix.map(row=>row.slice());
+export function createClosureTrial(id){if(!Object.hasOwn(closureCases,id))throw new RangeError('地図が不正です。');const matrix=Array.from({length:4},()=>Array(4).fill(false));for(const [i,j] of closureCases[id].edges)matrix[i][j]=true;return {id,k:0,base:copy(matrix),matrix,history:[],message:'経由地を使って新たに届く組合せを探しましょう。'};}
+export function closureMissing(s){if(s.k>=closureNodes.length)return [];const pairs=[];for(let i=0;i<4;i++)for(let j=0;j<4;j++)if(!s.matrix[i][j]&&s.base[i][s.k]&&s.base[s.k][j])pairs.push([i,j]);return pairs;}
+export function stepClosure(s,action){const n={...s,base:copy(s.base),matrix:copy(s.matrix),history:s.history.slice()};if(s.k<4&&typeof action==='string'&&/^mark:[0-3]:[0-3]$/.test(action)){const [,is,js]=action.split(':'),i=Number(is),j=Number(js);if(s.matrix[i][j]||!s.base[i][s.k]||!s.base[s.k][j])return {...s,message:'この段階の開始時に、出発地から経由地と経由地から目的地へ届くか確認しましょう。'};n.matrix[i][j]=true;n.message=`${closureNodes[i]} から ${closureNodes[s.k]} を経由して ${closureNodes[j]} に届きます。`;}
+  else if(s.k<4&&action==='next'){if(closureMissing(s).length)return {...s,message:'この経由地で新たに届く組合せがまだあります。'};n.k++;n.base=copy(s.matrix);n.message=n.k===4?'全ての経由地を調べました。':'追加した道を記録し、次の経由地へ進みました。';}
+  else return {...s,message:'現在の表と段階を確認しましょう。'};n.history.push(action);return n;}
+export function createClosureSet(){return {selected:'chain',trials:Object.fromEntries(Object.keys(closureCases).map(id=>[id,createClosureTrial(id)]))};}
+export function closureComplete(s){return Object.keys(closureCases).every(id=>s.trials[id].k===4);}
+export function restoreClosureSet(saved){if(!saved||!Object.hasOwn(closureCases,saved.selected)||!saved.histories)throw new RangeError('途中記録が不正です。');const r=createClosureSet();r.selected=saved.selected;for(const id of Object.keys(closureCases)){const h=saved.histories[id];if(!Array.isArray(h)||h.length>20)throw new RangeError('途中記録が不正です。');for(const action of h){const before=r.trials[id],after=stepClosure(before,action);if(after.history.length!==before.history.length+1)throw new RangeError('途中記録が不正です。');r.trials[id]=after;}}return r;}
