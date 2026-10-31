@@ -162,5 +162,5 @@
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 未着手 |
 | SPD | SPD-Robot | Robot Platforms | 304 | 一部試作：依頼28の観測・移動と依頼71の地形・充電を考慮した移動 |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 未着手 |
-| SPD | SPD-Game | Game Platforms | 306 | 未着手 |
+| SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の点と壁の衝突・トンネリングの固定例。他は未対応。[詳細](spd-game.md) |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 未着手 |
