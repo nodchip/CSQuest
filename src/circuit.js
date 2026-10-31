@@ -26,3 +26,10 @@ export function evaluateCircuit(first, second) {
     return { a, b, upper, lower, actual, expected: a ^ b, correct: actual === (a ^ b) };
   });
 }
+
+export function restoreCircuit(saved) {
+  if(!saved||!Array.isArray(saved.parts)||saved.parts.length!==2||
+     saved.parts.some(part=>typeof part!=='string'||!Object.hasOwn(gates,part))||typeof saved.tested!=='boolean')throw new RangeError('途中記録が不正です。');
+  const parts=saved.parts.slice();
+  return {parts,rows:saved.tested?evaluateCircuit(...parts):null};
+}
