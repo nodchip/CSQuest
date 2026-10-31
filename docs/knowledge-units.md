@@ -113,7 +113,7 @@
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 未着手 |
 | PDC | PDC-Programs | Programs | 219 | 未着手 |
 | PDC | PDC-Communication | Communication | 220 | 未着手 |
-| PDC | PDC-Coordination | Coordination | 222 | 一部試作：読み書きの順序と更新喪失 |
+| PDC | PDC-Coordination | Coordination | 222 | 一部試作：読み書きの順序と更新喪失、鍵による排他 |
 | PDC | PDC-Evaluation | Evaluation | 224 | 未着手 |
 | PDC | PDC-Algorithms | Algorithms | 225 | 未着手 |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作 |
