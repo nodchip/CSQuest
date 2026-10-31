@@ -10,7 +10,7 @@
 | AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、訓練・未使用記録の比較と過学習の固定例 |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 未着手 |
 | AI | AI-LRR | Logical Representation and Reasoning | 76 | 未着手 |
-| AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 未着手 |
+| AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率と条件付き独立の固定例。他は未対応。[詳細](ai-probability.md) |
 | AI | AI-Planning | Planning | 78 | 未着手 |
 | AI | AI-Agents | Agents and Cognitive Systems | 79 | 未着手 |
 | AI | AI-NLP | Natural Language Processing | 79 | 未着手 |
