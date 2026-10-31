@@ -66,3 +66,11 @@
 
 .morph-comparison { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; }
 .morph-comparison pre { padding: .6rem; background: #f5f8f0; border: 1px solid #d4dece; line-height: 1.45; }
+
+.bezier-diagram { display: block; width: min(100%, 300px); height: auto; margin: 1rem 0; background: #f7faf3; border: 1px solid #ceddce; }
+.bezier-diagram .bezier-guide { fill: none; stroke: #758b7a; stroke-width: 2; stroke-dasharray: 5 4; }
+.bezier-diagram .bezier-curve { fill: none; stroke: #b45d25; stroke-width: 4; }
+.bezier-diagram .bezier-target { fill: none; stroke: #2851a3; stroke-width: 3; }
+.bezier-diagram .bezier-control { fill: #243b2a; }
+.bezier-diagram .bezier-middle { fill: #ffdc35; stroke: #563f17; stroke-width: 2; }
+.bezier-diagram text { fill: #344d3b; font-size: 10px; }
