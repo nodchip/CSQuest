@@ -116,7 +116,7 @@
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：読み書きの順序と更新喪失、鍵による排他、２鍵の循環待ち |
 | PDC | PDC-Evaluation | Evaluation | 224 | 未着手 |
 | PDC | PDC-Algorithms | Algorithms | 225 | 未着手 |
-| SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作 |
+| SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |
 | SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 未着手 |
 | SDF | SDF-Algorithms | Algorithms | 232 | 未着手 |
 | SDF | SDF-Practices | Software Development Practices | 232 | 未着手 |
