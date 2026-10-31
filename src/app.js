@@ -157,7 +157,7 @@ import { unifyLevel, unifyCases, unifyActions, unifyFormat, unifyApply, createUn
 import { tessellationLevel, tessellationCases, createTessTrial, tessStep, createTessellation, tessComplete, restoreTessellation } from './tessellation.js';
 import { componentsLevel, componentPixels, componentSeed, componentModes, componentsFor, componentCorrect, createComponents, restoreComponents, componentsComplete } from './components.js';
 import { csgLevel, csgCells, csgModes, shapeContains, csgCorrect, csgErrors, createCsg, restoreCsg, csgComplete } from './shape-csg.js';
-import { bezierLevel, bezierCases, bezierHeights, bezierGeometry, bezierParameters, bezierAt, bezierCorrect, createBezier, restoreBezier, bezierComplete } from './bezier.js';
+import { bezierLevel, bezierCases, bezierHeights, bezierGeometry, bezierParameters, bezierAt, bezierCorrect, createBezier, restoreBezier, bezierComplete } from './bezier.js?v=bernstein-1';
 import { highpassLevel, highpassCases, highpassWeights, highpassPredictions, highpassValue, highpassCorrect, createHighpass, restoreHighpass, highpassComplete } from './highpass.js';
 import { morphSequenceLevel, morphSequenceCases, morphSequenceActions, morphTarget, morphCurrent, morphSequenceCorrect, createMorphSequence, restoreMorphSequence, morphSequenceComplete } from './morph-sequence.js';
 import { morphologyLevel, morphologyImage, morphologyModes, morphologyCells, morphologyCorrect, morphologyErrors, createMorphology, restoreMorphology, morphologyComplete } from './morphology.js';
