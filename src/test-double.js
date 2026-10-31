@@ -1,0 +1,9 @@
+export const doubleLevel={id:'village-test-double',number:'246',kind:'test-double',name:'伝令の代役',tag:'テストダブルと依存性の差し替え',title:'伝令が届かない時も試そう',story:'薬草の受取を伝令で知らせる倉庫を試します。伝令の代役を使い、成功と失敗を自由に再現しましょう。'};
+export const doubleInputs={valid:'２個の依頼',invalid:'０個の依頼'};
+export const doubleFakes={success:'成功を返す代役',failure:'失敗を起こす代役'};
+export function doubleProcess(amount,send){let stock=3;if(amount<=0)return {status:'invalid',stock};try{send(amount);}catch{return {status:'failure',stock};}stock-=amount;return {status:'ok',stock};}
+export function doubleRun(input,fake){if(!Object.hasOwn(doubleInputs,input)||!Object.hasOwn(doubleFakes,fake))throw new RangeError('試験の設定が不正です。');const amount=input==='valid'?2:0,calls=[];const result=doubleProcess(amount,n=>{calls.push(n);if(fake==='failure')throw new Error('伝令の失敗');});return {...result,calls};}
+export function createDouble(){return {input:'valid',fake:'success',history:[]};}
+export function doubleObserved(s){const result={success:false,failure:false,invalid:false};for(const [input,fake] of s.history){const r=doubleRun(input,fake);if(input==='valid'&&fake==='success'&&r.status==='ok'&&r.stock===1&&r.calls.length===1)result.success=true;if(input==='valid'&&fake==='failure'&&r.status==='failure'&&r.stock===3&&r.calls.length===1)result.failure=true;if(input==='invalid'&&r.status==='invalid'&&r.stock===3&&r.calls.length===0)result.invalid=true;}return result;}
+export function doubleComplete(s){return Object.values(doubleObserved(s)).every(Boolean);}
+export function restoreDouble(saved){if(!saved||!Object.hasOwn(doubleInputs,saved.input)||!Object.hasOwn(doubleFakes,saved.fake)||!Array.isArray(saved.history)||saved.history.length>20)throw new RangeError('途中記録が不正です。');const history=saved.history.map(entry=>{if(!Array.isArray(entry)||entry.length!==2)throw new RangeError('途中記録が不正です。');doubleRun(...entry);return [...entry];});return {input:saved.input,fake:saved.fake,history};}
