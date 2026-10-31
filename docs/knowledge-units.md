@@ -67,7 +67,7 @@
 | FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 未着手 |
 | FPL | FPL-Design | Design Principles of Programming Languages | 146 | 未着手 |
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 未着手 |
-| GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 未着手 |
+| GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 依頼83で三角形の中心標本と画素内４標本の固定例。他は未対応。[詳細](git-fundamentals.md) |
 | GIT | GIT-Visualization | Visualization | 156 | 未着手 |
 | GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26の２次元変換と依頼64の平行・透視投影 |
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 未着手 |
