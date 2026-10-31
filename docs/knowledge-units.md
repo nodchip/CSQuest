@@ -78,7 +78,7 @@
 | GIT | GIT-Simulation | Simulation | 161 | 未着手 |
 | GIT | GIT-Immersion | Immersion | 161 | 未着手 |
 | GIT | GIT-Interaction | Interaction | 162 | 未着手 |
-| GIT | GIT-Image | Image Processing | 163 | 未着手 |
+| GIT | GIT-Image | Image Processing | 163 | 依頼139で二値画像の膨張・収縮の固定例。他は未対応。[詳細](git-image.md) |
 | GIT | GIT-Physical | Tangible/Physical Computing | 164 | 未着手 |
 | GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 未着手 |
 | HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 未着手 |

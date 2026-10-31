@@ -58,3 +58,8 @@
 .collision-diagram{display:block;width:min(100%,620px);height:auto;margin:20px 0;background:#f7f5ed;border:1px solid #d4dece}.collision-diagram text{font-size:16px;fill:#3d614a}
 
 .induction-grid{display:grid;grid-template-columns:repeat(4,1fr);width:min(100%,240px);aspect-ratio:1;gap:4px;margin:20px 0}.induction-grid span{display:grid;place-items:center;background:#dfece0;color:#315f48;border:1px solid #9fbaa1}.induction-grid span.added{background:#f4e5bb;color:#8b6726;border-color:#c6a66c}
+
+.morph-grid { display: grid; grid-template-columns: repeat(5, minmax(2.5rem, 3rem)); gap: .35rem; margin: 1rem 0; }
+.morph-grid button { min-height: 2.7rem; font-weight: 700; }
+.morph-grid button { border: 1px solid #94ae99; background: #fffef8; color: #315a40; }
+.morph-grid button[aria-pressed=true] { background: #416e56; color: #fff; border-color: #416e56; }

@@ -1,0 +1,11 @@
+export const morphologyLevel={id:'ruin-morphology',number:'139',kind:'morphology',name:'欠けた紋章の画素',tag:'二値画像の膨張と収縮',title:'紋章を広げて縮める',story:'遺跡の古い紋章には小さな汚れがあります。画素の周りを調べ、紋章を広げる場合と縮める場合を比べましょう。'};
+export const morphologyImage=[[0,0,0,0,0],[0,1,1,1,0],[0,1,1,1,0],[0,1,1,1,0],[0,0,0,0,1]];
+export const morphologyModes={dilate:{name:'膨張',description:'自分と上下左右の５か所のうち、１つ以上が１なら結果を１にします。'},erode:{name:'収縮',description:'自分と上下左右の５か所すべてが１なら結果を１にします。'}};
+export const morphologyCells=Array.from({length:25},(_,i)=>`${Math.floor(i/5)}:${i%5}`);
+export function morphologyAt(mode,row,col){if(!Object.hasOwn(morphologyModes,mode)||!Number.isInteger(row)||!Number.isInteger(col)||row<0||row>=5||col<0||col>=5)throw new RangeError('画素が不正です。');const around=[[0,0],[-1,0],[1,0],[0,-1],[0,1]].map(([dr,dc])=>morphologyImage[row+dr]?.[col+dc]??0);return mode==='dilate'?around.some(Boolean):around.every(Boolean);}
+export function morphologyExpected(mode){return morphologyCells.filter(key=>{const [row,col]=key.split(':').map(Number);return morphologyAt(mode,row,col);});}
+export function morphologyCorrect(mode,c){const expected=morphologyExpected(mode);return c.checked&&c.selected.length===expected.length&&expected.every(key=>c.selected.includes(key));}
+export function morphologyErrors(mode,c){const expected=new Set(morphologyExpected(mode)),selected=new Set(c.selected);return morphologyCells.filter(key=>expected.has(key)!==selected.has(key)).length;}
+export function createMorphology(){return {selected:'dilate',choices:{dilate:{selected:[],checked:false},erode:{selected:[],checked:false}}};}
+export function restoreMorphology(s){if(!s||!Object.hasOwn(morphologyModes,s.selected)||!s.choices)throw new RangeError('途中記録が不正です。');const r=createMorphology();r.selected=s.selected;for(const id of Object.keys(morphologyModes)){const c=s.choices[id];if(!c||!Array.isArray(c.selected)||new Set(c.selected).size!==c.selected.length||c.selected.some(key=>!morphologyCells.includes(key))||typeof c.checked!=='boolean')throw new RangeError('画素の記録が不正です。');r.choices[id]={selected:c.selected.slice(),checked:c.checked};}return r;}
+export function morphologyComplete(s){return Object.keys(morphologyModes).every(mode=>morphologyCorrect(mode,s.choices[mode]));}
