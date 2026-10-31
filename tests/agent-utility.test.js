@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {agentUtilityTotal,createAgentUtility,agentUtilityCorrect,agentUtilityComplete,restoreAgentUtility} from '../src/agent-utility.js';
+test('four equally likely outcomes yield the expected comparisons for both utility assignments',()=>{assert.equal(agentUtilityTotal('normal','short',4)/4,5);assert.equal(agentUtilityTotal('normal','safe',4)/4,3);assert.equal(agentUtilityTotal('fragile','short',4)/4,2);assert.equal(agentUtilityTotal('fragile','safe',4)/4,3);});
+test('every outcome and the preferred action must be checked in each case',()=>{const s=createAgentUtility();s.trials.normal={short:4,safe:4,answer:'short',checked:true};s.trials.fragile={short:4,safe:4,answer:'short',checked:true};assert.equal(agentUtilityCorrect('fragile',s.trials.fragile),false);s.trials.fragile.answer='safe';assert.equal(agentUtilityComplete(s),true);assert.deepEqual(restoreAgentUtility(s),s);assert.throws(()=>restoreAgentUtility({...s,trials:{...s.trials,normal:{...s.trials.normal,short:5}}}));});

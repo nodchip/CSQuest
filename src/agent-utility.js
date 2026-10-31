@@ -1,0 +1,9 @@
+export const agentUtilityLevel={id:'ruin-agent-utility',number:'368',kind:'agent-utility',name:'二つの道と旅の目的',tag:'合理的行動と期待効用',title:'精霊の道選びを考えよう',story:'遺跡の精霊は近道と安全な道を選びます。結果の起こりやすさと、旅の目的ごとの価値を比べてみましょう。'};
+export const agentUtilityCases={normal:{name:'通常の荷物',loss:-4,correct:'short'},fragile:{name:'壊れやすい荷物',loss:-16,correct:'safe'}};
+export const agentUtilityRoutes={short:'近道',safe:'安全な道'};
+export function agentUtilityOutcomes(id,route){if(!Object.hasOwn(agentUtilityCases,id)||!Object.hasOwn(agentUtilityRoutes,route))throw new RangeError('場面が不正です');return route==='short'?[8,8,8,agentUtilityCases[id].loss]:[3,3,3,3];}
+export function agentUtilityTotal(id,route,tick){if(!Number.isInteger(tick)||tick<0||tick>4)throw new RangeError('進行が不正です');return agentUtilityOutcomes(id,route).slice(0,tick).reduce((a,b)=>a+b,0);}
+export function createAgentUtility(){return {selected:'normal',trials:{normal:{short:0,safe:0,answer:null,checked:false},fragile:{short:0,safe:0,answer:null,checked:false}}};}
+export function agentUtilityCorrect(id,t){return Object.hasOwn(agentUtilityCases,id)&&t.short===4&&t.safe===4&&t.answer===agentUtilityCases[id].correct&&t.checked;}
+export function agentUtilityComplete(s){return Object.keys(agentUtilityCases).every(id=>agentUtilityCorrect(id,s.trials[id]));}
+export function restoreAgentUtility(s){if(!s||!Object.hasOwn(agentUtilityCases,s.selected)||!s.trials)throw new RangeError('途中記録が不正です');const n=createAgentUtility();n.selected=s.selected;for(const id of Object.keys(agentUtilityCases)){const t=s.trials[id];if(!t||![null,'short','safe'].includes(t.answer)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です');agentUtilityTotal(id,'short',t.short);agentUtilityTotal(id,'safe',t.safe);n.trials[id]={short:t.short,safe:t.safe,answer:t.answer,checked:t.checked};}return n;}
