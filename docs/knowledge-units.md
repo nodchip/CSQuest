@@ -90,7 +90,7 @@
 | MSF | MSF-Statistics | Statistics | 190 | 一部試作：依頼47で平均と中央値の比較 |
 | MSF | MSF-Linear | Linear Algebra | 191 | 一部試作：依頼50で２次元の内積と向き |
 | NC | NC-Fundamentals | Fundamentals | 198 | 未着手 |
-| NC | NC-Applications | Networked Applications | 199 | 未着手 |
+| NC | NC-Applications | Networked Applications | 199 | 一部試作：依頼62で POST の受付後の応答消失と再送 |
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
 | NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48の固定転送表と依頼61の最長接頭辞照合 |
 | NC | NC-SingleHop | Single Hop Communication | 200 | 未着手 |
@@ -158,7 +158,7 @@
 | SF | SF-Design | System Design | 297 | 未着手 |
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 未着手 |
 | SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 未着手 |
-| SPD | SPD-Web | Web Platforms | 303 | 未着手 |
+| SPD | SPD-Web | Web Platforms | 303 | 一部試作：依頼62で受付 API と再送の固定例 |
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 未着手 |
 | SPD | SPD-Robot | Robot Platforms | 304 | 一部試作：依頼28で格子上の観測と移動 |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 未着手 |
