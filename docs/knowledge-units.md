@@ -74,7 +74,7 @@
 | GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26の２次元変換と依頼64の平行・透視投影 |
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 未着手 |
-| GIT | GIT-Animation | Computer Animation | 160 | 依頼182・183でキーフレーム間の緩急と平面２関節の位置の固定例。３次元回転・リグ・モーションキャプチャなどは未対応。[詳細](git-animation.md) |
+| GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜184でキーフレーム間の緩急と平面２関節の位置・姿勢・到達範囲の固定例。３次元回転・リグ・モーションキャプチャなどは未対応。[詳細](git-animation.md) |
 | GIT | GIT-Simulation | Simulation | 161 | 未着手 |
 | GIT | GIT-Immersion | Immersion | 161 | 未着手 |
 | GIT | GIT-Interaction | Interaction | 162 | 未着手 |
