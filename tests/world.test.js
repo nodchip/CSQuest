@@ -55,3 +55,10 @@ test('the linear algebra trail connects foundations to their applications',()=>{
  assert.equal(learningTrails[0].id,'first-steps');
  const completed=['light-vectors','ruin-vector-span'];assert.equal(nextTrailQuest(trail,all,completed).level.id,'ruin-basis-coordinates');
 });
+
+test('statistics trail links summaries and probability to inference and PCA foundations',()=>{
+ const trail=findTrail('statistics'),items=trail.quests;
+ const before=(a,b)=>assert.ok(items.indexOf(a)>=0&&items.indexOf(a)<items.indexOf(b),`${a} should precede ${b}`);
+ before('arrival-records','harvest-histogram');before('harvest-histogram','harvest-quartiles');before('treasure-expectation','treasure-variance');before('lantern-signals','village-event-independence');before('crystal-regression','crystal-gaussian-likelihood');before('village-bernoulli-likelihood','crystal-gaussian-likelihood');before('crystal-gaussian-likelihood','crystal-map-ridge');before('village-confidence-interval','village-normal-interval');before('village-normal-interval','village-hypothesis-test');before('ruin-eigen-directions','ruin-pca-axis');before('ruin-orthogonal-projection','ruin-pca-axis');
+ assert.equal(nextTrailQuest(trail,all,['arrival-records','harvest-quartiles']).level.id,'harvest-histogram');
+});
