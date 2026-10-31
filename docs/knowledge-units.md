@@ -86,7 +86,7 @@
 | HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 一部試作：依頼22で三つの利用条件 |
 | HCI | HCI-Evaluation | Evaluating the Design | 178 | 一部試作：依頼60で架空４人の時間・観察と限定的な結論 |
 | HCI | HCI-Design | System Design | 179 | 依頼287・288で反復設計と同期表示の固定例。他は未対応。[詳細](hci-design.md) |
-| HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 未着手 |
+| HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 依頼359で架空の参加者と試作品を比較。他は未対応。[詳細](hci-society.md) |
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：有限集合、命題推論・反例、依頼95の数学的帰納法の固定例 |
 | MSF | MSF-Probability | Probability | 188 | 一部試作：条件付き確率、期待値と、依頼84で等確率の４札の分散 |
 | MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜115で代表値、条件別集計、度数、四分位範囲と回帰の固定例。他は未対応。[詳細](msf-statistics.md) |

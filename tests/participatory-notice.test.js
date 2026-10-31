@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createParticipation,participationFeedback,runParticipation,participationComplete,restoreParticipation} from '../src/participatory-notice.js';
+test('each fictional participant sees the issues specified in the scenario',()=>{const s=createParticipation();assert.deepEqual(participationFeedback(s.options),{ao:false,bea:false,rin:false});s.options={text:true,privateAudio:true,publicAudio:false,confirm:true};assert.deepEqual(participationFeedback(s.options),{ao:true,bea:true,rin:true});s.options.publicAudio=true;assert.equal(participationFeedback(s.options).rin,false);});
+test('listening, observing a problem, retesting, and checking are needed',()=>{let s=runParticipation(createParticipation());s.heard={ao:true,bea:true,rin:true};s.options={text:true,privateAudio:true,publicAudio:false,confirm:true};s.tested=false;s.checked=true;assert.equal(participationComplete(s),false);s=runParticipation(s);s.checked=true;assert.equal(participationComplete(s),true);assert.deepEqual(restoreParticipation(s),s);assert.throws(()=>restoreParticipation({...s,options:{}}));});
