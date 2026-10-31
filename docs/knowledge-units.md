@@ -60,8 +60,8 @@
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 未着手 |
 | FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75で優先順位と結合による構造の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75で小さな抽象構文木を操作。他は未対応。[詳細](fpl-syntax.md) |
-| FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜207で制御フロー、到達定義・固定点と不要な書込みの固定例。一般の解析は未対応。[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
-| FPL | FPL-Code | Code Generation | 142 | 命令・呼出し等と依頼207の不要な書込み除去の固定例。一般のコード生成は未対応。[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
+| FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜208で制御フロー、到達定義・固定点、不要な書込みと別の効果の固定例。一般の解析は未対応。[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
+| FPL | FPL-Code | Code Generation | 142 | 命令・呼出し等と依頼207・208の書込み除去と効果保持の固定例。一般のコード生成は未対応。[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
 | FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 呼出し・配列配置、依頼201・202の回収方式の固定例。実際の実行時機構は未対応。[詳細](fpl-execution-analysis.md#fpl-run-timenon-core) |
 | FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 未着手 |
 | FPL | FPL-Pragmatics | Language Pragmatics | 144 | 未着手 |

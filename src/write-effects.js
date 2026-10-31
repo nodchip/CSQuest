@@ -1,0 +1,8 @@
+export const effectsLevel={id:'workshop-write-effects',number:'208',kind:'write-effects',name:'消してはいけない知らせ',tag:'最適化と副作用',title:'知らせを残して手順を軽く',story:'城門に知らせる札と、ただ数を書く札があります。届ける数と門への知らせを守りながら、後で上書きされる書込みを省きましょう。'};
+export const effectsCases={quiet:{name:'数だけ書く札',signal:false},signal:{name:'知らせも出す札',signal:true}};
+export const effectsChoices={keep:'札をそのまま残す',remove:'札を丸ごと外す',signalOnly:'知らせを出すだけに置き換える'};
+export function runEffects(id,choice){if(!Object.hasOwn(effectsCases,id)||!Object.hasOwn(effectsChoices,choice))throw new RangeError('試行か操作が不正です。');const c=effectsCases[id];let x=0,signals=0;if(choice==='keep'){x=1;if(c.signal)signals++;}else if(choice==='signalOnly')signals++;x=3;return {value:x,signals,oldWrite:choice==='keep'};}
+export function effectsCorrect(id,choice){const a=runEffects(id,choice),b=runEffects(id,'keep');return a.value===b.value&&a.signals===b.signals&&!a.oldWrite;}
+export function createEffects(){return {selected:'quiet',trials:{quiet:{choice:'keep',checked:false},signal:{choice:'keep',checked:false}}};}
+export function effectsComplete(s){return Object.keys(effectsCases).every(id=>s.trials[id].checked&&effectsCorrect(id,s.trials[id].choice));}
+export function restoreEffects(saved){if(!saved||!Object.hasOwn(effectsCases,saved.selected)||!saved.trials)throw new RangeError('途中記録が不正です。');const s=createEffects();s.selected=saved.selected;for(const id of Object.keys(effectsCases)){const t=saved.trials[id];if(!t||!Object.hasOwn(effectsChoices,t.choice)||typeof t.checked!=='boolean'||(t.checked&&!effectsCorrect(id,t.choice)))throw new RangeError('途中記録が不正です。');s.trials[id]={choice:t.choice,checked:t.checked};}return s;}
