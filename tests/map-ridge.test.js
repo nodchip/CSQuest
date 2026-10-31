@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {ridgeLambdas,ridgeCandidates,ridgeScore,ridgeBest,createMapRidge,ridgeTrialValid,mapRidgeComplete,restoreMapRidge} from '../src/map-ridge.js';
+test('least squares plus Gaussian prior penalty equals the completed-square minimum',()=>{for(const l of ridgeLambdas){const best=ridgeBest(l);for(const theta of ridgeCandidates){const result=ridgeScore(l,theta);assert.equal(result.residual,2*(2-theta)**2);assert.equal(result.penalty,l*theta**2);assert.ok(Math.abs(result.total-((2+l)*(theta-best)**2+8-16/(2+l)))<1e-12);assert.ok(result.total>=ridgeScore(l,best).total);}}assert.deepEqual(ridgeLambdas.map(ridgeBest),[2,1,0.5]);});
+test('each strength requires every candidate and its minimum before completion',()=>{const s=createMapRidge();for(const l of ridgeLambdas){s.trials[l]={candidate:ridgeBest(l),tested:[...ridgeCandidates],done:true};assert.ok(ridgeTrialValid(l,s.trials[l]));}s.answer='map';s.checked=true;assert.ok(mapRidgeComplete(s));assert.deepEqual(restoreMapRidge(s),s);s.trials[2].candidate=2;assert.throws(()=>restoreMapRidge(s));});
