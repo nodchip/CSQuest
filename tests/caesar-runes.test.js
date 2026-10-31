@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {runeAlphabet,caesarCases,shiftRunes,unshiftRunes,createCaesar,caesarTrialValid,caesarComplete,restoreCaesar} from '../src/caesar-runes.js';
+test('all six shifts round-trip every rune and each clue identifies one candidate',()=>{for(let k=0;k<6;k++)assert.equal(unshiftRunes(shiftRunes(runeAlphabet,k),k),runeAlphabet);for(const [id,c] of Object.entries(caesarCases)){const valid=Array.from({length:6},(_,k)=>k).filter(k=>unshiftRunes(c.cipher,k).startsWith(c.first));assert.equal(valid.length,1,id);assert.equal(shiftRunes(unshiftRunes(c.cipher,valid[0]),valid[0]),c.cipher);}});
+test('all candidate shifts and both cases must be examined before completion',()=>{const s=createCaesar();for(const [id,k] of [['first',2],['second',3]]){s.trials[id]={shift:k,tested:[0,1,2,3,4,5],done:true};assert.ok(caesarTrialValid(id,s.trials[id]));}s.answer='few';s.checked=true;assert.ok(caesarComplete(s));assert.deepEqual(restoreCaesar(s),s);s.trials.first.tested=[2];assert.throws(()=>restoreCaesar(s));assert.throws(()=>unshiftRunes('Z',1));});

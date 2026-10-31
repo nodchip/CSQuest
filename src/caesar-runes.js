@@ -1,0 +1,10 @@
+export const caesarLevel={id:'castle-caesar-runes',number:'426',kind:'caesar-runes',name:'巡る六つの印',tag:'シフト暗号と鍵の探索',title:'封印された手紙を読もう',story:'城に６種類の印で書かれた手紙が届きました。ずらす数を変えて候補を調べ、手紙の最初の印を手がかりに読み解きます。'};
+export const runeAlphabet='ABCDEF';
+export const caesarCases={first:{name:'最初の印は A',cipher:'CDDC',first:'A'},second:{name:'最初の印は F',cipher:'CDFB',first:'F'}};
+export function shiftRunes(text,shift){if(typeof text!=='string'||![...text].every(x=>runeAlphabet.includes(x))||!Number.isInteger(shift)||shift<0||shift>=runeAlphabet.length)throw new RangeError('印かずらす数が不正です');return [...text].map(x=>runeAlphabet[(runeAlphabet.indexOf(x)+shift)%runeAlphabet.length]).join('');}
+export function unshiftRunes(text,shift){if(!Number.isInteger(shift)||shift<0||shift>=runeAlphabet.length)throw new RangeError('ずらす数が不正です');return shiftRunes(text,(runeAlphabet.length-shift)%runeAlphabet.length);}
+export function createCaesarTrial(){return {shift:0,tested:[],done:false};}
+export function caesarTrialValid(id,t){const c=caesarCases[id];return !!c&&t.tested.length===6&&new Set(t.tested).size===6&&unshiftRunes(c.cipher,t.shift).startsWith(c.first);}
+export function createCaesar(){return {selected:'first',trials:{first:createCaesarTrial(),second:createCaesarTrial()},answer:null,checked:false};}
+export function caesarComplete(s){return Object.keys(caesarCases).every(id=>s.trials[id].done&&caesarTrialValid(id,s.trials[id]))&&s.answer==='few'&&s.checked;}
+export function restoreCaesar(s){if(!s||!Object.hasOwn(caesarCases,s.selected)||!s.trials||![null,'few','unique','safe'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createCaesar();n.selected=s.selected;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(caesarCases)){const t=s.trials[id];if(!t||!Number.isInteger(t.shift)||t.shift<0||t.shift>5||!Array.isArray(t.tested)||t.tested.length>6||new Set(t.tested).size!==t.tested.length||!t.tested.every(x=>Number.isInteger(x)&&x>=0&&x<=5)||typeof t.done!=='boolean'||t.done&&!caesarTrialValid(id,t))throw new RangeError('途中記録が不正です');n.trials[id]={shift:t.shift,tested:[...t.tested],done:t.done};}return n;}
