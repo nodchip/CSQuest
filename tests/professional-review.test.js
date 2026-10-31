@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {professionalReviewResult,createProfessionalReview,runProfessionalReview,professionalReviewComplete,restoreProfessionalReview} from '../src/professional-review.js';
+test('the original fails the exact-stock case and the revision meets all three fixed checks',()=>{assert.equal(professionalReviewResult('boundary',false).match,false);for(const id of ['ordinary','boundary','zero'])assert.equal(professionalReviewResult(id,true).match,true);});
+test('limited claims, disclosure, peer review, the observed failure and rerun checks are required',()=>{let s=runProfessionalReview(createProfessionalReview(),'boundary');s.revised=true;s.tested=0;s.last=null;for(const id of ['ordinary','boundary','zero'])s=runProfessionalReview(s,id);s.disclosed=true;s.peer=true;s.report='perfect';s.checked=true;assert.equal(professionalReviewComplete(s),false);s.report='limited';assert.equal(professionalReviewComplete(s),true);assert.deepEqual(restoreProfessionalReview(s),s);assert.throws(()=>restoreProfessionalReview({...s,tested:1}));});

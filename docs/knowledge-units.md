@@ -142,7 +142,7 @@
 | SEC | SEC-Governance | Security Governance | 263 | 依頼353で復旧方針・保管・訓練の固定例。他は未対応。[詳細](sec-governance.md) |
 | SEP | SEP-Context | Social Context | 273 | 依頼358で申請経路と利用条件の固定例。他は未対応。[詳細](sep-context.md) |
 | SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 一部試作：依頼63で架空の関係者の声と３案の影響を比較 |
-| SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 未着手 |
+| SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 依頼360・367で報告とレビューの固定例。他は未対応。[詳細](sep-professional-ethics.md) |
 | SEP | SEP-IP | Intellectual Property | 277 | 依頼269・270でライセンスと出典・著作者の固定例。法的基礎、権利の種類などは未対応。[詳細](sep-ip.md) |
 | SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き |
 | SEP | SEP-Communication | Communication | 279 | 依頼295で相手に合わせた架空の報告と未確認事項の固定例。他は未対応。[詳細](sep-communication.md) |
