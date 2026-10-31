@@ -29,7 +29,7 @@
 | AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106・107・110でキャッシュ、誤り訂正と圧縮の固定例。他は未対応。[詳細](ar-memory.md) |
 | AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知の固定例。他は未対応。[詳細](ar-io.md) |
 | AR | AR-Organization | Functional Organization | 106 | 依頼158で３段階パイプラインのデータ依存、待機と転送の固定例。他は未対応。[詳細](ar-organization.md) |
-| AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 未着手 |
+| AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 依頼159で固定・２ビット分岐予測の固定例。他は未対応。[詳細](ar-performance-energy.md) |
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 未着手 |
 | AR | AR-Security | Secure Processor Architectures | 107 | 未着手 |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの重ね合わせ、H・Z と途中観測の固定例。他の範囲は未対応。[詳細](ar-quantum.md) |
