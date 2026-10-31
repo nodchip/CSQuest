@@ -1,0 +1,10 @@
+export const normalFormsLevel={id:'ruin-normal-forms',number:'406',kind:'normal-forms',name:'二つの紋章の組み方',tag:'真理値表と論理の標準形',title:'同じ扉を二つの形で開こう',story:'遺跡の扉は二つの灯りが異なるときだけ開きます。紋章を組み合わせ、二つの形で同じ条件を作りましょう。'};
+export const normalFormCases={dnf:'連言を「または」で結ぶ',cnf:'選択肢を「かつ」で結ぶ'};
+export const truthInputs=[[0,0],[0,1],[1,0],[1,1]];
+export function normalOutput(id,mask,row){if(!Object.hasOwn(normalFormCases,id)||!Number.isInteger(mask)||mask<0||mask>15||!Number.isInteger(row)||row<0||row>3)throw new RangeError('条件が不正です');return id==='dnf'?Boolean(mask&(1<<row)):!(mask&(1<<row));}
+export function normalTarget(row){return truthInputs[row][0]!==truthInputs[row][1];}
+export function normalValid(id,mask){return truthInputs.every((_,row)=>normalOutput(id,mask,row)===normalTarget(row));}
+export function createNormalTrial(){return {mask:0,observed:[],done:false};}
+export function createNormalForms(){return {selected:'dnf',input:0,trials:{dnf:createNormalTrial(),cnf:createNormalTrial()},answer:null,checked:false};}
+export function normalFormsComplete(s){return Object.keys(normalFormCases).every(id=>s.trials[id].done&&normalValid(id,s.trials[id].mask)&&s.trials[id].observed.length===4)&&s.answer==='same'&&s.checked;}
+export function restoreNormalForms(s){if(!s||!Object.hasOwn(normalFormCases,s.selected)||![0,1,2,3].includes(s.input)||!s.trials||![null,'same','some','shape'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createNormalForms();n.selected=s.selected;n.input=s.input;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(normalFormCases)){const t=s.trials[id];if(!t||!Number.isInteger(t.mask)||t.mask<0||t.mask>15||!Array.isArray(t.observed)||t.observed.length>4||new Set(t.observed).size!==t.observed.length||!t.observed.every(i=>[0,1,2,3].includes(i))||typeof t.done!=='boolean'||(t.done&&(t.observed.length!==4||!normalValid(id,t.mask))))throw new RangeError('途中記録が不正です');n.trials[id]={mask:t.mask,observed:[...t.observed],done:t.done};}return n;}

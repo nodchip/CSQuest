@@ -11,7 +11,7 @@
 | 3 | CS Core / KA Core | 帰納法、背理法などの証明法 | 依頼95で帰納法、依頼400で鳩の巣原理の背理法の固定例。一般の証明は未対応 |
 | 4 | CS Core / KA Core | 順列、組合せ、数え上げ、鳩の巣原理 | 依頼33で並べ方、46で包除、400で鳩の巣原理、404で順列と組合せの固定例。一般の数え上げと証明は未対応 |
 | 5 | CS Core / KA Core | 合同算術 | 依頼19で３による余り、405で５・７を法とする加算と乗算の固定例。一般の計算は未対応 |
-| 6 | CS Core / KA Core | 論理、真理値表、演算、推論規則、標準形、述語論理 | 依頼06の２入力の真理値表、依頼72のモーダスポネンス・反例、依頼126の有限集合上の全称条件と空の条件の固定例。一般の論理式・述語・証明は未対応 |
+| 6 | CS Core / KA Core | 論理、真理値表、演算、推論規則、標準形、述語論理 | 依頼06の２入力の真理値表、依頼72のモーダスポネンス・反例、依頼126の有限集合上の全称条件、406の２入力の標準形の固定例。一般の論理式・述語・証明は未対応 |
 | 7 | CS Core / KA Core | グラフの基本 | 依頼08・21・32などで固定グラフを操作。一般の定義や構成は未対応 |
 | 8 | CS Core / KA Core | オーダー記法 | 未着手 |
 
@@ -32,7 +32,7 @@
 | 4c–4d | CS Core | 順列・組合せの計算と具体的な数え上げモデル | 依頼33で並べ方、404で３人から２人を選ぶ順列と組合せの固定例。一般の数え上げは未対応 |
 | 5a | CS Core | 合同算術の計算 | 依頼19で３による余り、405で加算・乗算の固定例。負数や除算は未対応 |
 | 5b | CS Core | 最大公約数とユークリッドの互除法 | 依頼96で二つの固定例。一般の場合や拡張互除法は未対応 |
-| 6a–6g | CS Core | 命題・述語論理への変換、妥当性、標準形、推論、応用と限界 | 依頼06・07の論理条件と依頼72の３命題による推論・反例。一般の論理式や証明は未対応 |
+| 6a–6g | CS Core | 命題・述語論理への変換、妥当性、標準形、推論、応用と限界 | 依頼06・07の論理条件、72の推論・反例、406の標準形の固定例。一般の論理式や証明は未対応 |
 | 7a–7d | CS Core | グラフ用語、走査、モデル化、データ構造や証明・数え上げとの関連 | 依頼08・21・32などで固定グラフの操作。一般の説明やモデル化は未対応 |
 
 原典にはトピック８に対応する独立した例示学習成果の列挙はないため、トピックとして未着手を追跡する。依頼46では薬草の集合４人、魔法の集合４人、両方２人で、和集合は６人。４種類の演算について７人の全128部分集合を判定テストする。
@@ -52,3 +52,5 @@
 依頼404は３人から異なる２人を選び、役割なしの３組と先導・見張りを区別する６通りを列挙する。各組に２通りの役割が対応することを比べる。一般の公式や重複選択は未対応。[Applied Discrete Structures](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Applied_Discrete_Structures_(Doerr_and_Levasseur)/02%3A_Combinatorics/2.04%3A_Combinations_and_the_Binomial_Theorem)。
 
 依頼405は８と９を５・７で割った余りから和と積の余りを求め、元の数を直接計算した場合と比べる。非負整数の固定例で、負数や除算、一般の証明は未対応。[A Spiral Workbook for Discrete Mathematics](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/A_Spiral_Workbook_for_Discrete_Mathematics_(Kwong)/05%3A_Basic_Number_Theory/5.07%3A_Modular_Arithmetic)。
+
+依頼406は２入力が異なる場合に真となる真理値表について、選言標準形と連言標準形を札で構築し全４入力を比較する。各形の全16選択を検査。一般の式の変換や証明は未対応。[Elementary Foundations](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Foundations%3A_An_Introduction_to_Topics_in_Discrete_Mathematics_(Sylvestre)/03%3A_Boolean_algebra/3.02%3A_Disjunctive_Normal_Form)。
