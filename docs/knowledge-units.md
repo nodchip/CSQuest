@@ -16,7 +16,7 @@
 | AI | AI-NLP | Natural Language Processing | 79 | 未着手 |
 | AI | AI-Robotics | Robotics | 80 | 未着手 |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 未着手 |
-| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：隣接交換による整列、幅優先探索 |
+| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：整列、幅優先探索、重み付き最短路 |
 | AL | AL-Strategies | Algorithmic Strategies | 90 | 未着手 |
 | AL | AL-Complexity | Complexity | 91 | 未着手 |
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 未着手 |
