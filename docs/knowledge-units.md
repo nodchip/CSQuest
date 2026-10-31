@@ -5,7 +5,7 @@
 | 分野 | 単位 | 名称 | 印字ページ | 状態 |
 |---|---|---|---:|---|
 | AI | AI-Introduction | Fundamental Issues | 67 | 未着手 |
-| AI | AI-Search | Search | 68 | 一部試作：依頼08・21・42・43で固定グラフの探索と A*・見積もりの比較 |
+| AI | AI-Search | Search | 68 | 一部試作：依頼08・21・42〜44で固定探索・A* とミニマックスの例 |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 未着手 |
 | AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、既知と未使用の例での評価比較 |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 未着手 |
