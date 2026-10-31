@@ -63,3 +63,6 @@
 .morph-grid button { min-height: 2.7rem; font-weight: 700; }
 .morph-grid button { border: 1px solid #94ae99; background: #fffef8; color: #315a40; }
 .morph-grid button[aria-pressed=true] { background: #416e56; color: #fff; border-color: #416e56; }
+
+.morph-comparison { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; }
+.morph-comparison pre { padding: .6rem; background: #f5f8f0; border: 1px solid #d4dece; line-height: 1.45; }

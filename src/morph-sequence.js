@@ -1,0 +1,13 @@
+export const morphSequenceLevel={id:'ruin-morphology-sequence',number:'140',kind:'morphsequence',name:'紋章を直す二つの術',tag:'オープニングとクロージング',title:'汚れと穴を整える',story:'遺跡の二つの紋章に、孤立した汚れと小さな穴が見つかりました。二つの術を組み合わせ、目標の紋章を作りましょう。'};
+const block=Array.from({length:7},(_,r)=>Array.from({length:7},(_,c)=>Number(r>=2&&r<=4&&c>=2&&c<=4)));
+const noise=block.map(row=>row.slice());noise[0][0]=1;
+const hole=block.map(row=>row.slice());hole[3][3]=0;
+export const morphSequenceCases={noise:{name:'孤立した汚れ',image:noise,target:[[2,3],[3,2],[3,3],[3,4],[4,3]]},hole:{name:'中央の穴',image:hole,target:Array.from({length:9},(_,i)=>[2+Math.floor(i/3),2+i%3])}};
+export const morphSequenceActions={erode:'収縮',dilate:'膨張'};
+export function morphTransform(image,operation){if(!Object.hasOwn(morphSequenceActions,operation)||!Array.isArray(image)||image.length!==7||image.some(row=>!Array.isArray(row)||row.length!==7||row.some(value=>value!==0&&value!==1)))throw new RangeError('画像または操作が不正です。');return image.map((row,r)=>row.map((_,c)=>{const values=[[0,0],[-1,0],[1,0],[0,-1],[0,1]].map(([dr,dc])=>image[r+dr]?.[c+dc]??0);return Number(operation==='dilate'?values.some(Boolean):values.every(Boolean));}));}
+export function morphTarget(id){if(!Object.hasOwn(morphSequenceCases,id))throw new RangeError('紋章が不正です。');const result=Array.from({length:7},()=>Array(7).fill(0));for(const [r,c] of morphSequenceCases[id].target)result[r][c]=1;return result;}
+export function morphCurrent(id,history){if(!Object.hasOwn(morphSequenceCases,id)||!Array.isArray(history)||history.length>2)throw new RangeError('履歴が不正です。');return history.reduce((image,action)=>morphTransform(image,action),morphSequenceCases[id].image.map(row=>row.slice()));}
+export function morphSequenceCorrect(id,c){return c.checked&&c.history.length===2&&JSON.stringify(morphCurrent(id,c.history))===JSON.stringify(morphTarget(id));}
+export function createMorphSequence(){return {selected:'noise',choices:{noise:{history:[],checked:false},hole:{history:[],checked:false}}};}
+export function restoreMorphSequence(s){if(!s||!Object.hasOwn(morphSequenceCases,s.selected)||!s.choices)throw new RangeError('途中記録が不正です。');const r=createMorphSequence();r.selected=s.selected;for(const id of Object.keys(morphSequenceCases)){const c=s.choices[id];if(!c||!Array.isArray(c.history)||c.history.length>2||c.history.some(action=>!Object.hasOwn(morphSequenceActions,action))||typeof c.checked!=='boolean')throw new RangeError('術の記録が不正です。');r.choices[id]={history:c.history.slice(),checked:c.checked};}return r;}
+export function morphSequenceComplete(s){return Object.keys(morphSequenceCases).every(id=>morphSequenceCorrect(id,s.choices[id]));}
