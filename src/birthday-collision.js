@@ -1,0 +1,5 @@
+export const birthdayLevel={id:'castle-birthday-collision',number:'264',kind:'birthday-collision',name:'紋章の衝突を調べる',tag:'誕生日の逆説と衝突',title:'同じ印はいつ現れる？',story:'八種類の印を持つ巻物を調べ、どのような一致が起きるか比べます。'};
+export function birthdayProbability(draws){if(!Number.isInteger(draws)||draws<0||draws>9)throw new RangeError('巻物の数が不正です。');let distinct=1;for(let i=0;i<draws;i++)distinct*=Math.max(0,8-i)/8;return {collision:1-distinct,target:1-(7/8)**draws};}
+export function createBirthday(){return {draws:1,seen:[1],answer:null,checked:false};}
+export function birthdayComplete(s){return [1,4,9].every(n=>s.seen.includes(n))&&s.answer==='collision'&&s.checked;}
+export function restoreBirthday(saved){if(!saved||!Number.isInteger(saved.draws)||saved.draws<1||saved.draws>9||!Array.isArray(saved.seen)||saved.seen.length>9||new Set(saved.seen).size!==saved.seen.length||!saved.seen.includes(saved.draws)||!saved.seen.every(n=>Number.isInteger(n)&&n>=1&&n<=9)||![null,'collision','target'].includes(saved.answer)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');return {draws:saved.draws,seen:[...saved.seen],answer:saved.answer,checked:saved.checked};}
