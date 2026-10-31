@@ -112,7 +112,7 @@
 | OS | OS-Advanced-Files | Advanced File systems | 212 | 未着手 |
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと仮想マシンのカーネルの固定模型。他は未対応。[詳細](os-virtualization.md) |
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
-| OS | OS-Faults | Fault tolerance | 214 | 未着手 |
+| OS | OS-Faults | Fault tolerance | 214 | 依頼136で DB の先行ログ復旧の固定模型。OS の障害耐性は未対応。[詳細](os-faults.md) |
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 未着手 |
 | PDC | PDC-Programs | Programs | 219 | 依頼130で２主体に分けた小計と集約の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
