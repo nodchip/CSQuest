@@ -66,7 +66,7 @@
 | FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 依頼325〜327で遅延評価、無限列と引数の共有の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-constructs) |
 | FPL | FPL-Pragmatics | Language Pragmatics | 144 | 依頼325〜327で遅延評価と先行評価の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-pragmatics) |
 | FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281〜284で操作的意味論、記号実行、ラムダ簡約と構造的帰納法の固定例。他は未対応。[詳細](fpl-formalism.md) |
-| FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 未着手 |
+| FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 依頼242〜244・282・284・349で固定例の契約、模型探索、記号経路と入力変異。他は未対応。[詳細](fpl-methodologies.md) |
 | FPL | FPL-Design | Design Principles of Programming Languages | 146 | 未着手 |
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 未着手 |
 | GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 依頼83で三角形の標本、依頼221・222で光の値の量子化と時間方向の読み取りの固定例。他は未対応。[詳細](git-fundamentals.md) |
