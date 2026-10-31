@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createReplica,replicaStep,replicaComplete,restoreReplica} from '../src/replica-lag.js';
+test('a partition delays a single update; the replica serves stale data until delivery',()=>{let s=createReplica();s=replicaStep(s,'write');assert.deepEqual([s.primary,s.replica],[3,4]);s=replicaStep(s,'readReplica');s=replicaStep(s,'readPrimary');s=replicaStep(s,'deliver');assert.equal(s.replica,4);assert.equal(s.pending,true);s=replicaStep(s,'heal');assert.equal(s.replica,4);s=replicaStep(s,'deliver');assert.deepEqual([s.primary,s.replica],[3,3]);s=replicaStep(s,'readReplica');assert.equal(replicaComplete(s),true);assert.equal(replicaComplete(restoreReplica({history:s.history})),true);});
+test('invalid actions do not advance and restoring rejects impossible histories',()=>{let s=createReplica();assert.equal(replicaStep(s,'deliver').history.length,0);s=replicaStep(s,'write');assert.equal(replicaStep(s,'write').history.length,1);assert.throws(()=>restoreReplica({history:['deliver']}));assert.throws(()=>replicaStep(s,'unknown'));});
