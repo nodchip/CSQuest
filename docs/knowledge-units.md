@@ -109,7 +109,7 @@
 | OS | OS-Memory | Memory Management | 210 | 一部試作：依頼34・40・137でページ置換、住所変換と枠数の固定例 |
 | OS | OS-Devices | Device management | 211 | 依頼105・132で通知と DMA の固定模型。他は未対応。[詳細](os-devices.md) |
 | OS | OS-Files | File Systems API and Implementation | 212 | 依頼77でファイルの名前・実体・ハードリンクと開いた参照の固定例。他は未対応。[詳細](os-files.md) |
-| OS | OS-Advanced-Files | Advanced File systems | 212 | 未着手 |
+| OS | OS-Advanced-Files | Advanced File systems | 212 | 依頼290でスナップショットと共有ブロックの固定例。他は未対応。[詳細](os-advanced-files.md) |
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと仮想マシンのカーネルの固定模型。他は未対応。[詳細](os-virtualization.md) |
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136で DB の先行ログ、181でバックアップ復元の固定模型。実 OS の障害耐性は未対応。[詳細](os-faults.md) |

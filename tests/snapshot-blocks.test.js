@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createSnapshot,snapshotStep,snapshotRefs,snapshotComplete,restoreSnapshot} from '../src/snapshot-blocks.js';
+test('snapshot retains old blocks and deleting one version only releases unreferenced blocks',()=>{let s=createSnapshot();const act=a=>s=snapshotStep(s,a);act('snap1');assert.deepEqual(snapshotRefs(s).A0,['現在','写し１']);act('writeA');assert.deepEqual(snapshotRefs(s).A0,['写し１']);act('snap2');act('writeB');act('drop1');const refs=snapshotRefs(s);assert.equal(refs.A0,undefined);assert.deepEqual(refs.B0,['写し２']);assert.deepEqual(refs.A1,['現在','写し２']);assert.equal(snapshotComplete(s),false);act('inspect2');assert.equal(snapshotComplete(s),true);assert.deepEqual(restoreSnapshot(s),s);});
+test('taking a snapshot after the old A was changed cannot satisfy the preservation task',()=>{let s=createSnapshot();for(const action of ['writeA','snap1','snap2','writeB','drop1','inspect2'])s=snapshotStep(s,action);assert.equal(snapshotComplete(s),false);assert.throws(()=>restoreSnapshot({history:['snap2']}));});
