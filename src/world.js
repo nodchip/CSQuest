@@ -14,3 +14,16 @@ export function visibleQuests(levels,regionId){
   const region=findRegion(regionId);
   return levels.map((level,index)=>({level,index})).filter(({level})=>!region||region.quests.includes(level.id));
 }
+
+export const storyScenes=[
+  {id:'beginning',threshold:0,title:'消えかけた道しるべ',speaker:'ギルド長 ミラ',text:'旅人たちを導く、ギルドの塔の灯りが弱くなっているの。各地から届く知らせも、少しずつ途切れがちになったわ。精霊のノノと一緒に、困っている人の声を聞いてくれない？'},
+  {id:'first-light',threshold:1,title:'小さな知らせ',speaker:'精霊 ノノ',text:'見て、塔の灯りが少し明るくなった！ 助けた場所から届く知らせが、灯りに力を分けているみたい。次はどこへ行こう？'},
+  {id:'connections',threshold:4,title:'つながる道',speaker:'ギルド長 ミラ',text:'各地で生まれた工夫が、別の場所にも届き始めたわ。一つのやり方が、別の困りごとを解く手がかりになることもあるのね。'},
+  {id:'beacon',threshold:8,title:'八つの知らせと塔の灯り',speaker:'精霊 ノノ',text:'八つの場所から知らせが届いたよ！ 塔の灯りが、また遠くまで道を照らしている。これで旅人たちも、助けを求める声を見つけやすくなるね。ミラと一緒に、これからも世界を巡ろう！'},
+];
+export function storyProgress(completed){
+  const done=new Set(completed);
+  const visited=regions.filter(region=>region.quests.some(id=>done.has(id)));
+  const scenes=storyScenes.filter(scene=>scene.threshold<=visited.length);
+  return {visited,scenes,current:scenes.at(-1),next:storyScenes.find(scene=>scene.threshold>visited.length)||null};
+}
