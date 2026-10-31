@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createInfiniteLists,infinitePair,diagonalRows,diagonalValid,infiniteListsComplete,restoreInfiniteLists} from '../src/infinite-lists.js';
+test('pairing and flipped diagonal give a distinct prefix for each row',()=>{let s=createInfiniteLists();assert.equal(infinitePair(s,2),null);for(const n of [0,2,4,6])s=infinitePair(s,n);s.digits=diagonalRows.map((row,i)=>1-row[i]);assert.equal(diagonalValid(s.digits),true);for(let i=0;i<4;i++)assert.notEqual(s.digits[i],diagonalRows[i][i]);s.diagonalChecked=true;s.answer='diagonal';s.checked=true;assert.equal(infiniteListsComplete(s),true);assert.deepEqual(restoreInfiniteLists(s),s);});
+test('all 16 finite diagonals have exactly one valid flip and forged saves fail',()=>{let count=0;for(let n=0;n<16;n++){const bits=Array.from({length:4},(_,i)=>(n>>i)&1);if(diagonalValid(bits))count++;}assert.equal(count,1);const s=createInfiniteLists();assert.throws(()=>restoreInfiniteLists({...s,diagonalChecked:true}));assert.throws(()=>restoreInfiniteLists({...s,paired:5}));});

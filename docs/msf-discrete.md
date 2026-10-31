@@ -6,7 +6,7 @@
 
 | 番号 | 分類 | 内容と現状 |
 |---:|---|---|
-| 1 | CS Core / KA Core | 集合、関係、関数、濃度 | 依頼46で有限集合の演算、依頼401で３対３の関係、402で異なる有限集合間の単射・全射の固定例。無限集合や一般の証明は未対応 |
+| 1 | CS Core / KA Core | 集合、関係、関数、濃度 | 依頼46で有限集合の演算、依頼401・402で有限集合の関係、403で可算と対角線論法の例。一般の証明は未対応 |
 | 2 | CS Core / KA Core | 再帰的な数学的定義 | 依頼33で並べ方の個数を小さい問題に帰着。一般の定義・漸化式は未対応 |
 | 3 | CS Core / KA Core | 帰納法、背理法などの証明法 | 依頼95で帰納法、依頼400で鳩の巣原理の背理法の固定例。一般の証明は未対応 |
 | 4 | CS Core / KA Core | 順列、組合せ、数え上げ、鳩の巣原理 | 依頼33で並べ方、46で包除、400で鳩の巣原理の固定例。一般の数え上げと証明は未対応 |
@@ -23,7 +23,7 @@
 | 1b | CS Core | 集合・関数・関係の操作 | 依頼46で集合操作、401で関係・関数の固定例。一般の操作は未対応 |
 | 1c | CS Core | 具体例を適切なモデルに対応づけ解釈 | 依頼46で仲間と印を集合として解釈。一般のモデル化は未対応 |
 | 1d | CS Core | 有限集合の大きさと和・積・包除 | 依頼46で２集合の包除の一例。一般の計算、積の法則は未対応 |
-| 1e | CS Core | 有限・可算・非可算の区別 | 未着手 |
+| 1e | CS Core | 有限・可算・非可算の区別 | 依頼403で自然数と偶数の対応、無限二進列の対角線論法の固定例。実数や一般の集合は未対応 |
 | 2a | CS Core | 再帰的な定義を適用 | 依頼33で並べ方の固定例。他の構造は未対応 |
 | 2b–2e | CS Core | 帰納法による証明、漸化式の解法・分析・閉形式 | 依頼95で奇数の和の帰納法を選択式で構成。一般の漸化式や証明は未対応 |
 | 3a–3f | CS Core | 証明法の識別・構造・適用・選択、再帰と帰納法、弱い帰納法と強い帰納法 | 依頼95で基底と帰納段階の固定例。他の証明法や強い帰納法は未対応 |
@@ -46,3 +46,5 @@
 依頼401では３人と３つの紋章の関係を構築し、関数・単射・全射と、線が０本または２本のため関数でない例を比較する。全512関係を独立した定義で検査した。無限集合、異なる大きさの集合や一般の証明は未対応。[Discrete Mathematics for Computer Science](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_for_Computer_Science_(Fitch)/03%3A_Functions/3.01%3A_Functions)。
 
 依頼402は２人から３紋章への単射で非全射・単射でも全射でもない例、３人から２紋章への全射で非単射の例を構築する。２対３の全９関数と３対２の全８関数を検査。無限集合や一般の証明は未対応。[Discrete Mathematics for Computer Science](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_for_Computer_Science_(Fitch)/03%3A_Functions/3.01%3A_Functions)。
+
+依頼403は自然数と０以上の偶数を２倍で対応させ、４行４桁の模型で対角桁を反転する。画面の有限例とは別に、任意の無限一覧から各行と異なる無限列を構成する理由を示す。小数表記や実数への拡張、自由な証明は未対応。[Transition to Higher Mathematics](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_(Dumas_and_McCarthy)/06%3A_New_Page/6.03%3A_New_Page)。
