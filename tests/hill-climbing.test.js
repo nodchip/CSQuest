@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {terrain,betterNeighbors,createHill,hillMove,hillStop,hillRestart,hillComplete,restoreHill} from '../src/hill-climbing.js';
+test('enumerated terrain has two local maxima but only E is globally maximal',()=>{const local=Object.keys(terrain).filter(x=>terrain[x].neighbors.every(n=>terrain[n].score<=terrain[x].score));assert.deepEqual(local,['C','E']);assert.equal(Math.max(...Object.values(terrain).map(x=>x.score)),10);assert.deepEqual(betterNeighbors('A'),['B']);assert.deepEqual(betterNeighbors('D'),['A','E']);});
+test('strict ascent, stops and restart are validated across saved state',()=>{let s=createHill();assert.equal(hillMove(s,'D'),false);assert.equal(hillStop(s),false);assert.ok(hillMove(s,'B'));assert.ok(hillMove(s,'C'));assert.ok(hillStop(s));assert.ok(hillRestart(s));assert.equal(hillMove(s,'A'),false);assert.ok(hillMove(s,'E'));assert.ok(hillStop(s));assert.deepEqual(restoreHill(s),s);s.answer='local';s.checked=true;assert.equal(hillComplete(s),true);assert.throws(()=>restoreHill({...s,first:['A','D','C']}));});
