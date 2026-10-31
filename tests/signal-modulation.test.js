@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {modulationModes,modulationSymbol,createModulation,modulationCorrect,modulationComplete,restoreModulation} from '../src/signal-modulation.js';
+test('amplitude changes only amplitude and frequency changes only cycles in the fixed symbols',()=>{for(const mode of Object.keys(modulationModes))for(let i=0;i<4;i++){const s=modulationSymbol(mode,i),bit=modulationModes[mode].bits[i];assert.equal(s.amplitude,mode==='amplitude'?(bit?1:0.5):1);assert.equal(s.cycles,mode==='frequency'?(bit?2:1):1);}assert.throws(()=>modulationSymbol('frequency',4),RangeError);});
+test('both sequences must be chosen and checked, and restored data is copied',()=>{const s=createModulation();for(const mode of Object.keys(modulationModes))s.answers[mode]={bits:[...modulationModes[mode].bits],checked:true};const copy=restoreModulation(s);assert.equal(modulationComplete(copy),true);s.answers.frequency.bits[0]=1;assert.equal(modulationCorrect(s,'frequency'),false);assert.equal(modulationComplete(s),false);assert.throws(()=>restoreModulation({...copy,selected:'other'}),RangeError);});

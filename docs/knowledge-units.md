@@ -96,7 +96,7 @@
 | NC | NC-Applications | Networked Applications | 199 | 一部試作：依頼62で POST の受付後の応答消失と再送 |
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
 | NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48の固定転送表と依頼61の最長接頭辞照合 |
-| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜277でスイッチ、VLAN、衝突、再送とフレーム化の固定例。変調、実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
+| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調の固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
 | NC | NC-Security | Network Security | 200 | 未着手 |
 | NC | NC-Mobility | Mobility | 201 | 未着手 |
 | NC | NC-Emerging | Emerging Topics | 201 | 未着手 |
