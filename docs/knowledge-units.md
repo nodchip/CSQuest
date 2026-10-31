@@ -130,7 +130,7 @@
 | SE | SE-Refactoring | Refactoring and Code Evolution | 249 | 未着手 |
 | SE | SE-Reliability | Software Reliability | 250 | 未着手 |
 | SE | SE-Formal | Formal Methods | 251 | 未着手 |
-| SEC | SEC-Foundations | Foundational Security | 257 | 未着手 |
+| SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
 | SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 未着手 |
 | SEC | SEC-Coding | Secure Coding | 259 | 未着手 |
 | SEC | SEC-Crypto | Cryptography | 260 | 未着手 |
