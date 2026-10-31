@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createDynamicLoad,dynamicLoadStep,dynamicLoadComplete,restoreDynamicLoad} from '../src/dynamic-load.js';
+test('missing dependency and missing symbol fail at distinct stages, then recover',()=>{const s=createDynamicLoad();for(const id of ['missing','symbol']){let t=s.trials[id];for(const a of ['compile','link','load'])t=dynamicLoadStep(t,a);if(id==='missing')assert.equal(t.stage,'repair');else {assert.equal(t.stage,'bind');t=dynamicLoadStep(t,'bind');assert.equal(t.stage,'repair');}for(const a of ['repair','load','bind','run'])t=dynamicLoadStep(t,a);assert.equal(t.stage,'done');assert.equal(t.failed,true);s.trials[id]=t;}s.answer='dependency';s.checked=true;assert.equal(dynamicLoadComplete(s),true);assert.deepEqual(restoreDynamicLoad(s),s);});
+test('skipped stages and forged history are rejected',()=>{const s=createDynamicLoad();assert.equal(dynamicLoadStep(s.trials.missing,'run'),null);assert.throws(()=>restoreDynamicLoad({...s,trials:{...s.trials,missing:{history:['compile','run']}}}));});
