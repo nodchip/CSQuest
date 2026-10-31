@@ -1,0 +1,78 @@
+import { commands, levels, runScenarios } from './engine.js';
+import { sortingLevel, swapAdjacent, isSorted } from './sorting.js';
+import { circuitLevel, gates, evaluateCircuit } from './circuit.js';
+
+const allLevels = [...levels, sortingLevel, circuitLevel];
+
+const app = document.querySelector('#app');
+const storageKey = 'csquest-progress-v1';
+let completed = [];
+let storageAvailable = true;
+try { const saved = JSON.parse(localStorage.getItem(storageKey) || '[]'); if (Array.isArray(saved)) completed = saved.filter(id => allLevels.some(level => level.id === id)); } catch { storageAvailable = false; }
+let active = null;
+let program = [];
+let result = null;
+let frame = 0;
+let scenarioIndex = 0;
+let hintOpen = false;
+let stones = [];
+let swapCount = 0;
+let circuitParts = ['AND', 'AND'];
+let circuitRows = null;
+
+function save() {
+  try { localStorage.setItem(storageKey, JSON.stringify(completed)); storageAvailable = true; }
+  catch { storageAvailable = false; }
+}
+function renderHome() {
+  active = null;
+  const finished = completed.length;
+  app.innerHTML = `<section class="hero"><div class="hero-copy"><div class="eyebrow"><span></span> A LITTLE ADVENTURE IN COMPUTER SCIENCE</div><p class="chapter">はじまりの地域 ／ 精霊の工房</p><h1>ひらめきが、<br><em>道をひらく。</em></h1><p class="intro">不思議な依頼が届く冒険者ギルド。<br>精霊たちと手を取り、世界のしくみを解き明かそう。</p><a href="#quests" class="primary hero-button">依頼を見に行く <span>↗</span></a><p class="hero-note">✧　知識は、冒険の道具になる。</p></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="moon"></div><div class="spark spark-a">✦</div><div class="spark spark-b">✧</div><div class="spark spark-c">✧</div><div class="tower"><div class="roof"></div><div class="tower-body"><i></i><i></i><i></i><div class="tower-door"></div></div></div><div class="ground"></div><div class="art-caption">THE SPIRIT WORKSHOP<br><span>精霊の工房</span></div></div></section><section id="quests" class="quests"><div class="section-head"><div><div class="eyebrow"><span></span> QUEST BOARD</div><h2>ギルドの依頼</h2><p>気になる依頼から始めよう。はじめてなら 01 からがおすすめ。</p></div><div class="progress"><span>冒険の記録</span><strong>${finished}<small> / ${allLevels.length}</small></strong><span>依頼を達成</span></div></div><div class="quest-grid">${allLevels.map((l,i)=>`<button class="quest-card" data-level="${i}"><span class="card-top"><span>QUEST ${l.number}</span><span>${completed.includes(l.id)?'✓ 達成済み':'未達成'}</span></span><span class="card-icon">${['✦','◇','♜','✧','◈','⌘'][i] || '✦'}</span><span class="card-tag">${l.tag}を学ぶ</span><strong>${l.name}</strong><span class="card-story">${l.story}</span><span class="card-link">依頼を見る <b>↗</b></span></button>`).join('')}</div><div class="notice"><span>✧</span><p><strong>学びについて</strong><br>依頼では、命令や整列、論理回路などの仕組みを体験します。ゲーム内の操作は、実際のプログラミング言語を書く練習とは異なります。CS2023 のすべての範囲はまだ収録していません。</p></div></section>`;
+  app.querySelectorAll('[data-level]').forEach(button => button.addEventListener('click', () => { active=allLevels[Number(button.dataset.level)]; program=[]; result=null; frame=0; scenarioIndex=0; hintOpen=false; if (active.kind === 'sorting') { stones=active.initial.slice(); swapCount=0; renderSorting(); } else if (active.kind === 'circuit') { circuitParts=['AND','AND']; circuitRows=null; renderCircuit(); } else renderQuest(); window.scrollTo(0,0); }));
+}
+function renderCircuit() {
+  const success = circuitRows && circuitRows.every(row => row.correct);
+  const selectGate = (index, label) => `<label class="gate-choice">${label}<select data-gate="${index}">${Object.entries(gates).map(([id, gate])=>`<option value="${id}" ${circuitParts[index]===id?'selected':''}>${gate.label}</option>`).join('')}</select><small>${gates[circuitParts[index]].description}</small></label>`;
+  app.innerHTML = `<div class="quest-page"><button class="back" id="back">← ギルドに戻る</button><div class="quest-heading"><div><div class="eyebrow"><span></span> QUEST ${active.number} ／ ${active.tag}</div><h1>${active.title}</h1><p>${active.story}</p></div><span class="chapter-badge">灯火の遺跡 <b>✦</b></span></div><section class="panel circuit-panel"><div class="panel-header"><div><span class="panel-kicker">THE LANTERN GATE</span><h2>灯火の回路を組もう</h2></div></div><p class="panel-description">０は消灯、１は点灯です。灯火ＡとＢの信号は、上と下の両方の部品に届きます。上と下の出力を、最後の「両方」部品に渡します。</p><div class="circuit-layout"><div class="circuit-input">灯火 Ａ<br>灯火 Ｂ</div><div class="circuit-arrow" aria-hidden="true">→</div><div class="gate-stack">${selectGate(0,'上の部品')}${selectGate(1,'下の部品')}</div><div class="circuit-arrow" aria-hidden="true">→</div><div class="final-gate">両方<br><small>AND</small></div><div class="circuit-arrow" aria-hidden="true">→</div><div class="circuit-input">門</div></div><button id="circuit-test" class="primary execute">４通りの灯火で試す <span>→</span></button><button id="hint" class="hint-button" aria-expanded="${hintOpen}">✧ ヒント ${hintOpen?'を閉じる':'を見る'}</button>${hintOpen?'<p class="hint-text">片方だけが１のときは「少なくとも一方が１」であり、かつ「両方が１ではない」状態です。</p>':''}</section>${circuitRows?`<section class="result panel" aria-live="polite"><div class="result-title"><span>${success?'✦':'↻'}</span><div><span class="panel-kicker">${success?'QUEST COMPLETE':'TRY AGAIN'}</span><h2>${success?'灯火の門が開きました！':'まだ開かない組み合わせがあります'}</h2></div></div><p>${success?'この回路は、どちらか片方だけが１のときに１を出します。この動作を排他的論理和（XOR）といいます。':'目標と実際を見比べ、部品を選び直してもう一度試しましょう。'}</p><div class="truth-wrap"><table class="truth-table"><caption>４通りの試験結果（１は点灯または開く）</caption><thead><tr><th scope="col">Ａ</th><th scope="col">Ｂ</th><th scope="col">上</th><th scope="col">下</th><th scope="col">目標</th><th scope="col">実際</th><th scope="col">判定</th></tr></thead><tbody>${circuitRows.map(row=>`<tr><td>${row.a}</td><td>${row.b}</td><td>${row.upper}</td><td>${row.lower}</td><td>${row.expected}</td><td>${row.actual}</td><td>${row.correct?'一致':'不一致'}</td></tr>`).join('')}</tbody></table></div>${success&&!storageAvailable?'<p class="storage-warning">進捗を保存できませんでした。ブラウザの保存設定を確認してください。</p>':''}<button class="text-link" id="return">ギルドの依頼へ戻る →</button></section>`:''}<aside class="reference">学びの手がかり：CS2023 <a href="https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf" target="_blank" rel="noopener noreferrer">AR-Logic ↗</a>　｜　この依頼は組合せ回路の一部を扱います。</aside></div>`;
+  app.querySelector('#back').onclick=renderHome;
+  app.querySelectorAll('[data-gate]').forEach(select=>select.onchange=()=>{const index=Number(select.dataset.gate); circuitParts[index]=select.value; circuitRows=null; renderCircuit(); app.querySelector(`[data-gate="${index}"]`).focus();});
+  app.querySelector('#hint').onclick=()=>{hintOpen=!hintOpen;renderCircuit();app.querySelector('#hint').focus();};
+  app.querySelector('#circuit-test').onclick=()=>{circuitRows=evaluateCircuit(...circuitParts); if(circuitRows.every(row=>row.correct)){if(!completed.includes(active.id)) completed.push(active.id);save();}renderCircuit();app.querySelector('.result').scrollIntoView({block:'nearest'});app.querySelector('#return').focus();};
+  if(circuitRows) app.querySelector('#return').onclick=renderHome;
+}
+function renderSorting() {
+  const done = isSorted(stones);
+  app.innerHTML = `<div class="quest-page"><button class="back" id="back">← ギルドに戻る</button><div class="quest-heading"><div><div class="eyebrow"><span></span> QUEST ${active.number} ／ アルゴリズムの基礎</div><h1>${active.title}</h1><p>${active.story}</p></div><span class="chapter-badge">古代の祭壇 <b>✦</b></span></div><section class="panel sorting-panel"><div class="panel-header"><div><span class="panel-kicker">THE ANCIENT ALTAR</span><h2>魔石を小さい順に</h2></div><span class="count">入れ替え ${swapCount} 回</span></div><p class="panel-description">となり合う２つの魔石の間にある矢印を選ぶと、位置が入れ替わります。</p><div class="stones" aria-label="魔石の並び">${stones.map((stone, i) => `<span class="stone" aria-label="${i+1}番目は${stone}">${stone}</span>${i < stones.length-1 ? `<button class="swap" data-swap="${i}" aria-label="${stone}と${stones[i+1]}を入れ替える">⇄</button>` : ''}`).join('')}</div><div class="sorting-actions"><button class="hint-button" id="hint" aria-expanded="${hintOpen}">✧ ヒント ${hintOpen ? 'を閉じる' : 'を見る'}</button><button class="text-link" id="reset">最初から並べ直す ↺</button></div>${hintOpen ? '<p class="hint-text">左から隣り合う数字を比べ、左が大きければ入れ替えてみましょう。何度か繰り返すと、少しずつ整います。</p>' : ''}</section>${done ? `<section class="result panel" aria-live="polite"><div class="result-title"><span>✦</span><div><span class="panel-kicker">QUEST COMPLETE</span><h2>祭壇に光が戻りました！</h2></div></div><p>隣り合う魔石を比較して入れ替える操作は、整列アルゴリズムの基本になります。最初の並びには、大きい数が小さい数より前にある組が５組あります。隣同士を一度入れ替えると、この数は１だけ変わるため、この並びを整えるには少なくとも５回の入れ替えが必要です。今回は ${swapCount} 回でした。</p>${!storageAvailable ? '<p class="storage-warning">進捗を保存できませんでした。ブラウザの保存設定を確認してください。</p>' : ''}<button class="text-link" id="return">ギルドの依頼へ戻る →</button></section>` : ''}<aside class="reference">学びの手がかり：CS2023 <a href="https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf" target="_blank" rel="noopener noreferrer">AL-Foundational / SDF-Algorithms ↗</a>　｜　この依頼は整列の一部を扱います。</aside></div>`;
+  app.querySelector('#back').onclick = renderHome;
+  app.querySelector('#hint').onclick = () => { hintOpen = !hintOpen; renderSorting(); app.querySelector('#hint').focus(); };
+  app.querySelector('#reset').onclick = () => { stones = active.initial.slice(); swapCount = 0; renderSorting(); app.querySelector('#reset').focus(); };
+  app.querySelectorAll('[data-swap]').forEach(button => button.onclick = () => {
+    const index = Number(button.dataset.swap);
+    stones = swapAdjacent(stones, index); swapCount++;
+    if (isSorted(stones)) { if (!completed.includes(active.id)) completed.push(active.id); save(); }
+    renderSorting();
+    app.querySelector(`[data-swap="${index}"]`).focus();
+  });
+  if (done) app.querySelector('#return').onclick = renderHome;
+}
+function renderQuest() {
+  const l=active;
+  const scenario = l.scenarios?.[scenarioIndex];
+  const view = { ...l, ...scenario };
+  const trace = result?.cases[scenarioIndex].trace;
+  const current=trace ? trace[frame] : {x:view.start[0],y:view.start[1],direction:view.direction};
+  const cells=[];
+  for (let y=0;y<l.rows;y++) for(let x=0;x<l.cols;x++) {
+    const wall=view.walls.some(([wx,wy])=>wx===x&&wy===y), goal=view.goal[0]===x&&view.goal[1]===y, spirit=current.x===x&&current.y===y;
+    cells.push(`<div class="tile ${wall?'wall':''} ${goal?'goal':''}" role="gridcell" aria-label="${x+1}列 ${y+1}行 ${wall?'壁':goal?'目的地':'道'}${spirit?'、精霊、'+['上','右','下','左'][current.direction]+'向き':''}">${wall?'':goal?'<span class="goal-symbol">✦</span>':''}${spirit?`<span class="spirit" aria-hidden="true">${['↑','→','↓','←'][current.direction]}</span>`:''}</div>`);
+  }
+  app.innerHTML=`<div class="quest-page"><button class="back" id="back">← ギルドに戻る</button><div class="quest-heading"><div><div class="eyebrow"><span></span> QUEST ${l.number} ／ ${l.tag}</div><h1>${l.title}</h1><p>${l.story}</p></div><span class="chapter-badge">精霊の工房 <b>✦</b></span></div><div class="play-layout"><section class="map-panel panel"><div class="panel-header"><div><span class="panel-kicker">THE WORKSHOP</span><h2>精霊の通り道</h2></div><span class="legend">✦ 灯りのかけら</span></div>${l.scenarios?`<div class="scenario-selector" role="group" aria-label="試す道を選択">${l.scenarios.map((item,i)=>`<button data-scenario="${i}" aria-pressed="${i===scenarioIndex}">${item.name}${result ? (result.cases[i].success?' ✓':' ✕') : ''}</button>`).join('')}</div><p class="scenario-explanation">同じ命令を両方の道で試します。道の名前を選ぶと地図を切り替えられます。</p>`:''}<div class="map-wrap"><div class="map-grid" role="grid" aria-label="精霊の通り道" style="--cols:${l.cols}">${cells.join('')}</div></div><div class="map-bottom"><span>✦　精霊は矢印の方向を向いています</span><span>${l.cols} × ${l.rows} の地図</span></div></section><section class="command-panel panel"><div class="panel-header"><div><span class="panel-kicker">YOUR INSTRUCTIONS</span><h2>精霊へのおねがい</h2></div><span class="count">${program.length} <small>/ ${l.max}</small></span></div><p class="panel-description">命令を選んで上から順に並べよう。</p><div class="program" aria-label="命令の順番">${program.length?program.map((id,i)=>`<div class="command-row"><span class="step-no">${String(i+1).padStart(2,'0')}</span><span class="command-icon">${commands[id].icon}</span><span class="command-name">${commands[id].label}</span><button class="remove" data-remove="${i}" aria-label="${i+1}番目の${commands[id].label}を削除">×</button></div>`).join(''):'<div class="empty">ここに命令を並べましょう <span>↓</span></div>'}</div><p class="palette-title">命令を追加 <span>／ 選ぶと末尾に加わります</span></p><div class="palette">${l.available.map(id=>`<button data-command="${id}" ${program.length>=l.max?'disabled':''} title="${commands[id].description}"><span>${commands[id].icon}</span>${commands[id].label} <b>＋</b></button>`).join('')}</div><button id="execute" class="primary execute" ${program.length?'':'disabled'}>命令を実行する <span>→</span></button><button id="hint" class="hint-button" aria-expanded="${hintOpen}">✧ ヒント ${hintOpen?'を閉じる':'を見る'}</button>${hintOpen?`<p class="hint-text">${l.hint}</p>`:''}</section></div>${result?`<section class="result panel" aria-live="polite"><div class="result-title"><span>${result.success?'✦':'↻'}</span><div><span class="panel-kicker">${result.success?'QUEST COMPLETE':'TRY AGAIN'}</span><h2>${result.success?'灯りを届けました！':'もう一度、道順を考えよう'}</h2></div></div><p>${result.success?l.lesson:'下の記録で精霊の動きを確認し、命令を変えて再挑戦できます。'+(l.scenarios?' 両方の道で届く命令を考えましょう。':'')}</p><div class="trace"><button id="previous" ${frame===0?'disabled':''}>← 前の動き</button><span>${frame} / ${trace.length-1}　${trace[frame].message}</span><button id="next" ${frame===trace.length-1?'disabled':''}>次の動き →</button></div>${!storageAvailable?'<p class="storage-warning">進捗を保存できませんでした。ブラウザの保存設定を確認してください。</p>':''}<button class="text-link" id="return">ギルドの依頼へ戻る →</button></section>`:''}<aside class="reference">学びの手がかり：CS2023 <a href="https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf" target="_blank" rel="noopener noreferrer">SDF-Fundamentals ↗</a>　｜　この依頼はプログラミング基礎の一部を扱います。</aside></div>`;
+  app.querySelector('#back').onclick=renderHome;
+  app.querySelectorAll('[data-scenario]').forEach(b=>b.onclick=()=>{scenarioIndex=Number(b.dataset.scenario); frame=result ? result.cases[scenarioIndex].trace.length-1 : 0; renderQuest(); app.querySelector(`[data-scenario="${scenarioIndex}"]`).focus();});
+  app.querySelectorAll('[data-command]').forEach(b=>b.onclick=()=>{ const id=b.dataset.command; program.push(id); result=null; renderQuest(); (app.querySelector(`[data-command="${id}"]:not(:disabled)`) || app.querySelector('#execute')).focus(); });
+  app.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{const index=Number(b.dataset.remove); program.splice(index,1); result=null; renderQuest(); (app.querySelector(`[data-remove="${Math.min(index,program.length-1)}"]`) || app.querySelector('[data-command]')).focus();});
+  app.querySelector('#hint').onclick=()=>{hintOpen=!hintOpen;renderQuest();app.querySelector('#hint').focus();};
+  app.querySelector('#execute').onclick=()=>{result=runScenarios(l,program);frame=result.cases[scenarioIndex].trace.length-1;if(result.success){if(!completed.includes(l.id)) completed.push(l.id);save();}renderQuest();app.querySelector('.result').scrollIntoView({block:'nearest'});app.querySelector('#previous:not(:disabled), #return').focus();};
+  if(result){ app.querySelector('#previous').onclick=()=>{frame--;renderQuest();(app.querySelector('#previous:not(:disabled)')||app.querySelector('#next')).focus();}; app.querySelector('#next').onclick=()=>{frame++;renderQuest();(app.querySelector('#next:not(:disabled)')||app.querySelector('#previous')).focus();}; app.querySelector('#return').onclick=renderHome; }
+}
+renderHome();
