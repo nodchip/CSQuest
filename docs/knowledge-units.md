@@ -49,7 +49,7 @@
 | DM | DM-SEP | Society, Ethics, and the Profession | 123 | 未着手 |
 | FPL | FPL-OOP | Object-Oriented Programming | 130 | 一部試作：依頼65で個体ごとの状態と種類別の動的な振る舞い |
 | FPL | FPL-Functional | Functional Programming | 131 | 一部試作：依頼51・52で列処理とクロージャの固定例 |
-| FPL | FPL-Logic | Logic Programming | 133 | 依頼146〜148で有限の項の単一化、事実・規則・問い合わせ、探索と戻りの固定例。他は未対応。[詳細](fpl-logic.md) |
+| FPL | FPL-Logic | Logic Programming | 133 | 依頼146〜149で有限の項の単一化、事実・規則・問い合わせ、探索と戻り、再帰的な関係の固定例。他は未対応。[詳細](fpl-logic.md) |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 未着手 |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 未着手 |
