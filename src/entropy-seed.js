@@ -1,0 +1,5 @@
+export const entropyLevel={id:'castle-seed-stones',number:'256',kind:'entropy-seed',name:'種石と偶然の泉',tag:'乱数の種とエントロピー',title:'予測できる灯りを見抜こう',story:'城の灯りを選ぶ装置に、同じ種石を再び渡してみます。'};
+export function seedSequence(seed){if(![3,7].includes(seed))throw new RangeError('種石が不正です。');let x=seed;return Array.from({length:5},()=>{x=(5*x+1)%16;return x;});}
+export function createEntropy(){return {seed:3,history:[],prediction:null,source:null,checked:false};}
+export function entropyComplete(s){return s.history.filter(x=>x===3).length>=2&&s.history.includes(7)&&s.prediction==='same'&&s.source==='physical'&&s.checked;}
+export function restoreEntropy(saved){if(!saved||![3,7].includes(saved.seed)||!Array.isArray(saved.history)||saved.history.length>20||!saved.history.every(x=>[3,7].includes(x))||![null,'same','different'].includes(saved.prediction)||![null,'physical','rule'].includes(saved.source)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');return {seed:saved.seed,history:[...saved.history],prediction:saved.prediction,source:saved.source,checked:saved.checked};}
