@@ -92,7 +92,7 @@
 | NC | NC-Fundamentals | Fundamentals | 198 | 未着手 |
 | NC | NC-Applications | Networked Applications | 199 | 未着手 |
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
-| NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48で固定転送表と巡回の例 |
+| NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48の固定転送表と依頼61の最長接頭辞照合 |
 | NC | NC-SingleHop | Single Hop Communication | 200 | 未着手 |
 | NC | NC-Security | Network Security | 200 | 未着手 |
 | NC | NC-Mobility | Mobility | 201 | 未着手 |

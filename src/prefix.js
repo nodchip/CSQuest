@@ -1,0 +1,15 @@
+export const prefixLevel={id:'address-towers',number:'61',kind:'prefix',name:'宛先の印と道しるべ',tag:'最長接頭辞一致',title:'手紙に合う道を選ぼう',story:'伝令塔には、宛先の先頭の印で手紙を送り分ける道しるべがあります。重なる道しるべから、最も詳しいものを選びましょう。'};
+export const prefixRoutes={default:{prefix:'',name:'どこにもより詳しい道がないとき',next:'港'},one:{prefix:'1',name:'１ではじまる宛先',next:'森'},three:{prefix:'101',name:'１０１ではじまる宛先',next:'丘'},four:{prefix:'1011',name:'１０１１ではじまる宛先',next:'泉'}};
+export const prefixCases={hill:{name:'丘の近く',bits:'10101100'},spring:{name:'泉の近く',bits:'10110101'},forest:{name:'森の近く',bits:'10001000'},harbor:{name:'その他の場所',bits:'00110101'}};
+export function matchingRoutes(bits){if(typeof bits!=='string'||!/^[01]{8}$/.test(bits))throw new RangeError('宛先は８つの印です。');return Object.keys(prefixRoutes).filter(id=>bits.startsWith(prefixRoutes[id].prefix));}
+export function longestRoute(bits){return matchingRoutes(bits).reduce((best,id)=>prefixRoutes[id].prefix.length>prefixRoutes[best].prefix.length?id:best,'default');}
+export function createPrefix(){return {selected:'hill',choices:Object.fromEntries(Object.keys(prefixCases).map(id=>[id,{matches:[],route:'',checked:false}]))};}
+export function prefixResult(id,choice){
+  if(!Object.hasOwn(prefixCases,id))throw new RangeError('未知の手紙です。');const expected=matchingRoutes(prefixCases[id].bits),chosen=choice.matches;
+  return {matches:expected.length===chosen.length&&expected.every(route=>chosen.includes(route)),route:choice.route===longestRoute(prefixCases[id].bits)};
+}
+export function restorePrefix(saved){
+  if(!saved||!Object.hasOwn(prefixCases,saved.selected)||!saved.choices)throw new RangeError('途中記録が不正です。');const result=createPrefix();result.selected=saved.selected;
+  for(const id of Object.keys(prefixCases)){const c=saved.choices[id];if(!c||!Array.isArray(c.matches)||new Set(c.matches).size!==c.matches.length||c.matches.some(x=>typeof x!=='string'||!Object.hasOwn(prefixRoutes,x))||(c.route!==''&&!Object.hasOwn(prefixRoutes,c.route))||typeof c.checked!=='boolean')throw new RangeError('途中記録が不正です。');result.choices[id]={matches:c.matches.slice(),route:c.route,checked:c.checked};}return result;
+}
+export function prefixComplete(state){return Object.keys(prefixCases).every(id=>{const c=state.choices[id],r=prefixResult(id,c);return c.checked&&r.matches&&r.route;});}
