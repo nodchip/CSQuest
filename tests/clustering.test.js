@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {clusterNearest,clusterAdvance,createClustering,clusteringComplete,restoreClustering} from '../src/clustering.js';
+test('near and far starts yield the same grouping after three and two full updates',()=>{const s=createClustering();for(const [id,count] of [['near',3],['far',2]]){let t=s.trials[id];for(let i=0;i<count;i++){assert.equal(t.done,false);t.assignments=clusterNearest(t.centers);t=clusterAdvance(t);}assert.equal(t.done,true);assert.deepEqual(t.centers,[1.5,8.5]);assert.deepEqual(t.history.at(-1),['a','a','b','b']);s.trials[id]=t;}s.answer='unlabeled';s.checked=true;assert.equal(clusteringComplete(s),true);assert.deepEqual(restoreClustering(s),s);});
+test('incorrect assignment or tampered recorded history is rejected',()=>{const s=createClustering(),t=s.trials.near;t.assignments=['a','a','b','b'];assert.equal(clusterAdvance(t),null);assert.throws(()=>restoreClustering({...s,trials:{...s.trials,near:{...t,history:[['a','a','b','b']]}}}));});
