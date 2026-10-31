@@ -90,7 +90,7 @@
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：有限集合、命題推論・反例、依頼95の数学的帰納法の固定例 |
 | MSF | MSF-Probability | Probability | 188 | 一部試作：条件付き確率、期待値と、依頼84で等確率の４札の分散 |
 | MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜115で代表値、条件別集計、度数、四分位範囲と回帰の固定例。他は未対応。[詳細](msf-statistics.md) |
-| MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜300で内積、行基本変形、線形結合、固有方向、射影、主成分分析と２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
+| MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜301で内積、行基本変形、線形結合、固有方向、射影、主成分分析、PageRankと２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
 | MSF | MSF-Calculus | Calculus | 192 | 依頼116で一変数の導関数と勾配降下の固定例。他は未対応。[詳細](msf-calculus.md) |
 | NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送の固定例。他は未対応。[詳細](nc-fundamentals.md) |
 | NC | NC-Applications | Networked Applications | 199 | 一部試作：依頼62で POST の受付後の応答消失と再送 |
