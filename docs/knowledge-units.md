@@ -150,7 +150,7 @@
 | SEP | SEP-History | Computing History | 282 | 依頼363で三つの出来事と人々の役割を紹介。他は未対応。[詳細](sep-history.md) |
 | SEP | SEP-Economies | Economies of Computing | 283 | 依頼364で伝令網の接続と相互運用を比較。他は未対応。[詳細](sep-economies.md) |
 | SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 依頼365で偽・正規の伝令と別経路確認の固定例。他は未対応。[詳細](sep-security.md) |
-| SEP | SEP-DEIA | Diversity, Equity, Inclusion, and Accessibility | 285 | 未着手 |
+| SEP | SEP-DEIA | Diversity, Equity, Inclusion, and Accessibility | 285 | 依頼366で平等な配分と条件を踏まえた支援の固定例。他は未対応。[詳細](sep-deia.md) |
 | SF | SF-Overview | Overview of Computer Systems | 292 | 回路、OS、パイプライン等に固定例。歴史や層間の一般的な構築は未対応。[詳細](sf-overview.md) |
 | SF | SF-Foundations | Basic Concepts | 293 | 状態、回路、逐次・並列処理等に固定例。一般的な構築と説明は未対応。[詳細](sf-foundations.md) |
 | SF | SF-Resource | Resource Management | 294 | スケジューリングや資源の固定例。実装・実測や一般的比較は未対応。[詳細](sf-resource.md) |
