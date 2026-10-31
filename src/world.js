@@ -38,6 +38,10 @@ export function findTrail(id){return learningTrails.find(trail=>trail.id===id)||
 export function trailQuests(trail,levels){
   return trail.quests.map(id=>{const index=levels.findIndex(level=>level.id===id);return {level:levels[index],index};});
 }
+export function nextTrailQuest(trail,levels,completed){
+  const done=new Set(completed);
+  return trailQuests(trail,levels).find(({level})=>!done.has(level.id))||null;
+}
 
 export const storyScenes=[
   {id:'beginning',threshold:0,title:'消えかけた道しるべ',speaker:'ギルド長 ミラ',text:'旅人たちを導く、ギルドの塔の灯りが弱くなっているの。各地から届く知らせも、少しずつ途切れがちになったわ。精霊のノノと一緒に、困っている人の声を聞いてくれない？'},
