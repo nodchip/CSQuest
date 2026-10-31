@@ -81,7 +81,7 @@
 | GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。他は未対応。[詳細](git-image.md) |
 | GIT | GIT-Physical | Tangible/Physical Computing | 164 | 未着手 |
 | GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 未着手 |
-| HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 未着手 |
+| HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 依頼188で架空の旅人・維持担当の声と案内所の固定模型。実際の利用者調査や協働は未対応。[詳細](hci-user.md) |
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 未着手 |
 | HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 一部試作：依頼22で三つの利用条件 |
 | HCI | HCI-Evaluation | Evaluating the Design | 178 | 一部試作：依頼60で架空４人の時間・観察と限定的な結論 |
