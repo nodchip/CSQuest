@@ -59,12 +59,12 @@
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312・315で式の構造、解釈と翻訳段階の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 依頼75・154・199・306〜312などで構文木、正規表現、スコープ、引数渡しと副作用の固定例。他は未対応。[詳細](fpl-abstraction.md) |
 | FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75・313・314で式の構造、字句解析と先読みの固定例。他は未対応。[詳細](fpl-syntax.md) |
-| FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75・315で構文木と型確認の固定例。他は未対応。[詳細](fpl-syntax.md) |
+| FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75・315・326で構文木、型確認と引数評価の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜208で制御フロー、到達定義・固定点、不要な書込みと別の効果の固定例。一般の解析は未対応。[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
 | FPL | FPL-Code | Code Generation | 142 | 命令・呼出し等と依頼207・208の書込み除去と効果保持の固定例。一般のコード生成は未対応。[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
 | FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 呼出し・配列配置、依頼201・202の回収方式の固定例。実際の実行時機構は未対応。[詳細](fpl-execution-analysis.md#fpl-run-timenon-core) |
-| FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 依頼325で遅延評価と無限列の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-constructs) |
-| FPL | FPL-Pragmatics | Language Pragmatics | 144 | 依頼325で遅延評価と先行評価の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-pragmatics) |
+| FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 依頼325・326で遅延評価、無限列と引数の共有の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-constructs) |
+| FPL | FPL-Pragmatics | Language Pragmatics | 144 | 依頼325・326で遅延評価と先行評価の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-pragmatics) |
 | FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281〜284で操作的意味論、記号実行、ラムダ簡約と構造的帰納法の固定例。他は未対応。[詳細](fpl-formalism.md) |
 | FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 未着手 |
 | FPL | FPL-Design | Design Principles of Programming Languages | 146 | 未着手 |
