@@ -34,7 +34,7 @@
 | AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 未着手 |
 | DM | DM-Core | Core Database System Concepts | 115 | 未着手 |
-| DM | DM-Modeling | Data Modeling | 116 | 依頼101で多対多の参加関係とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
+| DM | DM-Modeling | Data Modeling | 116 | 依頼101・102で多対多、１対多、１対１の高々の制約とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
 | DM | DM-Relational | Relational Databases | 117 | 一部試作：依頼67で更新異常と分解後の結合を比較 |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択と内部結合 |
 | DM | DM-Processing | Query Processing | 118 | 依頼89で複合索引の列順と候補範囲の固定例。他は未対応。[詳細](dm-processing.md) |
