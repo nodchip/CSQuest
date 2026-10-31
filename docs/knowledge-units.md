@@ -9,7 +9,7 @@
 | AI | AI-Introduction | Fundamental Issues | 67 | 依頼109で部分観測と記憶に基づく行動の固定例。他は未対応。[詳細](ai-introduction.md) |
 | AI | AI-Search | Search | 68 | 一部試作：依頼08・21・42〜45・49・97で探索、対戦、枝刈りと制約充足の固定例 |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 依頼81・98・99で条件付き頻度、期待損失とマルコフ連鎖の固定例。他は未対応。[詳細](ai-krr.md) |
-| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、訓練・未使用記録の比較と過学習の固定例 |
+| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標と過学習の固定例 |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 未着手 |
 | AI | AI-LRR | Logical Representation and Reasoning | 76 | 未着手 |
 | AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率と条件付き独立の固定例。他は未対応。[詳細](ai-probability.md) |
@@ -22,7 +22,7 @@
 | AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、依頼55で分割統治、依頼76で動的計画法と貪欲法の比較。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼88で冊数別の逐次・二分探索の比較回数と最大値。一般の分析は未対応 |
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件の固定例。他のモデルや一般の証明は未対応 |
-| AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
+| AL | AL-SEP | Society, Ethics, and the Profession | 95 | 依頼118で集団別の分類指標の固定例。他は未対応。[詳細](al-other-units.md) |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩と一桁の加算器 |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8 固定例 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行 |
