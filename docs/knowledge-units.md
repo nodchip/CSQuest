@@ -97,7 +97,7 @@
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
 | NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48の固定転送表と依頼61の最長接頭辞照合 |
 | NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調の固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
-| NC | NC-Security | Network Security | 200 | 未着手 |
+| NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279で差し替え、認証、分離と門番の固定例。他の攻撃・対策は未対応。[詳細](nc-security.md) |
 | NC | NC-Mobility | Mobility | 201 | 未着手 |
 | NC | NC-Emerging | Emerging Topics | 201 | 未着手 |
 | OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で仕事の切り替えと完了時刻の比較、53・54・77・105・133・151〜153に関連する固定例。OS の目的や機能の全体像と設計の体系的比較は未対応。[詳細](os-purpose.md) |
