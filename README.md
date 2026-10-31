@@ -1,6 +1,6 @@
 # CS Quest
 
-冒険しながら情報科学を学ぶ、制作途中のブラウザゲームです。[CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) の全17分野を対象とした学習体験を目指しています。
+冒険しながら情報科学を学ぶ、制作途中のブラウザゲームです。公開中の試作: https://nodchip.github.io/CSQuest/ 。[CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) の全17分野を対象とした学習体験を目指しています。
 
 世界地図から行き先を選ぶと、その場所の依頼が並びます。学びの道しるべでは、関連する依頼を順番の目安として選べます。どの依頼からでも始められ、すべての依頼も一覧できます。各地の依頼を達成すると、ギルドの塔の灯りを巡る物語が進みます。
 
