@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createReadyQueue,readyQueueStep,readyQueueComplete,restoreReadyQueue} from '../src/ready-queue.js';
+const doStep=(s,a,c=null)=>{const n=readyQueueStep(s,a,c);assert.ok(n);return n;};
+test('a blocked job joins the queue tail after I/O and all jobs finish',()=>{let s=createReadyQueue();assert.equal(readyQueueStep(s,'dispatch','B'),null);s=doStep(s,'dispatch','A');s=doStep(s,'run');assert.deepEqual(s.waiting,['A']);s=doStep(s,'dispatch','B');s=doStep(s,'run');assert.deepEqual(s.ready,['C','B']);s=doStep(s,'dispatch','C');s=doStep(s,'run');s=doStep(s,'wake');assert.deepEqual(s.ready,['B','A']);s=doStep(s,'dispatch','B');s=doStep(s,'run');s=doStep(s,'dispatch','A');s=doStep(s,'run');s.answer='queues';s.checked=true;assert.equal(readyQueueComplete(s),true);assert.deepEqual(restoreReadyQueue(s),s);});
+test('early I/O completion appends behind ready jobs and forged histories fail',()=>{let s=createReadyQueue();s=doStep(s,'dispatch','A');s=doStep(s,'run');s=doStep(s,'wake');assert.deepEqual(s.ready,['B','C','A']);assert.throws(()=>restoreReadyQueue({...s,history:[['dispatch','B']]}));assert.throws(()=>restoreReadyQueue({...s,history:[['dispatch','A'],['run',null,'B']]}));assert.equal(readyQueueStep(s,'wake'),null);});
