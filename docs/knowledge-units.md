@@ -105,7 +105,7 @@
 | OS | OS-Process | Process Model | 210 | 一部試作：依頼53で単一の計算装置と入出力待ちの状態を操作 |
 | OS | OS-Memory | Memory Management | 210 | 一部試作：依頼34・40で FIFO・LRU のページ置換と住所変換 |
 | OS | OS-Devices | Device management | 211 | 未着手 |
-| OS | OS-Files | File Systems API and Implementation | 212 | 未着手 |
+| OS | OS-Files | File Systems API and Implementation | 212 | 依頼77でファイルの名前・実体・ハードリンクと開いた参照の固定例。他は未対応。[詳細](os-files.md) |
 | OS | OS-Advanced-Files | Advanced File systems | 212 | 未着手 |
 | OS | OS-Virtualization | Virtualization | 213 | 未着手 |
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 未着手 |
