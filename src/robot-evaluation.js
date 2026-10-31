@@ -1,0 +1,9 @@
+export const robotEvaluationLevel={id:'workshop-robot-evaluation',number:'396',kind:'robot-evaluation',name:'見落とされた旅人',tag:'ロボットの評価と偏り',title:'見守り人形の検知を比べよう',story:'広場の見守り人形が旅人に気づけないという声が届きました。条件別の試験結果を調べ、改良案を確かめましょう。'};
+export const robotModels={before:'改良前',after:'改良案'};
+export const robotConditions={A:'条件 A',B:'条件 B'};
+export const robotFixture={before:{A:[true,true,true,true],B:[true,true,false,false]},after:{A:[true,true,true,true],B:[true,true,true,true]}};
+export function robotEvaluationResult(model,condition){if(!Object.hasOwn(robotModels,model)||!Object.hasOwn(robotConditions,condition))throw new RangeError('条件が不正です');const outcomes=robotFixture[model][condition];return {detected:outcomes.filter(Boolean).length,total:outcomes.length};}
+export function createRobotEvaluation(){return {model:'before',condition:'A',observed:[],answer:null,checked:false};}
+export function observeRobotEvaluation(s){const key=`${s.model}:${s.condition}`;return {...s,observed:s.observed.includes(key)?[...s.observed]:[...s.observed,key],checked:false};}
+export function robotEvaluationComplete(s){return ['before:A','before:B','after:A','after:B'].every(k=>s.observed.includes(k))&&s.answer==='evaluate'&&s.checked;}
+export function restoreRobotEvaluation(s){const keys=Object.keys(robotModels).flatMap(m=>Object.keys(robotConditions).map(c=>`${m}:${c}`));if(!s||!Object.hasOwn(robotModels,s.model)||!Object.hasOwn(robotConditions,s.condition)||!Array.isArray(s.observed)||s.observed.length>keys.length||new Set(s.observed).size!==s.observed.length||!s.observed.every(k=>keys.includes(k))||![null,'evaluate','total','guarantee'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {model:s.model,condition:s.condition,observed:[...s.observed],answer:s.answer,checked:s.checked};}

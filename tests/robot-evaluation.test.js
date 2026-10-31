@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createRobotEvaluation,robotEvaluationResult,observeRobotEvaluation,robotEvaluationComplete,restoreRobotEvaluation} from '../src/robot-evaluation.js';
+test('grouped detection reveals a disparity hidden by total counts',()=>{assert.deepEqual(robotEvaluationResult('before','A'),{detected:4,total:4});assert.deepEqual(robotEvaluationResult('before','B'),{detected:2,total:4});assert.deepEqual(robotEvaluationResult('after','B'),{detected:4,total:4});let s=createRobotEvaluation();for(const model of ['before','after'])for(const condition of ['A','B']){s.model=model;s.condition=condition;s=observeRobotEvaluation(s);}s.answer='evaluate';s.checked=true;assert.equal(robotEvaluationComplete(s),true);assert.deepEqual(restoreRobotEvaluation(s),s);});
+test('rejects invalid and duplicated saved results',()=>{const s=createRobotEvaluation();assert.throws(()=>robotEvaluationResult('bad','A'));assert.throws(()=>restoreRobotEvaluation({...s,observed:['before:A','before:A']}));});
