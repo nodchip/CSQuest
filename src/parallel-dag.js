@@ -2,6 +2,7 @@ export const parallelDagLevel={id:'forge-parallel-dag',number:'418',kind:'parall
 export const dagTasks={A:{name:'A：２＋３',needs:[],value:5},B:{name:'B：４＋２',needs:[],value:6},C:{name:'C：A と B を掛ける',needs:['A','B'],value:30},D:{name:'D：C に１を足す',needs:['C'],value:31}};
 export const dagEdges={AC:'A → C',BC:'B → C',CD:'C → D',AB:'A → B',AD:'A → D'};
 export function dagGraphValid(edges){return edges.length===3&&['AC','BC','CD'].every(e=>edges.includes(e));}
+export function dagGraphFeedback(edges){const missing=['AC','BC','CD'].filter(e=>!edges.includes(e)),extra=edges.filter(e=>!['AC','BC','CD'].includes(e));if(!missing.length&&!extra.length)return '依存関係を確認しました。';return [missing.length?`直接必要な矢印が足りません：${missing.map(e=>dagEdges[e]).join('、')}。`:'',extra.includes('AB')?'A と B は互いの結果を必要としません。':'',extra.includes('AD')?'A → D は、A → C → D を通じて既に順序が守られます。':''].filter(Boolean).join(' ');}
 export function createParallelDag(){return {edges:[],graphChecked:false,rounds:[],selected:[],answer:null,checked:false};}
 export function dagFinished(rounds){return rounds.flat();}
 export function dagReady(rounds){const done=dagFinished(rounds);return Object.keys(dagTasks).filter(k=>!done.includes(k)&&dagTasks[k].needs.every(x=>done.includes(x)));}
