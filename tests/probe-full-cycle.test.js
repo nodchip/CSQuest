@@ -1,0 +1,4 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createCycle,cycleStep,cycleComplete,restoreCycle} from '../src/probe-full-cycle.js';
+test('a bounded full cycle distinguishes full table from a reusable tombstone',()=>{const s=createCycle();for(const id of ['full','deleted']){let t=s.trials[id];assert.equal(cycleStep(id,t,'reject',0).history.length,0);for(const i of [1,2,3,4,0])t=cycleStep(id,t,'probe',i);assert.deepEqual(t.visited,[1,2,3,4,0]);assert.equal(t.phase,'decide');assert.equal(cycleStep(id,t,'probe',1).history.length,5);t=cycleStep(id,t,id==='full'?'reject':'place',id==='full'?0:2);s.trials[id]=t;}assert.equal(s.trials.full.outcome,'full');assert.equal(s.trials.deleted.slots[2],26);s.answer='bounded';s.checked=true;assert.equal(cycleComplete(s),true);assert.deepEqual(restoreCycle(s),s);s.trials.full.history.push(['probe',1]);assert.throws(()=>restoreCycle(s));});
