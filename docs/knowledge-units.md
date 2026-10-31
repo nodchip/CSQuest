@@ -69,7 +69,7 @@
 | FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 未着手 |
 | FPL | FPL-Design | Design Principles of Programming Languages | 146 | 未着手 |
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 未着手 |
-| GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 依頼83で三角形の中心標本と画素内４標本の固定例。他は未対応。[詳細](git-fundamentals.md) |
+| GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 依頼83で三角形の標本、依頼221で光の値の量子化の固定例。他は未対応。[詳細](git-fundamentals.md) |
 | GIT | GIT-Visualization | Visualization | 156 | 依頼111〜113で棒・点、軸範囲、条件別集計とヒストグラムの固定例。他は未対応。[詳細](git-visualization.md) |
 | GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26の２次元変換と依頼64の平行・透視投影 |
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
@@ -79,7 +79,7 @@
 | GIT | GIT-Immersion | Immersion | 161 | 依頼216〜218で２視点の視差、古い視点情報によるずれ、現実物体の遮蔽の固定例。実際の立体表示・追跡・安全性等は未対応。[詳細](git-immersion.md) |
 | GIT | GIT-Interaction | Interaction | 162 | 未着手 |
 | GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。他は未対応。[詳細](git-image.md) |
-| GIT | GIT-Physical | Tangible/Physical Computing | 164 | 依頼219・220で光の読み取り、サーボの目標・移動と閾値の固定例。実際の回路や製作等は未対応。[詳細](git-physical.md) |
+| GIT | GIT-Physical | Tangible/Physical Computing | 164 | 依頼219〜221で光の読み取り、サーボの目標・移動、閾値と量子化の固定例。実際の回路や製作等は未対応。[詳細](git-physical.md) |
 | GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 未着手 |
 | HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 依頼188で架空の旅人・維持担当の声と案内所の固定模型。実際の利用者調査や協働は未対応。[詳細](hci-user.md) |
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 未着手 |
@@ -164,7 +164,7 @@
 | SPD | SPD-Web | Web Platforms | 303 | 一部試作：依頼62で受付 API と再送の固定例 |
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 未着手 |
 | SPD | SPD-Robot | Robot Platforms | 304 | 一部試作：依頼28の観測・移動と依頼71の地形・充電を考慮した移動 |
-| SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219・220でセンサー、アクチュエーターと閾値の固定模型。実機・リアルタイム・安全性等は未対応。原典の全項目の照合は未完了 |
+| SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜221でセンサー、アクチュエーター、閾値と量子化の固定模型。実機・リアルタイム・安全性等は未対応。原典の全項目の照合は未完了 |
 | SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の点と壁の衝突・トンネリングの固定例。他は未対応。[詳細](spd-game.md) |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 未着手 |
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
