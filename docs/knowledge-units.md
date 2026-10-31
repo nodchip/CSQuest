@@ -89,7 +89,7 @@
 | MSF | MSF-Probability | Probability | 188 | 一部試作：依頼20・41で条件付き確率と期待値の固定例 |
 | MSF | MSF-Statistics | Statistics | 190 | 一部試作：依頼47で平均と中央値の比較 |
 | MSF | MSF-Linear | Linear Algebra | 191 | 一部試作：依頼50で２次元の内積と向き |
-| NC | NC-Fundamentals | Fundamentals | 198 | 未着手 |
+| NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層、カプセル化と中継時の区間別アドレスの固定例。他は未対応。[詳細](nc-fundamentals.md) |
 | NC | NC-Applications | Networked Applications | 199 | 一部試作：依頼62で POST の受付後の応答消失と再送 |
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
 | NC | NC-Routing | Routing and Forwarding | 199 | 一部試作：依頼48の固定転送表と依頼61の最長接頭辞照合 |
