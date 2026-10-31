@@ -49,7 +49,7 @@
 | トピック | 要約 | 状態 |
 |---|---|---|
 | 1a | 創作の知的財産権の所有、生成 AI など | 未対応 |
-| 1b | 利用許諾、例外、ライセンスと権利の執行 | 未対応 |
+| 1b | 利用許諾、例外、ライセンスと権利の執行 | 依頼399で販売用の架空素材に CC BY・BY-NC の条件を比較。例外や執行は未対応 |
 | 2a | ゲーム UI の要件、使いやすさと評価 | 未対応 |
 | 2b | 障害の種類、ゲーム UI のアクセシビリティと評価 | 依頼117で音を使えない条件の字幕の固定例。一般の障害や実利用者による評価は未対応 |
 | 3a | プレイ時の上半身のけがと緩和 | 未対応 |
@@ -124,3 +124,5 @@
 依頼397は架空の橋守の知らせと生成下書きの食い違いを確認し、修正文・出典・生成利用表示と人の確認を選ぶ。実際の資料の信頼性、訂正、法令や報道機関ごとの方針を評価しない。[AP の AI 利用方針](https://www.ap.org/the-definitive-source/announcements/ap-updates-newsroom-standards-for-artificial-intelligence/)。
 
 依頼398は５枚中３枚を集めた状態で、制限時間・固定通知と中断保存・通知選択を比較する。休憩時の進捗と通知設定の架空の結果であり、実際の行動や健康の診断はしない。[WHO のゲーム障害に関する説明](https://www.who.int/news-room/questions-and-answers/item/addictive-behaviours-gaming-disorder)、[FTC の選択を妨げる設計の報告](https://www.ftc.gov/reports/bringing-dark-patterns-light)。
+
+依頼399は販売する架空ゲームで背景を改変する設定で CC BY 4.0 と BY-NC 4.0 を比較し、作者・出典、ライセンス、変更を表示する。実素材の権利、例外やその他の権利は扱わない。[CC BY](https://creativecommons.org/licenses/by/4.0/)、[CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/)。

@@ -1,0 +1,7 @@
+export const assetLicenseLevel={id:'guild-asset-license',number:'399',kind:'asset-license',name:'絵師の素材帳',tag:'作品の利用条件',title:'冒険の背景を選ぼう',story:'ギルドは販売する冒険ゲームの背景を探しています。絵師が示す条件を比べ、使う素材と表示を選びましょう。'};
+export const assetLicenses={by:'森の絵：CC BY 4.0',nc:'湖の絵：CC BY-NC 4.0'};
+export function createAssetLicense(){return {selected:'by',seen:[],credit:false,license:false,changes:false,answer:null,checked:false};}
+export function inspectAssetLicense(s){return {...s,seen:s.seen.includes(s.selected)?[...s.seen]:[...s.seen,s.selected],checked:false};}
+export function assetLicenseProblems(s){const issues=[];if(!s.seen.includes('by')||!s.seen.includes('nc'))issues.push('両方の条件を確認する');if(s.selected==='nc')issues.push('販売する企画では非商用限定の素材をそのまま使えない');if(!s.credit)issues.push('作者と出典を表示する');if(!s.license)issues.push('ライセンス名とリンクを表示する');if(!s.changes)issues.push('色を変えたことを表示する');return issues;}
+export function assetLicenseComplete(s){return assetLicenseProblems(s).length===0&&s.answer==='terms'&&s.checked;}
+export function restoreAssetLicense(s){if(!s||!Object.hasOwn(assetLicenses,s.selected)||!Array.isArray(s.seen)||s.seen.length>2||new Set(s.seen).size!==s.seen.length||!s.seen.every(k=>Object.hasOwn(assetLicenses,k))||typeof s.credit!=='boolean'||typeof s.license!=='boolean'||typeof s.changes!=='boolean'||![null,'terms','credit','always'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {selected:s.selected,seen:[...s.seen],credit:s.credit,license:s.license,changes:s.changes,answer:s.answer,checked:s.checked};}
