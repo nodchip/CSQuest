@@ -1,0 +1,8 @@
+export const pdcScalingLevel={id:'forge-strong-weak-scaling',number:'437',kind:'strong-weak-scaling',name:'工房の仕事量と精霊の数',tag:'強スケーリング・弱スケーリング',title:'工房の分担を計画しよう',story:'宝石の工房では精霊を増やして仕事を分けます。仕事量と人数を変え、費用も含めて計画しましょう。'};
+export const pdcScalingModes={strong:{name:'全体を16個に固定'},weak:{name:'一人あたり16個に固定'}};
+export const pdcScalingWorkers=[1,2,4,8];
+export function pdcScalingResult(mode,n){if(!Object.hasOwn(pdcScalingModes,mode)||!pdcScalingWorkers.includes(n))throw new RangeError('条件が不正です');const work=mode==='strong'?16:16*n,preparation=4,parallel=work/n,overhead=n,time=preparation+parallel+overhead,base=21;return {work,preparation,parallel,overhead,time,throughput:work/time,efficiency:mode==='strong'?base/(n*time):base/time};}
+export function createPdcScaling(){return {mode:'strong',workers:1,seen:{strong:[],weak:[]},best:null,answer:null,checked:false};}
+export function pdcScalingReady(s){return Object.keys(pdcScalingModes).every(m=>pdcScalingWorkers.every(n=>s.seen[m].includes(n)))&&s.best===4;}
+export function pdcScalingComplete(s){return pdcScalingReady(s)&&s.answer==='weak'&&s.checked;}
+export function restorePdcScaling(s){if(!s||!Object.hasOwn(pdcScalingModes,s.mode)||!pdcScalingWorkers.includes(s.workers)||!s.seen||![null,...pdcScalingWorkers].includes(s.best)||![null,'weak','strong','guaranteed'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const r=createPdcScaling();r.mode=s.mode;r.workers=s.workers;r.best=s.best;r.answer=s.answer;r.checked=s.checked;for(const m of Object.keys(pdcScalingModes)){const v=s.seen[m];if(!Array.isArray(v)||v.length>4||new Set(v).size!==v.length||!v.every(n=>pdcScalingWorkers.includes(n)))throw new RangeError('途中記録が不正です');r.seen[m]=[...v];}return r;}

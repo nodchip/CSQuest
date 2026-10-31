@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pdcScalingWorkers,pdcScalingResult,createPdcScaling,pdcScalingReady,pdcScalingComplete,restorePdcScaling} from '../src/pdc-scaling.js';
+test('fixed-work and fixed-work-per-worker models include preparation and increasing overhead',()=>{for(const [mode,times,works] of [['strong',[21,14,12,14],[16,16,16,16]],['weak',[21,22,24,28],[16,32,64,128]]])for(const [i,n] of pdcScalingWorkers.entries()){const r=pdcScalingResult(mode,n);assert.equal(r.work,works[i]);assert.equal(r.time,times[i]);assert.equal(r.time,r.preparation+r.parallel+r.overhead);assert.equal(r.throughput,r.work/r.time);assert.equal(r.efficiency,mode==='strong'?21/(n*r.time):21/r.time);}});
+test('all conditions and the fastest fixed-work worker count are required',()=>{const s=createPdcScaling();s.seen={strong:[1,2,4,8],weak:[1,2,4,8]};s.best=4;assert.ok(pdcScalingReady(s));s.answer='weak';s.checked=true;assert.ok(pdcScalingComplete(s));assert.deepEqual(restorePdcScaling(s),s);s.seen.weak.push(8);assert.throws(()=>restorePdcScaling(s));});
