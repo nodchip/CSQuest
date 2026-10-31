@@ -105,8 +105,8 @@
 | OS | OS-Concurrency | Concurrency | 208 | 依頼15・16・30・177〜179で更新喪失、排他、循環待ち、飢餓、セマフォとプロセス・スレッドの記録共有の固定例。実 OS の同期は未対応。[詳細](os-concurrency.md) |
 | OS | OS-Protection | Protection and Safety | 209 | 依頼11・54・180・181で権限、媒体・起動・受付の保護とバックアップの固定模型。実 OS の脆弱性や保護機構は未対応。[詳細](os-protection.md) |
 | OS | OS-Scheduling | Scheduling | 209 | 一部試作：先着順とラウンドロビン |
-| OS | OS-Process | Process Model | 210 | 一部試作：依頼53で単一の計算装置と入出力待ちの状態を操作 |
-| OS | OS-Memory | Memory Management | 210 | 一部試作：依頼34・40・137でページ置換、住所変換と枠数の固定例 |
+| OS | OS-Process | Process Model | 210 | 依頼53で状態、依頼179でスレッドとプロセス、依頼385で頁の分離・共有の固定例。他は未対応。[詳細](os-process.md) |
+| OS | OS-Memory | Memory Management | 210 | 依頼34・40・137でページ置換、住所変換と枠数、依頼385で複数プロセスの頁の分離・共有の固定例。他は未対応。[詳細](os-memory.md) |
 | OS | OS-Devices | Device management | 211 | 依頼105・132で通知と DMA の固定模型。他は未対応。[詳細](os-devices.md) |
 | OS | OS-Files | File Systems API and Implementation | 212 | 依頼77で名前・実体と開いた参照、依頼384で開く操作・読取り・権限の固定例。他は未対応。[詳細](os-files.md) |
 | OS | OS-Advanced-Files | Advanced File systems | 212 | 依頼290〜292で写しの共有ブロック、マウントとメモリ対応付けの固定例。他は未対応。[詳細](os-advanced-files.md) |
