@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {avlCases,avlStep,avlBalanced,createAvl,restoreAvl,avlComplete} from '../src/avl-rotations.js';
+function keys(t){return t?[...keys(t.left),t.key,...keys(t.right)]:[];}
+test('four single and double rotation patterns preserve ordering and restore balance',()=>{const plans={ll:[[30,'right']],rr:[[10,'left']],lr:[[10,'left'],[30,'right']],rl:[[30,'right'],[10,'left']]},s=createAvl();for(const id of Object.keys(avlCases)){let t=s.trials[id];for(let i=0;i<3;i++)t=avlStep(id,t,'insert');assert.equal(avlBalanced(t.tree),false);for(const [key,d] of plans[id]){t=avlStep(id,t,'rotate',key,d);assert.deepEqual(keys(t.tree),[10,20,30]);}assert.equal(avlBalanced(t.tree),true);assert.equal(t.tree.key,20);t.checked=true;s.trials[id]=t;}s.answer='order';s.checked=true;assert.equal(avlComplete(s),true);const restored=restoreAvl(s);assert.deepEqual(restored.trials.lr.tree,s.trials.lr.tree);s.trials.ll.history.push(['rotate',10,'right']);assert.throws(()=>restoreAvl(s));});
+test('rotations with no child or before all insertions do not advance',()=>{let t=createAvl().trials.ll;t=avlStep('ll',t,'insert');assert.equal(avlStep('ll',t,'rotate',30,'right').history.length,1);for(let i=0;i<2;i++)t=avlStep('ll',t,'insert');assert.equal(avlStep('ll',t,'rotate',10,'right').history.length,3);});
