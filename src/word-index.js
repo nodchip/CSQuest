@@ -1,0 +1,9 @@
+export const indexWordsLevel={id:'archive-word-index',number:'120',kind:'wordindex',name:'古文書の単語索引',tag:'転置索引と TF-IDF',title:'薬師に巻物を届ける',story:'薬師の探し物を早く見つけるため、書庫の精霊と単語の索引を作り、巻物を並べ替えましょう。'};
+export const wordDocuments={a:['月草','解毒'],b:['月草','月草'],c:['薬草'],d:['炎']};
+export const wordQueries={moon:'月草',antidote:'解毒'};
+export function postings(term){if(!Object.values(wordQueries).includes(term))throw new RangeError('単語が不正です。');return Object.keys(wordDocuments).filter(id=>wordDocuments[id].includes(term));}
+export function wordIdf(term){return Math.log2(Object.keys(wordDocuments).length/postings(term).length);}
+export function wordScore(id){if(!Object.hasOwn(wordDocuments,id))throw new RangeError('巻物が不正です。');return Object.values(wordQueries).reduce((sum,term)=>sum+wordDocuments[id].filter(w=>w===term).length*wordIdf(term),0);}
+export function createWordIndex(){return {term:'moon',selected:{moon:[],antidote:[]},scores:{a:'',b:''},winner:'',checked:false};}
+export function restoreWordIndex(s){if(!s||!Object.hasOwn(wordQueries,s.term)||!s.selected||!s.scores||!['','a','b','tie'].includes(s.winner)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');const r=createWordIndex();r.term=s.term;r.winner=s.winner;r.checked=s.checked;for(const term of Object.keys(wordQueries)){const values=s.selected[term];if(!Array.isArray(values)||new Set(values).size!==values.length||values.some(id=>!Object.hasOwn(wordDocuments,id)))throw new RangeError('索引が不正です。');r.selected[term]=values.slice();}for(const id of ['a','b']){if(!['','0','1','2','3','4'].includes(s.scores[id]))throw new RangeError('得点が不正です。');r.scores[id]=s.scores[id];}return r;}
+export function wordIndexComplete(s){return s.checked&&Object.entries(wordQueries).every(([key,term])=>{const expected=postings(term),actual=s.selected[key];return actual.length===expected.length&&expected.every(id=>actual.includes(id));})&&['a','b'].every(id=>s.scores[id]===String(wordScore(id)))&&s.winner==='a';}
