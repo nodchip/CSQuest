@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {lambdaCases,createLambda,lambdaTry,lambdaComplete,restoreLambda} from '../src/lambda-reduction.js';
+test('both examples require each displayed transformation and incorrect choices do not advance',()=>{let s=createLambda();for(const id of ['simple','capture']){s.selected=id;for(const [i,step] of lambdaCases[id].steps.entries()){for(let choice=0;choice<step.choices.length;choice++)if(choice!==step.answer)assert.equal(lambdaTry({...s,choice}).steps[id],i);s=lambdaTry({...s,choice:step.answer});}if(id==='simple')assert.equal(lambdaComplete(s),false);}assert.equal(lambdaComplete(s),true);assert.deepEqual(restoreLambda(s).steps,{simple:1,capture:2});});
+test('capture-avoiding renaming keeps the argument y free and cannot yield the identity',()=>{const c=lambdaCases.capture;assert.equal(c.steps[0].choices[c.steps[0].answer],'(λx.λz.x) y');assert.equal(c.steps[1].choices[c.steps[1].answer],'λz.y');assert.notEqual(c.result,'λy.y');const s=createLambda();assert.throws(()=>restoreLambda({...s,steps:{simple:1,capture:3}}));});
