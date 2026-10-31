@@ -23,6 +23,16 @@ export function stepTransaction(state,action){
   const index=state.index+1,status=index===transactionModes[state.mode].steps.length?'done':'playing';
   return {mode:state.mode,index,committed,working,status,log:[...state.log,message],message};
 }
+export function predictTransactionCrash(state,guess){
+  if(state.status!=='playing'||transactionModes[state.mode].steps[state.index]!=='crash')throw new RangeError('今は中断後の予測を選べません。');
+  if(!['original','partial','transferred'].includes(guess))throw new RangeError('未知の予測です。');
+  const expected=state.mode==='separate'?'partial':state.working?'original':'transferred';
+  if(guess!==expected){
+    const hint=state.mode==='separate'?'単独で保存した更新と、まだ実行していない更新を確認しましょう。':state.working?'まだ確定していない作業は、途切れた後には取り消されます。':'まとめて確定した結果が途切れた後も残ると考えましょう。';
+    return {...state,message:`その台帳にはなりません。${hint}`};
+  }
+  return stepTransaction(state,'crash');
+}
 export function restoreTransaction(saved){
   if(!saved||!Object.hasOwn(transactionModes,saved.selected)||!saved.actions)throw new RangeError('途中記録が不正です。');
   const states={},actions={};
