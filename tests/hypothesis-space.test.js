@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {hypothesisValues,hypothesisEvaluate,createHypothesis,hypothesisComplete,restoreHypothesis} from '../src/hypothesis-space.js';
+test('all 125 linear settings fail XOR while an interaction feature fits all four cases',()=>{let best=0;for(const a of hypothesisValues)for(const b of hypothesisValues)for(const threshold of hypothesisValues)best=Math.max(best,hypothesisEvaluate('linear',{a,b,both:0,threshold}).correct);assert.equal(best,3);const r=hypothesisEvaluate('cross',{a:1,b:1,both:-2,threshold:1});assert.equal(r.correct,4);assert.deepEqual(r.rows.map(x=>x.prediction),[0,1,1,0]);assert.throws(()=>hypothesisEvaluate('cross',{a:7,b:0,both:0,threshold:1}));});
+test('both observed models and a reflection are needed and drafts are checked',()=>{const s=createHypothesis();s.trials.linear.seen=true;s.trials.cross.seen=true;s.answer='features';assert.equal(hypothesisComplete(s),false);s.checked=true;assert.equal(hypothesisComplete(s),true);assert.deepEqual(restoreHypothesis(s),s);assert.throws(()=>restoreHypothesis({...s,trials:{...s.trials,linear:{...s.trials.linear,both:1}}}));});
