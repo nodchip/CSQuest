@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createScanPrivacy,scanPrivacyResult,scanPrivacyCapture,scanPrivacyComplete,restoreScanPrivacy} from '../src/room-scan-privacy.js';
+test('all sixteen capture choices preserve the tradeoff between useful and sensitive data',()=>{const items=['door','wall','note','chest'];for(let bits=0;bits<16;bits++){const selection=items.filter((_,i)=>bits&(1<<i)),r=scanPrivacyResult(selection);assert.equal(r.useful,(bits&3)===3);assert.equal(r.sensitive.length,Number(Boolean(bits&4))+Number(Boolean(bits&8)));}});
+test('completion needs both observations and informed choice',()=>{let s=createScanPrivacy();s.selected=['note'];s=scanPrivacyCapture(s);s.selected=['door','wall'];s=scanPrivacyCapture(s);s.answer='always';s.checked=true;assert.equal(scanPrivacyComplete(s),false);s.answer='consent';assert.equal(scanPrivacyComplete(s),true);assert.deepEqual(restoreScanPrivacy(s),s);assert.throws(()=>restoreScanPrivacy({...s,selected:['door','door']}));});
