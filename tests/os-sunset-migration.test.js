@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createOsSunset,osSunsetStep,restoreOsSunset} from '../src/os-sunset-migration.js';
+test('a supported replacement still needs a usable application, a tested backup and the requested settings',()=>{let s=createOsSunset();assert.equal(osSunsetStep(s,'restore').message,'need-backup');assert.equal(osSunsetStep(s,'migrate').done,false);for(const action of ['inventory','backup','restore','compat','app-test'])s=osSunsetStep(s,action);assert.equal(s.appTest,false);for(const action of ['updated','app-test','default'])s=osSunsetStep(s,action);assert.equal(osSunsetStep(s,'migrate').done,false);s=osSunsetStep(s,'minimal');s=osSunsetStep(s,'migrate');assert.equal(s.done,true);assert.deepEqual(restoreOsSunset(s),s);assert.throws(()=>restoreOsSunset({...s,backup:false}));});
+test('changing the application invalidates its previous test',()=>{let s=createOsSunset();for(const action of ['inventory','backup','restore','compat','updated','app-test','old'])s=osSunsetStep(s,action);assert.equal(s.appTest,false);});

@@ -113,7 +113,7 @@
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと仮想マシンのカーネルの固定模型。他は未対応。[詳細](os-virtualization.md) |
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136で DB の先行ログ、181でバックアップ復元の固定模型。実 OS の障害耐性は未対応。[詳細](os-faults.md) |
-| OS | OS-SEP | Society, Ethics, and the Profession | 215 | 未着手 |
+| OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[詳細](os-society.md) |
 | PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：更新喪失、排他と循環待ち、依頼90で二人のバリア同期 |
