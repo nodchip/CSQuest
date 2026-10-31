@@ -62,8 +62,8 @@
 | 11 | CS Core | NP 完全性の意義を説明。未着手 |
 | 12 | CS Core | NP 困難性・NP・NP 完全性の関係を説明。未着手 |
 | 13 | CS Core | NP 完全問題の例を説明。未着手 |
-| 14 | KA Core | 再帰の時間計算量に漸化式を使う。未着手 |
-| 15 | KA Core | マスター定理を用いた基本的な漸化式の適用。未着手 |
+| 14 | KA Core | 再帰の時間計算量に漸化式を使う。依頼409で書込み回数の固定例。実時間や一般の分析は未対応 |
+| 15 | KA Core | マスター定理を用いた基本的な漸化式の適用。依頼409で２分割・追加費用 n の固定例。他の条件は未対応 |
 | 16 | KA Core | O 記法で時間・領域の上界を与える。未着手 |
 | 17 | KA Core | Cook–Levin の定理と SAT の NP 完全性を説明。未着手 |
 | 18 | KA Core | P と NP を説明。未着手 |
@@ -164,3 +164,5 @@
 依頼343は n=4・8 の厳密な４分の１比較から、正の n における n/n²→0 と n²/n²=1 の固定例を扱う。有限個の試験自体は極限を証明しない。小さい ω や一般の関数の証明は未対応。参考：[Cornell: Asymptotic Analysis](https://www.cs.cornell.edu/jeh/book%20July%202018.pdf)。
 
 依頼344は昇順配列の最大値より大きい不在値を16回探索する処理を、4096・65536件で３回測り中央値を示す。各方式を16回事前実行し、測定順を交互にする。配列の準備は含めず、タイマー精度や実行環境による変動がある。比較回数は順次が4096・65536、二分が13・17で、時間の優劣を達成条件にはしない。参考：[MDN: performance.now()](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)。
+
+依頼409は n が２のべき、T(1)=1、T(n)=2T(n/2)+n の書込み模型。各段 n、段数 log₂ n＋１ から正確な費用 n(log₂ n＋１) を求め、Θ(n log n) とマスター定理の対応を確認する。端数、実時間や他の場合は未対応。[MIT: Recurrences](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec07.pdf)。

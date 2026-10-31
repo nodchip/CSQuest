@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {recursionTreeLevels,createRecursionTree,recursionTreeStep,recursionTreeTotal,recursionTreeComplete,restoreRecursionTree} from '../src/recursion-tree.js';
+test('each level costs eight and the complete tree costs 32',()=>{let s=createRecursionTree();assert.deepEqual(recursionTreeLevels.map(x=>x.tasks*x.size),[8,8,8,8]);assert.equal(recursionTreeStep(s,4),null);assert.equal(recursionTreeTotal(s,32),null);for(let i=0;i<4;i++)s=recursionTreeStep(s,8);assert.equal(recursionTreeTotal(s,24),null);s=recursionTreeTotal(s,32);s.answers={reason:'levels',growth:'nlog'};s.checked=true;assert.equal(recursionTreeComplete(s),true);assert.deepEqual(restoreRecursionTree(s),s);});
+test('exact formula agrees with recurrence at powers of two',()=>{let t=1;for(let k=1;k<=8;k++){const n=2**k;t=2*t+n;assert.equal(t,n*(k+1));}const s=createRecursionTree();assert.throws(()=>restoreRecursionTree({...s,levels:[8,4]}));assert.throws(()=>restoreRecursionTree({...s,total:true}));});

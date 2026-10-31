@@ -1,0 +1,7 @@
+export const recursionTreeLevel={id:'archive-recursion-tree',number:'409',kind:'recursion-tree',name:'分かれる仕事の木',tag:'漸化式と再帰木',title:'分割する仕事の増え方を調べよう',story:'書庫の仕事は半分に分かれ、各段で記録を書きます。仕事の木をたどり、入力が増えるときの費用を考えましょう。'};
+export const recursionTreeLevels=[{tasks:1,size:8},{tasks:2,size:4},{tasks:4,size:2},{tasks:8,size:1}];
+export function createRecursionTree(){return {levels:[],choice:null,total:false,answers:{reason:null,growth:null},checked:false};}
+export function recursionTreeStep(s,choice){if(s.levels.length>=4||choice!==8)return null;return {...s,levels:[...s.levels,choice],choice:null,checked:false};}
+export function recursionTreeTotal(s,choice){if(s.levels.length!==4||choice!==32)return null;return {...s,total:true,choice:null,checked:false};}
+export function recursionTreeComplete(s){return s.total&&s.levels.length===4&&s.answers.reason==='levels'&&s.answers.growth==='nlog'&&s.checked;}
+export function restoreRecursionTree(s){if(!s||!Array.isArray(s.levels)||s.levels.length>4||!s.levels.every(v=>v===8)||![null,2,4,8,16,24,32].includes(s.choice)||typeof s.total!=='boolean'||(s.total&&(s.levels.length!==4||s.choice!==null))||!s.answers||![null,'levels','constant','square'].includes(s.answers.reason)||![null,'nlog','linear','quadratic'].includes(s.answers.growth)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');return {levels:[...s.levels],choice:s.choice,total:s.total,answers:{...s.answers},checked:s.checked};}
