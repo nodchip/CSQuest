@@ -1,0 +1,4 @@
+import {linearHistoryOrders,linearHistoryCheckOps} from './linear-history.js';
+export const linearExploreTimings={before:{name:'書込みが両方の読取りより前',write:[0,1]},overlap:{name:'書込みが１回目の読取りと重なる',write:[1,4]},both:{name:'書込みが両方の読取りと重なる',write:[1,6]}};
+export function linearExploreOps(timing,first,second){if(!Object.hasOwn(linearExploreTimings,timing)||![0,1].includes(first)||![0,1].includes(second))throw new RangeError('記録が不正です');const [start,end]=linearExploreTimings[timing].write;return {W:{name:'Ｗ：１を書込む',start,end,type:'write',value:1},O:{name:`Ｏ：${first}を読取る`,start:2,end:3,type:'read',value:first},N:{name:`Ｎ：${second}を読取る`,start:5,end:6,type:'read',value:second}};}
+export function linearExploreResults(timing,first,second){const ops=linearExploreOps(timing,first,second);return linearHistoryOrders.map(order=>({order,...linearHistoryCheckOps(ops,order)}));}
