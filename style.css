@@ -92,3 +92,5 @@
 .startup-message{margin:48px auto;padding:24px;max-width:640px;background:#fffef8;border:1px solid #d2ddce;color:#355747;line-height:1.8}.startup-message h1{font-size:20px}.startup-message a{color:#285f46;text-decoration:underline}
 
 .story-finale{margin-top:14px}.beacon-board{display:grid;grid-template-columns:repeat(3,minmax(0,100px));gap:8px;margin:20px 0}.beacon-tile{min-width:0;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid #9aab99;background:#f5f7f1;color:#486354}.beacon-tile.is-lit{background:#f8e9ae;border-color:#bd9d4d;color:#644e1f}.beacon-tile span{font-size:32px;line-height:1}.beacon-tile small{font-size:10px}.beacon-tile:disabled{opacity:1}.beacon-ends{font-size:13px;color:#3d654d}.beacon-empty{min-height:90px}
+
+.span-diagram{display:block;width:min(100%,280px);height:auto;background:#f7faf5;border:1px solid #d2ddce}
