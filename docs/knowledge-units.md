@@ -69,7 +69,7 @@
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 未着手 |
 | GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 未着手 |
 | GIT | GIT-Visualization | Visualization | 156 | 未着手 |
-| GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26で２次元図形の平行移動と回転 |
+| GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26の２次元変換と依頼64の平行・透視投影 |
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 未着手 |
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 未着手 |
 | GIT | GIT-Animation | Computer Animation | 160 | 未着手 |
