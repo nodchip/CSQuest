@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createTape,tapeExpected,tapeStep,createTuringTape,turingTapeComplete,restoreTuringTape} from '../src/turing-tape.js';
+test('the tape machine appends one unary mark and returns to its first cell',()=>{for(let n=0;n<=12;n++){let s=createTape(n);while(s.state!=='done')s=tapeStep(s,tapeExpected(s));assert.deepEqual(s.marks,Array.from({length:n+1},(_,i)=>i+1));assert.equal(s.head,1);assert.equal(s.history.length,2*n+2);}});
+test('invalid transitions and falsified history are rejected; both cases and reflection are required',()=>{const s=createTuringTape();assert.throws(()=>tapeStep(s.trials.empty,'right'));s.trials.empty=tapeStep(tapeStep(s.trials.empty,'write-left'),'finish');s.answer='read-write';s.checked=true;assert.equal(turingTapeComplete(s),false);s.trials.three.history=['finish'];assert.throws(()=>restoreTuringTape(s));let t=createTape(3);while(t.state!=='done')t=tapeStep(t,tapeExpected(t));s.trials.three=t;assert.equal(turingTapeComplete(s),true);assert.deepEqual(restoreTuringTape(s),s);});
