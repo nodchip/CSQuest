@@ -1,0 +1,11 @@
+import {contractResult} from './inventory-contract.js';
+export const boundaryLevel={id:'village-module-boundaries',number:'224',kind:'module-boundaries',name:'倉庫の中身と窓口',tag:'情報隠蔽と部品の依存',title:'倉庫への道をつなぎ直そう',story:'薬師の村の画面と受付は倉庫を使っています。倉庫の記録方法を変えても約束を守れるよう、両方のつなぎ方を見直しましょう。'};
+export const boundaryClients={display:'在庫を表示する画面',request:'取り出しを行う受付'};
+export const boundaryModes={direct:'古い内部記録を直接使う',api:'倉庫の公開された操作を使う'};
+export const boundaryCases={oldNormal:{name:'旧形式・２個取り出す',format:'old',amount:2},newNormal:{name:'新形式・２個取り出す',format:'new',amount:2},oldInvalid:{name:'旧形式・−１個',format:'old',amount:-1},newInvalid:{name:'新形式・−１個',format:'new',amount:-1}};
+export function boundaryResult(config,id){if(!Object.hasOwn(boundaryCases,id)||!config||!Object.keys(boundaryClients).every(k=>Object.hasOwn(boundaryModes,config[k])))throw new RangeError('つなぎ方か試験が不正です。');const c=boundaryCases[id],shown=config.display==='direct'&&c.format==='new'?null:3;let status,remaining;
+ if(config.request==='direct'&&c.format==='new'){status='unavailable';remaining=3;}else if(config.request==='direct'){status='ok';remaining=3-c.amount;}else{const r=contractResult({positive:true,enough:true,unchanged:true},c.amount<0?'negative':'normal');status=r.status;remaining=r.remaining;}return {shown,status,remaining};}
+export function boundaryCasePass(config,id){const c=boundaryCases[id],r=boundaryResult(config,id);return r.shown===3&&r.status===(c.amount<0?'invalid':'ok')&&r.remaining===(c.amount<0?3:1);}
+export function createBoundary(){return {config:{display:'direct',request:'direct'},tested:Object.fromEntries(Object.keys(boundaryCases).map(id=>[id,false]))};}
+export function boundaryComplete(s){return Object.keys(boundaryCases).every(id=>s.tested[id]&&boundaryCasePass(s.config,id));}
+export function restoreBoundary(saved){if(!saved||!saved.config||!saved.tested||!Object.keys(boundaryClients).every(k=>Object.hasOwn(boundaryModes,saved.config[k]))||!Object.keys(boundaryCases).every(k=>typeof saved.tested[k]==='boolean'))throw new RangeError('途中記録が不正です。');return {config:Object.fromEntries(Object.keys(boundaryClients).map(k=>[k,saved.config[k]])),tested:Object.fromEntries(Object.keys(boundaryCases).map(k=>[k,saved.tested[k]]))};}
