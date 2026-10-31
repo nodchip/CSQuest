@@ -1,0 +1,4 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {structuralStages,createStructural,structuralTry,structuralComplete,restoreStructural} from '../src/structural-induction.js';
+test('every proof stage requires the sound reason and explains the incorrect choices',()=>{let state=createStructural();for(const [i,stage] of structuralStages.entries()){assert.equal(stage.choices.filter(c=>c.correct).length,1);for(const [choice,c] of stage.choices.entries())if(!c.correct){const rejected=structuralTry({...state,choice});assert.equal(rejected.stage,i);assert.equal(rejected.message,c.why);}const answer=stage.choices.findIndex(c=>c.correct);state=structuralTry({...state,choice:answer});}assert.equal(structuralComplete(state),true);assert.deepEqual(restoreStructural(state),{...state,message:''});assert.throws(()=>restoreStructural({stage:4,choice:null}));});
