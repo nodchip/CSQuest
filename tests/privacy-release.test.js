@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createRelease,releaseResult,releaseKey,releaseComplete,restoreRelease} from '../src/privacy-release.js';
+test('all eight combinations respect group size, diversity and retention requirements',()=>{const successes=[];for(const age of ['exact','decade'])for(const area of [true,false])for(const excludeOlder of [true,false]){const s={age,area,excludeOlder};const r=releaseResult(s);assert.equal(r.count,excludeOlder?4:6);if(r.meets)successes.push(releaseKey(s));}assert.deepEqual(successes,['exact:false:true','decade:false:true']);});
+test('evaluation before and after changes and the limitation are required',()=>{const s=createRelease();s.observed.push(releaseKey(s));s.age='decade';s.area=false;s.excludeOlder=true;s.observed.push(releaseKey(s));s.answer='tradeoff';s.checked=true;assert.equal(releaseComplete(s),true);const copy=restoreRelease(s);copy.observed.pop();assert.equal(releaseComplete(copy),false);assert.equal(releaseComplete(s),true);assert.throws(()=>restoreRelease({...s,observed:['invalid']}));});

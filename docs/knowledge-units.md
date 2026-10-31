@@ -46,7 +46,7 @@
 | DM | DM-Analytics | Data Analytics | 121 | 依頼127で名寄せの固定例。可視化・分類・回帰・公平性などは別の固定例のみ。[詳細](dm-analytics.md) |
 | DM | DM-Distributed | Distributed Databases/Cloud Computing | 122 | 依頼190・191・193・293・294で複製、分割、クォーラム、分散取引と結合の固定模型。他は未対応。[詳細](dm-distributed.md) |
 | DM | DM-Unstructured | Semi-structured and Unstructured Databases | 122 | 依頼120で転置索引と TF-IDF の固定例。他は未対応。[詳細](dm-unstructured.md) |
-| DM | DM-SEP | Society, Ethics, and the Profession | 123 | 依頼194・196・330〜332で収集、推論、来歴、管理責任と準識別子の固定例。他は未対応。[詳細](dm-society.md) |
+| DM | DM-SEP | Society, Ethics, and the Profession | 123 | 依頼194・196・330〜333で収集、推論、来歴、管理責任と準識別子の固定例。他は未対応。[詳細](dm-society.md) |
 | FPL | FPL-OOP | Object-Oriented Programming | 130 | 一部試作：依頼65で個体ごとの状態と種類別の動的な振る舞い |
 | FPL | FPL-Functional | Functional Programming | 131 | 一部試作：依頼51・52で列処理とクロージャの固定例 |
 | FPL | FPL-Logic | Logic Programming | 133 | 依頼146〜150で有限の項の単一化、事実・規則・問い合わせ、探索と戻り、再帰的な関係、カットの固定例。他は未対応。[詳細](fpl-logic.md) |
