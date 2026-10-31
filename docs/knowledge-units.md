@@ -102,7 +102,7 @@
 | OS | OS-Concurrency | Concurrency | 208 | 未着手 |
 | OS | OS-Protection | Protection and Safety | 209 | 未着手 |
 | OS | OS-Scheduling | Scheduling | 209 | 一部試作：先着順とラウンドロビン |
-| OS | OS-Process | Process Model | 210 | 未着手 |
+| OS | OS-Process | Process Model | 210 | 一部試作：依頼53で単一の計算装置と入出力待ちの状態を操作 |
 | OS | OS-Memory | Memory Management | 210 | 一部試作：依頼34・40で FIFO・LRU のページ置換と住所変換 |
 | OS | OS-Devices | Device management | 211 | 未着手 |
 | OS | OS-Files | File Systems API and Implementation | 212 | 未着手 |
