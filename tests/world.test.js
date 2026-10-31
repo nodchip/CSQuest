@@ -36,6 +36,17 @@ test('the AI path connects introductions to search, learning, and applications',
  before('workshop-ai-kinds','crystal-neighbors');before('forest-search','forest-iterative-deepening');before('weighted-roads','guided-ruins');before('forest-hill-climbing','forest-annealing');before('crystal-neighbors','archive-feature-preparation');before('archive-feature-preparation','archive-kmeans');before('archive-feature-preparation','archive-hypothesis-space');before('crystal-overfit','archive-validation-split');before('rain-observations','ruin-agent-utility');before('ruin-agent-utility','ruin-reinforcement');
  assert.equal(nextTrailQuest(trail,all,['workshop-ai-kinds']).level.id,'forest-search');
 });
+test('introductory and subject paths recommend related foundations before later topics',()=>{
+ const intro=findTrail('first-steps').quests, paths=findTrail('paths').quests, systems=findTrail('systems').quests;
+ assert.deepEqual(intro.slice(0,7),['sequence','branch','loop','two-paths','workshop-assignment-swap','workshop-counting-loop','workshop-function-scope']);
+ assert.ok(intro.indexOf('workshop-parameter-passing')<intro.indexOf('workshop-lambda-reduction'));
+ assert.ok(!intro.includes('workshop-sensor-sampling'));
+ assert.ok(!paths.includes('archive-kmeans'));
+ assert.ok(!paths.includes('forest-nat-mapping'));
+ assert.ok(systems.includes('forest-nat-mapping'));
+ assert.ok(findTrail('craft').quests.includes('workshop-sensor-sampling'));
+ assert.ok(!findTrail('ai-journey').quests.includes('forest-cover-reduction'));
+});
 test('the next suggestion is the earliest unfinished quest even when later ones were completed first',()=>{
   for(const trail of learningTrails){const items=trailQuests(trail,all);assert.deepEqual(nextTrailQuest(trail,all,[]),items[0]);assert.deepEqual(nextTrailQuest(trail,all,[items[0].level.id,items.at(-1).level.id]),items[1]);assert.equal(nextTrailQuest(trail,all,trail.quests),null);}
 });
