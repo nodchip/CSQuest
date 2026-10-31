@@ -148,7 +148,7 @@
 | SEP | SEP-Communication | Communication | 279 | 依頼295で相手に合わせた架空の報告と未確認事項の固定例。他は未対応。[詳細](sep-communication.md) |
 | SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の集計範囲と期間の架空比較。他は未対応。[詳細](sep-sustainability.md) |
 | SEP | SEP-History | Computing History | 282 | 依頼363で三つの出来事と人々の役割を紹介。他は未対応。[詳細](sep-history.md) |
-| SEP | SEP-Economies | Economies of Computing | 283 | 未着手 |
+| SEP | SEP-Economies | Economies of Computing | 283 | 依頼364で伝令網の接続と相互運用を比較。他は未対応。[詳細](sep-economies.md) |
 | SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 未着手 |
 | SEP | SEP-DEIA | Diversity, Equity, Inclusion, and Accessibility | 285 | 未着手 |
 | SF | SF-Overview | Overview of Computer Systems | 292 | 回路、OS、パイプライン等に固定例。歴史や層間の一般的な構築は未対応。[詳細](sf-overview.md) |

@@ -20,5 +20,6 @@
 | KA Core 3 歴史上の形成的・重大な傾向を特定 | 依頼363で三時点を並べる固定例。傾向の一般的な分析は未対応 |
 | KA Core 4 先駆者・組織の貢献を特定 | 依頼363でラブレス、ENIAC に関わる女性たち、CERN における Web の提案を紹介。他の貢献者は未対応 |
 | KA Core 5 重要な出来事の歴史的文脈を議論 | 依頼363で研究者間の情報共有という Web の目的に触れる。広い文脈の議論は未対応 |
+| KA Core 6 大きな発展の前後の日常生活の比較 | 未対応 |
 
 依頼363の年と内容は、[Computer History Museum のラブレスの注記](https://www.computerhistory.org/babbage/adalovelace)、[Smithsonian の ENIAC と女性たち](https://womenshistory.si.edu/human-computer-project)、[CERN の Web の歴史](https://home.cern/science/computing/the-birth-of-the-web) を参照した。Web の1989年は提案の年であり、インターネットそのものの発明年ではない。

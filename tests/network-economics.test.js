@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {networkEconomicsPairs,createNetworkEconomics,measureNetworkEconomics,networkEconomicsComplete,restoreNetworkEconomics} from '../src/network-economics.js';
+test('split, linked, and single-network cases yield two, six, and six undirected pairs',()=>{const groups=['red','red','blue','blue'];assert.equal(networkEconomicsPairs(groups,false).length,2);assert.equal(networkEconomicsPairs(groups,true).length,6);assert.equal(networkEconomicsPairs(['red','red','red','red'],false).length,6);});
+test('all comparisons and a bounded conclusion are needed',()=>{let s=measureNetworkEconomics(createNetworkEconomics());s.bridge=true;s=measureNetworkEconomics(s);s.bridge=false;s.groups=['red','red','red','red'];s=measureNetworkEconomics(s);s.answer='inevitable';s.checked=true;assert.equal(networkEconomicsComplete(s),false);s.answer='choice';assert.equal(networkEconomicsComplete(s),true);assert.deepEqual(restoreNetworkEconomics(s),s);assert.throws(()=>restoreNetworkEconomics({...s,groups:['red']}));});
