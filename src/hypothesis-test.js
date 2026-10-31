@@ -1,0 +1,10 @@
+export const hypothesisTestLevel={id:'village-hypothesis-test',number:'436',kind:'hypothesis-test',name:'灯りの偏りと仮説検定',tag:'仮説検定・p値',title:'灯りの記録を検討しよう',story:'村の灯りが点きやすいという噂を聞き、８回の記録を調べます。'};
+export const hypothesisCases={eight:{label:'８回とも点灯',observed:8},seven:{label:'７回点灯・１回消灯',observed:7}};
+export const hypothesisCounts=[1,8,28,56,70,56,28,8,1];
+export function extremeMask(observed){if(!Number.isInteger(observed)||observed<0||observed>8)throw new RangeError('観測が不正です');let mask=0;for(let k=0;k<=8;k++)if(Math.abs(k-4)>=Math.abs(observed-4))mask|=1<<k;return mask;}
+export function selectedCount(mask){if(!Number.isInteger(mask)||mask<0||mask>511)throw new RangeError('選択が不正です');return hypothesisCounts.reduce((sum,n,k)=>sum+((mask>>k)&1)*n,0);}
+export function createHypothesisTrial(){return {mask:0,decision:null,done:false};}
+export function hypothesisTrialValid(id,t){const c=hypothesisCases[id];return !!c&&t.mask===extremeMask(c.observed)&&t.decision===(selectedCount(t.mask)/256<=0.05?'reject':'retain');}
+export function createHypothesisTest(){return {selected:'eight',trials:{eight:createHypothesisTrial(),seven:createHypothesisTrial()},answer:null,checked:false};}
+export function hypothesisTestComplete(s){return Object.keys(hypothesisCases).every(id=>s.trials[id].done&&hypothesisTrialValid(id,s.trials[id]))&&s.answer==='conditional'&&s.checked;}
+export function restoreHypothesisTest(s){if(!s||!Object.hasOwn(hypothesisCases,s.selected)||!s.trials||![null,'conditional','truth','proof'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const r=createHypothesisTest();r.selected=s.selected;r.answer=s.answer;r.checked=s.checked;for(const id of Object.keys(hypothesisCases)){const t=s.trials[id];if(!t||!Number.isInteger(t.mask)||t.mask<0||t.mask>511||![null,'reject','retain'].includes(t.decision)||typeof t.done!=='boolean'||t.done&&!hypothesisTrialValid(id,t))throw new RangeError('途中記録が不正です');r.trials[id]={mask:t.mask,decision:t.decision,done:t.done};}return r;}
