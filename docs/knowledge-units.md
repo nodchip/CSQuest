@@ -123,7 +123,7 @@
 | SDF | SDF-SEP | Society, Ethics, and the Profession | 233 | 未着手 |
 | SE | SE-Teamwork | Teamwork | 240 | 一部試作：依頼59で提示された関係者の希望を確認。実際の協働は未対応 |
 | SE | SE-Tools | Tools and Environments | 241 | 一部試作：依頼59で共通の元と２版の変更を比較 |
-| SE | SE-Requirements | Product Requirements | 242 | 未着手 |
+| SE | SE-Requirements | Product Requirements | 242 | 依頼87で架空の聞き取り、機能・品質・曖昧さと振る舞いの分類。他は未対応。[詳細](se-requirements.md) |
 | SE | SE-Design | Software Design | 243 | 未着手 |
 | SE | SE-Construction | Software Construction | 245 | 未着手 |
 | SE | SE-Validation | Software Verification and Validation | 246 | 一部試作：依頼23で仕様に基づく有限の試験選択 |
