@@ -43,7 +43,7 @@
 | DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38・39で原子性・永続性・分離と競合直列化の固定例 |
 | DM | DM-NoSQL | NoSQL Systems | 120 | 未着手 |
 | DM | DM-Security | Data Security and Privacy | 121 | 未着手 |
-| DM | DM-Analytics | Data Analytics | 121 | 未着手 |
+| DM | DM-Analytics | Data Analytics | 121 | 依頼127で名寄せの固定例。可視化・分類・回帰・公平性などは別の固定例のみ。[詳細](dm-analytics.md) |
 | DM | DM-Distributed | Distributed Databases/Cloud Computing | 122 | 未着手 |
 | DM | DM-Unstructured | Semi-structured and Unstructured Databases | 122 | 依頼120で転置索引と TF-IDF の固定例。他は未対応。[詳細](dm-unstructured.md) |
 | DM | DM-SEP | Society, Ethics, and the Profession | 123 | 未着手 |
