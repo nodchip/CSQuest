@@ -2,6 +2,8 @@
 
 出典: CS2023 目次（PDF 印字ページ番号）。トピック・学習成果単位への分解と照合は一部のみ実施済みで、全単位分は未完了。分野や単位が列挙されていることは、対応済みを意味しない。
 
+目次の単位 ID・名称・印字ページは、PDF から `pdftotext -layout CS2023.pdf cs2023.txt` で抽出後、`python scripts/check_knowledge_units.py cs2023.txt` で照合できる。2026-10-31 の照合では目次とこの表は各166行で一致した。目次に名称がない単位は ID とページのみ比較する。この検査は教材、各トピック・学習成果、原典の本文の正確性を確認するものではない。
+
 | 分野 | 単位 | 名称 | 印字ページ | 状態 |
 |---|---|---|---:|---|
 | AI | AI-Introduction | Fundamental Issues | 67 | 依頼109で部分観測と記憶に基づく行動の固定例。他は未対応。[詳細](ai-introduction.md) |
@@ -165,3 +167,8 @@
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 未着手 |
 | SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の点と壁の衝突・トンネリングの固定例。他は未対応。[詳細](spd-game.md) |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 未着手 |
+| SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Interactive | Interactive の社会・倫理（作業用名） | 312 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
