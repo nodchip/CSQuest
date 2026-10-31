@@ -169,6 +169,6 @@
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 未着手 |
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
-| SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で音を使えない条件の字幕の固定例。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Interactive | Interactive の社会・倫理（作業用名） | 312 | 項目一覧化。教材は未対応。[詳細](spd-sep.md) |
