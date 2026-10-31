@@ -1,0 +1,9 @@
+export const gradientLevel={id:'gradient-valley',number:'116',kind:'gradient',name:'水晶の誤差の谷',tag:'導関数と勾配降下',title:'谷底へ進もう',story:'鑑定士は予測の誤差が小さい設定を探します。谷の傾きと歩幅を使い、光の珠を動かしましょう。'};
+export const gradientModes={small:{name:'小さな学習率',rate:0.25},large:{name:'大きな学習率',rate:1}};
+export function gradientLoss(w){if(!Number.isFinite(w))throw new RangeError('位置が不正です。');return (w-2)**2;}
+export function gradientSlope(w){if(!Number.isFinite(w))throw new RangeError('位置が不正です。');return 2*(w-2);}
+export function createGradientTrial(id){if(!Object.hasOwn(gradientModes,id))throw new RangeError('学習率が不正です。');return {id,w:0,steps:0,history:[],message:'珠は０から出発します。'};}
+export function gradientStep(state,direction){if(state.steps>=4||!['left','right'].includes(direction))throw new RangeError('操作できません。');const slope=gradientSlope(state.w),expected=slope<0?'right':slope>0?'left':null;if(direction!==expected)return {...state,message:'今の傾きの符号を見て、誤差が減る方向を選びましょう。'};const next=state.w-gradientModes[state.id].rate*slope;return {...state,w:next,steps:state.steps+1,history:[...state.history,{from:state.w,slope,to:next,loss:gradientLoss(next)}],message:`位置 ${next}、誤差 ${gradientLoss(next)} に移動しました。`};}
+export function createGradient(){return {selected:'small',states:Object.fromEntries(Object.keys(gradientModes).map(id=>[id,createGradientTrial(id)]))};}
+export function restoreGradient(saved){if(!saved||!Object.hasOwn(gradientModes,saved.selected)||!saved.steps)throw new RangeError('途中記録が不正です。');const result=createGradient();result.selected=saved.selected;for(const id of Object.keys(gradientModes)){const n=saved.steps[id];if(!Number.isInteger(n)||n<0||n>4)throw new RangeError('途中記録が不正です。');let state=result.states[id];for(let i=0;i<n;i++)state=gradientStep(state,gradientSlope(state.w)<0?'right':'left');result.states[id]=state;}return result;}
+export function gradientComplete(set){return Object.values(set.states).every(state=>state.steps===4);}

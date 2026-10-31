@@ -89,6 +89,7 @@
 | MSF | MSF-Probability | Probability | 188 | 一部試作：条件付き確率、期待値と、依頼84で等確率の４札の分散 |
 | MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜115で代表値、条件別集計、度数、四分位範囲と回帰の固定例。他は未対応。[詳細](msf-statistics.md) |
 | MSF | MSF-Linear | Linear Algebra | 191 | 一部試作：２次元の内積と向き、依頼86で２×２行列による線形変換 |
+| MSF | MSF-Calculus | Calculus | 192 | 依頼116で一変数の導関数と勾配降下の固定例。他は未対応。[詳細](msf-calculus.md) |
 | NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層、カプセル化と中継時の区間別アドレスの固定例。他は未対応。[詳細](nc-fundamentals.md) |
 | NC | NC-Applications | Networked Applications | 199 | 一部試作：依頼62で POST の受付後の応答消失と再送 |
 | NC | NC-Reliability | Reliability Support | 199 | 一部試作：消失、再送、重複排除 |
