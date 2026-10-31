@@ -101,7 +101,7 @@
 | NC | NC-Mobility | Mobility | 201 | 依頼316〜318で保存・中継、無線 LAN の再接続とセルラー登録区域の固定例。他は未対応。[詳細](nc-mobility.md) |
 | NC | NC-Emerging | Emerging Topics | 201 | 依頼319〜322で SDN、NAT、負荷分散と CDN の固定模型。他は未対応。[詳細](nc-emerging.md) |
 | OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で仕事の切り替えと完了時刻の比較、53・54・77・105・133・151〜153に関連する固定例。OS の目的や機能の全体像と設計の体系的比較は未対応。[詳細](os-purpose.md) |
-| OS | OS-Principles | Principles of Operating System | 207 | 一部試作：依頼54で保護された装置とシステムコールの固定例 |
+| OS | OS-Principles | Principles of Operating System | 207 | 依頼54で保護とシステムコール、依頼381で一体型・分離型の保護境界と切替えの固定例。他は未対応。[詳細](os-principles.md) |
 | OS | OS-Concurrency | Concurrency | 208 | 依頼15・16・30・177〜179で更新喪失、排他、循環待ち、飢餓、セマフォとプロセス・スレッドの記録共有の固定例。実 OS の同期は未対応。[詳細](os-concurrency.md) |
 | OS | OS-Protection | Protection and Safety | 209 | 依頼11・54・180・181で権限、媒体・起動・受付の保護とバックアップの固定模型。実 OS の脆弱性や保護機構は未対応。[詳細](os-protection.md) |
 | OS | OS-Scheduling | Scheduling | 209 | 一部試作：先着順とラウンドロビン |
