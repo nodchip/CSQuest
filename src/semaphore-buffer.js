@@ -1,0 +1,11 @@
+export const semaphoreLevel={id:'forge-semaphore-buffer',number:'178',kind:'semaphore-buffer',name:'一つ箱の伝言',tag:'セマフォと同期',title:'送り手と受け手をつなぐ',story:'精霊は一つしか入らない箱を使い、二つの巻物を順番に渡します。空きと到着を数える印で、待機と再開を調べましょう。'};
+const scrolls=['月','星'];
+export function createSemaphore(){return {empty:1,full:0,buffer:null,received:[],producer:{phase:'wait',index:0,blocked:false},consumer:{phase:'wait',index:0,blocked:false},history:[],message:'次に進める精霊を選びましょう。'};}
+export function stepSemaphore(s,who){if(!['producer','consumer'].includes(who))throw new RangeError('精霊が不正です。');const actor=s[who];if(actor.index===2)return {...s,message:'この精霊は仕事を終えています。'};if(actor.blocked)return {...s,message:'この精霊は印を待っています。相手を進めましょう。'};const n={...s,producer:{...s.producer},consumer:{...s.consumer},received:s.received.slice(),history:s.history.slice()},a=n[who],isProducer=who==='producer';
+  if(a.phase==='wait'){const key=isProducer?'empty':'full';if(n[key]===0){a.blocked=true;n.message=`${isProducer?'送り手':'受け手'}は${isProducer?'空き':'到着'}の印を待ちます。`;}else{n[key]--;a.phase='work';n.message=`${isProducer?'空き':'到着'}の印を１つ受け取りました。`;}}
+  else if(a.phase==='work'){if(isProducer){if(n.buffer!==null)throw new Error('箱が満杯です。');n.buffer=scrolls[a.index];n.message=`${n.buffer}の巻物を箱に入れました。`;}else{if(n.buffer===null)throw new Error('箱が空です。');n.received.push(n.buffer);n.message=`${n.buffer}の巻物を受け取りました。`;n.buffer=null;}a.phase='signal';}
+  else if(a.phase==='signal'){const other=isProducer?n.consumer:n.producer,key=isProducer?'full':'empty';if(other.blocked){other.blocked=false;other.phase='work';n.message=`${isProducer?'到着':'空き'}の印を待つ相手に渡し、再開しました。`;}else{n[key]++;n.message=`${isProducer?'到着':'空き'}の印を１つ増やしました。`;}a.index++;a.phase='wait';}
+  else throw new RangeError('状態が不正です。');n.history.push(who);return n;
+}
+export function semaphoreComplete(s){return s.producer.index===2&&s.consumer.index===2&&s.received.join('')==='月星'&&s.buffer===null&&s.empty===1&&s.full===0;}
+export function restoreSemaphore(saved){if(!saved||!Array.isArray(saved.history)||saved.history.length>16)throw new RangeError('途中記録が不正です。');let s=createSemaphore();for(const who of saved.history){const next=stepSemaphore(s,who);if(next.history.length!==s.history.length+1)throw new RangeError('履歴が不正です。');s=next;}return s;}
