@@ -143,7 +143,7 @@
 | SEP | SEP-Context | Social Context | 273 | 未着手 |
 | SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 一部試作：依頼63で架空の関係者の声と３案の影響を比較 |
 | SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 未着手 |
-| SEP | SEP-IP | Intellectual Property | 277 | 未着手 |
+| SEP | SEP-IP | Intellectual Property | 277 | 依頼269で２ライセンスの固定例。法的基礎、権利の種類、剽窃などは未対応。[詳細](sep-ip.md) |
 | SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き |
 | SEP | SEP-Communication | Communication | 279 | 未着手 |
 | SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の集計範囲と期間の架空比較。他は未対応。[詳細](sep-sustainability.md) |
@@ -159,7 +159,7 @@
 | SF | SF-Reliability | System Reliability | 296 | 依頼10・35・62・106〜108・229で再送、途中停止、冗長符号、稼働記録と複製の固定例。他は未対応。[詳細](sf-reliability.md) |
 | SF | SF-Security | System Security | 297 | 依頼180・258などで攻撃と対策の固定例。侵入検知などは未対応。[詳細](sf-security-design.md) |
 | SF | SF-Design | System Design | 297 | 設計基準に関連する固定例。代表的システムの設計は未対応。[詳細](sf-security-design.md) |
-| SF | SF-SEP | Society, Ethics, and the Profession | 297 | 原典の項目を整理。権利、ライセンス、犯罪の教材は未対応。[詳細](sf-security-design.md) |
+| SF | SF-SEP | Society, Ethics, and the Profession | 297 | 依頼269で２ライセンスの限定的な比較。権利と犯罪などは未対応。[詳細](sf-security-design.md) |
 | SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 未着手 |
 | SPD | SPD-Web | Web Platforms | 303 | 一部試作：依頼62で受付 API と再送の固定例 |
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 未着手 |

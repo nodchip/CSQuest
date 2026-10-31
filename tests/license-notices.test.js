@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {licenseCases,licenseItems,licenseExpected,createLicense,licenseCorrect,licenseComplete,restoreLicense} from '../src/license-notices.js';
+test('all eight answer combinations are checked against the stated conditions in both scenarios',()=>{for(const id of Object.keys(licenseCases))for(let mask=0;mask<8;mask++){const s=createLicense();Object.keys(licenseItems).forEach((k,i)=>s.answers[id][k]=!!(mask&(1<<i)));s.answers[id].checked=true;assert.equal(licenseCorrect(s,id),Object.keys(licenseItems).every(k=>s.answers[id][k]===licenseExpected[id][k]));}});
+test('both checked comparisons are required and restored answers are independent',()=>{const s=createLicense();for(const id of Object.keys(licenseCases))s.answers[id]={...licenseExpected[id],checked:true};const copy=restoreLicense(s);s.answers.mit.checked=false;assert.equal(licenseComplete(s),false);assert.equal(licenseComplete(copy),true);assert.throws(()=>restoreLicense({...copy,selected:'other'}),RangeError);});
