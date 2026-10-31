@@ -36,7 +36,7 @@
 | DM | DM-Core | Core Database System Concepts | 115 | 未着手 |
 | DM | DM-Modeling | Data Modeling | 116 | 未着手 |
 | DM | DM-Relational | Relational Databases | 117 | 未着手 |
-| DM | DM-Querying | Query Construction | 118 | 未着手 |
+| DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による行の選択 |
 | DM | DM-Processing | Query Processing | 118 | 未着手 |
 | DM | DM-Internals | DBMS Internals | 119 | 未着手 |
 | DM | DM-NoSQL | NoSQL Systems | 120 | 未着手 |
