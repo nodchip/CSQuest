@@ -139,7 +139,7 @@
 | SEC | SEC-Crypto | Cryptography | 260 | 依頼58・128・259〜264で鍵の再利用、署名、教材用 RSA、鍵交換、認証、再送防止と衝突確率の固定例。他は未対応。[詳細](sec-crypto.md) |
 | SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 依頼328・329で脅威経路、対策の選択と修正前後の試験の固定模型。他は未対応。[詳細](sec-engineering.md) |
 | SEC | SEC-Forensics | Digital Forensics | 262 | 依頼195・286で監査、受け渡しと照合の固定例。他は未対応。[詳細](sec-forensics.md) |
-| SEC | SEC-Governance | Security Governance | 263 | 未着手 |
+| SEC | SEC-Governance | Security Governance | 263 | 依頼353で復旧方針・保管・訓練の固定例。他は未対応。[詳細](sec-governance.md) |
 | SEP | SEP-Context | Social Context | 273 | 未着手 |
 | SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 一部試作：依頼63で架空の関係者の声と３案の影響を比較 |
 | SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 未着手 |

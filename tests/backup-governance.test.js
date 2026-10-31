@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createGovernance,governanceResult,governanceRun,governanceComplete,restoreGovernance} from '../src/backup-governance.js';
+test('a common failure destroys a local copy, while a separate copy still needs a recovery exercise',()=>{const s=createGovernance();s.backup='local';s.drill=true;assert.equal(governanceResult(s).outcome,'lost');s.backup='separate';s.drill=false;assert.equal(governanceResult(s).outcome,'untested');s.drill=true;assert.equal(governanceResult(s).outcome,'restored');});
+test('the policy, technical measure and exercise must agree after both outcomes are observed',()=>{let s=createGovernance();s.backup='local';s=governanceRun(s);s.backup='separate';s.drill=true;s.policy='week';s=governanceRun(s);s.checked=true;assert.equal(governanceComplete(s),false);s.policy='day';s=governanceRun(s);s.checked=true;assert.equal(governanceComplete(s),true);assert.deepEqual(restoreGovernance(s),s);assert.throws(()=>restoreGovernance({...s,backup:'local'}));});
