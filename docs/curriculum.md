@@ -4,7 +4,7 @@
 
 | 略号 | 分野 | 状況 |
 |---|---|---|
-| AI | 人工知能 | 未着手 |
+| AI | 人工知能 | 一部試作：架空データの特徴を比べる最近傍分類。学習評価や他の手法は未対応 |
 | AL | アルゴリズムの基礎 | 一部試作：隣接交換による整列、幅優先探索、重み付き最短路。特定の整列手法や一般的な計算量などは未対応 |
 | AR | アーキテクチャと構成 | 一部試作：論理ゲートを組み合わせ、４通りの入力を試す。順序回路・計算機構成などは未対応 |
 | DM | データ管理 | 一部試作：複数条件による行の選択と内部結合。SQL の記述、更新などは未対応 |
@@ -22,4 +22,4 @@
 | SF | システムの基礎 | 未着手 |
 | SPD | 専門プラットフォームの開発 | 未着手 |
 
-知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md)、[pdc-coordination.md](pdc-coordination.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
+知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [ai-ml.md](ai-ml.md)、[sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md)、[pdc-coordination.md](pdc-coordination.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
