@@ -137,7 +137,7 @@
 | SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 未着手 |
 | SEC | SEC-Coding | Secure Coding | 259 | 依頼82で文字列連結と値のパラメータ化による検索の固定例。他は未対応。[詳細](sec-coding.md) |
 | SEC | SEC-Crypto | Cryptography | 260 | 依頼58・128・259〜264で鍵の再利用、署名、教材用 RSA、鍵交換、認証、再送防止と衝突確率の固定例。他は未対応。[詳細](sec-crypto.md) |
-| SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 未着手 |
+| SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 依頼328で資産・３経路・対策と枠の固定模型。他は未対応。[詳細](sec-engineering.md) |
 | SEC | SEC-Forensics | Digital Forensics | 262 | 依頼195・286で監査、受け渡しと照合の固定例。他は未対応。[詳細](sec-forensics.md) |
 | SEC | SEC-Governance | Security Governance | 263 | 未着手 |
 | SEP | SEP-Context | Social Context | 273 | 未着手 |
