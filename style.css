@@ -38,3 +38,4 @@
 .recursion-stack{display:flex;flex-direction:column;gap:6px;list-style:none;padding:0;margin:12px 0 18px}.recursion-stack li{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px;background:#f1f6ed;border:1px solid #d5e1d3;color:#526e59;font-size:12px}.recursion-stack li.top{background:#f8f1d9;border-color:#c5aa70}.recursion-stack li span{flex:1;min-width:160px}.recursion-stack small{color:#9a8251}
 
 .bst-tree,.bst-tree ul{padding-left:1.1em}
+.energy-map{display:grid;grid-template-columns:repeat(5,minmax(0,72px));gap:6px;justify-content:center;margin:24px auto 0}.energy-map .water{background:#d7e9ef;color:#305c70}.energy-map .charger{background:#f7e6ad;color:#6e592b}
