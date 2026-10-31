@@ -156,7 +156,7 @@
 | SF | SF-Resource | Resource Management | 294 | 未着手 |
 | SF | SF-Performance | System Performance | 294 | 一部試作：依頼25でキャッシュと時間的局所性 |
 | SF | SF-Evaluation | Performance Evaluation | 295 | 一部試作：依頼66で理想化した並列作業の時間を比較 |
-| SF | SF-Reliability | System Reliability | 296 | 依頼10・35・62・106〜108で再送、途中停止、冗長符号と稼働記録の固定例。他は未対応。[詳細](sf-reliability.md) |
+| SF | SF-Reliability | System Reliability | 296 | 依頼10・35・62・106〜108・229で再送、途中停止、冗長符号、稼働記録と複製の固定例。他は未対応。[詳細](sf-reliability.md) |
 | SF | SF-Security | System Security | 297 | 未着手 |
 | SF | SF-Design | System Design | 297 | 未着手 |
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 未着手 |
