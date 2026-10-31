@@ -138,7 +138,7 @@
 | SEC | SEC-Forensics | Digital Forensics | 262 | 未着手 |
 | SEC | SEC-Governance | Security Governance | 263 | 未着手 |
 | SEP | SEP-Context | Social Context | 273 | 未着手 |
-| SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 未着手 |
+| SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 一部試作：依頼63で架空の関係者の声と３案の影響を比較 |
 | SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 未着手 |
 | SEP | SEP-IP | Intellectual Property | 277 | 未着手 |
 | SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き |

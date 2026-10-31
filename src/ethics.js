@@ -1,0 +1,12 @@
+export const ethicsLevel={id:'village-choices',number:'63',kind:'ethics',name:'村の受取方法を考える',tag:'関係者と倫理的判断',title:'それぞれの声を集めよう',story:'薬草を受け取る方法を変える相談が村に届きました。関わる人たちの声を聞き、三つの案を比べましょう。'};
+export const ethicsVoices={recipient:{name:'受取人 ミナ',text:'薬草の種類と名前が誰にでも見えると困ります。'},courier:{name:'配達人 ロウ',text:'名前と薬草の種類が一覧にあれば、準備した包みをすぐ探せます。'},traveler:{name:'旅人 サナ',text:'魔法の端末が使えなくても受け取りたいです。'},clerk:{name:'受付の精霊',text:'受付で一つずつ照合する案なら手間と待ち時間が増えます。'}};
+export const ethicsEffects={fast:{name:'名前と薬草の種類の一覧から包みを素早く探せる'},private:{name:'名前と薬草の種類を公開しない'},offline:{name:'端末なしでも受付で受け取れる'},exposure:{name:'名前と薬草の種類が公開される'},device:{name:'端末を使えない人は受け取れない'},delay:{name:'受付の照合による待ち時間が増える'}};
+export const ethicsPlans={public:{name:'公開掲示板',description:'名前と薬草の種類を誰でも見られる一覧に載せます。受取は端末で行います。',effects:['fast','exposure','device']},number:{name:'番号だけの端末',description:'一覧には受取番号だけを載せ、名前と薬草の種類は公開しません。受取は端末で行います。',effects:['private','device']},counter:{name:'受付で照合',description:'名前と薬草の種類を公開せず、端末なしでも受付で番号を照合します。受付では一件ずつ調べます。',effects:['private','offline','delay']}};
+export function createEthics(){return {observed:[],selected:'public',plans:Object.fromEntries(Object.keys(ethicsPlans).map(id=>[id,{effects:[],checked:false}])),decision:''};}
+export function ethicsCorrect(id,choice){if(!Object.hasOwn(ethicsPlans,id))throw new RangeError('未知の案です。');const expected=ethicsPlans[id].effects;return expected.length===choice.effects.length&&expected.every(effect=>choice.effects.includes(effect));}
+export function ethicsComplete(s){return s.observed.length===Object.keys(ethicsVoices).length&&Object.keys(ethicsPlans).every(id=>s.plans[id].checked&&ethicsCorrect(id,s.plans[id]))&&Object.hasOwn(ethicsPlans,s.decision);}
+export function restoreEthics(saved){
+  if(!saved||!Array.isArray(saved.observed)||new Set(saved.observed).size!==saved.observed.length||saved.observed.some(id=>typeof id!=='string'||!Object.hasOwn(ethicsVoices,id))||!Object.hasOwn(ethicsPlans,saved.selected)||!saved.plans||(saved.decision!==''&&!Object.hasOwn(ethicsPlans,saved.decision)))throw new RangeError('途中記録が不正です。');
+  const s=createEthics();s.observed=saved.observed.slice();s.selected=saved.selected;s.decision=saved.decision;
+  for(const id of Object.keys(ethicsPlans)){const p=saved.plans[id];if(!p||!Array.isArray(p.effects)||new Set(p.effects).size!==p.effects.length||p.effects.some(x=>typeof x!=='string'||!Object.hasOwn(ethicsEffects,x))||typeof p.checked!=='boolean')throw new RangeError('途中記録が不正です。');s.plans[id]={effects:p.effects.slice(),checked:p.checked};}return s;
+}
