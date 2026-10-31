@@ -1,0 +1,7 @@
+export const thresholdLevel={id:'ruin-threshold-segmentation',number:'230',kind:'threshold-segmentation',name:'霞の中の紋章',tag:'画像の領域分割と評価',title:'紋章の画素を見つけよう',story:'霞に包まれた遺跡の紋章を、画素の明るさから探します。境界の選び方で間違いがどう変わるか確かめましょう。'};
+export const thresholdImage=[[0,0,0,0],[0,1,2,1],[0,2,3,2],[0,0,0,1]];
+export const thresholds=[1,2,3];
+export function thresholdResult(t){if(!thresholds.includes(t))throw new RangeError('しきい値が不正です。');let tp=0,fp=0,fn=0,tn=0;const cells=thresholdImage.map((row,y)=>row.map((value,x)=>{const actual=(y===1||y===2)&&(x===1||x===2),detected=value>=t;if(actual&&detected)tp++;else if(actual)fn++;else if(detected)fp++;else tn++;return {value,actual,detected};}));return {cells,tp,fp,fn,tn,errors:fp+fn};}
+export function createThreshold(){return {selected:1,tested:{1:false,2:false,3:false},choice:1,checked:false};}
+export function thresholdComplete(s){return s.checked&&thresholds.every(t=>s.tested[t])&&thresholdResult(s.choice).errors===Math.min(...thresholds.map(t=>thresholdResult(t).errors));}
+export function restoreThreshold(saved){if(!saved||!thresholds.includes(saved.selected)||!thresholds.includes(saved.choice)||!saved.tested||!thresholds.every(t=>typeof saved.tested[t]==='boolean')||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');return {selected:saved.selected,choice:saved.choice,tested:Object.fromEntries(thresholds.map(t=>[t,saved.tested[t]])),checked:saved.checked};}
