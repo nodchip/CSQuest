@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createReport,reportAudiences,reportFeedback,reportCorrect,reportComplete,restoreReport} from '../src/audience-report.js';
+test('each audience requires listening and relevant facts without overclaiming or unrelated private data',()=>{const s=createReport();for(const id of Object.keys(reportAudiences)){s.drafts[id].cards=[...reportAudiences[id].required];assert.equal(reportCorrect(id,s),false);s.heard.push(id);assert.equal(reportCorrect(id,s),true);for(const unsafe of ['personal','certain']){s.drafts[id].cards.push(unsafe);assert.equal(reportCorrect(id,s),false);assert.notEqual(reportFeedback(id,s),'');s.drafts[id].cards.pop();}s.drafts[id].checked=true;}assert.equal(reportComplete(s),true);});
+test('checked drafts survive restoration independently and invalid cards are rejected',()=>{const s=createReport();const copy=restoreReport(s);assert.notEqual(copy.drafts.traveler.cards,s.drafts.traveler.cards);s.drafts.repair.cards=['missing'];assert.throws(()=>restoreReport(s));});
