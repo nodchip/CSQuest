@@ -28,7 +28,7 @@
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行 |
 | AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106・107・110でキャッシュ、誤り訂正と圧縮の固定例。他は未対応。[詳細](ar-memory.md) |
 | AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知の固定例。他は未対応。[詳細](ar-io.md) |
-| AR | AR-Organization | Functional Organization | 106 | 未着手 |
+| AR | AR-Organization | Functional Organization | 106 | 依頼158で３段階パイプラインのデータ依存、待機と転送の固定例。他は未対応。[詳細](ar-organization.md) |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 未着手 |
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 未着手 |
 | AR | AR-Security | Secure Processor Architectures | 107 | 未着手 |
