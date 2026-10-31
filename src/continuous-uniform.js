@@ -1,0 +1,9 @@
+export const continuousLevel={id:'ruin-continuous-uniform',number:'428',kind:'continuous-uniform',name:'光の落ちる長い道',tag:'連続一様分布と累積確率',title:'光の範囲を調べよう',story:'光は長さ４の道のどこかに落ちます。同じ長さの範囲には同じ確率で落ちる模型で、範囲や一点を比べましょう。'};
+export const continuousCases={middle:{name:'１から３まで',lo:1,hi:3},point:{name:'２ちょうど',lo:2,hi:2},end:{name:'３から４まで',lo:3,hi:4}};
+export function uniformCdf(x){if(typeof x!=='number'||!Number.isFinite(x))throw new RangeError('位置が不正です');return Math.max(0,Math.min(1,x/4));}
+export function uniformInterval(lo,hi){if(!Number.isInteger(lo)||!Number.isInteger(hi)||lo<0||hi>4||lo>hi)throw new RangeError('範囲が不正です');return uniformCdf(hi)-uniformCdf(lo);}
+export function createContinuousTrial(){return {lo:null,hi:null,answer:null,done:false};}
+export function continuousTrialValid(id,t){const c=continuousCases[id];return !!c&&t.lo===c.lo&&t.hi===c.hi&&t.answer===uniformInterval(c.lo,c.hi);}
+export function createContinuous(){return {selected:'middle',trials:Object.fromEntries(Object.keys(continuousCases).map(k=>[k,createContinuousTrial()])),answer:null,checked:false};}
+export function continuousComplete(s){return Object.keys(continuousCases).every(id=>s.trials[id].done&&continuousTrialValid(id,s.trials[id]))&&s.answer==='point'&&s.checked;}
+export function restoreContinuous(s){if(!s||!Object.hasOwn(continuousCases,s.selected)||!s.trials||![null,'point','impossible','density'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createContinuous();n.selected=s.selected;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(continuousCases)){const t=s.trials[id];if(!t||![null,0,1,2,3,4].includes(t.lo)||![null,0,1,2,3,4].includes(t.hi)||![null,0,.25,.5,.75,1].includes(t.answer)||typeof t.done!=='boolean'||t.done&&!continuousTrialValid(id,t))throw new RangeError('途中記録が不正です');n.trials[id]={lo:t.lo,hi:t.hi,answer:t.answer,done:t.done};}return n;}

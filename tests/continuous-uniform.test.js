@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {continuousCases,uniformCdf,uniformInterval,createContinuous,continuousTrialValid,continuousComplete,restoreContinuous} from '../src/continuous-uniform.js';
+test('uniform cumulative probability is clamped and each interval equals its width over four',()=>{assert.equal(uniformCdf(-1),0);assert.equal(uniformCdf(5),1);for(let lo=0;lo<=4;lo++)for(let hi=lo;hi<=4;hi++)assert.equal(uniformInterval(lo,hi),(hi-lo)/4);assert.throws(()=>uniformInterval(3,2));assert.equal(uniformInterval(2,2),0);});
+test('each specified interval and point must be checked before completion',()=>{const s=createContinuous();for(const [id,c] of Object.entries(continuousCases)){const t={lo:c.lo,hi:c.hi,answer:uniformInterval(c.lo,c.hi),done:true};assert.ok(continuousTrialValid(id,t));s.trials[id]=t;}s.answer='point';s.checked=true;assert.ok(continuousComplete(s));assert.deepEqual(restoreContinuous(s),s);s.trials.point.answer=.25;assert.throws(()=>restoreContinuous(s));});
