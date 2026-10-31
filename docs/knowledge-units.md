@@ -160,7 +160,7 @@
 | SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 未着手 |
 | SPD | SPD-Web | Web Platforms | 303 | 未着手 |
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 未着手 |
-| SPD | SPD-Robot | Robot Platforms | 304 | 未着手 |
+| SPD | SPD-Robot | Robot Platforms | 304 | 一部試作：依頼28で格子上の観測と移動 |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 未着手 |
 | SPD | SPD-Game | Game Platforms | 306 | 未着手 |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 未着手 |

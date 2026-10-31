@@ -21,3 +21,5 @@
 .depth-buttons button:first-child{background:#fffef8;border-color:#cadbca}
 
 .emblem-map{display:block;width:100%;max-width:420px;margin:24px auto 0;background:#eef4e9}.emblem-grid{stroke:#d5e2d2;stroke-width:1}.emblem-axis{stroke:#94ad99;stroke-width:1.5}.emblem-target{fill:#e9c78d55;stroke:#a77739;stroke-width:3;stroke-dasharray:7 4}.emblem-actual{fill:#5b947b88;stroke:#37674c;stroke-width:2}
+
+.robot-map{display:grid;grid-template-columns:repeat(4,minmax(0,72px));gap:6px;justify-content:center;margin:24px auto 0}.robot-cell{display:grid;place-items:center;aspect-ratio:1;background:#eef4e9;border:1px solid #cbdcc9;color:#577760;font-size:20px}.robot-cell.unknown{background:#e0e9dc;color:#98aa99}.robot-cell.blocked{background:#879e89;color:#fff}.robot-cell.current{background:#456e57;color:#fff}.robot-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.robot-actions button{border:1px solid #a8bfaa;background:#f8faf4;color:#31523e;padding:12px;font-size:12px}
