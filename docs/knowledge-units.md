@@ -88,7 +88,7 @@
 | HCI | HCI-Design | System Design | 179 | 依頼287・288で反復設計と同期表示、427で利用条件と予算の固定比較。他は未対応。[詳細](hci-design.md) |
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 依頼359で架空の参加者と試作品を比較。他は未対応。[詳細](hci-society.md) |
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：有限集合、命題推論・反例、依頼95の帰納法、依頼400の鳩の巣原理、401・402の関係と関数、403の可算と対角線論法、404の順列・組合せ、405の合同算術、406の論理標準形、407の強い帰納法、408の再帰的な数え上げ、409の再帰木の固定例 |
-| MSF | MSF-Probability | Probability | 188 | 条件付き確率、期待値、依頼84で等確率の４札の分散、428で連続一様分布の固定例。他は未対応。[詳細](msf-probability.md) |
+| MSF | MSF-Probability | Probability | 188 | 条件付き確率、期待値、依頼84で分散、428で連続一様分布、429で条件付き期待値の固定例。他は未対応。[詳細](msf-probability.md) |
 | MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜115で代表値、条件別集計、度数、四分位範囲と回帰の固定例。他は未対応。[詳細](msf-statistics.md) |
 | MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜305で内積、行基本変形、線形結合、基底と座標、固有方向、対角化、射影、直交化、主成分分析、PageRank、SVDと２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
 | MSF | MSF-Calculus | Calculus | 192 | 依頼116で一変数の導関数と勾配降下の固定例。他は未対応。[詳細](msf-calculus.md) |
