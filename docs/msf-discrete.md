@@ -8,7 +8,7 @@
 |---:|---|---|
 | 1 | CS Core / KA Core | 集合、関係、関数、濃度 | 依頼46で有限集合の演算、依頼401・402で有限集合の関係、403で可算と対角線論法の例。一般の証明は未対応 |
 | 2 | CS Core / KA Core | 再帰的な数学的定義 | 依頼33で並べ方の個数を小さい問題に帰着。一般の定義・漸化式は未対応 |
-| 3 | CS Core / KA Core | 帰納法、背理法などの証明法 | 依頼95で帰納法、依頼400で鳩の巣原理の背理法の固定例。一般の証明は未対応 |
+| 3 | CS Core / KA Core | 帰納法、背理法などの証明法 | 依頼95・407で帰納法、依頼400で鳩の巣原理の背理法の固定例。一般の証明は未対応 |
 | 4 | CS Core / KA Core | 順列、組合せ、数え上げ、鳩の巣原理 | 依頼33で並べ方、46で包除、400で鳩の巣原理、404で順列と組合せの固定例。一般の数え上げと証明は未対応 |
 | 5 | CS Core / KA Core | 合同算術 | 依頼19で３による余り、405で５・７を法とする加算と乗算の固定例。一般の計算は未対応 |
 | 6 | CS Core / KA Core | 論理、真理値表、演算、推論規則、標準形、述語論理 | 依頼06の２入力の真理値表、依頼72のモーダスポネンス・反例、依頼126の有限集合上の全称条件、406の２入力の標準形の固定例。一般の論理式・述語・証明は未対応 |
@@ -26,7 +26,7 @@
 | 1e | CS Core | 有限・可算・非可算の区別 | 依頼403で自然数と偶数の対応、無限二進列の対角線論法の固定例。実数や一般の集合は未対応 |
 | 2a | CS Core | 再帰的な定義を適用 | 依頼33で並べ方の固定例。他の構造は未対応 |
 | 2b–2e | CS Core | 帰納法による証明、漸化式の解法・分析・閉形式 | 依頼95で奇数の和の帰納法を選択式で構成。一般の漸化式や証明は未対応 |
-| 3a–3f | CS Core | 証明法の識別・構造・適用・選択、再帰と帰納法、弱い帰納法と強い帰納法 | 依頼95で基底と帰納段階の固定例。他の証明法や強い帰納法は未対応 |
+| 3a–3f | CS Core | 証明法の識別・構造・適用・選択、再帰と帰納法、弱い帰納法と強い帰納法 | 依頼95で基底と帰納段階、407で強い帰納法の固定例。他の証明法や一般の証明は未対応 |
 | 4a | CS Core | 和・積・包除や数列による数え上げ | 依頼46で２集合の包除のみ |
 | 4b | CS Core | 鳩の巣原理を証明に適用 | 依頼400で４羽と３つの巣の固定例。他の問題への応用は未対応 |
 | 4c–4d | CS Core | 順列・組合せの計算と具体的な数え上げモデル | 依頼33で並べ方、404で３人から２人を選ぶ順列と組合せの固定例。一般の数え上げは未対応 |
@@ -54,3 +54,5 @@
 依頼405は８と９を５・７で割った余りから和と積の余りを求め、元の数を直接計算した場合と比べる。非負整数の固定例で、負数や除算、一般の証明は未対応。[A Spiral Workbook for Discrete Mathematics](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/A_Spiral_Workbook_for_Discrete_Mathematics_(Kwong)/05%3A_Basic_Number_Theory/5.07%3A_Modular_Arithmetic)。
 
 依頼406は２入力が異なる場合に真となる真理値表について、選言標準形と連言標準形を札で構築し全４入力を比較する。各形の全16選択を検査。一般の式の変換や証明は未対応。[Elementary Foundations](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Foundations%3A_An_Introduction_to_Topics_in_Discrete_Mathematics_(Sylvestre)/03%3A_Boolean_algebra/3.02%3A_Disjunctive_Normal_Form)。
+
+依頼407は長さ２と３の石板から４〜７を作り、２・３の基底と、２から k まで作れるという仮定から k−１ に２を足す強い帰納段階を選ぶ。有限の操作自体を一般の証明とはしない。自由記述や他の命題への適用は未対応。[Gentle Introduction to the Art of Mathematics](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Gentle_Introduction_to_the_Art_of_Mathematics_(Fields)/05%3A_Proof_Techniques_II_-_Induction/5.04%3A_The_Strong_Form_of_Mathematical_Induction)。
