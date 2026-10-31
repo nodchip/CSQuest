@@ -13,7 +13,7 @@
 | 5 | KA Core | 直交、射影、最小二乗、正規直交基底 | 依頼50・115・299で直交、二乗誤差、直線への射影の固定例。一般の射影や基底は未対応 |
 | 6 | KA Core | 多項式の線形結合とベジェ曲線 | 未着手 |
 | 7 | KA Core | 固有値と固有ベクトル | 依頼298で４つの２次元変換と固有方向・固有値の固定例。一般的な計算や対角化は未対応 |
-| 8 | KA Core | PCA、SVD、PageRank、グラフィックスへの応用 | 未着手 |
+| 8 | KA Core | PCA、SVD、PageRank、グラフィックスへの応用 | 依頼300で２次元から１次元へのPCAの固定例。SVD、PageRank、グラフィックスへの応用は未対応 |
 
 ## 例示学習成果
 
@@ -28,7 +28,7 @@
 | 5a–5e | KA Core | グラム・シュミット、射影、直交補空間、最小二乗 | 依頼115・299で二乗誤差と直線への直交射影の固定例。一般の部分空間、正規方程式や証明は未対応 |
 | 6a–6e | KA Core | 多項式の線形結合、直交性、ベルンシュタイン多項式とベジェ曲線 | 未着手 |
 | 7a–7h | KA Core | 固有値・固有ベクトル、特性多項式、対角化 | 依頼298で固有値０と零ベクトル、90度回転を含む固定例。特性多項式や対角化は未対応 |
-| 8a–8h | KA Core | PCA、次元削減、最小二乗、固有値問題、PageRank、SVD | 未着手 |
+| 8a–8h | KA Core | PCA、次元削減、最小二乗、固有値問題、PageRank、SVD | 依頼300で中心化済みの２次元データと第一主成分の固定例。一般の計算、PageRank、SVDなどは未対応 |
 
 依頼50は基準ベクトル (2,1) と (1,0)、(1,−2)、(−2,−1) を比較し、内積はそれぞれ２、０、−５。零ベクトルは使わず、向きや角度が定まらないことを解説する。内積の計算と選択肢をテストする。
 
@@ -41,3 +41,5 @@
 依頼298は実数の２次元で拡大、射影、せん断と90度回転を４種類の入力に適用し、固有値または非該当を選ぶ。零入力は固有ベクトルでなく、零でない入力が零へ写る場合は固有値０となる。一般の計算、複素数や対角化は未対応。参考：[Interactive Linear Algebra: Eigenvalues and Eigenvectors](https://math.libretexts.org/Bookshelves/Linear_Algebra/Interactive_Linear_Algebra_%28Margalit_and_Rabinoff%29/05%3A_Eigenvalues_and_Eigenvectors/5.01%3A_Eigenvalues_and_Eigenvectors)。
 
 依頼299は零でない２方向と目標点について、直線上の候補、ずれの二乗と内積を比較する。最短性は残差の直交性を用いて説明し、有限の候補だけでは一般の最小性を証明しない。一般の部分空間と任意次元は未対応。参考：[MIT: Projection matrices and least squares](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/198bde3a6536b62989b6cc09495575c1_MIT18_06SCF11_Ses2.3sum.pdf)。
+
+依頼300は中心化済み４点の２例で４方向への射影を比較し、共分散行列の最大固有値の方向と二乗誤差の最小性を結ぶ。尺度や用途により主成分が変わり得ることを説明する。任意次元や一般のPCA計算は未対応。参考：[MIT: Principal Component Analysis](https://ocw.mit.edu/courses/9-641j-introduction-to-neural-networks-spring-2005/resources/lec18_pca/)。
