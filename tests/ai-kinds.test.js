@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {aiKindsRoute,aiKindsNearest,aiKindsNetwork,createAiKinds,aiKindsComplete,restoreAiKinds} from '../src/ai-kinds.js';
+test('rule search, nearest examples, and both layers of the fixed network produce the expected results',()=>{assert.deepEqual(aiKindsRoute(),['S','A','G']);assert.equal(aiKindsNearest(0),'月');assert.equal(aiKindsNearest(3),'太陽');for(const x of [0,1])for(const y of [0,1]){const r=aiKindsNetwork(x,y);assert.deepEqual(r.first,[x,y]);assert.deepEqual(r.second,[x|y,x&y]);assert.equal(r.output,x^y);}assert.throws(()=>aiKindsNearest(2));});
+test('all observations and the nested categories are required',()=>{const s=createAiKinds();s.visited={rule:true,knn:[0,3],deep:[0,1,2,3]};s.answers={rule:'ai',knn:'ml',deep:'dl'};assert.equal(aiKindsComplete(s),false);s.checked=true;assert.equal(aiKindsComplete(s),true);assert.deepEqual(restoreAiKinds(s),s);assert.throws(()=>restoreAiKinds({...s,visited:{...s.visited,deep:[0,0]}}));});
