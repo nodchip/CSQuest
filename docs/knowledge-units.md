@@ -37,7 +37,7 @@
 | DM | DM-Modeling | Data Modeling | 116 | 未着手 |
 | DM | DM-Relational | Relational Databases | 117 | 一部試作：依頼67で更新異常と分解後の結合を比較 |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択と内部結合 |
-| DM | DM-Processing | Query Processing | 118 | 未着手 |
+| DM | DM-Processing | Query Processing | 118 | 依頼89で複合索引の列順と候補範囲の固定例。他は未対応。[詳細](dm-processing.md) |
 | DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38・39で原子性・永続性・分離と競合直列化の固定例 |
 | DM | DM-NoSQL | NoSQL Systems | 120 | 未着手 |
 | DM | DM-Security | Data Security and Privacy | 121 | 未着手 |
