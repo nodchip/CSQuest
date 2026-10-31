@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {satWitnessResult,createSatWitness,testSatWitness,satWitnessComplete,restoreSatWitness} from '../src/sat-witness.js';
+test('one valid witness proves the possible formula, all assignments reject the other',()=>{const yes=Array.from({length:8},(_,i)=>i).filter(m=>satWitnessResult('possible',m).satisfied);assert.deepEqual(yes,[2,5]);for(let i=0;i<8;i++)assert.equal(satWitnessResult('impossible',i).satisfied,false);const s=createSatWitness();s.trials.possible=testSatWitness('possible',{mask:5,tested:[]});for(let mask=0;mask<8;mask++)s.trials.impossible=testSatWitness('impossible',{...s.trials.impossible,mask});s.answer='witness';s.checked=true;assert.equal(satWitnessComplete(s),true);assert.deepEqual(restoreSatWitness(s),s);});
+test('invalid and duplicate saved assignments are rejected',()=>{const s=createSatWitness();assert.throws(()=>satWitnessResult('possible',8));assert.throws(()=>restoreSatWitness({...s,trials:{...s.trials,possible:{mask:0,tested:[2,2]}}}));});
