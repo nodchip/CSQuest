@@ -147,7 +147,7 @@
 | SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き |
 | SEP | SEP-Communication | Communication | 279 | 依頼295で相手に合わせた架空の報告と未確認事項の固定例。他は未対応。[詳細](sep-communication.md) |
 | SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の集計範囲と期間の架空比較。他は未対応。[詳細](sep-sustainability.md) |
-| SEP | SEP-History | Computing History | 282 | 未着手 |
+| SEP | SEP-History | Computing History | 282 | 依頼363で三つの出来事と人々の役割を紹介。他は未対応。[詳細](sep-history.md) |
 | SEP | SEP-Economies | Economies of Computing | 283 | 未着手 |
 | SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 未着手 |
 | SEP | SEP-DEIA | Diversity, Equity, Inclusion, and Accessibility | 285 | 未着手 |
