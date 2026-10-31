@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {witnessCases,witnessSum} from '../src/subset-witness.js';
+import {tableNext,newTableTrial,tableAdvance,createSubsetTable,restoreSubsetTable,subsetTableComplete} from '../src/subset-table.js';
+test('each table row matches independent subset enumeration for both gates',()=>{for(const [id,c] of Object.entries(witnessCases)){let mask=1;for(let i=0;i<c.values.length;i++){mask=tableNext(mask,c.values[i]);let expected=0;for(let subset=0;subset<(1<<(i+1));subset++){const sum=witnessSum(id,subset);if(sum<=9)expected|=1<<sum;}assert.equal(mask,expected,`${id} row ${i+1}`);}assert.equal(Boolean(mask&(1<<9)),id==='open');}});
+test('wrong row is rejected, all rows and reflection are required, and restoration validates history',()=>{const s=createSubsetTable();assert.equal(tableAdvance('open',newTableTrial()).rows.length,1);for(const [id,c] of Object.entries(witnessCases)){let t=s.trials[id];for(const value of c.values){t.draft=tableNext(t.rows.at(-1),value);t=tableAdvance(id,t);}s.trials[id]=t;}s.answer='target';s.checked=true;assert.equal(subsetTableComplete(s),true);const copy=restoreSubsetTable(s);assert.deepEqual(copy.trials.open.rows,s.trials.open.rows);copy.trials.open.rows[2]=0;assert.throws(()=>restoreSubsetTable(copy));assert.equal(subsetTableComplete(s),true);});
