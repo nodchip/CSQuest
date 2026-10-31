@@ -30,7 +30,7 @@
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 未着手 |
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 未着手 |
 | AR | AR-Security | Secure Processor Architectures | 107 | 未着手 |
-| AR | AR-Quantum | Quantum Architectures | 108 | 未着手 |
+| AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの重ね合わせ、H・Z と途中観測の固定例。他の範囲は未対応。[詳細](ar-quantum.md) |
 | AR | AR-SEP | Sustainability Issues | 109 | 未着手 |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 未着手 |
 | DM | DM-Core | Core Database System Concepts | 115 | 未着手 |
