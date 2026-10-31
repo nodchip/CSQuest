@@ -22,7 +22,7 @@
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件の固定例。他のモデルや一般の証明は未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 項目一覧化、教材は未着手 |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 一部試作：組合せ回路の初歩と一桁の加算器 |
-| AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：依頼36・37の４ビット整数と加算器、依頼68の小数の丸め |
+| AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8 固定例 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行 |
 | AR | AR-Memory | Memory Hierarchy | 104 | 未着手 |
 | AR | AR-IO | Interfacing and Communication | 105 | 未着手 |

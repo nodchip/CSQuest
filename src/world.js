@@ -7,7 +7,7 @@ export const regions=[
   {id:'castle',name:'王城',icon:'⚔',description:'城門と通行の仕組みを守り、約束を確かめる。',quests:['castle-access','ward-tests','protected-gate','secret-lanterns','ledger-seals']},
   {id:'village',name:'薬師の村',icon:'✿',description:'薬草と台帳を手がかりに、村の暮らしを支える。',quests:['herb-catalog','village-join','private-ledger','transfer-ledger','shared-ledger','ledger-order','festival-order','village-choices','village-decomposition','village-coins','herb-index-plan']},
   {id:'forge',name:'宝石の工房',icon:'◈',description:'炉と記録を共有する精霊たちを手伝う。',quests:['workshop-scheduling','shared-counter','counter-lock','two-locks','waiting-workers','parallel-workshop','forge-barrier']},
-  {id:'archive',name:'鑑定士の書庫',icon:'⌗',description:'水晶の記録や魔導書を調べ、知識を届ける。',quests:['crystal-neighbors','crystal-evaluation','crystal-overfit','hash-archive','lantern-signals','archive-cache','search-ledger','search-invariant','tree-archive','page-frames','page-address','treasure-expectation','arrival-records','archive-file-links','treasure-variance','archive-search-growth']},
+  {id:'archive',name:'鑑定士の書庫',icon:'⌗',description:'水晶の記録や魔導書を調べ、知識を届ける。',quests:['crystal-neighbors','crystal-evaluation','crystal-overfit','hash-archive','lantern-signals','archive-cache','search-ledger','search-invariant','tree-archive','page-frames','page-address','treasure-expectation','arrival-records','archive-file-links','treasure-variance','archive-search-growth','archive-utf8']},
 ];
 export function findRegion(id){return regions.find(region=>region.id===id)||null;}
 export function visibleQuests(levels,regionId){
@@ -27,7 +27,7 @@ export function filterQuests(levels,regionId,query,status,completed){
 // Suggested paths are optional; players may still open any quest in any order.
 export const learningTrails=[
   {id:'first-steps',name:'精霊と始める',description:'順番、条件、繰り返しから、再帰やデータの処理へ進みます。',quests:['sequence','branch','loop','two-paths','rune-arrangements','typed-spells','lantern-spirits','stone-pipeline','multiplier-seals','spell-syntax','guild-containers','event-lantern']},
-  {id:'logic',name:'灯火と計算',description:'論理の灯火から、整数表現や量子の干渉へ進みます。',quests:['circuit','guardian','lantern-proof','memory-gate','nested-gate','number-lanterns','lantern-adder','rounding-crystals','instruction-engine','secret-lanterns','moon-qubit']},
+  {id:'logic',name:'灯火と計算',description:'論理の灯火から、整数表現や量子の干渉へ進みます。',quests:['circuit','guardian','lantern-proof','memory-gate','nested-gate','number-lanterns','archive-utf8','lantern-adder','rounding-crystals','instruction-engine','secret-lanterns','moon-qubit']},
   {id:'paths',name:'道と探索',description:'整列と探索から、最短路や条件を満たす探索へ進みます。',quests:['sorting','merge-stones','search-ledger','archive-search-growth','search-invariant','tree-archive','forest-search','depth-ruins','weighted-roads','village-bridges','festival-order','hash-archive','guided-ruins','misleading-stars','lantern-constraints','village-coins','key-return-maze']},
   {id:'data',name:'台帳と仲間',description:'集合と問い合わせから、台帳の同時更新へ進みます。',quests:['guild-sets','herb-catalog','herb-index-plan','village-join','village-decomposition','private-ledger','village-choices','transfer-ledger','shared-ledger','ledger-order']},
   {id:'systems',name:'支える仕組み',description:'仕事の順番、共有、記憶と通信をたどります。',quests:['workshop-scheduling','waiting-workers','parallel-workshop','forge-barrier','protected-gate','shared-counter','counter-lock','two-locks','archive-cache','page-frames','page-address','archive-file-links','routing-towers','address-towers','layered-message','message-delivery','guild-web-requests']},
