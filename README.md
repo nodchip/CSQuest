@@ -18,4 +18,5 @@
 
 - [開発状況](docs/progress.md)
 - [CS2023 の対応状況](docs/curriculum.md)
+- [出典と素材](sources.html)（[確認記録](docs/sources-and-assets.md)）
 - [プロジェクトのゴール](CSQUEST_GOAL.md)
