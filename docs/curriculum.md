@@ -16,10 +16,10 @@
 | OS | オペレーティングシステム | 一部試作：先着順とラウンドロビンによる仕事の順番。プロセス、メモリなどは未対応 |
 | PDC | 並列・分散コンピューティング | 一部試作：並行する読み書きと更新の喪失、単一の鍵による排他。実際のプログラムや分散処理は未対応 |
 | SDF | ソフトウェア開発の基礎 | 一部試作：順序、条件分岐、固定回数の繰り返し。SDF-Fundamentals pp. 230–231 の一部に関連。実際の言語でプログラムを書く学習成果は直接評価しない。 |
-| SE | ソフトウェア工学 | 未着手 |
+| SE | ソフトウェア工学 | 一部試作：仕様と異なる動作を発見する有限の試験選択。試験計画、開発、実際のコードなどは未対応 |
 | SEC | セキュリティ | 一部試作：本人確認の結果と役割別の許可、最小権限。認証の実装や他の保護技術は未対応 |
 | SEP | 社会・倫理・専門職 | 未着手 |
 | SF | システムの基礎 | 未着手 |
 | SPD | 専門プラットフォームの開発 | 未着手 |
 
-知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [ai-ml.md](ai-ml.md)、[hci-accessibility.md](hci-accessibility.md)、[msf-probability.md](msf-probability.md)、[sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md)、[pdc-coordination.md](pdc-coordination.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
+知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [ai-ml.md](ai-ml.md)、[se-validation.md](se-validation.md)、[hci-accessibility.md](hci-accessibility.md)、[msf-probability.md](msf-probability.md)、[sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md)、[pdc-coordination.md](pdc-coordination.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。

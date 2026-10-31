@@ -126,7 +126,7 @@
 | SE | SE-Requirements | Product Requirements | 242 | 未着手 |
 | SE | SE-Design | Software Design | 243 | 未着手 |
 | SE | SE-Construction | Software Construction | 245 | 未着手 |
-| SE | SE-Validation | Software Verification and Validation | 246 | 未着手 |
+| SE | SE-Validation | Software Verification and Validation | 246 | 一部試作：依頼23で仕様に基づく有限の試験選択 |
 | SE | SE-Refactoring | Refactoring and Code Evolution | 249 | 未着手 |
 | SE | SE-Reliability | Software Reliability | 250 | 未着手 |
 | SE | SE-Formal | Formal Methods | 251 | 未着手 |
