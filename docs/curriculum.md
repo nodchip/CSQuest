@@ -14,7 +14,7 @@
 | MSF | 数学と統計の基礎 | 未着手 |
 | NC | ネットワークと通信 | 一部試作：データ・応答の消失、再送、重複排除。ネットワーク全体や TCP の実装は未対応 |
 | OS | オペレーティングシステム | 一部試作：先着順とラウンドロビンによる仕事の順番。プロセス、メモリなどは未対応 |
-| PDC | 並列・分散コンピューティング | 未着手 |
+| PDC | 並列・分散コンピューティング | 一部試作：並行する読み書きと更新の喪失。排他制御の構築や分散処理は未対応 |
 | SDF | ソフトウェア開発の基礎 | 一部試作：順序、条件分岐、固定回数の繰り返し。SDF-Fundamentals pp. 230–231 の一部に関連。実際の言語でプログラムを書く学習成果は直接評価しない。 |
 | SE | ソフトウェア工学 | 未着手 |
 | SEC | セキュリティ | 一部試作：本人確認の結果と役割別の許可、最小権限。認証の実装や他の保護技術は未対応 |
@@ -22,4 +22,4 @@
 | SF | システムの基礎 | 未着手 |
 | SPD | 専門プラットフォームの開発 | 未着手 |
 
-知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
+知識単位の目録は [knowledge-units.md](knowledge-units.md)、詳細対応は [sdf-fundamentals.md](sdf-fundamentals.md)、[ar-logic.md](ar-logic.md)、[al-foundational.md](al-foundational.md)、[nc-reliability.md](nc-reliability.md)、[sec-foundations.md](sec-foundations.md)、[dm-querying.md](dm-querying.md)、[os-scheduling.md](os-scheduling.md)、[pdc-coordination.md](pdc-coordination.md) を参照。次の作業: 残りの知識単位についても CS Core、KA Core、Non-core のトピックと学習成果を原典から抽出し、各項目に状態、具体的な体験、検証証拠、ゲーム操作の限界を記録する。
