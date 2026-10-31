@@ -111,7 +111,7 @@
 | OS | OS-Files | File Systems API and Implementation | 212 | 依頼77でファイルの名前・実体・ハードリンクと開いた参照の固定例。他は未対応。[詳細](os-files.md) |
 | OS | OS-Advanced-Files | Advanced File systems | 212 | 未着手 |
 | OS | OS-Virtualization | Virtualization | 213 | 未着手 |
-| OS | OS-Real-time | Real-time and Embedded Systems | 214 | 未着手 |
+| OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 未着手 |
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 未着手 |
 | PDC | PDC-Programs | Programs | 219 | 依頼130で２主体に分けた小計と集約の固定例。他は未対応。[詳細](pdc-programs.md) |

@@ -1,0 +1,11 @@
+export const deadlineLevel={id:'forge-deadlines',number:'133',kind:'deadline',name:'二つの灯りと刻限',tag:'期限とリアルタイム処理',title:'灯りを間に合わせる',story:'工房の二つの灯りに刻限があります。１人の精霊に仕事を割り当て、期限までに両方を整えましょう。'};
+export const deadlineJobs={seal:{name:'氷の封印',work:1,deadline:2},lamp:{name:'道の灯り',work:2,deadline:3}};
+export const deadlineCases={miss:{name:'期限を過ぎる順序',want:'miss'},meet:{name:'両方に間に合う順序',want:'meet'}};
+export function createDeadlineTrial(id){if(!Object.hasOwn(deadlineCases,id))throw new RangeError('試行が不正です。');return {id,time:0,remaining:{seal:1,lamp:2},finished:{seal:null,lamp:null},history:[],message:'進める仕事を選びましょう。'};}
+export function deadlineStep(s,job){if(!Object.hasOwn(deadlineJobs,job))throw new RangeError('仕事が不正です。');if(s.time>=3||s.remaining[job]===0)return {...s,message:'この仕事は今は進められません。'};const n={...s,time:s.time+1,remaining:{...s.remaining},finished:{...s.finished},history:[...s.history,job]};n.remaining[job]--;if(n.remaining[job]===0)n.finished[job]=n.time;n.message=`${deadlineJobs[job].name}を１刻進めました。`;return n;}
+export function deadlineStatus(s,job){if(!Object.hasOwn(deadlineJobs,job))throw new RangeError('仕事が不正です。');const due=deadlineJobs[job].deadline,finished=s.finished[job];return finished!==null?(finished<=due?'ontime':'late'):(s.time>=due?'late':'waiting');}
+export function deadlineTrialResult(s){if(s.time!==3)return null;return Object.keys(deadlineJobs).every(job=>deadlineStatus(s,job)==='ontime')?'meet':'miss';}
+export function deadlineTrialCorrect(s){return deadlineTrialResult(s)===deadlineCases[s.id].want;}
+export function createDeadlines(){return {selected:'miss',trials:{miss:createDeadlineTrial('miss'),meet:createDeadlineTrial('meet')}};}
+export function deadlinesComplete(s){return Object.keys(deadlineCases).every(id=>deadlineTrialCorrect(s.trials[id]));}
+export function restoreDeadlines(saved){if(!saved||!Object.hasOwn(deadlineCases,saved.selected)||!saved.histories)throw new RangeError('途中記録が不正です。');const r=createDeadlines();r.selected=saved.selected;for(const id of Object.keys(deadlineCases)){const history=saved.histories[id];if(!Array.isArray(history)||history.length>3)throw new RangeError('履歴が不正です。');for(const action of history){const before=r.trials[id],after=deadlineStep(before,action);if(after.history.length!==before.history.length+1)throw new RangeError('履歴が不正です。');r.trials[id]=after;}}return r;}
