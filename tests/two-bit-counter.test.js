@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {counterNext,counterTrace,counterLowRules,counterHighRules,createCounter,counterComplete,restoreCounter} from '../src/two-bit-counter.js';
+test('the selected carry rule uses the old low bit for every state',()=>{for(let s=0;s<4;s++)assert.equal(counterNext(s,'toggle','carry'),(s+1)%4);assert.deepEqual(counterTrace('toggle','carry',4),[0,1,2,3,0]);assert.deepEqual(counterTrace('toggle','toggle',4),[0,3,0,3,0]);});
+test('only the intended rule pair produces the full count, and restore validates the attempt',()=>{for(const low of Object.keys(counterLowRules))for(const high of Object.keys(counterHighRules))assert.equal(counterComplete({low,high,ticks:4}),low==='toggle'&&high==='carry');const s=createCounter();s.low='toggle';s.high='carry';s.ticks=3;const copy=restoreCounter(s);s.ticks=4;assert.equal(counterComplete(s),true);assert.equal(counterComplete(copy),false);assert.throws(()=>restoreCounter({...s,ticks:5}),RangeError);});
