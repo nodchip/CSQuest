@@ -14,6 +14,15 @@ export function visibleQuests(levels,regionId){
   const region=findRegion(regionId);
   return levels.map((level,index)=>({level,index})).filter(({level})=>!region||region.quests.includes(level.id));
 }
+export function filterQuests(levels,regionId,query,status,completed){
+  if(typeof query!=='string'||!['all','todo','done'].includes(status)||!Array.isArray(completed))throw new RangeError('検索条件が不正です。');
+  const words=query.normalize('NFKC').toLowerCase().trim().split(/\s+/u).filter(Boolean),done=new Set(completed);
+  return visibleQuests(levels,regionId).filter(({level})=>{
+    const place=regions.find(region=>region.quests.includes(level.id));
+    const text=[level.number,`quest ${level.number}`,level.name,level.title,level.tag,level.story,place?.name||''].join(' ').normalize('NFKC').toLowerCase();
+    return words.every(word=>text.includes(word))&&(status==='all'||(status==='done')===done.has(level.id));
+  });
+}
 
 // Suggested paths are optional; players may still open any quest in any order.
 export const learningTrails=[

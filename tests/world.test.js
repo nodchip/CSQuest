@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {regions,findRegion,visibleQuests,learningTrails,findTrail,trailQuests} from '../src/world.js';
+import {regions,findRegion,visibleQuests,filterQuests,learningTrails,findTrail,trailQuests} from '../src/world.js';
 import {levels} from '../src/engine.js';
 const modules=['sorting','circuit','battle','search','routes','delivery','access','catalog','join','scheduling','concurrency','locking','classification','evaluation','hash','probability','depth','inclusive','testing','types','cache','transform','privacy','robot','lookup','deadlock','automaton','bridges','recursion','paging','transaction','binary','adder','isolation','serial','address','expectation','astar','heuristic','minimax','duel','sets','statistics','forwarding','constraints','vectors','pipeline','closures','process','syscall','merge-sort','topology','bst','crypto','revision','usability','prefix','web-request','ethics','projection','objects','scaling','decomposition','rounding','invariant','overfit','robot-energy','logic-proof','machine','qubit','syntax-tree','coins','files','layers','containers','brackets','bayes','injection','raster','variance','key-maze','matrix'];
 const all=[...levels];for(const module of modules){const exports=await import(`../src/${module}.js`);all.push(Object.values(exports).find(value=>value&&typeof value==='object'&&value.id&&value.number));}
@@ -11,6 +11,18 @@ test('every current quest appears in exactly one region and every region entry e
 test('filtering preserves the original quest indices and an unknown selection shows every quest',()=>{
   const forest=visibleQuests(all,'wilds');assert.deepEqual(forest.map(x=>x.level.id),['forest-search','weighted-roads','message-delivery','village-bridges','guided-ruins','misleading-stars','routing-towers','address-towers','layered-message','rain-observations']);
   assert.ok(forest.every(x=>all[x.index]===x.level));assert.equal(visibleQuests(all,'missing').length,all.length);assert.equal(findRegion('missing'),null);
+});
+test('quest search combines normalized words, region and completion without changing quest indices',()=>{
+  const done=['matrix-mirror'];
+  const search=(region,query,status='all')=>filterQuests(all,region,query,status,done);
+  assert.deepEqual(search('all','ＱＵＥＳＴ　８６').map(x=>x.level.id),['matrix-mirror']);
+  assert.deepEqual(search('ruins','変換鏡 行列').map(x=>x.level.id),['matrix-mirror']);
+  assert.deepEqual(search('wilds','変換鏡 行列'),[]);
+  assert.deepEqual(search('all','変換鏡','done').map(x=>x.level.id),['matrix-mirror']);
+  assert.deepEqual(search('all','変換鏡','todo'),[]);
+  assert.ok(search('all','').every(({level,index})=>all[index]===level));
+  assert.deepEqual(search('all','<img src=x>'),[]);
+  assert.throws(()=>search('all','', 'invalid'),RangeError);
 });
 test('optional learning trails cover every existing quest once and preserve their suggested order',()=>{
   const ids=learningTrails.flatMap(trail=>trail.quests);
