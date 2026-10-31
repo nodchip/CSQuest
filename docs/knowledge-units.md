@@ -81,7 +81,7 @@
 | GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 未着手 |
 | HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 未着手 |
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 未着手 |
-| HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 未着手 |
+| HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 一部試作：依頼22で三つの利用条件 |
 | HCI | HCI-Evaluation | Evaluating the Design | 178 | 未着手 |
 | HCI | HCI-Design | System Design | 179 | 未着手 |
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 未着手 |
