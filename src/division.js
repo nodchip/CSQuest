@@ -1,0 +1,8 @@
+export const divisionLevel={id:'guild-division',number:'126',kind:'division',name:'すべての印を持つ仲間',tag:'関係の除算と全称条件',title:'護衛隊を集める',story:'ギルドが依頼に必要な印をすべて持つ仲間を探しています。必要な印が変わると、選ばれる仲間がどう変わるか調べましょう。'};
+export const divisionMembers={ao:{name:'アオ',marks:['太陽','月']},beni:{name:'ベニ',marks:['太陽']},kuro:{name:'クロ',marks:['太陽','月','星']},sora:{name:'ソラ',marks:[]}};
+export const divisionCases={two:{name:'太陽と月が必要',required:['太陽','月']},none:{name:'必要な印がない',required:[]}};
+export function divisionExpected(mode){if(!Object.hasOwn(divisionCases,mode))throw new RangeError('依頼が不正です。');return Object.keys(divisionMembers).filter(id=>divisionCases[mode].required.every(mark=>divisionMembers[id].marks.includes(mark)));}
+export function divisionCaseCorrect(mode,c){const expected=divisionExpected(mode);return c.checked&&c.selected.length===expected.length&&expected.every(id=>c.selected.includes(id));}
+export function createDivision(){return {mode:'two',choices:{two:{selected:[],checked:false},none:{selected:[],checked:false}}};}
+export function restoreDivision(s){if(!s||!Object.hasOwn(divisionCases,s.mode)||!s.choices)throw new RangeError('途中記録が不正です。');const state=createDivision();state.mode=s.mode;for(const mode of Object.keys(divisionCases)){const c=s.choices[mode];if(!c||!Array.isArray(c.selected)||new Set(c.selected).size!==c.selected.length||c.selected.some(id=>!Object.hasOwn(divisionMembers,id))||typeof c.checked!=='boolean')throw new RangeError('選択が不正です。');state.choices[mode]={selected:c.selected.slice(),checked:c.checked};}return state;}
+export function divisionComplete(s){return Object.keys(divisionCases).every(mode=>divisionCaseCorrect(mode,s.choices[mode]));}
