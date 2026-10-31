@@ -67,7 +67,7 @@
 | 16 | KA Core | O 記法で時間・領域の上界を与える。未着手 |
 | 17 | KA Core | Cook–Levin の定理と SAT の NP 完全性を説明。未着手 |
 | 18 | KA Core | P と NP を説明。依頼412で SAT の候補の検証を扱う固定例。複雑性クラスの一般的な説明は未対応 |
-| 19 | KA Core | 既知の問題からの帰着で NP 完全性を証明。依頼411で頂点被覆から独立集合への変換と補集合の関係を扱う固定例。完全な証明の構築は未対応 |
+| 19 | KA Core | 既知の問題からの帰着で NP 完全性を証明。依頼411で頂点被覆から独立集合、413で部分和から等分割への変換の固定例。完全な NP 完全性の証明の構築は未対応 |
 | 20 | KA Core | PSPACE と EXP の関係を説明。未着手 |
 
 ## AL-Models：トピック
@@ -172,3 +172,5 @@
 依頼411では３頂点の一本道と三角で２頂点の独立集合と残りの頂点被覆を比べる。一般には被覆 U と独立集合 V−U の同値から、被覆が高々 k 個かを独立集合が少なくとも |V|−k 個かに多項式時間で変換する。全３頂点単純グラフと全部分集合を検査。元問題の困難性や NP 所属の完全な証明は扱わない。[Cornell: Reductions and NP-Completeness](https://www.cs.cornell.edu/courses/cs6820/2019fa/handouts/npcomplete.pdf)。
 
 依頼412は三変数の２つの論理条件について、充足する割当てを１つ示す場合と、充足不能な８割当てをすべて試す場合を比較する。候補の検証と探索を区別し、一般 SAT の NP 完全性に言及するが、Cook–Levin の証明や一般の UNSAT の証明方法は扱わない。[Cornell: P, NP, and NP-completeness](https://www.cs.cornell.edu/courses/cs2800/2015fa/lectures/lec36-np.html)。
+
+依頼413は正の石と 0<T<S に限定し、部分和から等分割へ S と 2T を追加する。半分は S+T、追加２石は同じ側に入れられず、S 側の元の石の和は T。YES・NO の固定例と小規模な全列挙で両方向の対応を確認。端の条件や NP 完全性の証明全体は未対応。[Cornell: NP-complete problems](https://www.cs.cornell.edu/courses/cs6820/2019fa/handouts/npcomplete.pdf)。
