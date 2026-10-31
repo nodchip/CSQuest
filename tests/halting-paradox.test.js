@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createHaltingParadox,haltingTrialValid,haltingParadoxComplete,restoreHaltingParadox} from '../src/halting-paradox.js';
+test('both hypothetical predictions lead to the opposite behavior and must be examined',()=>{const s=createHaltingParadox();assert.equal(haltingTrialValid('halts',{action:'loop'}),true);assert.equal(haltingTrialValid('halts',{action:'halt'}),false);assert.equal(haltingTrialValid('loops',{action:'halt'}),true);s.trials.halts={action:'loop',done:true};s.conclusion='impossible';s.limit='insufficient';s.checked=true;assert.equal(haltingParadoxComplete(s),false);s.trials.loops={action:'halt',done:true};assert.equal(haltingParadoxComplete(s),true);assert.deepEqual(restoreHaltingParadox(s),s);});
+test('restored progress cannot claim a false branch or invalid conclusion',()=>{const s=createHaltingParadox();s.trials.halts={action:'halt',done:true};assert.throws(()=>restoreHaltingParadox(s));s.trials.halts.done=false;s.limit='unknown';assert.throws(()=>restoreHaltingParadox(s));});

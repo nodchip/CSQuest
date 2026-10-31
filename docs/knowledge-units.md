@@ -21,7 +21,7 @@
 | AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：辞書、依頼345〜347の線形探索法によるハッシュ表、各種整列、最長共通部分列、４点 FFT、多次元配列、連結リスト、二分探索木、依頼348の AVL 回転、最小ヒープ、グラフ表現・探索、最短路、最小全域木、推移閉包など |
 | AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、55・342で分割統治、76・337・338・341で動的計画法と解の復元、415で４塔の道を変えられる頂点被覆の近似。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼88・334〜344で探索と実測、漸近記法、部分和、償却費用、409・410で再帰木とマスター定理、411で独立集合と頂点被覆の帰着、412で SAT の証拠、413で部分和から等分割への帰着、414で計算量クラスの固定例。一般の分析は未対応 |
-| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件、依頼154の正規表現の固定例。他のモデルや一般の証明は未対応 |
+| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件、依頼154の正規表現、依頼416の停止問題の対角化。他のモデルや自由な証明は未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 依頼118で集団別の分類指標の固定例。他は未対応。[詳細](al-other-units.md) |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 依頼06・37で組合せ回路、265〜268で記憶、シフト、カウンター、伝搬遅延の固定例。他は未対応。[詳細](ar-logic.md) |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8 固定例 |
