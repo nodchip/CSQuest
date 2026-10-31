@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createReinforcement,reinforcementStep,reinforcementComplete,restoreReinforcement} from '../src/reinforcement.js';
+test('repeated door experience propagates the discounted future reward',()=>{let s=createReinforcement();assert.equal(reinforcementStep(s,'treasure'),null);s=reinforcementStep(s,'safe');assert.equal(s.q.safe,1);s=reinforcementStep(s,'door');assert.equal(s.q.door,0);s=reinforcementStep(s,'treasure');assert.equal(s.q.treasure,4);assert.equal(s.q.door,0);s=reinforcementStep(s,'door');assert.equal(s.q.door,2);assert.equal(s.place,'room');s=reinforcementStep(s,'treasure');assert.equal(s.place,'start');assert.deepEqual(s.q,{safe:1,door:2,treasure:4});s.answer='explore';s.checked=true;assert.equal(reinforcementComplete(s),true);assert.deepEqual(restoreReinforcement(s),s);});
+test('invalid histories and excess actions cannot be restored',()=>{assert.throws(()=>restoreReinforcement({history:['treasure'],answer:null,checked:false}));assert.throws(()=>restoreReinforcement({history:Array(101).fill('safe'),answer:null,checked:false}));});

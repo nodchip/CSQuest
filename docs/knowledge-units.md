@@ -9,12 +9,12 @@
 | AI | AI-Introduction | Fundamental Issues | 67 | 依頼109で部分観測と記憶、依頼368で期待効用、依頼375で AI・機械学習・深層学習の固定例。他は未対応。[詳細](ai-introduction.md) |
 | AI | AI-Search | Search | 68 | 依頼08・21・42〜45・49・97・369〜374で探索、反復深化、ビーム探索、双方向探索、山登り、焼きなまし、遺伝的探索、対戦、枝刈りと制約充足の固定例。負の辺の緩和は依頼138。他は未対応。[詳細](ai-search.md) |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 依頼81・98・99で条件付き頻度、期待損失とマルコフ連鎖の固定例。他は未対応。[詳細](ai-krr.md) |
-| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標、過学習、依頼375〜378の多層ネットワーク、前処理、評価分割、特徴表現の固定例。[詳細](ai-ml.md) |
+| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標、過学習、依頼375〜379の多層ネットワーク、前処理、評価分割、特徴表現、強化学習の固定例。[詳細](ai-ml.md) |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 依頼118で架空の公平性指標の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-LRR | Logical Representation and Reasoning | 76 | 依頼72で固定の命題から前向き推論。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率と条件付き独立の固定例。他は未対応。[詳細](ai-probability.md) |
 | AI | AI-Planning | Planning | 78 | 依頼85・100で道具・仕掛け・残り時間を持つ状態と移動の固定例。他は未対応。[詳細](ai-planning.md) |
-| AI | AI-Agents | Agents and Cognitive Systems | 79 | 依頼109で記憶を持つ主体の固定例。他は未対応。[詳細](ai-additional.md) |
+| AI | AI-Agents | Agents and Cognitive Systems | 79 | 依頼109で記憶を持つ主体、依頼379で行動価値を更新する主体の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-NLP | Natural Language Processing | 79 | 依頼119〜121で検索評価、転置索引、TF-IDF と単語の並びの固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Robotics | Robotics | 80 | 依頼28・71で格子上の観測と移動の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 依頼17・118で分類指標、依頼230〜233で固定画像の分割、形の特徴と動きの対応付けの比較。他は未対応。[詳細](ai-additional.md) |
