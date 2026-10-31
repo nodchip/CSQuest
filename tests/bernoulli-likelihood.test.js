@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {likelihoodCases,likelihoodChoices,likelihoodNumerator,createLikelihood,likelihoodTrialValid,likelihoodComplete,restoreLikelihood} from '../src/bernoulli-likelihood.js';
+test('likelihoods represent the specific ordered observations under independent Bernoulli trials',()=>{assert.deepEqual(likelihoodChoices.map(k=>likelihoodNumerator('three',k)),[0,3,16,27,0]);assert.deepEqual(likelihoodChoices.map(k=>likelihoodNumerator('two',k)),[0,9,16,9,0]);for(const [id,c] of Object.entries(likelihoodCases))for(const k of likelihoodChoices)assert.equal(likelihoodNumerator(id,k)/256,(k/4)**c.success*(1-k/4)**(4-c.success));});
+test('all candidates and both observation sets must be checked',()=>{const s=createLikelihood();for(const [id,k] of [['three',3],['two',2]]){s.trials[id]={candidate:k,tested:[0,1,2,3,4],done:true};assert.ok(likelihoodTrialValid(id,s.trials[id]));}s.answer='likelihood';s.checked=true;assert.ok(likelihoodComplete(s));assert.deepEqual(restoreLikelihood(s),s);s.trials.three.candidate=2;assert.throws(()=>restoreLikelihood(s));});
