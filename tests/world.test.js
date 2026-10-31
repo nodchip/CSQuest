@@ -24,11 +24,17 @@ test('quest search combines normalized words, region and completion without chan
   assert.deepEqual(search('all','<img src=x>'),[]);
   assert.throws(()=>search('all','', 'invalid'),RangeError);
 });
-test('optional learning trails cover every existing quest once and preserve their suggested order',()=>{
+test('optional learning trails cover all quests, avoid duplicates within each path, and preserve their order',()=>{
   const ids=learningTrails.flatMap(trail=>trail.quests);
-  assert.equal(new Set(ids).size,ids.length);assert.deepEqual([...ids].sort(),all.map(level=>level.id).sort());
-  for(const trail of learningTrails){assert.equal(findTrail(trail.id),trail);assert.deepEqual(trailQuests(trail,all).map(item=>item.level.id),trail.quests);assert.ok(trailQuests(trail,all).every(item=>all[item.index]===item.level));}
+  assert.deepEqual([...new Set(ids)].sort(),all.map(level=>level.id).sort());
+  for(const trail of learningTrails){assert.equal(new Set(trail.quests).size,trail.quests.length);assert.equal(findTrail(trail.id),trail);assert.deepEqual(trailQuests(trail,all).map(item=>item.level.id),trail.quests);assert.ok(trailQuests(trail,all).every(item=>all[item.index]===item.level));}
   assert.equal(findTrail('missing'),null);
+});
+test('the AI path connects introductions to search, learning, and applications',()=>{
+ const trail=findTrail('ai-journey'),items=trail.quests;
+ const before=(a,b)=>assert.ok(items.indexOf(a)>=0&&items.indexOf(a)<items.indexOf(b),`${a} should precede ${b}`);
+ before('workshop-ai-kinds','crystal-neighbors');before('forest-search','forest-iterative-deepening');before('weighted-roads','guided-ruins');before('forest-hill-climbing','forest-annealing');before('crystal-neighbors','archive-feature-preparation');before('crystal-overfit','archive-validation-split');before('rain-observations','ruin-agent-utility');
+ assert.equal(nextTrailQuest(trail,all,['workshop-ai-kinds']).level.id,'forest-search');
 });
 test('the next suggestion is the earliest unfinished quest even when later ones were completed first',()=>{
   for(const trail of learningTrails){const items=trailQuests(trail,all);assert.deepEqual(nextTrailQuest(trail,all,[]),items[0]);assert.deepEqual(nextTrailQuest(trail,all,[items[0].level.id,items.at(-1).level.id]),items[1]);assert.equal(nextTrailQuest(trail,all,trail.quests),null);}
