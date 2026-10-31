@@ -35,7 +35,7 @@
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの重ね合わせ、H・Z と途中観測の固定例。他の範囲は未対応。[詳細](ar-quantum.md) |
 | AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |
-| DM | DM-Core | Core Database System Concepts | 115 | 未着手 |
+| DM | DM-Core | Core Database System Concepts | 115 | 依頼123で列の変更とビューの固定例。問い合わせ・トランザクション等は別の固定例のみ。[詳細](dm-core.md) |
 | DM | DM-Modeling | Data Modeling | 116 | 依頼101・102で多対多、１対多、１対１の高々の制約とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
 | DM | DM-Relational | Relational Databases | 117 | 一部試作：依頼67で更新異常と分解後の結合を比較 |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択と内部結合 |
