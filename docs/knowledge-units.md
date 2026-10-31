@@ -75,7 +75,7 @@
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 依頼186・187で拡散光の段階化と光からの深さによる影の固定模型。他の手法や描画 API は未対応。[詳細](git-shading.md) |
 | GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜185でキーフレームの緩急、平面２関節と線形ブレンドの固定例。３次元回転・実際のリグ制作・モーションキャプチャなどは未対応。[詳細](git-animation.md) |
-| GIT | GIT-Simulation | Simulation | 161 | 依頼209〜211で１粒子の積分、２円の接触判定、一次元の衝突応答の固定例。流体や一般の衝突応答等は未対応。[詳細](git-simulation.md) |
+| GIT | GIT-Simulation | Simulation | 161 | 依頼209〜212で１粒子の積分、２円の接触、一次元の衝突応答、有限盤面のライフゲームの固定例。流体や一般の衝突応答等は未対応。[詳細](git-simulation.md) |
 | GIT | GIT-Immersion | Immersion | 161 | 未着手 |
 | GIT | GIT-Interaction | Interaction | 162 | 未着手 |
 | GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。他は未対応。[詳細](git-image.md) |

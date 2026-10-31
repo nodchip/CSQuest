@@ -81,3 +81,6 @@
 .tess-remaining { fill: #eef3e9; stroke: #426957; stroke-width: 2; }
 .tess-outline { fill: none; stroke: #294e39; stroke-width: 3; }
 .tess-point { fill: #233d2b; } .tess-diagram text { fill: #233d2b; font-size: 12px; font-weight: bold; }
+.life-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:4px; width:min(100%,260px); margin:12px 0 22px; }
+.life-grid span,.life-grid button { display:grid; place-items:center; aspect-ratio:1; min-width:0; padding:0; border:1px solid #aac2ad; background:#f2f5e9; color:#375845; font-size:22px; }
+.life-grid .lit,.life-grid button[aria-pressed="true"] { background:#315c48; color:#fff6c7; }
