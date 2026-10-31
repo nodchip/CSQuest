@@ -46,7 +46,7 @@
 | DM | DM-Unstructured | Semi-structured and Unstructured Databases | 122 | 未着手 |
 | DM | DM-SEP | Society, Ethics, and the Profession | 123 | 未着手 |
 | FPL | FPL-OOP | Object-Oriented Programming | 130 | 未着手 |
-| FPL | FPL-Functional | Functional Programming | 131 | 未着手 |
+| FPL | FPL-Functional | Functional Programming | 131 | 一部試作：依頼51で列の変換・選択・合計 |
 | FPL | FPL-Logic | Logic Programming | 133 | 未着手 |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 未着手 |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 未着手 |
