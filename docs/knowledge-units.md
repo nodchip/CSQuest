@@ -7,7 +7,7 @@
 | 分野 | 単位 | 名称 | 印字ページ | 状態 |
 |---|---|---|---:|---|
 | AI | AI-Introduction | Fundamental Issues | 67 | 依頼109で部分観測と記憶に基づく行動、依頼368で期待効用による行動選択の固定例。他は未対応。[詳細](ai-introduction.md) |
-| AI | AI-Search | Search | 68 | 依頼08・21・42〜45・49・97・369・370で探索、反復深化、ビーム探索、対戦、枝刈りと制約充足の固定例。負の辺の緩和は依頼138。他は未対応。[詳細](ai-search.md) |
+| AI | AI-Search | Search | 68 | 依頼08・21・42〜45・49・97・369〜371で探索、反復深化、ビーム探索、双方向探索、対戦、枝刈りと制約充足の固定例。負の辺の緩和は依頼138。他は未対応。[詳細](ai-search.md) |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 依頼81・98・99で条件付き頻度、期待損失とマルコフ連鎖の固定例。他は未対応。[詳細](ai-krr.md) |
 | AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標と過学習の固定例 |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 依頼118で架空の公平性指標の固定例。他は未対応。[詳細](ai-additional.md) |
