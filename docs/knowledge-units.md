@@ -31,7 +31,7 @@
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 未着手 |
 | AR | AR-Security | Secure Processor Architectures | 107 | 未着手 |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの重ね合わせ、H・Z と途中観測の固定例。他の範囲は未対応。[詳細](ar-quantum.md) |
-| AR | AR-SEP | Sustainability Issues | 109 | 未着手 |
+| AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 未着手 |
 | DM | DM-Core | Core Database System Concepts | 115 | 未着手 |
 | DM | DM-Modeling | Data Modeling | 116 | 未着手 |
@@ -143,7 +143,7 @@
 | SEP | SEP-IP | Intellectual Property | 277 | 未着手 |
 | SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き |
 | SEP | SEP-Communication | Communication | 279 | 未着手 |
-| SEP | SEP-Sustainability | Sustainability | 281 | 未着手 |
+| SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の集計範囲と期間の架空比較。他は未対応。[詳細](sep-sustainability.md) |
 | SEP | SEP-History | Computing History | 282 | 未着手 |
 | SEP | SEP-Economies | Economies of Computing | 283 | 未着手 |
 | SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 未着手 |
