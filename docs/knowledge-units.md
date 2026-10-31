@@ -7,7 +7,7 @@
 | 分野 | 単位 | 名称 | 印字ページ | 状態 |
 |---|---|---|---:|---|
 | AI | AI-Introduction | Fundamental Issues | 67 | 依頼109で部分観測と記憶に基づく行動の固定例。他は未対応。[詳細](ai-introduction.md) |
-| AI | AI-Search | Search | 68 | 依頼08・21・42〜45・49・97で探索、対戦、枝刈りと制約充足の固定例。他は未対応。[詳細](ai-search.md) |
+| AI | AI-Search | Search | 68 | 依頼08・21・42〜45・49・97で探索、負の辺の緩和、対戦、枝刈りと制約充足の固定例。他は未対応。[詳細](ai-search.md) |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 依頼81・98・99で条件付き頻度、期待損失とマルコフ連鎖の固定例。他は未対応。[詳細](ai-krr.md) |
 | AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標と過学習の固定例 |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 依頼118で架空の公平性指標の固定例。他は未対応。[詳細](ai-additional.md) |
@@ -18,7 +18,7 @@
 | AI | AI-NLP | Natural Language Processing | 79 | 依頼119〜121で検索評価、転置索引、TF-IDF と単語の並びの固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Robotics | Robotics | 80 | 依頼28・71で格子上の観測と移動の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 依頼17・118で画像以外の分類と指標の固定例。視覚は未対応。[詳細](ai-additional.md) |
-| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：マージソート、二分探索木、探索、最短路、最小全域木、トポロジカル順序、ハッシュ衝突など |
+| AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：マージソート、二分探索木、探索、負の辺を含む最短路、最小全域木、トポロジカル順序、ハッシュ衝突など |
 | AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、依頼55で分割統治、依頼76で動的計画法と貪欲法の比較。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼88で冊数別の逐次・二分探索の比較回数と最大値。一般の分析は未対応 |
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、依頼80のスタック付きの括弧判定、依頼69の不変条件の固定例。他のモデルや一般の証明は未対応 |
