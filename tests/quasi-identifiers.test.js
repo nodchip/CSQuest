@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {quasiGroups,createQuasi,quasiComplete,restoreQuasi} from '../src/quasi-identifiers.js';
+test('generalizing age groups records while the sensitive field stays homogeneous',()=>{const exact=quasiGroups('exact',true),decade=quasiGroups('decade',true);assert.deepEqual(exact.map(g=>g.count),[1,1,1,1,1,1]);assert.deepEqual(decade.map(g=>g.count),[2,2,2]);assert.deepEqual(decade.map(g=>g.support),[['あり','あり'],['なし','なし'],['あり','あり']]);assert.deepEqual(quasiGroups('decade',false).map(g=>g.count),[4,2]);assert.throws(()=>quasiGroups('other',true));});
+test('both comparisons and inference explanation are required and restoration is isolated',()=>{const s=createQuasi();s.age='decade';s.observed=['exact:true','decade:true'];s.answer='inference';s.checked=true;assert.equal(quasiComplete(s),true);const copy=restoreQuasi(s);copy.observed.pop();assert.equal(quasiComplete(copy),false);assert.equal(quasiComplete(s),true);assert.throws(()=>restoreQuasi({...s,observed:['exact:true','exact:true']}));});
