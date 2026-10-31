@@ -9,10 +9,11 @@ export function createGuided(mode){
   return {mode,distances:{S:0,A:null,B:null,C:null,G:null},parents:{S:null},settled:[],status:'playing',message:'出発地から探索を始めましょう。'};
 }
 export function estimate(mode,id){if(!Object.hasOwn(guidedModes,mode)||!Object.hasOwn(guidedRoads,id))throw new RangeError('地点が不正です。');return mode==='astar'?guidedHeuristic[id]:0;}
-export function advanceGuided(state,id){
+export function advanceGuided(state,id){return advanceGuidedWith(state,id,estimate);}
+export function advanceGuidedWith(state,id,heuristic){
   if(state.status!=='playing'||!Object.hasOwn(guidedRoads,id)||state.settled.includes(id)||state.distances[id]===null)throw new RangeError('選べない地点です。');
   const open=Object.keys(guidedRoads).filter(k=>!state.settled.includes(k)&&state.distances[k]!==null);
-  const score=k=>state.distances[k]+estimate(state.mode,k),minimum=Math.min(...open.map(score));
+  const score=k=>state.distances[k]+heuristic(state.mode,k),minimum=Math.min(...open.map(score));
   if(score(id)!==minimum)return {...state,message:'候補の中で「ここまでの費用＋残りの見積もり」が最も小さい地点を選びましょう。'};
   const settled=[...state.settled,id],distances={...state.distances},parents={...state.parents};
   if(id==='G')return {...state,settled,status:'found',message:`遺跡までの費用 ${distances.G} が決まりました。`};
