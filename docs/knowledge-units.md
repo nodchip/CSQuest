@@ -132,7 +132,7 @@
 | SE | SE-Validation | Software Verification and Validation | 246 | 一部試作：依頼23で仕様に基づく有限の試験選択 |
 | SE | SE-Refactoring | Refactoring and Code Evolution | 249 | 依頼234〜237で暗黙の依存、重複整理、版番号と段階的移行の固定例。他は未対応。[詳細](se-refactoring.md) |
 | SE | SE-Reliability | Software Reliability | 250 | 依頼238〜241で単一障害点、失敗枠、多数決と故障の依存の固定例。他は未対応。[詳細](se-reliability.md) |
-| SE | SE-Formal | Formal Methods | 251 | 依頼242で二人の入室の有限状態探索と反例。他は未対応。[詳細](se-formal.md) |
+| SE | SE-Formal | Formal Methods | 251 | 依頼242・243で有限状態の反例と有限範囲の契約検査。他は未対応。[詳細](se-formal.md) |
 | SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
 | SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 未着手 |
 | SEC | SEC-Coding | Secure Coding | 259 | 依頼82で文字列連結と値のパラメータ化による検索の固定例。他は未対応。[詳細](sec-coding.md) |
