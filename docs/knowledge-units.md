@@ -55,7 +55,7 @@
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。他は未対応。[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 未対応。トピックを整理。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
 | FPL | FPL-Types | Type Systems | 136 | 一部試作：依頼24で入力・出力の型と検査 |
-| FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、依頼201・202の回収と参照カウントの固定例。実行時配置・一般のメモリ管理等は未対応。[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
+| FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、依頼201〜203の回収・参照カウント・別名の固定例。実行時配置・一般のメモリ管理等は未対応。[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75で優先順位・括弧・左結合による式の構造の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 未着手 |
 | FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75で優先順位と結合による構造の固定例。他は未対応。[詳細](fpl-syntax.md) |
