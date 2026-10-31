@@ -1,0 +1,11 @@
+export const vertexApproximationLevel={id:'forest-vertex-approximation',number:'415',kind:'vertex-approximation',name:'見張りの二倍の約束',tag:'頂点被覆の近似',title:'道を選んで見張りを置こう',story:'塔の間の道を見張ります。道を一つ選ぶたび、その両端に見張りを置きます。'};
+export const approximationCases={middle:{name:'中央の道から',required:'BC'},outer:{name:'端の道から',required:'AB'}};
+export const approximationEdges={AB:['A','B'],BC:['B','C'],CD:['C','D']};
+export function createApproximationTrial(){return {edges:[],done:false};}
+export function approximationSelected(t){return [...new Set(t.edges.flatMap(e=>approximationEdges[e]))];}
+export function approximationRemaining(t){const selected=approximationSelected(t);return Object.keys(approximationEdges).filter(e=>approximationEdges[e].every(v=>!selected.includes(v)));}
+export function approximationStep(t,e){if(!Object.hasOwn(approximationEdges,e)||!approximationRemaining(t).includes(e))throw new RangeError('まだ見張られていない道を選んでください');return {edges:[...t.edges,e],done:false};}
+export function approximationTrialValid(id,t){return Object.hasOwn(approximationCases,id)&&t.edges[0]===approximationCases[id].required&&approximationRemaining(t).length===0;}
+export function createVertexApproximation(){return {selected:'middle',trials:{middle:createApproximationTrial(),outer:createApproximationTrial()},answer:null,checked:false};}
+export function vertexApproximationComplete(s){return Object.keys(approximationCases).every(id=>s.trials[id].done&&approximationTrialValid(id,s.trials[id]))&&s.answer==='matching'&&s.checked;}
+export function restoreVertexApproximation(s){if(!s||!Object.hasOwn(approximationCases,s.selected)||!s.trials||![null,'matching','optimal','shared'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createVertexApproximation();n.selected=s.selected;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(approximationCases)){const t=s.trials[id];if(!t||!Array.isArray(t.edges)||t.edges.length>2||typeof t.done!=='boolean')throw new RangeError('途中記録が不正です');let trial=createApproximationTrial();for(const e of t.edges)trial=approximationStep(trial,e);trial.done=t.done;if(t.done&&!approximationTrialValid(id,trial))throw new RangeError('途中記録が不正です');n.trials[id]=trial;}return n;}
