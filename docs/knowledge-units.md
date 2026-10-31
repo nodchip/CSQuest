@@ -117,7 +117,7 @@
 | PDC | PDC-Evaluation | Evaluation | 224 | 一部試作：依頼66で固定量の並列化と逐次部分の限界 |
 | PDC | PDC-Algorithms | Algorithms | 225 | 未着手 |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |
-| SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 未着手 |
+| SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 依頼79で待ち行列とスタックの選択・操作の固定例。他は未対応。[詳細](sdf-data-structures.md) |
 | SDF | SDF-Algorithms | Algorithms | 232 | 未着手 |
 | SDF | SDF-Practices | Software Development Practices | 232 | 未着手 |
 | SDF | SDF-SEP | Society, Ethics, and the Profession | 233 | 未着手 |
