@@ -104,7 +104,7 @@
 | OS | OS-Principles | Principles of Operating System | 207 | 依頼54で保護とシステムコール、依頼381で保護境界と切替え、依頼384でファイル操作の引数と返り値の固定例。他は未対応。[詳細](os-principles.md) |
 | OS | OS-Concurrency | Concurrency | 208 | 依頼15・16・30・177〜179で競合・排他・待機・記録共有、567で原子的なスピンロック、568で再入と作業状態の固定例。実 OS の同期は未対応。[詳細](os-concurrency.md) |
 | OS | OS-Protection | Protection and Safety | 209 | 依頼11・54・180・181で権限、媒体・起動・受付の保護とバックアップの固定模型。実 OS の脆弱性や保護機構は未対応。[詳細](os-protection.md) |
-| OS | OS-Scheduling | Scheduling | 209 | 一部試作：先着順とラウンドロビン |
+| OS | OS-Scheduling | Scheduling | 209 | 依頼14の先着順・ラウンドロビン、569の最短ジョブ・最短残り時間の固定例。[詳細](os-scheduling.md) |
 | OS | OS-Process | Process Model | 210 | 依頼53で状態、依頼179でスレッド、依頼385で頁の分離・共有、依頼386で親子プロセス、依頼388で局所・動的領域の寿命、依頼389でパイプ、依頼390で割込みと切替え、依頼391で実行待ち列、依頼392で共有部品の読込みの固定例。他は未対応。[詳細](os-process.md) |
 | OS | OS-Memory | Memory Management | 210 | 依頼34・40・137でページ置換と住所変換、依頼385で頁の分離・共有、依頼387で確保方式と断片化の固定例。他は未対応。[詳細](os-memory.md) |
 | OS | OS-Devices | Device management | 211 | 依頼105・132で通知と DMA の固定模型。他は未対応。[詳細](os-devices.md) |
