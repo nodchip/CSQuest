@@ -151,6 +151,8 @@
 
 依頼334では４・８個について、全要素の走査、２列の全組合せ、１個になるまで半分にする回数を比較する。これらの規則は線形・二次・対数の固定例であり、２点だけで一般の漸近的な性質を証明するものではない。参考：[NIST: big-O notation](https://xlinux.nist.gov/dads/HTML/bigOnotation.html)。
 
+同じ依頼で、直接参照、全部分集合、全順列の作業回数を石３・４個で比較する。直接参照は各番号に１回でアクセスできる仮定、部分集合は空集合を含み８・16、順列は６・24。一般の規則をそれぞれ１・2ⁿ・n! と説明するが、実際の実行時間や任意のアルゴリズムの計算量は評価しない。参考：[NIST: factorial](https://xlinux.nist.gov/dads/HTML/factorial.html)。
+
 依頼335は石の個数 n が４・８・16のとき、8n と n² の固定の操作回数を比較する。n が１以上なら 8n ≤ 8n² であり、線形の作業にも二次の O 上限が成り立つ。実行時間の測定、一般の証明の構築や Θ の形式的な検証は未対応。参考：[NIST: big-O notation](https://xlinux.nist.gov/dads/HTML/bigOnotation.html)。
 
 依頼336は４個の石について、候補一つの合計確認と16通りの全探索を比較する。肯定の候補は検証でき、失敗した一候補だけでは解なしと結論できない。固定例は P と NP の関係、NP 完全性や他の解法の不在を証明しない。参考：[Cornell: Subset Sum is NP-complete](https://www.cs.cornell.edu/courses/cs4820/2018fa/lectures/subset_sum.pdf)。
