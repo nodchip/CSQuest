@@ -139,3 +139,7 @@
 
 .color-result { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .color-swatch { width: 6rem; height: 6rem; border: .2rem solid #485769; border-radius: .75rem; flex: none; }
+
+.network-scene { margin: 1rem auto; max-width: 38rem; }
+.network-scene svg { display: block; width: 100%; height: auto; }
+.network-scene figcaption { margin-top: .5rem; line-height: 1.6; }
