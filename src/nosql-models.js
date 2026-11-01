@@ -1,3 +1,4 @@
+import {createDataFormats,dataFormatsComplete,restoreDataFormats} from './data-formats.js';
 export const nosqlLevel={id:'village-nosql-models',number:'189',kind:'nosql-models',name:'薬師の異なる記録箱',tag:'キー・バリューと文書',title:'記録の扱い方を比べよう',story:'薬師の店には種類の違う品物があります。同じ記録を二つの箱に入れ、「回復」の札を持つ品を探しましょう。'};
 export const nosqlModes={kv:'鍵で値を取り出す箱',document:'文書の中を検索できる箱'};
 export const nosqlItems={K1:{name:'薬草',category:'植物',tags:['回復','野草']},K2:{name:'解毒薬',category:'薬',tags:['解毒']},K3:{name:'お守り',category:'道具',tags:['回復']}};
@@ -8,6 +9,6 @@ export function nosqlStep(s,action){if(!Array.isArray(action))throw new RangeErr
  else if((s.stage==='before'||s.stage==='after')&&s.id==='document'&&action.length===1&&action[0]==='query'){n.matches[s.stage]=n.index['回復'].slice();n.stage=s.stage==='before'?'update':'done';n.message=n.stage==='update'?'札の索引で文書を探しました。次に K1 の札を変更しましょう。':'更新後の索引で文書を探しました。';}
  else if(s.stage==='update'&&action.length===1&&action[0]==='update'){n.removed=true;if(n.index)n.index['回復']=n.index['回復'].filter(key=>key!=='K1');n.stage='after';n.scanned=[];n.message='K1 から「回復」の札を外しました。もう一度探しましょう。';}
  else return {...s,message:'今の段階で使う操作を選びましょう。'};n.history.push(action);return n;}
-export function createNosqlSet(){return {selected:'kv',trials:{kv:createNosqlTrial('kv'),document:createNosqlTrial('document')}};}
-export function nosqlComplete(s){return Object.keys(nosqlModes).every(id=>s.trials[id].stage==='done');}
-export function restoreNosqlSet(saved){if(!saved||!Object.hasOwn(nosqlModes,saved.selected)||!saved.histories)throw new RangeError('途中記録が不正です。');const s=createNosqlSet();s.selected=saved.selected;for(const id of Object.keys(nosqlModes)){const history=saved.histories[id];if(!Array.isArray(history)||history.length>(id==='kv'?7:3))throw new RangeError('履歴が不正です。');for(const action of history){const n=nosqlStep(s.trials[id],action);if(n.history.length!==s.trials[id].history.length+1)throw new RangeError('履歴が不正です。');s.trials[id]=n;}}return s;}
+export function createNosqlSet(){return {selected:'kv',trials:{kv:createNosqlTrial('kv'),document:createNosqlTrial('document')},formats:createDataFormats()};}
+export function nosqlComplete(s){return Object.keys(nosqlModes).every(id=>s.trials[id].stage==='done')&&dataFormatsComplete(s.formats);}
+export function restoreNosqlSet(saved){if(!saved||!Object.hasOwn(nosqlModes,saved.selected)||!saved.histories)throw new RangeError('途中記録が不正です。');const s=createNosqlSet();s.selected=saved.selected;for(const id of Object.keys(nosqlModes)){const history=saved.histories[id];if(!Array.isArray(history)||history.length>(id==='kv'?7:3))throw new RangeError('履歴が不正です。');for(const action of history){const n=nosqlStep(s.trials[id],action);if(n.history.length!==s.trials[id].history.length+1)throw new RangeError('履歴が不正です。');s.trials[id]=n;}}if(saved.formats!==undefined)s.formats=restoreDataFormats(saved.formats);return s;}
