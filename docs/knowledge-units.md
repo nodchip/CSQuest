@@ -15,7 +15,7 @@
 | AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率、562で観測による d 分離、563で共通結果を条件とする確率、564で変数消去の固定例。他は未対応。[詳細](ai-probability.md) |
 | AI | AI-Planning | Planning | 78 | 依頼85・100・541〜548で状態を含む移動、半順序、因果リンク、計画グラフ、操作の前提と効果、階層分解、観測と再計画、有限期間 MDP、複数主体の経路の固定例。他は未対応。[詳細](ai-planning.md) |
 | AI | AI-Agents | Agents and Cognitive Systems | 79 | 依頼109で記憶を持つ主体、依頼379で行動価値を更新する主体の固定例。他は未対応。[詳細](ai-additional.md) |
-| AI | AI-NLP | Natural Language Processing | 79 | 依頼119〜121で検索評価、転置索引、TF-IDF と単語の並びの固定例。他は未対応。[詳細](ai-additional.md) |
+| AI | AI-NLP | Natural Language Processing | 79 | 依頼119〜121で検索評価、転置索引と単語の並び、587で文法の表による認識の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Robotics | Robotics | 80 | 依頼28・71で格子上の観測と移動、584・585で機体の大きさと向きを考慮した経路、586で不確かな観測と移動による位置推定の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 依頼17・118で分類指標、依頼230〜233で固定画像の分割、形の特徴と動きの対応付けの比較。他は未対応。[詳細](ai-additional.md) |
 | AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：辞書、依頼559の両端キュー、依頼345〜347の線形探索法によるハッシュ表、各種整列、最長共通部分列、４点 FFT、多次元配列、連結リスト、二分探索木、依頼348の AVL 回転、最小ヒープ、グラフ表現・探索、最短路、最小全域木、推移閉包など |
