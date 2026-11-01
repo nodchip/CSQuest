@@ -1,0 +1,7 @@
+export const integralAreaLevel={id:'ruin-integral-area',number:'474',kind:'integral-area',name:'光の道を積み重ねる',tag:'定積分と面積',title:'速度から進んだ道を探そう',story:'先ほどの精霊が進んだ道を、速度の記録からたどります。短い時間の小さな長方形を並べましょう。'};
+export const integralSides={left:'区間の初め',right:'区間の終わり'};
+export function integralMeasure(side,n,count){if(!Object.hasOwn(integralSides,side)||![1,2,4].includes(n)||!Number.isInteger(count)||count<0||count>n)throw new RangeError('分割または積み重ねが不正です。');const width=2/n,heights=Array.from({length:n},(_,i)=>2*width*(i+(side==='right'?1:0)));return {width,heights,area:heights.slice(0,count).reduce((sum,h)=>sum+h*width,0)};}
+export function createIntegralArea(){return {side:'left',n:1,count:0,visited:[],answer:null,checked:false};}
+export function addIntegralRectangle(s){integralMeasure(s.side,s.n,s.count);if(s.count>=s.n)throw new RangeError('この分割の長方形はすべて並べました。');const count=s.count+1,key=`${s.side}-${s.n}`;return {...s,count,visited:count===s.n?[...new Set([...s.visited,key])]:[...s.visited],checked:false};}
+export function integralAreaComplete(s){return ['left','right'].every(side=>[1,2,4].every(n=>s.visited.includes(`${side}-${n}`)))&&s.answer===4&&s.checked;}
+export function restoreIntegralArea(s){if(!s||!Array.isArray(s.visited)||s.visited.some(k=>!['left-1','left-2','left-4','right-1','right-2','right-4'].includes(k))||new Set(s.visited).size!==s.visited.length||![null,2,4,6].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');integralMeasure(s.side,s.n,s.count);return {...s,visited:[...s.visited]};}
