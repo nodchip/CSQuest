@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pumpingParts,createCflPumping,cflPumpingComplete,restoreCflPumping} from '../src/cfl-pumping.js';
+
+test('every legal split for several pumping lengths loses equality at exponent zero',()=>{for(let p=1;p<=8;p++){let count=0;for(let start=0;start<3*p;start++)for(let v=0;v<=p;v++)for(let x=0;x<=p;x++)for(let y=0;y<=p;y++){if(v+y===0||v+x+y>p||start+v+x+y>3*p)continue;const r=pumpingParts(p,start,v,x,y);assert.equal(r.u+r.v+r.x+r.y+r.z,r.word);assert.equal(r.pumped,r.u+r.x+r.z);assert.ok(new Set(r.span).size<=2);assert.ok(Object.values(r.counts).includes(p));assert.ok(Object.values(r.counts).some(n=>n<p));assert.equal(r.inLanguage,false);count++;}assert.ok(count>0);}});
+test('all three span types, both examples and the universal reasoning are required',()=>{const s=createCflPumping();s.observed=['2,within','2,ab','3,bc'];s.answer='all';s.checked=true;assert.equal(cflPumpingComplete(restoreCflPumping(s)),true);assert.equal(cflPumpingComplete({...s,observed:['2,within','2,ab']}),false);assert.equal(cflPumpingComplete({...s,answer:'one'}),false);assert.throws(()=>pumpingParts(2,0,0,0,0));assert.throws(()=>pumpingParts(2,0,2,1,0));assert.throws(()=>restoreCflPumping({...s,observed:['2,ab','2,ab']}));});
