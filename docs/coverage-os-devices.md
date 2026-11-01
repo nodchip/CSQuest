@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | 1 | KA Core | バッファリング戦略 | 部分 | 129で通信路の容量、746で一重・二重の受取りと処理。可変の速度や実装は未評価。 |
 | 2 | KA Core | DMA、ポーリング、メモリマップド I/O | 部分 | 105・132で待機と DMA、454で手順、747で装置番地、748で依頼の環状管理を操作。実機 MMIO、DMA 実装・一般のプロトコルは未評価。 |
-| 3 | KA Core | 記憶装置の管理と歴史的背景 | 未照合 | 磁気装置と SSD の管理・歴史を扱う教材は未確認。 |
+| 3 | KA Core | 記憶装置の管理と歴史的背景 | 部分 | 749で磁気の位置決め費用と、機械的ヘッドのない SSD の固定費用を処理順とともに比較。実機管理や歴史全般は未評価。 |
 | 4 | Non-core | 装置インターフェースと抽象化層 | 部分 | 674で共通窓口と２装置の変換。一般のハードウェア抽象化層は未評価。 |
 | 5 | Non-core | ドライバーの目的、抽象、実装、試験の課題 | 部分 | 674で装置ごとの担当と未対応装置。実装・試験の課題は未評価。 |
 | 6 | Non-core | 装置通信の高水準の耐障害性 | 未照合 | 装置通信の障害と復旧の教材は未確認。 |
@@ -29,3 +29,5 @@
 依頼747は [Linux のデバイス I/O](https://docs.kernel.org/driver-api/device-io.html) と [OSTEP の I/O Devices](https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf) を参考に、制御・状態・データを架空の番地に割り当て、３枚の受取りと普通のメモリを比較する模型。データ読取り時の消費はこの装置固有の約束で、実機のレジスタ、順序、アクセス幅、権限やドライバー実装は評価しない。`tests/mmio-registers.test.js` で状態遷移・不正な操作・途中履歴を検査する。
 
 依頼748は [Linux の descriptor ring の例](https://docs.kernel.org/5.10/networking/device_drivers/ethernet/toshiba/spider_net.html) と [DMA mapping](https://docs.kernel.org/core-api/dma-api-howto.html) を参考に、３枠の依頼・装置処理・回収と４件目の折返しを操作する。単一の CPU 側と装置、順序どおりの成功と即時に見える状態変更を仮定し、実 DMA、アドレス変換、キャッシュ、メモリバリア、失敗と並行競合は扱わない。`tests/dma-descriptor-ring.test.js` は到達可能な操作順序の全探索で順序と所有状態を検査する。
+
+依頼749は [OSTEP の磁気ディスク](https://pages.cs.wisc.edu/~remzi/OSTEP/file-disks.pdf) と [Linux のブロック I/O](https://www.kernel.org/doc/html/v5.15/block/blk-mq.html) を参考に、４つの同時依頼について到着順と番号の近い順を、移動距離を費用に加える磁気の模型と一律費用の SSD の模型で比較する。各回の基本費用10・初期位置50とし、磁気は254・144、SSD は40・40。回転待ち、SSD の内部処理、並列性や実機性能は扱わず、`tests/storage-scheduling.test.js` で独立した手計算と履歴を照合する。
