@@ -1,6 +1,8 @@
 # CS Quest 開発記録
 
 
+- 2026-11-01: 依頼464で外部キーの参照中の削除拒否と連鎖削除を比較。[PostgreSQL の外部キー](https://www.postgresql.org/docs/current/ddl-constraints.html)を参照。削除順と履歴復元を検査し `npm test` 1068件成功。配信用ビルドのブラウザで拒否、途中再開、連鎖削除、両方式の達成と320・390・1280px幅を確認。NULL、遅延制約や実 SQL は未対応。前回の Pages デプロイは成功。
+
 - 2026-11-01: 依頼463で検索結果をカーソルで１行ずつ読み、０行と２行の集計・終了を比較。[Oracle の ResultSet](https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html)を参照。読み飛ばし・重複加算・履歴復元を検査し `npm test` 1066件成功。配信用ビルドのブラウザで不正操作、途中再開、両調査の達成と320・390・1280px幅を確認。実際の SQL・接続や例外処理は未対応。前回の Pages デプロイは成功。
 
 - 2026-11-01: 依頼462で外側の村を参照する存在判定と参照しない判定を比較。[PostgreSQL の EXISTS](https://www.postgresql.org/docs/current/functions-subquery.html)を参照。空・重複を含む３行以下の台帳を検査し `npm test` 1064件成功。配信用ビルドのブラウザで判定不足、途中再開、両日・両方式の達成と320・390・1280px幅を確認。NULL、実行計画や実 SQL の記述は未対応。前回の Pages デプロイは成功。
