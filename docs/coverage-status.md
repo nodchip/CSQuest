@@ -10,6 +10,6 @@
 
 追加の項目別台帳：[AR-Representation](coverage-ar-representation.md)、[AI-ML](coverage-ai-ml.md)、[AI-SEP](coverage-ai-sep.md)、[AL-SEP](coverage-al-sep.md)、[AL-Strategies](coverage-al-strategies.md)、[AL-Complexity](coverage-al-complexity.md)、[AL-Models](coverage-al-models.md)。
 
-追加の項目別台帳：[AL-Foundational](coverage-al-foundational.md)、[PDC-Algorithms](coverage-pdc-algorithms.md)、[PDC-Evaluation](coverage-pdc-evaluation.md)、[MSF-Discrete](coverage-msf-discrete.md)。
+追加の項目別台帳：[AL-Foundational](coverage-al-foundational.md)、[PDC-Algorithms](coverage-pdc-algorithms.md)、[PDC-Evaluation](coverage-pdc-evaluation.md)、[MSF-Discrete](coverage-msf-discrete.md)、[MSF-Probability](coverage-msf-probability.md)。
 
-現時点ではこの形式で見直したのは71単位。他の95単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この71/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
+現時点ではこの形式で見直したのは72単位。他の94単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この72/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
