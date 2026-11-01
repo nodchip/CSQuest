@@ -17,6 +17,14 @@ test('each environment requires its observations and all five classifications',(
  for(const a of ['guard:1','run:calm','run:gust','run:wait','guard:2','run:calm'])s=act(s,a);
  for(const [k,v] of Object.entries(agentExpected.fog))s=act(s,`choose:${k}:${v}`);
  s=act(s,'choose:transition:deterministic');s=act(s,'check');assert.equal(agentEnvironmentsComplete(s),false);
- s=act(s,'choose:transition:stochastic');s=act(s,'check');assert.equal(agentEnvironmentsComplete(s),true);
+ s=act(s,'choose:transition:stochastic');s=act(s,'check');assert.equal(agentEnvironmentsComplete(s),false);
+ // The last fog experiment leaves the guard at 2; river observations must not depend on it.
+ s=act(s,'scene:river');for(const a of ['run:calm','run:gust','run:wait'])s=act(s,a);
+ assert.equal(s.logs['river:calm'].player,0.25);assert.equal(s.logs['river:gust'].player,0.5);assert.equal(s.logs['river:wait'].player,1);
+ for(const [k,v] of Object.entries(agentExpected.river))s=act(s,`choose:${k}:${v}`);
+ s=act(s,'check');assert.equal(agentEnvironmentsComplete(s),true);
+ s=act(s,'choose:state:discrete');assert.equal(agentEnvironmentsComplete(s),false);
+ s=act(s,'check');assert.equal(agentEnvironmentsComplete(s),false);
+ s=act(s,'choose:state:continuous');s=act(s,'check');assert.equal(agentEnvironmentsComplete(s),true);
  assert.deepEqual(restoreAgentEnvironments(JSON.parse(JSON.stringify(s))),s);assert.throws(()=>restoreAgentEnvironments({history:['check']}),RangeError);
 });
