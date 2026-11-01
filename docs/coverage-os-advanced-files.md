@@ -14,7 +14,7 @@
 | 6a | KA Core | ジャーナリング | 部分 | 736で管理情報の確定記録と再適用。実ファイルシステムのログ形式、順序保証や同時更新は未評価。 |
 | 6b | KA Core | ログ構造ファイルシステム | 部分 | 737で追記済みの版と有効記録の移動・区画回収を操作。実際のインデックス・障害復旧・性能は未評価。 |
 | 1 | Non-core | 分散ファイルシステム | 部分 | 739で遠隔の共有ファイルと利用者側の写し、close-to-open の固定例を操作。命名、障害、認証や実運用は未評価。 |
-| 2 | Non-core | 暗号化ファイルシステム | 未照合 | 暗号化ファイルシステム固有の教材は未確認。 |
+| 2 | Non-core | 暗号化ファイルシステム | 部分 | 744で名前・本文の保存時の保護、鍵ありのアクセス制御、メタデータと平文の写しを比較。実装、鍵管理、改ざん検出や実データの安全性は未評価。 |
 | 3 | Non-core | 耐障害性 | 部分 | 181・290で復元と履歴、736で電源断後の管理情報を比較。装置自体の故障や実機での保証は未評価。 |
 
 ## 例示学習成果
@@ -35,5 +35,7 @@
 依頼739は [Linux nfs(5)](https://man7.org/linux/man-pages/man5/nfs.5.html) の close-to-open を参考に、書き手が閉じて更新を送り、読み手が開き直して確認する固定模型。開いたままの読み手は古い写しを使うと仮定し、実装全般や同期された同時アクセスは表現しない。
 
 依頼743では [OSTEP のジャーナリング](https://pages.cs.wisc.edu/~remzi/OSTEP/file-journaling.pdf) を参考に、権限・名前解決・空き棚の選択と、確定前後の中断および復旧を組み合わせる。本文が先に永続化され、管理情報の記録・確定・書込みが順序どおり完了すると仮定する。一般のファイルシステムや同時更新・装置故障は未評価。
+
+依頼744は [Linux fscrypt の脅威モデル](https://docs.kernel.org/filesystems/fscrypt.html) を参考に、鍵のない装置の一時点の記録、鍵を入れた後のアクセス権、非名前メタデータ、別に作った平文の写しを比較する概念模型。暗号処理を行わず、鍵を外す際には参照と平文キャッシュを消せたと仮定する。改ざん、複数時点の観察や鍵管理の安全性は未評価。`tests/encrypted-files.test.js` で状態と観察の組合せを検査する。
 
 関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`、`tests/log-checkpoint.test.js`、`tests/distributed-file.test.js`。各模型の範囲に限る。
