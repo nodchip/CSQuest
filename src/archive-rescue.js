@@ -1,0 +1,17 @@
+import {filePermissionAllowed} from './file-permissions.js';
+import {directoryLookupResult} from './directory-lookup.js';
+import {fsJournalRecover} from './fs-journal.js';
+
+export const archiveRescueLevel={id:'archive-rescue-journey',number:'743',kind:'archive-rescue',name:'消えた地図と書庫の灯り',tag:'ファイルシステムの応用',title:'地図を救う書庫の冒険',story:'村への道を示す地図に追記する途中で、書庫の灯りが消えます。門の印と書庫の記録を調べ、地図を取り戻しましょう。'};
+export const archiveRescueFree=[0,2,3,5,6];
+export const archiveRescuePlaces=['gate','archive','workbench'];
+export function archiveRescueCreate(){return {place:'gate',dir:0,file:4,found:false,slot:null,data:false,step:0,phase:'working',guess:'',seen:[]};}
+export function archiveRescueAccess(s){return filePermissionAllowed(s.dir,s.file,'read')&&filePermissionAllowed(s.dir,s.file,'write');}
+export function archiveRescueMove(s,place){archiveRescueRestore(s);if(!archiveRescuePlaces.includes(place)||(place!=='gate'&&!archiveRescueAccess(s))||(place==='workbench'&&!s.found))return false;s.place=place;return true;}
+export function archiveRescueToggle(s,target){archiveRescueRestore(s);if(s.place!=='gate'||!['dir','file'].includes(target))return false;if(target==='dir')s.dir^=1;else s.file^=2;return true;}
+export function archiveRescueFind(s,dir,name){archiveRescueRestore(s);if(s.place!=='archive'||!Object.hasOwn({north:1,south:1,shared:1},dir)||!['herb','map'].includes(name))return false;const value=directoryLookupResult(dir,name);if(value!==33)return false;s.found=true;return true;}
+export function archiveRescueSelect(s,slot){archiveRescueRestore(s);if(s.place!=='workbench'||s.phase!=='working'||s.data||!archiveRescueFree.includes(slot))return false;s.slot=slot;return true;}
+export function archiveRescueStep(s,action){archiveRescueRestore(s);if(s.place!=='workbench')return false;if(action==='retry'&&s.phase==='recovered'){s.slot=null;s.data=false;s.step=0;s.phase='working';s.guess='';return true;}if(s.phase!=='working')return false;if(action==='data'&&s.slot!==null&&!s.data){s.data=true;return true;}if(action==='record'&&s.data&&s.step===0){s.step=1;return true;}if(action==='commit'&&s.step===1){s.step=2;return true;}if(action==='bitmap'&&s.step===2){s.step=3;return true;}if(action==='crash'&&s.data){s.phase='crashed';s.guess='';return true;}return false;}
+export function archiveRescueRecover(s){archiveRescueRestore(s);if(s.place!=='workbench'||s.phase!=='crashed'||!s.guess)return false;const result=fsJournalRecover('journal',s.step);if(result.outcome!==s.guess)return false;s.phase='recovered';const marker=s.step===1?'before':s.step===3?'after':'';if(marker&&!s.seen.includes(marker))s.seen.push(marker);return true;}
+export function archiveRescueComplete(s){return s.phase==='recovered'&&s.step===3&&s.seen.includes('before')&&s.seen.includes('after');}
+export function archiveRescueRestore(s){if(!s||!archiveRescuePlaces.includes(s.place)||![0,1].includes(s.dir)||![4,6].includes(s.file)||typeof s.found!=='boolean'||!(s.slot===null||archiveRescueFree.includes(s.slot))||typeof s.data!=='boolean'||(s.data&&s.slot===null)||!Number.isInteger(s.step)||s.step<0||s.step>3||(!s.data&&s.step!==0)||!['working','crashed','recovered'].includes(s.phase)||(s.phase!=='working'&&!s.data)||!['','old','partial','new'].includes(s.guess)||!Array.isArray(s.seen)||new Set(s.seen).size!==s.seen.length||s.seen.some(x=>!['before','after'].includes(x)))throw new RangeError('途中記録が不正です。');return {...s,seen:[...s.seen]};}

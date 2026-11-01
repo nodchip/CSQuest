@@ -24,6 +24,8 @@
 | 2 | KA Core | ファイル構成方式の長所・短所を評価 | 部分 | 576で固定の空き配置と読取棚数を比較。一般の負荷や実測は未評価。 |
 | 3 | KA Core | 実装の理解に基づき適切なソフトウェア構成を適用 | 部分 | 77・384・576・577で操作や割当を選択。実際のソフトウェア構築は未評価。 |
 
+依頼743では権限、名前解決、空き棚の選択、ジャーナルを同じ冒険で組み合わせる。本文が先に保存され、各操作が順序どおり完了する仮定の単一更新であり、実 OS の操作や一般的な設計能力は評価しない。`tests/archive-rescue.test.js` で門の条件、異なる巻物、空き棚、保存順序と確定前後の復旧を検査する。
+
 依頼740は [path_resolution(7)](https://man7.org/linux/man-pages/man7/path_resolution.7.html) と [unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html) を参考に、通常の許可ビットと既知の名前を使う模型。親ディレクトリの探索、ファイルの読書き、親ディレクトリからの名前削除を区別する。ACL、sticky bit、特権、読取り専用媒体、既に開いたファイルと上位ディレクトリは扱わない。`tests/file-permissions.test.js` で全権限の組合せを検査する。
 
 依頼741は [UIC の空き領域管理の解説](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/12_FileSystemImplementation.html) を参考に、８棚のビット表と空きリストで単一棚の確保・解放と連続する空きを比較。`tests/free-space-index.test.js` で全256種類の空き配置と連続長１〜８を独立したビット演算で照合する。リストを先頭から取得する模型で、探索費用、実装性能や障害を評価しない。

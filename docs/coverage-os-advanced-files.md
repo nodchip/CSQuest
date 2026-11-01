@@ -34,4 +34,6 @@
 
 依頼739は [Linux nfs(5)](https://man7.org/linux/man-pages/man5/nfs.5.html) の close-to-open を参考に、書き手が閉じて更新を送り、読み手が開き直して確認する固定模型。開いたままの読み手は古い写しを使うと仮定し、実装全般や同期された同時アクセスは表現しない。
 
+依頼743では [OSTEP のジャーナリング](https://pages.cs.wisc.edu/~remzi/OSTEP/file-journaling.pdf) を参考に、権限・名前解決・空き棚の選択と、確定前後の中断および復旧を組み合わせる。本文が先に永続化され、管理情報の記録・確定・書込みが順序どおり完了すると仮定する。一般のファイルシステムや同時更新・装置故障は未評価。
+
 関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`、`tests/log-checkpoint.test.js`、`tests/distributed-file.test.js`。各模型の範囲に限る。
