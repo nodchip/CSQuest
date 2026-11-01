@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: AES の MixColumns の依頼613を追加。有限体の全65,536組の乗算を独立した多項式還元と照合し、既知の列と逆変換を検査。`npm test` 1441件とビルドが成功。ブラウザで誤答、途中再開、２列８行、１ビット変更の比較、達成、320・390・1280px幅を確認。[NIST FIPS 197](https://csrc.nist.gov/pubs/fips/197/final)参照。１列の線形変換に限り、AES 全体や暗号解析は扱わない。
+
 - 2026-11-01: AES-GCM と RSA-OAEP の暗号化時間・出力長、RSA で包んだ AES 鍵を含むデータ量を比較する依頼612を追加。３種類の本文の実際の暗号化・鍵の包み込み・復号、RSA-OAEP 190・191バイト境界を検査し、`npm test` 1438件とビルドが成功。ブラウザで誤答、途中再開、長さ超過、API 不可、計算中の条件変更、達成、320・390・1280px幅を確認。[RFC 8017](https://www.rfc-editor.org/rfc/rfc8017)、[MDN](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey)参照。測定は鍵生成・復号を除く９回の中央値で、一般的性能や方式全体の安全性を示さない。
 
 - 2026-11-01: 法17の楕円曲線の依頼611を追加。19点の列挙、361組の加算、324組の共有点を検査し、`npm test` 1435件とビルドが成功。ブラウザで誤答、途中再開、単位元・逆点・倍加・異なる点の加算、公開点の探索、共有点、320・390・1280px幅を確認。点加算の式と具体例も提示。[NPTEL](https://archive.nptel.ac.in/content/storage2/courses/106103015/module9/lec3/1.html)、[NIST](https://csrc.nist.gov/pubs/sp/800/56/a/r3/final)参照。19点の教材用曲線で実用上の安全性、認証や鍵導出は未対応。
