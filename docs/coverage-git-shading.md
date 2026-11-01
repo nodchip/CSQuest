@@ -10,7 +10,7 @@
 | 1b | KA Core | フォトンマッピング | 未照合 | 対応教材は未確認。 |
 | 1c | KA Core | 双方向パストレーシング | 未照合 | 対応教材は未確認。 |
 | 1d | KA Core | メトロポリス光輸送 | 未照合 | 対応教材は未確認。 |
-| 2a | KA Core | 時間とモーションブラー | 未照合 | 時間方向の描画・露光の教材は未確認。 |
+| 2a | KA Core | 時間とモーションブラー | 部分 | 735で動く点の１・２・４時刻の標本平均を比較。連続露光、実画像や一般の時間積分は未評価。 |
 | 2b | KA Core | レンズ位置と焦点 | 部分 | 64で投影を比較。レンズ開口・被写界深度は未評価。 |
 | 2c | KA Core | 波長と色 | 部分 | 515で RGB を操作。連続的な波長とスペクトル描画は未評価。 |
 | 3 | KA Core | シャドウマッピング | 部分 | 187で３本の光の深度比較。２次元深度画像、投影やバイアスは未評価。 |
@@ -38,4 +38,4 @@
 | 7 | KA Core | 画素単位の描画プログラム | 未照合 | 実際のプログラム作成は評価しない。 |
 | 8 | KA Core | BRDF・反射・屈折を用いたレイトレーサ | 部分 | 641・720で固定の交差・可視性を操作。BRDF、反射・屈折や実プログラムは未評価。 |
 
-関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`。各模型の範囲に限る。
+関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`、`tests/motion-exposure.test.js`。各模型の範囲に限る。

@@ -39,4 +39,4 @@
 
 関連検査は `tests/keyframe-motion.test.js`、`tests/forward-kinematics.test.js`、`tests/inverse-kinematics.test.js`、`tests/linear-skinning.test.js`、`tests/rotation-interpolation.test.js`、`tests/spline-motion.test.js`、`tests/motion-capture-gap.test.js`、`tests/motion-blend.test.js`、`tests/gimbal-lock.test.js`、`tests/spherical-rotation.test.js`。各検査は限定された模型に限る。
 
-学びの道「精霊の動きを紡ぐ」は、補間・回転から関節、スキニング、動作記録・合成まで10依頼を案内する。道の達成はアニメーション全体の網羅を意味しない。
+学びの道「精霊の動きを紡ぐ」は、補間・回転から関節、スキニング、動作記録・合成まで11依頼を案内する。道の達成はアニメーション全体の網羅を意味しない。

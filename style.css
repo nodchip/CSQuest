@@ -175,3 +175,7 @@
 
 .blend-rail { position:relative; display:flex; justify-content:space-between; max-width:28rem; height:3rem; padding-top:1.5rem; border-top:3px solid #7d927d; margin:2rem 1rem 0; }
 .blend-marker { position:absolute; top:-1.1rem; transform:translateX(-50%); color:#915300; font-size:1.5rem; }
+
+.exposure-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:.3rem; max-width:22rem; margin:1rem 0; }
+.exposure-cell { display:grid; place-items:center; height:3.5rem; border:1px solid #718274; color:#173b26; background:#edf0ea; }
+.exposure-cell.lit { background:#f8db75; color:#4a3100; }
