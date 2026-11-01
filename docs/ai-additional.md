@@ -21,6 +21,8 @@
 
 ## AI-LRR：論理による表現と推論（pp.76–77）
 
+項目別の再照合は [coverage-ai-lrr.md](coverage-ai-lrr.md) を参照。
+
 全項目 Non-core。
 
 | トピック | 内容と現状 |
