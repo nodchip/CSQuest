@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: AES S-box の線形近似の依頼615を追加。全65,536組の入出力マスクの一致回数を独立した Walsh–Hadamard 変換と照合し、`npm test` 1447件とビルドが成功。ブラウザで偏り表の表示維持、誤答、途中再開、10組の達成、320・390・1280px幅と表内スクロールを確認。[NIST FIPS 197](https://csrc.nist.gov/pubs/fips/197/final)、[線形・差分暗号解析の解説](https://www.engr.mun.ca/~howard/PAPERS/ldc_tutorial.pdf)参照。単一 S-box の集計で、AES 全体の攻撃や安全性の証明ではない。
+
 - 2026-11-01: AES S-box の差分分布を調べる依頼614を追加。S-box の既知値・置換性と全255種類の非ゼロ入力差の集計を検査し、`npm test` 1444件とビルドが成功。ブラウザで集計表の表示維持、誤答、途中再開、10組の達成、320・390・1280px幅を確認。狭い画面では集計表内をスクロールできる。[NIST FIPS 197](https://csrc.nist.gov/pubs/fips/197/final)、[AES の差分に関する研究](https://eprint.iacr.org/2018/182.pdf)参照。単一 S-box の統計で、AES 全体の攻撃や安全性の証明ではない。
 
 - 2026-11-01: AES の MixColumns の依頼613を追加。有限体の全65,536組の乗算を独立した多項式還元と照合し、既知の列と逆変換を検査。`npm test` 1441件とビルドが成功。ブラウザで誤答、途中再開、２列８行、１ビット変更の比較、達成、320・390・1280px幅を確認。[NIST FIPS 197](https://csrc.nist.gov/pubs/fips/197/final)参照。１列の線形変換に限り、AES 全体や暗号解析は扱わない。
