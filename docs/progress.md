@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: 色カテゴリの one-hot 表現と未登録・欠損の扱いを比較する依頼621を追加。２方式と５種類の全変換、途中記録と達成条件を検査し、`npm test` 1461件とビルドが成功。ブラウザで誤変換・途中再開・10条件の達成、320・390・1280px幅を確認。[OneHotEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)参照。架空の１項目による模型で、未登録と欠損用の列が予測精度を保証するものではない。
+
 - 2026-11-01: Iris の境界法と１近傍の説明を比較する依頼620を追加。３つの仮入力と２方法の予測、理由に示す境界・最近傍、保存と達成を検査。`npm test` 1459件とビルドが成功。ブラウザで未選択・誤予想・再開・６条件の達成、境界の表示精度、320・390・1280px幅を確認。[説明可能性](https://pair.withgoogle.com/chapter/People%20%2B%20AI%20Guidebook%20-%20Explainability%20%2B%20Trust.pdf)参照。仮の入力でのモデル出力の比較であり、実際の花の因果関係や鑑定の正しさは示さない。
 
 - 2026-11-01: 旅人の評価を用いる協調フィルタリングの依頼619を追加。共通評価の差、選んだ２人の平均、未評価と０点の区別、評価のない新規利用者を扱う。３例と途中記録を検査し、`npm test` 1457件とビルドが成功。ブラウザで誤選択・途中再開・３人の達成、320・390・1280px幅を確認。[協調フィルタリング](https://developers.google.com/machine-learning/recommendation/collaborative/basics)参照。少数の架空評価による模型で、実データや実際の推薦性能は未評価。
