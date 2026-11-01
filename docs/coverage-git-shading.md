@@ -17,7 +17,7 @@
 | 4 | KA Core | 遮蔽カリング | 未照合 | 720は光線と境界箱を絞り込む別の手法。画面上の遮蔽による描画省略は未確認。 |
 | 5 | KA Core | BSDF とマイクロファセット | 未照合 | 散乱分布と微小面の教材は未確認。 |
 | 6 | KA Core | 表面下散乱 | 未照合 | 対応教材は未確認。 |
-| 7 | KA Core | 面光源 | 部分 | 732で線状光源の５点と遮蔽を比較。面積積分・光量・３次元は未評価。 |
+| 7 | KA Core | 面光源 | 部分 | 732で線状光源の５点と遮蔽、733で５点の可視割合の標本推定を比較。連続的な面積積分・光量・３次元は未評価。 |
 | 8 | KA Core | 階層的深度バッファ | 部分 | 506で単一画素の深度比較。階層やカリングは未評価。 |
 | 9 | KA Core | 画像ベースレンダリング | 未照合 | 対応教材は未確認。 |
 | 10 | KA Core | 非写実的描画 | 部分 | 186で拡散光を３段階に分ける。輪郭線や一般の様式は未評価。 |
@@ -30,7 +30,7 @@
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
 | 1 | KA Core | レンダリング方程式の解の推定を説明 | 未照合 | 光線模型はあるが、方程式の積分推定は未確認。 |
-| 2 | KA Core | 完全性・一致性・不偏性を議論 | 未照合 | 対応する推定器の比較は未確認。 |
+| 2 | KA Core | 完全性・一致性・不偏性を議論 | 部分 | 733で有限の５点に対する等確率標本と中央固定の期待値・分散を比較。一般の一致性、完全性やレンダラー全体は未評価。 |
 | 3 | KA Core | シェーディングの帯域・計算量の分析 | 未照合 | 個別の画像容量や描画模型はあるが、分析の対応は未確認。 |
 | 4 | KA Core | 描画 API でシェーディングを実装 | 部分 | 186でトゥーン調の明暗を操作。描画 API と実装能力は未評価。 |
 | 5 | KA Core | 芸術的技法を描画で実現する方法 | 部分 | 186で明暗の段階化を選ぶ。一般の技法の設計・自由記述は未評価。 |
@@ -38,4 +38,4 @@
 | 7 | KA Core | 画素単位の描画プログラム | 未照合 | 実際のプログラム作成は評価しない。 |
 | 8 | KA Core | BRDF・反射・屈折を用いたレイトレーサ | 部分 | 641・720で固定の交差・可視性を操作。BRDF、反射・屈折や実プログラムは未評価。 |
 
-関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`。各模型の範囲に限る。
+関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`。各模型の範囲に限る。
