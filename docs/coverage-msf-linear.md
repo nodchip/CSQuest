@@ -22,9 +22,9 @@
 | 1a | CS Core | ベクトルの代数・幾何表現と加算・スカラー倍・内積 | 部分 | 50で２次元の内積と図。一般次元、加算・スカラー倍は未評価。 |
 | 1b | CS Core | ベクトルの性質を列挙 | 部分 | 50で内積の符号と向き。一般の性質の列挙は未評価。 |
 | 1c | CS Core | ベクトル間の角度を計算 | 部分 | 50で直角を境とする分類。数値角度は未評価。 |
-| 2a | KA Core | 行列の加算・スカラー倍・積・転置 | 部分 | 86で行列とベクトルの積。一般の行列演算は未評価。 |
+| 2a | KA Core | 行列の加算・スカラー倍・積・転置 | 部分 | 86で行列とベクトルの積、長方形行列の４組の積を比較。一般の行列演算は未評価。 |
 | 2b | KA Core | 行列と同次連立方程式の関係 | 未照合 | 関連依頼と同次系の対応は未確認。 |
-| 2c | KA Core | ２行列の積の可否 | 未照合 | 関連依頼と次元の整合の対応は未確認。 |
+| 2c | KA Core | ２行列の積の可否 | 部分 | 86で４組の内側の次元、積の大きさと左上の値を比較。任意の行列や一般の証明は未評価。 |
 | 2d | KA Core | 行列変換と幾何図の関係 | 部分 | 86で回転・せん断等を操作。一般の変換は未評価。 |
 | 3a | KA Core | 線形系の定式化・解釈 | 部分 | 296で３つの固定された連立方程式を操作。一般の定式化は未評価。 |
 | 3b | KA Core | 行列の行操作 | 部分 | 296で２行の入替え・加減・倍率を操作。任意の行列は未評価。 |
@@ -69,4 +69,4 @@
 | 8g | KA Core | SVD と PCA の幾何的な違い | 未照合 | 300・302は個別模型。両者の比較課題は未確認。 |
 | 8h | KA Core | SVD を具体例に適用 | 部分 | 302で２種類の２次元変換を操作。推薦などの応用は未評価。 |
 
-`tests/vectors.test.js`、`tests/matrix.test.js`、`tests/vector-span.test.js`、`tests/orthogonal-projection.test.js`、`tests/gram-schmidt.test.js`、`tests/eigen-directions.test.js` 等は対応する固定模型の一部を検査する。各前提と根拠は[既存の調査](msf-linear.md)を参照。未照合は教材が存在しない証拠ではない。
+`tests/vectors.test.js`、`tests/matrix.test.js`、`tests/matrix-product.test.js`、`tests/vector-span.test.js`、`tests/orthogonal-projection.test.js`、`tests/gram-schmidt.test.js`、`tests/eigen-directions.test.js` 等は対応する固定模型の一部を検査する。各前提と根拠は[既存の調査](msf-linear.md)を参照。未照合は教材が存在しない証拠ではない。

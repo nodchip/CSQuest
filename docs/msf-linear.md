@@ -57,3 +57,5 @@
 依頼304は２種類の平面の基底について同じ位置を２通りの座標で表す。斜めの基底は直交しないが線形独立であり、変換式と逆変換を説明する。任意の基底や高次元は未対応。参考：[MIT: Linear transformations and their matrices](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/cc829145eee5220b2024424bcb14c263_MIT18_06SCF11_Ses3.6sum.pdf)。
 
 依頼305は２×２行列の固有基底を探し、固有値が重なっても対角化可能な例と不可能な例を比較する。複素数や任意次元の対角化は未対応。参考：[MIT: Eigenvalues, Diagonalization, and Decoupling](https://ocw.mit.edu/courses/es-1803-differential-equations-spring-2024/mites_1803_s24_topic16.pdf)。
+
+依頼86ではさらに２×３、３×２、２×２の３行列から４組を比較し、積の可否・大きさ・左上の値を選ぶ。左の列数と右の行数が一致する場合に積を定義し、左の行と右の列の対応成分を掛けて足す。[Interactive Linear Algebra: Matrix Multiplication](https://math.libretexts.org/Bookshelves/Linear_Algebra/Interactive_Linear_Algebra_%28Margalit_and_Rabinoff%29/03%3A_Linear_Transformations_and_Matrix_Algebra/3.04%3A_Matrix_Multiplication) を参照。固定例であり、任意の行列や一般の証明は評価しない。
