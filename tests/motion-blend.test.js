@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {blendA,blendB,blendTargets,blendWeights,blendPosition,blendCreate,blendComplete,blendRestore} from '../src/motion-blend.js';
+test('all weighted positions interpolate the correct two samples',()=>{for(let i=0;i<5;i++){assert.equal(blendPosition(i,0),blendA[i]);assert.equal(blendPosition(i,100),blendB[i]);for(const w of blendWeights)assert.equal(blendPosition(i,w),i+6*w/100);assert.equal(blendPosition(i,i*25),blendTargets[i]);}assert.throws(()=>blendPosition(5,0));assert.throws(()=>blendPosition(0,1));});
+test('all target positions and checked reflection are required, and restore validates',()=>{const s=blendCreate();s.weights=[0,25,50,75,100];s.answer='limits';assert.equal(blendComplete(s),false);s.checked=true;assert.equal(blendComplete(s),true);const copy=blendRestore(s);copy.weights[1]=0;assert.equal(blendComplete(copy),false);assert.equal(blendComplete(s),true);s.weights[0]=1;assert.throws(()=>blendRestore(s));});
