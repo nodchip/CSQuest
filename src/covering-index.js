@@ -1,0 +1,8 @@
+// The fixed query selects the names of three matching entries on two heap pages.
+export const coveringCases={baseVisible:{name:'名前なし・両頁の可視性は確認済み',included:false,visible:{P1:true,P2:true}},basePartial:{name:'名前なし・頁２の可視性は未確認',included:false,visible:{P1:true,P2:false}},coverVisible:{name:'名前あり・両頁の可視性は確認済み',included:true,visible:{P1:true,P2:true}},coverPartial:{name:'名前あり・頁２の可視性は未確認',included:true,visible:{P1:true,P2:false}}};
+export const coveringEntries=[{id:'B',name:'月草',page:'P1'},{id:'C',name:'星草',page:'P1'},{id:'D',name:'風草',page:'P2'}];
+export function coveringResult(id){if(!Object.hasOwn(coveringCases,id))throw new RangeError('索引が不正です。');const c=coveringCases[id],heapPages=[...new Set(coveringEntries.filter(e=>!c.included||!c.visible[e.page]).map(e=>e.page))];return {heapPages,names:coveringEntries.map(e=>e.name)};}
+export function createCoveringIndex(){return {selected:'baseVisible',choices:Object.fromEntries(Object.keys(coveringCases).map(id=>[id,{pages:null,checked:false}]))};}
+export function coveringCorrect(id,choice){return choice.checked&&choice.pages===coveringResult(id).heapPages.length;}
+export function coveringComplete(s){return Object.keys(coveringCases).every(id=>coveringCorrect(id,s.choices[id]));}
+export function restoreCoveringIndex(saved){if(!saved||!Object.hasOwn(coveringCases,saved.selected)||!saved.choices)throw new RangeError('索引の記録が不正です。');const s=createCoveringIndex();s.selected=saved.selected;for(const id of Object.keys(coveringCases)){const c=saved.choices[id];if(!c||![null,0,1,2].includes(c.pages)||typeof c.checked!=='boolean')throw new RangeError('頁数が不正です。');s.choices[id]={pages:c.pages,checked:c.checked};}return s;}
