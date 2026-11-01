@@ -14,7 +14,7 @@ test('leading equality and first range affect candidate counts',()=>{
   assert.equal(indexOptimal('both','kindPrice'),true);assert.equal(indexOptimal('price','priceKind'),true);assert.equal(indexOptimal('both','priceKind'),false);
 });
 test('both cases need all methods tested and a checked minimum; saved trials are validated',()=>{
-  const s=createIndexPlan(),methods=Object.keys(indexMethods);s.trials.both={method:'kindPrice',tested:methods.slice(),checked:true};s.trials.price={method:'priceKind',tested:methods.slice(),checked:true};assert.equal(indexPlanComplete(s),false);s.pipeline.histories={both:['validate','planKind','execute','send'],price:['validate','planPrice','execute','send']};assert.equal(indexPlanComplete(s),true);
+  const s=createIndexPlan(),methods=Object.keys(indexMethods);s.trials.both={method:'kindPrice',tested:methods.slice(),checked:true};s.trials.price={method:'priceKind',tested:methods.slice(),checked:true};assert.equal(indexPlanComplete(s),false);s.pipeline.histories={both:['validate','planKind','execute','send'],price:['validate','planPrice','execute','send']};assert.equal(indexPlanComplete(s),false);for(const id of Object.keys(s.components.answers)){s.components.answers[id]=id;s.components.checked[id]=true;}assert.equal(indexPlanComplete(s),true);
   const copy=restoreIndexPlan(s);s.trials.both.tested.pop();assert.equal(indexPlanComplete(s),false);assert.equal(indexPlanComplete(copy),true);assert.throws(()=>restoreIndexPlan(s),RangeError);
   s.trials.both.checked=false;s.trials.both.tested=['scan','scan'];assert.throws(()=>restoreIndexPlan(s),RangeError);
 });
