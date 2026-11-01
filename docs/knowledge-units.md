@@ -105,7 +105,7 @@
 | OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で切替え、依頼381で保護境界、依頼382で記録の仲介・同期・権限、依頼383で起動検証の固定例。OS の機能の全体像と体系的比較は未対応。依頼673で進化と旧窓口の互換性、674で装置仲介を比較。[詳細](os-purpose.md) |
 | OS | OS-Principles | Principles of Operating System | 207 | 依頼54で保護とシステムコール、依頼381で保護境界と切替え、依頼384でファイル操作の引数と返り値の固定例。他は未対応。依頼671で受付と依頼者の権限、672でタイマーと特権を比較。[詳細](os-principles.md) |
 | OS | OS-Concurrency | Concurrency | 208 | 依頼15・16・30・177〜179で競合・排他・待機・記録共有、567で原子的なスピンロック、568で再入と作業状態の固定例。実 OS の同期は未対応。[詳細](os-concurrency.md) |
-| OS | OS-Protection | Protection and Safety | 209 | 依頼11・54・180・181で権限、媒体・起動・受付の保護とバックアップの固定模型。実 OS の脆弱性や保護機構は未対応。[詳細](os-protection.md) |
+| OS | OS-Protection | Protection and Safety | 209 | 依頼11・54・180・181・490・491で権限、保護とバックアップ、架空の競合模型。[項目別台帳](coverage-os-protection.md) |
 | OS | OS-Scheduling | Scheduling | 209 | 依頼14の先着順・ラウンドロビン、569の最短ジョブ・最短残り時間の固定例。[詳細](os-scheduling.md) |
 | OS | OS-Process | Process Model | 210 | 依頼53で状態、依頼179でスレッド、依頼385で頁の分離・共有、依頼386で親子プロセス、依頼388で局所・動的領域の寿命、依頼389でパイプ、依頼390で割込みと切替え、依頼391で実行待ち列、依頼392で共有部品の読込みの固定例。他は未対応。[詳細](os-process.md) |
 | OS | OS-Memory | Memory Management | 210 | 依頼34・40・137でページ置換と住所変換、依頼385で頁の分離・共有、依頼387で確保方式と断片化の固定例。他は未対応。[詳細](os-memory.md) |
@@ -113,8 +113,8 @@
 | OS | OS-Files | File Systems API and Implementation | 212 | 依頼77で名前と実体、384で開く操作、576・577で領域割当て、739で遠隔共有、740で権限、741で空き領域管理、742でディレクトリの名前解決を操作。残る範囲は[項目別台帳](coverage-os-files.md)を参照。 |
 | OS | OS-Advanced-Files | Advanced File systems | 212 | 依頼290〜292で共有ブロック・マウント・メモリ対応、736〜739で復旧と遠隔共有、743で応用冒険、744で保存時暗号化、745で特殊目的の書庫を比較。残る範囲は[項目別台帳](coverage-os-advanced-files.md)を参照。 |
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと VM、754で門番と設定の切替え、755で符の読み替えとアクセス制限、756で二段階変換と共有の固定模型。残る範囲は[項目別台帳](coverage-os-virtualization.md)を参照。 |
-| OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
-| OS | OS-Faults | Fault tolerance | 214 | 依頼136で DB の先行ログ、181でバックアップ復元の固定模型。実 OS の障害耐性は未対応。[詳細](os-faults.md) |
+| OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133・134で期限と優先度、420で周期、395で停止距離の固定例。[項目別台帳](coverage-os-real-time.md) |
+| OS | OS-Faults | Fault tolerance | 214 | 依頼136・181・229・736〜738・752で記録・復元・装置復旧の固定例。[項目別台帳](coverage-os-faults.md) |
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[詳細](os-society.md) |
 | PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均、442で生産者・消費者の流れ作業の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
