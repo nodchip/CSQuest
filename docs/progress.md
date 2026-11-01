@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: Web Crypto で SHA-256 と HMAC-SHA-256 を計算し、本文変更・印の変更・再送を比べる依頼601を追加。[RFC 4231](https://www.rfc-editor.org/rfc/rfc4231) と [NIST](https://csrc.nist.gov/pubs/fips/198-1/final) を参照。RFC の HMAC 既知値と８条件、復元を自動検査し、`npm test` 1407件成功。ブラウザで誤答、再開、８条件、API 不可、計算中の条件変更、達成、キーボードと320・390・1280px幅を確認。鍵と本文は公開固定値であり、実用の鍵管理・再送防止・安全性は評価しない。
+
 - 2026-11-01: ブラウザの Web Crypto で AES-GCM を実行し、２通の初期値と暗号文改変を比較する依頼600を追加。[NIST SP 800-38D](https://csrc.nist.gov/pubs/sp/800/38/d/final) と [MDN](https://developer.mozilla.org/en-US/docs/Web/API/AesGcmParams) を参照。既知の AES-GCM 入出力と４条件、認証失敗・保存を自動検査し、`npm test` 1404件成功。ブラウザで誤答、再開、４条件、API 不可時、計算中の条件変更、達成、キーボードと320・390・1280px幅を確認。公開の固定鍵・本文・初期値を使う実験で、実用上の鍵管理や安全性は評価しない。
 
 - 2026-11-01: 素数５・11から教材用 RSA の法55、互いに素な数40個、指数３・27と暗号化・復号を調べる依頼599を追加。[Stanford](https://crypto.stanford.edu/pbc/notes/numbertheory/order.html) と [NIST](https://csrc.nist.gov/pubs/sp/800/56/b/r2/final) を参照。全55剰余の復号と不適切な指数５の衝突、誤答・途中復元・達成を検査し、`npm test` 1401件成功。ブラウザで因数の誤答、指数５の試行と再開、達成、キーボードと320・390・1280px幅を確認。極小・決定的な模型で実用暗号の安全性や実装は評価しない。
