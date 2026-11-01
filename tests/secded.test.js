@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {hammingEncode,flipHamming,receivedHamming} from '../src/hamming.js';
 import {secdedModes,secdedStatus,secdedCorrect,createSecded,restoreSecded,secdedComplete} from '../src/secded.js';
+import {crcLabAct,crcDivision,crcReceived} from '../src/crc-lab.js';
 
 test('the extended code distinguishes all single and double errors under the two-error assumption',()=>{
  for(let value=0;value<16;value++){
@@ -13,5 +14,10 @@ test('the extended code distinguishes all single and double errors under the two
  }
 });
 test('all four trials need the specified corruption and correct receiver decision',()=>{
- const state=createSecded();for(const mode of Object.keys(secdedModes))for(const id of ['single','double']){const choice=state.choices[mode][id];choice.bits=receivedHamming(id);choice.checked=true;choice.answer=mode==='plain'?'unknown':id==='single'?'fix':'stop';assert.equal(secdedCorrect(mode,id,choice),true);}assert.equal(secdedComplete(state),true);const copy=restoreSecded(state);state.choices.plain.single.bits[0]^=1;assert.notDeepEqual(copy.choices.plain.single.bits,state.choices.plain.single.bits);copy.choices.extended.double.answer='fix';assert.equal(secdedComplete(copy),false);assert.throws(()=>restoreSecded({...copy,mode:'bad'}),RangeError);
+ const state=createSecded();for(const mode of Object.keys(secdedModes))for(const id of ['single','double']){const choice=state.choices[mode][id];choice.bits=receivedHamming(id);choice.checked=true;choice.answer=mode==='plain'?'unknown':id==='single'?'fix':'stop';assert.equal(secdedCorrect(mode,id,choice),true);}assert.equal(secdedComplete(state),false);
+ const act=a=>{const result=crcLabAct(state.crc,a);assert.equal(result.ok,true);state.crc=result.state;};
+ const divide=()=>{act('start');for(let i=0;i<4;i++){const work=crcDivision(crcReceived(state.crc))[state.crc.stage];act(work[i]?'step:xor':'step:skip');}};
+ divide();act('flip:1');divide();act('flip:2');divide();act('flip:1');act('flip:2');for(const i of [4,6,7])act(`flip:${i}`);divide();act('answer:limits');act('check');
+ assert.equal(secdedComplete(state),true);const copy=restoreSecded(state);assert.equal(secdedComplete(copy),true);state.choices.plain.single.bits[0]^=1;assert.notDeepEqual(copy.choices.plain.single.bits,state.choices.plain.single.bits);copy.choices.extended.double.answer='fix';assert.equal(secdedComplete(copy),false);assert.throws(()=>restoreSecded({...copy,mode:'bad'}),RangeError);
+ const old={...state};delete old.crc;assert.deepEqual(restoreSecded(old).crc.history,[]);
 });
