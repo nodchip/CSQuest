@@ -9,7 +9,7 @@
 | AI | AI-Introduction | Fundamental Issues | 67 | 依頼109で部分観測と記憶、依頼368で期待効用、依頼375で AI・機械学習・深層学習の固定例。他は未対応。[詳細](ai-introduction.md) |
 | AI | AI-Search | Search | 68 | 依頼08・21・42〜45・49・97・369〜374で探索、反復深化、ビーム探索、双方向探索、山登り、焼きなまし、遺伝的探索、対戦、枝刈りと制約充足の固定例。負の辺の緩和は依頼138。他は未対応。[詳細](ai-search.md) |
 | AI | AI-KRR | Fundamental Knowledge Representation and Reasoning | 70 | 依頼81・98・99で条件付き頻度、期待損失とマルコフ連鎖の固定例。依頼456で共起から学習する二次元表現の固定例。他は未対応。[詳細](ai-krr.md) |
-| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標、過学習、依頼375〜380の多層ネットワーク、前処理、評価分割、特徴表現、強化学習、クラスタリング、依頼549・550の実測 Iris を使う境界分類と１近傍の比較例。[詳細](ai-ml.md) |
+| AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標、過学習、依頼375〜380の多層ネットワーク、前処理、評価分割、特徴表現、強化学習、クラスタリング、依頼549〜551の実測 Iris を使う境界分類・１近傍と交差検証の比較例。[詳細](ai-ml.md) |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 依頼118で架空の公平性指標の固定例。依頼457で文章生成と根拠照合、458で乱れた像と条件付き復元、459で attention の重み付き和の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-LRR | Logical Representation and Reasoning | 76 | 依頼72・537〜540で命題、知識の種類、開世界、非単調推論、量化と推論方向の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率と条件付き独立の固定例。他は未対応。[詳細](ai-probability.md) |
