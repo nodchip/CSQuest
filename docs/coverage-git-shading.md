@@ -14,11 +14,11 @@
 | 2b | KA Core | レンズ位置と焦点 | 部分 | 64で投影を比較。レンズ開口・被写界深度は未評価。 |
 | 2c | KA Core | 波長と色 | 部分 | 515で RGB を操作。連続的な波長とスペクトル描画は未評価。 |
 | 3 | KA Core | シャドウマッピング | 部分 | 187で３本の光の深度比較。２次元深度画像、投影やバイアスは未評価。 |
-| 4 | KA Core | 遮蔽カリング | 未照合 | 720は光線と境界箱を絞り込む別の手法。画面上の遮蔽による描画省略は未確認。 |
+| 4 | KA Core | 遮蔽カリング | 部分 | 734で深度の領域最大値と旗の最も近い深さから保守的に描画を省く。一般の視錐台・投影・実性能は未評価。 |
 | 5 | KA Core | BSDF とマイクロファセット | 未照合 | 散乱分布と微小面の教材は未確認。 |
 | 6 | KA Core | 表面下散乱 | 未照合 | 対応教材は未確認。 |
 | 7 | KA Core | 面光源 | 部分 | 732で線状光源の５点と遮蔽、733で５点の可視割合の標本推定を比較。連続的な面積積分・光量・３次元は未評価。 |
-| 8 | KA Core | 階層的深度バッファ | 部分 | 506で単一画素の深度比較。階層やカリングは未評価。 |
+| 8 | KA Core | 階層的深度バッファ | 部分 | 506で画素の深度比較、734で２×２の最大深度による１段の集約。多段階・実 GPU・精度誤差は未評価。 |
 | 9 | KA Core | 画像ベースレンダリング | 未照合 | 対応教材は未確認。 |
 | 10 | KA Core | 非写実的描画 | 部分 | 186で拡散光を３段階に分ける。輪郭線や一般の様式は未評価。 |
 | 11 | KA Core | リアルタイム描画 | 部分 | 639で描画段階を模型化。リアルタイム実装と性能は未評価。 |
@@ -38,4 +38,4 @@
 | 7 | KA Core | 画素単位の描画プログラム | 未照合 | 実際のプログラム作成は評価しない。 |
 | 8 | KA Core | BRDF・反射・屈折を用いたレイトレーサ | 部分 | 641・720で固定の交差・可視性を操作。BRDF、反射・屈折や実プログラムは未評価。 |
 
-関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`。各模型の範囲に限る。
+関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`。各模型の範囲に限る。
