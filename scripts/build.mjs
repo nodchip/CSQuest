@@ -6,7 +6,7 @@ const out='dist';
 await mkdir(out,{recursive:true});
 // Keep source URLs available for visitors with the previous HTML cached.
 for(const path of ['src','docs','style.css','CSQUEST_GOAL.md']) await cp(path,`${out}/${path}`,{recursive:true});
-const result=await build({entryPoints:['src/app.js'],bundle:true,format:'esm',platform:'browser',write:false,charset:'utf8',logLevel:'warning'});
+const result=await build({entryPoints:['src/app.js'],bundle:true,format:'esm',platform:'browser',write:false,charset:'utf8',minify:true,keepNames:true,logLevel:'warning'});
 const bundle=result.outputFiles[0].contents;
 const digest=createHash('sha256').update(bundle).digest('hex').slice(0,16);
 const bundleName=`app.js?v=${digest}`;
