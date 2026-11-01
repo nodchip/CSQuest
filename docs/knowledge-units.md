@@ -113,7 +113,7 @@
 | OS | OS-Files | File Systems API and Implementation | 212 | 依頼77で名前と実体、384で開く操作、576・577で領域割当て、739で遠隔共有、740で権限、741で空き領域管理、742でディレクトリの名前解決を操作。残る範囲は[項目別台帳](coverage-os-files.md)を参照。 |
 | OS | OS-Advanced-Files | Advanced File systems | 212 | 依頼290〜292で共有ブロック・マウント・メモリ対応、736〜739で復旧と遠隔共有、743で応用冒険、744で保存時暗号化、745で特殊目的の書庫を比較。残る範囲は[項目別台帳](coverage-os-advanced-files.md)を参照。 |
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと VM、754で門番と設定の切替え、755で符の読み替えとアクセス制限、756で二段階変換と共有の固定模型。残る範囲は[項目別台帳](coverage-os-virtualization.md)を参照。 |
-| OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133・134で期限と優先度、420で周期、395で停止距離、757で周期優先と期限優先、758で頁の固定と期限の固定例。[項目別台帳](coverage-os-real-time.md) |
+| OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133・134で期限と優先度、420で周期、395で停止距離、757で周期優先と期限優先、758で頁の固定、759で進捗監視と再起動開始の固定例。[項目別台帳](coverage-os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136・181・229・736〜738・752で記録・復元・装置復旧の固定例。[項目別台帳](coverage-os-faults.md) |
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[詳細](os-society.md) |
 | PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均、442で生産者・消費者の流れ作業の固定例。他は未対応。[詳細](pdc-programs.md) |
