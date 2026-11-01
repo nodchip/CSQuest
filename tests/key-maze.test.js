@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {keyMazes,createKeyMaze,keyMazeStep,createKeyMazeSet,restoreKeyMaze,keyMazeComplete} from '../src/key-maze.js';
+import {keyMazes,createKeyMaze,keyMazeStep,createKeySearch,expandKeySearch,keySearchPath,createKeyMazeSet,restoreKeyMaze,keyMazeComplete} from '../src/key-maze.js';
 
 // Independent enumeration uses room and key as distinct search-state fields.
 function minimum(id){const edges=keyMazes[id].edges,queue=[{room:'S',key:false,distance:0}],seen=new Set(['S:false']);while(queue.length){const s=queue.shift();if(s.room==='G')return s.distance;for(const [a,b] of edges){const next=a===s.room?b:b===s.room?a:null;if(!next||(next==='G'&&!s.key))continue;const key=s.key||next==='K',tag=`${next}:${key}`;if(!seen.has(tag)){seen.add(tag);queue.push({room:next,key,distance:s.distance+1});}}}return Infinity;}
@@ -14,7 +14,13 @@ test('the key changes available progress at the same room',()=>{
   let failed=createKeyMaze('bridge');for(const room of ['A','S','A'])failed=keyMazeStep(failed,room);assert.equal(failed.status,'failed');assert.throws(()=>keyMazeStep(failed,'G'),RangeError);
 });
 test('histories replay only valid transitions and completion requires both maps',()=>{
-  const saved={selected:'bridge',history:{bridge:['K','A','G'],return:['K','S','A','G']}};assert.equal(keyMazeComplete(restoreKeyMaze(saved)),true);assert.equal(keyMazeComplete(createKeyMazeSet()),false);
+  const saved={selected:'bridge',history:{bridge:['K','A','G'],return:['K','S','A','G']}};assert.equal(keyMazeComplete(restoreKeyMaze(saved)),false);assert.equal(keyMazeComplete(createKeyMazeSet()),false);
+  const complete=restoreKeyMaze({...saved,searchHistory:['S0','A0','K1','S1','A1','G1'],searchAnswer:'state',searchChecked:true});assert.equal(keyMazeComplete(complete),true);
   assert.throws(()=>restoreKeyMaze({...saved,history:{...saved.history,return:['A','G']}}),RangeError);
   assert.throws(()=>restoreKeyMaze({...saved,history:{...saved.history,bridge:['G']}}),RangeError);
+});
+test('on-demand state generation preserves key-dependent identity and shortest path',()=>{
+ let s=createKeySearch();assert.equal(expandKeySearch(s,'A0').ok,false);while(!s.done){const r=expandKeySearch(s,s.queue[0]);assert.equal(r.ok,true);s=r.state;}
+ assert.deepEqual(s.history,['S0','A0','K1','S1','A1','G1']);assert.deepEqual(keySearchPath(s),['S0','K1','S1','A1','G1']);assert.equal(s.nodes.G1.distance,minimum('return'));assert.equal(s.nodes.S0.key,false);assert.equal(s.nodes.S1.key,true);assert.ok(s.edges.includes('A1>G1'));assert.equal(s.edges.includes('A0>G0'),false);assert.equal(expandKeySearch(s,'G1').ok,false);
+ const partial=restoreKeyMaze({selected:'return',history:{bridge:[],return:[]},searchHistory:['S0','A0','K1'],searchAnswer:'state',searchChecked:false});assert.equal(partial.search.nodes.S1.distance,2);assert.throws(()=>restoreKeyMaze({selected:'return',history:{bridge:[],return:[]},searchHistory:['S0','K1']}));
 });
