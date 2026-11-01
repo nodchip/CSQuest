@@ -114,7 +114,7 @@
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136で DB の先行ログ、181でバックアップ復元の固定模型。実 OS の障害耐性は未対応。[詳細](os-faults.md) |
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[詳細](os-society.md) |
-| PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均の固定例。他は未対応。[詳細](pdc-programs.md) |
+| PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均、442で生産者・消費者の流れ作業の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：更新喪失、排他と循環待ち、依頼90で二人のバリア同期 |
 | PDC | PDC-Evaluation | Evaluation | 224 | 依頼66で固定量の並列化、437で固定量・一人あたり固定の仕事量と効率、438で安全性と活性、439で時相論理の循環記録、440で線形化可能性、441で分担と小計の不変条件の固定例。他は未対応。[詳細](pdc-evaluation.md) |
