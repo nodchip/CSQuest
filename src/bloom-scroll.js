@@ -1,0 +1,8 @@
+export const bloomKeys={moon:{name:'月草',bits:[0,2]},antidote:{name:'解毒',bits:[1,4]},herb:{name:'薬草',bits:[0,4]},fire:{name:'炎',bits:[3,5]}};
+export const bloomStored=['moon','antidote'];
+export const bloomQueries=['moon','herb','fire'];
+export function bloomBits(inserted){const bits=Array(6).fill(false);for(const id of inserted){if(!bloomStored.includes(id))throw new RangeError('登録する語が不正です。');for(const bit of bloomKeys[id].bits)bits[bit]=true;}return bits;}
+export function bloomMaybe(inserted,id){if(!Object.hasOwn(bloomKeys,id))throw new RangeError('語が不正です。');const bits=bloomBits(inserted);return bloomKeys[id].bits.every(bit=>bits[bit]);}
+export function createBloom(){return {inserted:[],selected:'moon',answers:Object.fromEntries(bloomQueries.map(id=>[id,null])),checked:Object.fromEntries(bloomQueries.map(id=>[id,false]))};}
+export function bloomComplete(s){return bloomStored.every(id=>s.inserted.includes(id))&&bloomQueries.every(id=>s.checked[id]&&s.answers[id]===(bloomMaybe(s.inserted,id)?'maybe':'absent'));}
+export function restoreBloom(saved){if(!saved||!Array.isArray(saved.inserted)||new Set(saved.inserted).size!==saved.inserted.length||saved.inserted.some(id=>!bloomStored.includes(id))||!bloomQueries.includes(saved.selected)||!saved.answers||!saved.checked)throw new RangeError('途中記録が不正です。');const s=createBloom();s.inserted=[...saved.inserted];s.selected=saved.selected;for(const id of bloomQueries){if(![null,'maybe','absent'].includes(saved.answers[id])||typeof saved.checked[id]!=='boolean'||(saved.checked[id]&&s.inserted.length!==2))throw new RangeError('途中記録が不正です。');s.answers[id]=saved.answers[id];s.checked[id]=saved.checked[id];}return s;}
