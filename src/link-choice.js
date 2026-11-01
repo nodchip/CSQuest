@@ -1,0 +1,8 @@
+export const linkChoices={near:{name:'近い細道',rate:1,propagation:1},wide:{name:'遠い広道',rate:4,propagation:4}};
+export const linkCases={small:{name:'小さな知らせ',size:2,deadline:5},large:{name:'大きな巻物',size:12,deadline:8},tie:{name:'同着する荷物',size:4,deadline:6},late:{name:'間に合わない依頼',size:12,deadline:6}};
+export function linkArrival(id,route){if(!Object.hasOwn(linkCases,id)||!Object.hasOwn(linkChoices,route))throw new RangeError('条件が不正です。');const c=linkCases[id],r=linkChoices[route];return {send:c.size/r.rate,propagation:r.propagation,arrival:c.size/r.rate+r.propagation};}
+export function linkBest(id){const c=linkCases[id];if(!c)throw new RangeError('条件が不正です。');const a=linkArrival(id,'near').arrival,b=linkArrival(id,'wide').arrival,best=Math.min(a,b);return best>c.deadline?'none':a===b?'both':a<b?'near':'wide';}
+export function createLinks(){return Object.fromEntries(Object.keys(linkCases).map(id=>[id,{observed:[],choice:'',checked:false}]));}
+export function linkCorrect(id,t){return !!t?.checked&&Object.keys(linkChoices).every(k=>t.observed.includes(k))&&t.choice===linkBest(id);}
+export function linksComplete(s){return Object.keys(linkCases).every(id=>linkCorrect(id,s[id]));}
+export function restoreLinks(saved){if(saved===undefined)return createLinks();if(!saved||typeof saved!=='object')throw new RangeError('途中記録が不正です。');const s=createLinks();for(const id of Object.keys(s)){const t=saved[id];if(!t||!Array.isArray(t.observed)||new Set(t.observed).size!==t.observed.length||t.observed.some(k=>!Object.hasOwn(linkChoices,k))||!['','near','wide','both','none'].includes(t.choice)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');s[id]={observed:[...t.observed],choice:t.choice,checked:t.checked};}return s;}

@@ -8,7 +8,7 @@
 |---:|---|---|---|
 | 1 | CS Core | DNS や URI などの名前と住所 | 依頼421で DNS の固定例、669で相対参照・検索条件・フラグメントを比較。別名、実通信と一般的な名前付けは未対応 |
 | 2 | CS Core | クライアント・サーバー、P2P、クラウドなど | 依頼62で端末とサーバー、667で中央書庫と既知の仲間からの受信・複製を比較。クラウドや一般の構成は未対応 |
-| 3 | CS Core | 遅延・帯域・損失耐性などアプリケーションの要求 | 依頼668で全断片の必要性と３刻目の新しさを固定到着例で比較。帯域や一般的な要求分析は未対応 |
+| 3 | CS Core | 遅延・帯域・損失耐性などアプリケーションの要求 | 依頼668で全断片の必要性と３刻目の新しさ、荷物の大きさ・伝送速度・期限を固定例で比較。一般的な要求分析や実通信は未対応 |
 | 4 | CS Core | HTTP などのアプリケーション層プロトコル | 依頼62で POST と再送、425で HTTPS の証明確認、670で条件付き GET の固定例。HTTP 全体や実通信は未対応 |
 | 5 | CS Core | TCP・UDP・ソケット API との相互作用 | 依頼424で TCP の接続開始、668で順序付きバイト列とデータグラムの損失時の固定例。ソケット API と実通信は未対応 |
 
@@ -34,3 +34,5 @@
 依頼669は `https://library.example/herbs/index.html` を基準に５つの参照を解決し、HTTP の依頼対象からフラグメントを分ける。書庫が application/x-www-form-urlencoded 形式で条件を解釈する固定例として、`name=moon%26star` と `name=moon&star` を比較する。一般の URI の全検索形式、実通信や認証は扱わない。[RFC 3986](https://www.rfc-editor.org/rfc/rfc3986.html)、[WHATWG URL Standard](https://url.spec.whatwg.org/)。
 
 依頼670は単一の地図と版１・２の固定 ETag について、毎回 GET する場合と保存済み ETag を If-None-Match に付ける場合を比較。変更なしは 304 と本体なし、変更後は 200 と本体を受け取る。毎回検証する模型で、鮮度や Vary、弱い ETag、通信障害、実際の HTTP や転送量は未対応。[RFC 9110: If-None-Match](https://www.rfc-editor.org/rfc/rfc9110.html#section-13.1.2)、[RFC 9111](https://www.rfc-editor.org/rfc/rfc9111.html)。
+
+依頼668の追加場面は１つの荷物と１本の通信路を仮定し、伝送時間（大きさ÷速度）と伝播時間を足す。小２個では近い細道が３刻・遠い広道が4.5刻、大12個では13刻・７刻、４個では５刻で同着。期限６刻に大12個を届ける場合は両方とも間に合わない。待ち行列、処理、損失、複数ホップと帯域変動は省略し、実際の期限は保証しない。参考：[University of Minnesota Duluth: Network Delays and Losses](https://www.d.umn.edu/~gshute/net/delays-losses.html)。
