@@ -1,6 +1,8 @@
 # CS Quest 開発記録
 
 
+- 2026-11-01: 依頼453で４種の計算場所を仕事量、準備・運搬、予算、持ち出し条件から比較。[Cornell の並列性能](https://www.cs.cornell.edu/courses/cs5220/2020fa/lec/2020-09-08-perf-basics.html)を参照。４条件×４案を検査し `npm test` 1043件成功。配信用ビルドのブラウザで比較不足、途中再開、持ち出し禁止、４条件の達成と320・390・1280px幅を確認。実際の性能・料金や一般の設計は未対応。前回の Pages デプロイは成功。
+
 - 2026-11-01: 依頼452で３人の知らせからそれぞれ活動を作り、精霊１人と２人の所要時間を比較。[AWS のイベント駆動連携](https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-serverless/event-driven-architecture.html)を参照。活動開始と時間進行・途中記録の復元を検査し `npm test` 1041件成功。配信用ビルドのブラウザで誤操作、途中再開、両方式の達成と320・390・1280px幅を確認。配送遅延・重複・障害、実装と実測は未対応。前回の Pages デプロイは成功。
 
 - 2026-11-01: 依頼451で残り１束の共有在庫を二人が購入する例を操作し、無条件更新の二重予約と版による条件付き更新を比較。[Microsoft の API 条件付き更新](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-implementation)を参照。読み順・購入順を全て検査し `npm test` 1039件成功。配信用ビルドのブラウザで誤操作、途中再開、二重予約、競合の拒否、両方式の達成と320・390・1280px幅を確認。実 API、応答喪失、複製は未対応。前回の Pages デプロイは成功。
