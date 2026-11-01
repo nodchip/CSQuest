@@ -11,6 +11,7 @@ export function available(assigned,tower){
 export function deadEnd(assigned){return towers.slice(assigned.length).some(tower=>available(assigned,tower).length===0);}
 export const constraintArcs=connections.flatMap(([a,b])=>[`${a}${b}`,`${b}${a}`]);
 export function initialArcDomains(){return Object.fromEntries(towers.map(t=>[t,t==='D'?['red']:Object.keys(colors)]));}
+export function domainProduct(domains){return towers.reduce((total,t)=>total*domains[t].length,1);}
 export function reviseDomains(domains,arc){if(!constraintArcs.includes(arc))throw new RangeError('道が不正です。');const [from,to]=arc,next=Object.fromEntries(towers.map(t=>[t,[...domains[t]]]));next[from]=next[from].filter(color=>next[to].some(other=>other!==color));return next;}
 export function arcSaturated(domains){return constraintArcs.every(arc=>{const next=reviseDomains(domains,arc);return next[arc[0]].length===domains[arc[0]].length;});}
 export function reviseArc(state,arc){if(!constraintArcs.includes(arc)||state.arcHistory.length>=50)throw new RangeError('道を確認できません。');const before=state.arcDomains[arc[0]],domains=reviseDomains(state.arcDomains,arc),removed=before.filter(c=>!domains[arc[0]].includes(c));return {...state,arcDomains:domains,arcHistory:[...state.arcHistory,arc],arcChecked:false,arcMessage:removed.length?`${arc[0]}から${removed.map(c=>colors[c]).join('・')}を除きました。`:'この道では候補は減りません。'};}
