@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {bfsLabNodes,bfsLabEdges,bfsLabDefault,bfsLabGraph,bfsLabReplay} from '../src/parallel-bfs-lab.js';
+import {createParallelBfs,restoreParallelBfs} from '../src/parallel-bfs.js';
+test('all 32768 simple graphs agree with an independent queue BFS',()=>{for(let mask=0;mask<1<<bfsLabEdges.length;mask++){const graph=bfsLabGraph(mask),queue=['S'],distance={S:0};for(let i=0;i<queue.length;i++)for(const v of graph[queue[i]])if(!(v in distance)){distance[v]=distance[queue[i]]+1;queue.push(v);}let steps=0,state=bfsLabReplay(mask,0);while(!state.done){state=bfsLabReplay(mask,++steps);assert.ok(steps<=6);}assert.equal(state.found,Object.hasOwn(distance,'T'));if(state.found)assert.equal(state.levels.length-1,distance.T);for(let depth=0;depth<state.levels.length;depth++)assert.deepEqual(state.levels[depth],bfsLabNodes.filter(v=>distance[v]===depth));}});
+test('saved experiments restore and old saves receive the default graph',()=>{const s=createParallelBfs();s.lab={mask:0,steps:1};assert.deepEqual(restoreParallelBfs(s),s);delete s.lab;assert.deepEqual(restoreParallelBfs(s).lab,{mask:bfsLabDefault,steps:0});s.lab={mask:0,steps:2};assert.throws(()=>restoreParallelBfs(s));});
