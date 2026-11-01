@@ -28,7 +28,7 @@
 | 2a | 導関数を極限として説明 | 部分 | 473で差商の両側の変化を操作。一般の定義と自由な説明は未評価。 |
 | 2b | 関数としての導関数 | 部分 | 116で二次誤差の各位置の傾きを扱う。一般の関数は未評価。 |
 | 2c | 極限から基本的な導関数を計算 | 部分 | 473で二次関数の固定点を扱う。任意の関数・点は未評価。 |
-| 2d | 和・積・商の微分規則 | 未照合 | 対応する依頼は未確認。 |
+| 2d | 和・積・商の微分規則 | 部分 | 473で２辺が伸びる長方形の面積を分け、積の変化率の固定例を操作。和・商や一般の規則の適用は未評価。 |
 | 2e | 重要な関数の例を扱う | 部分 | 473で二次関数の固定例。一般の関数は未評価。 |
 | 3a | 定積分と不定積分の定義 | 部分 | 474で区間の面積と位置の変化を比較。不定積分の一般の定義は未評価。 |
 | 3b | 積分規則を重要な関数に適用 | 未照合 | 一般の規則を扱う依頼は未確認。 |
@@ -45,4 +45,4 @@
 | 7b | 一変数の微分方程式にオイラー法を適用 | 部分 | 475で初期値問題を３刻み幅で近似。一般の方程式は未評価。 |
 | 7c | 複数変数の微分方程式にオイラー法を適用 | 未照合 | 対応する依頼は未確認。 |
 
-`tests/gradient.test.js`、`tests/derivative-limit.test.js`、`tests/integral-area.test.js`、`tests/polar-circle.test.js`、`tests/taylor-growth.test.js`、`tests/partial-gradient.test.js`、`tests/euler-growth.test.js` 等は各固定模型の一部を検査する。前提と出典は[既存の調査](msf-calculus.md)を参照。未照合は未実装の証拠ではない。
+`tests/gradient.test.js`、`tests/derivative-limit.test.js`、`tests/product-growth.test.js`、`tests/integral-area.test.js`、`tests/polar-circle.test.js`、`tests/taylor-growth.test.js`、`tests/partial-gradient.test.js`、`tests/euler-growth.test.js` 等は各固定模型の一部を検査する。前提と出典は[既存の調査](msf-calculus.md)を参照。未照合は未実装の証拠ではない。

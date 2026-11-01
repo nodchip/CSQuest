@@ -39,3 +39,5 @@
 依頼478は固定半径２の円で角度０、π/２、π、３π/２、２πに対応する直交座標を選ぶ。x=2 cos θ、y=2 sin θ と５点を照合し、０と２πの位置が同じことを確認する。負の半径、一般の曲線や媒介変数の微分は未対応。[OpenStax の極座標](https://openstax.org/books/calculus-volume-3/pages/1-3-polar-coordinates)を参照。
 
 依頼479は f(x,y)=(x−1)²+(y−2)² を x,y≥0、x+y=2 の下で最小化する。候補を比較し、制約のない最小点 (1,2) は使えないことを確認する。y=2−x の代入で f=2(x−0.5)²+0.5 となり、連続範囲の最小点は (0.5,1.5)。候補と平方完成を検査した。一般の制約付き問題は扱わない。[OpenStax の制約付き最適化](https://openstax.org/books/calculus-volume-3/pages/4-8-lagrange-multipliers)を参照。
+
+依頼473の追加場面は時刻２で横２・縦３、両辺が１秒に１ずつ伸びる長方形。時間幅１と0.1に対して面積増分を右の帯・上の帯・角に分け、平均変化率６と5.1を比較する。幅を０に近づけると角の寄与が消え、瞬間の面積変化率は３＋２＝５。積の微分の固定例であり、一般の関数の証明や商の規則は未評価。[OpenStax の微分規則](https://openstax.org/books/calculus-volume-1/pages/3-3-differentiation-rules)を参照。
