@@ -23,3 +23,5 @@
 依頼517は端末から接続事業者へ進み、事業者内の複製、中継事業者経由、または合意済みの相互接続点を介した配信元への経路を比べる。中継が使えない条件も扱う。自律システムは共通の経路方針を示す IP の網のまとまりであり、事業者との１対１対応を仮定しない。接続点だけで通信が成立するわけではなく、経路と合意を所与とする。模型内の区間数は実際の遅延ではない。実際の契約・BGP・復旧・キャッシュ更新や復路は扱わない。参考：[Internet Society のピアリング](https://www.internetsociety.org/our-work/connectivity/peering/)、[RFC 1930](https://www.rfc-editor.org/rfc/rfc1930.html)。
 
 依頼556は A・B・ルータの一方が同一 LAN、C がルータの別側にある固定模型。ハブは A の入力以外へ信号を繰り返し、スイッチは B の宛先を既知なら B 側のみ、未知なら B 側とルータ側へフレームを送る。送出と端末の受理は区別する。C 宛てでは A の最初の MAC 宛先はルータの LAN 側、ルータは C 側 MAC を送り元とし C の MAC を宛先とする新しいフレームを作る。IP の送信元・宛先を保ち、TTL 5 を４とする例。入力の宛先３通りと４場面を検査した。ARP の解決、VLAN、無線、フィルタ、断片化や一般のルータ実装は扱わない。[Cisco の転送](https://www.cisco.com/en/US/docs/internetworking/troubleshooting/guide/tr1923.pdf)、[RFC 1812](https://www.rfc-editor.org/rfc/rfc1812)。
+
+依頼557は A・B・ルータ G が同じ Ethernet、C が別ネットワークにある固定模型。A は B 宛てなら B、C 宛てなら G の IP を ARP 要求で問い合わせ、同じ LAN の応答と次のフレームの MAC 宛先を確かめる。C の IP を直接尋ねると代理 ARP のない条件では応答がない。問い合わせと予想の全組合せ、保存の検証と再挑戦を検査した。ARP 表の期限、損失、なりすまし、代理 ARP、IPv6、実装の詳細は扱わない。[RFC 826](https://www.rfc-editor.org/rfc/rfc826) を参照。
