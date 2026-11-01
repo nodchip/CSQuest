@@ -1,4 +1,5 @@
-export const hashJoinLevel={id:'village-hash-join',number:'666',kind:'hash-join',name:'桶で照らす二つの台帳',tag:'ハッシュ結合',title:'印から依頼と届け先を結ぼう',story:'薬師の依頼と村人の台帳を照らします。片方を桶に分け、もう片方の印から候補を探して番号を確かめましょう。'};
+import {createMergeJoinLab,mergeJoinDone,restoreMergeJoinLab} from './merge-join-lab.js';
+export const hashJoinLevel={id:'village-hash-join',number:'666',kind:'hash-join',name:'桶で照らす二つの台帳',tag:'ハッシュ結合と整列併合',title:'印から依頼と届け先を結ぼう',story:'薬師の依頼と村人の台帳を照らします。片方を桶に分け、もう片方の印から候補を探して番号を確かめましょう。'};
 export const hashJoinPeople=[{id:'A',key:1},{id:'B',key:2},{id:'C',key:3},{id:'D',key:4}];
 export const hashJoinOrders=[{id:'甲',key:1},{id:'乙',key:1},{id:'丙',key:3},{id:'丁',key:4},{id:'戊',key:5}];
 export const hashJoinModes={people:'人の台帳を桶に入れる',orders:'依頼の台帳を桶に入れる'};
@@ -17,6 +18,6 @@ export function hashJoinTrialAct(s,action){
  else return {ok:false,message:'今の段階でできる操作を選びましょう。'};
  n.history.push(action);return {ok:true,state:n,message};
 }
-export function createHashJoin(){return {selected:'people',trials:{people:createHashJoinTrial('people'),orders:createHashJoinTrial('orders')},answer:null,checked:false};}
-export function hashJoinComplete(s){return Object.keys(hashJoinModes).every(k=>s.trials[k].phase==='done')&&s.answer==='verify'&&s.checked;}
-export function restoreHashJoin(saved){if(!saved||!Object.hasOwn(hashJoinModes,saved.selected)||!saved.trials||![null,'verify','bucket','first'].includes(saved.answer)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');const n=createHashJoin();n.selected=saved.selected;n.answer=saved.answer;n.checked=saved.checked;for(const mode of Object.keys(hashJoinModes)){const h=saved.trials[mode]?.history;if(!Array.isArray(h)||h.length>64)throw new RangeError('途中記録が不正です。');for(const a of h){if(typeof a!=='string')throw new RangeError('途中記録が不正です。');const r=hashJoinTrialAct(n.trials[mode],a);if(!r.ok)throw new RangeError('途中記録が不正です。');n.trials[mode]=r.state;}}return n;}
+export function createHashJoin(){return {selected:'people',trials:{people:createHashJoinTrial('people'),orders:createHashJoinTrial('orders')},answer:null,checked:false,merge:createMergeJoinLab()};}
+export function hashJoinComplete(s){return Object.keys(hashJoinModes).every(k=>s.trials[k].phase==='done')&&s.answer==='verify'&&s.checked&&mergeJoinDone(s.merge);}
+export function restoreHashJoin(saved){if(!saved||!Object.hasOwn(hashJoinModes,saved.selected)||!saved.trials||![null,'verify','bucket','first'].includes(saved.answer)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');const n=createHashJoin();n.selected=saved.selected;n.answer=saved.answer;n.checked=saved.checked;for(const mode of Object.keys(hashJoinModes)){const h=saved.trials[mode]?.history;if(!Array.isArray(h)||h.length>64)throw new RangeError('途中記録が不正です。');for(const a of h){if(typeof a!=='string')throw new RangeError('途中記録が不正です。');const r=hashJoinTrialAct(n.trials[mode],a);if(!r.ok)throw new RangeError('途中記録が不正です。');n.trials[mode]=r.state;}}if(saved.merge!==undefined)n.merge=restoreMergeJoinLab(saved.merge);return n;}
