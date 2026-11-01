@@ -212,3 +212,5 @@
 依頼695は非自明な言語の性質、状態数という記述上の性質、自明な性質を４例で区別する。Q は任意の入力に対し M(w) を模倣し、停止すれば入力０だけを受理する。Q が０を受理することと M(w) の停止は同値である。仮の０受理判定器から停止判定器が得られる矛盾を操作するが、Rice の定理全体の証明の自由構築は扱わない。[Cornell: Limits of Computability](https://www.cs.cornell.edu/courses/cs4820/2019sp/handouts/computability.pdf)。
 
 依頼696では aᵖbᵖcᵖ を u・v・x・y・z に分割し、vxy の長さが p 以下、v と y が合わせて空でない条件の下で、v と y を取り除く。vxy は３種類すべてに届かず、少なくとも１種類の数が減って別の種類は p のままなので、０回の結果は言語に属さない。画面では p=２・３を操作し、任意の p と条件を満たす全分割に対する論証を区別する。任意言語の自由な証明は扱わない。[Cornell: Pumping Lemma](https://www.cs.cornell.edu/courses/cs3810/2010fa/exams/381-2006fa-prelim2-solutions.pdf)。
+
+同じ依頼の対照例では、aᵖbᵖ を a のみ伸縮する分割と、a・b を各１文字ずつ伸縮する分割で比較する。前者は０・２回で同数を失うが、後者は任意の非負回数 i で両文字が p−１＋i 個となる。p≥２なら後者の vxy は長さ２で条件を満たす。１つの失敗だけでは全分割を否定できない。[Cornell: Pumping Lemma の注意](https://www.cs.cornell.edu/courses/cs381/2000FA/Assignments/note1pum.htm)。
