@@ -47,14 +47,14 @@
 | DM | DM-Distributed | Distributed Databases/Cloud Computing | 122 | 依頼190・191・193・293・294で複製、分割、クォーラム、分散取引と結合の固定模型。他は未対応。[詳細](dm-distributed.md) |
 | DM | DM-Unstructured | Semi-structured and Unstructured Databases | 122 | 依頼120で転置索引と TF-IDF の固定例。他は未対応。[詳細](dm-unstructured.md) |
 | DM | DM-SEP | Society, Ethics, and the Profession | 123 | 依頼194・196・330〜333で収集、推論、来歴、管理責任と準識別子の固定例。他は未対応。[詳細](dm-society.md) |
-| FPL | FPL-OOP | Object-Oriented Programming | 130 | 依頼65で個体ごとの状態と種類別の動的な振る舞い、579で非公開状態と操作による範囲検査、580で継承と合成の固定例。[詳細](fpl-oop.md) |
+| FPL | FPL-OOP | Object-Oriented Programming | 130 | 依頼65で個体ごとの状態と種類別の動的な振る舞い、579で非公開状態と操作による範囲検査、580で継承と合成、581で静的な候補選択と動的な呼出しの固定例。[詳細](fpl-oop.md) |
 | FPL | FPL-Functional | Functional Programming | 131 | 一部試作：依頼51・52で列処理とクロージャの固定例 |
 | FPL | FPL-Logic | Logic Programming | 133 | 依頼146〜150で有限の項の単一化、事実・規則・問い合わせ、探索と戻り、再帰的な関係、カットの固定例。他は未対応。[詳細](fpl-logic.md) |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜154で処理の受け渡し、失敗、終了状態、環境変数、正規表現の固定例。他は未対応。[詳細](fpl-scripting.md) |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。他は未対応。[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。他は未対応。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
-| FPL | FPL-Types | Type Systems | 136 | 一部試作：依頼24で入力・出力の型と検査 |
+| FPL | FPL-Types | Type Systems | 136 | 依頼24で入力・出力の型と検査、581で静的な候補選択の固定例。[詳細](fpl-types.md) |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、依頼201〜203の回収・参照カウント・別名の固定例。実行時配置・一般のメモリ管理等は未対応。[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312・315で式の構造、解釈と翻訳段階の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 依頼75・154・199・306〜312などで構文木、正規表現、スコープ、引数渡しと副作用の固定例。他は未対応。[詳細](fpl-abstraction.md) |
