@@ -4,6 +4,8 @@
 
 ## AL-Strategies：トピック
 
+子項目と例示学習成果の詳細は [coverage-al-strategies.md](coverage-al-strategies.md) を参照。
+
 | 番号 | 分類 | 内容と現状 |
 |---|---|---|
 | 1a | CS Core | 全探索。依頼336で４個の石の全16通りを調べる固定例。一般の分析は未対応 |
@@ -32,6 +34,8 @@
 | 7 | CS Core | 指数時間の問題への対処を説明。未着手 |
 
 ## AL-Complexity：トピック
+
+子項目と例示学習成果の詳細は [coverage-al-complexity.md](coverage-al-complexity.md) を参照。
 
 | 番号 | 分類 | 内容と現状 |
 |---:|---|---|
