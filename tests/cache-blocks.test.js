@@ -13,6 +13,6 @@ test('four traces match independently calculated hit counts and time',()=>{
   }
 });
 test('all four traces are required and indices reconstruct the cache safely',()=>{
-  const set=createBlockSet();for(const id of Object.keys(blockPatterns))for(const size of blockSizes){let state=set.states[id][size];for(const page of blockPatterns[id].requests){const block=Math.floor(page/size)*size;state=blockAccess(state,state.cache.includes(block)?'hit':'miss');}set.states[id][size]=state;}assert.equal(blocksComplete(set),true);
-  const saved={selected:'sequential',size:1,indices:{sequential:{1:8,2:8},stride:{1:8,2:8}}};assert.deepEqual(restoreBlocks(saved),set);assert.throws(()=>restoreBlocks({...saved,indices:{...saved.indices,stride:{1:9,2:8}}}),RangeError);
+  const set=createBlockSet();for(const id of Object.keys(blockPatterns))for(const size of blockSizes){let state=set.states[id][size];for(const page of blockPatterns[id].requests){const block=Math.floor(page/size)*size;state=blockAccess(state,state.cache.includes(block)?'hit':'miss');}set.states[id][size]=state;}assert.equal(blocksComplete(set),false);
+  const saved={selected:'sequential',size:1,indices:{sequential:{1:8,2:8},stride:{1:8,2:8}}};assert.deepEqual(restoreBlocks(saved),set);set.average.answers={a:3.5,b:3.25,c:4.5};set.average.checked={a:true,b:true,c:true};set.average.comparison='b';set.average.confirmed=true;assert.equal(blocksComplete(set),true);assert.deepEqual(restoreBlocks({...saved,average:set.average}),set);assert.throws(()=>restoreBlocks({...saved,indices:{...saved.indices,stride:{1:9,2:8}}}),RangeError);
 });

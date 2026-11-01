@@ -1,0 +1,6 @@
+export const averageCases={a:{name:'棚Ａ',hit:1,missRate:0.5,penalty:5},b:{name:'棚Ｂ',hit:2,missRate:0.25,penalty:5},c:{name:'棚Ｃ',hit:2,missRate:0.25,penalty:10}};
+export function averageAccess(hit,missRate,penalty){if(!Number.isFinite(hit)||hit<0||!Number.isFinite(missRate)||missRate<0||missRate>1||!Number.isFinite(penalty)||penalty<0)throw new RangeError('時間または割合が不正です。');return hit+missRate*penalty;}
+export function createAverage(){return {selected:'a',answers:{a:null,b:null,c:null},checked:{a:false,b:false,c:false},comparison:null,confirmed:false};}
+export function averageCorrect(s,id){const c=averageCases[id];return s.checked[id]&&s.answers[id]===averageAccess(c.hit,c.missRate,c.penalty);}
+export function averageComplete(s){return Object.keys(averageCases).every(id=>averageCorrect(s,id))&&s.comparison==='b'&&s.confirmed;}
+export function restoreAverage(s){if(!s||!Object.hasOwn(averageCases,s.selected)||!s.answers||!s.checked||![null,'a','b','c'].includes(s.comparison)||typeof s.confirmed!=='boolean')throw new RangeError('途中記録が不正です。');const n=createAverage();n.selected=s.selected;n.comparison=s.comparison;n.confirmed=s.confirmed;for(const id of Object.keys(averageCases)){if(![null,3.25,3.5,4.5].includes(s.answers[id])||typeof s.checked[id]!=='boolean')throw new RangeError('途中記録が不正です。');n.answers[id]=s.answers[id];n.checked[id]=s.checked[id];}return n;}
