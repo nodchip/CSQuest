@@ -29,3 +29,5 @@
 依頼328の３経路の影響点は架空の優先順位であり、確率・損失・現実のリスクを推定したものではありません。各対策は表示された前提の下で対応する固定経路を防ぐものとして扱います。実際には対策の実装検証、鍵の管理、他の脅威、前提の破綻を含めて見直す必要があります。参考：[OWASP Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html)。
 
 依頼329では公開された写しと漏れた古い鍵について、正当な主体と侵入者の操作を修正前後に試します。身元の識別、新鍵の秘匿と認証印の検証は正しいという固定仮定です。実際の鍵配送、過去の漏えいや他の入口は未対応。参考：[OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)、[NIST 鍵管理ガイド](https://csrc.nist.gov/csrc/media/events/key-management-workshop-2001/documents/key-management-guideline-workshop.pdf)。
+
+依頼328では、３対策を配置した状態から専用鍵の盗難、共有鍵の漏出、写しの設定変更をそれぞれ切り替える。前提が崩れた経路のみ再び成立すると仮定し、８条件の経路と影響点を検証。鍵の漏出が常に攻撃成功を意味するわけではなく、実システムのリスク・実際の対策の効果は評価しない。

@@ -30,4 +30,4 @@
 | 6 | KA Core | 脆弱性を特定し軽減 | 部分 | 依頼328・329の固定の露出経路と対策のみ。実システムは未対応 |
 | 7 | KA Core | データ科学・AI等の創発的な振る舞いを評価・予測 | 未照合 | 関連する依頼との対応は未確認。 |
 
-`tests/threat-planning.test.js`、`tests/control-validation.test.js` と関連する試験は固定模型の一部を検査する。各経路の影響点は架空であり実際のリスク推定ではない。出典・前提・限界は[既存の調査](sec-engineering.md)を参照。未照合は未実装の証拠ではない。
+`tests/threat-planning.test.js`、`tests/threat-assumptions.test.js`、`tests/control-validation.test.js` と関連する試験は固定模型の一部を検査する。各経路の影響点は架空であり実際のリスク推定ではない。出典・前提・限界は[既存の調査](sec-engineering.md)を参照。未照合は未実装の証拠ではない。

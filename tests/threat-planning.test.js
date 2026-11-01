@@ -1,3 +1,4 @@
+import {inspectAssumptions} from '../src/threat-assumptions.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {threatResult,createThreat,restoreThreat,threatComplete} from '../src/threat-planning.js';
@@ -5,5 +6,5 @@ test('bounded plans preserve every unaddressed route and compute fixed impact su
  assert.deepEqual(threatResult('limited',['message','backup']),{remaining:['gate'],score:2});assert.equal(threatResult('limited',['gate','backup']).score,5);assert.equal(threatResult('expanded',['gate','message','backup']).score,0);assert.throws(()=>threatResult('limited',['gate','message','backup']));assert.throws(()=>threatResult('limited',['gate','gate']));
 });
 test('both tested plans and explicit residual-risk understanding are required',()=>{
- const s=createThreat();s.plans.limited=['message','backup'];s.plans.expanded=['gate','message','backup'];s.tested.limited=true;s.tested.expanded=true;s.answer='residual';s.checked=true;assert.equal(threatComplete(s),true);const copy=restoreThreat(s);copy.plans.limited.pop();assert.equal(threatComplete(copy),false);assert.equal(threatComplete(s),true);
+ const s=createThreat();s.plans.limited=['message','backup'];s.plans.expanded=['gate','message','backup'];s.tested.limited=true;s.tested.expanded=true;s.answer='residual';s.checked=true;assert.equal(threatComplete(s),false);for(const failed of [[],['gate'],['message','backup'],['gate','message','backup']]){s.assumptions.failed=failed;s.assumptions=inspectAssumptions(s.assumptions);}assert.equal(threatComplete(s),true);const {assumptions,...old}=s;assert.equal(threatComplete(restoreThreat(old)),false);const copy=restoreThreat(s);copy.plans.limited.pop();assert.equal(threatComplete(copy),false);assert.equal(threatComplete(s),true);
 });

@@ -1,0 +1,9 @@
+export const assumptionRoutes={gate:{name:'受付',healthy:'専用の鍵は漏れていない',broken:'専用の鍵が盗まれた',impact:2},message:{name:'通信',healthy:'共有鍵は漏れていない',broken:'共有鍵が漏れた',impact:5},backup:{name:'保管庫の写し',healthy:'閲覧設定は正しく動く',broken:'写しの設定が公開に戻った',impact:3}};
+// Each control is installed. In this deliberately bounded model, a failed premise reopens its route.
+export function assumptionResult(failed){if(!Array.isArray(failed)||new Set(failed).size!==failed.length||failed.some(k=>!Object.hasOwn(assumptionRoutes,k)))throw new RangeError('条件が不正です。');return {open:Object.keys(assumptionRoutes).filter(k=>failed.includes(k)),score:failed.reduce((n,k)=>n+assumptionRoutes[k].impact,0)};}
+const keyOf=failed=>Object.keys(assumptionRoutes).filter(k=>failed.includes(k)).join(',')||'none';
+const required=['none','gate','message,backup','gate,message,backup'];
+export function createAssumptions(){return {failed:[],observed:[],shown:false};}
+export function inspectAssumptions(s){assumptionResult(s.failed);const key=keyOf(s.failed);return {...s,observed:[...new Set([...s.observed,key])],shown:true};}
+export function assumptionsComplete(s){return required.every(key=>s.observed.includes(key));}
+export function restoreAssumptions(saved){if(saved===undefined)return createAssumptions();if(!saved||!Array.isArray(saved.failed)||!Array.isArray(saved.observed)||typeof saved.shown!=='boolean')throw new RangeError('途中記録が不正です。');assumptionResult(saved.failed);const possible=[];for(let n=0;n<8;n++)possible.push(keyOf(Object.keys(assumptionRoutes).filter((_,i)=>n&(1<<i))));if(new Set(saved.observed).size!==saved.observed.length||saved.observed.some(k=>!possible.includes(k))||(saved.shown&&!saved.observed.includes(keyOf(saved.failed))))throw new RangeError('途中記録が不正です。');return {failed:[...saved.failed],observed:[...saved.observed],shown:saved.shown};}
