@@ -1,0 +1,6 @@
+export const taylorGrowthLevel={id:'ruin-taylor-growth',number:'476',kind:'taylor-growth',name:'灯火の近似の巻物',tag:'テイラー多項式と級数',title:'項を重ねて灯火を近づけよう',story:'育つ灯火の明るさを、有限の項を持つ巻物で近似します。項を加え、元の明るさとの差を比べましょう。'};
+export function taylorGrowth(x,degree){if(![1,2].includes(x)||!Number.isInteger(degree)||degree<0||degree>4)throw new RangeError('時刻または次数が不正です。');let term=1,sum=1;const terms=[1];for(let k=1;k<=degree;k++){term*=x/k;sum+=term;terms.push(term);}return {terms,sum,exact:Math.exp(x),error:Math.exp(x)-sum};}
+export function createTaylorGrowth(){return {x:1,degrees:{1:0,2:0},answer:null,checked:false};}
+export function advanceTaylor(s){taylorGrowth(s.x,s.degrees[s.x]);if(s.degrees[s.x]>=4)throw new RangeError('４次までの項を重ねました。');return {...s,degrees:{...s.degrees,[s.x]:s.degrees[s.x]+1},checked:false};}
+export function taylorGrowthComplete(s){return [1,2].every(x=>s.degrees[x]===4)&&s.answer==='approx'&&s.checked;}
+export function restoreTaylorGrowth(s){if(!s||![1,2].includes(s.x)||!s.degrees||![null,'approx','exact','same'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createTaylorGrowth();n.x=s.x;n.answer=s.answer;n.checked=s.checked;for(const x of [1,2]){taylorGrowth(x,s.degrees[x]);n.degrees[x]=s.degrees[x];}return n;}
