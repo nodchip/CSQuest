@@ -13,7 +13,7 @@
 | 5 | KA Core | 名前、検索、アクセス、バックアップ | 部分 | 77・181・290で参照や復元の固定例。実際の名前空間やバックアップ管理は未評価。 |
 | 6a | KA Core | ジャーナリング | 部分 | 736で管理情報の確定記録と再適用。実ファイルシステムのログ形式、順序保証や同時更新は未評価。 |
 | 6b | KA Core | ログ構造ファイルシステム | 部分 | 737で追記済みの版と有効記録の移動・区画回収を操作。実際のインデックス・障害復旧・性能は未評価。 |
-| 1 | Non-core | 分散ファイルシステム | 未照合 | 分散ファイルシステム固有の教材は未確認。 |
+| 1 | Non-core | 分散ファイルシステム | 部分 | 739で遠隔の共有ファイルと利用者側の写し、close-to-open の固定例を操作。命名、障害、認証や実運用は未評価。 |
 | 2 | Non-core | 暗号化ファイルシステム | 未照合 | 暗号化ファイルシステム固有の教材は未確認。 |
 | 3 | Non-core | 耐障害性 | 部分 | 181・290で復元と履歴、736で電源断後の管理情報を比較。装置自体の故障や実機での保証は未評価。 |
 
@@ -26,10 +26,12 @@
 | 3 | KA Core | マウントの種類を識別・分類 | 部分 | 291で単一の接続例。他の種類と分類は未評価。 |
 | 4 | KA Core | 要件とそれを満たすファイルシステム機能を説明 | 部分 | 290で状態保持、736で管理情報の途中状態と復旧を比較。他の要件と自由な説明は未評価。 |
 | 5 | KA Core | ジャーナリングとログ構造の耐障害性を説明 | 部分 | 736で確定済み記録の再適用、737で有効記録の移動、738で保存順序と復旧点を操作。後続ログの再適用、複数の復旧点や一般的な説明は未評価。 |
-| 6 | Non-core | 分散ファイルシステムの目的と複雑さ | 未照合 | 対応教材は未確認。 |
-| 7 | Non-core | 分散ファイルシステムのプロトコル例 | 未照合 | 対応教材は未確認。 |
+| 6 | Non-core | 分散ファイルシステムの目的と複雑さ | 部分 | 739で遠隔の共有とキャッシュの古さを比較。障害・権限・競合などは未評価。 |
+| 7 | Non-core | 分散ファイルシステムのプロトコル例 | 部分 | 739で NFS の close-to-open を参考にした例。プロトコルの実装や他の方式との比較は未評価。 |
 | 8 | Non-core | ファイルシステムの耐障害性を高める仕組み | 部分 | 290の写しと736の記録再適用の模型。独立障害、装置故障や実機の保証は未評価。 |
 
 依頼738は [Sprite LFS の論文](https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf) のチェックポイントによる復旧を参考に、本文・対応表・復旧点を順に永続化する簡略模型。各書込みの完了と復旧点の原子的な切替を仮定し、復旧点以降のログ走査や実ファイルシステム全般は扱わない。
 
-関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`、`tests/log-checkpoint.test.js`。各模型の範囲に限る。
+依頼739は [Linux nfs(5)](https://man7.org/linux/man-pages/man5/nfs.5.html) の close-to-open を参考に、書き手が閉じて更新を送り、読み手が開き直して確認する固定模型。開いたままの読み手は古い写しを使うと仮定し、実装全般や同期された同時アクセスは表現しない。
+
+関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`、`tests/log-checkpoint.test.js`、`tests/distributed-file.test.js`。各模型の範囲に限る。
