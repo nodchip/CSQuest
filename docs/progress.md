@@ -1,6 +1,8 @@
 # CS Quest 開発記録
 
 
+- 2026-11-01: 依頼465に真・偽・不明の AND・OR・NOT と WHERE・CHECK の扱いを比較する実験を追加。[PostgreSQL の論理演算](https://www.postgresql.org/docs/current/functions-logical.html)を参照。27設定と旧保存の復元を検査し `npm test` 1072件成功。配信用ビルドのブラウザで不明・偽の結果、途中再開、元の依頼の達成と320・390・1280px幅を確認。全 SQL 演算や実データベースは未対応。前回の Pages デプロイは成功。
+
 - 2026-11-01: 依頼465で正の数の CHECK と NOT NULL を比較し、NULL の比較が不明となる場合を操作。[PostgreSQL の制約](https://www.postgresql.org/docs/current/ddl-constraints.html)を参照。２方式・３入力と更新拒否・復元を検査し `npm test` 1070件成功。配信用ビルドのブラウザで入力不足、途中再開、拒否時の値保持、両方式の達成と320・390・1280px幅を確認。実 SQL や NULL の全挙動は未対応。前回の Pages デプロイは成功。
 
 - 2026-11-01: 依頼464で外部キーの参照中の削除拒否と連鎖削除を比較。[PostgreSQL の外部キー](https://www.postgresql.org/docs/current/ddl-constraints.html)を参照。削除順と履歴復元を検査し `npm test` 1068件成功。配信用ビルドのブラウザで拒否、途中再開、連鎖削除、両方式の達成と320・390・1280px幅を確認。NULL、遅延制約や実 SQL は未対応。前回の Pages デプロイは成功。

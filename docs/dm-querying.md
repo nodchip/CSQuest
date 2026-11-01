@@ -8,7 +8,7 @@
 |---:|---|---|---|
 | 1 | CS Core | SQL の問い合わせ作成、対話・プログラムからの実行 | 試作：複数条件を満たす行の選択と等しい値による内部結合・左外部結合、集合演算、全称条件による除算の固定例をゲーム内操作で扱う。SQL を書く・実行する操作は行わない |
 | 2 | KA Core | 関係代数 | 行の選択、結合、集合演算と全称条件の固定例のみ。関係代数全体は未対応 |
-| 3 | KA Core | SQL によるデータ定義、整合性制約、更新 | 依頼464で外部キーの削除拒否・連鎖、465で CHECK と NOT NULL の固定例。SQL の定義や一般の更新は未対応 |
+| 3 | KA Core | SQL によるデータ定義、整合性制約、更新 | 依頼464で外部キーの削除拒否・連鎖、465で CHECK と NOT NULL、三値論理と WHERE・CHECK の比較。SQL の定義や一般の更新は未対応 |
 | 4 | Non-core | 関係論理 | 未着手 |
 | 5 | Non-core | QBE と第４世代環境 | 未着手 |
 | 6 | Non-core | 通常の言語からの非手続き問い合わせの呼び出し | 未着手 |
@@ -38,3 +38,5 @@
 依頼463は月草２束・星花１束・月草３束の固定台帳から月草２行または日草０行を返し、先頭の前からカーソルを進めて各行を一度加算する。月草の合計は５、日草は０。行がないことを確かめて閉じる。[Oracle の ResultSet](https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html)を参照。行の読み飛ばし、重複加算、早期終了と履歴復元を検査した。台帳順を仮定する固定模型で、順序未指定時の保証、実接続や例外処理は扱わない。
 
 依頼465は「束数＞０」の CHECK と、それに NOT NULL を加えた制約を比較する。−１は偽で拒否、２は真で許可、NULL は比較結果が不明のため CHECK だけなら通るが NOT NULL で拒否される。拒否時は元の値を保つ。[PostgreSQL の制約](https://www.postgresql.org/docs/current/ddl-constraints.html)を参照。２方式・３入力と履歴復元を検査した。単一列の固定模型であり、SQL の作成、他の制約や NULL 全般は扱わない。
+
+依頼465の追加実験では、条件Ａ・Ｂに真・偽・不明を選び、AND・OR・NOT の結果を表示する。同じ結果について WHERE は真の行だけを残し、CHECK 制約は偽だけを拒否する。NOT はＡのみを使い、別の NOT NULL 制約は実験に含めない。[PostgreSQL の論理演算](https://www.postgresql.org/docs/current/functions-logical.html)と [WHERE](https://www.postgresql.org/docs/current/queries-table-expressions.html)を参照。３値×３値×３演算の27設定と旧形式の保存復元を検査した。NULL を伴うすべての SQL 演算や実データベースは扱わない。
