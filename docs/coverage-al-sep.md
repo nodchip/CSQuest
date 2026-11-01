@@ -24,6 +24,6 @@
 | 3 | CS Core | 実問題に選んだ構造や手法の根拠を発表 | 未照合 | 実問題の選択理由の発表は未確認。自由な発表能力はゲームで直接評価しない。 |
 | 4 | CS Core | 差分プライバシーが個人の情報を守る例を説明 | 部分 | 196で二値回答の１回・２回の確率比と限界を比較。一般の集計・自由な説明は未評価。 |
 | 5 | CS Core | アルゴリズム設計の選択による環境影響を説明 | 部分 | 161で時間と電力の固定値を比較。環境影響全体は未評価。 |
-| 6 | CS Core | Proof of Work と Proof of Stake のトレードオフを説明 | 未照合 | 両方式の比較は未確認。 |
+| 6 | CS Core | Proof of Work と Proof of Stake のトレードオフを説明 | 部分 | 607で計算能力と預けた資源の２配分を比べ、負担と損失を検討。実際の合意・運用や自由な説明は未評価。 |
 
 `tests/fairness.test.js`、`tests/aggregate-inference.test.js`、`tests/energy-comparison.test.js`、`tests/iris-explanation.test.js` は各固定例を検査する。実際の乱数や公開の安全性、実環境の影響は保証しない。

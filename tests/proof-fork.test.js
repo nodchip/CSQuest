@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {webcrypto,createHash} from 'node:crypto';
-import {forkDigest,forkRecords,forkBranch,mineForkBlock,compareForks,createProofFork,proofForkComplete,restoreProofFork} from '../src/proof-fork.js';
+import {forkDigest,forkRecords,forkBranch,mineForkBlock,compareForks,createProofFork,proofForkComplete,restoreProofFork,consensusShares,consensusComparisonCorrect} from '../src/proof-fork.js';
 const subtle=webcrypto.subtle;
 test('hash encoding matches an independent SHA-256 implementation',async()=>{
  const prev='0'.repeat(64),input=JSON.stringify([1,forkRecords.a[0],prev,0]);
@@ -21,3 +21,4 @@ test('completion and saved draft validation',()=>{
  const s=createProofFork();s.observed=['tie','longer','invalid'];s.answer='work';s.checked=true;assert.ok(proofForkComplete(restoreProofFork(s)));
  assert.throws(()=>restoreProofFork({...s,a:[-1]}));assert.throws(()=>restoreProofFork({...s,observed:['tie','tie']}));
 });
+test('resource shares and comparison validation restore previous drafts',()=>{for(const method of ['work','stake']){assert.deepEqual(consensusShares(method,'north'),{north:3,south:1,total:4});assert.deepEqual(consensusShares(method,'south'),{north:1,south:3,total:4});}assert.throws(()=>consensusShares('unknown','north'));const s=createProofFork();delete s.comparison;assert.deepEqual(restoreProofFork(s).comparison,{seen:[],answer:null,checked:false});s.comparison={seen:['work-north','work-south','stake-north','stake-south'],answer:'tradeoff',checked:true};assert.ok(consensusComparisonCorrect(restoreProofFork(s).comparison));assert.equal(consensusComparisonCorrect({...s.comparison,seen:s.comparison.seen.slice(1)}),false);assert.equal(consensusComparisonCorrect({...s.comparison,answer:'free'}),false);assert.throws(()=>restoreProofFork({...s,comparison:{...s.comparison,seen:['work-north','work-north']}}));});

@@ -27,10 +27,14 @@ export async function compareForks(subtle,state){
  let choice;if(!a.valid&&!b.valid)choice='none';else if(!a.valid)choice='b';else if(!b.valid)choice='a';else choice=state.a.length===state.b.length?'tie':state.a.length>state.b.length?'a':'b';
  return {a,b,choice};
 }
-export function createProofFork(){return {a:[],b:[],corrupt:false,observed:[],answer:null,checked:false};}
+export function consensusShares(method,allocation){if(!['work','stake'].includes(method)||!['north','south'].includes(allocation))throw new RangeError('条件が不正です');return allocation==='north'?{north:3,south:1,total:4}:{north:1,south:3,total:4};}
+export function createConsensusComparison(){return {seen:[],answer:null,checked:false};}
+export function consensusComparisonCorrect(c){return c.checked&&c.seen.length===4&&c.answer==='tradeoff';}
+export function createProofFork(){return {a:[],b:[],corrupt:false,observed:[],answer:null,checked:false,comparison:createConsensusComparison()};}
 export function proofForkComplete(s){return ['tie','longer','invalid'].every(x=>s.observed.includes(x))&&s.answer==='work'&&s.checked;}
 export function restoreProofFork(s){
  const validBranch=a=>Array.isArray(a)&&a.length<=3&&a.every(n=>Number.isInteger(n)&&n>=0&&n<2048);
  if(!s||!validBranch(s.a)||!validBranch(s.b)||typeof s.corrupt!=='boolean'||!Array.isArray(s.observed)||new Set(s.observed).size!==s.observed.length||s.observed.some(x=>!['tie','longer','invalid'].includes(x))||![null,'work','count','truth'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('保存データが不正です');
- return {...s,a:[...s.a],b:[...s.b],observed:[...s.observed]};
+ const comparison=createConsensusComparison();if(s.comparison!==undefined){const c=s.comparison;if(!c||!Array.isArray(c.seen)||new Set(c.seen).size!==c.seen.length||c.seen.some(x=>!['work-north','work-south','stake-north','stake-south'].includes(x))||![null,'tradeoff','free','identical'].includes(c.answer)||typeof c.checked!=='boolean')throw new RangeError('保存データが不正です');comparison.seen=c.seen.slice();comparison.answer=c.answer;comparison.checked=c.checked;}
+ return {...s,a:[...s.a],b:[...s.b],observed:[...s.observed],comparison};
 }
