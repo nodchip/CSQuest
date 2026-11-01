@@ -23,13 +23,28 @@ export function serialGoal(mode,history){
   if(mode==='shared')return run.classification==='neither'?'conflict':'ordered';
   return history[0]!==history[1]?'independent':null;
 }
-export function createSerial(){return {mode:'shared',history:[],witnesses:{ordered:null,conflict:null,independent:null},message:'書記を選んで、一つずつ仕事を進めましょう。'};}
+export const lockItems=['X','Y','Z'];
+export function createTwoPhaseLocks(){return {held:[],acquired:[],shrinking:false,denied:false,history:[],message:'まず必要な鍵を取ります。'};}
+export function stepTwoPhaseLocks(s,action){
+  if(typeof action!=='string'||s.history.length>=12)throw new RangeError('操作が不正です。');
+  const [verb,item,...rest]=action.split(':');if(rest.length||!['take','release'].includes(verb)||!lockItems.includes(item))throw new RangeError('操作が不正です。');
+  const n={...s,held:[...s.held],acquired:[...s.acquired],history:[...s.history]};
+  if(verb==='take'&&s.shrinking&&!s.held.includes(item)&&!s.denied){n.denied=true;n.message='一度解放した後は、新しい鍵を取得できません。';}
+  else if(verb==='take'&&!s.shrinking&&!s.held.includes(item)){n.held.push(item);if(!n.acquired.includes(item))n.acquired.push(item);n.message=`${item} の鍵を取得しました。`;}
+  else if(verb==='release'&&s.held.includes(item)){n.held=n.held.filter(x=>x!==item);n.shrinking=true;n.message=`${item} の鍵を解放しました。以後は取得できません。`;}
+  else return {...s,message:'今はその操作を進められません。'};
+  n.history.push(action);return n;
+}
+export function twoPhaseLocksComplete(s){return s.acquired.includes('X')&&s.acquired.includes('Y')&&s.shrinking&&s.denied&&s.held.length===0;}
+export function restoreTwoPhaseLocks(history){if(!Array.isArray(history)||history.length>12)throw new RangeError('履歴が不正です。');let s=createTwoPhaseLocks();for(const action of history){const n=stepTwoPhaseLocks(s,action);if(n.history.length!==s.history.length+1)throw new RangeError('履歴が不正です。');s=n;}return s;}
+export function createSerial(){return {mode:'shared',history:[],witnesses:{ordered:null,conflict:null,independent:null},locks:createTwoPhaseLocks(),message:'書記を選んで、一つずつ仕事を進めましょう。'};}
 export function restoreSerial(saved){
   if(!saved||!Object.hasOwn(serialModes,saved.mode)||!saved.witnesses)throw new RangeError('途中記録が不正です。');
   serialRun(saved.mode,saved.history);const state=createSerial();state.mode=saved.mode;state.history=saved.history.slice();
   for(const key of Object.keys(state.witnesses)){
     const witness=saved.witnesses[key];if(witness!==null){if(!witness||serialGoal(witness.mode,witness.history)!==key)throw new RangeError('途中記録が不正です。');state.witnesses[key]={mode:witness.mode,history:witness.history.slice()};}
   }
+  if(saved.lockHistory!==undefined)state.locks=restoreTwoPhaseLocks(saved.lockHistory);
   return state;
 }
-export function serialComplete(state){return Object.values(state.witnesses).every(Boolean);}
+export function serialComplete(state){return Object.values(state.witnesses).every(Boolean)&&twoPhaseLocksComplete(state.locks);}
