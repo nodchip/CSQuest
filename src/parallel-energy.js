@@ -1,0 +1,8 @@
+export const parallelEnergyCases={short:{name:'準備が短い仕事',serial:2},long:{name:'準備が長い仕事',serial:8}};
+export const parallelEnergyCounts=[1,2,4];
+// A deliberately constant power assumption: all selected workers remain powered throughout the serial phase.
+export function parallelEnergyResult(id,count){if(!Object.hasOwn(parallelEnergyCases,id)||!parallelEnergyCounts.includes(count))throw new RangeError('条件が不正です。');const seconds=parallelEnergyCases[id].serial+8/count,watts=2+count;return {seconds,watts,joules:seconds*watts};}
+export function createParallelEnergy(){return Object.fromEntries(Object.keys(parallelEnergyCases).map(id=>[id,{visited:[],fast:'',power:'',energy:'',checked:false}]));}
+export function parallelEnergyCorrect(id,t){return !!t?.checked&&parallelEnergyCounts.every(n=>t.visited.includes(n))&&t.fast==='4'&&t.power==='1'&&t.energy===(id==='short'?'2,4':'1,2');}
+export function parallelEnergyComplete(s){return Object.keys(parallelEnergyCases).every(id=>parallelEnergyCorrect(id,s[id]));}
+export function restoreParallelEnergy(saved){if(saved===undefined)return createParallelEnergy();if(!saved||typeof saved!=='object')throw new RangeError('途中記録が不正です。');const r=createParallelEnergy();for(const id of Object.keys(r)){const t=saved[id];if(!t||!Array.isArray(t.visited)||new Set(t.visited).size!==t.visited.length||t.visited.some(n=>!parallelEnergyCounts.includes(n))||!['','1','2','4'].includes(t.fast)||!['','1','2','4'].includes(t.power)||!['','1','2','4','1,2','2,4'].includes(t.energy)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');r[id]={visited:[...t.visited],fast:t.fast,power:t.power,energy:t.energy,checked:t.checked};}return r;}
