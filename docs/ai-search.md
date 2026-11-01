@@ -1,5 +1,7 @@
 # AI-Search の対応状況
 
+依頼370の追加試験では、既存の木の各辺の費用を１とし、同じ見積もりを使う A* の待機列を操作する。幅１のビームが B を捨てる一方、A* は B を保持し、S・A・B・C・X・E を展開して G を選び、S→B→E→G に到達する。同点はアルファベット順。ビームは各深さの候補を一括生成し、幅１では３地点、幅２では５地点を展開するが、終了時点が異なるため一般的な性能比較ではない。E の見積もり３は実際の残り１歩を上回り、一般の A* の最適性を保証しない。参考：[Berkeley の A*](https://inst.eecs.berkeley.edu/~cs188/textbook/search/informed.html)、[IJCAI のビーム探索](https://ijcai.org/proceedings/2005/50)。
+
 出典: [CS2023 AI-Search](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 pp. 68–69。原典を要約した作業用一覧。依頼42〜45・49は探索、対戦、制約充足の限定された例であり、実言語での探索実装能力を評価しない。
 
 ## トピック
