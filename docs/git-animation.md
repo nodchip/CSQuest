@@ -42,4 +42,6 @@
 
 依頼730では列ベクトルに固定軸 X、Y、Z の順で回転を適用し、Rz Ry Rx と単位クォータニオンを表示する。pitch 90°で (roll,yaw)＝(０°,０°) と (45°,45°) は同じ姿勢だが、pitch ０°では異なる。８条件でオイラー角行列をクォータニオンから独立に計算した行列と照合。回転順に依存する固定例で、一般の補間や姿勢の学習は未評価。[SciPy のオイラー角](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.as_euler.html)。
 
-依頼731では単位クォータニオンの始点と Y 軸周り120°の終点を、正規化した線形補間と球面線形補間で比較する。25%で球面線形は30°、正規化線形は約27.796°。q と −q は同じ姿勢を表し、内積が負なら短い側を選ぶため終点の符号を反転する。単一軸・固定角度の教材で、180°の同点、数値的に近い端点、一般の実装・実性能は未評価。[SciPy Slerp](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Slerp.html)、[Unity Quaternion.Lerp](https://docs.unity3d.com/kr/current/ScriptReference/Quaternion.Lerp.html)。
+依頼731では単位クォータニオンの始点と Y 軸周り120°の終点を、正規化した線形補間と球面線形補間で比較する。25%で球面線形は30°、正規化線形は約27.796°。q と −q は同じ姿勢を表し、内積が負なら短い側を選ぶため終点の符号を反転する。Y 軸120°に加えて X 軸90°、Z 軸180°、同一姿勢を試せる。180°の２経路は同じ長さで、この教材では終点の最初の非ゼロ成分を正とする規則を採用。任意の姿勢を入力する操作や実性能は未評価。[SciPy Slerp](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Slerp.html)、[Unity Quaternion.Lerp](https://docs.unity3d.com/kr/current/ScriptReference/Quaternion.Lerp.html)。
+
+依頼731の補間関数は任意の単位クォータニオン２つを受け取り、同一・近接姿勢では正規化した線形補間を使う。３軸の選択肢、180°の両符号と同一姿勢、別軸の始点・終点、旧形式の途中記録を検査。画面で扱う入力は固定例で、任意の姿勢を体験できることは意味しない。
