@@ -127,3 +127,7 @@
 .shadow-scene { margin: 1.25rem auto; max-width: 32rem; }
 .shadow-scene svg { display: block; width: 100%; height: auto; }
 .shadow-scene figcaption { margin-top: .5rem; line-height: 1.6; }
+
+.frame-scene { margin: 1rem auto; max-width: 20rem; }
+.frame-scene svg { display: block; width: 100%; height: auto; }
+.frame-scene figcaption { margin-top: .5rem; line-height: 1.6; }
