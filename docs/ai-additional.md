@@ -44,6 +44,8 @@
 
 ## AI-Agents：エージェントと認知システム（p.79）
 
+項目別の再照合は [coverage-ai-agents.md](coverage-ai-agents.md) を参照。
+
 全項目 Non-core。
 
 | トピック | 内容と現状 |
@@ -64,6 +66,8 @@
 | 5 | 確立した認知構造を使う主体の構築。未対応 |
 
 ## AI-NLP：自然言語処理（pp.79–80）
+
+項目別の再照合は [coverage-ai-nlp.md](coverage-ai-nlp.md) を参照。
 
 全項目 Non-core。
 
