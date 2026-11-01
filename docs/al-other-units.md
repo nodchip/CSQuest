@@ -151,7 +151,7 @@
 
 依頼334では４・８個について、全要素の走査、２列の全組合せ、１個になるまで半分にする回数を比較する。これらの規則は線形・二次・対数の固定例であり、２点だけで一般の漸近的な性質を証明するものではない。参考：[NIST: big-O notation](https://xlinux.nist.gov/dads/HTML/bigOnotation.html)。
 
-依頼692は S・A・B・T と容量１の５辺を使う。S → A → B → T で１箱を割り当てた後、残余の S → B → A → T を使うと A → B の割当が取り消され、合計は２箱になる。S の出口の容量合計２が上界なので最大。逆向きの残余辺は既存の割当の取消しであり、物理的な逆送を意味しない。任意の容量・水路網やアルゴリズムの一般的証明は扱わない。[MIT: Network flows](https://ocw.mit.edu/courses/18-200-principles-of-discrete-applied-mathematics-spring-2024/mit18_200_s24_lec11-12.pdf)。
+依頼692は S・A・B・T と容量１の５辺を使い、プレイヤーが残余容量を確かめながら中継所を一つずつ選ぶ。S → A → B → T で１箱を割り当てた後、残余の S → B → A → T を使うと A → B の割当が取り消され、合計は２箱になる。S の出口の容量合計２が上界なので最大。逆向きの残余辺は既存の割当の取消しであり、物理的な逆送を意味しない。任意の容量・水路網やアルゴリズムの一般的証明は扱わない。[MIT: Network flows](https://ocw.mit.edu/courses/18-200-principles-of-discrete-applied-mathematics-spring-2024/mit18_200_s24_lec11-12.pdf)。
 
 同じ依頼で、直接参照、全部分集合、全順列の作業回数を石３・４個で比較する。直接参照は各番号に１回でアクセスできる仮定、部分集合は空集合を含み８・16、順列は６・24。一般の規則をそれぞれ１・2ⁿ・n! と説明するが、実際の実行時間や任意のアルゴリズムの計算量は評価しない。参考：[NIST: factorial](https://xlinux.nist.gov/dads/HTML/factorial.html)。
 
