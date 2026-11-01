@@ -7,8 +7,8 @@
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
 | 1a | KA Core | 連結成分 | 部分 | 144で４・８近傍を比較。一般の画像は未評価。 |
-| 1b | KA Core | 膨張 | 部分 | 139・140で十字近傍の固定例。一般の構造要素は未評価。 |
-| 1c | KA Core | 収縮 | 部分 | 139・140で十字近傍の固定例。一般の構造要素は未評価。 |
+| 1b | KA Core | 膨張 | 部分 | 139・140・728で十字近傍の固定例。一般の構造要素は未評価。 |
+| 1c | KA Core | 収縮 | 部分 | 139・140・728で十字近傍の固定例。一般の構造要素は未評価。 |
 | 1d | KA Core | 面積・周長・重心など | 部分 | 232で画素数と外接矩形を比較。周長・重心や一般の領域は未評価。 |
 | 2a | KA Core | 色ヒストグラムの表現 | 部分 | 724で灰色値ごとの画素数を表示。カラーの複数チャンネルや一般の区間は未評価。 |
 | 2b | KA Core | 正規化によるコントラスト強調 | 部分 | 724で最小・最大を使う線形な伸張とノイズ・一色の例。カラー、外れ値、実画像は未評価。 |
@@ -36,4 +36,6 @@
 | 4 | KA Core | インペインティングで欠損画像を復元するプログラム | 部分 | 727で欠損範囲の指定と反復補完を操作。一般のアルゴリズム、実画像とプログラムを書く能力は未評価。 |
 | 5 | KA Core | 周波数領域の選択的フィルタの結果を評価 | 未照合 | 画像の周波数領域の比較は未確認。 |
 
-関連検査は `tests/morphology.test.js`、`tests/components.test.js`、`tests/shape-features.test.js`、`tests/image-contrast.test.js`、`tests/image-kernel.test.js`、`tests/image-hue.test.js`、`tests/image-inpaint.test.js`、`tests/highpass.test.js`、`tests/convolution.test.js` 等。検査は各教材が定めた模型に限る。
+関連検査は `tests/morphology.test.js`、`tests/components.test.js`、`tests/shape-features.test.js`、`tests/image-contrast.test.js`、`tests/image-kernel.test.js`、`tests/image-hue.test.js`、`tests/image-inpaint.test.js`、`tests/emblem-rescue.test.js`、`tests/highpass.test.js`、`tests/convolution.test.js` 等。検査は各教材が定めた模型に限る。
+
+学びの道「遺跡の絵巻を読み解く」は、画素と色から分割、形態操作、フィルタ、補完へ16依頼を案内する。最後の728はしきい値による分割後に収縮と膨張を組み合わせる固定例。道の達成は画像処理全体の網羅を意味しない。
