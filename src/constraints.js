@@ -9,7 +9,12 @@ export function available(assigned,tower){
   return domain.filter(color=>!connections.some(([a,b])=>{const neighbor=a===tower?b:b===tower?a:null;return neighbor!==null&&assigned[towers.indexOf(neighbor)]===color;}));
 }
 export function deadEnd(assigned){return towers.slice(assigned.length).some(tower=>available(assigned,tower).length===0);}
-export function createConstraints(){return {assigned:[],witness:null,backtracked:false,message:'塔Ａから順に色を選びましょう。'};}
+export const constraintArcs=connections.flatMap(([a,b])=>[`${a}${b}`,`${b}${a}`]);
+export function initialArcDomains(){return Object.fromEntries(towers.map(t=>[t,t==='D'?['red']:Object.keys(colors)]));}
+export function reviseDomains(domains,arc){if(!constraintArcs.includes(arc))throw new RangeError('道が不正です。');const [from,to]=arc,next=Object.fromEntries(towers.map(t=>[t,[...domains[t]]]));next[from]=next[from].filter(color=>next[to].some(other=>other!==color));return next;}
+export function arcSaturated(domains){return constraintArcs.every(arc=>{const next=reviseDomains(domains,arc);return next[arc[0]].length===domains[arc[0]].length;});}
+export function reviseArc(state,arc){if(!constraintArcs.includes(arc)||state.arcHistory.length>=50)throw new RangeError('道を確認できません。');const before=state.arcDomains[arc[0]],domains=reviseDomains(state.arcDomains,arc),removed=before.filter(c=>!domains[arc[0]].includes(c));return {...state,arcDomains:domains,arcHistory:[...state.arcHistory,arc],arcChecked:false,arcMessage:removed.length?`${arc[0]}から${removed.map(c=>colors[c]).join('・')}を除きました。`:'この道では候補は減りません。'};}
+export function createConstraints(){return {assigned:[],witness:null,backtracked:false,message:'塔Ａから順に色を選びましょう。',arcDomains:initialArcDomains(),arcHistory:[],arcAnswer:null,arcChecked:false,arcMessage:'道を選んで候補を確認しましょう。'};}
 export function assignColor(state,color){
   if(!Object.hasOwn(colors,color)||state.assigned.length>=towers.length||deadEnd(state.assigned))throw new RangeError('色を選べません。');
   const tower=towers[state.assigned.length];
@@ -31,6 +36,7 @@ export function restoreConstraints(saved){
   if(saved.witness!==null){const witness=replay(saved.witness);if(!deadEnd(witness.assigned))throw new RangeError('途中記録が不正です。');current.witness=witness.assigned.slice();}
   if(saved.backtracked&&current.witness===null)throw new RangeError('途中記録が不正です。');
   if(deadEnd(current.assigned)&&current.witness===null)throw new RangeError('途中記録が不正です。');
-  current.backtracked=saved.backtracked;return current;
+  current.backtracked=saved.backtracked;
+  const history=saved.arcHistory??[],answer=saved.arcAnswer??null,checked=saved.arcChecked??false;if(!Array.isArray(history)||history.length>50||![null,'local','global'].includes(answer)||typeof checked!=='boolean')throw new RangeError('途中記録が不正です。');let state=current;for(const arc of history)state=reviseArc(state,arc);state.arcAnswer=answer;state.arcChecked=checked;return state;
 }
-export function constraintsComplete(state){return state.assigned.length===towers.length&&!deadEnd(state.assigned)&&state.backtracked;}
+export function constraintsComplete(state){return state.assigned.length===towers.length&&!deadEnd(state.assigned)&&state.backtracked&&arcSaturated(state.arcDomains)&&state.arcAnswer==='local'&&state.arcChecked;}
