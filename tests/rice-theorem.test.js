@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {riceProperties,createRice,ricePropertyCorrect,riceComplete,restoreRice} from '../src/rice-theorem.js';
+
+test('semantic nontrivial, syntactic and trivial cases remain distinct',()=>{const s=createRice();for(const [id,c] of Object.entries(riceProperties)){s.choices[id]=c.category;assert.equal(ricePropertyCorrect(s,id),false);s.checked.push(id);assert.equal(ricePropertyCorrect(s,id),true);}s.halt='yes';s.loop='no';s.direction='halting';s.proofChecked=true;assert.equal(riceComplete(s),true);const restored=restoreRice(s);restored.checked.pop();assert.equal(riceComplete(restored),false);assert.equal(riceComplete(s),true);});
+test('wrong implications and malformed saved states cannot complete the quest',()=>{const s=createRice();s.choices=Object.fromEntries(Object.entries(riceProperties).map(([id,p])=>[id,p.category]));s.checked=Object.keys(riceProperties);s.halt='yes';s.loop='yes';s.direction='halting';s.proofChecked=true;assert.equal(riceComplete(s),false);assert.throws(()=>restoreRice({...s,checked:['zero','zero']}));assert.throws(()=>restoreRice({...s,choices:{...s.choices,states:'rice-invalid'}}));assert.throws(()=>restoreRice({...s,halt:'maybe'}));});

@@ -114,7 +114,7 @@
 | 13 | KA Core | 算術化・対角化で停止問題の決定不能性を証明。依頼416で自己入力による対角化の両場合を操作。算術化や自由な証明は未対応 |
 | 14 | KA Core | 既知の決定不能言語から他言語への帰着を行う。依頼648で停止問題から空言語判定への固定構成を操作。一般の帰着の構成は未対応 |
 | 15 | KA Core | DFA・NFA・正規表現や PDA・CFG の相互変換。依頼561は空文字遷移のない NFA から DFA を作り、565で空文字遷移の閉包を求める固定例。一般の変換と他の方向は未対応 |
-| 16 | KA Core | Rice の定理と意義を説明。未着手 |
+| 16 | KA Core | Rice の定理と意義を説明。依頼695で言語・記述上・自明な性質を区別し、０の受理への帰着を操作。一般の証明や自由な説明は未評価 |
 | 17 | KA Core | 既知の問題からの帰着による計算不能性の証明例を説明。依頼648で仮定の空判定器から停止判定器を得る矛盾を扱う。一般の証明は未対応 |
 | 18 | KA Core | 原始・一般再帰関数とその意義・機械による実現を説明。依頼646で後者関数の固定例。一般の関数体系と μ 演算は未評価 |
 | 19 | KA Core | ラムダ計算の計算と変換を説明。依頼283で α 変換と β 簡約の固定例。任意の式は未評価 |
@@ -208,3 +208,5 @@
 依頼647は a・b の全列、a 終わり、b 終わりを和・連結・星の札から構築する。全18組合せを長さ７以下の列と JavaScript の正規表現で照合し、この限定文法の正解を検査。別に JavaScript の後方参照で ww の例を比較し、任意に多い aⁱb 接頭辞が区別可能なため ww が正規でない理由を示す。JavaScript の例は a・b の列全体に限定し、各処理系の構文や一般の式の構築は扱わない。[MDN: Backreference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Backreference)、[Cornell: Myhill–Nerode theorem](https://www.cs.cornell.edu/courses/cs6861/2024sp/Handouts/ACLec13-16.pdf)。
 
 依頼648は M と入力 w から、任意の入力を無視し M(w) を模倣して停止後に受理する機械 Q の記述を作る帰着を扱う。M(w) が停止すれば Q の受理言語は全入力、停止しなければ空。仮定の空判定器で停止問題を決定できるという矛盾を示す。２手で打ち切る誤った構成と５手後に停止する例を比較し、３つの固定機械・２入力を検査。一般の判定器や証明の自由構築は実装しない。[Columbia: Undecidability Review](https://www.cs.columbia.edu/~tal/3261/fall22/handouts/11_final_review.pdf)。
+
+依頼695は非自明な言語の性質、状態数という記述上の性質、自明な性質を４例で区別する。Q は任意の入力に対し M(w) を模倣し、停止すれば入力０だけを受理する。Q が０を受理することと M(w) の停止は同値である。仮の０受理判定器から停止判定器が得られる矛盾を操作するが、Rice の定理全体の証明の自由構築は扱わない。[Cornell: Limits of Computability](https://www.cs.cornell.edu/courses/cs4820/2019sp/handouts/computability.pdf)。
