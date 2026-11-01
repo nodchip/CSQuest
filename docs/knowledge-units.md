@@ -37,7 +37,7 @@
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |
 | DM | DM-Core | Core Database System Concepts | 115 | 依頼123で列の変更とビューの固定例。問い合わせ・トランザクション等は別の固定例のみ。[詳細](dm-core.md) |
 | DM | DM-Modeling | Data Modeling | 116 | 依頼101・102で多対多、１対多、１対１の高々の制約とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
-| DM | DM-Relational | Relational Databases | 117 | 一部試作：依頼67で更新異常と分解後の結合、464で外部キーの削除動作を比較 |
+| DM | DM-Relational | Relational Databases | 117 | 一部試作：依頼67で更新異常と分解後の結合、464で外部キーの削除動作、466で属性閉包と候補キーを比較 |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択、内部・左外部結合、集合演算、全称条件、依頼462の相関する存在判定と463の結果の反復、465の NULL と制約の固定例 |
 | DM | DM-Processing | Query Processing | 118 | 依頼89で複合索引の列順と候補範囲の固定例。他は未対応。[詳細](dm-processing.md) |
 | DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38・39で原子性・永続性・分離と競合直列化の固定例 |

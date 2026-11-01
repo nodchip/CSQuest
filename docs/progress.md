@@ -1,6 +1,8 @@
 # CS Quest 開発記録
 
 
+- 2026-11-01: 依頼466で３属性の関数従属性を適用し、閉包・スーパーキー・候補キーを比較。[Cornell の属性閉包](https://www.cs.cornell.edu/courses/cs330/2004sp/slides/CIS330-lecture11-03-02-2004-Normalization.pdf)を参照。全初期集合を２行の反例探索と照合し `npm test` 1074件成功。配信用ビルドのブラウザで前提不足、途中再開、４門の達成と320・390・1280px幅を確認。一般の正準被覆と分解の証明は未対応。前回の Pages デプロイは成功。
+
 - 2026-11-01: 依頼465に真・偽・不明の AND・OR・NOT と WHERE・CHECK の扱いを比較する実験を追加。[PostgreSQL の論理演算](https://www.postgresql.org/docs/current/functions-logical.html)を参照。27設定と旧保存の復元を検査し `npm test` 1072件成功。配信用ビルドのブラウザで不明・偽の結果、途中再開、元の依頼の達成と320・390・1280px幅を確認。全 SQL 演算や実データベースは未対応。前回の Pages デプロイは成功。
 
 - 2026-11-01: 依頼465で正の数の CHECK と NOT NULL を比較し、NULL の比較が不明となる場合を操作。[PostgreSQL の制約](https://www.postgresql.org/docs/current/ddl-constraints.html)を参照。２方式・３入力と更新拒否・復元を検査し `npm test` 1070件成功。配信用ビルドのブラウザで入力不足、途中再開、拒否時の値保持、両方式の達成と320・390・1280px幅を確認。実 SQL や NULL の全挙動は未対応。前回の Pages デプロイは成功。
