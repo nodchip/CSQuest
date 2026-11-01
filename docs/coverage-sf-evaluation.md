@@ -15,7 +15,7 @@
 | 7 | CS Core | ストールやミスの性能への影響 | 部分 | 依頼573の競合と取寄せ待ち。実機のストールや並列性は未評価。 |
 | 7 | KA Core | 定量評価を導く分析ツール | 未照合 | 実ツールを使った分析と検証は未確認。 |
 | 8 | KA Core | 階層・負荷・プラットフォームと評価の難しさ | 部分 | 依頼572で２種類の仕事の組成と機械を比較。実際の階層や評価設計は未評価。 |
-| 9 | KA Core | マイクロベンチマークの落とし穴 | 未照合 | その落とし穴を直接扱う教材と検証は未確認。 |
+| 9 | KA Core | マイクロベンチマークの落とし穴 | 部分 | 依頼572で未使用の計算が省かれ、短く見える固定模型を比較。実際の処理系・他の最適化や測定手法は未評価。 |
 
 ## 例示学習成果
 
@@ -30,4 +30,4 @@
 | 7 | KA Core | 代表的なシステムの性能実験を設計・実施 | 未照合 | 実システムの実験は未確認。 |
 | 8 | KA Core | 階層化システムのパラメータと性能の実験を設計 | 部分 | 依頼573は固定キャッシュ模型の配置と時間を比較。一般の実験設計や実測は未評価。 |
 
-依頼254・572・573の計算、前提と根拠は [既存の記録](sf-evaluation.md) に記載。関連検証は `tests/latency-throughput.test.js`、`tests/workload-cpi.test.js`、`tests/cache-conflict.test.js`、`tests/search-growth.test.js` を参照。ゲーム内操作は実機測定や自由記述を直接評価しない。
+依頼254・572・573の計算、前提と根拠は [既存の記録](sf-evaluation.md) に記載。関連検証は `tests/latency-throughput.test.js`、`tests/workload-cpi.test.js`、`tests/benchmark-elision.test.js`、`tests/cache-conflict.test.js`、`tests/search-growth.test.js` を参照。ゲーム内操作は実機測定や自由記述を直接評価しない。
