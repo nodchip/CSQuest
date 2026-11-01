@@ -25,9 +25,11 @@
 | 2 | KA Core | ファイル抽象と装置・インターフェースを対応づける | 部分 | 291で棚の接続と名前解決。実装置・インターフェースの対応は未評価。 |
 | 3 | KA Core | マウントの種類を識別・分類 | 部分 | 291で単一の接続例。他の種類と分類は未評価。 |
 | 4 | KA Core | 要件とそれを満たすファイルシステム機能を説明 | 部分 | 290で状態保持、736で管理情報の途中状態と復旧を比較。他の要件と自由な説明は未評価。 |
-| 5 | KA Core | ジャーナリングとログ構造の耐障害性を説明 | 部分 | 736で確定済み記録からの再適用、737でログ構造の有効記録の移動を操作。ログ構造の障害復旧と一般的な説明は未評価。 |
+| 5 | KA Core | ジャーナリングとログ構造の耐障害性を説明 | 部分 | 736で確定済み記録の再適用、737で有効記録の移動、738で保存順序と復旧点を操作。後続ログの再適用、複数の復旧点や一般的な説明は未評価。 |
 | 6 | Non-core | 分散ファイルシステムの目的と複雑さ | 未照合 | 対応教材は未確認。 |
 | 7 | Non-core | 分散ファイルシステムのプロトコル例 | 未照合 | 対応教材は未確認。 |
 | 8 | Non-core | ファイルシステムの耐障害性を高める仕組み | 部分 | 290の写しと736の記録再適用の模型。独立障害、装置故障や実機の保証は未評価。 |
 
-関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`。各模型の範囲に限る。
+依頼738は [Sprite LFS の論文](https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf) のチェックポイントによる復旧を参考に、本文・対応表・復旧点を順に永続化する簡略模型。各書込みの完了と復旧点の原子的な切替を仮定し、復旧点以降のログ走査や実ファイルシステム全般は扱わない。
+
+関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`、`tests/log-checkpoint.test.js`。各模型の範囲に限る。
