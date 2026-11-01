@@ -1,0 +1,6 @@
+export const mvcActions={controller:'入力係が増やす依頼を受け取る',model:'記録係が灯りの数を１増やす',view:'表示係が２つの札を更新する'};
+const sequence=['controller','model','view','controller','model','view'];
+export function createMvcLantern(){return {history:[],value:0,numberView:0,markView:0,message:'入力係から操作を始めましょう。'};}
+export function stepMvcLantern(s,action){if(!Object.hasOwn(mvcActions,action))throw new RangeError('操作が不正です。');if(sequence[s.history.length]!==action)return {...s,message:s.history.length===sequence.length?'２回の更新は終わりました。':'入力・記録・表示の役割と、今の順番を確かめましょう。'};const n={...s,history:[...s.history,action]};if(action==='controller')n.message='入力係が依頼を受け、記録係へ渡します。';if(action==='model'){n.value++;n.message='記録係が数を変えました。表示はまだ古いままです。';}if(action==='view'){n.numberView=n.value;n.markView=n.value;n.message='表示係が同じ記録から２つの札を更新しました。';}return n;}
+export function mvcLanternComplete(s){return s.history.length===sequence.length&&s.value===2&&s.numberView===2&&s.markView===2;}
+export function restoreMvcLantern(saved){if(saved===undefined)return createMvcLantern();if(!saved||!Array.isArray(saved.history)||saved.history.length>sequence.length)throw new RangeError('途中記録が不正です。');let s=createMvcLantern();for(const action of saved.history){const n=stepMvcLantern(s,action);if(n.history.length!==s.history.length+1)throw new RangeError('途中記録が不正です。');s=n;}return s;}

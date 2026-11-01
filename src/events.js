@@ -1,3 +1,4 @@
+import {createMvcLantern,restoreMvcLantern,mvcLanternComplete} from './mvc-lantern.js';
 export const eventsLevel={id:'event-lantern',number:'92',kind:'events',name:'印を聞く灯り',tag:'イベントと処理の登録',title:'灯りに反応を教えよう',story:'精霊の灯りに太陽と月の印が届きます。印ごとの処理を登録し、出来事を受け取って順に動かしましょう。'};
 export const eventCases={resetLast:{name:'最後に月',events:['sun','sun','moon'],target:0},increaseLast:{name:'最後に太陽',events:['moon','sun','sun'],target:2}};
 export const eventSymbols={sun:'太陽',moon:'月'};
@@ -18,9 +19,9 @@ export function eventStep(state,action){
 }
 export function eventTrialDone(state){return state.sent===eventCases[state.id].events.length&&state.queue.length===0;}
 export function eventTrialCorrect(state){return eventTrialDone(state)&&state.handlers.sun==='increment'&&state.handlers.moon==='reset'&&state.value===eventCases[state.id].target;}
-export function createEventSet(){return {selected:'resetLast',states:Object.fromEntries(Object.keys(eventCases).map(id=>[id,createEventTrial(id)]))};}
+export function createEventSet(){return {mvc:createMvcLantern(),selected:'resetLast',states:Object.fromEntries(Object.keys(eventCases).map(id=>[id,createEventTrial(id)]))};}
 export function restoreEvents(saved){
-  if(!saved||!Object.hasOwn(eventCases,saved.selected)||!saved.states)throw new RangeError('途中記録が不正です。');const result=createEventSet();result.selected=saved.selected;
+  if(!saved||!Object.hasOwn(eventCases,saved.selected)||!saved.states)throw new RangeError('途中記録が不正です。');const result=createEventSet();result.mvc=restoreMvcLantern(saved.mvc);result.selected=saved.selected;
   for(const id of Object.keys(eventCases)){const item=saved.states[id];if(!item||!Array.isArray(item.history)||item.history.length>eventCases[id].events.length*2)throw new RangeError('途中記録が不正です。');let state=createEventTrial(id,item.handlers);for(const action of item.history){const next=eventStep(state,action);if(next.history.length!==state.history.length+1)throw new RangeError('途中記録が不正です。');state=next;}result.states[id]=state;}return result;
 }
-export function eventsComplete(set){return Object.values(set.states).every(eventTrialCorrect);}
+export function eventsComplete(set){return Object.values(set.states).every(eventTrialCorrect)&&mvcLanternComplete(set.mvc);}
