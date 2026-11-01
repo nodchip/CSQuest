@@ -1,0 +1,11 @@
+export const styleScrollLevel={id:'archive-style-scroll',number:'555',kind:'style-scroll',name:'伝わる指示書を整える',tag:'名前・字下げ・コメント',title:'次の人が読める指示書にしよう',story:'書庫の精霊は石の重さを集計する指示書を引き継ぎます。名前や説明と、実際の動きを確かめましょう。'};
+export const styleNames={sum:'石の重さ合計',count:'石の個数',vague:'しらべる'};
+export const styleComments={sum:'石の重さをすべて足し、空なら０を返す',count:'石の個数を返す',max:'最も重い石の重さを返し、空なら０を返す'};
+export const stylePlacements={after:'繰り返しの後に返す',early:'繰り返しの中で返す'};
+export const styleCases={pair:{name:'重さ２と３の石',weights:[2,3]},empty:{name:'石がない',weights:[]},single:{name:'重さ４の石',weights:[4]}};
+export function styleActual(placement,weights){if(!Object.hasOwn(stylePlacements,placement)||!Array.isArray(weights)||weights.some(x=>!Number.isFinite(x)||x<0))throw new RangeError('条件が不正です。');if(placement==='early')return weights.length?weights[0]:null;return weights.reduce((a,b)=>a+b,0);}
+export function styleClaim(choice,weights){if(choice==='sum')return weights.reduce((a,b)=>a+b,0);if(choice==='count')return weights.length;if(choice==='max')return weights.length?Math.max(...weights):0;if(choice==='vague')return null;throw new RangeError('説明が不正です。');}
+export function styleCaseResult(s,id){if(!Object.hasOwn(styleCases,id)||!Object.hasOwn(styleNames,s.name)||!Object.hasOwn(styleComments,s.comment))throw new RangeError('条件が不正です。');const weights=styleCases[id].weights,actual=styleActual(s.placement,weights),name=styleClaim(s.name,weights),comment=styleClaim(s.comment,weights);return {actual,name,comment,nameMatch:name===null?null:actual===name,commentMatch:actual===comment};}
+export function createStyleScroll(){return {name:'vague',comment:'count',placement:'early',tested:0,reflection:null,checked:false};}
+export function styleScrollComplete(s){return s.tested===7&&s.name==='sum'&&s.comment==='sum'&&s.placement==='after'&&s.reflection==='meaning'&&s.checked;}
+export function restoreStyleScroll(s){if(!s||!Object.hasOwn(styleNames,s.name)||!Object.hasOwn(styleComments,s.comment)||!Object.hasOwn(stylePlacements,s.placement)||!Number.isInteger(s.tested)||s.tested<0||s.tested>=8||![null,'meaning','comments','names'].includes(s.reflection)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');return {...s};}
