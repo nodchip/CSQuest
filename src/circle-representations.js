@@ -1,0 +1,8 @@
+export const circleRepLevel={id:'ruin-circle-representations',number:'722',kind:'circle-representations',name:'円を二つの方法で',tag:'陰的・媒介変数表示',title:'円形の封印を調べる',story:'封印の円には、点を選ぶ規則と、角度から点を作る規則があります。同じ円を二つの見方で調べましょう。'};
+export const circleRepPoints=Array.from({length:25},(_,i)=>({x:i%5-2,y:2-Math.floor(i/5)}));
+export const circleRepCases={implicit:{name:'点を検査',kind:'implicit'},a0:{name:'０°',index:14},a90:{name:'90°',index:2},a180:{name:'180°',index:10},a270:{name:'270°',index:22}};
+export function circleRepExpected(id){if(!Object.hasOwn(circleRepCases,id))throw new RangeError('未知の規則です。');return id==='implicit'?circleRepPoints.flatMap((p,i)=>p.x*p.x+p.y*p.y===4?[i]:[]):[circleRepCases[id].index];}
+export function circleRepCreate(){return {selected:'implicit',trials:Object.fromEntries(Object.keys(circleRepCases).map(id=>[id,{points:[],checked:false}]))};}
+export function circleRepCorrect(t,id){const expected=circleRepExpected(id);return t.checked&&t.points.length===expected.length&&expected.every(i=>t.points.includes(i));}
+export function circleRepComplete(s){return Object.keys(circleRepCases).every(id=>circleRepCorrect(s.trials[id],id));}
+export function circleRepRestore(s){if(!s||!Object.hasOwn(circleRepCases,s.selected)||!s.trials)throw new RangeError('途中記録が不正です。');const out=circleRepCreate();out.selected=s.selected;for(const id of Object.keys(circleRepCases)){const t=s.trials[id];if(!t||!Array.isArray(t.points)||new Set(t.points).size!==t.points.length||t.points.some(i=>!Number.isInteger(i)||i<0||i>=25)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');out.trials[id]={points:[...t.points],checked:t.checked};}return out;}
