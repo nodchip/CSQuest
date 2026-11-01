@@ -1,0 +1,6 @@
+export const eulerGrowthLevel={id:'ruin-euler-growth',number:'475',kind:'euler-growth',name:'育つ灯火を予測する',tag:'常微分方程式とオイラー法',title:'短い一歩で灯火を追おう',story:'遺跡の灯火は、明るいほど速く育ちます。今の増え方を手がかりに、一秒後の明るさを予測しましょう。'};
+export function eulerGrowth(n,steps){if(![1,2,4].includes(n)||!Number.isInteger(steps)||steps<0||steps>n)throw new RangeError('刻み幅または歩数が不正です。');let value=1;const history=[value];for(let i=0;i<steps;i++){value+=value/n;history.push(value);}return {time:steps/n,value,history,stepSize:1/n};}
+export function createEulerGrowth(){return {n:1,steps:{1:0,2:0,4:0},answer:null,checked:false};}
+export function advanceEuler(s){eulerGrowth(s.n,s.steps[s.n]);if(s.steps[s.n]>=s.n)throw new RangeError('この刻み幅では１秒後まで進みました。');return {...s,steps:{...s.steps,[s.n]:s.steps[s.n]+1},checked:false};}
+export function eulerGrowthComplete(s){return [1,2,4].every(n=>s.steps[n]===n)&&s.answer==='small'&&s.checked;}
+export function restoreEulerGrowth(s){if(!s||![1,2,4].includes(s.n)||!s.steps||![null,'small','same','exact'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createEulerGrowth();n.n=s.n;n.answer=s.answer;n.checked=s.checked;for(const k of [1,2,4]){eulerGrowth(k,s.steps[k]);n.steps[k]=s.steps[k];}return n;}
