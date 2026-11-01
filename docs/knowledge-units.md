@@ -125,7 +125,7 @@
 | SDF | SDF-Practices | Software Development Practices | 232 | 依頼23・198で試験選択と状態追跡、555で名前・注釈・字下げを振る舞いと照合。実際の開発環境やプログラムの記述は未対応。[詳細](sdf-practices.md) |
 | SDF | SDF-SEP | Society, Ethics, and the Profession | 233 | 依頼269・270・360で利用条件・出典・不具合対応の固定例。他は未対応。[詳細](sdf-society.md) |
 | SE | SE-Teamwork | Teamwork | 240 | 依頼59で関係者の希望、650で事情の聞取り・対立する制約・役割分担の固定例。実際の協働は未対応。[詳細](se-teamwork.md) |
-| SE | SE-Tools | Tools and Environments | 241 | 依頼59で３版の変更、655で集中・分散型と公開版、656で検査対象の版と依存物の固定例を比較。実ツールや一般のリリースは未対応。[詳細](se-tools.md) |
+| SE | SE-Tools | Tools and Environments | 241 | 依頼59で３版の変更、655で集中・分散型と公開版、656で検査対象の版と依存物、657で静的規則と実行試験の固定例を比較。実ツールや一般のリリースは未対応。[詳細](se-tools.md) |
 | SE | SE-Requirements | Product Requirements | 242 | 依頼87で架空の聞き取り、機能・品質・曖昧さと振る舞いの分類。他は未対応。[詳細](se-requirements.md) |
 | SE | SE-Design | Software Design | 243 | 依頼223〜228で在庫操作の契約、部品の依存、伝言の順序、操作の組合せと記録方式の固定例。設計全般は未対応。[詳細](se-design.md) |
 | SE | SE-Construction | Software Construction | 245 | 依頼245〜250で試験先行、代役、診断記録、統合と例外後の後片付けの固定例。他は未対応。[詳細](se-construction.md) |
