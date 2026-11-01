@@ -12,7 +12,7 @@
 | 2c | KA Core | モーションキャプチャ | 部分 | 635で欠測を含む架空の記録を操作。実収録や制作は未評価。 |
 | 2d | KA Core | モーショングラフィックス | 未照合 | 原典で 2b と同じ記載。別番号のまま保持。 |
 | 2e | KA Core | ストップモーション | 未照合 | 比較・制作の教材は未確認。 |
-| 3a | KA Core | キーフレームの線形・球面線形・スプライン補間 | 部分 | 182・633・634で線形、平面角、Catmull–Rom、731で３軸の固定例と同一姿勢・180°を球面線形補間。任意の３次元回転の学習操作と補間実装は未評価。 |
+| 3a | KA Core | キーフレームの線形・球面線形・スプライン補間 | 部分 | 182・633・634で線形、平面角、Catmull–Rom、731で３軸の固定例、回転済みの始点と異なる軸の終点、同一姿勢・180°を球面線形補間。任意の３次元回転の学習操作と補間実装は未評価。 |
 | 4 | KA Core | 順運動学・逆運動学 | 部分 | 183・184で平面２関節の位置と姿勢を操作。一般の３次元や逆運動学の解法は未評価。 |
 | 5a | KA Core | スキニングの捕捉 | 未照合 | 対応する手順は未確認。 |
 | 5b | KA Core | 線形ブレンドと双対クォータニオン | 部分 | 185で平面２変換の線形ブレンド。双対クォータニオンと一般のメッシュは未評価。 |
@@ -38,3 +38,5 @@
 | 6 | KA Core | 既存ソフトで形状・リグ・アニメーションを制作 | 未照合 | 実際のソフトでの制作は未評価。 |
 
 関連検査は `tests/keyframe-motion.test.js`、`tests/forward-kinematics.test.js`、`tests/inverse-kinematics.test.js`、`tests/linear-skinning.test.js`、`tests/rotation-interpolation.test.js`、`tests/spline-motion.test.js`、`tests/motion-capture-gap.test.js`、`tests/motion-blend.test.js`、`tests/gimbal-lock.test.js`、`tests/spherical-rotation.test.js`。各検査は限定された模型に限る。
+
+学びの道「精霊の動きを紡ぐ」は、補間・回転から関節、スキニング、動作記録・合成まで10依頼を案内する。道の達成はアニメーション全体の網羅を意味しない。

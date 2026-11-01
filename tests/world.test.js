@@ -103,3 +103,7 @@ test('image trail connects representation, segmentation, filtering, restoration 
  for(const [a,b] of [['ruin-vector-raster','ruin-image-hue'],['ruin-image-contrast','ruin-threshold-segmentation'],['ruin-threshold-segmentation','ruin-morphology'],['ruin-morphology','ruin-morphology-sequence'],['ruin-highpass','ruin-image-kernel'],['ruin-image-kernel','ruin-image-inpaint'],['ruin-image-inpaint','ruin-emblem-rescue']])assert.ok(ids.indexOf(a)>=0&&ids.indexOf(a)<ids.indexOf(b));
  assert.equal(nextTrailQuest(trail,all,ids.slice(0,-1)).level.id,'ruin-emblem-rescue');assert.equal(nextTrailQuest(trail,all,ids),null);
 });
+
+test('animation trail orders interpolation, kinematics, skinning and motion capture',()=>{
+ const ids=findTrail('animation-journey').quests;for(const [a,b] of [['ruin-keyframe-motion','ruin-spline-motion'],['ruin-rotation-interpolation','ruin-gimbal-lock'],['ruin-gimbal-lock','ruin-spherical-rotation'],['ruin-forward-kinematics','ruin-inverse-kinematics'],['ruin-inverse-kinematics','ruin-linear-skinning'],['ruin-motion-capture-gap','ruin-motion-blend']])assert.ok(ids.indexOf(a)>=0&&ids.indexOf(a)<ids.indexOf(b));assert.equal(nextTrailQuest(findTrail('animation-journey'),all,ids.slice(0,-1)).level.id,'ruin-motion-blend');
+});

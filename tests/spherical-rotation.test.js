@@ -15,3 +15,8 @@ test('generic interpolation handles arbitrary starting rotations and old drafts'
 test('near-coincident quaternions avoid division instability',()=>{
  const angle=1e-8,a=[1,0,0,0],b=[Math.cos(angle/2),0,Math.sin(angle/2),0];for(const t of [0,.25,.5,.75,1]){const v=interpolateQuaternion(a,b,t,'slerp').q;near(Math.hypot(...v),1);assert.ok(v.every(Number.isFinite));assert.ok(Math.abs(v[2]-t*angle/2)<1e-15);}
 });
+
+test('rotated start and different axis produce the correct relative angle',()=>{
+ for(const method of Object.keys(sphericalMethods))for(const step of sphericalSteps){const a=sphericalSample(method,'positive',step,'turn'),b=sphericalSample(method,'negative',step,'turn');near(a.angle,b.angle);near(Math.hypot(...a.q),1);if(method==='slerp')near(a.angle,120*step/100);if(step===0){near(a.angle,0);near(a.q[1],Math.SQRT1_2);}if(step===100){near(a.angle,120);near(a.q[2],Math.SQRT1_2);}}
+ assert.deepEqual(sphericalRestore({...sphericalCreate(),scenario:'turn',seen:['turn:slerp:negative:50']}).seen,['turn:slerp:negative:50']);
+});
