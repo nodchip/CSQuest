@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {gameValue,createDuel,duelMove,createDuelSet,restoreDuel,duelComplete} from '../src/duel.js';
 import {mctsAllowed,mctsStep,mctsBestMoves} from '../src/mcts.js';
+import {recordStoneEntry} from '../src/stone-tablebase.js';
 function outcomes(state){if(state.winner)return [state.winner];return [1,2].filter(n=>n<=state.stones).flatMap(n=>outcomes(duelMove(state,n)));}
 test('minimax values match the independent multiple-of-three strategy',()=>{
   for(let n=0;n<=8;n++)for(const turn of ['player','guardian']){
@@ -17,7 +18,7 @@ test('perfect guardian cannot lose from six, while seven and eight have winning 
 test('partial and completed matches restore only legal player moves',()=>{
   const state=restoreDuel({selected:'eight',moves:{seven:[1,2,2],eight:[2,2,2],six:[1,1]}});
   assert.equal(state.states.seven.winner,'player');assert.equal(state.states.eight.winner,'player');assert.equal(state.states.six.winner,'guardian');assert.equal(duelComplete(state),false);
-  for(let i=0;i<12;i++)state.mcts=mctsStep(state.mcts,mctsAllowed(state.mcts)[0]).state;state.mcts.best=mctsBestMoves(state.mcts)[0];state.mcts.answer='sample';state.mcts.checked=true;assert.equal(duelComplete(state),true);
+  for(let i=0;i<12;i++)state.mcts=mctsStep(state.mcts,mctsAllowed(state.mcts)[0]).state;state.mcts.best=mctsBestMoves(state.mcts)[0];state.mcts.answer='sample';state.mcts.checked=true;assert.equal(duelComplete(state),false);for(const choice of [1,2,0,1,2,0,1,2])state.table=recordStoneEntry(state.table,choice).state;state.table.answer='limits';state.table.checked=true;assert.equal(duelComplete(state),true);
   assert.throws(()=>restoreDuel({selected:'six',moves:{seven:[],eight:[],six:[1,1,1]}}),RangeError);
   assert.equal(duelComplete(createDuelSet()),false);
 });
