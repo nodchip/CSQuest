@@ -1,4 +1,5 @@
 import {createLightDelay,restoreLightDelay} from './light-delay.js';
+import {createLatencyPaths,restoreLatencyPaths} from './latency-paths.js';
 export const cacheLevel={id:'archive-cache',number:'25',kind:'cache',name:'近くの棚と遠くの書庫',tag:'キャッシュと局所性',title:'魔導書を素早く届けよう',story:'魔導士は同じ三種類の本を繰り返し使います。手元の小さな棚を使って、二通りの依頼の順番を比べましょう。'};
 export const patterns={
   grouped:{name:'まとまった依頼',requests:['A','B','A','B','C','C']},
@@ -24,5 +25,5 @@ export function restoreCache(draft){
     const count=draft.index[id];if(!Number.isInteger(count)||count<0||count>pattern.requests.length)throw new RangeError('途中記録が不正です。');
     let state=createCache(id);for(let i=0;i<count;i++){const hit=state.shelf.includes(pattern.requests[i]);state=accessNext(state,hit?'hit':'miss');}states[id]=state;
   }
-  return {selected:draft.selected,states,light:draft.light===undefined?createLightDelay():restoreLightDelay(draft.light)};
+  return {selected:draft.selected,states,light:draft.light===undefined?createLightDelay():restoreLightDelay(draft.light),latency:draft.latency===undefined?createLatencyPaths():restoreLatencyPaths(draft.latency)};
 }

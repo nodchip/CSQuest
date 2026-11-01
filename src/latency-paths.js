@@ -1,0 +1,7 @@
+export const latencyPaths={local:{name:'手元の記憶',steps:[{name:'読取り',time:2}]},disk:{name:'手元の記録装置',steps:[{name:'読取り',time:100}]},near:{name:'近い塔の記憶',steps:[{name:'行きの伝令',time:5},{name:'塔での読取り',time:4},{name:'帰りの伝令',time:5}]},far:{name:'遠い塔の記憶',steps:[{name:'行きの伝令',time:60},{name:'塔での読取り',time:4},{name:'帰りの伝令',time:60}]}};
+export const latencyChoices=[2,14,100,124];
+export function latencyTotal(id){if(!Object.hasOwn(latencyPaths,id))throw new RangeError('経路が不正です。');return latencyPaths[id].steps.reduce((sum,step)=>sum+step.time,0);}
+export function createLatencyPaths(){return {selected:'local',choices:Object.fromEntries(Object.keys(latencyPaths).map(id=>[id,null])),checked:Object.fromEntries(Object.keys(latencyPaths).map(id=>[id,false])),answer:null,confirmed:false};}
+export function latencyCorrect(s,id){return s.checked[id]&&s.choices[id]===latencyTotal(id);}
+export function latencyComplete(s){return Object.keys(latencyPaths).every(id=>latencyCorrect(s,id))&&s.answer==='depends'&&s.confirmed;}
+export function restoreLatencyPaths(s){if(!s||!Object.hasOwn(latencyPaths,s.selected)||!s.choices||!s.checked||![null,'depends','alwaysRemote','alwaysDisk'].includes(s.answer)||typeof s.confirmed!=='boolean')throw new RangeError('途中記録が不正です。');const n=createLatencyPaths();n.selected=s.selected;n.answer=s.answer;n.confirmed=s.confirmed;for(const id of Object.keys(latencyPaths)){if(![null,...latencyChoices].includes(s.choices[id])||typeof s.checked[id]!=='boolean')throw new RangeError('途中記録が不正です。');n.choices[id]=s.choices[id];n.checked[id]=s.checked[id];}return n;}
