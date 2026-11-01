@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {lifeNext} from '../src/life-garden.js';
+import {haloGardenCases,haloGardenPart,haloGardenResult,createHaloGarden,haloTrialDone,haloGardenComplete,restoreHaloGarden} from '../src/halo-garden.js';
+test('shared boundary matches whole-board rule for all 512 center patterns',()=>{const positions=[6,7,8,11,12,13,16,17,18];for(let bits=0;bits<512;bits++){const cells=positions.filter((_,i)=>bits&(1<<i)),combined=[...haloGardenPart(cells,'left',true),...haloGardenPart(cells,'right',true)].sort((a,b)=>a-b);assert.deepEqual(combined,lifeNext(cells));}for(const id of Object.keys(haloGardenCases)){assert.equal(haloGardenResult(id,false).match,false);assert.equal(haloGardenResult(id,true).match,true);}});
+test('both modes and both worker results are necessary and state restores',()=>{const s=createHaloGarden();for(const id of Object.keys(haloGardenCases)){s.trials[id]={shared:true,calculated:['left','right'],tested:['local','shared'],compared:true};assert.ok(haloTrialDone(id,s.trials[id]));}s.answer='same-generation';s.checked=true;assert.ok(haloGardenComplete(s));assert.deepEqual(restoreHaloGarden(s),s);s.trials.line.calculated=['left'];assert.throws(()=>restoreHaloGarden(s));});
