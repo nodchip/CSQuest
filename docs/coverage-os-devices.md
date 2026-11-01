@@ -7,7 +7,7 @@
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
 | 1 | KA Core | バッファリング戦略 | 部分 | 129で通信路の容量、746で一重・二重の受取りと処理。可変の速度や実装は未評価。 |
-| 2 | KA Core | DMA、ポーリング、メモリマップド I/O | 部分 | 105で待機方式、132で DMA、454で手順、747で架空の制御・状態・データ番地を操作。実機 MMIO、DMA 実装・プロトコルは未評価。 |
+| 2 | KA Core | DMA、ポーリング、メモリマップド I/O | 部分 | 105・132で待機と DMA、454で手順、747で装置番地、748で依頼の環状管理を操作。実機 MMIO、DMA 実装・一般のプロトコルは未評価。 |
 | 3 | KA Core | 記憶装置の管理と歴史的背景 | 未照合 | 磁気装置と SSD の管理・歴史を扱う教材は未確認。 |
 | 4 | Non-core | 装置インターフェースと抽象化層 | 部分 | 674で共通窓口と２装置の変換。一般のハードウェア抽象化層は未評価。 |
 | 5 | Non-core | ドライバーの目的、抽象、実装、試験の課題 | 部分 | 674で装置ごとの担当と未対応装置。実装・試験の課題は未評価。 |
@@ -27,3 +27,5 @@
 依頼746は [UIC I/O Systems](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/13_IOSystems.html) の二重バッファを参考に、３組を受け取る装置２刻・処理３刻、切替費用０の固定模型を比較。１皿15刻、２皿11刻で、`tests/io-double-buffer.test.js` は各刻の装置・CPU の動きを独立した期待列と照合する。実機速度、DMA の詳細、競合や一般の性能は評価しない。
 
 依頼747は [Linux のデバイス I/O](https://docs.kernel.org/driver-api/device-io.html) と [OSTEP の I/O Devices](https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf) を参考に、制御・状態・データを架空の番地に割り当て、３枚の受取りと普通のメモリを比較する模型。データ読取り時の消費はこの装置固有の約束で、実機のレジスタ、順序、アクセス幅、権限やドライバー実装は評価しない。`tests/mmio-registers.test.js` で状態遷移・不正な操作・途中履歴を検査する。
+
+依頼748は [Linux の descriptor ring の例](https://docs.kernel.org/5.10/networking/device_drivers/ethernet/toshiba/spider_net.html) と [DMA mapping](https://docs.kernel.org/core-api/dma-api-howto.html) を参考に、３枠の依頼・装置処理・回収と４件目の折返しを操作する。単一の CPU 側と装置、順序どおりの成功と即時に見える状態変更を仮定し、実 DMA、アドレス変換、キャッシュ、メモリバリア、失敗と並行競合は扱わない。`tests/dma-descriptor-ring.test.js` は到達可能な操作順序の全探索で順序と所有状態を検査する。
