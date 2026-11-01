@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: ２-of-３秘密分散の依頼604を追加。法11の秘密と係数の全121組について、一欠片に対応する全秘密と、二欠片からの一意な復元を検証し、`npm test` 1414件とビルドが成功。ブラウザで係数０、誤答、途中再開、三組の復元、320・390・1280px幅を確認。[Shamir の原論文](https://dspace.mit.edu/entities/publication/91c51bfc-5678-409c-80c5-44ce8fcdbadf)を参照。実験では秘密と係数を見せ、実用上の安全な乱数、配布・保管・改ざん対策は扱わない。
+
 - 2026-11-01: Web Crypto の ECDH、HKDF、AES-GCM で直接交換と中間者の差し替え・中継、確認済みの鍵との照合を比較する依頼603を追加。[NIST SP 800-56A](https://csrc.nist.gov/pubs/sp/800/56/a/r3/final) と [RFC 5869](https://www.rfc-editor.org/rfc/rfc5869)を参照。３条件と復元を自動検査し、`npm test` 1412件成功。ブラウザで誤答、再開、リセット、API 不可、達成、320・390・1280px幅を確認。確認済みの鍵は仮定で、本人確認・証明書や実用の通信プロトコルは未対応。
 
 - 2026-11-01: Web Crypto で ECDSA P-256 の鍵生成・署名・検証を行い、改変・別鍵・鍵の差替え・再送を比較する依頼602を追加。[NIST FIPS 186-5](https://csrc.nist.gov/pubs/fips/186-5/final) と [MDN](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign)を参照。６条件、Node の公開鍵検証との相互運用、復元を自動検査し、`npm test` 1410件成功。ブラウザで誤答、再開、６条件、API 不可、計算中の条件変更、達成、キーボードと320・390・1280px幅を確認。固定本文と一時鍵を使う実験で、本人確認・証明書や実用の鍵管理は未対応。
