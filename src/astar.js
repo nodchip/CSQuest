@@ -10,18 +10,18 @@ export function createGuided(mode){
 }
 export function estimate(mode,id){if(!Object.hasOwn(guidedModes,mode)||!Object.hasOwn(guidedRoads,id))throw new RangeError('地点が不正です。');return mode==='astar'?guidedHeuristic[id]:0;}
 export function advanceGuided(state,id){return advanceGuidedWith(state,id,estimate);}
-export function advanceGuidedWith(state,id,heuristic){
+export function advanceGuidedWith(state,id,heuristic,{reopen=false}={}){
   if(state.status!=='playing'||!Object.hasOwn(guidedRoads,id)||state.settled.includes(id)||state.distances[id]===null)throw new RangeError('選べない地点です。');
   const open=Object.keys(guidedRoads).filter(k=>!state.settled.includes(k)&&state.distances[k]!==null);
   const score=k=>state.distances[k]+heuristic(state.mode,k),minimum=Math.min(...open.map(score));
   if(score(id)!==minimum)return {...state,message:'候補の中で「ここまでの費用＋残りの見積もり」が最も小さい地点を選びましょう。'};
-  const settled=[...state.settled,id],distances={...state.distances},parents={...state.parents};
+  let settled=[...state.settled,id];const distances={...state.distances},parents={...state.parents};
   if(id==='G')return {...state,settled,status:'found',message:`遺跡までの費用 ${distances.G} が決まりました。`};
   const updates=[];
   for(const [next,cost] of Object.entries(guidedRoads[id])){
-    if(settled.includes(next))continue;
+    if(settled.includes(next)&&!reopen)continue;
     const candidate=distances[id]+cost;
-    if(distances[next]===null||candidate<distances[next]){distances[next]=candidate;parents[next]=id;updates.push(`${next} → ${candidate}`);}
+    if(distances[next]===null||candidate<distances[next]){distances[next]=candidate;parents[next]=id;if(settled.includes(next))settled=settled.filter(place=>place!==next);updates.push(`${next} → ${candidate}`);}
   }
   return {...state,settled,distances,parents,message:updates.length?`${id} を調べ、候補を更新：${updates.join('、')}`:`${id} を調べました。候補の更新はありません。`};
 }
