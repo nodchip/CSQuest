@@ -1,0 +1,11 @@
+export const causalLinkLevel={id:'ruin-causal-link',number:'542',kind:'causal-link',name:'灯りの約束を守る',tag:'因果リンクと脅威',title:'風が吹く順番を選ぼう',story:'灯りがある間だけ開く遺跡の門。風で灯りが消えても開門できる計画を作ります。'};
+export const linkActions={light:'灯りをつける',open:'門を開く',wind:'風が吹く'};
+export const linkEdges=Object.keys(linkActions).flatMap(a=>Object.keys(linkActions).filter(b=>a!==b).map(b=>[a,b]));
+export const linkCases={before:{name:'風を灯りより先に',order:['wind','light','open']},after:{name:'風を開門より後に',order:['light','open','wind']}};
+export const linkOrders=[['light','open','wind'],['light','wind','open'],['open','light','wind'],['open','wind','light'],['wind','light','open'],['wind','open','light']];
+export function simulateLinkOrder(order){let lit=false,opened=false;for(const action of order){if(action==='light')lit=true;else if(action==='wind')lit=false;else if(action==='open'){if(!lit)return false;opened=true;}else throw new RangeError('作業が不正です。');}return opened;}
+export function evaluateLinkPlan(mask){if(!Number.isInteger(mask)||mask<0||mask>=64)throw new RangeError('順序が不正です。');const orders=linkOrders.filter(o=>linkEdges.every(([a,b],i)=>!(mask&(1<<i))||o.indexOf(a)<o.indexOf(b)));return {orders,unsafe:orders.filter(o=>!simulateLinkOrder(o))};}
+export function createCausalLink(){return {selected:'before',trials:{before:{mask:1,checked:false},after:{mask:1,checked:false}},reflection:null,finished:false};}
+export function causalLinkTrialComplete(id,t){if(!Object.hasOwn(linkCases,id)||!t)return false;const r=evaluateLinkPlan(t.mask);return t.checked&&r.orders.length===1&&r.unsafe.length===0&&r.orders[0].every((x,i)=>x===linkCases[id].order[i]);}
+export function causalLinkComplete(s){return Object.keys(linkCases).every(id=>causalLinkTrialComplete(id,s.trials[id]))&&s.reflection==='protect'&&s.finished;}
+export function restoreCausalLink(s){if(!s||!Object.hasOwn(linkCases,s.selected)||!s.trials||![null,'protect','reverse','impossible'].includes(s.reflection)||typeof s.finished!=='boolean')throw new RangeError('途中記録が不正です。');const n=createCausalLink();n.selected=s.selected;n.reflection=s.reflection;n.finished=s.finished;for(const id of Object.keys(linkCases)){const t=s.trials[id];if(!t||!Number.isInteger(t.mask)||t.mask<0||t.mask>=64||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');n.trials[id]={mask:t.mask,checked:t.checked};}return n;}
