@@ -118,7 +118,7 @@
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 一部試作：更新喪失、排他と循環待ち、依頼90で二人のバリア同期 |
 | PDC | PDC-Evaluation | Evaluation | 224 | 依頼66で固定量の並列化、437で固定量・一人あたり固定の仕事量と効率、438で安全性と活性、439で時相論理の循環記録、440で線形化可能性、441で分担と小計の不変条件の固定例。他は未対応。[詳細](pdc-evaluation.md) |
-| PDC | PDC-Algorithms | Algorithms | 225 | 依頼130・285で集約と並列累積和、443で行列積の並列分担、444で倍精度加算の順序と丸め、445で並列幅優先探索、446で並列整列、447で領域分割と境界共有、448で SAT 探索の分担の固定例。他は未対応。[詳細](pdc-algorithms.md) |
+| PDC | PDC-Algorithms | Algorithms | 225 | 依頼130・285で集約と並列累積和、443で行列積の並列分担、444で倍精度加算の順序と丸め、445で並列幅優先探索、446で並列整列、447で領域分割と境界共有、448で SAT 探索、449で画素ごとの視線を分担する固定例。他は未対応。[詳細](pdc-algorithms.md) |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |
 | SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 依頼79で待ち行列とスタックの選択・操作の固定例。他は未対応。[詳細](sdf-data-structures.md) |
 | SDF | SDF-Algorithms | Algorithms | 232 | 依頼29・88などで探索や比較回数の固定例。一般的な時間・空間解析は未対応。[詳細](sdf-algorithms.md) |
