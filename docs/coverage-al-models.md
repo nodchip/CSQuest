@@ -13,9 +13,9 @@
 | 2a | CS Core | 正規言語 | 部分 | 31・647で有限状態と限定された正規表現を操作。一般の関係は未評価。 |
 | 2a-i | CS Core | 正規表現 | 部分 | 647で和・連結・星を組む固定例。一般の式は未評価。 |
 | 2b | CS Core | 文脈自由言語 | 部分 | 644で aⁿbⁿ の山札と文法に触れる。一般の文法は未評価。 |
-| 2c | CS Core | 文脈依存言語 | 部分 | 697で aⁿbⁿcⁿ の限定された入力を帯内で照合。一般の文法と等価性は未評価。 |
+| 2c | CS Core | 文脈依存言語 | 部分 | 697で aⁿbⁿcⁿ の限定された入力を帯内で照合、698で n≧1 の同言語の文脈依存文法の導出を操作。一般の文法と等価性は未評価。 |
 | 2d | CS Core | 帰納的可算言語 | 未照合 | 対応する体験は未確認。 |
-| 3 | CS Core | オートマトン・言語・文法の関係 | 部分 | 644で有限状態、山札と文法を比較。階層全体は未評価。 |
+| 3 | CS Core | オートマトン・言語・文法の関係 | 部分 | 644で有限状態、山札と文法を比較、697・698で帯内認識と文脈依存文法の例を扱う。一般の等価性や階層全体は未評価。 |
 | 4 | CS Core | 決定可能性・計算不能性・停止 | 部分 | 416・648で停止判定と空言語判定の帰着を操作。一般の判定問題は未評価。 |
 | 5 | CS Core | Church–Turing のテーゼ | 部分 | 646で形式モデル間の等価性とテーゼを区別。一般の論証は未評価。 |
 | 6a | CS Core | 正しさと不変条件 | 部分 | 69で二分探索の候補範囲と反例を調べる。一般の証明は未評価。 |
@@ -72,3 +72,5 @@
 `tests/language-stacks.test.js`、`tests/subset-automaton.test.js`、`tests/epsilon-closure.test.js`、`tests/halting-paradox.test.js`、`tests/emptiness-reduction.test.js`、`tests/lambda-reduction.test.js`、`tests/bell-gates.test.js` はそれぞれの固定例を検査する。
 
 依頼697は入力を aᵃbᵇcᶜ の形に限定し、未処理の３文字を順に X・Y・Z にして先頭へ戻る。a がなくなったら余りを調べる。各色０〜３個の64通りについて、停止、帯長の不変、３数が等しい場合のみ受理することを検査。空文字も受理する。一般の入力長には同じ規則を適用できるが、有限例の検査は一般の場合の証明ではない。非決定的な線形拘束オートマトンと文脈依存言語の等価性の証明は扱わない。参考：[Virginia Tech の教材](https://opendsa.cs.vt.edu/ODSA/Books/FLAslides/html/TuringExtend.html)。
+
+依頼698は S→aSBC | aBC、CB→BC、aB→ab、bB→bb、bC→bc、cC→cc の文法で abc・aabbcc を導出する。最大12文字で到達可能な全途中列を探索し、終端列が n=1〜4 の４例のみで、各規則が長さを減らさないことを検査。画面は有限の実験であり、一般の場合の生成言語の証明や LBA との一般の等価性の証明ではない。依頼697の機械と異なり、ここで使う文法は空文字を生成しない。参考：[Brown の文法例](https://cs.brown.edu/courses/csci1810/fall-2023/resources/ch2_readings/automata_theory_and_formal_languages.pdf)。
