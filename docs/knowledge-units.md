@@ -39,7 +39,7 @@
 | DM | DM-Modeling | Data Modeling | 116 | 依頼101・102で多対多、１対多、１対１の高々の制約とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
 | DM | DM-Relational | Relational Databases | 117 | 依頼466〜472で属性閉包、正規形、二・三分解、多値従属性、物理配置、非正規化と制約の固定例。一般の設計・証明は未対応。[詳細](dm-relational.md) |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択、内部・左外部結合、集合演算、全称条件、依頼462の相関する存在判定と463の結果の反復、465の NULL と制約の固定例 |
-| DM | DM-Processing | Query Processing | 118 | 依頼89で複合索引の列順と候補範囲、662で B+ 木の挿入と範囲走査、663で拡張可能ハッシュ、664で結合と条件の順序、665で外部併合整列の固定例。他は未対応。[詳細](dm-processing.md) |
+| DM | DM-Processing | Query Processing | 118 | 依頼89で複合索引の列順と候補範囲、662で B+ 木の挿入と範囲走査、663で拡張可能ハッシュ、664で結合と条件の順序、665で外部併合整列、666でハッシュ結合の固定例。他は未対応。[詳細](dm-processing.md) |
 | DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38・39で原子性・永続性・分離と競合直列化の固定例 |
 | DM | DM-NoSQL | NoSQL Systems | 120 | 依頼189〜193で鍵と文書、複製・分割・グラフと読み書きの重なりの固定模型。実製品や一般的な分散・整合性は未対応。[詳細](dm-nosql.md) |
 | DM | DM-Security | Data Security and Privacy | 121 | 依頼194〜196で不要な収集、通信・閲覧、監査記録と集計からの推論の固定模型。実際の法令や DB の安全性は未対応。[詳細](dm-security.md) |
