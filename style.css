@@ -160,3 +160,5 @@
 .circle-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.25rem; max-width: 26rem; margin: 1rem 0; }
 .circle-grid button { min-width: 0; min-height: 3rem; padding: 0.25rem; font-size: 0.8rem; }
 .circle-grid button[aria-pressed="true"] { outline: 3px solid #b14a00; outline-offset: -3px; }
+
+.contrast-pixel { display: grid; place-items: center; min-width: 0; min-height: 3rem; border: 1px solid #777; }
