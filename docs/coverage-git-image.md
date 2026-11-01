@@ -17,7 +17,7 @@
 | 3c | KA Core | ラプラシアン等による鮮鋭化 | 部分 | 141は１方向の二階差分、725は元画像から離散ラプラシアンを引く固定例。一般の強度と実画像は未評価。 |
 | 3d | KA Core | 周波数フィルタ | 部分 | 141で空間の高域差分、175で４点の周波数変換を別々に操作。画像の周波数領域での選択的フィルタは未評価。 |
 | 4a | KA Core | ノイズ・劣化 | 部分 | 458で２値の乱れと候補を比較、724で小さな揺らぎの強調を比較。一般の劣化模型は未評価。 |
-| 4b | KA Core | インペインティング等の補完 | 未照合 | 欠損箇所の補完アルゴリズムは未確認。 |
+| 4b | KA Core | インペインティング等の補完 | 部分 | 727で隣り合う２画素を４近傍の同時平均で反復補完。任意の欠損、実画像と他の補完法は未評価。 |
 | 4c | KA Core | Wiener フィルタ | 未照合 | 対応教材は未確認。 |
 | 5a | KA Core | 冗長性 | 未照合 | 画像における冗長性の操作は未確認。 |
 | 5b | KA Core | 圧縮 | 部分 | 110で一般のハフマン符号を操作。画像符号化での適用は未評価。 |
@@ -33,7 +33,7 @@
 | 1 | KA Core | 膨張と収縮で二値画像の縁を平滑化するプログラム | 部分 | 139・140で固定画像を操作。一般の縁の平滑化と実際のプログラムは評価しない。 |
 | 2 | KA Core | 画像の色相を操作 | 部分 | 726で４画素の HSV の色相回転と彩度・明度を調節。一般の画像、実データと色管理は未評価。 |
 | 3 | KA Core | 画像への高域フィルタのプログラム | 部分 | 141で１方向３画素、725で二次元の鮮鋭化を操作。一般の画像・実プログラム・周波数領域は未評価。 |
-| 4 | KA Core | インペインティングで欠損画像を復元するプログラム | 未照合 | 対応する補完操作とプログラムは未確認。 |
+| 4 | KA Core | インペインティングで欠損画像を復元するプログラム | 部分 | 727で欠損範囲の指定と反復補完を操作。一般のアルゴリズム、実画像とプログラムを書く能力は未評価。 |
 | 5 | KA Core | 周波数領域の選択的フィルタの結果を評価 | 未照合 | 画像の周波数領域の比較は未確認。 |
 
-関連検査は `tests/morphology.test.js`、`tests/components.test.js`、`tests/shape-features.test.js`、`tests/image-contrast.test.js`、`tests/image-kernel.test.js`、`tests/image-hue.test.js`、`tests/highpass.test.js`、`tests/convolution.test.js` 等。検査は各教材が定めた模型に限る。
+関連検査は `tests/morphology.test.js`、`tests/components.test.js`、`tests/shape-features.test.js`、`tests/image-contrast.test.js`、`tests/image-kernel.test.js`、`tests/image-hue.test.js`、`tests/image-inpaint.test.js`、`tests/highpass.test.js`、`tests/convolution.test.js` 等。検査は各教材が定めた模型に限る。
