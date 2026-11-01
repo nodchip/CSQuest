@@ -31,9 +31,9 @@
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
 | 1 | KA Core | 膨張と収縮で二値画像の縁を平滑化するプログラム | 部分 | 139・140で固定画像を操作。一般の縁の平滑化と実際のプログラムは評価しない。 |
-| 2 | KA Core | 画像の色相を操作 | 未照合 | HSV の色相操作は未確認。 |
+| 2 | KA Core | 画像の色相を操作 | 部分 | 726で４画素の HSV の色相回転と彩度・明度を調節。一般の画像、実データと色管理は未評価。 |
 | 3 | KA Core | 画像への高域フィルタのプログラム | 部分 | 141で１方向３画素、725で二次元の鮮鋭化を操作。一般の画像・実プログラム・周波数領域は未評価。 |
 | 4 | KA Core | インペインティングで欠損画像を復元するプログラム | 未照合 | 対応する補完操作とプログラムは未確認。 |
 | 5 | KA Core | 周波数領域の選択的フィルタの結果を評価 | 未照合 | 画像の周波数領域の比較は未確認。 |
 
-関連検査は `tests/morphology.test.js`、`tests/components.test.js`、`tests/shape-features.test.js`、`tests/image-contrast.test.js`、`tests/image-kernel.test.js`、`tests/highpass.test.js`、`tests/convolution.test.js` 等。検査は各教材が定めた模型に限る。
+関連検査は `tests/morphology.test.js`、`tests/components.test.js`、`tests/shape-features.test.js`、`tests/image-contrast.test.js`、`tests/image-kernel.test.js`、`tests/image-hue.test.js`、`tests/highpass.test.js`、`tests/convolution.test.js` 等。検査は各教材が定めた模型に限る。
