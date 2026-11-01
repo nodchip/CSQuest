@@ -12,7 +12,7 @@
 | 2c | KA Core | モーションキャプチャ | 部分 | 635で欠測を含む架空の記録を操作。実収録や制作は未評価。 |
 | 2d | KA Core | モーショングラフィックス | 未照合 | 原典で 2b と同じ記載。別番号のまま保持。 |
 | 2e | KA Core | ストップモーション | 未照合 | 比較・制作の教材は未確認。 |
-| 3a | KA Core | キーフレームの線形・球面線形・スプライン補間 | 部分 | 182・633・634で線形、平面角、Catmull–Rom の固定例。３次元回転と球面線形補間は未評価。 |
+| 3a | KA Core | キーフレームの線形・球面線形・スプライン補間 | 部分 | 182・633・634で線形、平面角、Catmull–Rom、731で単一軸の球面線形補間を比較。任意の３次元回転と補間実装は未評価。 |
 | 4 | KA Core | 順運動学・逆運動学 | 部分 | 183・184で平面２関節の位置と姿勢を操作。一般の３次元や逆運動学の解法は未評価。 |
 | 5a | KA Core | スキニングの捕捉 | 未照合 | 対応する手順は未確認。 |
 | 5b | KA Core | 線形ブレンドと双対クォータニオン | 部分 | 185で平面２変換の線形ブレンド。双対クォータニオンと一般のメッシュは未評価。 |
@@ -33,8 +33,8 @@
 | 1 | KA Core | モデルとリグで各原則を視覚的に説明 | 部分 | 182で緩急を操作。モデル・リグと各原則の説明は未評価。 |
 | 2 | KA Core | 順運動学で各部の位置・向き | 部分 | 183で平面２関節を操作。任意の角度や３次元は未評価。 |
 | 3 | KA Core | 位置・向きから逆運動学で関節の向き | 部分 | 184で選択肢から姿勢を探す。一般の解法と先端の向きは未評価。 |
-| 4 | KA Core | 回転表現のトレードオフ比較 | 部分 | 730でオイラー角の特異点と同じ姿勢のクォータニオンを比較。一般の姿勢、各表現の補間・精度・性能は未評価。 |
+| 4 | KA Core | 回転表現のトレードオフ比較 | 部分 | 730でオイラー角の特異点とクォータニオン、731で正規化線形補間と球面線形補間を比較。一般の姿勢、精度・性能は未評価。 |
 | 5 | KA Core | スプライン補間のプログラム | 部分 | 634で１次元の Catmull–Rom を操作。一般の位置・向きと実際のプログラム作成は評価しない。 |
 | 6 | KA Core | 既存ソフトで形状・リグ・アニメーションを制作 | 未照合 | 実際のソフトでの制作は未評価。 |
 
-関連検査は `tests/keyframe-motion.test.js`、`tests/forward-kinematics.test.js`、`tests/inverse-kinematics.test.js`、`tests/linear-skinning.test.js`、`tests/rotation-interpolation.test.js`、`tests/spline-motion.test.js`、`tests/motion-capture-gap.test.js`、`tests/motion-blend.test.js`、`tests/gimbal-lock.test.js`。各検査は限定された模型に限る。
+関連検査は `tests/keyframe-motion.test.js`、`tests/forward-kinematics.test.js`、`tests/inverse-kinematics.test.js`、`tests/linear-skinning.test.js`、`tests/rotation-interpolation.test.js`、`tests/spline-motion.test.js`、`tests/motion-capture-gap.test.js`、`tests/motion-blend.test.js`、`tests/gimbal-lock.test.js`、`tests/spherical-rotation.test.js`。各検査は限定された模型に限る。
