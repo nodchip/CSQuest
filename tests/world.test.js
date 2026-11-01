@@ -107,3 +107,11 @@ test('image trail connects representation, segmentation, filtering, restoration 
 test('animation trail orders interpolation, kinematics, skinning and motion capture',()=>{
  const ids=findTrail('animation-journey').quests;for(const [a,b] of [['ruin-keyframe-motion','ruin-spline-motion'],['ruin-rotation-interpolation','ruin-gimbal-lock'],['ruin-gimbal-lock','ruin-spherical-rotation'],['ruin-forward-kinematics','ruin-inverse-kinematics'],['ruin-inverse-kinematics','ruin-linear-skinning'],['ruin-motion-capture-gap','ruin-motion-blend']])assert.ok(ids.indexOf(a)>=0&&ids.indexOf(a)<ids.indexOf(b));assert.equal(nextTrailQuest(findTrail('animation-journey'),all,ids.slice(0,-1)).level.id,'ruin-motion-blend');
 });
+
+test('virtualization trail connects protection and page translation to two-stage mappings',()=>{
+ const trail=findTrail('virtualization-journey'),ids=trail.quests;
+ assert.deepEqual(ids,['protected-gate','page-address','forge-process-pages','archive-tlb-switch','workshop-virtual-machines','workshop-vm-trap','workshop-two-stage-memory','workshop-emulation-isolation','workshop-virtual-block-devices']);
+ assert.ok(trailQuests(trail,all).every(q=>q.level));
+ assert.equal(nextTrailQuest(trail,all,[...ids.slice(0,5),ids[6]]).level.id,'workshop-vm-trap');
+ assert.equal(nextTrailQuest(trail,all,ids),null);
+});
