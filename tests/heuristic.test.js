@@ -16,7 +16,15 @@ test('overestimation can stop at a suboptimal goal while the reliable estimate f
   state.guesses=['A','C'];state.checked=true;assert.equal(heuristicComplete(state),false);
   for(const id of ['S','B','C','A','G'])state.states.closed=stepHeuristic('closed',state.states.closed,id);
   for(const id of ['S','B','C','A','C','G'])state.states.reopen=stepHeuristic('reopen',state.states.reopen,id);
-  assert.equal(state.states.closed.distances.G,7);assert.equal(state.states.reopen.distances.G,6);assert.deepEqual(guidedRoute(state.states.reopen),['S','A','C','G']);assert.equal(heuristicComplete(state),true);
+  assert.equal(state.states.closed.distances.G,7);assert.equal(state.states.reopen.distances.G,6);assert.deepEqual(guidedRoute(state.states.reopen),['S','A','C','G']);assert.equal(heuristicComplete(state),false);
+  for(const id of ['S','B','G'])state.states.greedy=stepHeuristic('greedy',state.states.greedy,id);
+  for(const id of ['S','B','A','C','G'])state.states.greedyAstar=stepHeuristic('greedyAstar',state.states.greedyAstar,id);
+  assert.equal(heuristicComplete(state),true);
+});
+test('greedy and A* use the same consistent admissible estimate but rank candidates differently',()=>{
+ for(const id of Object.keys(guidedRoads)){assert.equal(heuristicValue('greedy',id),heuristicValue('greedyAstar',id));assert.ok(heuristicValue('greedy',id)<=cheapest(id));for(const [next,cost] of Object.entries(guidedRoads[id]))assert.ok(heuristicValue('greedy',id)<=cost+heuristicValue('greedy',next));}
+ const s=createHeuristic();for(const id of ['S','B','G'])s.states.greedy=stepHeuristic('greedy',s.states.greedy,id);for(const id of ['S','B','A','C','G'])s.states.greedyAstar=stepHeuristic('greedyAstar',s.states.greedyAstar,id);
+ assert.equal(s.states.greedy.distances.G,10);assert.equal(s.states.greedyAstar.distances.G,6);assert.deepEqual(guidedRoute(s.states.greedy),['S','B','G']);
 });
 test('partial saved trials replay and reject wrong priorities',()=>{
   const saved={selected:'overestimate',actions:{reliable:['S','A'],overestimate:['S','B']},guesses:['A'],checked:true};
