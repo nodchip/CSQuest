@@ -179,3 +179,5 @@
 .exposure-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:.3rem; max-width:22rem; margin:1rem 0; }
 .exposure-cell { display:grid; place-items:center; height:3.5rem; border:1px solid #718274; color:#173b26; background:#edf0ea; }
 .exposure-cell.lit { background:#f8db75; color:#4a3100; }
+
+.exposure-eight { grid-template-columns:repeat(4,minmax(0,1fr)); }
