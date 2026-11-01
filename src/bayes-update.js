@@ -1,0 +1,12 @@
+export const bayesUpdateLevel={id:'village-bayes-update',number:'497',kind:'bayes-update',name:'灯りの記録と二つの見込み',tag:'ベイズ更新と事前分布',title:'新しい記録で見込みを更新しよう',story:'村の灯りが点く割合は分かっていません。二つの見込みを使い、点灯と消灯の記録が増えると予測がどう変わるか調べましょう。'};
+export const priorChoices={light:{name:'広く考える見込み',alpha:1,beta:1},strong:{name:'半分付近を重く見る見込み',alpha:4,beta:4}};
+export function posterior(prior,sequence){
+ if(!Object.hasOwn(priorChoices,prior)||!Array.isArray(sequence)||sequence.length>8||sequence.some(x=>!['on','off'].includes(x)))throw new RangeError('見込みまたは記録が不正です。');
+ const initial=priorChoices[prior],success=sequence.filter(x=>x==='on').length,fail=sequence.length-success,alpha=initial.alpha+success,beta=initial.beta+fail,n=sequence.length;
+ const comparison=n===0?null:alpha*n===success*(alpha+beta)?'same':alpha*n>success*(alpha+beta)?'higher':'lower';
+ return {success,fail,alpha,beta,meanNumerator:alpha,meanDenominator:alpha+beta,comparison};
+}
+export function createBayesUpdate(){return {prior:'light',sequence:[],guess:null,trialChecked:false,seen:{light:{more:false,less:false},strong:{more:false,less:false}},answer:null,checked:false};}
+export function bayesRecordTrial(s){const r=posterior(s.prior,s.sequence);if(!s.sequence.length)throw new RangeError('点灯か消灯を１回以上記録しましょう。');const next={...s,seen:{...s.seen,[s.prior]:{...s.seen[s.prior]}},trialChecked:true,checked:false};if(s.guess===r.comparison&&s.sequence.length===4){if(r.success===3)next.seen[s.prior].more=true;if(r.success===1)next.seen[s.prior].less=true;}return next;}
+export function bayesUpdateComplete(s){return Object.keys(priorChoices).every(k=>s.seen[k].more&&s.seen[k].less)&&s.answer==='prior'&&s.checked;}
+export function restoreBayesUpdate(s){if(!s||!Object.hasOwn(priorChoices,s.prior)||![null,'higher','lower','same'].includes(s.guess)||typeof s.trialChecked!=='boolean'||!s.seen||![null,'prior','certainty','same'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');posterior(s.prior,s.sequence);if(s.trialChecked&&!s.sequence.length)throw new RangeError('途中記録が不正です。');const n=createBayesUpdate();n.prior=s.prior;n.sequence=[...s.sequence];n.guess=s.guess;n.trialChecked=s.trialChecked;n.answer=s.answer;n.checked=s.checked;for(const p of Object.keys(priorChoices)){if(typeof s.seen[p]?.more!=='boolean'||typeof s.seen[p]?.less!=='boolean')throw new RangeError('途中記録が不正です。');n.seen[p]={more:s.seen[p].more,less:s.seen[p].less};}return n;}
