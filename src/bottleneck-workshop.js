@@ -1,0 +1,8 @@
+export const bottleneckLevel={id:'forge-bottleneck-workshop',number:'715',kind:'bottleneck-workshop',name:'工房の待ち時間を縮める',tag:'逐次部分と並列化',title:'精霊を増やす前に',story:'工房で魔石を仕上げる仕事が滞っています。準備を改善する案と精霊を増やす案を比べ、予算に合う方法を選びましょう。'};
+export const bottleneckModes={original:{name:'元の準備',serial:8},improved:{name:'準備を改善',serial:4}};
+export const bottleneckWorkers=[1,4,8];
+export function bottleneckResult(mode,workers){if(!Object.hasOwn(bottleneckModes,mode)||!bottleneckWorkers.includes(workers))throw new RangeError('未知の計画です。');const serial=bottleneckModes[mode].serial,parallel=8/workers,time=serial+parallel,cost=(mode==='improved'?2:0)+(workers===8?2:0);return {serial,parallel,time,cost};}
+export function bottleneckCreate(){return {mode:'original',workers:4,seen:{original:[],improved:[]},answer:null,checked:false};}
+export function bottleneckReady(s){return Object.keys(bottleneckModes).every(m=>bottleneckWorkers.every(n=>s.seen[m].includes(n)));}
+export function bottleneckComplete(s){return bottleneckReady(s)&&s.checked&&s.answer==='improve';}
+export function bottleneckRestore(s){if(!s||!Object.hasOwn(bottleneckModes,s.mode)||!bottleneckWorkers.includes(s.workers)||![null,'improve','workers','both'].includes(s.answer)||typeof s.checked!=='boolean'||!s.seen)throw new RangeError('途中記録が不正です。');const r=bottleneckCreate();r.mode=s.mode;r.workers=s.workers;r.answer=s.answer;r.checked=s.checked;for(const m of Object.keys(bottleneckModes)){const a=s.seen[m];if(!Array.isArray(a)||new Set(a).size!==a.length||a.some(n=>!bottleneckWorkers.includes(n)))throw new RangeError('途中記録が不正です。');r.seen[m]=[...a];}return r;}
