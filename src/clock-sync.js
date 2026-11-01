@@ -1,0 +1,8 @@
+export const clockSyncLevel={id:'forest-clock-sync',number:'503',kind:'clock-sync',name:'伝令と二つの時計',tag:'分散時計と通信遅延',title:'塔の時計を合わせよう',story:'森の塔の時計は王城の時計より遅れています。伝令の往復を使って時刻のずれを推定しましょう。'};
+// 参照時計は真の時刻、塔は常に３刻遅れ、王城の応答時間は０と仮定する。
+export const clockRoutes={even:{name:'往復が同じ速さの道',out:2,back:2},slowReturn:{name:'帰りが遅い道',out:1,back:3},slowOut:{name:'行きが遅い道',out:3,back:1}};
+export function clockExchange(route){if(!Object.hasOwn(clockRoutes,route))throw new RangeError('道が不正です。');const r=clockRoutes[route],send=97,server=100+r.out,receive=97+r.out+r.back,estimate=server-(send+receive)/2;return {send,server,receive,estimate,actual:3,error:estimate-3,roundTrip:r.out+r.back};}
+export function createClockSync(){return {route:'even',trials:Object.fromEntries(Object.keys(clockRoutes).map(k=>[k,{answer:null,checked:false}])),reflection:null,checked:false};}
+export function clockTrialComplete(route,t){return t.checked&&t.answer===clockExchange(route).estimate;}
+export function clockSyncComplete(s){return Object.keys(clockRoutes).every(k=>clockTrialComplete(k,s.trials[k]))&&s.reflection==='uncertain'&&s.checked;}
+export function restoreClockSync(s){if(!s||!Object.hasOwn(clockRoutes,s.route)||!s.trials||![null,'uncertain','same','perfect'].includes(s.reflection)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');const n=createClockSync();n.route=s.route;n.reflection=s.reflection;n.checked=s.checked;for(const k of Object.keys(clockRoutes)){const t=s.trials[k];if(!t||![null,2,3,4].includes(t.answer)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');n.trials[k]={answer:t.answer,checked:t.checked};}return n;}
