@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {storyCases,storyFields,requirementStoryCorrect,requirementStoriesComplete,createRequirementStories,restoreRequirementStories} from '../src/requirement-stories.js';
+test('each role, goal and benefit must match its context',()=>{for(const [id,c] of Object.entries(storyCases))for(const field of Object.keys(storyFields))for(const value of Object.keys(storyFields[field])){const t={role:c.role,goal:c.goal,benefit:c.benefit,checked:true,[field]:value};assert.equal(requirementStoryCorrect(id,t),value===c[field]);}});
+test('conflicting wishes remain unresolved and old drafts are migrated',()=>{const s=createRequirementStories();for(const [id,c] of Object.entries(storyCases))s.trials[id]={role:c.role,goal:c.goal,benefit:c.benefit,checked:true};s.status='approved';s.checked=true;assert.equal(requirementStoriesComplete(s),false);s.status='unresolved';assert.ok(requirementStoriesComplete(s));assert.deepEqual(restoreRequirementStories(s),s);assert.equal(requirementStoriesComplete(restoreRequirementStories(undefined)),false);assert.throws(()=>restoreRequirementStories({...s,status:'unknown'}));});

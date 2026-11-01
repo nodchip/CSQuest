@@ -149,3 +149,6 @@
 .iris-curve-plot { display: block; width: 100%; max-width: 640px; height: auto; background: #fff; }
 
 .uri-quest code { overflow-wrap: anywhere; }
+
+.story-draft-panel label { min-width: 0; max-width: 100%; }
+.story-draft-panel select { max-width: 100%; }
