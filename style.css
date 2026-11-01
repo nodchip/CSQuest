@@ -136,3 +136,6 @@
 .emblem-comparison figure { margin: 0; width: min(100%, 12rem); }
 .emblem-comparison svg { display: block; width: 100%; height: auto; }
 .emblem-comparison figcaption { margin-top: .5rem; line-height: 1.5; }
+
+.color-result { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.color-swatch { width: 6rem; height: 6rem; border: .2rem solid #485769; border-radius: .75rem; flex: none; }
