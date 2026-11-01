@@ -28,9 +28,9 @@
 
 ## ローカルで遊ぶ
 
-このフォルダーで `python -m http.server 8000` を実行し、ブラウザで `http://localhost:8000/` を開きます。達成記録、最後に選んだ行き先と学びの道、および現在の611依頼の途中経過は同じブラウザ内に保存します。各依頼の途中経過は消去して最初からやり直せます。
+このフォルダーで `python -m http.server 8000` を実行し、ブラウザで `http://localhost:8000/` を開きます。達成記録、最後に選んだ行き先と学びの道、および現在の612依頼の途中経過は同じブラウザ内に保存します。各依頼の途中経過は消去して最初からやり直せます。
 
-依頼600〜603と606〜608ではブラウザの Web Crypto API を使って AES-GCM、SHA-256、HMAC、ECDSA、ECDH と HKDF を計算します。HTTPS の公開サイト、または対応ブラウザの `localhost` で利用できます。実験の本文は固定値で、鍵は公開固定値または実験用の一時鍵です。
+依頼600〜603、606〜608、612ではブラウザの Web Crypto API を使って AES-GCM、SHA-256、HMAC、ECDSA、ECDH、HKDF と RSA-OAEP を計算します。HTTPS の公開サイト、または対応ブラウザの `localhost` で利用できます。実験の本文は固定値で、鍵は公開固定値または実験用の一時鍵です。
 
 Node.js で `npm ci` を実行すると、`npm test` でテストできます。公開用ビルドは `npm run build` を実行すると `dist` に生成されます。`python -m http.server 8000 --directory dist` で公開用ビルドも確認できます。GitHub Actions がテスト・ビルド・Pages へのデプロイを行います。
 
