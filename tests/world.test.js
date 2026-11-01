@@ -15,7 +15,9 @@ test('filtering preserves the original quest indices and an unknown selection sh
 test('quest search combines normalized words, region and completion without changing quest indices',()=>{
   const done=['matrix-mirror'];
   const search=(region,query,status='all')=>filterQuests(all,region,query,status,done);
-  assert.deepEqual(search('all','ＱＵＥＳＴ　８６').map(x=>x.level.id),['matrix-mirror','ruin-toon-shading','castle-evidence-custody','forge-process-fork','archive-copy-on-write']);
+  assert.deepEqual(search('all','ＱＵＥＳＴ　８６').map(x=>x.level.id),['matrix-mirror']);
+  assert.deepEqual(search('all','086').map(x=>x.level.id),['matrix-mirror']);
+  assert.deepEqual(search('all','486').map(x=>x.level.id),['archive-copy-on-write']);
   assert.deepEqual(search('ruins','変換鏡 行列').map(x=>x.level.id),['matrix-mirror']);
   assert.deepEqual(search('wilds','変換鏡 行列'),[]);
   assert.deepEqual(search('all','変換鏡','done').map(x=>x.level.id),['matrix-mirror']);
@@ -23,6 +25,13 @@ test('quest search combines normalized words, region and completion without chan
   assert.ok(search('all','').every(({level,index})=>all[index]===level));
   assert.deepEqual(search('all','<img src=x>'),[]);
   assert.throws(()=>search('all','', 'invalid'),RangeError);
+});
+test('saved drafts can be found independently of completion and region',()=>{
+  const drafts=['matrix-mirror','archive-copy-on-write'];
+  assert.deepEqual(filterQuests(all,'all','','draft',['matrix-mirror'],drafts).map(x=>x.level.id),drafts);
+  assert.deepEqual(filterQuests(all,'archive','','draft',['matrix-mirror'],drafts).map(x=>x.level.id),['archive-copy-on-write']);
+  assert.deepEqual(filterQuests(all,'all','86','draft',[],drafts).map(x=>x.level.id),['matrix-mirror']);
+  assert.deepEqual(filterQuests(all,'all','','draft',[],[]),[]);
 });
 test('optional learning trails cover all quests, avoid duplicates within each path, and preserve their order',()=>{
   const ids=learningTrails.flatMap(trail=>trail.quests);

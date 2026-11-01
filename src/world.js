@@ -14,13 +14,16 @@ export function visibleQuests(levels,regionId){
   const region=findRegion(regionId);
   return levels.map((level,index)=>({level,index})).filter(({level})=>!region||region.quests.includes(level.id));
 }
-export function filterQuests(levels,regionId,query,status,completed){
-  if(typeof query!=='string'||!['all','todo','done'].includes(status)||!Array.isArray(completed))throw new RangeError('検索条件が不正です。');
-  const words=query.normalize('NFKC').toLowerCase().trim().split(/\s+/u).filter(Boolean),done=new Set(completed);
+export function filterQuests(levels,regionId,query,status,completed,drafts=[]){
+  if(typeof query!=='string'||!['all','todo','done','draft'].includes(status)||!Array.isArray(completed)||!Array.isArray(drafts))throw new RangeError('検索条件が不正です。');
+  const normalized=query.normalize('NFKC').toLowerCase().trim();
+  const numberMatch=normalized.match(/^(?:quest\s*)?(\d+)$/u);
+  const words=normalized.split(/\s+/u).filter(Boolean),done=new Set(completed),saved=new Set(drafts);
   return visibleQuests(levels,regionId).filter(({level})=>{
     const place=regions.find(region=>region.quests.includes(level.id));
     const text=[level.number,`quest ${level.number}`,level.name,level.title,level.tag,level.story,place?.name||''].join(' ').normalize('NFKC').toLowerCase();
-    return words.every(word=>text.includes(word))&&(status==='all'||(status==='done')===done.has(level.id));
+    const matches=numberMatch?Number(level.number)===Number(numberMatch[1]):words.every(word=>text.includes(word));
+    return matches&&(status==='all'||status==='draft'&&saved.has(level.id)||status==='done'&&done.has(level.id)||status==='todo'&&!done.has(level.id));
   });
 }
 
