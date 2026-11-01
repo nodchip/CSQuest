@@ -12,7 +12,7 @@
 | AI | AI-ML | Machine Learning | 71 | 一部試作：１近傍分類、回帰、勾配降下、依頼118の集団別指標、過学習、依頼375〜380の多層ネットワーク、前処理、評価分割、特徴表現、強化学習、クラスタリング、依頼549〜551・553・554の実測 Iris の比較、漏洩と未学習の種類、552の小さなネットワークの逆伝播と更新の例。[詳細](ai-ml.md) |
 | AI | AI-SEP | Applications and Societal Impact | 75 | 依頼118で架空の公平性指標の固定例。依頼457で文章生成と根拠照合、458で乱れた像と条件付き復元、459で attention の重み付き和の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-LRR | Logical Representation and Reasoning | 76 | 依頼72・537〜540で命題、知識の種類、開世界、非単調推論、量化と推論方向の固定例。他は未対応。[詳細](ai-additional.md) |
-| AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率と条件付き独立の固定例。他は未対応。[詳細](ai-probability.md) |
+| AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率、562で観測による d 分離の固定例。他は未対応。[詳細](ai-probability.md) |
 | AI | AI-Planning | Planning | 78 | 依頼85・100・541〜548で状態を含む移動、半順序、因果リンク、計画グラフ、操作の前提と効果、階層分解、観測と再計画、有限期間 MDP、複数主体の経路の固定例。他は未対応。[詳細](ai-planning.md) |
 | AI | AI-Agents | Agents and Cognitive Systems | 79 | 依頼109で記憶を持つ主体、依頼379で行動価値を更新する主体の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-NLP | Natural Language Processing | 79 | 依頼119〜121で検索評価、転置索引、TF-IDF と単語の並びの固定例。他は未対応。[詳細](ai-additional.md) |
