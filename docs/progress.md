@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: AES S-box の差分分布を調べる依頼614を追加。S-box の既知値・置換性と全255種類の非ゼロ入力差の集計を検査し、`npm test` 1444件とビルドが成功。ブラウザで集計表の表示維持、誤答、途中再開、10組の達成、320・390・1280px幅を確認。狭い画面では集計表内をスクロールできる。[NIST FIPS 197](https://csrc.nist.gov/pubs/fips/197/final)、[AES の差分に関する研究](https://eprint.iacr.org/2018/182.pdf)参照。単一 S-box の統計で、AES 全体の攻撃や安全性の証明ではない。
+
 - 2026-11-01: AES の MixColumns の依頼613を追加。有限体の全65,536組の乗算を独立した多項式還元と照合し、既知の列と逆変換を検査。`npm test` 1441件とビルドが成功。ブラウザで誤答、途中再開、２列８行、１ビット変更の比較、達成、320・390・1280px幅を確認。[NIST FIPS 197](https://csrc.nist.gov/pubs/fips/197/final)参照。１列の線形変換に限り、AES 全体や暗号解析は扱わない。
 
 - 2026-11-01: AES-GCM と RSA-OAEP の暗号化時間・出力長、RSA で包んだ AES 鍵を含むデータ量を比較する依頼612を追加。３種類の本文の実際の暗号化・鍵の包み込み・復号、RSA-OAEP 190・191バイト境界を検査し、`npm test` 1438件とビルドが成功。ブラウザで誤答、途中再開、長さ超過、API 不可、計算中の条件変更、達成、320・390・1280px幅を確認。[RFC 8017](https://www.rfc-editor.org/rfc/rfc8017)、[MDN](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey)参照。測定は鍵生成・復号を除く９回の中央値で、一般的性能や方式全体の安全性を示さない。
