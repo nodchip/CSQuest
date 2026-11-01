@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {irisSamples} from '../src/iris-samples.js';
+import {irisModels,irisEvaluate,irisBest,createIrisValidation,irisValidationComplete,restoreIrisValidation} from '../src/iris-validation.js';
+test('derived samples preserve UCI rows, labels, and measurement units',()=>{const rows=readFileSync(new URL('../data/iris.data',import.meta.url),'utf8').trim().split(/\r?\n/).map(x=>x.split(','));assert.equal(rows.length,150);const expected=rows.slice(50).map(r=>[Math.round(Number(r[2])*10),Math.round(Number(r[3])*10),Number(r[4]==='Iris-virginica')]);assert.deepEqual(irisSamples,expected);});
+test('all six validation and test counts match independent grouping and confusion totals',()=>{const known=[[74,19],[72,20],[65,19],[74,18],[75,19],[75,19]];for(let i=0;i<irisModels.length;i++){for(const [j,split] of ['validation','test'].entries()){const r=irisEvaluate(i,split);assert.equal(r.total,split==='validation'?80:20);assert.equal(r.correct,known[i][j]);assert.equal(r.tp+r.tn+r.fp+r.fn,r.total);}assert.equal(irisBest(i),i>=4);}assert.throws(()=>irisEvaluate(6,'test'));});
+test('completion needs all validation comparisons before locking and test, with a limitation reflection',()=>{const s=createIrisValidation();Object.assign(s,{selected:4,evaluated:63,locked:true,tested:true,reflection:'limits',checked:true});assert.ok(irisValidationComplete(s));assert.deepEqual(restoreIrisValidation(s),s);assert.throws(()=>restoreIrisValidation({...s,evaluated:31}));assert.throws(()=>restoreIrisValidation({...s,locked:false}));assert.ok(!irisValidationComplete({...s,selected:0}));});

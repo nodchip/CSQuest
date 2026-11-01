@@ -8,6 +8,7 @@
 | [Proof Dungeon](https://github.com/kihara-logic/proof-dungeon) | 企画上の参考作品。[公式ライセンス](https://github.com/kihara-logic/proof-dungeon/blob/main/LICENSE) はソフトウェアを MIT、指定された物語・解説等の内容を CC BY-NC-SA 4.0 と区別している。作品を参考として表示する。この記録は他作品の素材を無条件で再利用できるという意味ではない。 |
 | [DM Sans](https://github.com/google/fonts/blob/main/ofl/dmsans/OFL.txt) | © 2014 The DM Sans Project Authors。SIL Open Font License 1.1。現在は Google Fonts から実行時に読み込み、フォントファイルをリポジトリには同梱しない。 |
 | [Noto Serif JP](https://github.com/google/fonts/blob/main/ofl/notoserifjp/OFL.txt) | © 2012 Google Inc.。SIL Open Font License 1.1。同じく実行時に読み込み、フォントファイルは同梱しない。 |
+| [Iris](https://doi.org/10.24432/C56C76) | R. A. Fisher (1936), Iris [Dataset], UCI Machine Learning Repository。配布元は [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) を指定。`data/iris.data` は原データ、`src/iris-samples.js` は Versicolor・Virginica の花弁の長さと幅を 0.1 cm 単位に変換して抽出したもの。原データ SHA-256 は `6f608b71a7317216319b4d27b4d9bc84e6abd734eda7872b71a458569e2656c0`。 |
 | その他 | 現在の追跡対象には画像・音声・動画・フォントのファイルは見当たらない。図は HTML、CSS、インライン SVG で描画する。個別の教材が参照する RFC、仕様、マニュアル等は各対応文書や画面にリンクする。 |
 
 確認範囲は現在のリポジトリのファイル名、HTML/CSS の外部読み込み、上記の原典・ライセンス表示。独立した著作権監査や全文章の類似性調査を完了したことは意味しない。
