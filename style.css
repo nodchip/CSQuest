@@ -153,3 +153,7 @@
 .story-draft-panel label { min-width: 0; max-width: 100%; }
 .story-draft-panel select { max-width: 100%; }
 #moving-answer { max-width: 100%; }
+.scalar-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; max-width: 24rem; margin: 1rem 0; }
+.scalar-cell { min-height: 3.5rem; border: 1px solid #777; border-radius: 0.35rem; font-weight: bold; }
+.scalar-cell small { display: block; min-height: 1em; font-size: 0.7rem; }
+.scalar-cell[aria-pressed="true"] { outline: 3px solid #ce5b00; outline-offset: -3px; }
