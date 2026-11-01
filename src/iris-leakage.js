@@ -1,0 +1,9 @@
+import {irisPartition,irisFit,irisPredict} from './iris-learning.js';
+export const irisLeakageLevel={id:'archive-iris-leakage',number:'553',kind:'iris-leakage',name:'未来の記録を混ぜない',tag:'前処理とデータ漏洩',title:'変換の基準をどこから作る？',story:'書庫の精霊は、花の分類に使う長さと幅を標準化します。基準にする記録を確かめましょう。'};
+export const irisLeakMethods={train:'訓練の60件だけ',mixed:'訓練とテストの80件'};
+export const irisLeakVariants={original:'元の記録',altered:'テスト１件を仮に変更'};
+export function irisLeakMetrics(method,variant){if(!Object.hasOwn(irisLeakMethods,method)||!Object.hasOwn(irisLeakVariants,variant))throw new RangeError('条件が不正です。');const p=irisPartition(),test=p.test.map((r,i)=>variant==='altered'&&i===0?[100,80,r[2]]:[...r]),trainModel=irisFit(3,p.train),stats=method==='train'?trainModel:irisFit(3,[...p.train,...test]),probe=test[1],model={...trainModel,means:stats.means,variances:stats.variances};return {means:stats.means,variances:stats.variances,probe:[...probe],transformed:[0,1].map(i=>(probe[i]-stats.means[i])/Math.sqrt(stats.variances[i])),prediction:irisPredict(model,probe),trainCount:p.train.length,testCount:test.length,changed:test[0]};}
+export function createIrisLeakage(){return {method:'train',variant:'original',tried:0,reflection:null,checked:false};}
+export function irisLeakageComplete(s){return s.tried===15&&s.reflection==='leak'&&s.checked;}
+export function restoreIrisLeakage(s){if(!s||!Object.hasOwn(irisLeakMethods,s.method)||!Object.hasOwn(irisLeakVariants,s.variant)||!Number.isInteger(s.tried)||s.tried<0||s.tried>=16||![null,'leak','identical','always'].includes(s.reflection)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');return {...s};}
+export function irisLeakBit(method,variant){if(!Object.hasOwn(irisLeakMethods,method)||!Object.hasOwn(irisLeakVariants,variant))throw new RangeError('条件が不正です。');return (method==='mixed'?2:0)+(variant==='altered'?1:0);}
