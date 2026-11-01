@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: タイマー割込みと協調的な譲渡を比較する依頼623を追加。鐘の有無と譲渡の有無の４場面について、７刻の履歴、B の開始時刻、保存と達成条件を検査。`npm test` 1465件とビルドが成功。ブラウザで早い判定・誤予想・途中再開・４場面の達成、320・390・1280px幅を確認。[OSTEP](https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf)参照。１炉・２仕事・切替え費用なしの模型で、実 OS の公平性や期限を保証しない。
+
 - 2026-11-01: 色カテゴリの符号化を最近傍の道案内に使う依頼622を追加。２種類の番号付けと３灯表現で赤・青の距離と選択を比較し、全６条件、保存と達成を検査。`npm test` 1463件とビルドが成功。ブラウザで誤案内・再開・同距離の保留・達成、320・390・1280px幅を確認。[カテゴリの表現](https://developers.google.com/machine-learning/crash-course/categorical-data/one-hot-encoding)参照。２件の架空記録による模型で、赤の実際の道や安全性は示さない。
 
 - 2026-11-01: 色カテゴリの one-hot 表現と未登録・欠損の扱いを比較する依頼621を追加。２方式と５種類の全変換、途中記録と達成条件を検査し、`npm test` 1461件とビルドが成功。ブラウザで誤変換・途中再開・10条件の達成、320・390・1280px幅を確認。[OneHotEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)参照。架空の１項目による模型で、未登録と欠損用の列が予測精度を保証するものではない。
