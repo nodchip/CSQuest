@@ -1,0 +1,10 @@
+export const correlatedLevel={id:'village-correlated-query',number:'462',kind:'correlated-query',name:'三つの村と配達台帳',tag:'相関する問い合わせ',title:'村ごとに配達を確かめよう',story:'薬師は配達のある村を探します。村の一覧と配達台帳を見比べ、内側の調査がどの村を見ているか確かめましょう。'};
+export const correlatedVillages=['森の村','川の村','山の村'];
+export const correlatedCases={deliveries:{name:'配達がある日',rows:[0,0,2]},empty:{name:'配達のない日',rows:[]}};
+export const correlatedModes={own:'その村への配達を探す',any:'どこかへの配達を探す'};
+export function correlatedExists(rows,village,mode){if(!Array.isArray(rows)||rows.some(x=>!Number.isInteger(x)||x<0||x>2)||!Number.isInteger(village)||village<0||village>2||!Object.hasOwn(correlatedModes,mode))throw new RangeError('台帳か問い合わせが不正です。');return mode==='own'?rows.some(x=>x===village):rows.length>0;}
+export function createCorrelatedTrial(){return {answers:[null,null,null],checked:false};}
+export function createCorrelated(){return {selected:'deliveries',mode:'own',trials:Object.fromEntries(Object.keys(correlatedCases).map(id=>[id,Object.fromEntries(Object.keys(correlatedModes).map(m=>[m,createCorrelatedTrial()]))])),answer:null,checked:false};}
+export function correlatedTrialDone(id,mode,t){return Boolean(t.checked&&t.answers.every((v,i)=>v===correlatedExists(correlatedCases[id].rows,i,mode)));}
+export function correlatedComplete(s){return Object.keys(correlatedCases).every(id=>Object.keys(correlatedModes).every(m=>correlatedTrialDone(id,m,s.trials[id][m])))&&s.answer==='outer'&&s.checked;}
+export function restoreCorrelated(s){if(!s||!Object.hasOwn(correlatedCases,s.selected)||!Object.hasOwn(correlatedModes,s.mode)||!s.trials||![null,'outer','equal','duplicates'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');const n=createCorrelated();n.selected=s.selected;n.mode=s.mode;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(correlatedCases))for(const m of Object.keys(correlatedModes)){const t=s.trials[id]?.[m];if(!t||!Array.isArray(t.answers)||t.answers.length!==3||t.answers.some(x=>![null,true,false].includes(x))||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です');n.trials[id][m]={answers:[...t.answers],checked:t.checked};}return n;}

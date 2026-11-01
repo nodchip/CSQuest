@@ -1,6 +1,8 @@
 # CS Quest 開発記録
 
 
+- 2026-11-01: 依頼462で外側の村を参照する存在判定と参照しない判定を比較。[PostgreSQL の EXISTS](https://www.postgresql.org/docs/current/functions-subquery.html)を参照。空・重複を含む３行以下の台帳を検査し `npm test` 1064件成功。配信用ビルドのブラウザで判定不足、途中再開、両日・両方式の達成と320・390・1280px幅を確認。NULL、実行計画や実 SQL の記述は未対応。前回の Pages デプロイは成功。
+
 - 2026-11-01: 依頼461で４ビットの符号と絶対値・２の補数、負の０と −８ を比較。[Cornell の符号付き整数](https://www.cs.cornell.edu/courses/cs3410/2026sp/notes/numbers.html)を参照。全16通りの読書きを検査し `npm test` 1062件成功。配信用ビルドのブラウザで誤答、途中再開、負の０と −８、３門の達成と320・390・1280px幅を確認。一般のビット幅と演算は未対応。前回の Pages デプロイは成功。
 
 - 2026-11-01: 依頼460で16ビットの値を８ビットずつ配置し、２種類のバイト順で読み取る。[MDN のバイト順](https://developer.mozilla.org/en-US/docs/Glossary/Endianness)を参照。全65,536値と両順序を DataView と照合し `npm test` 1060件成功。配信用ビルドのブラウザで配置不足、途中再開、読み方による値の違い、両方式の達成と320・390・1280px幅を確認。一般のワード長や実機の命令は未対応。前回の Pages デプロイは成功。
