@@ -12,7 +12,7 @@ test('expected costs match independent enumeration of all 100 observations',()=>
   }
 });
 test('all four checked correct decisions are required and saved choices are validated',()=>{
-  const state=createDecision();for(const id of Object.keys(decisionCases))for(const g of Object.keys(decisionGroups)){const cost=decisionCosts(id,g);state.choices[id][g]={broken:decisionGroups[g].broken,policy:cost.inspect<cost.leave?'inspect':'leave',checked:true};}assert.equal(decisionComplete(state),true);
+  const state=createDecision();for(const id of Object.keys(decisionCases))for(const g of Object.keys(decisionGroups)){const cost=decisionCosts(id,g);state.choices[id][g]={broken:decisionGroups[g].broken,policy:cost.inspect<cost.leave?'inspect':'leave',checked:true};}assert.equal(decisionComplete(state),false);state.game={a:'rest',b:'rest',visited:15,last:3,equilibrium:'rest',welfare:'work',checked:true};assert.equal(decisionComplete(state),true);
   const restored=restoreDecision(state);state.choices.costly.alarm.broken=2;assert.equal(restored.choices.costly.alarm.broken,8);restored.choices.mild.silent.checked=false;assert.equal(decisionComplete(restored),false);
   restored.choices.mild.silent.broken=999;assert.throws(()=>restoreDecision(restored),RangeError);
 });
