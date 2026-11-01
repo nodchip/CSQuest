@@ -131,3 +131,8 @@
 .frame-scene { margin: 1rem auto; max-width: 20rem; }
 .frame-scene svg { display: block; width: 100%; height: auto; }
 .frame-scene figcaption { margin-top: .5rem; line-height: 1.6; }
+
+.emblem-comparison { display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center; }
+.emblem-comparison figure { margin: 0; width: min(100%, 12rem); }
+.emblem-comparison svg { display: block; width: 100%; height: auto; }
+.emblem-comparison figcaption { margin-top: .5rem; line-height: 1.5; }
