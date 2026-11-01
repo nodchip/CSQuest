@@ -808,3 +808,5 @@
 - 2026-11-01: 架空の利用者調査の同意範囲、共有候補、元記録のアクセスと保存期限を比較する依頼532を追加。[NIH のデータ管理計画](https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/dms/writing-dms-plan)と [ICO の集計・識別リスク](https://ico.org.uk/media/for-organisations/documents/1061/anonymisation-code.pdf)を参照。16設定×２時点・復元・関連する道順を検査し、`npm test` 1243件成功。ブラウザで同意範囲の問題・途中再開・期限後・達成・キーボードと320・390・1280px幅を確認。少人数の集計の安全性を保証せず、実際の共有や削除は行わない。依頼531の公開動作も確認。
 
 - 2026-11-01: 被験者間・被験者内の割当と、参加者の個人差が平均へ与える影響を比較する依頼533を追加。[Penn State の比較実験](https://online.stat.psu.edu/stat503/Lesson02)を参照。全81割当と７種類の有効な設計、途中保存、ブラウザの不成立な割当・再開・達成・キーボードと320・390・1280px幅を確認し、`npm test` 1245件成功。順序効果がない固定模型で実際の無作為化、疲労や統計的推論は未対応。依頼532の公開動作も確認。
+
+- 2026-11-01: 案内板の３場面を試し、状態の可視性・操作のやり直し・選択肢の認識を点検し改善する依頼534を追加。[Nielsen Norman Group の原則](https://media.nngroup.com/media/articles/attachments/Heuristic_Summary1_A4_compressed.pdf)を参照。27通りの原則の選択、改善と再確認、途中保存を検査し、`npm test` 1247件成功。ブラウザで誤答・再開・改善前後・達成・キーボードと320・390・1280px幅を確認。固定３場面であり、実際の利用者評価や全体の使いやすさは保証しない。依頼533の公開動作も確認。
