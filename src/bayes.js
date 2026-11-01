@@ -1,3 +1,4 @@
+import {createRelationalWeather,restoreRelationalWeather,relationalComplete} from './relational-weather.js';
 export const bayesLevel={id:'rain-observations',number:'81',kind:'bayes',name:'雨の兆しと二つの観測',tag:'確率と観測による推論',title:'雨の手がかりを比べよう',story:'山道の番人は、雨と石の濡れ具合、鐘の音の記録を持っています。観測と一致する記録から、雨の可能性を調べましょう。'};
 // A Bayesian network R -> W and R -> B, represented as an exact 100-case joint distribution.
 export const records=[
@@ -15,10 +16,10 @@ export function bayesExpected(id){
 }
 export function bayesCounts(selection){return {denominator:selection.denominator.reduce((sum,i)=>sum+records[i].count,0),numerator:selection.numerator.reduce((sum,i)=>sum+records[i].count,0)};}
 export function bayesCorrect(id,selection){const expected=bayesExpected(id);return ['denominator','numerator'].every(key=>expected[key].length===selection[key].length&&expected[key].every(i=>selection[key].includes(i)));}
-export function createBayes(){return {selected:'wet',choices:Object.fromEntries(Object.keys(bayesCases).map(id=>[id,{denominator:[],numerator:[],checked:false}]))};}
+export function createBayes(){return {selected:'wet',choices:Object.fromEntries(Object.keys(bayesCases).map(id=>[id,{denominator:[],numerator:[],checked:false}])),relational:createRelationalWeather()};}
 export function restoreBayes(saved){
   if(!saved||!Object.hasOwn(bayesCases,saved.selected)||!saved.choices)throw new RangeError('途中記録が不正です。');
   const result=createBayes();result.selected=saved.selected;
-  for(const id of Object.keys(bayesCases)){const c=saved.choices[id];if(!c||typeof c.checked!=='boolean')throw new RangeError('途中記録が不正です。');for(const key of ['denominator','numerator'])if(!Array.isArray(c[key])||c[key].some(i=>!Number.isInteger(i)||i<0||i>=records.length)||new Set(c[key]).size!==c[key].length)throw new RangeError('途中記録が不正です。');result.choices[id]={denominator:c.denominator.slice(),numerator:c.numerator.slice(),checked:c.checked};}return result;
+  for(const id of Object.keys(bayesCases)){const c=saved.choices[id];if(!c||typeof c.checked!=='boolean')throw new RangeError('途中記録が不正です。');for(const key of ['denominator','numerator'])if(!Array.isArray(c[key])||c[key].some(i=>!Number.isInteger(i)||i<0||i>=records.length)||new Set(c[key]).size!==c[key].length)throw new RangeError('途中記録が不正です。');result.choices[id]={denominator:c.denominator.slice(),numerator:c.numerator.slice(),checked:c.checked};}if(saved.relational!==undefined)result.relational=restoreRelationalWeather(saved.relational);return result;
 }
-export function bayesComplete(set){return Object.keys(bayesCases).every(id=>set.choices[id].checked&&bayesCorrect(id,set.choices[id]));}
+export function bayesComplete(set){return Object.keys(bayesCases).every(id=>set.choices[id].checked&&bayesCorrect(id,set.choices[id]))&&relationalComplete(set.relational);}

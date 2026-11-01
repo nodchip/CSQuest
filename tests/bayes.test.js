@@ -20,7 +20,7 @@ test('each question selects the correct exact rows and counts',()=>{
   }
 });
 test('saved selections are copied and malformed selections rejected',()=>{
-  const state=createBayes();for(const id of Object.keys(bayesCases))state.choices[id]={...bayesExpected(id),checked:true};assert.equal(bayesComplete(state),true);
+  const state=createBayes();for(const id of Object.keys(bayesCases))state.choices[id]={...bayesExpected(id),checked:true};assert.equal(bayesComplete(state),false);state.relational.answers={sharedWet:68,sharedDry:32,separateWet:50,separateDry:50};state.relational.checked={sharedWet:true,sharedDry:true,separateWet:true,separateDry:true};assert.equal(bayesComplete(state),true);
   const restored=restoreBayes(state);state.choices.wet.numerator.push(7);assert.equal(bayesComplete(restored),true);assert.throws(()=>restoreBayes({...state,selected:'unknown'}),RangeError);
   state.choices.wet.numerator=[0,0];assert.throws(()=>restoreBayes(state),RangeError);
 });
