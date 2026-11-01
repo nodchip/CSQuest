@@ -93,7 +93,7 @@
 | MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜305で内積、行基本変形、線形結合、基底と座標、固有方向、対角化、射影、直交化、主成分分析、PageRank、SVDと２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
 | MSF | MSF-Calculus | Calculus | 192 | 依頼473〜479で導関数、定積分、オイラー法、テイラー近似、勾配、極座標と制約付き最適化の固定例。一般の計算・証明は未対応。[詳細](msf-calculus.md) |
 | NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送、556でハブ・スイッチ・ルータ、557で ARP による次の受け手の解決、558で IP の砂時計型の固定例。他は未対応。[詳細](nc-fundamentals.md) |
-| NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET、667で中央と仲間からの受信・複製を比較する固定模型。他は未対応。[詳細](nc-applications.md) |
+| NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET、667で中央と仲間からの受信・複製、668で用途と転送方式を比較する固定模型。他は未対応。[詳細](nc-applications.md) |
 | NC | NC-Reliability | Reliability Support | 199 | 依頼10・649で消失・再送、422で送信窓・累積確認、423で混雑と AIMD、424で TCP 接続開始の固定例。他は未対応。[詳細](nc-reliability.md) |
 | NC | NC-Routing | Routing and Forwarding | 199 | 依頼480〜484で集約、距離ベクトル、リンクステート、AS 経路と IP 版の固定例。実網の経路制御は未対応。[詳細](nc-routing.md) |
 | NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調、570で冗長経路とループ、571で STP の根とポート役割の固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
