@@ -1,3 +1,4 @@
+import {createExternalBudget,externalBudgetComplete,restoreExternalBudget} from './external-budget.js';
 export const externalSortLevel={id:'archive-external-sort',number:'665',kind:'external-sort',name:'頁を運ぶ整列の工房',tag:'外部整列と入出力',title:'限られた机で札を並べよう',story:'書庫の８枚の札は机に一度に載りません。小さく整列した列を作り、先頭を比べて大きな列へ合わせましょう。'};
 export const externalItems=[7,2,6,1,8,3,5,4];
 export const externalBuffers={small:3,large:4};
@@ -23,6 +24,6 @@ export function externalTrialAct(s,action){
  else return {ok:false,message:'今の段階でできる操作を選びましょう。'};
  n.history.push(action);return {ok:true,state:n,message};
 }
-export function createExternalSort(){return {selected:'small',trials:{small:createExternalTrial('small'),large:createExternalTrial('large')},answer:null,checked:false};}
-export function externalSortComplete(s){return Object.keys(externalBuffers).every(k=>s.trials[k].phase==='done')&&s.answer==='buffers'&&s.checked;}
-export function restoreExternalSort(saved){if(!saved||!Object.hasOwn(externalBuffers,saved.selected)||!saved.trials||![null,'buffers','always','none'].includes(saved.answer)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');const n=createExternalSort();n.selected=saved.selected;n.answer=saved.answer;n.checked=saved.checked;for(const mode of Object.keys(externalBuffers)){const h=saved.trials[mode]?.history;if(!Array.isArray(h)||h.length>64)throw new RangeError('途中記録が不正です。');for(const action of h){if(typeof action!=='string')throw new RangeError('途中記録が不正です。');const r=externalTrialAct(n.trials[mode],action);if(!r.ok)throw new RangeError('途中記録が不正です。');n.trials[mode]=r.state;}}return n;}
+export function createExternalSort(){return {selected:'small',trials:{small:createExternalTrial('small'),large:createExternalTrial('large')},answer:null,checked:false,budget:createExternalBudget()};}
+export function externalSortComplete(s){return Object.keys(externalBuffers).every(k=>s.trials[k].phase==='done')&&s.answer==='buffers'&&s.checked&&externalBudgetComplete(s.budget);}
+export function restoreExternalSort(saved){if(!saved||!Object.hasOwn(externalBuffers,saved.selected)||!saved.trials||![null,'buffers','always','none'].includes(saved.answer)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');const n=createExternalSort();n.selected=saved.selected;n.answer=saved.answer;n.checked=saved.checked;for(const mode of Object.keys(externalBuffers)){const h=saved.trials[mode]?.history;if(!Array.isArray(h)||h.length>64)throw new RangeError('途中記録が不正です。');for(const action of h){if(typeof action!=='string')throw new RangeError('途中記録が不正です。');const r=externalTrialAct(n.trials[mode],action);if(!r.ok)throw new RangeError('途中記録が不正です。');n.trials[mode]=r.state;}}if(saved.budget!==undefined)n.budget=restoreExternalBudget(saved.budget);return n;}
