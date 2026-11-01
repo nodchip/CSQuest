@@ -116,3 +116,10 @@
 .ray-blue { background: #9cc6e4; }
 .ray-sky { background: #e3f2f3; }
 .ray-pending { background: #eee9df; border: 1px dashed #766e60; }
+
+.emblem-boards { display: flex; flex-wrap: wrap; gap: 1rem; }
+.emblem-board p { margin-bottom: .4rem; }
+.emblem-grid { display: grid; grid-template-columns: repeat(3, 2.5rem); gap: .15rem; }
+.emblem-cell { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; padding: 0; border: 1px solid #82745d; border-radius: .2rem; font-size: 1.2rem; }
+.emblem-cell.lit { color: #503616; background: #f2d27c; }
+.emblem-cell.unlit { color: #4f564c; background: #e7e9df; }
