@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {keyMazes,createKeyMaze,keyMazeStep,createKeySearch,expandKeySearch,keySearchPath,createKeyMazeSet,restoreKeyMaze,keyMazeComplete} from '../src/key-maze.js';
+import {createDynamicPath,dynamicPathAct} from '../src/dynamic-path.js';
 
 // Independent enumeration uses room and key as distinct search-state fields.
 function minimum(id){const edges=keyMazes[id].edges,queue=[{room:'S',key:false,distance:0}],seen=new Set(['S:false']);while(queue.length){const s=queue.shift();if(s.room==='G')return s.distance;for(const [a,b] of edges){const next=a===s.room?b:b===s.room?a:null;if(!next||(next==='G'&&!s.key))continue;const key=s.key||next==='K',tag=`${next}:${key}`;if(!seen.has(tag)){seen.add(tag);queue.push({room:next,key,distance:s.distance+1});}}}return Infinity;}
@@ -15,7 +16,7 @@ test('the key changes available progress at the same room',()=>{
 });
 test('histories replay only valid transitions and completion requires both maps',()=>{
   const saved={selected:'bridge',history:{bridge:['K','A','G'],return:['K','S','A','G']}};assert.equal(keyMazeComplete(restoreKeyMaze(saved)),false);assert.equal(keyMazeComplete(createKeyMazeSet()),false);
-  const complete=restoreKeyMaze({...saved,searchHistory:['S0','A0','K1','S1','A1','G1'],searchAnswer:'state',searchChecked:true});assert.equal(keyMazeComplete(complete),true);
+  const partial=restoreKeyMaze({...saved,searchHistory:['S0','A0','K1','S1','A1','G1'],searchAnswer:'state',searchChecked:true});assert.equal(keyMazeComplete(partial),false);let dynamic=createDynamicPath();for(const action of ['move:A','move:G','move:B','move:G','answer:replan','check'])dynamic=dynamicPathAct(dynamic,action).state;const complete=restoreKeyMaze({...saved,searchHistory:['S0','A0','K1','S1','A1','G1'],searchAnswer:'state',searchChecked:true,dynamic});assert.equal(keyMazeComplete(complete),true);
   assert.throws(()=>restoreKeyMaze({...saved,history:{...saved.history,return:['A','G']}}),RangeError);
   assert.throws(()=>restoreKeyMaze({...saved,history:{...saved.history,bridge:['G']}}),RangeError);
 });

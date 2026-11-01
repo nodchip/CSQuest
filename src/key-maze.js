@@ -1,3 +1,4 @@
+import {createDynamicPath,restoreDynamicPath,dynamicPathComplete} from './dynamic-path.js';
 export const keyMazeLevel={id:'key-return-maze',number:'85',kind:'keymaze',name:'鍵を持って戻る迷宮',tag:'状態空間と計画',title:'鍵を手に門へ向かおう',story:'迷宮の奥に閉じた門があります。限られた灯りの時間で鍵を見つけ、門までたどり着きましょう。'};
 export const keyRooms={S:'入口',A:'分かれ道',K:'鍵の祭壇',G:'閉じた門'};
 export const keyMazes={bridge:{name:'祭壇からの近道',budget:3,edges:[['S','A'],['S','K'],['K','A'],['A','G']]},return:{name:'入口へ戻る道',budget:4,edges:[['S','A'],['S','K'],['A','G']]}};
@@ -20,10 +21,10 @@ export function expandKeySearch(s,id){
  return {ok:true,state:{queue,nodes,edges,history,done:false,message:added.length?`新たに ${added.join('・')} を発見しました。`:'新しい状態はありません。'}};
 }
 export function keySearchPath(s){if(!s.done)return null;const path=[];for(let id='G1';id!==null;id=s.nodes[id].parent)path.push(id);return path.reverse();}
-export function createKeyMazeSet(){return {selected:'bridge',states:Object.fromEntries(Object.keys(keyMazes).map(id=>[id,createKeyMaze(id)])),search:createKeySearch(),searchAnswer:null,searchChecked:false};}
+export function createKeyMazeSet(){return {selected:'bridge',states:Object.fromEntries(Object.keys(keyMazes).map(id=>[id,createKeyMaze(id)])),search:createKeySearch(),searchAnswer:null,searchChecked:false,dynamic:createDynamicPath()};}
 export function restoreKeyMaze(saved){
   if(!saved||!Object.hasOwn(keyMazes,saved.selected)||!saved.history)throw new RangeError('途中記録が不正です。');const result=createKeyMazeSet();result.selected=saved.selected;
   for(const id of Object.keys(keyMazes)){const history=saved.history[id];if(!Array.isArray(history)||history.length>keyMazes[id].budget)throw new RangeError('途中記録が不正です。');for(const next of history){const before=result.states[id],after=keyMazeStep(before,next);if(after.history.length!==before.history.length+1)throw new RangeError('途中記録が不正です。');result.states[id]=after;}}
-  const history=saved.searchHistory??[],answer=saved.searchAnswer??null,checked=saved.searchChecked??false;if(!Array.isArray(history)||history.length>20||![null,'state','room'].includes(answer)||typeof checked!=='boolean')throw new RangeError('途中記録が不正です。');for(const id of history){const r=expandKeySearch(result.search,id);if(!r.ok)throw new RangeError('途中記録が不正です。');result.search=r.state;}result.searchAnswer=answer;result.searchChecked=checked;return result;
+  const history=saved.searchHistory??[],answer=saved.searchAnswer??null,checked=saved.searchChecked??false;if(!Array.isArray(history)||history.length>20||![null,'state','room'].includes(answer)||typeof checked!=='boolean')throw new RangeError('途中記録が不正です。');for(const id of history){const r=expandKeySearch(result.search,id);if(!r.ok)throw new RangeError('途中記録が不正です。');result.search=r.state;}result.searchAnswer=answer;result.searchChecked=checked;if(saved.dynamic!==undefined)result.dynamic=restoreDynamicPath(saved.dynamic);return result;
 }
-export function keyMazeComplete(value){return Object.values(value.states).every(s=>s.status==='found')&&value.search.done&&value.searchAnswer==='state'&&value.searchChecked;}
+export function keyMazeComplete(value){return Object.values(value.states).every(s=>s.status==='found')&&value.search.done&&value.searchAnswer==='state'&&value.searchChecked&&dynamicPathComplete(value.dynamic);}
