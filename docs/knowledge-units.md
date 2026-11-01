@@ -155,7 +155,7 @@
 | SF | SF-Foundations | Basic Concepts | 293 | 状態、回路、逐次・並列処理等に固定例。一般的な構築と説明は未対応。[詳細](sf-foundations.md) |
 | SF | SF-Resource | Resource Management | 294 | スケジューリングや資源の固定例。実装・実測や一般的比較は未対応。[詳細](sf-resource.md) |
 | SF | SF-Performance | System Performance | 294 | 一部試作：依頼25でキャッシュと時間的局所性 |
-| SF | SF-Evaluation | Performance Evaluation | 295 | 依頼66で理想化した並列作業、572で CPI・クロックと仕事の構成比の固定例。[詳細](sf-evaluation.md) |
+| SF | SF-Evaluation | Performance Evaluation | 295 | 依頼66で理想化した並列作業、572で CPI・クロックと仕事の構成比、573でキャッシュ競合と待ち時間の固定例。[詳細](sf-evaluation.md) |
 | SF | SF-Reliability | System Reliability | 296 | 依頼10・35・62・106〜108・229で再送、途中停止、冗長符号、稼働記録と複製の固定例。他は未対応。[詳細](sf-reliability.md) |
 | SF | SF-Security | System Security | 297 | 依頼180・258・280などで攻撃、対策と警報の固定例。一般的な侵入検知などは未対応。[詳細](sf-security-design.md) |
 | SF | SF-Design | System Design | 297 | 設計基準に関連する固定例。代表的システムの設計は未対応。[詳細](sf-security-design.md) |
