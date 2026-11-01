@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: Web Crypto の ECDH、HKDF、AES-GCM で直接交換と中間者の差し替え・中継、確認済みの鍵との照合を比較する依頼603を追加。[NIST SP 800-56A](https://csrc.nist.gov/pubs/sp/800/56/a/r3/final) と [RFC 5869](https://www.rfc-editor.org/rfc/rfc5869)を参照。３条件と復元を自動検査し、`npm test` 1412件成功。ブラウザで誤答、再開、リセット、API 不可、達成、320・390・1280px幅を確認。確認済みの鍵は仮定で、本人確認・証明書や実用の通信プロトコルは未対応。
+
 - 2026-11-01: Web Crypto で ECDSA P-256 の鍵生成・署名・検証を行い、改変・別鍵・鍵の差替え・再送を比較する依頼602を追加。[NIST FIPS 186-5](https://csrc.nist.gov/pubs/fips/186-5/final) と [MDN](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign)を参照。６条件、Node の公開鍵検証との相互運用、復元を自動検査し、`npm test` 1410件成功。ブラウザで誤答、再開、６条件、API 不可、計算中の条件変更、達成、キーボードと320・390・1280px幅を確認。固定本文と一時鍵を使う実験で、本人確認・証明書や実用の鍵管理は未対応。
 
 - 2026-11-01: Web Crypto で SHA-256 と HMAC-SHA-256 を計算し、本文変更・印の変更・再送を比べる依頼601を追加。[RFC 4231](https://www.rfc-editor.org/rfc/rfc4231) と [NIST](https://csrc.nist.gov/pubs/fips/198-1/final) を参照。RFC の HMAC 既知値と８条件、復元を自動検査し、`npm test` 1407件成功。ブラウザで誤答、再開、８条件、API 不可、計算中の条件変更、達成、キーボードと320・390・1280px幅を確認。鍵と本文は公開固定値であり、実用の鍵管理・再送防止・安全性は評価しない。
