@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {triadCases,createTriad,triadTrialComplete,triadComplete,restoreTriad} from '../src/security-triad.js';
+test('all combinations of affected properties and preparations are checked for each report',()=>{for(const id of Object.keys(triadCases))for(let impact=0;impact<8;impact++)for(let controls=0;controls<8;controls++)assert.equal(triadTrialComplete(id,{impact,controls,checked:true}),impact===triadCases[id].mask&&controls===triadCases[id].mask);});
+test('all reports and reflection are required and restored trials are independent',()=>{const s=createTriad();for(const [id,v] of Object.entries(triadCases))s.trials[id]={impact:v.mask,controls:v.mask,checked:true};s.answer='distinct';s.checked=true;assert.equal(triadComplete(s),true);const r=restoreTriad(s);r.trials.both.impact=1;assert.equal(s.trials.both.impact,3);assert.equal(triadComplete(r),false);assert.throws(()=>restoreTriad({...s,trials:{...s.trials,both:{impact:8,controls:3,checked:true}}}));});
