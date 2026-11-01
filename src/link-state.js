@@ -1,0 +1,8 @@
+export const linkStateLevel={id:'forest-link-state',number:'482',kind:'link-state',name:'森の塔の道地図',tag:'リンクステートと最短経路',title:'道の知らせを集めて地図を作ろう',story:'森の塔は隣の道の費用を知らせ合います。Ａ塔に集めた地図を使って、城までの最短の道を探しましょう。'};
+export const linkNodes=['Ａ','Ｂ','Ｃ','城'];
+export const linkGraph={'Ａ':{'Ｂ':1,'Ｃ':4},'Ｂ':{'Ａ':1,'Ｃ':2,'城':6},'Ｃ':{'Ａ':4,'Ｂ':2,'城':1},'城':{'Ｂ':6,'Ｃ':1}};
+export function linkSnapshot(history){if(!Array.isArray(history)||history.length>4)throw new RangeError('探索の記録が不正です。');const dist={'Ａ':0,'Ｂ':Infinity,'Ｃ':Infinity,'城':Infinity},parent={'Ａ':null},settled=[];for(const node of history){if(!linkNodes.includes(node)||settled.includes(node)||dist[node]===Infinity)throw new RangeError('塔の選択が不正です。');const min=Math.min(...linkNodes.filter(v=>!settled.includes(v)).map(v=>dist[v]));if(dist[node]!==min)throw new RangeError('未確定の中で費用が最も小さい塔を選びましょう。');settled.push(node);for(const [v,w] of Object.entries(linkGraph[node]))if(!settled.includes(v)&&dist[node]+w<dist[v]){dist[v]=dist[node]+w;parent[v]=node;}}return {dist,parent,settled};}
+export function createLinkState(){return {received:0,history:[],answer:null,checked:false};}
+export function settleLink(s,node){if(s.received!==15)throw new RangeError('まず４つの塔の知らせを集めましょう。');const history=[...s.history,node];linkSnapshot(history);return {...s,history,checked:false};}
+export function linkStateComplete(s){return s.received===15&&s.history.length===4&&s.answer==='map'&&s.checked;}
+export function restoreLinkState(s){if(!s||!Number.isInteger(s.received)||s.received<0||s.received>15||!Array.isArray(s.history)||(s.history.length&&s.received!==15)||![null,'map','distance','magic'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');linkSnapshot(s.history);return {...s,history:[...s.history]};}
