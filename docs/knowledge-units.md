@@ -111,7 +111,7 @@
 | OS | OS-Memory | Memory Management | 210 | 依頼34・40・137でページ置換と住所変換、依頼385で頁の分離・共有、依頼387で確保方式と断片化の固定例。他は未対応。[詳細](os-memory.md) |
 | OS | OS-Devices | Device management | 211 | 依頼105・132で通知と DMA の固定模型。他は未対応。[詳細](os-devices.md) |
 | OS | OS-Files | File Systems API and Implementation | 212 | 依頼77で名前と実体、384で開く操作、576・577で領域割当て、739で遠隔共有、740で権限、741で空き領域管理、742でディレクトリの名前解決を操作。残る範囲は[項目別台帳](coverage-os-files.md)を参照。 |
-| OS | OS-Advanced-Files | Advanced File systems | 212 | 依頼290〜292で共有ブロック・マウント・メモリ対応、736〜739で復旧と遠隔共有、743で応用冒険、744で保存時暗号化の脅威模型を操作。残る範囲は[項目別台帳](coverage-os-advanced-files.md)を参照。 |
+| OS | OS-Advanced-Files | Advanced File systems | 212 | 依頼290〜292で共有ブロック・マウント・メモリ対応、736〜739で復旧と遠隔共有、743で応用冒険、744で保存時暗号化、745で特殊目的の書庫を比較。残る範囲は[項目別台帳](coverage-os-advanced-files.md)を参照。 |
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと仮想マシンのカーネルの固定模型。他は未対応。[詳細](os-virtualization.md) |
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133で２仕事の期限と順序の固定例。他は未対応。[詳細](os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136で DB の先行ログ、181でバックアップ復元の固定模型。実 OS の障害耐性は未対応。[詳細](os-faults.md) |
