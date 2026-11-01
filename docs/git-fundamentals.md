@@ -14,6 +14,8 @@
 
 CS Core の例示学習成果2・10は、依頼83で固定図形の標本化と境界の見え方を比較する一例がある。成果6には依頼515、KA Core成果13には依頼22の限定例もある。原典の子項目と各成果は [項目別台帳](coverage-git-fundamentals.md) を参照。実際の描画プログラムや自由な説明を評価しない。
 
+依頼719は画素ごとに RGB の３成分または RGBA の４成分を各１バイトで記録する固定模型。８×８の RGB は192バイト、RGBA は256バイト、16×８の RGB は384バイト、８×８の RGB を１秒30枚保存すると5760バイト。圧縮・行の余白・音声・付加情報は含めず、実ファイルのサイズと同一視しない。RGBA の例はブラウザの８×８ ImageData の256バイトと照合。参考：[MDN の画素データ](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas)、[MDN の動画の概念](https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API/Video_processing_concepts)。
+
 依頼514は四角領域の左上半分の三角形を、画素中心が厳密に内側なら塗る。辺上は塗らない。４×４の６画素を最近傍で８×８・16×16に広げると24・96画素、元の図形から再標本化すると28・120画素になる。図は指定した標本モデルの結果であり、実際の SVG レンダラのアンチエイリアスや他の拡大法を再現しない。画素だけの情報と図形記述の違いを扱い、表示時には双方が画素になる。[W3C SVG の概念](https://www.w3.org/TR/SVG11/concepts.html)を参照。
 
 依頼515は RGB 各成分を０・１とし、灯火は選んだ成分を加える。白い光を通すシアン・マゼンタ・黄色の理想結晶は、それぞれ赤・緑・青を遮り、重ねた結晶のすべてを通る成分を残す。各方式の全８組合せを検証。スペクトル、実際の材料、表示装置の色域、知覚や印刷の黒インクを再現しない。[OpenStax の光と色](https://openstax.org/books/physics/pages/15-1-the-electromagnetic-spectrum)を参照。

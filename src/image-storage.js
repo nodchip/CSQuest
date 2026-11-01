@@ -1,0 +1,7 @@
+export const imageStorageLevel={id:'ruin-image-storage',number:'719',kind:'image-storage',name:'絵巻の保管箱',tag:'画素と記憶量',title:'絵巻の大きさを見積もる',story:'書庫の絵巻と動く絵を保管します。画素と色の成分、枚数から必要な場所を見積もりましょう。'};
+export const imageStorageCases={rgb:{name:'小さな絵',width:8,height:8,channels:3,frames:1,description:'静止画：８×８画素、RGB'},alpha:{name:'透明度つきの絵',width:8,height:8,channels:4,frames:1,description:'静止画：８×８画素、RGBA'},wide:{name:'横長の絵',width:16,height:8,channels:3,frames:1,description:'静止画：16×８画素、RGB'},video:{name:'動く絵',width:8,height:8,channels:3,frames:30,description:'動画：８×８画素、RGB、１秒に30枚を１秒'}};
+export const imageStorageChoices=[192,256,384,576,1920,5760];
+export function imageStorageSize(c){return c.width*c.height*c.channels*c.frames;}
+export function imageStorageCreate(){return {selected:'rgb',trials:Object.fromEntries(Object.keys(imageStorageCases).map(id=>[id,{answer:null,checked:false}]))};}
+export function imageStorageComplete(s){return Object.entries(imageStorageCases).every(([id,c])=>s.trials[id].checked&&s.trials[id].answer===imageStorageSize(c));}
+export function imageStorageRestore(s){if(!s||!Object.hasOwn(imageStorageCases,s.selected)||!s.trials)throw new RangeError('途中記録が不正です。');const out=imageStorageCreate();out.selected=s.selected;for(const id of Object.keys(imageStorageCases)){const t=s.trials[id];if(!t||![null,...imageStorageChoices].includes(t.answer)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です。');out.trials[id]={answer:t.answer,checked:t.checked};}return out;}
