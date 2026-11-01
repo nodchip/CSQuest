@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: ブラウザの Web Crypto で AES-GCM を実行し、２通の初期値と暗号文改変を比較する依頼600を追加。[NIST SP 800-38D](https://csrc.nist.gov/pubs/sp/800/38/d/final) と [MDN](https://developer.mozilla.org/en-US/docs/Web/API/AesGcmParams) を参照。既知の AES-GCM 入出力と４条件、認証失敗・保存を自動検査し、`npm test` 1404件成功。ブラウザで誤答、再開、４条件、API 不可時、計算中の条件変更、達成、キーボードと320・390・1280px幅を確認。公開の固定鍵・本文・初期値を使う実験で、実用上の鍵管理や安全性は評価しない。
+
 - 2026-11-01: 素数５・11から教材用 RSA の法55、互いに素な数40個、指数３・27と暗号化・復号を調べる依頼599を追加。[Stanford](https://crypto.stanford.edu/pbc/notes/numbertheory/order.html) と [NIST](https://csrc.nist.gov/pubs/sp/800/56/b/r2/final) を参照。全55剰余の復号と不適切な指数５の衝突、誤答・途中復元・達成を検査し、`npm test` 1401件成功。ブラウザで因数の誤答、指数５の試行と再開、達成、キーボードと320・390・1280px幅を確認。極小・決定的な模型で実用暗号の安全性や実装は評価しない。
 
 - 2026-11-01: 公開方式と秘密鍵・独自暗号の危険を扱う依頼598を追加。[OWASP の暗号利用](https://top10proactive.owasp.org/archive/2024/the-top-10/c2-crypto/)を参照。６印の全入力・鍵と２組の既知平文・暗号文、誤答・途中保存・達成を検査し、`npm test` 1399件成功。ブラウザで候補の誤答、再開、二つの鍵と方針の達成、キーボードと320・390・1280px幅を確認。既知平文と小さな鍵の模型で、実用暗号の強度や鍵管理の実装は未評価。
