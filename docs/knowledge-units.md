@@ -96,7 +96,7 @@
 | NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET の固定模型。他は未対応。[詳細](nc-applications.md) |
 | NC | NC-Reliability | Reliability Support | 199 | 依頼10で消失・再送、422で送信窓・累積確認、423で混雑と AIMD、424で TCP 接続開始の固定例。他は未対応。[詳細](nc-reliability.md) |
 | NC | NC-Routing | Routing and Forwarding | 199 | 依頼480〜484で集約、距離ベクトル、リンクステート、AS 経路と IP 版の固定例。実網の経路制御は未対応。[詳細](nc-routing.md) |
-| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調、570で冗長経路とループの固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
+| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調、570で冗長経路とループ、571で STP の根とポート役割の固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
 | NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279・280で差し替え、認証、分離、門番と警報の固定例。他の攻撃・対策は未対応。[詳細](nc-security.md) |
 | NC | NC-Mobility | Mobility | 201 | 依頼316〜318で保存・中継、無線 LAN の再接続とセルラー登録区域の固定例。他は未対応。[詳細](nc-mobility.md) |
 | NC | NC-Emerging | Emerging Topics | 201 | 依頼319〜322で SDN、NAT、負荷分散と CDN の固定模型。他は未対応。[詳細](nc-emerging.md) |
