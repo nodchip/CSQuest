@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: 法17の楕円曲線の依頼611を追加。19点の列挙、361組の加算、324組の共有点を検査し、`npm test` 1435件とビルドが成功。ブラウザで誤答、途中再開、単位元・逆点・倍加・異なる点の加算、公開点の探索、共有点、320・390・1280px幅を確認。点加算の式と具体例も提示。[NPTEL](https://archive.nptel.ac.in/content/storage2/courses/106103015/module9/lec3/1.html)、[NIST](https://csrc.nist.gov/pubs/sp/800/56/a/r3/final)参照。19点の教材用曲線で実用上の安全性、認証や鍵導出は未対応。
+
 - 2026-11-01: 15の因数分解を題材に、理想化した周期探索の測定結果と古典的な後処理を操作する依頼610を追加。７つの底について周期と16通りの測定確率を独立したフーリエ振幅和で検査し、`npm test` 1432件とビルドが成功。ブラウザで誤答、途中再開、不十分な周期候補、自明な因数と３・５の発見、320・390・1280px幅を確認。320pxでは数表を内部スクロールに修正。[IBM Quantum](https://quantum.cloud.ibm.com/docs/en/tutorials/shors-algorithm)、[NIST](https://www.nist.gov/cybersecurity-and-privacy/what-post-quantum-cryptography)参照。量子回路、一般の周期や実用規模は未対応。
 
 - 2026-11-01: 鍵の生成・配布・保管・漏えい対応・廃棄を比較する依頼609を追加。32通りの選択における侵害前の漏えい、旧鍵漏えい後の新しい伝令、管理下と影のコピーを検査し、`npm test` 1429件とビルドが成功。ブラウザで誤予想、原因を単独にした比較、途中再開、達成、320・390・1280px幅を確認。[NIST SP 800-57](https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final)、[OWASP 鍵管理](https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html)参照。理想化した保護と固定の侵害を仮定し、実際の鍵管理や端末復旧は行わない。
