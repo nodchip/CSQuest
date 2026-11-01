@@ -1,6 +1,8 @@
 # CS Quest 開発記録
 
 
+- 2026-11-01: 依頼460で16ビットの値を８ビットずつ配置し、２種類のバイト順で読み取る。[MDN のバイト順](https://developer.mozilla.org/en-US/docs/Glossary/Endianness)を参照。全65,536値と両順序を DataView と照合し `npm test` 1060件成功。配信用ビルドのブラウザで配置不足、途中再開、読み方による値の違い、両方式の達成と320・390・1280px幅を確認。一般のワード長や実機の命令は未対応。前回の Pages デプロイは成功。
+
 - 2026-11-01: 依頼459に query・value を変更し未来の位置のマスクを比べる実験を追加。[Hugging Face の causal attention](https://huggingface.co/docs/transformers/en/attention_interface)を参照。90設定と旧保存の復元を検査し `npm test` 1058件成功。配信用ビルドのブラウザでマスクの有無と未来の値の変更、途中再開、元の依頼の達成と320・390・1280px幅を確認。固定２位置の模型で実モデルの訓練は未対応。前回の Pages デプロイは成功。
 
 - 2026-11-01: 依頼459で１次元 query・key の softmax と２値の加重和を操作。[Attention Is All You Need](https://arxiv.org/abs/1706.03762)を参照。３例の重みと結果を独立計算し `npm test` 1056件成功。配信用ビルドのブラウザで誤答、途中再開、３例の達成と320・390・1280px幅を確認。多頭化、位置情報、訓練やモデル全体は未対応。前回の Pages デプロイは成功。
