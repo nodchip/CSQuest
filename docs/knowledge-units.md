@@ -37,7 +37,7 @@
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |
 | DM | DM-Core | Core Database System Concepts | 115 | 依頼123で列の変更とビューの固定例。問い合わせ・トランザクション等は別の固定例のみ。[詳細](dm-core.md) |
 | DM | DM-Modeling | Data Modeling | 116 | 依頼101・102で多対多、１対多、１対１の高々の制約とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
-| DM | DM-Relational | Relational Databases | 117 | 一部試作：依頼67で更新異常と分解後の結合、464で外部キーの削除動作、466で属性閉包と候補キーを比較 |
+| DM | DM-Relational | Relational Databases | 117 | 依頼466〜472で属性閉包、正規形、二・三分解、多値従属性、物理配置、非正規化と制約の固定例。一般の設計・証明は未対応。[詳細](dm-relational.md) |
 | DM | DM-Querying | Query Construction | 118 | 一部試作：複数条件による選択、内部・左外部結合、集合演算、全称条件、依頼462の相関する存在判定と463の結果の反復、465の NULL と制約の固定例 |
 | DM | DM-Processing | Query Processing | 118 | 依頼89で複合索引の列順と候補範囲の固定例。他は未対応。[詳細](dm-processing.md) |
 | DM | DM-Internals | DBMS Internals | 119 | 一部試作：依頼35・38・39で原子性・永続性・分離と競合直列化の固定例 |
@@ -91,7 +91,7 @@
 | MSF | MSF-Probability | Probability | 188 | 条件付き確率、期待値、依頼84で分散、428で連続一様分布、429で条件付き期待値、430で独立性の固定例。他は未対応。[詳細](msf-probability.md) |
 | MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜115で代表値、条件別集計、度数と回帰、431で二値観測の最尤推定、432で正規誤差の最尤推定と最小二乗、433で有限標本、434で既知の母標準偏差を使う正規母集団の信頼区間、435で最大事後推定と正則化、436で厳密な二項検定の固定例。他は未対応。[詳細](msf-statistics.md) |
 | MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜305で内積、行基本変形、線形結合、基底と座標、固有方向、対角化、射影、直交化、主成分分析、PageRank、SVDと２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
-| MSF | MSF-Calculus | Calculus | 192 | 依頼116で一変数の導関数と勾配降下の固定例。他は未対応。[詳細](msf-calculus.md) |
+| MSF | MSF-Calculus | Calculus | 192 | 依頼473〜479で導関数、定積分、オイラー法、テイラー近似、勾配、極座標と制約付き最適化の固定例。一般の計算・証明は未対応。[詳細](msf-calculus.md) |
 | NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送の固定例。他は未対応。[詳細](nc-fundamentals.md) |
 | NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET の固定模型。他は未対応。[詳細](nc-applications.md) |
 | NC | NC-Reliability | Reliability Support | 199 | 依頼10で消失・再送、422で送信窓・累積確認、423で混雑と AIMD、424で TCP 接続開始の固定例。他は未対応。[詳細](nc-reliability.md) |
