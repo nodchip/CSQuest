@@ -92,7 +92,7 @@
 | MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜115で代表値、条件別集計、度数と回帰、431で二値観測の最尤推定、432で正規誤差の最尤推定と最小二乗、433で有限標本、434で既知の母標準偏差を使う正規母集団の信頼区間、435で最大事後推定と正則化、436で厳密な二項検定の固定例。他は未対応。[詳細](msf-statistics.md) |
 | MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜305で内積、行基本変形、線形結合、基底と座標、固有方向、対角化、射影、直交化、主成分分析、PageRank、SVDと２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
 | MSF | MSF-Calculus | Calculus | 192 | 依頼473〜479で導関数、定積分、オイラー法、テイラー近似、勾配、極座標と制約付き最適化の固定例。一般の計算・証明は未対応。[詳細](msf-calculus.md) |
-| NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送、556でハブ・スイッチ・ルータ、557で ARP による次の受け手の解決の固定例。他は未対応。[詳細](nc-fundamentals.md) |
+| NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送、556でハブ・スイッチ・ルータ、557で ARP による次の受け手の解決、558で IP の砂時計型の固定例。他は未対応。[詳細](nc-fundamentals.md) |
 | NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET の固定模型。他は未対応。[詳細](nc-applications.md) |
 | NC | NC-Reliability | Reliability Support | 199 | 依頼10で消失・再送、422で送信窓・累積確認、423で混雑と AIMD、424で TCP 接続開始の固定例。他は未対応。[詳細](nc-reliability.md) |
 | NC | NC-Routing | Routing and Forwarding | 199 | 依頼480〜484で集約、距離ベクトル、リンクステート、AS 経路と IP 版の固定例。実網の経路制御は未対応。[詳細](nc-routing.md) |

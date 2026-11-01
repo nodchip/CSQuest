@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {hourglassApps,hourglassLinks,hourglassRoute,createHourglass,hourglassTry,hourglassComplete,restoreHourglass} from '../src/hourglass.js';
+test('全組合せで共通 IP の有無がこの模型の到達を決める',()=>{for(const a of Object.keys(hourglassApps))for(const l of Object.keys(hourglassLinks))for(const ip of [false,true])assert.equal(hourglassRoute(a,l,ip).delivered,ip);assert.throws(()=>hourglassRoute('unknown','wifi',true));});
+test('四つの組合せと共通層の欠落、振り返りを記録して再開する',()=>{let s=createHourglass();for(const a of Object.keys(hourglassApps))for(const l of Object.keys(hourglassLinks))s=hourglassTry({...s,app:a,link:l});assert.equal(s.visited.length,4);s=hourglassTry({...s,ip:false});assert.equal(s.failed,true);assert.equal(hourglassComplete(s),false);s.answer='shared';s.checked=true;assert.equal(hourglassComplete(s),true);const copy=restoreHourglass(s);copy.visited.pop();assert.equal(s.visited.length,4);assert.throws(()=>restoreHourglass({...s,visited:['wrong']}));assert.throws(()=>restoreHourglass({...s,failed:false}));});
