@@ -1,0 +1,10 @@
+export const ensembleLevel={id:'castle-watch-ensemble',number:'496',kind:'watch-ensemble',name:'三人の見張りと多数決',tag:'アンサンブルと誤りの重なり',title:'見張りを組み合わせよう',story:'王城の三人の見張りは、それぞれ六つの記録を調べました。一人で判断するときと多数決を使うときで、見逃しと誤警報がどう変わるか比べましょう。'};
+export const ensembleModes={different:'誤りが別々の組',same:'誤りが重なる組'};
+export const ensembleTeams={A:'見張りＡだけ',B:'見張りＢだけ',C:'見張りＣだけ',all:'３人の多数決'};
+export const ensembleTruth=[true,true,true,false,false,false];
+const first=[false,true,true,true,false,false];
+export const ensembleVotes={different:[first,[true,false,true,false,true,false],[true,true,false,false,false,true]],same:[first,first,first]};
+export function ensembleResult(mode,team){if(!Object.hasOwn(ensembleModes,mode)||!Object.hasOwn(ensembleTeams,team))throw new RangeError('条件が不正です。');const vectors=ensembleVotes[mode];const rows=ensembleTruth.map((attack,i)=>{const votes=vectors.map(v=>v[i]),alert=team==='all'?votes.filter(Boolean).length>=2:votes[['A','B','C'].indexOf(team)];return {id:i+1,attack,votes,alert,correct:alert===attack};});return {rows,correct:rows.filter(r=>r.correct).length,missed:rows.filter(r=>r.attack&&!r.alert).length,falseAlarm:rows.filter(r=>!r.attack&&r.alert).length};}
+export function createEnsemble(){return {selected:'different',team:'A',seen:{different:[],same:[]},answer:null,checked:false};}
+export function ensembleComplete(s){return Object.keys(ensembleModes).every(id=>['A','all'].every(team=>s.seen[id].includes(team)))&&s.answer==='errors'&&s.checked;}
+export function restoreEnsemble(s){if(!s||!Object.hasOwn(ensembleModes,s.selected)||!Object.hasOwn(ensembleTeams,s.team)||!s.seen||![null,'errors','always','same'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');const n=createEnsemble();n.selected=s.selected;n.team=s.team;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(ensembleModes)){const v=s.seen[id];if(!Array.isArray(v)||v.some(team=>!Object.hasOwn(ensembleTeams,team))||new Set(v).size!==v.length)throw new RangeError('途中記録が不正です。');n.seen[id]=[...v];}return n;}
