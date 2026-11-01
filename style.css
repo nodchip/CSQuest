@@ -98,3 +98,5 @@
 .span-diagram{display:block;width:min(100%,280px);height:auto;background:#f7faf5;border:1px solid #d2ddce}
 
 .fr-table-wrap{max-width:100%;overflow-x:auto}
+
+.pbfs-map{max-width:440px;margin:16px auto}.pbfs-map svg{display:block;width:100%;height:auto}.pbfs-map line{stroke:#7b9582;stroke-width:3}.pbfs-map circle{stroke:#52755d;stroke-width:2;fill:#fffef8}.pbfs-map .frontier circle{fill:#f8edc9}.pbfs-map .visited circle{fill:#dcebdd}.pbfs-map text{font-size:14px;fill:#274d39;font-weight:700}.pbfs-map .pbfs-status{font-size:9px;font-weight:400}
