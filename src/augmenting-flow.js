@@ -1,0 +1,8 @@
+export const augmentingFlowLevel={id:'forest-augmenting-flow',number:'692',kind:'augmenting-flow',name:'水路を組み替える配達',tag:'最大流と反復改善',title:'残りの水路で荷物を届けよう',story:'森の集荷所から砦へ荷物を運びます。途中の水路の使い方を組み替え、より多くの荷物を届けましょう。'};
+export const flowEdges={SA:['S','A'],SB:['S','B'],AB:['A','B'],AT:['A','T'],BT:['B','T']};
+export const flowRoutes={long:{name:'S → A → B → T',steps:[['SA',1],['AB',1],['BT',1]]},reverse:{name:'S → B → A → T',steps:[['SB',1],['AB',-1],['AT',1]]},top:{name:'S → A → T',steps:[['SA',1],['AT',1]]},bottom:{name:'S → B → T',steps:[['SB',1],['BT',1]]}};
+export function flowFromHistory(history){if(!Array.isArray(history)||history.length>2)throw new RangeError('経路の記録が不正です。');const flow=Object.fromEntries(Object.keys(flowEdges).map(e=>[e,0]));for(const id of history){const route=Object.hasOwn(flowRoutes,id)?flowRoutes[id]:null;if(!route||route.steps.some(([edge,direction])=>direction===1?flow[edge]>=1:flow[edge]<=0))throw new RangeError('その経路には空きがありません。逆向きは既に使った流れを戻す場合だけ使えます。');for(const [edge,direction] of route.steps)flow[edge]+=direction;}return flow;}
+export function flowAdvance(s,id){flowFromHistory([...s.history,id]);return {...s,history:[...s.history,id],checked:false};}
+export function createAugmentingFlow(){return {history:[],answer:null,checked:false};}
+export function augmentingFlowComplete(s){return s.checked&&s.answer==='cut'&&s.history.length===2&&s.history[0]==='long'&&s.history[1]==='reverse';}
+export function restoreAugmentingFlow(saved){if(!saved||![null,'cut','full','random'].includes(saved.answer)||typeof saved.checked!=='boolean')throw new RangeError('途中記録が不正です。');flowFromHistory(saved.history);return {history:[...saved.history],answer:saved.answer,checked:saved.checked};}
