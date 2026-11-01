@@ -1,0 +1,12 @@
+export const historyExhibitLevel={id:'guild-computing-exhibit',number:'498',kind:'computing-exhibit',name:'記録をつなぐ展示室',tag:'計算技術の歴史と社会',title:'史料を読み、展示を組み立てよう',story:'ギルドの展示室に、計算技術に携わった人々の記録が届きました。業績と当時の状況を史料から確かめ、分からないことは分からないまま展示しましょう。'};
+export const exhibitPeople={
+ johnson:{name:'キャサリン・ジョンソン',source:'NASA：ジョンソンの経歴',url:'https://www.nasa.gov/people-of-nasa/katherine-g-johnson/',evidence:'1953年に人種分離された計算部門で働き始め、後に宇宙飛行の軌道計算を担当しました。NASA の経歴は、人種分離と性別による偏見の制約にも触れています。',work:'orbit',context:'segregation'},
+ hamilton:{name:'マーガレット・ハミルトン',source:'NASA：アポロのソフトウェア',url:'https://science.nasa.gov/people/margaret-hamilton/',evidence:'MIT の計測研究所でソフトウェア工学部門を率い、NASA のアポロ計画の誘導システムに関わりました。この資料の要約には本人が受けた具体的な制度上の障壁は記載されていません。',work:'apollo',context:'unknown'},
+ turing:{name:'アラン・チューリング',source:'英国政府：チューリングへの恩赦',url:'https://www.gov.uk/government/news/royal-pardon-for-ww2-code-breaker-dr-alan-turing',evidence:'第二次世界大戦中にエニグマ暗号の解読に貢献しました。1952年に同性間の行為を理由に有罪となり、政府機関での仕事に必要な資格を失いました。2013年に死後恩赦を受けました。',work:'code',context:'conviction'}
+};
+export const exhibitWorks={orbit:'宇宙飛行の軌道計算に携わった',apollo:'アポロ計画の誘導ソフトウェアの部門を率いた',code:'第二次世界大戦中の暗号解読に貢献した'};
+export const exhibitContexts={segregation:'人種分離された部門で働き始め、偏見の制約にも直面した',conviction:'同性間の行為で有罪となり、政府機関の仕事に必要な資格を失った',unknown:'この資料の要約には、本人が受けた具体的な制度上の障壁は書かれていない'};
+export function createHistoryExhibit(){return {selected:'johnson',trials:Object.fromEntries(Object.keys(exhibitPeople).map(id=>[id,{read:false,work:null,context:null,checked:false}])),answer:null,checked:false};}
+export function exhibitTrialComplete(id,t){const p=exhibitPeople[id];return Boolean(p&&t.read&&t.checked&&t.work===p.work&&t.context===p.context);}
+export function historyExhibitComplete(s){return Object.keys(exhibitPeople).every(id=>exhibitTrialComplete(id,s.trials[id]))&&s.answer==='evidence'&&s.checked;}
+export function restoreHistoryExhibit(s){if(!s||!Object.hasOwn(exhibitPeople,s.selected)||!s.trials||![null,'evidence','assume','none'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');const n=createHistoryExhibit();n.selected=s.selected;n.answer=s.answer;n.checked=s.checked;for(const id of Object.keys(exhibitPeople)){const t=s.trials[id];if(!t||typeof t.read!=='boolean'||typeof t.checked!=='boolean'||t.work!==null&&!Object.hasOwn(exhibitWorks,t.work)||t.context!==null&&!Object.hasOwn(exhibitContexts,t.context))throw new RangeError('途中記録が不正です。');n.trials[id]={read:t.read,work:t.work,context:t.context,checked:t.checked};}return n;}
