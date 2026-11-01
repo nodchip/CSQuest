@@ -12,6 +12,6 @@
 
 追加の項目別台帳：[AL-Foundational](coverage-al-foundational.md)、[PDC-Algorithms](coverage-pdc-algorithms.md)、[PDC-Evaluation](coverage-pdc-evaluation.md)、[MSF-Discrete](coverage-msf-discrete.md)、[MSF-Probability](coverage-msf-probability.md)、[MSF-Statistics](coverage-msf-statistics.md)、[GIT-Fundamentals](coverage-git-fundamentals.md)、[GIT-Rendering](coverage-git-rendering.md)、[GIT-Visualization](coverage-git-visualization.md)、[GIT-Modeling](coverage-git-modeling.md)。
 
-追加の項目別台帳：[GIT-Image](coverage-git-image.md)、[GIT-Animation](coverage-git-animation.md)、[GIT-Shading](coverage-git-shading.md)、[OS-Advanced-Files](coverage-os-advanced-files.md)。
+追加の項目別台帳：[GIT-Image](coverage-git-image.md)、[GIT-Animation](coverage-git-animation.md)、[GIT-Shading](coverage-git-shading.md)、[OS-Advanced-Files](coverage-os-advanced-files.md)、[OS-Files](coverage-os-files.md)。
 
-現時点ではこの形式で見直したのは81単位。他の85単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この81/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
+現時点ではこの形式で見直したのは82単位。他の84単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この82/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
