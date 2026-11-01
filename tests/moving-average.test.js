@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {movingValues,movingWidths,movingPositions,movingAverage,movingCreate,movingReady,movingComplete,movingRestore} from '../src/moving-average.js';
+test('each centered window averages the expected original days and omits incomplete edges',()=>{const expected={1:[2,8,2],3:[4,4,4],5:[3.2,3.2,3.2]};for(const w of movingWidths)for(const [i,p] of movingPositions.entries())assert.equal(movingAverage(movingValues,p,w).mean,expected[w][i]);assert.equal(movingAverage(movingValues,0,3),null);assert.equal(movingAverage(movingValues,8,5),null);for(const w of movingWidths)assert.equal(movingAverage(Array(9).fill(7),4,w).mean,7);});
+test('nine observations, interpretation and check are required and saved state is validated',()=>{const s=movingCreate();s.answer='flatten';s.checked=true;assert.equal(movingComplete(s),false);s.seen={1:[2,3,4],3:[2,3,4],5:[2,3,4]};assert.equal(movingReady(s),true);assert.equal(movingComplete(s),true);assert.deepEqual(movingRestore(s),s);s.seen[1].push(2);assert.throws(()=>movingRestore(s));});
