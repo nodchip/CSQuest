@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {minimaxCases,minimaxValue,checkMinimax,chanceCases,chanceValue,checkChance,createMinimax,restoreMinimax,minimaxComplete} from '../src/minimax.js';
+import {minimaxCases,minimaxValue,checkMinimax,chanceCases,chanceValue,checkChance,horizonExample,horizonValues,createMinimax,restoreMinimax,minimaxComplete} from '../src/minimax.js';
 
 test('the player maximizes the minimum result chosen by the opponent',()=>{
   assert.deepEqual(minimaxValue('first'),{east:2,west:4,best:'west',guaranteed:4});
@@ -12,9 +12,10 @@ test('the player maximizes the minimum result chosen by the opponent',()=>{
 });
 test('all trials require tested correct choices and saved choices are validated',()=>{
   const state=createMinimax();state.choices.first={east:2,west:4,best:'west',tested:true};state.choices.second={east:3,west:1,best:'east',tested:true};
-  assert.equal(minimaxComplete(state),false);for(const id of Object.keys(chanceCases)){const v=chanceValue(id);state.chanceChoices[id]={east:v.east,best:v.best,tested:true};}assert.equal(minimaxComplete(state),true);const restored=restoreMinimax(state);state.choices.first.east=8;assert.equal(restored.choices.first.east,2);
+  assert.equal(minimaxComplete(state),false);for(const id of Object.keys(chanceCases)){const v=chanceValue(id);state.chanceChoices[id]={east:v.east,best:v.best,tested:true};}assert.equal(minimaxComplete(state),false);state.horizon={shallow:'east',east:0,west:4,best:'west',shallowChecked:true,deepChecked:true};assert.equal(minimaxComplete(state),true);const restored=restoreMinimax(state);state.choices.first.east=8;assert.equal(restored.choices.first.east,2);
   assert.throws(()=>restoreMinimax({...state,selected:'unknown'}),RangeError);restored.choices.second.west=7;assert.throws(()=>restoreMinimax(restored),RangeError);
 });
+test('the shallow estimate chooses differently from the complete two-ply tree',()=>{const v=horizonValues();assert.deepEqual(v,{shallow:'east',east:0,west:4,best:'west'});assert.equal(Math.min(...horizonExample.terminal.east),0);assert.equal(Math.min(...horizonExample.terminal.west),4);const old=createMinimax();delete old.horizon;const restored=restoreMinimax(old);assert.equal(restored.horizon.shallow,'');assert.equal(restored.horizon.deepChecked,false);assert.throws(()=>restoreMinimax({...restored,horizon:{...restored.horizon,east:99}}));});
 test('chance nodes use the given probabilities, and earlier saves still restore',()=>{
  assert.deepEqual(chanceValue('half'),{east:5,west:4,best:'east'});assert.deepEqual(chanceValue('fifth'),{east:2,west:4,best:'west'});
  for(const id of Object.keys(chanceCases))for(const east of [2,4,5])for(const best of ['east','west']){const r=checkChance(id,{east,best}),v=chanceValue(id);assert.equal(r.east,east===v.east);assert.equal(r.best,best===v.best);}
