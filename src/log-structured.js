@@ -1,0 +1,8 @@
+export const logStructuredLevel={id:'archive-log-structured',number:'737',kind:'log-structured',name:'書庫の追記と棚の整理',tag:'ログ構造と領域回収',title:'新しい棚に必要な記録を移す',story:'書庫では変更を順に追記しています。古い記録の残る棚から必要な巻物を移して、空き棚を作りましょう。'};
+export const logSource=[{file:'A',version:1},{file:'B',version:1},{file:'A',version:2},{file:'C',version:1}];export const logInitialDestination=[{file:'B',version:2}];export const logLiveSource=[2,3];
+export function logCreate(){return {copies:[],reclaimed:false,answer:'',checked:false};}
+export function logView(s){if(!s||!Array.isArray(s.copies)||new Set(s.copies).size!==s.copies.length||s.copies.some(i=>!logLiveSource.includes(i))||typeof s.reclaimed!=='boolean'||(s.reclaimed&&s.copies.length!==2))throw new RangeError('棚の記録が不正です。');const source=s.reclaimed?Array(4).fill(null):logSource.map((r,i)=>({...r,live:logLiveSource.includes(i)&&!s.copies.includes(i)})),destination=[...logInitialDestination.map(r=>({...r,live:true})),...s.copies.map(i=>({...logSource[i],live:true}))];while(destination.length<4)destination.push(null);return {source,destination,free:source.filter(x=>!x).length+destination.filter(x=>!x).length};}
+export function logCopy(s,i){logView(s);if(s.reclaimed||!logLiveSource.includes(i)||s.copies.includes(i))return false;s.copies.push(i);return true;}
+export function logReclaim(s){logView(s);if(s.reclaimed||s.copies.length!==logLiveSource.length)return false;s.reclaimed=true;return true;}
+export function logComplete(s){return s.reclaimed&&s.checked&&s.answer==='append';}
+export function logRestore(s){if(!s||!['','append','overwrite','backup'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です。');logView(s);return {copies:[...s.copies],reclaimed:s.reclaimed,answer:s.answer,checked:s.checked};}
