@@ -123,3 +123,7 @@
 .emblem-cell { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; padding: 0; border: 1px solid #82745d; border-radius: .2rem; font-size: 1.2rem; }
 .emblem-cell.lit { color: #503616; background: #f2d27c; }
 .emblem-cell.unlit { color: #4f564c; background: #e7e9df; }
+
+.shadow-scene { margin: 1.25rem auto; max-width: 32rem; }
+.shadow-scene svg { display: block; width: 100%; height: auto; }
+.shadow-scene figcaption { margin-top: .5rem; line-height: 1.6; }
