@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {gimbalAngles,gimbalPitches,gimbalPose,gimbalCreate,gimbalRequired,gimbalComplete,gimbalRestore} from '../src/gimbal-lock.js';
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-12,`${a} != ${b}`);
+test('Euler rotation agrees with independent quaternion matrix for all eight poses',()=>{for(const r of gimbalAngles)for(const p of gimbalPitches)for(const y of gimbalAngles){const {matrix:m,q:[w,x,z1,z]}=gimbalPose(r,p,y);const v=z1;near(w*w+x*x+v*v+z*z,1);const qm=[[1-2*(v*v+z*z),2*(x*v-z*w),2*(x*z+v*w)],[2*(x*v+z*w),1-2*(x*x+z*z),2*(v*z-x*w)],[2*(x*z-v*w),2*(v*z+x*w),1-2*(x*x+v*v)]];for(let i=0;i<3;i++)for(let j=0;j<3;j++)near(m[i][j],qm[i][j]);}});
+test('paired roll and yaw align only in the locked sample',()=>{const equal=(a,b)=>a.flat().every((v,i)=>Math.abs(v-b.flat()[i])<1e-12);assert.equal(equal(gimbalPose(0,90,0).matrix,gimbalPose(45,90,45).matrix),true);assert.equal(equal(gimbalPose(0,0,0).matrix,gimbalPose(45,0,45).matrix),false);assert.throws(()=>gimbalPose(90,0,0));});
+test('completion requires observations and the checked comparison; restore copies',()=>{const s=gimbalCreate();s.answer='lock';s.checked=true;assert.equal(gimbalComplete(s),false);s.seen=[...gimbalRequired];assert.equal(gimbalComplete(s),true);const copy=gimbalRestore(s);copy.seen.pop();assert.equal(gimbalComplete(copy),false);assert.equal(gimbalComplete(s),true);s.seen.push('0:0:0');assert.throws(()=>gimbalRestore(s));});
