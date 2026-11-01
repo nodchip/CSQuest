@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {kernelImages,kernelFilters,kernelAt,kernelCreate,kernelComplete,kernelRestore} from '../src/image-kernel.js';
+test('two dimensional kernels handle impulses, step edges and replicated borders',()=>{
+ assert.equal(kernelAt('noise','box',12).value,40/9);assert.equal(kernelAt('noise','gaussian',12).value,5);assert.equal(kernelAt('noise','sharp',12).value,24);assert.equal(kernelAt('noise','sharp',11).value,0);assert.equal(kernelAt('noise','box',0).value,4);
+ assert.equal(kernelAt('edge','gaussian',11).value,3);assert.equal(kernelAt('edge','gaussian',12).value,5);assert.equal(kernelAt('edge','sharp',11).value,-2);assert.equal(kernelAt('edge','sharp',12).value,10);assert.equal(kernelAt('edge','box',0).value,2);assert.equal(kernelAt('edge','box',4).value,6);
+ for(const id of Object.keys(kernelImages))for(const f of Object.keys(kernelFilters))for(let i=0;i<25;i++){const r=kernelAt(id,f,i);assert.equal(r.samples.length,9);assert.ok(Number.isFinite(r.value));}assert.throws(()=>kernelAt('edge','sharp',25));
+});
+test('all observations and checked answer are needed; drafts validate and copy',()=>{
+ const s=kernelCreate();s.answer='tradeoff';s.checked=true;assert.equal(kernelComplete(s),false);for(const i of Object.keys(kernelImages))for(const f of Object.keys(kernelFilters))s.seen[i][f]=true;assert.equal(kernelComplete(s),true);const saved=kernelRestore(s);saved.seen.edge.box=false;assert.equal(kernelComplete(saved),false);assert.equal(kernelComplete(s),true);assert.throws(()=>kernelRestore({...s,index:25}));assert.throws(()=>kernelRestore({...s,seen:{}}));
+});
