@@ -4,6 +4,8 @@
 
 目次の単位 ID・名称・印字ページは、PDF から `pdftotext -layout CS2023.pdf cs2023.txt` で抽出後、`python scripts/check_knowledge_units.py cs2023.txt` で照合できる。2026-10-31 の照合では目次とこの表は各166行で一致した。目次に名称がない単位は ID とページのみ比較する。この検査は教材、各トピック・学習成果、原典の本文の正確性を確認するものではない。
 
+項目別の追跡方法と新しい台帳の整備状況は [coverage-status.md](coverage-status.md) を参照。
+
 | 分野 | 単位 | 名称 | 印字ページ | 状態 |
 |---|---|---|---:|---|
 | AI | AI-Introduction | Fundamental Issues | 67 | 依頼109・687で環境、688で主体の方針、689で人と自動化の役割分担、368・685で不確実性下の判断、375で AI の分類、686で模倣ゲームと中国語の部屋の固定例。他は未対応。[詳細](ai-introduction.md) |
