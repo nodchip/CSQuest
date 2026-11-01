@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {robotPlatformScenes,robotPlatformDrives,robotPlatformSensors,createRobotPlatform,robotPlatformAct,restoreRobotPlatform,robotPlatformComplete} from '../src/robot-platform.js';
+import {robotPlatformScenes,robotPlatformDrives,robotPlatformSensors,gripOutcome,createRobotPlatform,robotPlatformAct,restoreRobotPlatform,robotPlatformComplete} from '../src/robot-platform.js';
 const act=(s,a)=>{const r=robotPlatformAct(s,a);assert.equal(r.ok,true,`${a}: ${r.message}`);return r.state;};
 test('all 12 scenario and platform combinations honor sensing, geometry and energy',()=>{
  for(const scene of Object.keys(robotPlatformScenes))for(const drive of Object.keys(robotPlatformDrives))for(const sensor of Object.keys(robotPlatformSensors)){
@@ -21,6 +21,15 @@ test('three limitations, three deliveries and reflection are required and restor
   for(let i=0;i<4;i++)for(const a of ['scan','forward'])s=act(s,a);
  }
  for(const a of ['answer:universal','check'])s=act(s,a);assert.equal(robotPlatformComplete(s),false);
- for(const a of ['answer:fit','check'])s=act(s,a);assert.equal(robotPlatformComplete(s),true);
+ for(const a of ['answer:fit','check'])s=act(s,a);assert.equal(robotPlatformComplete(s),false);
+ for(const force of [2,4,6,8])for(const a of [`grip-force:${force}`,'grip:run'])s=act(s,a);
+ for(const a of ['grip-item:rough','grip-force:6','grip:run','check'])s=act(s,a);assert.equal(robotPlatformComplete(s),true);
+ assert.equal(robotPlatformComplete({...s,gripSeen:s.gripSeen.map(k=>k==='rough:6'?'rough:4':k)}),true);
  assert.deepEqual(restoreRobotPlatform(JSON.parse(JSON.stringify(s))),s);assert.throws(()=>restoreRobotPlatform({history:['forward']}),RangeError);
+});
+test('two ideal contacts distinguish slip, boundary, margin and damage',()=>{
+ assert.deepEqual([2,4,6,8].map(force=>gripOutcome('smooth',force).status),['slip','limit','secure','damaged']);
+ assert.deepEqual([2,4,6,8].map(force=>gripOutcome('rough',force).status),['limit','secure','secure','damaged']);
+ assert.equal(gripOutcome('smooth',6).capacity,3);assert.equal(gripOutcome('rough',4).capacity,4);
+ assert.throws(()=>gripOutcome('smooth',3),RangeError);
 });
