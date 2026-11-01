@@ -1,4 +1,4 @@
-import {parseCompleted} from './progress-record.js';
+import {parseCompleted,mergeCompleted} from './progress-record.js';
 import {eliminationLevel,eliminationModes,eliminationStep,eliminationResult,createElimination,eliminationComplete,restoreElimination} from './variable-elimination.js';
 import {explainingLevel,explainingRows,explainingCases,explainingCorrect,createExplaining,explainingComplete,restoreExplaining} from './explaining-away.js';
 import {dsepLevel,dsepGraphs,dsepObservations,dsepCases,dsepBlocked,createDsep,dsepComplete,restoreDsep} from './d-separation.js';
@@ -590,6 +590,14 @@ let unknownCompleted = [];
 let storageAvailable = true;
 let progressLocked = false;
 try { const parsed=parseCompleted(localStorage.getItem(storageKey),allLevels.map(level=>level.id));completed=parsed.completed;unknownCompleted=parsed.unknown; } catch { storageAvailable=false;progressLocked=true; }
+window.addEventListener('storage',event=>{
+  if(event.key!==storageKey||progressLocked)return;
+  try {
+    const saved=parseCompleted(event.newValue,allLevels.map(level=>level.id));
+    const merged=mergeCompleted({completed,unknown:unknownCompleted},saved);
+    completed=merged.completed;unknownCompleted=merged.unknown;
+  } catch { progressLocked=true;storageAvailable=false; }
+});
 let active = null;
 let program = [];
 let result = null;
@@ -1336,6 +1344,11 @@ const protectedDrafts = new Set();
 
 function save() {
   if(progressLocked){storageAvailable=false;return;}
+  try {
+    const saved=parseCompleted(localStorage.getItem(storageKey),allLevels.map(level=>level.id));
+    const merged=mergeCompleted({completed,unknown:unknownCompleted},saved);
+    completed=merged.completed;unknownCompleted=merged.unknown;
+  } catch { progressLocked=true;storageAvailable=false;return; }
   try { localStorage.setItem(storageKey, JSON.stringify([...completed,...unknownCompleted])); storageAvailable = true; }
   catch { storageAvailable = false; }
 }

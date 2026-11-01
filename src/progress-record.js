@@ -5,3 +5,7 @@ export function parseCompleted(raw,knownIds){
   const known=new Set(knownIds);
   return {completed:[...new Set(saved.filter(id=>known.has(id)))],unknown:[...new Set(saved.filter(id=>!known.has(id)))]};
 }
+
+export function mergeCompleted(first,second){
+  return {completed:[...new Set([...first.completed,...second.completed])],unknown:[...new Set([...first.unknown,...second.unknown])]};
+}
