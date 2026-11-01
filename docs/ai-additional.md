@@ -88,6 +88,8 @@
 
 ## AI-Robotics：ロボティクス（pp.80–82）
 
+項目別の再照合は [coverage-ai-robotics.md](coverage-ai-robotics.md) を参照。
+
 全項目 Non-core。原典は学習成果をシミュレーションでも扱えるとしている。
 
 | トピック | 内容と現状 |
@@ -107,6 +109,8 @@
 | 8–10 | 複数ロボットの協調、人との協働との比較、実応用の社会・経済・倫理の分析。未対応 |
 
 ## AI-Vision：知覚とコンピュータビジョン（p.82）
+
+項目別の再照合は [coverage-ai-vision.md](coverage-ai-vision.md) を参照。
 
 全項目 Non-core。
 
