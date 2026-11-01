@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-01: 15の因数分解を題材に、理想化した周期探索の測定結果と古典的な後処理を操作する依頼610を追加。７つの底について周期と16通りの測定確率を独立したフーリエ振幅和で検査し、`npm test` 1432件とビルドが成功。ブラウザで誤答、途中再開、不十分な周期候補、自明な因数と３・５の発見、320・390・1280px幅を確認。320pxでは数表を内部スクロールに修正。[IBM Quantum](https://quantum.cloud.ibm.com/docs/en/tutorials/shors-algorithm)、[NIST](https://www.nist.gov/cybersecurity-and-privacy/what-post-quantum-cryptography)参照。量子回路、一般の周期や実用規模は未対応。
+
 - 2026-11-01: 鍵の生成・配布・保管・漏えい対応・廃棄を比較する依頼609を追加。32通りの選択における侵害前の漏えい、旧鍵漏えい後の新しい伝令、管理下と影のコピーを検査し、`npm test` 1429件とビルドが成功。ブラウザで誤予想、原因を単独にした比較、途中再開、達成、320・390・1280px幅を確認。[NIST SP 800-57](https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final)、[OWASP 鍵管理](https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html)参照。理想化した保護と固定の侵害を仮定し、実際の鍵管理や端末復旧は行わない。
 
 - 2026-11-01: 未使用の受取記録と ECDSA 署名を扱う依頼608を追加。別人の署名、同じ記録の二重使用、未作成記録、２通りの初回譲渡と受取人からの再譲渡を比較する。実際の P-256 署名検証と署名対象の変更、操作順を検査し、`npm test` 1427件とビルドが成功。ブラウザで誤予想、途中再開、異なる順番、API 不可、達成、320・390・1280px幅を確認。[Bitcoin 開発ガイド](https://developer.bitcoin.org/devguide/transactions.html)参照。固定の単一台帳で、Bitcoin の取引形式・分散合意・鍵管理は未実装。
