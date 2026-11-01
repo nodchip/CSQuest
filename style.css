@@ -147,3 +147,5 @@
 
 .style-scroll-preview { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #f5f8f0; border: 1px solid #d4dece; line-height: 1.6; }
 .iris-curve-plot { display: block; width: 100%; max-width: 640px; height: auto; background: #fff; }
+
+.uri-quest code { overflow-wrap: anywhere; }
