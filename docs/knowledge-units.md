@@ -102,7 +102,7 @@
 | NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279・280で差し替え、認証、分離、門番と警報の固定例。[項目別台帳](coverage-nc-security.md)と[詳細](nc-security.md) |
 | NC | NC-Mobility | Mobility | 201 | 依頼316〜318で保存・中継、無線 LAN の再接続とセルラー登録区域の固定例。[項目別台帳](coverage-nc-mobility.md)と[詳細](nc-mobility.md) |
 | NC | NC-Emerging | Emerging Topics | 201 | 依頼319〜322で SDN、NAT、負荷分散と CDN、678で量子テレポーテーションの固定例。[項目別台帳](coverage-nc-emerging.md)と[詳細](nc-emerging.md) |
-| OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176・381〜383で切替え、保護、記録仲介と起動検証、673・674で旧窓口と装置仲介の固定例。[項目別台帳](coverage-os-purpose.md)と[詳細](os-purpose.md) |
+| OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176・381〜383で切替え、保護、記録仲介と起動検証、673・674で旧窓口と装置仲介、828で DMA の隔離の固定例。[項目別台帳](coverage-os-purpose.md)と[詳細](os-purpose.md) |
 | OS | OS-Principles | Principles of Operating System | 207 | 依頼54・381・384で保護、切替えとファイル操作、671・672で受付権限とタイマーの固定例。[項目別台帳](coverage-os-principles.md)と[詳細](os-principles.md) |
 | OS | OS-Concurrency | Concurrency | 208 | 依頼15・16・30・177〜179で競合・排他・待機・記録共有、567で原子的なスピンロック、568で再入と作業状態の固定例。実 OS の同期は未対応。[詳細](os-concurrency.md) |
 | OS | OS-Protection | Protection and Safety | 209 | 依頼11・54・180・181・490・491で権限、保護とバックアップ、架空の競合模型。[項目別台帳](coverage-os-protection.md) |
