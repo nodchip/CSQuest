@@ -12,11 +12,11 @@
 | 1d | CS Core | 面接 | 部分 | 188で経験を詳しく知る方法として選択。実面接は行わない。 |
 | 1e | CS Core | 質問紙調査 | 部分 | 960で質問文の誘導・二重質問・選択肢と、２種類の招待・無回答を比較。実際の調査設計・実施と一般化は未評価。 |
 | 1f | CS Core | ユーザビリティ試験 | 部分 | 188で時刻探しの試作品の試用を選択。実際の参加者による試験は未評価。 |
-| 2a | KA Core | ペルソナとその広がり | 未照合 | 関連する依頼とペルソナの作成・利用は未確認。 |
+| 2a | KA Core | ペルソナとその広がり | 部分 | 961で架空の発言から仮の人物像を組み立て、推測と代表性の限界を確認。実際の調査に基づく複数の人物像は未評価。 |
 | 2b | KA Core | 利用者物語と収集方法 | 部分 | 87で２つの固定事情から立場・望み・理由を組み立てる。実際の収集・自由な作成は未評価。 |
-| 2c | KA Core | 共感マップ | 未照合 | 対応する依頼は未確認。 |
+| 2c | KA Core | 共感マップ | 部分 | 961で架空の発言、行動、本人が語った気持ちと要確認の推測を整理。実際の調査・自由な作成は未評価。 |
 | 2d | KA Core | ニーズの把握と要求収集 | 部分 | 87・188で架空の声と要求、３方法を扱う。実際の調査と分析は未評価。 |
-| 2e | KA Core | ジャーニーマップ | 未照合 | 対応する依頼は未確認。 |
+| 2e | KA Core | ジャーニーマップ | 部分 | 961で架空の移動・通信断・紙の確認を順に並べ、改善案を選択。実際の調査・複数経路・自由な作成は未評価。 |
 | 2f | KA Core | 設計の評価 | 部分 | 60・188で架空の評価記録と場面確認を操作。実際の利用者評価は未評価。 |
 | 2g | KA Core | チームで関係者と関わる | 未照合 | 関連する依頼と実際の協働は未確認。 |
 | 2h | KA Core | 対面・分散・混合・仮想チームのリスク | 未照合 | 対応する依頼は未確認。 |
@@ -56,3 +56,5 @@
 `tests/user-needs.test.js` と `tests/research-methods.test.js` は固定された人物・調査計画の一部を検査する。前提と出典は[既存の調査](hci-user.md)を参照。未照合は未実装の証拠ではない。
 
 依頼960は [Pew Research Center の質問文の解説](https://www.pewresearch.org/writing-survey-questions/)と [ICO のデータ保護原則](https://ico.org.uk/for-organisations/advice-for-small-organisations/getting-started-with-gdpr/data-protection-principles-definitions-and-key-terms)を参考に、４つの質問文、招待方法と無回答を比較する。架空の８人について水晶のみは招待４人・回答３人、水晶と紙は招待８人・回答６人で、各招待者の回答率は75％。`tests/survey-workshop.test.js` は人数・内訳、分類、保存と達成条件を検査する。架空の調査であり、実際の回答者の代表性・選択肢や質問の普遍的な優劣は評価しない。
+
+依頼961は [NN/g の共感マップ](https://media.nngroup.com/media/articles/attachments/Empathy_Mapping_Poster1-compressed.pdf)と[ジャーニーマップ](https://www.nngroup.com/articles/journey-mapping-how/)を参考に、依頼188の架空の発言と追加した架空の観察を人物像・記録・時系列に整理する。`tests/journey-map-workshop.test.js` は人物像の全選択、４札の全24順序、記録の分類と保存・達成条件を検査。実際の利用者調査や代表性は示さない。
