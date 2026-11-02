@@ -1,6 +1,8 @@
 # CS Quest 開発記録
 
-- 2026-11-02: Pages の配置が接続切断で失敗した後、同一ワークフロー実行の再実行では `github-pages` の成果物が２つ見つかり配置できなかった（[実行履歴](https://github.com/nodchip/CSQuest/actions/runs/41423851280)）。アップロードと配置の両方で実行回番号を含む同じ成果物名を使用するよう変更。新しい実行とその再実行の結果は GitHub Actions の履歴で確認する。
+- 2026-11-02: 依頼862で３入力の順番待ちと交互実行を比較し、認識機械と判定機械の停止条件を扱う。[MIT の講義](https://ocw.mit.edu/courses/6-045j-automata-computability-and-complexity-spring-2011/5b9f68b5081985b135f6ad521a93d81d_MIT6_045JS11_lec07.pdf)を参照。全刻の進行・受理と保存を検査し、`npm test` 2245件とビルドが成功。ブラウザーで両方式、途中再開、誤答・達成、キーボード、320・390・1280px幅を確認。無限入力の列挙や一般の証明は未評価。
+
+- 2026-11-02: Pages の配置が接続切断で失敗した後、同一ワークフロー実行の再実行では `github-pages` の成果物が２つ見つかり配置できなかった（[失敗した実行](https://github.com/nodchip/CSQuest/actions/runs/41423851280)）。アップロードと配置の両方で実行回番号を含む成果物名を使用するよう変更し、[修正後の初回と再実行](https://github.com/nodchip/CSQuest/actions/runs/41424552596)はいずれも成功。再配置後の公開版で依頼861の操作を確認した。
 
 - 2026-11-02: 依頼861で４・８・16候補の Grover 探索を０〜４回操作し、最初に最大の確率となる回数と問い合わせ回数を比較。[IBM Quantum の解説](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/grover-algorithm/number-of-iterations)を参照。全段階を独立した正弦式・正規化と照合し、`npm test` 2243件が成功。ブラウザーで誤操作、途中再開、３部屋、同率の判定、キーボード、320・390・1280px幅を確認。複数解、実機、オラクルの構築費用、再試行を含む実行時間は未評価。
 

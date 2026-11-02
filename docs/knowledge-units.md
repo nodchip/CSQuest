@@ -23,7 +23,7 @@
 | AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：辞書、依頼559の両端キュー、依頼345〜347の線形探索法によるハッシュ表、各種整列、最長共通部分列、４点 FFT、多次元配列、連結リスト、二分探索木、依頼794の削除、依頼348の AVL 回転、最小ヒープ、グラフ表現・探索、最短路、最小全域木、推移閉包など |
 | AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、55・342で分割統治、76・337・338・341で動的計画法と解の復元、415で頂点被覆の近似、566で反復と再帰、861で量子探索の反復と確率。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼88・334〜344で探索と実測、漸近記法、部分和、償却費用、409・410で再帰木とマスター定理、411で独立集合と頂点被覆の帰着、412で SAT の証拠、413で部分和から等分割への帰着、414で計算量クラスの固定例。一般の分析は未対応 |
-| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、80のスタック付き括弧判定、69の不変条件、154の正規表現、416の停止問題の対角化、417のチューリング機械、561の NFA から DFA への部分集合構成、565の ε 閉包の固定例。他のモデルや自由な証明は未対応 |
+| AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、80のスタック付き括弧判定、69の不変条件、154の正規表現、416の停止問題、417のチューリング機械、561の部分集合構成、565の ε 閉包、862の認識と判定の固定例。他のモデルや自由な証明は未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 依頼118で集団別の分類指標の固定例。他は未対応。[詳細](al-other-units.md) |
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 依頼06・37で組合せ回路、265〜268で記憶、シフト、カウンター、伝搬遅延の固定例。他は未対応。[詳細](ar-logic.md) |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8、依頼460のバイト順、461の符号付き表現の固定例 |
