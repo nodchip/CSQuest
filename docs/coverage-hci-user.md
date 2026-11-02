@@ -24,7 +24,7 @@
 | 3b | KA Core | 注意・知覚・記憶等の認知モデル | 未照合 | 体系的な認知モデルと関連依頼の対応は未確認。 |
 | 3c | KA Core | 社会・行動心理と認知バイアス | 未照合 | 対応する依頼は未確認。 |
 | 4a | KA Core | 利用者の違いと経験・ニーズ | 部分 | 22・188で異なる利用条件を扱う。人々の違い全般は未評価。 |
-| 4b | KA Core | 国際化 | 未照合 | 対応する依頼は未確認。 |
+| 4b | KA Core | 国際化 | 部分 | 962で同じ瞬間の３表示方法・３時間帯と日付の曖昧さを比較。翻訳、他の暦・言語・文化や夏時間境界は未評価。 |
 | 4c | KA Core | 他文化の利用者向け設計 | 未照合 | 対応する依頼は未確認。 |
 | 4d | KA Core | 異文化間の設計 | 未照合 | 対応する依頼は未確認。 |
 | 4e | KA Core | 標本・一般化・障害経験など評価の課題 | 部分 | 188で架空の調査は代表性を示さないと説明。実際の標本設計や一般化は未評価。 |
@@ -58,3 +58,5 @@
 依頼960は [Pew Research Center の質問文の解説](https://www.pewresearch.org/writing-survey-questions/)と [ICO のデータ保護原則](https://ico.org.uk/for-organisations/advice-for-small-organisations/getting-started-with-gdpr/data-protection-principles-definitions-and-key-terms)を参考に、４つの質問文、招待方法と無回答を比較する。架空の８人について水晶のみは招待４人・回答３人、水晶と紙は招待８人・回答６人で、各招待者の回答率は75％。`tests/survey-workshop.test.js` は人数・内訳、分類、保存と達成条件を検査する。架空の調査であり、実際の回答者の代表性・選択肢や質問の普遍的な優劣は評価しない。
 
 依頼961は [NN/g の共感マップ](https://media.nngroup.com/media/articles/attachments/Empathy_Mapping_Poster1-compressed.pdf)と[ジャーニーマップ](https://www.nngroup.com/articles/journey-mapping-how/)を参考に、依頼188の架空の発言と追加した架空の観察を人物像・記録・時系列に整理する。`tests/journey-map-workshop.test.js` は人物像の全選択、４札の全24順序、記録の分類と保存・達成条件を検査。実際の利用者調査や代表性は示さない。
+
+依頼962は [W3C の日付形式](https://www.w3.org/International/questions/qa-date-format.en)と [MDN の日時書式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)を参考に、固定された１瞬間を３表示方法・３時間帯で比較する。`tests/locale-time-workshop.test.js` は９組の年月日・時分、保存と達成条件を検査。言語と時間帯を別々に選ぶ例で、翻訳やすべての文化・暦・夏時間境界は未評価。
