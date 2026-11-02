@@ -5,7 +5,28 @@ export const inclusiveSteps=[
  {title:'試して改善する',prompt:'一人の旅人が確認操作にたどり着けないと分かりました。次に何をしますか。',choices:[['iterate','本人と障壁を確認し、修正して再び試してもらう'],['ignore','別の旅人が操作できたので報告を退ける'],['generalize','一人の経験だけで全員の利用方法を決める']],correct:'iterate',feedback:'困りごとを確認し、変更を試して改善を重ねます。異なる経験を持つ人の意見も集めます。'},
  {title:'評価を重ねる',prompt:'試作品を使えた人がいました。公開前の評価はどうしますか。',choices:[['combine','多様な人との評価を続け、適用する標準にも照らして検証する'],['pass','一人が使えたので規格に適合したと宣言する'],['standard','標準を見れば人との評価は不要とする']],correct:'combine',feedback:'利用者との評価と標準に照らした検証は補い合います。どちらか片方だけで全てを保証できません。'}
 ];
-export function cycleCreate(){return {history:[]};}
+export function cycleCreate(){return {history:[],prototype:{keyboard:{fixed:false,seen:false,result:null},name:{fixed:false,seen:false,result:null}}};}
 export function cycleStep(q,choice){const step=inclusiveSteps[q.history.length];if(!step||!step.choices.some(([id])=>id===choice))throw new RangeError('選択肢が不正です');if(choice!==step.correct)return false;q.history.push(choice);return true;}
-export function cycleComplete(q){return q.history.length===inclusiveSteps.length;}
-export function cycleRestore(q){if(!q||!Array.isArray(q.history)||q.history.length>inclusiveSteps.length)throw new RangeError('記録が不正です');const n=cycleCreate();for(const c of q.history)if(!cycleStep(n,c))throw new RangeError('記録が不正です');return n;}
+// These are two deliberately limited observations, not a browser or assistive technology simulation.
+export function cyclePrototypeStep(q,kind,action){
+ if(q.history.length!==inclusiveSteps.length||!Object.hasOwn(q.prototype,kind))throw new RangeError('まだ調べられません');
+ const item=q.prototype[kind];
+ if(action==='test'){item.result=item.fixed?'pass':'fail';if(!item.fixed)item.seen=true;return;}
+ if(action==='fix'&&item.seen&&!item.fixed){item.fixed=true;item.result=null;return;}
+ throw new RangeError('まず旅人の操作を確認しましょう');
+}
+export function cycleComplete(q){return q.history.length===inclusiveSteps.length&&Object.values(q.prototype).every(item=>item.seen&&item.fixed&&item.result==='pass');}
+export function cycleRestore(q){
+ if(!q||!Array.isArray(q.history)||q.history.length>inclusiveSteps.length)throw new RangeError('記録が不正です');
+ const n=cycleCreate();for(const c of q.history)if(!cycleStep(n,c))throw new RangeError('記録が不正です');
+ // Drafts created before the prototype activity still retain their completed choices.
+ if(q.prototype===undefined)return n;
+ for(const kind of ['keyboard','name']){
+  const item=q.prototype?.[kind];
+  if(!item||typeof item.fixed!=='boolean'||typeof item.seen!=='boolean'||![null,'pass','fail'].includes(item.result)||
+   (item.fixed&&!item.seen)||(item.result==='pass'&&!item.fixed)||(item.result==='fail'&&(item.fixed||!item.seen))||
+   (q.history.length<inclusiveSteps.length&&(item.fixed||item.seen||item.result!==null)))throw new RangeError('記録が不正です');
+  n.prototype[kind]={fixed:item.fixed,seen:item.seen,result:item.result};
+ }
+ return n;
+}
