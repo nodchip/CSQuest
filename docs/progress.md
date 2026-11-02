@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼878で４刻みの合図を選び、減衰と閾値、発火後のリセットを比較。[EPFL の積分発火模型](https://neuronaldynamics.epfl.ch/online/Ch1.S3.html)と[Intel の Loihi 2](https://download.intel.com/newsroom/2021/new-technologies/neuromorphic-computing-loihi-2-brief.pdf)を参照。16通り×２方式を独立した固定小数点計算で照合し、途中保存、`npm test` 2277件とビルドが成功。ブラウザーで条件変更・途中再開・４比較・誤答・達成、キーボードと320・390・1280px幅を確認。単一素子・離散時間の模型で、実チップ、学習や生物の神経全体は未評価。
+
 - 2026-11-02: 依頼877で川辺と遠方の判断を、通信あり・なしの４条件で比較。[NIST のエッジ計算](https://www.nist.gov/publications/task-management-cooperative-mobile-edge-computing)と[プライバシー](https://www.nist.gov/publications/analyzing-data-privacy-edge-systems)を参照。架空の期限・３拍と８拍・通信不能、手順と保存を検査し、`npm test` 2275件とビルドが成功。ブラウザーで誤操作、途中再開、４条件、誤答・達成、キーボードと320・390・1280px幅を確認。固定された時間と正常な装置の模型で、実機の安全性・誤差・負荷や情報保護は未評価。
 
 - 2026-11-02: 依頼876で４村の報告を中継塔で集約する方法と個別転送を比較。[Sapio ほかの SwitchML](https://www.usenix.org/system/files/nsdi21-sapio.pdf)を参照。24通りの到着順で合計16、区間別の通数、操作順と途中保存を検査し、`npm test` 2273件とビルドが成功。ブラウザーで誤操作、途中再開、２方法、誤答・達成、キーボードと320・390・1280px幅を確認。固定整数・損失なしの模型で、実機性能、再送、重複、容量や機密性は未評価。
