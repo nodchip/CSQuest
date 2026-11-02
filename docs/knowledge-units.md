@@ -63,7 +63,7 @@
 | FPL | FPL-Syntax | Syntax Analysis | 141 | 75・313・314で式の構造、字句解析と先読み、792で区切りを使う誤り回復の固定例。[項目別台帳](coverage-fpl-syntax.md)と[詳細](fpl-syntax.md) |
 | FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75・315・326・327で構文木、型確認と引数評価の固定例。[項目別台帳](coverage-fpl-semantics.md)と[詳細](fpl-syntax.md) |
 | FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜208で制御フローとデータフロー、416で停止判定、657で静的規則の固定例。[項目別台帳](coverage-fpl-analysis.md)と[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
-| FPL | FPL-Code | Code Generation | 142 | 依頼207・208の書込み除去、783で分岐、790でリンクの固定例。[項目別台帳](coverage-fpl-code.md)と[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
+| FPL | FPL-Code | Code Generation | 142 | 依頼207・208の書込み除去、783で分岐、790でリンク、833でレジスタ割当ての固定例。[項目別台帳](coverage-fpl-code.md)と[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
 | FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 依頼201・202の回収、560の呼出し、785の枠とヒープ、831の数値交換の固定例。[項目別台帳](coverage-fpl-run-time.md)と[詳細](fpl-execution-analysis.md#fpl-run-timenon-core) |
 | FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 依頼325〜327で評価、778・780で多重継承とミックスインの固定模型。[項目別台帳](coverage-fpl-constructs.md)と[詳細](fpl-constructs-pragmatics.md#fpl-constructs) |
 | FPL | FPL-Pragmatics | Language Pragmatics | 144 | 依頼325〜327で遅延評価と先行評価の固定模型。[項目別台帳](coverage-fpl-pragmatics.md)と[詳細](fpl-constructs-pragmatics.md#fpl-pragmatics) |
