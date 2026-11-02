@@ -73,7 +73,7 @@
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 依頼93・350で UTF-8 と言語・操作・日付の固定例。[項目別台帳](coverage-fpl-sep.md)と[詳細](fpl-society.md) |
 | GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 依頼83で三角形の標本、依頼221・222で光の値の量子化と時間方向の読み取りの固定例。他は未対応。[詳細](git-fundamentals.md) |
 | GIT | GIT-Visualization | Visualization | 156 | 依頼111〜113で棒・点、軸範囲、条件別集計とヒストグラムの固定例。他は未対応。[詳細](git-visualization.md) |
-| GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 一部試作：依頼26の２次元変換と依頼64の平行・透視投影 |
+| GIT | GIT-Rendering | Applied Rendering and Techniques | 157 | 依頼26の２次元変換、64の平行・透視投影、639の描画工程模型、871の固定立方体の実 WebGL 描画など。[項目別台帳](coverage-git-rendering.md) |
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 依頼186・187で拡散光の段階化と光からの深さによる影の固定模型。他の手法や描画 API は未対応。[詳細](git-shading.md) |
 | GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜185・633〜635・729で緩急、関節、スキニング、回転や架空の動作記録を操作。３次元回転・実際のリグ制作や収録は未評価。[詳細](git-animation.md) |
@@ -167,7 +167,7 @@
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 依頼354で圏外の保留と再送の固定例。他は未対応。[項目別台帳](coverage-spd-mobile.md)と[詳細](spd-mobile.md) |
 | SPD | SPD-Robot | Robot Platforms | 304 | 依頼28の観測・移動、71の地形・充電、690のトピック・受信待ち、691の機体・観測器選択の固定模型。実機や ROS の実行は未対応。[項目別台帳](coverage-spd-robot.md)と[詳細](spd-robot.md) |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222のセンサーと駆動、133・134・420の期限・優先度・周期、395の安全性などの固定模型。実機や一般的な設計・検証は未対応。[項目別台帳](coverage-spd-embedded.md)と[詳細](spd-embedded.md) |
-| SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の衝突・トンネリング、799で描画と固定時間の更新、800で区画による描画候補、869で即時・タイル内保存、870でフラグメント色計算の固定模型。他は未対応。[項目別台帳](coverage-spd-game.md)と[詳細](spd-game.md) |
+| SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の衝突・トンネリング、799で描画と固定時間の更新、800で描画候補、869で即時・タイル内保存、870で色計算、871で実 WebGL 描画。他は未対応。[項目別台帳](coverage-spd-game.md)と[詳細](spd-game.md) |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノート、840で報道用の架空の集計と記事、841で架空のプログラム比較、842で３種類の音を並べる伴奏、843で描画の入力遅延の固定例。他は未対応。[項目別台帳](coverage-spd-interactive.md)と[詳細](spd-interactive.md) |
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[項目別台帳](coverage-spd-sep-mobile.md)と[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し依頼393、通知と中断の選択に依頼398の固定例。他は未対応。[項目別台帳](coverage-spd-sep-web.md)と[詳細](spd-sep.md) |

@@ -52,4 +52,6 @@
 
 依頼640は右手系で点 A=(１,０,０) と B=(０,１,１) に x・y・z 軸の正回転90°と x 方向への移動１を操作する。平面の回転を z 軸回転へ広げ、他の軸と操作順序を比較する。長さ４以下の全341操作列を独立した４×４同次行列計算と照合。２点と固定角度による模型で、任意角度、拡大縮小、３次元モデル、行列やプログラムの記述能力は評価しない。[MDN: Matrix math for the web](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web)。
 
+依頼871は固定立方体の24頂点・36索引を WebGL バッファに送り、頂点・フラグメントシェーダーと `drawElements` で実際に描画する。一面と立方体、０・45度の回転、深度判定の有無を操作し、描画順序による上書きを比較する。WebGL 非対応時は成功を記録しない。ブラウザーで画素を読み取り、回転と深度の有無で画像が変わることを確認した。固定例であり自由なモデルやコード作成、透過、照明、一般の行列、実性能は評価しない。[MDN: Creating 3D objects using WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Creating_3D_objects_using_WebGL)。
+
 依頼641はカメラと２本の線分を上から見た断面で、奥行き２・４の旗と４つの窓標本を使う。物体側から端点を投影して深度を比較する処理と、各視線の各奥行きでの横位置を計算して線分と交差判定する処理を、旗・カメラ各２配置で照合する。実際の交差候補を用いるが、１方向の線分・不透明・固定標本の模型であり、三角形、反射、影、透過や実行性能は扱わない。[Cornell: Ray tracing](https://www.cs.cornell.edu/courses/cs465/2003fa/lectures/notes-09raytracing.pdf)。

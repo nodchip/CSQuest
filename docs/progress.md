@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼871で固定立方体の頂点・索引・シェーダーを使う実 WebGL 描画を追加し、一面・立方体・回転・深度判定を比較。[MDN の WebGL 立体描画](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Creating_3D_objects_using_WebGL)を参照。頂点・索引と保存を検査し、`npm test` 2263件とビルドが成功。ブラウザーで描画結果の画素、回転、深度の有無、途中再開、誤答・達成、キーボード、320・390・1280px幅、WebGL 不可時に達成が記録されないことを確認。自由なコード・モデル作成、透過、ライティングや実性能は未評価。
+
 - 2026-11-02: 依頼870でフラグメント色計算の周囲光・倍率・値の制限を調整し、３条件の目標に合わせる。[MDN の WebGL シェーダー](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Adding_2D_content_to_a_WebGL_context)と [Microsoft の HLSL](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl)を参照。12設定の数値・表示色と保存を検査し、`npm test` 2261件が成功。ブラウザーで３条件、制限前後、途中再開、誤答・達成、キーボード、320・390・1280px幅を確認。実言語・API、頂点補間、光源・法線、色空間と実性能は未評価。
 
 - 2026-11-02: 依頼869で２画素の不透明描画について、遠い順・近い順の深さ判定と即時・タイル内保存を比較。[Apple のタイルベース描画](https://developer.apple.com/documentation/metal/tailor-your-apps-for-apple-gpus-and-tile-based-deferred-rendering)を参考にした固定模型。４条件の最終色・比較・色計算・書込みと保存記録を検査し、`npm test` 2259件とビルドが成功。ブラウザーで誤った順序、４条件、途中再開、書戻し、誤答・達成、キーボード、320・390・1280px幅を確認。頂点処理・タイル分配・キャッシュ・深さ通信・半透明・実機性能は未評価。
