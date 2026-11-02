@@ -50,4 +50,6 @@
 
 追加の項目別台帳：[SE-Teamwork](coverage-se-teamwork.md)、[SE-Tools](coverage-se-tools.md)、[SE-Construction](coverage-se-construction.md)、[SE-Refactoring](coverage-se-refactoring.md)、[SE-Reliability](coverage-se-reliability.md)、[SE-Formal](coverage-se-formal.md)。
 
-現時点ではこの形式で見直したのは161単位。他の5単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この161/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
+追加の項目別台帳：[AR-SEP](coverage-ar-sep.md)、[GIT-Simulation](coverage-git-simulation.md)、[GIT-SEP](coverage-git-sep.md)、[OS-SEP](coverage-os-sep.md)、[SDF-SEP](coverage-sdf-sep.md)。
+
+現時点では166単位すべてにこの形式の台帳がある。ただし、台帳には「未照合」と「部分」の項目が多数残り、原典との対応漏れや内容の正確性の最終検証も終わっていない。166/166 は台帳の整備状況であり、CS2023 全体の教材・検証の完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳を更新する。

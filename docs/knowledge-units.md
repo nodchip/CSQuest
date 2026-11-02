@@ -1,6 +1,6 @@
 # CS2023 知識単位の目録
 
-出典: CS2023 目次（PDF 印字ページ番号）。トピック・学習成果単位への分解と照合は一部のみ実施済みで、全単位分は未完了。分野や単位が列挙されていることは、対応済みを意味しない。
+出典: CS2023 目次（PDF 印字ページ番号）。全166単位に項目別台帳を用意しているが、項目の照合・教材・検証には未完了が残る。分野や単位が列挙されていることは、対応済みを意味しない。
 
 目次の単位 ID・名称・印字ページは、PDF から `pdftotext -layout CS2023.pdf cs2023.txt` で抽出後、`python scripts/check_knowledge_units.py cs2023.txt` で照合できる。2026-10-31 の照合では目次とこの表は各166行で一致した。目次に名称がない単位は ID とページのみ比較する。この検査は教材、各トピック・学習成果、原典の本文の正確性を確認するものではない。
 
@@ -35,7 +35,7 @@
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162・163で SIMD・MIMD と専用機械の費用比較の固定例。[項目別台帳](coverage-ar-heterogeneity.md)と[詳細](ar-heterogeneity.md) |
 | AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜259で範囲と権限、乱数、個体差、構成証明、暗号文での乗算、依頼383で信頼の起点を仮定した起動検証の固定例。[項目別台帳](coverage-ar-security.md)と[詳細](ar-security.md) |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの干渉、610で周期探索後処理、676〜679でベル状態・転送と複製、820〜822で Grover、Bernstein–Vazirani と Simon の固定例。[項目別台帳](coverage-ar-quantum.md)と[詳細](ar-quantum.md) |
-| AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[詳細](sep-sustainability.md) |
+| AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間の架空モデル。他は未対応。[項目別台帳](coverage-ar-sep.md)と[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |
 | DM | DM-Core | Core Database System Concepts | 115 | 依頼123で列の変更とビューの固定例。問い合わせ・トランザクション等は別の固定例のみ。[詳細](dm-core.md) |
 | DM | DM-Modeling | Data Modeling | 116 | 依頼101・102で多対多、１対多、１対１の高々の制約とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
@@ -77,12 +77,12 @@
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 依頼186・187で拡散光の段階化と光からの深さによる影の固定模型。他の手法や描画 API は未対応。[詳細](git-shading.md) |
 | GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜185・633〜635・729で緩急、関節、スキニング、回転や架空の動作記録を操作。３次元回転・実際のリグ制作や収録は未評価。[詳細](git-animation.md) |
-| GIT | GIT-Simulation | Simulation | 161 | 依頼209〜215で粒子・ばね、接触と衝突応答、ライフゲーム、濃度移流と高さ場の固定例。流体全体や一般の衝突応答等は未対応。[詳細](git-simulation.md) |
+| GIT | GIT-Simulation | Simulation | 161 | 依頼209〜215で粒子・ばね、接触と衝突応答、ライフゲーム、濃度移流と高さ場の固定例。流体全体や一般の衝突応答等は未対応。[項目別台帳](coverage-git-simulation.md)と[詳細](git-simulation.md) |
 | GIT | GIT-Immersion | Immersion | 161 | 依頼216〜218で２視点の視差、古い視点情報によるずれ、現実物体の遮蔽の固定例。実際の立体表示・追跡・安全性等は未対応。[項目別台帳](coverage-git-immersion.md)と[詳細](git-immersion.md) |
 | GIT | GIT-Interaction | Interaction | 162 | 依頼92・351で固定イベントと画面操作、427で複数手段の選択、806でアクセシビリティの固定例。[項目別台帳](coverage-git-interaction.md)と[詳細](git-interaction.md) |
 | GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。808で２×２、809で４×４画像の周波数選択、810で雑音と倍率、811で DCT と量子化、812で差分と連長、813で最下位ビットの透かしの固定例を操作。他は未対応。[詳細](git-image.md) |
 | GIT | GIT-Physical | Tangible/Physical Computing | 164 | 依頼219〜222で光の読み取り、サーボの目標・移動、閾値・量子化・標本化、807で積層・切削・成形の固定例。実際の回路や製作等は未対応。[項目別台帳](coverage-git-physical.md)と[詳細](git-physical.md) |
-| GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 依頼352で室内情報の収集を比較。他は未対応。[詳細](git-society.md) |
+| GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 依頼352で室内情報の収集を比較。他は未対応。[項目別台帳](coverage-git-sep.md)と[詳細](git-society.md) |
 | HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 依頼188で架空の旅人・維持担当の声と案内所の固定模型。実際の利用者調査や協働は未対応。[詳細](hci-user.md) |
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 依頼63・289で関係者と選択画面、824で入力方法の情報露出の固定例。[項目別台帳](coverage-hci-accountability.md)と[詳細](hci-accountability.md) |
 | HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 依頼22で三つの利用条件、575で確認窓のフォーカスと操作名、793で参加型設計と評価の固定例。[項目別台帳](coverage-hci-accessibility.md)と[詳細](hci-accessibility.md) |
@@ -115,7 +115,7 @@
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと VM、754で門番と設定の切替え、755で符の読み替えとアクセス制限、756で二段階変換と共有の固定模型。残る範囲は[項目別台帳](coverage-os-virtualization.md)を参照。 |
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133・134で期限と優先度、420で周期、395で停止距離、757で周期仕事、758で頁の固定、759で進捗監視、760で平均と期限要件、761で FreeRTOS の切替え、762で応答時間解析、763で切替えと頁準備を組み合わせる固定例。[項目別台帳](coverage-os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136・181・229・736〜738・752で記録・復元・装置復旧の固定例。[項目別台帳](coverage-os-faults.md) |
-| OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[詳細](os-society.md) |
+| OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[項目別台帳](coverage-os-sep.md)と[詳細](os-society.md) |
 | PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均、442で生産者・消費者の流れ作業の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 更新喪失、排他と循環待ち、90でバリア、814で比較交換と再試行、815で ABA、816で回収延期、817で分散リースの番号検査、818で楽観的な版確認の固定例。他は未評価。[項目別台帳](coverage-pdc-coordination.md) |
@@ -125,7 +125,7 @@
 | SDF | SDF-Data-Structures | Fundamental Data Structures | 231 | 依頼79で待ち行列とスタックの選択・操作の固定例。他は未対応。[詳細](sdf-data-structures.md) |
 | SDF | SDF-Algorithms | Algorithms | 232 | 依頼29・88などで探索や比較回数の固定例。一般的な時間・空間解析は未対応。[詳細](sdf-algorithms.md) |
 | SDF | SDF-Practices | Software Development Practices | 232 | 依頼23・198で試験選択と状態追跡、555で名前・注釈・字下げを振る舞いと照合。実際の開発環境やプログラムの記述は未対応。[詳細](sdf-practices.md) |
-| SDF | SDF-SEP | Society, Ethics, and the Profession | 233 | 依頼269・270・360で利用条件・出典・不具合対応の固定例。他は未対応。[詳細](sdf-society.md) |
+| SDF | SDF-SEP | Society, Ethics, and the Profession | 233 | 依頼269・270・360で利用条件・出典・不具合対応の固定例。他は未対応。[項目別台帳](coverage-sdf-sep.md)と[詳細](sdf-society.md) |
 | SE | SE-Teamwork | Teamwork | 240 | 依頼59で関係者の希望、650で事情の聞取り・対立する制約・役割分担の固定例。実際の協働は未対応。[項目別台帳](coverage-se-teamwork.md)と[詳細](se-teamwork.md) |
 | SE | SE-Tools | Tools and Environments | 241 | 依頼59で３版の変更、655で集中・分散型と公開版、656で検査対象の版と依存物、657で静的規則と実行試験の固定例を比較。実ツールや一般のリリースは未対応。[項目別台帳](coverage-se-tools.md)と[詳細](se-tools.md) |
 | SE | SE-Requirements | Product Requirements | 242 | 依頼87で架空の聞き取り、機能・品質・曖昧さと振る舞いの分類。他は未対応。[詳細](se-requirements.md) |
