@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼861で４・８・16候補の Grover 探索を０〜４回操作し、最初に最大の確率となる回数と問い合わせ回数を比較。[IBM Quantum の解説](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/grover-algorithm/number-of-iterations)を参照。全段階を独立した正弦式・正規化と照合し、`npm test` 2243件が成功。ブラウザーで誤操作、途中再開、３部屋、同率の判定、キーボード、320・390・1280px幅を確認。複数解、実機、オラクルの構築費用、再試行を含む実行時間は未評価。
+
 - 2026-11-02: 依頼860で [ITU / UNITAR の世界の電子廃棄物推計](https://www.itu.int/en/ITU-D/Environment/Pages/Publications/The-Global-E-waste-Monitor-2024.aspx)を2010年・2022年で比較し、未記録分の解釈と[WHO の示す健康リスク](https://www.who.int/news-room/questions-and-answers/item/children-and-digital-dumpsites-e-waste-and-health)を扱う。丸め済み数字の差・割合と保存記録を検査し、`npm test` 2241件とビルドが成功。ブラウザーで両年、途中再開、誤答・達成、キーボード、320・390・1280px幅を確認。統計は全電子・電気機器を含み、機器別・地域別の被害や現在の値を示さない。
 
 - 2026-11-02: 依頼859で環境監視の観測間隔を操作し、２種類の濁り・欠測と架空の消費を比較。[EPA の大気センサーの解説](https://www.epa.gov/air-sensor-toolbox/frequent-questions-about-air-sensors)を参照し、観測間と欠測の状態を断定しないことを確認する。６条件の記録・検知・消費と保存記録を検査し、`npm test` 2239件とビルドが成功。ブラウザーで６条件、途中再開、誤答・達成、320・390・1280px幅を確認。測定誤差・実測、設置や通信、対策の効果は未評価。

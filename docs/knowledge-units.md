@@ -21,7 +21,7 @@
 | AI | AI-Robotics | Robotics | 80 | 依頼28・71で格子上の観測と移動、584・585で機体の大きさと向きを考慮した経路、586で不確かな観測と移動による位置推定の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Vision | Perception and Computer Vision | 82 | 依頼17・118で分類指標、依頼230〜233で固定画像の分割、形の特徴と動きの対応付けの比較。他は未対応。[詳細](ai-additional.md) |
 | AL | AL-Foundational | Foundational Data Structures and Algorithms | 88 | 一部試作：辞書、依頼559の両端キュー、依頼345〜347の線形探索法によるハッシュ表、各種整列、最長共通部分列、４点 FFT、多次元配列、連結リスト、二分探索木、依頼794の削除、依頼348の AVL 回転、最小ヒープ、グラフ表現・探索、最短路、最小全域木、推移閉包など |
-| AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、55・342で分割統治、76・337・338・341で動的計画法と解の復元、415で４塔の道を変えられる頂点被覆の近似、566で反復と再帰の固定例。一般的分析などは未対応 |
+| AL | AL-Strategies | Algorithmic Strategies | 90 | 依頼09・32・110で貪欲法、55・342で分割統治、76・337・338・341で動的計画法と解の復元、415で頂点被覆の近似、566で反復と再帰、861で量子探索の反復と確率。一般的分析などは未対応 |
 | AL | AL-Complexity | Complexity | 91 | 依頼88・334〜344で探索と実測、漸近記法、部分和、償却費用、409・410で再帰木とマスター定理、411で独立集合と頂点被覆の帰着、412で SAT の証拠、413で部分和から等分割への帰着、414で計算量クラスの固定例。一般の分析は未対応 |
 | AL | AL-Models | Computational Models and Formal Languages | 93 | 依頼31の有限状態、80のスタック付き括弧判定、69の不変条件、154の正規表現、416の停止問題の対角化、417のチューリング機械、561の NFA から DFA への部分集合構成、565の ε 閉包の固定例。他のモデルや自由な証明は未対応 |
 | AL | AL-SEP | Society, Ethics, and the Profession | 95 | 依頼118で集団別の分類指標の固定例。他は未対応。[詳細](al-other-units.md) |
@@ -34,7 +34,7 @@
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 依頼159〜161で分岐予測、投機実行、時間・電力・エネルギー比較の固定例。[項目別台帳](coverage-ar-performance-energy.md)と[詳細](ar-performance-energy.md) |
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162・163で SIMD・MIMD と専用機械の費用比較の固定例。[項目別台帳](coverage-ar-heterogeneity.md)と[詳細](ar-heterogeneity.md) |
 | AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜259で範囲と権限、乱数、個体差、構成証明、暗号文での乗算、依頼383で信頼の起点を仮定した起動検証の固定例。[項目別台帳](coverage-ar-security.md)と[詳細](ar-security.md) |
-| AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの干渉、610で周期探索後処理、676〜679でベル状態・転送と複製、820〜822で Grover、Bernstein–Vazirani と Simon の固定例。[項目別台帳](coverage-ar-quantum.md)と[詳細](ar-quantum.md) |
+| AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの干渉、610で周期探索後処理、676〜679でベル状態・転送と複製、820〜822・861で Grover、Bernstein–Vazirani と Simon の固定例。[項目別台帳](coverage-ar-quantum.md)と[詳細](ar-quantum.md) |
 | AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間、844で塔の稼働台数と設備電力量、858で待機設定の架空模型、860で電子廃棄物の推計。他は未対応。[項目別台帳](coverage-ar-sep.md)と[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |
 | DM | DM-Core | Core Database System Concepts | 115 | 依頼123で列の変更とビューの固定例。問い合わせ・トランザクション等は別の固定例のみ。[詳細](dm-core.md) |
