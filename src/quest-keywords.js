@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-search-tradeoffs':['algorithm selection','linear search','binary search','hash','探索の選択','トレードオフ'],
  'village-test-objectives':['test objectives','usability','reliability','試験目的','使用性','信頼性'],
  'workshop-fuzz-corpus':['fuzzing','coverage guided fuzzing','コーパス','ファジング','カバレッジ誘導'],
  'archive-mmap-page-lab':['mmap','MAP_SHARED','MAP_PRIVATE','ページ境界','コピーオンライト'],
