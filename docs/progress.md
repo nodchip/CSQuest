@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: Pages の配置が接続切断で失敗した後、同一ワークフロー実行の再実行では `github-pages` の成果物が２つ見つかり配置できなかった（[実行履歴](https://github.com/nodchip/CSQuest/actions/runs/41423851280)）。アップロードと配置の両方で実行回番号を含む同じ成果物名を使用するよう変更。新しい実行とその再実行の結果は GitHub Actions の履歴で確認する。
+
 - 2026-11-02: 依頼861で４・８・16候補の Grover 探索を０〜４回操作し、最初に最大の確率となる回数と問い合わせ回数を比較。[IBM Quantum の解説](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/grover-algorithm/number-of-iterations)を参照。全段階を独立した正弦式・正規化と照合し、`npm test` 2243件が成功。ブラウザーで誤操作、途中再開、３部屋、同率の判定、キーボード、320・390・1280px幅を確認。複数解、実機、オラクルの構築費用、再試行を含む実行時間は未評価。
 
 - 2026-11-02: 依頼860で [ITU / UNITAR の世界の電子廃棄物推計](https://www.itu.int/en/ITU-D/Environment/Pages/Publications/The-Global-E-waste-Monitor-2024.aspx)を2010年・2022年で比較し、未記録分の解釈と[WHO の示す健康リスク](https://www.who.int/news-room/questions-and-answers/item/children-and-digital-dumpsites-e-waste-and-health)を扱う。丸め済み数字の差・割合と保存記録を検査し、`npm test` 2241件とビルドが成功。ブラウザーで両年、途中再開、誤答・達成、キーボード、320・390・1280px幅を確認。統計は全電子・電気機器を含み、機器別・地域別の被害や現在の値を示さない。
