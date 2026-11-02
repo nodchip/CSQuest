@@ -148,7 +148,7 @@
 | SEP | SEP-IP | Intellectual Property | 277 | 依頼269・270でライセンスと出典・著作者の固定例。法的基礎、権利の種類などは未対応。[項目別台帳](coverage-sep-ip.md)と[詳細](sep-ip.md) |
 | SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き。[項目別台帳](coverage-sep-privacy.md)と[詳細](sep-privacy.md) |
 | SEP | SEP-Communication | Communication | 279 | 依頼295で相手に合わせた架空の報告と未確認事項の固定例。他は未対応。[項目別台帳](coverage-sep-communication.md)と[詳細](sep-communication.md) |
-| SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の比較、802で利用回数と製造、858で待機設定の架空比較。他は未対応。[項目別台帳](coverage-sep-sustainability.md)と[詳細](sep-sustainability.md) |
+| SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の比較、802で利用回数と製造、858で待機設定、859で環境監視の架空比較。他は未対応。[項目別台帳](coverage-sep-sustainability.md)と[詳細](sep-sustainability.md) |
 | SEP | SEP-History | Computing History | 282 | 依頼363で三つの出来事と人々の役割を紹介。他は未対応。[項目別台帳](coverage-sep-history.md)と[詳細](sep-history.md) |
 | SEP | SEP-Economies | Economies of Computing | 283 | 依頼364で伝令網の接続と相互運用を比較。他は未対応。[項目別台帳](coverage-sep-economies.md)と[詳細](sep-economies.md) |
 | SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 依頼365で偽・正規の伝令と別経路確認の固定例。他は未対応。[項目別台帳](coverage-sep-security.md)と[詳細](sep-security.md) |
