@@ -55,16 +55,16 @@
 | FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜154で処理の受け渡し、失敗、終了状態、環境変数、正規表現の固定例。他は未対応。[詳細](fpl-scripting.md) |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期と通信、829でアクター、830で通信費用、832で条件待ちと鍵の固定例。[項目別台帳](coverage-fpl-parallel.md)と[詳細](fpl-parallel.md) |
-| FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。他は未対応。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
+| FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。[項目別台帳](coverage-fpl-aspect.md)と[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
 | FPL | FPL-Types | Type Systems | 136 | 依頼24・772で型検査と正しさ、764・765で型推論、766・767で進行と保存、768で命題と型、769で長さに依存する型を扱う。[項目別台帳](coverage-fpl-types.md)と[詳細](fpl-types.md)を参照。 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、201〜203の回収・別名、782の直接・間接・添字アクセス、783の制御フローから分岐・ジャンプ、784の末尾呼出しと枠、785の再帰とメモリ領域、786の棚再利用と世代付きキーの固定例。[項目別台帳](coverage-fpl-systems.md)と[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312・315で式と翻訳段階、787でクロスコンパイルと中間コード、788で構文図と規則札、789で最適化の意味保存、790で名前解決と配置の固定例。[項目別台帳](coverage-fpl-translation.md)と[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 75・154・199・306〜312の構文木やスコープ、791の環境とストアの固定例。[項目別台帳](coverage-fpl-abstraction.md)と[詳細](fpl-abstraction.md) |
 | FPL | FPL-Syntax | Syntax Analysis | 141 | 75・313・314で式の構造、字句解析と先読み、792で区切りを使う誤り回復の固定例。[項目別台帳](coverage-fpl-syntax.md)と[詳細](fpl-syntax.md) |
 | FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75・315・326・327で構文木、型確認と引数評価の固定例。[項目別台帳](coverage-fpl-semantics.md)と[詳細](fpl-syntax.md) |
-| FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜208で制御フロー、到達定義・固定点、不要な書込みと別の効果の固定例。一般の解析は未対応。[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
-| FPL | FPL-Code | Code Generation | 142 | 命令・呼出し等と依頼207・208の書込み除去と効果保持の固定例。一般のコード生成は未対応。[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
-| FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 呼出し・配列配置、依頼201・202の回収方式の固定例。実際の実行時機構は未対応。[詳細](fpl-execution-analysis.md#fpl-run-timenon-core) |
+| FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜208で制御フローとデータフロー、416で停止判定、657で静的規則の固定例。[項目別台帳](coverage-fpl-analysis.md)と[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
+| FPL | FPL-Code | Code Generation | 142 | 依頼207・208の書込み除去、783で分岐、790でリンクの固定例。[項目別台帳](coverage-fpl-code.md)と[詳細](fpl-execution-analysis.md#fpl-codenon-core) |
+| FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 依頼201・202の回収、560の呼出し、785の枠とヒープ、831の数値交換の固定例。[項目別台帳](coverage-fpl-run-time.md)と[詳細](fpl-execution-analysis.md#fpl-run-timenon-core) |
 | FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 依頼325〜327で評価、778・780で多重継承とミックスインの固定模型。[項目別台帳](coverage-fpl-constructs.md)と[詳細](fpl-constructs-pragmatics.md#fpl-constructs) |
 | FPL | FPL-Pragmatics | Language Pragmatics | 144 | 依頼325〜327で遅延評価と先行評価の固定模型。[項目別台帳](coverage-fpl-pragmatics.md)と[詳細](fpl-constructs-pragmatics.md#fpl-pragmatics) |
 | FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281〜284で操作的意味論・記号実行・ラムダ簡約・帰納法、766〜770で型安全性・命題と型・依存型・パラメトリシティ、771で３種の意味論を固定例で扱う。[項目別台帳](coverage-fpl-formalism.md)と[詳細](fpl-formalism.md)を参照。 |
