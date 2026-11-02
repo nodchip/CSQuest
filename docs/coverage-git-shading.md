@@ -6,7 +6,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
-| 1a | KA Core | 分布レイトレーシング・パストレーシング | 未照合 | 507・720・732に光線と遮蔽の模型はある。分布レイトレーシングや多重反射のパス追跡・積分推定の対応は未確認。 |
+| 1a | KA Core | 分布レイトレーシング・パストレーシング | 部分 | 881で２反射までの４離散経路と等確率標本の平均を比較。連続方向、一般の分布レイトレーシングや実レンダラーは未評価。 |
 | 1b | KA Core | フォトンマッピング | 未照合 | 対応教材は未確認。 |
 | 1c | KA Core | 双方向パストレーシング | 未照合 | 対応教材は未確認。 |
 | 1d | KA Core | メトロポリス光輸送 | 未照合 | 対応教材は未確認。 |
@@ -29,7 +29,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
-| 1 | KA Core | レンダリング方程式の解の推定を説明 | 未照合 | 光線模型はあるが、方程式の積分推定は未確認。 |
+| 1 | KA Core | レンダリング方程式の解の推定を説明 | 部分 | 881で有限の２反射経路の平均と等確率標本を比較。連続積分、一般の解や自由な説明は未評価。 |
 | 2 | KA Core | 完全性・一致性・不偏性を議論 | 部分 | 733で有限の５点に対する等確率標本と中央固定の期待値・分散を比較。一般の一致性、完全性やレンダラー全体は未評価。 |
 | 3 | KA Core | シェーディングの帯域・計算量の分析 | 未照合 | 個別の画像容量や描画模型はあるが、分析の対応は未確認。 |
 | 4 | KA Core | 描画 API でシェーディングを実装 | 部分 | 186でトゥーン調の明暗を操作。描画 API と実装能力は未評価。 |
@@ -38,4 +38,4 @@
 | 7 | KA Core | 画素単位の描画プログラム | 部分 | 870で色計算の係数・制限を選ぶ代替体験。プログラム作成や実 API は直接評価しない。 |
 | 8 | KA Core | BRDF・反射・屈折を用いたレイトレーサ | 部分 | 641・720で固定の交差・可視性を操作。BRDF、反射・屈折や実プログラムは未評価。 |
 
-関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`、`tests/motion-exposure.test.js`。各模型の範囲に限る。
+関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/path-sampling.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`、`tests/motion-exposure.test.js`。各模型の範囲に限る。
