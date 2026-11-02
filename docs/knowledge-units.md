@@ -80,7 +80,7 @@
 | GIT | GIT-Simulation | Simulation | 161 | 依頼209〜215で粒子・ばね、接触と衝突応答、ライフゲーム、濃度移流と高さ場の固定例。流体全体や一般の衝突応答等は未対応。[詳細](git-simulation.md) |
 | GIT | GIT-Immersion | Immersion | 161 | 依頼216〜218で２視点の視差、古い視点情報によるずれ、現実物体の遮蔽の固定例。実際の立体表示・追跡・安全性等は未対応。[項目別台帳](coverage-git-immersion.md)と[詳細](git-immersion.md) |
 | GIT | GIT-Interaction | Interaction | 162 | 依頼92・351で固定イベントと画面操作、427で複数手段の選択、806でアクセシビリティの固定例。[項目別台帳](coverage-git-interaction.md)と[詳細](git-interaction.md) |
-| GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。他は未対応。[詳細](git-image.md) |
+| GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。808で２×２画像の周波数選択を操作。他は未対応。[詳細](git-image.md) |
 | GIT | GIT-Physical | Tangible/Physical Computing | 164 | 依頼219〜222で光の読み取り、サーボの目標・移動、閾値・量子化・標本化、807で積層・切削・成形の固定例。実際の回路や製作等は未対応。[項目別台帳](coverage-git-physical.md)と[詳細](git-physical.md) |
 | GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 依頼352で室内情報の収集を比較。他は未対応。[詳細](git-society.md) |
 | HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 依頼188で架空の旅人・維持担当の声と案内所の固定模型。実際の利用者調査や協働は未対応。[詳細](hci-user.md) |

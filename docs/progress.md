@@ -1,5 +1,8 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼808で２×２画像の周波数成分を選び、逆変換して一様な明るさと模様を分離。[University of Edinburgh](https://homepages.inf.ed.ac.uk/rbf/HIPR2/freqfilt.htm) を参照。81入力で直接式と、２画像の全16選択で独立した空間側の式と比較。途中復元・４課題・負値を検査し、`npm test` 2097件成功。配信用ビルドで誤答・再挑戦・再開・達成・キーボードと320・390・1280px幅を確認。２×２の固定例で、一般画像の複素係数や表示・境界は未評価。
+
+
 - 2026-11-02: 依頼807で積層・切削による３列の断面と、加熱・減圧・冷却による成形を操作。[NIST](https://www.nist.gov/additive-manufacturing/what-additive-manufacturing) と [UC Davis](https://techfoundry.ucdavis.edu/vacuum-forming) を参照。両方式の64高さ、成形順、途中復元と達成を検査し、`npm test` 2094件成功。配信用ビルドで誤操作・再開・３台の完成・キーボードと320・390・1280px幅を確認。実機、材料、品質、費用、環境負荷や安全は未評価。
 
 
