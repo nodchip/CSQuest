@@ -54,7 +54,7 @@
 | FPL | FPL-Logic | Logic Programming | 133 | 146〜150で単一化・事実・規則・探索・再帰・カット、776で待機と規則に基づく未知値の探索、777で部分計算の記録と再利用を扱う。[項目別台帳](coverage-fpl-logic.md)と[詳細](fpl-logic.md)を参照。 |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜154で処理の受け渡し、失敗、終了状態、環境変数、正規表現の固定例。他は未対応。[詳細](fpl-scripting.md) |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
-| FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。[項目別台帳](coverage-fpl-parallel.md)と[詳細](fpl-parallel.md) |
+| FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期と通信、829で伝言箱を持つアクターの固定例。[項目別台帳](coverage-fpl-parallel.md)と[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。他は未対応。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
 | FPL | FPL-Types | Type Systems | 136 | 依頼24・772で型検査と正しさ、764・765で型推論、766・767で進行と保存、768で命題と型、769で長さに依存する型を扱う。[項目別台帳](coverage-fpl-types.md)と[詳細](fpl-types.md)を参照。 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、201〜203の回収・別名、782の直接・間接・添字アクセス、783の制御フローから分岐・ジャンプ、784の末尾呼出しと枠、785の再帰とメモリ領域、786の棚再利用と世代付きキーの固定例。[項目別台帳](coverage-fpl-systems.md)と[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
