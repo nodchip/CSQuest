@@ -142,17 +142,17 @@
 | SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 依頼328・329で脅威経路、対策の選択と修正前後の試験の固定模型。他は未対応。[詳細](sec-engineering.md) |
 | SEC | SEC-Forensics | Digital Forensics | 262 | 依頼195・286で監査と受け渡し、834で記録時刻と空白の固定例。[項目別台帳](coverage-sec-forensics.md)と[詳細](sec-forensics.md) |
 | SEC | SEC-Governance | Security Governance | 263 | 依頼353で復旧方針・保管・訓練の固定例。[項目別台帳](coverage-sec-governance.md)と[詳細](sec-governance.md) |
-| SEP | SEP-Context | Social Context | 273 | 依頼358で申請経路と利用条件の固定例。他は未対応。[詳細](sep-context.md) |
-| SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 一部試作：依頼63で架空の関係者の声と３案の影響を比較 |
-| SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 依頼360・367で報告とレビューの固定例。他は未対応。[詳細](sep-professional-ethics.md) |
-| SEP | SEP-IP | Intellectual Property | 277 | 依頼269・270でライセンスと出典・著作者の固定例。法的基礎、権利の種類などは未対応。[詳細](sep-ip.md) |
-| SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き |
-| SEP | SEP-Communication | Communication | 279 | 依頼295で相手に合わせた架空の報告と未確認事項の固定例。他は未対応。[詳細](sep-communication.md) |
+| SEP | SEP-Context | Social Context | 273 | 依頼358で申請経路と利用条件の固定例。他は未対応。[項目別台帳](coverage-sep-context.md)と[詳細](sep-context.md) |
+| SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 一部試作：依頼63で架空の関係者の声と３案の影響を比較。[項目別台帳](coverage-sep-ethical-analysis.md) |
+| SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 依頼360・367で報告とレビューの固定例。他は未対応。[項目別台帳](coverage-sep-professional-ethics.md)と[詳細](sep-professional-ethics.md) |
+| SEP | SEP-IP | Intellectual Property | 277 | 依頼269・270でライセンスと出典・著作者の固定例。法的基礎、権利の種類などは未対応。[項目別台帳](coverage-sep-ip.md)と[詳細](sep-ip.md) |
+| SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き。[項目別台帳](coverage-sep-privacy.md)と[詳細](sep-privacy.md) |
+| SEP | SEP-Communication | Communication | 279 | 依頼295で相手に合わせた架空の報告と未確認事項の固定例。他は未対応。[項目別台帳](coverage-sep-communication.md)と[詳細](sep-communication.md) |
 | SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の比較、802で利用回数と製造の架空比較。他は未対応。[項目別台帳](coverage-sep-sustainability.md)と[詳細](sep-sustainability.md) |
-| SEP | SEP-History | Computing History | 282 | 依頼363で三つの出来事と人々の役割を紹介。他は未対応。[詳細](sep-history.md) |
-| SEP | SEP-Economies | Economies of Computing | 283 | 依頼364で伝令網の接続と相互運用を比較。他は未対応。[詳細](sep-economies.md) |
-| SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 依頼365で偽・正規の伝令と別経路確認の固定例。他は未対応。[詳細](sep-security.md) |
-| SEP | SEP-DEIA | Diversity, Equity, Inclusion, and Accessibility | 285 | 依頼366で平等な配分と条件を踏まえた支援の固定例。他は未対応。[詳細](sep-deia.md) |
+| SEP | SEP-History | Computing History | 282 | 依頼363で三つの出来事と人々の役割を紹介。他は未対応。[項目別台帳](coverage-sep-history.md)と[詳細](sep-history.md) |
+| SEP | SEP-Economies | Economies of Computing | 283 | 依頼364で伝令網の接続と相互運用を比較。他は未対応。[項目別台帳](coverage-sep-economies.md)と[詳細](sep-economies.md) |
+| SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 依頼365で偽・正規の伝令と別経路確認の固定例。他は未対応。[項目別台帳](coverage-sep-security.md)と[詳細](sep-security.md) |
+| SEP | SEP-DEIA | Diversity, Equity, Inclusion, and Accessibility | 285 | 依頼366で平等な配分と条件を踏まえた支援の固定例。他は未対応。[項目別台帳](coverage-sep-deia.md)と[詳細](sep-deia.md) |
 | SF | SF-Overview | Overview of Computer Systems | 292 | 回路、OS、パイプライン等に固定例。歴史や層間の一般的な構築は未対応。[詳細](sf-overview.md) |
 | SF | SF-Foundations | Basic Concepts | 293 | 状態、回路、逐次・並列処理等に固定例。一般的な構築と説明は未対応。[詳細](sf-foundations.md) |
 | SF | SF-Resource | Resource Management | 294 | スケジューリングや資源の固定例。実装・実測や一般的比較は未対応。[詳細](sf-resource.md) |

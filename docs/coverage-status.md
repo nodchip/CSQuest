@@ -46,4 +46,6 @@
 
 追加の項目別台帳：[SPD-Web](coverage-spd-web.md)、[SPD-Mobile](coverage-spd-mobile.md)、[SPD-Embedded](coverage-spd-embedded.md)、[SPD-SEP/Mobile](coverage-spd-sep-mobile.md)、[SPD-SEP/Web](coverage-spd-sep-web.md)、[SPD-SEP/Game](coverage-spd-sep-game.md)、[SPD-SEP/Robotics](coverage-spd-sep-robotics.md)、[SPD-SEP/Interactive](coverage-spd-sep-interactive.md)。
 
-現時点ではこの形式で見直したのは147単位。他の19単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この147/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
+追加の項目別台帳：[SEP-Context](coverage-sep-context.md)、[SEP-Ethical-Analysis](coverage-sep-ethical-analysis.md)、[SEP-Professional-Ethics](coverage-sep-professional-ethics.md)、[SEP-Communication](coverage-sep-communication.md)、[SEP-History](coverage-sep-history.md)、[SEP-Economies](coverage-sep-economies.md)、[SEP-Security](coverage-sep-security.md)、[SEP-DEIA](coverage-sep-deia.md)。
+
+現時点ではこの形式で見直したのは155単位。他の11単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この155/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
