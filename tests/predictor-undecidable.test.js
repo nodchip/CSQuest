@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {predictorBounded,predictorCreate,predictorCheck,predictorComplete,predictorRestore} from '../src/predictor-undecidable.js';
+test('bounded predictors always return and distinguish the exact fifth step',()=>{for(let n=0;n<=100;n++){assert.equal(predictorBounded('stops',n),n>=5?1:0);assert.equal(predictorBounded('loops',n),0);}assert.throws(()=>predictorBounded('bad',5));assert.throws(()=>predictorBounded('stops',-1));});
+test('construction, four correct checks, two reasoning choices, and replayable drafts',()=>{const q=predictorCreate();assert.throws(()=>predictorCheck(q));q.construction='bounded';for(const [m,n] of [['stops',4],['stops',5],['loops',5],['loops',10]]){q.machine=m;q.bound=n;q.guesses[`${m}:${n}`]=predictorBounded(m,n);predictorCheck(q);}q.finite='limited';q.reduction='halt';assert.equal(predictorComplete(q),true);const copy=predictorRestore(q);assert.deepEqual(copy,q);copy.checked.pop();assert.equal(q.checked.length,4);assert.throws(()=>predictorRestore({...q,guesses:{...q.guesses,'stops:5':0}}));});
