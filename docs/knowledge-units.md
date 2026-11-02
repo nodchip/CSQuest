@@ -28,7 +28,7 @@
 | AR | AR-Logic | Digital Logic and Digital Systems | 102 | 依頼06・37で組合せ回路、265〜268で記憶、シフト、カウンター、伝搬遅延の固定例。他は未対応。[詳細](ar-logic.md) |
 | AR | AR-Representation | Machine-Level Data Representation | 103 | 一部試作：４ビット整数と加算器、小数の丸め、依頼93の UTF-8、依頼460のバイト順、461の符号付き表現の固定例 |
 | AR | AR-Assembly | Assembly Level Machine Organization | 103 | 一部試作：依頼73で架空の命令の取出し・解読・実行、560で入れ子の呼出しと復帰 |
-| AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106・107・110でキャッシュ、誤り訂正と圧縮の固定例。依頼455で番地の読書きと保存・電源断、574でキャッシュの書込み方針を比較。他は未対応。[詳細](ar-memory.md) |
+| AR | AR-Memory | Memory Hierarchy | 104 | 依頼25・103・104・106・107・110でキャッシュ、誤り訂正と圧縮の固定例。依頼455で番地の読書きと保存・電源断、574でキャッシュの書込み方針、795で直接対応と２ウェイを比較。他は未対応。[項目別台帳](coverage-ar-memory.md)と[詳細](ar-memory.md) |
 | AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知、454で１枠のハンドシェイクの固定例。他は未対応。[詳細](ar-io.md) |
 | AR | AR-Organization | Functional Organization | 106 | 依頼158で３段階パイプラインのデータ依存、待機と転送の固定例。他は未対応。[詳細](ar-organization.md) |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 依頼159〜161で分岐予測、投機実行、時間・電力・エネルギー比較の固定例。他は未対応。[詳細](ar-performance-energy.md) |
