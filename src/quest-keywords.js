@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-queue-model':['待ち行列','M/M/1','queueing','Little','通信','到着率','処理率'],
  'archive-transposition-decipher':['転置','復号','transposition','decipher','古典暗号'],
  'archive-transposition-route':['転置','transposition','古典暗号','列順'],
  'castle-ot-posterior':['秘匿転送','条件付き確率','ベイズ','事前確率','posterior','bayes'],

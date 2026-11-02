@@ -1,0 +1,8 @@
+export const queueModelLevel={id:'forest-queue-model',number:'993',kind:'queue-model',name:'伝令の列を予測する',tag:'並列・分散・待ち行列',title:'伝令所の混み具合を予測しよう',story:'森の伝令所に届く手紙が増えています。到着率と処理率から、長い時間の平均を調べましょう。'};
+export const queueRates=[1,2,3,4,5];
+export const queueCases={1:{size:'third',time:'third'},2:{size:'one',time:'half'},3:{size:'three',time:'one'},4:{size:'none',time:'none'},5:{size:'none',time:'none'}};
+export function queueMetrics(rate){if(!queueRates.includes(rate))throw new RangeError('不正な到着率');const stable=rate<4;return {stable,utilization:stable?rate/4:null,system:stable?rate/(4-rate):null,time:stable?1/(4-rate):null,waiting:stable?rate*rate/(4*(4-rate)):null,waitTime:stable?rate/(4*(4-rate)):null};}
+export function queueModelCreate(){return {selected:1,trials:Object.fromEntries(queueRates.map(rate=>[rate,{size:null,time:null,checked:false}])),reflection:null};}
+export function queueModelDone(rate,t){const c=queueCases[rate];return !!c&&!!t&&t.checked&&t.size===c.size&&t.time===c.time;}
+export function queueModelComplete(s){return s.reflection==='model'&&queueRates.every(rate=>queueModelDone(rate,s.trials[rate]));}
+export function queueModelRestore(saved){if(!saved||!queueRates.includes(saved.selected)||![null,'model','linear','guarantee'].includes(saved.reflection))throw new RangeError('途中記録が不正です');const s=queueModelCreate();s.selected=saved.selected;s.reflection=saved.reflection;for(const rate of queueRates){const t=saved.trials?.[rate];if(!t||![null,'third','one','three','none'].includes(t.size)||![null,'third','half','one','none'].includes(t.time)||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です');s.trials[rate]={size:t.size,time:t.time,checked:t.checked};}return s;}
