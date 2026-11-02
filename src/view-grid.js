@@ -1,0 +1,16 @@
+export const viewGridLevel={id:'ruin-view-grid',number:'800',kind:'view-grid',name:'見張り台の区画',tag:'空間分割と描画範囲',title:'見える宝箱を探し出そう',story:'遺跡の見張り台から地図を調べます。画面が重なる区画を探し、そこにある宝箱の候補を絞りましょう。'};
+export const gridTiles=Array.from({length:6},(_,i)=>({id:`t${i%3}${Math.floor(i/3)}`,name:`${Math.floor(i/3)===0?'上':'下'}・${['左','中央','右'][i%3]}`,box:[(i%3)*4,Math.floor(i/3)*4,(i%3+1)*4,(Math.floor(i/3)+1)*4]}));
+export const gridObjects={A:[0,0,2,2],B:[3,1,5,3],C:[6,1,7,3],D:[8,0,10,2],E:[4,4,7,7],F:[7,5,9,7],G:[1,4,3,7]};
+export const gridViews={top:{name:'上の通路',box:[3,1,7,3]},lower:{name:'下の通路',box:[4,3,8,6]}};
+export function gridOverlap(a,b){return a[0]<b[2]&&b[0]<a[2]&&a[1]<b[3]&&b[1]<a[3];}
+export function gridViewTiles(box){return gridTiles.filter(t=>gridOverlap(t.box,box)).map(t=>t.id);}
+export function gridCandidates(ids){const tiles=gridTiles.filter(t=>ids.includes(t.id));return Object.keys(gridObjects).filter(id=>tiles.some(t=>gridOverlap(t.box,gridObjects[id])));}
+export function gridVisible(box){return Object.keys(gridObjects).filter(id=>gridOverlap(box,gridObjects[id]));}
+const same=(a,b)=>a.length===b.length&&a.every(x=>b.includes(x));
+export function gridCreate(){return {selected:'top',trials:Object.fromEntries(Object.keys(gridViews).map(k=>[k,{tiles:[],tilesChecked:false,visible:[],checked:false}])),answer:null};}
+export function gridToggleTile(q,id){if(!gridTiles.some(x=>x.id===id))throw new RangeError('区画が不正です');const t=q.trials[q.selected];t.tiles=t.tiles.includes(id)?t.tiles.filter(x=>x!==id):[...t.tiles,id];t.tilesChecked=false;t.visible=[];t.checked=false;}
+export function gridCheckTiles(q){const t=q.trials[q.selected];t.tilesChecked=same(t.tiles,gridViewTiles(gridViews[q.selected].box));t.visible=[];t.checked=false;return t.tilesChecked;}
+export function gridToggleVisible(q,id){const t=q.trials[q.selected];if(!t.tilesChecked||!gridCandidates(t.tiles).includes(id))throw new RangeError('候補を先に確かめましょう');t.visible=t.visible.includes(id)?t.visible.filter(x=>x!==id):[...t.visible,id];t.checked=false;}
+export function gridCheckVisible(q){const t=q.trials[q.selected];t.checked=t.tilesChecked&&same(t.visible,gridVisible(gridViews[q.selected].box));return t.checked;}
+export function gridComplete(q){return Object.values(q.trials).every(t=>t.checked)&&q.answer==='filter';}
+export function gridRestore(q){if(!q||!Object.hasOwn(gridViews,q.selected)||!q.trials||![null,'filter','all','one'].includes(q.answer))throw new RangeError('記録が不正です');const n=gridCreate();n.selected=q.selected;n.answer=q.answer;for(const id of Object.keys(gridViews)){const t=q.trials[id];if(!t||!Array.isArray(t.tiles)||!Array.isArray(t.visible)||new Set(t.tiles).size!==t.tiles.length||new Set(t.visible).size!==t.visible.length||t.tiles.some(x=>!gridTiles.some(z=>z.id===x))||typeof t.tilesChecked!=='boolean'||typeof t.checked!=='boolean')throw new RangeError('記録が不正です');if(t.tilesChecked&&!same(t.tiles,gridViewTiles(gridViews[id].box)))throw new RangeError('記録が不正です');if((!t.tilesChecked&&t.visible.length)||t.visible.some(x=>!gridCandidates(t.tiles).includes(x))||(t.checked&&(!t.tilesChecked||!same(t.visible,gridVisible(gridViews[id].box)))))throw new RangeError('記録が不正です');n.trials[id]={tiles:[...t.tiles],tilesChecked:t.tilesChecked,visible:[...t.visible],checked:t.checked};}return n;}
