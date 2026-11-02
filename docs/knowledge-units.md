@@ -131,7 +131,7 @@
 | SE | SE-Requirements | Product Requirements | 242 | 依頼87で架空の聞き取り、機能・品質・曖昧さと振る舞いの分類。他は未対応。[詳細](se-requirements.md) |
 | SE | SE-Design | Software Design | 243 | 依頼223〜228で契約・依存など、680で重複と仕様変更、681で部品変更と利用者の移行をつなぐ固定例。設計全般は未対応。[詳細](se-design.md) |
 | SE | SE-Construction | Software Construction | 245 | 依頼245〜250で試験先行、代役、診断記録、統合と例外後の後片付けの固定例。他は未対応。[詳細](se-construction.md) |
-| SE | SE-Validation | Software Verification and Validation | 246 | 依頼23・251〜254・658・660で試験選択、検証、試験の種類、性能指標、並行実行の順序と製品・試験の役割の固定例 |
+| SE | SE-Validation | Software Verification and Validation | 246 | 依頼23・251〜254・658・660で試験選択、検証、試験の種類、性能指標、並行実行の順序と製品・試験の役割、801で試験環境の組合せの固定例 |
 | SE | SE-Refactoring | Refactoring and Code Evolution | 249 | 依頼234〜237で暗黙の依存、重複整理、版番号と段階的移行、680で重複と変更の影響を比較する固定例。他は未対応。[詳細](se-refactoring.md) |
 | SE | SE-Reliability | Software Reliability | 250 | 依頼238〜241で単一障害点、失敗枠、多数決と故障の依存の固定例。他は未対応。[詳細](se-reliability.md) |
 | SE | SE-Formal | Formal Methods | 251 | 依頼242〜244で有限状態の安全性・デッドロックと有限範囲の契約検査。他は未対応。[詳細](se-formal.md) |
