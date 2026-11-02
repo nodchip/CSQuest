@@ -16,7 +16,7 @@
 | 3 | KA Core | シャドウマッピング | 部分 | 187で３本の光の深度比較。２次元深度画像、投影やバイアスは未評価。 |
 | 4 | KA Core | 遮蔽カリング | 部分 | 734で深度の領域最大値と旗の最も近い深さから保守的に描画を省く。一般の視錐台・投影・実性能は未評価。 |
 | 5 | KA Core | BSDF とマイクロファセット | 部分 | 882で６枚の鏡の法線分布と反射方向を比較。遮蔽、フレネル、透過、連続分布や一般の BSDF は未評価。 |
-| 6 | KA Core | 表面下散乱 | 未照合 | 対応教材は未確認。 |
+| 6 | KA Core | 表面下散乱 | 部分 | 883で石の中の散乱・吸収と異なる位置からの出射、打切りを比較。連続媒体・波長・BSSRDF の数値評価や実画像は未評価。 |
 | 7 | KA Core | 面光源 | 部分 | 732で線状光源の５点と遮蔽、733で５点の可視割合の標本推定を比較。連続的な面積積分・光量・３次元は未評価。 |
 | 8 | KA Core | 階層的深度バッファ | 部分 | 506で画素の深度比較、734で２×２領域と画面全体の２段の最大深度を操作。一般の解像度・実 GPU・精度誤差は未評価。 |
 | 9 | KA Core | 画像ベースレンダリング | 未照合 | 対応教材は未確認。 |
@@ -38,4 +38,4 @@
 | 7 | KA Core | 画素単位の描画プログラム | 部分 | 870で色計算の係数・制限を選ぶ代替体験。プログラム作成や実 API は直接評価しない。 |
 | 8 | KA Core | BRDF・反射・屈折を用いたレイトレーサ | 部分 | 641・720で固定の交差・可視性を操作。BRDF、反射・屈折や実プログラムは未評価。 |
 
-関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/path-sampling.test.js`、`tests/microfacet-mirrors.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`、`tests/motion-exposure.test.js`。各模型の範囲に限る。
+関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/path-sampling.test.js`、`tests/microfacet-mirrors.test.js`、`tests/subsurface-walk.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`、`tests/motion-exposure.test.js`。各模型の範囲に限る。

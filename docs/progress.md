@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼883で表面反射と、石の内部を散乱・吸収して別の位置へ出る経路を比較。[Physically Based Rendering の表面下散乱](https://pbr-book.org/4ed/Radiometry%2C_Spectra%2C_and_Color/Surface_Reflection)を参照。等確率の125通りで同位置28・別位置12・吸収50・未確定35を検査し、途中保存、`npm test` 2287件とビルドが成功。ブラウザーで表面と４結果、途中再開、誤答・達成、キーボードと320・390・1280px幅を確認。固定格子・最大３回の模型で、実材料の連続経路、色・屈折や画像は未評価。
+
 - 2026-11-02: 依頼882で６枚の微小な鏡の向き、光源と観察者の角度を変えて反射を比較。[Physically Based Rendering の微小面モデル](https://pbr-book.org/4ed/Reflection_Models/Roughness_Using_Microfacet_Theory)を参照。全18条件の各反射を独立したベクトル計算と照合し、途中保存、`npm test` 2285件とビルドが成功。ブラウザーで再開、４比較、誤答・達成、キーボードと320・390・1280px幅を確認。６枚・２次元の完全鏡面模型で、遮蔽・投影・フレネル・透過や実際の明るさは未評価。
 
 - 2026-11-02: 依頼881で１・２反射の打切り、４つの離散経路と等確率標本の平均を比較。[Physically Based Rendering の Path Tracing](https://pbr-book.org/4ed/Light_Transport_I_Surface_Reflection/Path_Tracing)を参照。４寄与、２標本の全16通りの期待値・分散、手動選択と途中保存を検査し、`npm test` 2283件とビルドが成功。ブラウザーで経路途中の再開、全経路、誤答・達成、キーボードと320・390・1280px幅を確認。固定４経路・２反射の模型で、連続方向、一般の BRDF と実画像は未評価。
