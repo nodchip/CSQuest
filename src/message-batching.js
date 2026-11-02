@@ -1,0 +1,7 @@
+export const batchLevel={id:'forest-message-batching',number:'830',kind:'message-batching',name:'伝令の袋と到着の早さ',tag:'メッセージの固定費用と粒度',title:'四枚の知らせを袋にまとめよう',story:'森の伝令が４枚の知らせを運びます。袋ごとの準備と運搬の時間を考え、まとめ方による到着の違いを比べましょう。'};
+export const batchModes={one:{name:'１枚ずつ',size:1},two:{name:'２枚ずつ',size:2},four:{name:'４枚まとめて',size:4}};
+export function batchReplay(mode,history){if(!Object.hasOwn(batchModes,mode)||!Array.isArray(history)||history.length>4)throw new RangeError('記録が不正です。');let sent=0,time=0;const arrivals=[];for(const a of history){const size=Math.min(batchModes[mode].size,4-sent);if(size<=0||a!==`${size}:${3+size}`)throw new RangeError('袋の枚数と、固定３刻に枚数を加えた時間を確かめましょう。');sent+=size;time+=3+size;arrivals.push({time,sent});}return {sent,time,arrivals,next:sent<4?Math.min(batchModes[mode].size,4-sent):null};}
+export function batchCreate(){return {mode:'one',histories:{one:[],two:[],four:[]},answer:null};}
+export function batchStep(q,action){const h=q.histories[q.mode];batchReplay(q.mode,[...h,action]);h.push(action);}
+export function batchComplete(q){return Object.keys(batchModes).every(id=>batchReplay(id,q.histories[id]).next===null)&&q.answer==='tradeoff';}
+export function batchRestore(q){if(!q||!Object.hasOwn(batchModes,q.mode)||!q.histories||![null,'tradeoff','always','same'].includes(q.answer))throw new RangeError('記録が不正です。');const n=batchCreate();n.mode=q.mode;n.answer=q.answer;for(const id of Object.keys(batchModes)){batchReplay(id,q.histories[id]);n.histories[id]=[...q.histories[id]];}return n;}
