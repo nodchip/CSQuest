@@ -1,0 +1,9 @@
+export const abstractMixinLevel={id:'workshop-abstract-mixin',number:'780',kind:'abstract-mixin',name:'配達役の約束と鈴',tag:'抽象基底クラスとミックスイン',title:'配達役の型を組み立てよう',story:'祭りに荷物を運ぶ役が必要です。共通の約束と鈴の道具を組み合わせ、作れる配達役を探しましょう。'};
+export const abstractMixins={missing:'配達方法を定めない',delivery:'配達方法を定める'};
+export const bellOptions={without:'鈴の道具なし',with:'鈴の道具を継ぐ'};
+export const abstractOutcomes={abstract:'作れない',delivery:'作れて配達できるが、鈴は鳴らせない',bell:'作れて配達でき、鈴も鳴らせる'};
+export function abstractEvaluate(implementation,bell){if(!Object.hasOwn(abstractMixins,implementation)||!Object.hasOwn(bellOptions,bell))throw new RangeError('設計が不正です');if(implementation==='missing')return 'abstract';return bell==='with'?'bell':'delivery';}
+export function abstractCreate(){return {implementation:'missing',bell:'without',trials:Object.fromEntries(Object.keys(abstractMixins).flatMap(a=>Object.keys(bellOptions).map(b=>[`${a}:${b}`,{guess:null,checked:false}]))),answer:null};}
+export function abstractCheck(q){const t=q.trials[`${q.implementation}:${q.bell}`];if(t.guess!==abstractEvaluate(q.implementation,q.bell))return false;t.checked=true;return true;}
+export function abstractComplete(q){return Object.values(q.trials).every(t=>t.checked)&&q.answer==='roles';}
+export function abstractRestore(q){if(!q||!Object.hasOwn(abstractMixins,q.implementation)||!Object.hasOwn(bellOptions,q.bell)||!q.trials||![null,'roles','bell','always'].includes(q.answer))throw new RangeError('記録が不正です');const out=abstractCreate();out.implementation=q.implementation;out.bell=q.bell;out.answer=q.answer;for(const a of Object.keys(abstractMixins))for(const b of Object.keys(bellOptions)){const key=`${a}:${b}`,t=q.trials[key];if(!t||![null,...Object.keys(abstractOutcomes)].includes(t.guess)||typeof t.checked!=='boolean'||(t.checked&&t.guess!==abstractEvaluate(a,b)))throw new RangeError('記録が不正です');out.trials[key]={guess:t.guess,checked:t.checked};}return out;}
