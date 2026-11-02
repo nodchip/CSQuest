@@ -32,7 +32,7 @@
 | 3a | CS Core | 証明法の識別 | 部分 | 95・400で帰納法と背理法の例。未知の証明の一般的識別は未評価。 |
 | 3b | CS Core | 直接証明・背理法・帰納法の構造 | 部分 | 95・400で固定した構造を選択。各手法の一般の説明は未評価。 |
 | 3c | CS Core | 各証明法による正しい論証 | 部分 | 95・400・407で固定された論証を選択。自由な構築は未評価。 |
-| 3d | CS Core | 問題に適した証明法の選択 | 未照合 | 複数の証明法を未知の問題で比較する体験は未確認。 |
+| 3d | CS Core | 問題に適した証明法の選択 | 部分 | 982で提示した３つの証明計画に合う直接証明・背理法・帰納法を選び、道筋を組み立てる。未知の問題に対する自由な方法選択は未評価。 |
 | 3e | CS Core | 帰納法と再帰構造の関係 | 部分 | 408の再帰と407の強い帰納の例。一般的な関係の説明は未評価。 |
 | 3f | CS Core | 弱い帰納法と強い帰納法 | 部分 | 95・407の固定例。一般的な比較と適用は未評価。 |
 | 4a | CS Core | 和・積・包除・数列による数え上げ | 部分 | 46で包除。等差・等比数列などの一般的適用は未評価。 |
@@ -56,3 +56,5 @@
 原典はトピック８に独立の例示学習成果を列挙していないため、トピックとして追跡する。関連する検査には `tests/sets.test.js`、`tests/function-cardinality.test.js`、`tests/strong-induction.test.js`、`tests/normal-forms.test.js`、`tests/asymptotic-bound.test.js` がある。これらは各模型の範囲を検査する。
 
 依頼981は [Stanford Introduction to Logic: Relational Logic](https://logic.stanford.edu/intrologic/chapters/chapter_07.html) を参考に、Ａ・Ｂを名指しする命題の連言と、村の対象全体に適用される全称量化を比較する。対象は空でない２人または３人、述語は灯りの有無に限定。有限の固定対象では個別命題の連言でも表せることを明示する。`tests/logic-domains.test.js` で全12状態の真偽、予測、復元と達成を検査。一般の表現力・推論や自由な証明は評価しない。
+
+依頼982は [MIT Mathematics for Computer Science: Contradiction and Induction](https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/mit6_1200j_s24_lec02.pdf) を参考に、偶数の和を定義から示す例、４羽と３巣の矛盾、奇数の和の基底と帰納段階を、それぞれ用意された証明計画に沿って並べる。別の正しい証明の存在を否定せず、固定された候補以外の証明や未知の問題の方法選択は評価しない。`tests/proof-outlines.test.js` で３例の方法・順序と保存履歴を検査する。
