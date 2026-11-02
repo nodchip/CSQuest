@@ -27,7 +27,7 @@
 | 6 | KA Core | little-o・little-Ω・little-Θ | 部分 | 343で２つの関数比を比較。他の記法と一般の証明は未評価。 |
 | 7 | KA Core | 再帰の形式的分析 | 部分 | 342・409で固定の分割と書込みの漸化式を比較。一般の導出・証明は未評価。 |
 | 8 | KA Core | 償却解析 | 部分 | 339・340で容量拡張と会計法を操作。一般の証明は未評価。 |
-| 9a-i | KA Core | チューリング機械の時間計算量・P・NP・NP-C・EXP | 部分 | 414で P・NP・NP完全を整理、865で１帯機械の遷移数を数える。各クラスの機械に基づく定義と EXP は未評価。 |
+| 9a-i | KA Core | チューリング機械の時間計算量・P・NP・NP-C・EXP | 部分 | 414で P・NP・NP完全、865で遷移数、868で PSPACE と EXP の包含を扱う。各クラスの機械に基づく一般的な定義は未評価。 |
 | 9a-ii | KA Core | Cook–Levin の定理 | 部分 | 867で１回の選択を行う架空機械の入力・遷移・終点・受理を論理式に写し、定理を説明。一般の構成と多項式上界の証明は未評価。 |
 | 9b-i | KA Core | 非決定性・決定性の領域計算量 | 部分 | 865で決定性１帯機械の訪問マスを数える。非決定性・一般の入力は未評価。 |
 | 9b-ii | KA Core | Savitch の定理 | 部分 | 866で５門の到達可能性を中継点に分け、領域再利用と定理の条件を説明。一般の構成・領域上界の証明は未評価。 |
@@ -55,6 +55,6 @@
 | 17 | KA Core | Cook–Levin の定理と SAT の NP 完全性 | 部分 | 867で受理する記録と充足割当ての固定対応、SAT の候補検証と NP 完全性を説明。一般の証明と自由な説明は未評価。 |
 | 18 | KA Core | P と NP | 部分 | 412・414で候補検証とクラスの関係を操作。一般の説明は未評価。 |
 | 19 | KA Core | 帰着による NP 完全性の証明 | 部分 | 411・413で固定の問題変換を操作。完全な証明の構築は未評価。 |
-| 20 | KA Core | PSPACE と EXP の関係 | 未照合 | 対応する説明は未確認。 |
+| 20 | KA Core | PSPACE と EXP の関係 | 部分 | 868で有限の構成数と決定的な再訪を操作し、PSPACE ⊆ EXP を説明。一般の構成数上界や自由な証明は未評価。 |
 
 `tests/search-growth.test.js`、`tests/search-benchmark.test.js`、`tests/recursion-tree.test.js`、`tests/amortized-credit.test.js`、`tests/complexity-classes.test.js`、`tests/cover-reduction.test.js` は各固定例を検査する。
