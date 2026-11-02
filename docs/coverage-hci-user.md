@@ -32,7 +32,7 @@
 | 5a | KA Core | 複数利用者の状況 | 部分 | 188で旅人と維持担当の事情を比較。実際の複数利用者システムは未評価。 |
 | 5b | KA Core | 同期的な集団通信 | 部分 | 964で２時刻の生放送と受信者を比較。実際の会議や相互作用は未評価。 |
 | 5c | KA Core | 非同期の集団通信 | 部分 | 964で掲示板の記録と後からの確認を比較。実際の掲示板や配信保証は未評価。 |
-| 5d | KA Core | 社会的計算・ソーシャルネットワーク分析 | 未照合 | 対応する依頼は未確認。 |
+| 5d | KA Core | 社会的計算・ソーシャルネットワーク分析 | 部分 | 965で架空の無向連絡網の到達範囲と関節点を比較。実際の社会関係・影響力や一般の社会的計算は未評価。 |
 | 5e | KA Core | オンライン協働 | 部分 | 288で別画面の競合と確認、655で接続断後の変更統合を操作。実際の共同作業や他の協働形態は未評価。 |
 | 5f | KA Core | 社会的調整とオンライン共同体 | 未照合 | 対応する依頼は未確認。 |
 | 5g | KA Core | アバター・キャラクター・仮想世界 | 未照合 | 利用者間の体験として扱う教材との対応は未確認。 |
@@ -66,3 +66,5 @@
 依頼964は [W3C 協働ツールのアクセシビリティ](https://www.w3.org/TR/ctaur/)を参考に、２時刻・３人の参加状況を固定し、生放送と記録の残る掲示板で知らせを届ける。`tests/group-communication.test.js` は操作順と受信者、記録と達成条件を検査する。掲示板の確認と通信成功は仮定で、実際の利用者、相互作用や共同編集・通知・理解は評価しない。
 
 依頼650・288・655をそれぞれ `src/bridge-team.js`、`src/shared-schedule.js`、`src/version-journey.js` と対応するテストで照合した。関係者の事情・２画面の競合・接続断後の版の統合という限定例で、実際のチーム活動や複数利用者の行動は評価しない。依頼59は共通の元からの変更を整理する補助教材である。
+
+依頼965は [NetworkX の関節点](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.articulation_points.html)と[連結成分](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.connected_components.html)を参考に、架空の６人の双方向の連絡網で追加経路と２人の除去を比較する。`tests/social-links.test.js` は６条件の到達集合、予測・保存・達成条件を検査。中継は仮定であり、実際の社会関係、影響力や伝達を評価しない。
