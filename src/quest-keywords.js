@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-association-ledger':['association rule','support','confidence','関連規則','支持度','確信度'],
  'sequence':['順次','sequence','手順'],
  'branch':['if','branch','条件','分岐'],
  'loop':['loop','反復','ループ'],
