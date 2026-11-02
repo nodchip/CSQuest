@@ -1,0 +1,14 @@
+export const perceptionModulesLevel={id:'workshop-perception-modules',number:'932',kind:'perception-modules',name:'星の石を見分ける',tag:'知覚の分担と統合',title:'目と指先の報告を組み合わせる',story:'自動人形は星形で硬い石を探します。目と指先の報告を別々に調べ、判断にどう伝わるか確かめましょう。'};
+export const perceptionModulesCases={starHard:{name:'星形・硬い',star:true,hard:true},starSoft:{name:'星形・柔らかい',star:true,hard:false},roundHard:{name:'丸形・硬い',star:false,hard:true},roundSoft:{name:'丸形・柔らかい',star:false,hard:false}};
+export const perceptionModulesModes={normal:'そのまま報告',flip:'報告を逆にする'};
+export const perceptionModulesTasks=[['starHard','normal','normal'],['starSoft','normal','normal'],['roundHard','normal','normal'],['roundSoft','normal','normal'],['roundHard','flip','normal'],['starHard','flip','normal'],['starSoft','normal','flip'],['starHard','normal','flip']];
+export function perceptionModulesState(scene,vision,touch,history){
+ if(!Object.hasOwn(perceptionModulesCases,scene)||!Object.hasOwn(perceptionModulesModes,vision)||!Object.hasOwn(perceptionModulesModes,touch)||!Array.isArray(history)||history.length>3)throw new RangeError('条件が不正です。');
+ const c=perceptionModulesCases[scene];let visual=null,tactile=null,result=null;
+ for(const a of history){if(a==='vision'&&visual===null&&result===null)visual=vision==='normal'?c.star:!c.star;else if(a==='touch'&&tactile===null&&result===null)tactile=touch==='normal'?c.hard:!c.hard;else if(a==='combine'&&visual!==null&&tactile!==null&&result===null)result=visual&&tactile;else throw new RangeError('操作の順番が不正です。');}
+ return {visual,tactile,result,truth:c.star&&c.hard,done:result!==null};
+}
+export function perceptionModulesCreate(){return {scene:'starHard',vision:'normal',touch:'normal',history:[],prediction:null,seen:[],reflection:null};}
+export function perceptionModulesStep(q,a){if(!['vision','touch','combine'].includes(a))throw new RangeError('操作が不正です。');if(a==='combine'&&q.prediction===null)return false;try{const s=perceptionModulesState(q.scene,q.vision,q.touch,[...q.history,a]);q.history.push(a);const key=`${q.scene}:${q.vision}:${q.touch}`;if(a==='combine'&&q.prediction===s.result&&perceptionModulesTasks.some(t=>t.join(':')===key)&&!q.seen.includes(key))q.seen.push(key);return true;}catch{return false;}}
+export function perceptionModulesComplete(q){return perceptionModulesTasks.every(t=>q.seen.includes(t.join(':')))&&q.reflection==='propagate';}
+export function perceptionModulesRestore(q){if(!q||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!perceptionModulesTasks.some(t=>t.join(':')===k))||![null,true,false].includes(q.prediction)||![null,'propagate','perfect','independent'].includes(q.reflection))throw new RangeError('記録が不正です。');const s=perceptionModulesState(q.scene,q.vision,q.touch,q.history);if(s.done&&q.prediction===null)throw new RangeError('記録が不正です。');return {scene:q.scene,vision:q.vision,touch:q.touch,history:[...q.history],prediction:q.prediction,seen:[...q.seen],reflection:q.reflection};}
