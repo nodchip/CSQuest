@@ -42,7 +42,7 @@
 | 13 | Non-core | 型推論 | 部分 | 764・765で単一化と単一の適用。一般の制約生成と推論は未評価。 |
 | 14 | Non-core | 静的オーバーロード | 部分 | 581で２候補の選択。一般の候補選択と型変換は未評価。 |
 | 15 | Non-core | 型としての命題 | 部分 | 768で含意と関数、連言と積、選言とタグ付き和の対応を示し、５つの証明と道具を組み立てる。一般の論理体系や任意の型は未評価。 |
-| 16 | Non-core | 依存型 | 未照合 | 対応する教材を未確認。 |
+| 16 | Non-core | 依存型 | 部分 | 769で入力の数に依存する長さの列、数と列の依存対、連結と範囲内の位置を操作。全称・存在との対応の一般的な証明や実言語は未評価。 |
 
 ## 例示学習成果
 
@@ -67,4 +67,4 @@
 | 17 | Non-core | 単一化に基づく型推論を実装 | 部分 | 764・765で等式整理と適用の代替体験。推論器を実装する能力は評価しない。 |
 | 18 | Non-core | 静的オーバーロードの解決と実行時の振る舞いを説明 | 部分 | 581で固定候補と動的ディスパッチ。一般の解決法と自由な説明は未評価。 |
 
-関連する `tests/type-checking.test.js`、`tests/generic-pouch.test.js`、`tests/record-compatibility.test.js`、`tests/overload-dispatch.test.js`、`tests/type-unification.test.js`、`tests/type-application.test.js`、`tests/type-safety.test.js`、`tests/type-safety-proof.test.js`、`tests/curry-howard.test.js` は各模型を検査するもので、原典の範囲全体や学習効果の検証を意味しない。
+関連する `tests/type-checking.test.js`、`tests/generic-pouch.test.js`、`tests/record-compatibility.test.js`、`tests/overload-dispatch.test.js`、`tests/type-unification.test.js`、`tests/type-application.test.js`、`tests/type-safety.test.js`、`tests/type-safety-proof.test.js`、`tests/curry-howard.test.js`、`tests/dependent-vectors.test.js` は各模型を検査するもので、原典の範囲全体や学習効果の検証を意味しない。
