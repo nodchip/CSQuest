@@ -8,6 +8,8 @@
 
 状態は「未照合」「部分」「完了」を区別する。未照合は未実装の証拠ではない。部分は教材例の存在を示し、項目全体の完成を意味しない。完了には原典の対象範囲、学習体験、根拠に基づく正答・解説の検証、必要な操作・再開、ゲーム内で直接評価できない成果の代替と限界を確認する。ユーザーが除外したコード・文章入力を実装していないこと自体は欠陥とせず、その能力を評価したとも主張しない。
 
+依頼検索の専門用語・略語は `src/quest-keywords.js` に個別に記録する。17分野の代表例を含む一部の依頼を探しやすくするための別名であり、原典項目との網羅対応や学習の完成を示すものではない。新しい別名は対象依頼の内容を確認し、`tests/world.test.js` で参照先と検索・地域・達成状況を検査する。
+
 追加の項目別台帳：[AR-Representation](coverage-ar-representation.md)、[AI-ML](coverage-ai-ml.md)、[AI-SEP](coverage-ai-sep.md)、[AL-SEP](coverage-al-sep.md)、[AL-Strategies](coverage-al-strategies.md)、[AL-Complexity](coverage-al-complexity.md)、[AL-Models](coverage-al-models.md)。
 
 追加の項目別台帳：[AL-Foundational](coverage-al-foundational.md)、[PDC-Algorithms](coverage-pdc-algorithms.md)、[PDC-Evaluation](coverage-pdc-evaluation.md)、[MSF-Discrete](coverage-msf-discrete.md)、[MSF-Probability](coverage-msf-probability.md)、[MSF-Statistics](coverage-msf-statistics.md)、[GIT-Fundamentals](coverage-git-fundamentals.md)、[GIT-Rendering](coverage-git-rendering.md)、[GIT-Visualization](coverage-git-visualization.md)、[GIT-Modeling](coverage-git-modeling.md)。

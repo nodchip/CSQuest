@@ -1,3 +1,5 @@
+import {questKeywords} from './quest-keywords.js';
+
 // Regions describe where the existing quests take place; they do not lock access.
 export const regions=[
   {id:'guild',name:'冒険者ギルド',icon:'⚑',description:'旅人が集まり、世界各地からの依頼を受ける場所。',quests:['guild-bandit-pouches','guild-bandit-expectation','guild-prototype-fidelity','guild-label-grouping','guild-input-privacy','guild-diamond-notice','guild-environment-matrix','guild-inclusive-cycle','guild-analysis-forge','guild-ci-forge','guild-version-journey','guild-callback-signs','guild-focus-dialog','guild-notice-impacts','guild-observation-coding','guild-heuristic-review','guild-study-pairing','guild-study-data-care','guild-study-order','guild-study-preregistration','guild-paired-permutation','guild-api-ledger','guild-library-framework','guild-event-workers','guild-sign','guild-multimodal-tradeoff','guild-sets','guild-revisions','sign-study','guild-web-requests','guild-mobile-retry','guild-play-break','guild-team-counting','guild-asset-license','guild-network-economics','guild-containers','timetable-requirements','guild-enrollment','guild-chart','courier-strata','guild-ledger-sets','guild-division','guild-record-match','guild-scroll-pipeline','guild-pipe-status','guild-child-environment','guild-user-needs','guild-participatory-notice','guild-iterative-prototype','guild-shared-schedule','guild-choice-design','guild-audience-report','guild-error-budget','guild-work-sequencing','guild-latency-throughput','guild-ip-guild','guild-fair-use-ledger','guild-similarity-review','guild-open-workshop','guild-license-notices','guild-credit-scrolls','guild-computing-exhibit','guild-argument-counterexample']},
@@ -21,7 +23,7 @@ export function filterQuests(levels,regionId,query,status,completed,drafts=[]){
   const words=normalized.split(/\s+/u).filter(Boolean),done=new Set(completed),saved=new Set(drafts);
   return visibleQuests(levels,regionId).filter(({level})=>{
     const place=regions.find(region=>region.quests.includes(level.id));
-    const text=[level.number,`quest ${level.number}`,level.name,level.title,level.tag,level.story,place?.name||''].join(' ').normalize('NFKC').toLowerCase();
+    const text=[level.number,`quest ${level.number}`,level.name,level.title,level.tag,level.story,place?.name||'',...(questKeywords[level.id]||[])].join(' ').normalize('NFKC').toLowerCase();
     const matches=numberMatch?Number(level.number)===Number(numberMatch[1]):words.every(word=>text.includes(word));
     return matches&&(status==='all'||status==='draft'&&saved.has(level.id)||status==='done'&&done.has(level.id)||status==='todo'&&!done.has(level.id));
   });
