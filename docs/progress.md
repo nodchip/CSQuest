@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: CS2023 印字 pp.178–181 と既存教材を照合し、HCI-Evaluation と HCI-Design の項目別台帳を追加。試作・調査・分析・影響における固定例と、実利用者・一般化・未照合の範囲を分けて記録。製作の依頼807も確認した。新形式の台帳は166単位中114単位で、教材完成率ではない。
+
 - 2026-11-02: 依頼822で Simon の問題における３ビットの非ゼロ周期を、000 と独立な測定条件から絞る。[IBM Quantum](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/quantum-query-algorithms/simon-algorithm) を参照。全７周期の測定分布、２例の候補、誤答と復元を検査し、`npm test` 2149件成功。ブラウザーで誤答・途中再開・２場面・320、390、1280px幅を確認。公開確認で測定結果の表示順を修正し、再ビルドと該当４テスト、ブラウザーで順序を確認。選択済みの測定例による模型で、回路・ゼロ周期・実機や一般の入力は未評価。
 
 - 2026-11-02: 依頼821で２ビットの Bernstein–Vazirani 問題について古典の２照会と量子の１照会、位相と H による干渉を比較。[IBM Quantum](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/quantum-query-algorithms/deutsch-jozsa-algorithm) を参照。４秘密の各段階の確率和・古典と量子の結果・復元を検査し、`npm test` 2145件成功。ブラウザーで誤操作・途中再開・４場面・320、390、1280px幅を確認。関数の約束と重ね合わせに作用できるオラクルを仮定し、実機・一般の関数・回路構築費用は未評価。
