@@ -98,7 +98,7 @@
 | NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET、667で中央と仲間からの受信・複製、668で用途と転送方式、669で URI、670で条件付き GET を比較する固定模型。他は未対応。[詳細](nc-applications.md) |
 | NC | NC-Reliability | Reliability Support | 199 | 依頼10・649で消失・再送、422で送信窓・累積確認、423で混雑と AIMD、424で TCP 接続開始、798で受信箱の容量に合わせる固定例。他は未対応。[詳細](nc-reliability.md) |
 | NC | NC-Routing | Routing and Forwarding | 199 | 依頼480〜484で集約、距離ベクトル、リンクステート、AS 経路と IP 版の固定例。実網の経路制御は未対応。[詳細](nc-routing.md) |
-| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調、570・571でループと STP の固定例。[項目別台帳](coverage-nc-single-hop.md)と[詳細](nc-single-hop.md) |
+| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調、570・571でループと STP、827で集約と冗長な上り道の固定例。[項目別台帳](coverage-nc-single-hop.md)と[詳細](nc-single-hop.md) |
 | NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279・280で差し替え、認証、分離、門番と警報の固定例。[項目別台帳](coverage-nc-security.md)と[詳細](nc-security.md) |
 | NC | NC-Mobility | Mobility | 201 | 依頼316〜318で保存・中継、無線 LAN の再接続とセルラー登録区域の固定例。[項目別台帳](coverage-nc-mobility.md)と[詳細](nc-mobility.md) |
 | NC | NC-Emerging | Emerging Topics | 201 | 依頼319〜322で SDN、NAT、負荷分散と CDN、678で量子テレポーテーションの固定例。[項目別台帳](coverage-nc-emerging.md)と[詳細](nc-emerging.md) |
