@@ -21,7 +21,7 @@
 | 2g | KA Core | チームで関係者と関わる | 部分 | 650で架空の技師・伝令・通行者の事情と担当を整理。実際のチームや関係者との対話は未評価。 |
 | 2h | KA Core | 対面・分散・混合・仮想チームのリスク | 未照合 | 対応する依頼は未確認。 |
 | 3a | KA Core | 身体的能力と設計 | 部分 | 22・188で色以外の手がかりや座って使う場面を扱う。人の身体能力全般は未評価。 |
-| 3b | KA Core | 注意・知覚・記憶等の認知モデル | 未照合 | 体系的な認知モデルと関連依頼の対応は未確認。 |
+| 3b | KA Core | 注意・知覚・記憶等の認知モデル | 部分 | 966で準備時間を含む簡略 KLM の固定操作列を比較。注意・知覚・記憶全体や実際の認知能力は未評価。 |
 | 3c | KA Core | 社会・行動心理と認知バイアス | 未照合 | 対応する依頼は未確認。 |
 | 4a | KA Core | 利用者の違いと経験・ニーズ | 部分 | 22・188で異なる利用条件を扱う。人々の違い全般は未評価。 |
 | 4b | KA Core | 国際化 | 部分 | 962で同じ瞬間の３表示方法・３時間帯と日付の曖昧さを比較。963で2024年のニューヨークの夏時間境界と東京の通常日を比較。翻訳、他の暦・言語・文化や他の時間帯・年の規則は未評価。 |
@@ -68,3 +68,5 @@
 依頼650・288・655をそれぞれ `src/bridge-team.js`、`src/shared-schedule.js`、`src/version-journey.js` と対応するテストで照合した。関係者の事情・２画面の競合・接続断後の版の統合という限定例で、実際のチーム活動や複数利用者の行動は評価しない。依頼59は共通の元からの変更を整理する補助教材である。
 
 依頼965は [NetworkX の関節点](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.articulation_points.html)と[連結成分](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.connected_components.html)を参考に、架空の６人の双方向の連絡網で追加経路と２人の除去を比較する。`tests/social-links.test.js` は６条件の到達集合、隣接をたどる経路、旧記録の復元、予測・保存・達成条件を検査。中継は仮定であり、実際の社会関係、影響力や伝達を評価しない。
+
+依頼966は [Card らの KLM 原論文](https://dl.acm.org/doi/10.1145/358886.358895)を参考に、準備・指す・押して離す・返事待ちを例示の時間で合計する。`tests/klm-workshop.test.js` は４条件の操作列・時間・保存と達成を検査。熟練した利用者の誤りのない固定手順と仮定した模型で、実測や注意・記憶の一般的な評価は行わない。
