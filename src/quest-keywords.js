@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-timing-flow':['timing channel','timing side channel','時間チャネル','非干渉','情報フロー'],
  'castle-noninterference':['noninterference','information flow','非干渉','情報フロー','機密性'],
  'village-lift-ledger':['lift','association rule','baseline','リフト','関連規則','ベースライン'],
  'village-apriori-ledger':['apriori','frequent itemset','頻出項目集合','枝刈り','関連規則'],
