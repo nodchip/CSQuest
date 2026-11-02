@@ -22,7 +22,7 @@
 | 3f | CS Core | 複製・読取専用・所有権・非ブロッキング | 部分 | 814で原子的比較交換と再試行を固定模型で操作。実装の進行保証、複製・所有権は未評価。 |
 | 4a | KA Core | 進行特性・公平性・優先度 | 部分 | 177で優先度と飢餓を比較。ロックフリー等の一般保証は未評価。 |
 | 4b | KA Core | 競合・粒度・スケーリングの性能 | 部分 | 630で共通鍵と棚別の鍵を比較。実測や一般性能は未評価。 |
-| 4c | KA Core | 非ブロッキング構造・アルゴリズム | 部分 | 814で比較交換による２更新の固定模型。一般の構造、実装と進行保証は未評価。 |
+| 4c | KA Core | 非ブロッキング構造・アルゴリズム | 部分 | 814で比較交換による２更新、815でスタックの ABA と更新番号の固定模型。一般の構造、実装と進行保証は未評価。 |
 | 4d | KA Core | 所有権と資源制御 | 未照合 | 関連依頼との対応は未確認。 |
 | 4e | KA Core | ロックの変種・再入・スピンと待機 | 部分 | 567・568でスピンと再入の固定例。一般のロックや実装は未評価。 |
 | 4f | KA Core | 楽観的・保守的な取引制御 | 部分 | 39で競合順序、取引の固定例を操作。一般の方式比較は未評価。 |
@@ -50,3 +50,5 @@
 `tests/barrier.test.js`、`tests/spinlock.test.js`、`tests/condition-recheck.test.js`、`tests/search-cancellation.test.js`、`tests/clock-sync.test.js` は固定模型の一部を検査する。前提・出典は既存の調査を参照。未照合は未実装の証拠ではない。
 
 依頼814では鍵の保持中に他方が取得できない場面と、２人の比較交換で先行更新・比較失敗・再読取・再試行を比較する。原子的比較交換を仮定し、両者の有限な読取・交換順序を列挙して成功回数と値を検査した。実言語の実装、メモリ順序、ハードウェア、無限実行の公平性や性能を証明しない。参考：[MDN compareExchange](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/compareExchange)、[C++ 作業草案の進行](https://eel.is/c++draft/intro.progress)。
+
+依頼815は先頭 A→B のスタックで、一人が A と B を読み、別の人が A・B を取り A を戻す固定順序。先頭だけの比較では古い次 B への交換が成功し、取り出された B が再び先頭に現れる。先頭と更新番号を一体で比較し番号が繰り返さない模型では失敗し、読み直した現在の次へ交換する。札は解放せず、実際のメモリ再利用、番号の周回、複数語の原子性や一般の進行保証は評価しない。参考：[Michael and Scott: Nonblocking Algorithms](https://www.cs.rochester.edu/u/scott/papers/1998_JPDC_nonblocking.pdf)。

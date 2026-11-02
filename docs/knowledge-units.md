@@ -118,7 +118,7 @@
 | OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[詳細](os-society.md) |
 | PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均、442で生産者・消費者の流れ作業の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
-| PDC | PDC-Coordination | Coordination | 222 | 更新喪失、排他と循環待ち、90でバリア、814で比較交換と再試行の固定例。他は未評価。[項目別台帳](coverage-pdc-coordination.md) |
+| PDC | PDC-Coordination | Coordination | 222 | 更新喪失、排他と循環待ち、90でバリア、814で比較交換と再試行、815で ABA の固定例。他は未評価。[項目別台帳](coverage-pdc-coordination.md) |
 | PDC | PDC-Evaluation | Evaluation | 224 | 依頼66で固定量の並列化、437で固定量・一人あたり固定の仕事量と効率、438で安全性と活性、439で時相論理の循環記録、440で線形化可能性、441で分担と小計の不変条件の固定例。他は未対応。[詳細](pdc-evaluation.md) |
 | PDC | PDC-Algorithms | Algorithms | 225 | 依頼130・285で集約と並列累積和、443で行列積の並列分担、444で倍精度加算の順序と丸め、445で並列幅優先探索、446で並列整列、447で領域分割と境界共有、448で SAT 探索、449で画素ごとの視線、450で仕事の負荷を分担、451で共有在庫の条件付き更新、452で知らせから活動、453で条件に応じた計算場所を選ぶ固定例。他は未対応。[詳細](pdc-algorithms.md) |
 | SDF | SDF-Fundamentals | Fundamental Programming Concepts and Practices | 230 | 一部試作：順序・条件・反復と依頼33の再帰 |

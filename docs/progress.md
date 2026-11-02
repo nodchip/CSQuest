@@ -1,5 +1,8 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼815で先頭 A→B→なし→A の変更と古い次 B を用い、札だけの比較と更新番号付き比較を比較。[Michael and Scott](https://www.cs.rochester.edu/u/scott/papers/1998_JPDC_nonblocking.pdf) を参照。両方式の各段階・誤順・予想・復元を検査し、`npm test` 2118件成功。配信用ビルドで誤操作・誤答・途中再開・両方式の達成・キーボードと320・390・1280px幅を確認。番号が繰り返さず一体で比較可能な固定模型で、実メモリ再利用や一般の安全性は未評価。
+
+
 - 2026-11-02: 依頼814で鍵の保持中の待機と、原子的比較交換による２人の更新・失敗・再試行を比較。[MDN compareExchange](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/compareExchange) と [C++ 作業草案の進行](https://eel.is/c++draft/intro.progress)を参照。２人の有限な比較交換の全順序で値と成功回数を照合し、`npm test` 2115件成功。配信用ビルドで誤操作・待機・再試行・再開・キーボードと320・390・1280px幅を確認。有限模型であり実装の進行保証・公平性・実機性能は未評価。
 
 
