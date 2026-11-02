@@ -45,7 +45,7 @@
 | 5 | CS Core | JPG・PNG・MP3・MP4・GIF の用途を説明 | 部分 | 949で５種類の用意された品を透明度・画質・音声・受信側・容量で選択。一般の形式や自由な説明は未評価。 |
 | 6 | CS Core | 色モデルと表示装置での利用を説明 | 部分 | 515で RGB と CMY を操作。実機と一般的な説明は未評価。 |
 | 7 | CS Core | 解像度・秒数・フレームレートから動画の記憶量を計算 | 部分 | 719で１秒30枚の無圧縮 RGB を計算。一般の動画形式・圧縮や音声は未評価。 |
-| 8 | CS Core | デジタル動画とアナログ動画を比較 | 未照合 | 対応する比較は未確認。 |
+| 8 | CS Core | デジタル動画とアナログ動画を比較 | 部分 | 950で記録時の丸め、誤りのないデジタルコピー、再符号化、アナログ複製の誤差とデータの欠損を比較。固定の４値の模型で、実信号・動画や自由な説明は未評価。 |
 | 9 | CS Core | 静止画列から連続的な動きを生む過程を説明 | 部分 | 947で２・４ fps の固定コマを時刻ごとに選び、１秒間の表示を観察。知覚の個人差や自由な説明は未評価。 |
 | 10 | CS Core | デジタル標本化による誤表現を説明 | 部分 | 83で境界標本の違いを比較。一般的な誤表現と自由な説明は未評価。 |
 | 11 | CS Core | 解像度・色符号化から記憶量を計算 | 部分 | 719で８ビット成分の RGB・RGBA を比較。一般の符号化は未評価。 |
@@ -60,3 +60,5 @@
 依頼948は [Linux DRM の表示モード](https://docs.kernel.org/gpu/drm-uapi.html)を参考に、表示領域と総走査数、画素クロック、フレーム頻度の関係を固定条件で操作する。プログレッシブ走査の単純模型であり、インターレース・変動リフレッシュ・実機信号は評価しない。
 
 依頼949は [MDN の画像形式](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types)と[動画のコンテナー](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Containers)を参考に、５種類の用意された候補を固定の要件で比較する。容量や受信側の対応は架空であり、全形式の全機能や実用環境を評価しない。
+
+依頼950は米国議会図書館の[動画デジタル化の形式比較](https://blogs.loc.gov/thesignal/2014/12/comparing-formats-for-video-digitization/)と[映像保存の記録](https://www.loc.gov/static/programs/national-film-preservation-board/documents/tvturner.pdf)を参考に、量子化、複製、再符号化と欠損を区別する。値と誤差は架空であり、実際の画質や保存性能を測定しない。`tests/video-preservation.test.js` で模型の数値、誤答、保存と達成条件を検査する。
