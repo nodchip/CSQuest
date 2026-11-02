@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼857で GNU 計画・Linux 0.01・GNU 条件への移行を並べ、架空の無償更新・有償支援・専用版を利用条件に照らして比較。[GNU の歴史](https://www.gnu.org/gnu/gnu-history.html)、[Linux 0.01](https://www.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.01)、[0.12](https://www.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.12)、[OSI の定義](https://opensource.org/osd)を参照。年代の全順列と３場面の条件、保存記録を検査し、`npm test` 2235件とビルドが成功。ブラウザーで誤順序・誤選択、途中再開、各場面と振り返りの達成、320・390・1280px幅を確認。実際の製品の価格・契約や一般的な安全性の優劣は未評価。
+
 - 2026-11-02: 依頼856で２×２区画に煙を追加し、風を選んで圧力投影と濃さの半ラグランジュ移流を組み合わせる操作を追加。[Fedkiw ほかの煙のシミュレーション](https://graphics.stanford.edu/courses/cs448-01-spring/papers/fedkiw.pdf)を参考にした固定模型。625通りの風の投影、２種類の風による濃さ、履歴の再生を検査し、`npm test` 2233件とビルドが成功。ブラウザーで煙なしの操作、途中再開、風・煙の変更、投影後の差、振り返りと達成、320・390・1280px幅を確認。速度自体の移流、浮力、温度、粘性、障害物や厳密な煙量保存は未評価。
 
 - 2026-11-02: 依頼855で、独立粒子と PIC・FLIP の速度伝達を、２粒・固定格子１点・２場面で比較する操作を追加。[Boyd の FLIP の説明](https://www.cs.ubc.ca/~rbridson/docs/boyd_msc.pdf)を参考にした固定重み・１刻みの模型。６条件の速度・位置と保存記録を検査し、`npm test` 2231件とビルドが成功。ブラウザーで誤答・再挑戦、途中再開、６条件と振り返りの達成、320・390・1280px幅を確認。一般の粒子補間、圧力、境界、実際の流体や長時間の軌道は未評価。
