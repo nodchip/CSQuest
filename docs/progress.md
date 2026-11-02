@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼872で４人ずつの２組の SIMT 分岐を、混在と並べ替えで比較。[NVIDIA の SIMT 説明](https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html)を参照。70通りの分岐配置と各仕事の結果、保存を検査し、`npm test` 2265件とビルドが成功。ブラウザーで並べ替え、選択途中の再開、誤答・達成、キーボード、320・390・1280px幅を確認。実 GPU、再編成・メモリ費用や実行時間は未評価。
+
 - 2026-11-02: 依頼871で固定立方体の頂点・索引・シェーダーを使う実 WebGL 描画を追加し、一面・立方体・回転・深度判定を比較。[MDN の WebGL 立体描画](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Creating_3D_objects_using_WebGL)を参照。頂点・索引と保存を検査し、`npm test` 2263件とビルドが成功。ブラウザーで描画結果の画素、回転、深度の有無、途中再開、誤答・達成、キーボード、320・390・1280px幅、WebGL 不可時に達成が記録されないことを確認。自由なコード・モデル作成、透過、ライティングや実性能は未評価。
 
 - 2026-11-02: 依頼870でフラグメント色計算の周囲光・倍率・値の制限を調整し、３条件の目標に合わせる。[MDN の WebGL シェーダー](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Adding_2D_content_to_a_WebGL_context)と [Microsoft の HLSL](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl)を参照。12設定の数値・表示色と保存を検査し、`npm test` 2261件が成功。ブラウザーで３条件、制限前後、途中再開、誤答・達成、キーボード、320・390・1280px幅を確認。実言語・API、頂点補間、光源・法線、色空間と実性能は未評価。

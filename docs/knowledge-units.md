@@ -32,7 +32,7 @@
 | AR | AR-IO | Interfacing and Communication | 105 | 依頼105でポーリングと割込み通知、454で１枠のハンドシェイクの固定例。[項目別台帳](coverage-ar-io.md)と[詳細](ar-io.md) |
 | AR | AR-Organization | Functional Organization | 106 | 依頼158で３段階パイプラインのデータ依存、待機と転送の固定例。[項目別台帳](coverage-ar-organization.md)と[詳細](ar-organization.md) |
 | AR | AR-Performance-Energy | Performance and Energy Efficiency | 106 | 依頼159〜161で分岐予測、投機実行、時間・電力・エネルギー比較の固定例。[項目別台帳](coverage-ar-performance-energy.md)と[詳細](ar-performance-energy.md) |
-| AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162・163で SIMD・MIMD と専用機械の費用比較の固定例。[項目別台帳](coverage-ar-heterogeneity.md)と[詳細](ar-heterogeneity.md) |
+| AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162・163で SIMD・MIMD と専用機械の費用比較、872で SIMT 分岐の固定例。[項目別台帳](coverage-ar-heterogeneity.md)と[詳細](ar-heterogeneity.md) |
 | AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜259で範囲と権限、乱数、個体差、構成証明、暗号文での乗算、依頼383で信頼の起点を仮定した起動検証の固定例。[項目別台帳](coverage-ar-security.md)と[詳細](ar-security.md) |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの干渉、610で周期探索後処理、676〜679でベル状態・転送と複製、820〜822・861で Grover、Bernstein–Vazirani と Simon の固定例。[項目別台帳](coverage-ar-quantum.md)と[詳細](ar-quantum.md) |
 | AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間、844で塔の稼働台数と設備電力量、858で待機設定の架空模型、860で電子廃棄物の推計。他は未対応。[項目別台帳](coverage-ar-sep.md)と[詳細](sep-sustainability.md) |
@@ -167,7 +167,7 @@
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 依頼354で圏外の保留と再送の固定例。他は未対応。[項目別台帳](coverage-spd-mobile.md)と[詳細](spd-mobile.md) |
 | SPD | SPD-Robot | Robot Platforms | 304 | 依頼28の観測・移動、71の地形・充電、690のトピック・受信待ち、691の機体・観測器選択の固定模型。実機や ROS の実行は未対応。[項目別台帳](coverage-spd-robot.md)と[詳細](spd-robot.md) |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222のセンサーと駆動、133・134・420の期限・優先度・周期、395の安全性などの固定模型。実機や一般的な設計・検証は未対応。[項目別台帳](coverage-spd-embedded.md)と[詳細](spd-embedded.md) |
-| SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の衝突・トンネリング、799で描画と固定時間の更新、800で描画候補、869で即時・タイル内保存、870で色計算、871で実 WebGL 描画。他は未対応。[項目別台帳](coverage-spd-game.md)と[詳細](spd-game.md) |
+| SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の衝突・トンネリング、799で描画と固定時間の更新、800で描画候補、869でタイル内保存、870で色計算、871で実 WebGL 描画、872で SIMT 分岐。他は未対応。[項目別台帳](coverage-spd-game.md)と[詳細](spd-game.md) |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノート、840で報道用の架空の集計と記事、841で架空のプログラム比較、842で３種類の音を並べる伴奏、843で描画の入力遅延の固定例。他は未対応。[項目別台帳](coverage-spd-interactive.md)と[詳細](spd-interactive.md) |
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[項目別台帳](coverage-spd-sep-mobile.md)と[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し依頼393、通知と中断の選択に依頼398の固定例。他は未対応。[項目別台帳](coverage-spd-sep-web.md)と[詳細](spd-sep.md) |
