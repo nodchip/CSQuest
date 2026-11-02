@@ -70,3 +70,5 @@
 依頼953は [Merck の TN 型 LCD 解説](https://www.emdgroup.com/en/expertise/displays/solutions/liquid-crystals/lcd-technologies/twisted-nematic.html)を参考に、背後の光を液晶・直交偏光板・RGB フィルターで制御する模型を扱う。`tests/lcd-workshop.test.js` は灯りと３小窓の全16条件、保存と達成条件を検査する。理想的な２状態・透過型の例であり、中間階調や他の LCD 方式・実機は未評価。
 
 依頼954は [ウィーン大学のハーフトーン解説](https://www.mat.univie.ac.at/~kriegl/Skripten/CG/node6.html)を参考に、４場所の閾値順序で黒点を置き、５段階の面積を作る。`tests/halftone-press.test.js` は５濃度と全16配置、保存と達成条件を検査する。等面積の点による固定模型であり、実際の印刷機構・色・紙・人間の知覚は未評価。
+
+依頼955は 949・951・953・954 の模型を再利用する冒険。標本化、半透明を保つ形式、LCD の光の制御、点の版を各場所で使い、番人の封印を解く。`tests/image-rescue.test.js` で進行制約、誤りと再挑戦、途中記録、準備の変更を検査する。元の依頼と同じ固定条件であり、実機や自由な設計を評価しない。
