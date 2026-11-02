@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-transposition-decipher':['転置','復号','transposition','decipher','古典暗号'],
  'archive-transposition-route':['転置','transposition','古典暗号','列順'],
  'castle-ot-posterior':['秘匿転送','条件付き確率','ベイズ','事前確率','posterior','bayes'],
  'castle-oblivious-transfer':['秘匿転送','oblivious transfer','OT','RSA','暗号','秘密計算'],
