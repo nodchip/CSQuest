@@ -1,5 +1,8 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼807で積層・切削による３列の断面と、加熱・減圧・冷却による成形を操作。[NIST](https://www.nist.gov/additive-manufacturing/what-additive-manufacturing) と [UC Davis](https://techfoundry.ucdavis.edu/vacuum-forming) を参照。両方式の64高さ、成形順、途中復元と達成を検査し、`npm test` 2094件成功。配信用ビルドで誤操作・再開・３台の完成・キーボードと320・390・1280px幅を確認。実機、材料、品質、費用、環境負荷や安全は未評価。
+
+
 - 2026-11-02: CS2023 原典と依頼・関連テストを照合し、GIT-Interaction・GIT-Physical・GIT-Immersion・SPD-Interactive の項目別台帳を追加。親の固有内容、各区分、直接評価できない成果と未照合を記録し、４台帳の参照先、関連19テストとビルドを確認。台帳は166単位中106単位であり、教材完成率ではない。
 
 
