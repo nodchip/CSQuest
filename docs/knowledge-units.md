@@ -168,7 +168,7 @@
 | SPD | SPD-Robot | Robot Platforms | 304 | 依頼28の観測・移動、71の地形・充電、690のトピック・受信待ち、691の機体・観測器選択の固定模型。実機や ROS の実行は未対応。[詳細](spd-robot.md) |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222のセンサーと駆動、133・134・420の期限・優先度・周期、395の安全性などの固定模型。実機や一般的な設計・検証は未対応。[詳細](spd-embedded.md) |
 | SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の衝突・トンネリング、799で描画と固定時間の更新、800で区画による描画候補の固定例。他は未対応。[項目別台帳](coverage-spd-game.md)と[詳細](spd-game.md) |
-| SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノートの固定例。他は未対応。[項目別台帳](coverage-spd-interactive.md)と[詳細](spd-interactive.md) |
+| SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノート、840で報道用の架空の集計と記事の固定例。他は未対応。[項目別台帳](coverage-spd-interactive.md)と[詳細](spd-interactive.md) |
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し依頼393、通知と中断の選択に依頼398の固定例。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で字幕、398で休憩と通知、399で素材の利用条件、806でゲームの門の手がかりと操作方式の固定例。他は未対応。[詳細](spd-sep.md) |
