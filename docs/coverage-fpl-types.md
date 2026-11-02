@@ -38,7 +38,7 @@
 | 11a | Non-core | サブタイプ多相と暗黙のアップキャスト | 部分 | 511で必要な項目を持つ記録を受入れ。実言語の暗黙変換は未評価。 |
 | 11b | Non-core | 振る舞いの置換 | 未照合 | 振る舞いの置換を検証する教材は未確認。 |
 | 11c | Non-core | サブタイプと継承の関係 | 部分 | 511で派生宣言と構造に基づく受入れを比較。実言語の継承と一般の関係は未評価。 |
-| 12 | Non-core | 保存と進行による型安全性 | 部分 | 766で型が付く品の進行と保存、二つの故障を固定例で比較。一般の式の証明は未評価。 |
+| 12 | Non-core | 保存と進行による型安全性 | 部分 | 766で固定例と故障を比較し、767で小さな言語の進行・保存の証明の道筋を選ぶ。ほかの言語は未評価。 |
 | 13 | Non-core | 型推論 | 部分 | 764・765で単一化と単一の適用。一般の制約生成と推論は未評価。 |
 | 14 | Non-core | 静的オーバーロード | 部分 | 581で２候補の選択。一般の候補選択と型変換は未評価。 |
 | 15 | Non-core | 型としての命題 | 未照合 | 対応する教材を未確認。 |
@@ -63,8 +63,8 @@
 | 13 | Non-core | 型システムを厳密かつ合成的に定義 | 未照合 | 対応する教材を未確認。 |
 | 14 | Non-core | 型構成子の値と不変条件を特定 | 部分 | 595・596で有限の積・和・全関数。一般の構成子と不変条件は未評価。 |
 | 15 | Non-core | 健全な型システムの不変条件を厳密に記述 | 部分 | 766で進行と１手の型の保存を選択肢で振り返る。厳密な自由記述は評価しない。 |
-| 16 | Non-core | 保存と進行で小言語の型安全性を証明 | 未照合 | 対応する教材を未確認。 |
+| 16 | Non-core | 保存と進行で小言語の型安全性を証明 | 部分 | 767で閉じた数・灯り・加算・分岐の言語の帰納法による証明の各場合を選ぶ。独力での証明構築や自由記述は評価しない。 |
 | 17 | Non-core | 単一化に基づく型推論を実装 | 部分 | 764・765で等式整理と適用の代替体験。推論器を実装する能力は評価しない。 |
 | 18 | Non-core | 静的オーバーロードの解決と実行時の振る舞いを説明 | 部分 | 581で固定候補と動的ディスパッチ。一般の解決法と自由な説明は未評価。 |
 
-関連する `tests/type-checking.test.js`、`tests/generic-pouch.test.js`、`tests/record-compatibility.test.js`、`tests/overload-dispatch.test.js`、`tests/type-unification.test.js`、`tests/type-application.test.js`、`tests/type-safety.test.js` は各模型を検査するもので、原典の範囲全体や学習効果の検証を意味しない。
+関連する `tests/type-checking.test.js`、`tests/generic-pouch.test.js`、`tests/record-compatibility.test.js`、`tests/overload-dispatch.test.js`、`tests/type-unification.test.js`、`tests/type-application.test.js`、`tests/type-safety.test.js`、`tests/type-safety-proof.test.js` は各模型を検査するもので、原典の範囲全体や学習効果の検証を意味しない。
