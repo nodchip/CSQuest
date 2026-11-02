@@ -77,7 +77,7 @@
 | GIT | GIT-Modeling | Geometric Modeling | 158 | 依頼142・143・145で２次ベジェ曲線、形状の集合演算と平面多角形の三角形分割の固定例。他は未対応。[詳細](git-modeling.md) |
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 依頼186・187で拡散光の段階化と光からの深さによる影の固定模型。他の手法や描画 API は未対応。[詳細](git-shading.md) |
 | GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜185・633〜635・729で緩急、関節、スキニング、回転や架空の動作記録を操作。３次元回転・実際のリグ制作や収録は未評価。[詳細](git-animation.md) |
-| GIT | GIT-Simulation | Simulation | 161 | 依頼209〜215で粒子・ばね、接触と衝突応答、ライフゲーム、濃度移流と高さ場の固定例。流体全体や一般の衝突応答等は未対応。[項目別台帳](coverage-git-simulation.md)と[詳細](git-simulation.md) |
+| GIT | GIT-Simulation | Simulation | 161 | 依頼209〜215で粒子・ばね、衝突、ライフゲーム、濃度移流と高さ場、845で L システムの固定例。流体全体や一般の衝突応答等は未対応。[項目別台帳](coverage-git-simulation.md)と[詳細](git-simulation.md) |
 | GIT | GIT-Immersion | Immersion | 161 | 依頼216〜218で２視点の視差、古い視点情報によるずれ、現実物体の遮蔽の固定例。実際の立体表示・追跡・安全性等は未対応。[項目別台帳](coverage-git-immersion.md)と[詳細](git-immersion.md) |
 | GIT | GIT-Interaction | Interaction | 162 | 依頼92・351で固定イベントと画面操作、427で複数手段の選択、806でアクセシビリティの固定例。[項目別台帳](coverage-git-interaction.md)と[詳細](git-interaction.md) |
 | GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。808で２×２、809で４×４画像の周波数選択、810で雑音と倍率、811で DCT と量子化、812で差分と連長、813で最下位ビットの透かしの固定例を操作。他は未対応。[詳細](git-image.md) |
