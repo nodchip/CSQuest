@@ -1668,3 +1668,5 @@
 - 2026-11-02: 依頼804で２端末の Cookie と受付側の記録を操作し、再訪、別端末、端末側の削除、受付側の期限切れを比較。[MDN の HTTP Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies) を参照。独立した端末の記録と削除・期限切れ、誤操作・途中保存を検査し、`npm test` 2086件成功。配信用ビルドのブラウザーで誤操作、再開、４目標と達成、320・390・1280px幅を確認。実 Cookie、認証や安全な番号生成は扱わない。
 
 - 2026-11-02: 依頼805で認証前から既知の番号を維持する場合と、認証時に旧番号を失効して交換する場合を比較。新番号の漏出とサーバー側ログアウトも試す。[OWASP のセッション管理](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html) を参照。各操作の順序と誤予想、２方針、記録の復元と達成を検査し、`npm test` 2089件成功。配信用ビルドをブラウザーで誤操作・再挑戦・途中再開・両方針の達成と320・390・1280px幅を確認。１セッションの固定模型であり、実認証、実攻撃、通信の保護、実システムの安全性は評価しない。
+
+- 2026-11-02: 依頼806で色による門の区別に、形・読み上げ名・キーボード操作を別々に追加し、３つの利用条件で比較。[W3C: 色の使用](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)、[キーボード](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html)、[名前・役割・値](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html)を参照。24条件の結果と復元・達成を検査し、`npm test` 2091件成功。配信用ビルドで誤答と再挑戦、途中再開、達成、キーボードと320・390・1280px幅を確認。固定された３条件の模型であり、実利用者の評価や規格適合は示さない。

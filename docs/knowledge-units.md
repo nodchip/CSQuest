@@ -171,6 +171,6 @@
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノートの固定例。他は未対応。[詳細](spd-interactive.md) |
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し依頼393、通知と中断の選択に依頼398の固定例。他は未対応。[詳細](spd-sep.md) |
-| SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で字幕、398で休憩と通知、399で素材の利用条件の固定例。他は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で字幕、398で休憩と通知、399で素材の利用条件、806でゲームの門の手がかりと操作方式の固定例。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 依頼395で停止距離と検知遮蔽、396で条件別の見落としと改良案を比較。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Interactive | Interactive の社会・倫理（作業用名） | 312 | 依頼397で生成下書きの照合と編集上の記録を操作。他は未対応。[詳細](spd-sep.md) |
