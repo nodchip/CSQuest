@@ -1,0 +1,11 @@
+export const envStoreLevel={id:'workshop-environment-store',number:'791',kind:'environment-store',name:'名前の札と二つの箱',tag:'環境・ストア・左辺値',title:'同じ名前と同じ箱を見分けよう',story:'工房の精霊は名前の札から箱を探します。内側の同名の札と、同じ箱を指す別名を使って更新を確かめましょう。'};
+export const envStoreActions={enter:'内側の部屋へ入る','loc:A':'箱Ａを選ぶ','loc:B':'箱Ｂを選ぶ','loc:none':'書換え先はない','write:9':'選んだ箱に９を書く','read:2':'Ｙの値は２','read:4':'Ｙの値は４',leave:'内側の部屋を出る','write:4':'選んだ箱に４を書く',reject:'定数への書込みを断る'};
+export function envStoreInitial(){return {stage:0,inner:false,store:{A:2},target:null};}
+export function envStoreBinding(s,name){if(name==='X')return {loc:s.inner?'B':'A'};if(name==='Y')return {loc:'A'};if(name==='C')return {value:5};throw new RangeError('名前が不正です');}
+export function envStoreExpected(s){switch(s.stage){case 0:return 'enter';case 1:return `loc:${envStoreBinding(s,'X').loc}`;case 2:return 'write:9';case 3:return `read:${s.store[envStoreBinding(s,'Y').loc]}`;case 4:return 'leave';case 5:return `loc:${envStoreBinding(s,'X').loc}`;case 6:return 'write:4';case 7:return `read:${s.store[envStoreBinding(s,'Y').loc]}`;case 8:return 'loc:none';case 9:return 'reject';default:return null;}}
+export function envStoreExecute(s,action){if(!action||action!==envStoreExpected(s))throw new RangeError('名前の対応と箱の中身を確かめましょう');if(action==='enter'){s.inner=true;s.store.B=7;}else if(action==='loc:A'||action==='loc:B')s.target=action.slice(4);else if(action==='write:9'||action==='write:4'){s.store[s.target]=Number(action.slice(6));s.target=null;}else if(action==='leave'){s.inner=false;delete s.store.B;}s.stage++;return s;}
+export function envStoreReplay(history){if(!Array.isArray(history)||history.length>10)throw new RangeError('記録が不正です');const s=envStoreInitial();for(const action of history)envStoreExecute(s,action);return s;}
+export function envStoreCreate(){return {history:[],answer:null};}
+export function envStoreStep(q,action){envStoreExecute(envStoreReplay(q.history),action);q.history.push(action);}
+export function envStoreComplete(q){return envStoreReplay(q.history).stage===10&&q.answer==='binding';}
+export function envStoreRestore(q){if(!q||![null,'binding','copy','same'].includes(q.answer))throw new RangeError('記録が不正です');envStoreReplay(q.history);return {history:[...q.history],answer:q.answer};}

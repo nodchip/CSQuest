@@ -59,7 +59,7 @@
 | FPL | FPL-Types | Type Systems | 136 | 依頼24・772で型検査と正しさ、764・765で型推論、766・767で進行と保存、768で命題と型、769で長さに依存する型を扱う。[項目別台帳](coverage-fpl-types.md)と[詳細](fpl-types.md)を参照。 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、201〜203の回収・別名、782の直接・間接・添字アクセス、783の制御フローから分岐・ジャンプ、784の末尾呼出しと枠、785の再帰とメモリ領域、786の棚再利用と世代付きキーの固定例。[項目別台帳](coverage-fpl-systems.md)と[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312・315で式と翻訳段階、787でクロスコンパイルと中間コード、788で構文図と規則札、789で最適化の意味保存、790で名前解決と配置の固定例。[項目別台帳](coverage-fpl-translation.md)と[詳細](fpl-syntax.md) |
-| FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 依頼75・154・199・306〜312などで構文木、正規表現、スコープ、引数渡しと副作用の固定例。他は未対応。[詳細](fpl-abstraction.md) |
+| FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 75・154・199・306〜312の構文木やスコープ、791の環境とストアの固定例。[項目別台帳](coverage-fpl-abstraction.md)と[詳細](fpl-abstraction.md) |
 | FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75・313・314で式の構造、字句解析と先読みの固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Semantics | Compiler Semantic Analysis | 141 | 依頼75・315・326・327で構文木、型確認と引数評価の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Analysis | Program Analysis and Analyzers | 142 | 依頼204〜208で制御フロー、到達定義・固定点、不要な書込みと別の効果の固定例。一般の解析は未対応。[詳細](fpl-execution-analysis.md#fpl-analysisnon-core) |
