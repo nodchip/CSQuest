@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | 1 | KA Core | 分割、マウント、仮想ファイルシステム | 部分 | 291で単一の接続点と名前解決。分割、マウント種別、一般の VFS 実装は未評価。 |
 | 2 | KA Core | 深い実装技術 | 部分 | 77で名前と実体、290でスナップショット、736で管理情報の記録と再適用。一般のファイルシステム実装は未評価。 |
-| 3 | KA Core | メモリマップトファイル | 部分 | 292で共有・私的な対応領域と同期の固定例。実 API やページ境界は未評価。 |
+| 3 | KA Core | メモリマップトファイル | 部分 | 292と977で共有・私的な対応領域、ページ境界と同期を固定例で比較。実 API や実装は未評価。 |
 | 4 | KA Core | 特殊目的ファイルシステム | 部分 | 745でプロセス状態を表す疑似ファイルと一時ファイルを永続的な保存と比較。ほかの特殊用途、実 API や実装は未評価。 |
 | 5 | KA Core | 名前、検索、アクセス、バックアップ | 部分 | 77・181・290で参照や復元の固定例。実際の名前空間やバックアップ管理は未評価。 |
 | 6a | KA Core | ジャーナリング | 部分 | 736で管理情報の確定記録と再適用。実ファイルシステムのログ形式、順序保証や同時更新は未評価。 |
@@ -43,3 +43,5 @@
 関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`、`tests/log-checkpoint.test.js`、`tests/distributed-file.test.js`。各模型の範囲に限る。
 
 依頼976は [OSTEP のファイル配置と局所性](https://pages.cs.wisc.edu/~remzi/Classes/537/Fall2021/Book/file-ffs.pdf)を参考に、４枚の巻物の連続・分散配置を、距離に費用を置く円盤と移動費用０の水晶で比較する。`tests/file-layout-device.test.js` は４条件の距離・費用・途中記録を検査。回転待ち、キャッシュ、並列性、実機の速度やフラッシュの書換え・摩耗は評価しない。
+
+依頼977は [Linux mmap(2)](https://man7.org/linux/man-pages/man2/mmap.2.html) と [msync(2)](https://man7.org/linux/man-pages/man2/msync.2.html) を参考に、仮の４バイト頁の開始位置、共有と私的な写し、書戻しを比較する。私的書込みで１頁をコピーし、共有の書戻しは同期要求の成功まで起きないと仮定する。実際には同期前の書戻しもあり得る。競合、外部からのファイル変更、部分頁、実 API や障害は扱わない。`tests/mmap-page-lab.test.js` で４条件と状態・保存を検査する。
