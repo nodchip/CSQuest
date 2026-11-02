@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼930で架空の４記録から環境音の種類・発話内容・登録話者という異なる課題と結果を選び、同じ言葉の別人、同一人物の異なる言葉、発話なしを比較。[Google の音分類](https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier)と[NIST の音声・話者認識](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=151431)を参照。12条件と誤った道具、10比較、保存と達成を検査し、依頼一覧の期待順を更新して `npm test` 2393件とビルドが成功。配信用ビルドで誤答・途中再開・10条件・振り返り・達成、キーボードと320・390・1280px幅を確認。既知ラベルの固定模型で、実音声の認識・未知話者・精度・本人確認は未評価。
+
 - 2026-11-03: 依頼929で固定回路の論理試験・合成・配置・配線・面積と遅延の検査を操作し、配線の変更後に再検査する。[OpenLane の設計フロー](https://openlane2.readthedocs.io/en/dev/getting_started/newcomers/index.html)を参考にした。真理値、遅延超過、面積超過、配置変更時の後続工程の無効化と保存再生を検査し、`npm test` 2391件とビルドが成功。配信用ビルドで誤操作・超過・途中再開・配置変更・再検査・達成、キーボードと320・390・1280px幅を確認。架空の固定数値で、実ツール、SoC 全体、物理検証や製造可能性は未評価。
 
 - 2026-11-03: 依頼928で演算を選び、Verilog の組合せ出力と立上りで記憶する断片を固定模型で比較。[AMD の組合せ記述](https://docs.amd.com/r/en-US/ug901-vivado-synthesis/KEEP-Verilog-Example)と[レジスタ記述例](https://docs.amd.com/r/2024.1-English/ug901-vivado-synthesis/Flip-Flops-and-Registers-Coding-Examples)を参照。３演算の真理値、２方式の出力履歴、誤操作・保存・達成を検査し、`npm test` 2389件とビルドが成功。配信用ビルドで両断片・誤操作・途中再開・両方式・振り返り・達成、キーボードと320・390・1280px幅を確認。２値・初期値０を仮定した固定模型で、HDL シミュレーター・未知値・合成や実機は未評価。
