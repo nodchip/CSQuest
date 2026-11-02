@@ -29,7 +29,7 @@
 | 4 | CS Core | 著作物の合法的・倫理的利用を擁護 | 未照合 | 固定例は法域に応じた擁護を評価しない。 |
 | 5 | CS Core | ライセンスの意図と実装を解釈 | 部分 | 269で表示・変更明示・許諾の３条件を比較。全条項と自由な解釈は未評価。 |
 | 6 | CS Core | fair use の可能性を議論 | 部分 | 957で米国の４要因に架空の事実を整理し、単一の割合や出典表示で決まらないことを確認。個別事案の結論と自由な議論は未評価。 |
-| 7 | CS Core | 剽窃検出の倫理問題を分析 | 未照合 | 検出方法そのものの分析は未確認。 |
+| 7 | CS Core | 剽窃検出の倫理問題を分析 | 部分 | 958で一致の閾値、引用・題文・言換えの見逃し、事情の確認、異議の機会と記録の扱いを比較。実際の検出器の性能・制度や自由な分析は未評価。 |
 | 8 | CS Core | 言換え・著者偽装・不適切な出典等を特定 | 部分 | 270で４つの固定例を比較。一般の判定は未評価。 |
 | 9 | KA Core | 適切な文脈で哲学的基礎を議論 | 未照合 | 関連体験は未確認。 |
 | 10 | KA Core | ソフトウェア特許の対立点を区別 | 未照合 | 関連体験は未確認。 |
@@ -46,3 +46,5 @@
 依頼956は [米国特許商標庁の知的財産の概説](https://www.uspto.gov/sites/default/files/documents/Patents-Toolkit.pdf)、[営業秘密](https://www.uspto.gov/sites/default/files/documents/tradesecretsiptoolkit.pdf)、[米国著作権局の保護対象](https://www.copyright.gov/help/faq/faq-protect.html)を参考に６例を比較する。成立要件は例で仮定し、４種の全16組合せを `tests/ip-guild.test.js` で検査。実際の権利の成立・侵害や法域ごとの判断は行わない。
 
 依頼957は [米国著作権局のフェアユース解説](https://www.copyright.gov/fair-use/)、[割合に関する FAQ](https://www.copyright.gov/help/faq/faq-fairuse.html)と[米国最高裁 Google 対 Oracle 判決](https://www.supremecourt.gov/opinions/20pdf/18-956diff_n6p1.pdf)を参照。８つの架空の事実を主な４要因へ分類し、判決の限定された結論と割合・出典表示だけでは決まらないことを確認する。`tests/fair-use-ledger.test.js` は各札・選択と保存・達成条件を検査。実際の事実は複数要因に関連し得て、個別事案の可否は判定しない。
+
+依頼958は [西オーストラリア大学の文章一致の説明](https://guides.library.uwa.edu.au/textmatching)、[トゥルク大学のレポート解釈](https://utuguides.fi/Turnitin_en/interpreting_report)、[英国 ICO のデータ保護原則](https://ico.org.uk/for-organisations/advice-for-small-organisations/getting-started-with-gdpr/data-protection-principles-definitions-and-key-terms)を参考に、同位置の単語一致という架空の規則と４例の事情を比較する。`tests/similarity-review.test.js` は一致数、閾値、確認の順序、保存と達成条件を検査する。実検出器の性能や不正・法令違反の判定はしない。
