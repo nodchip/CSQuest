@@ -56,7 +56,7 @@
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。他は未対応。[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。他は未対応。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
-| FPL | FPL-Types | Type Systems | 136 | 依頼24で入力・出力の型と検査、581で静的な候補選択、764で型の等式の単一化を操作。残る範囲は[詳細](fpl-types.md)を参照。 |
+| FPL | FPL-Types | Type Systems | 136 | 依頼24で入力・出力の型と検査、581で静的な候補選択、764で型の等式の単一化、765で道具の適用から条件と結果型を求める。残る範囲は[詳細](fpl-types.md)を参照。 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、依頼201〜203の回収・参照カウント・別名の固定例。実行時配置・一般のメモリ管理等は未対応。[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312・315で式の構造、解釈と翻訳段階の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 依頼75・154・199・306〜312などで構文木、正規表現、スコープ、引数渡しと副作用の固定例。他は未対応。[詳細](fpl-abstraction.md) |
