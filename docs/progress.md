@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: CS2023 印字 pp.105–107 と既存の依頼・調査を照合し、AR-IO・AR-Organization・AR-Performance-Energy・AR-Heterogeneity のトピックと例示学習成果の項目別台帳を追加。未照合と固定例のみの部分対応を区別し、自由な説明・実機・実測等の限界を記録。新形式の台帳は166単位中110単位で、教材完成率ではない。
+
 - 2026-11-02: 依頼818で在庫１・２束と版確認の有無を比較し、競合後の読直し・再試行・在庫不足を操作。[AWS: Optimistic locking](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BestPractices_OptimisticLocking.html) を参照。４場面の版・在庫・注文結果、誤予想と途中記録を検査し、`npm test` 2133件成功。配信用ビルドで誤操作・再開・４場面・キーボードと320・390・1280px幅を確認。単一台帳で条件確認と更新が一体の模型で、実 DB・重複送信・一般の競合や性能は未評価。
 
 
