@@ -35,7 +35,7 @@
 | AR | AR-Heterogeneity | Heterogeneous Architectures | 107 | 依頼162・163で SIMD・MIMD と専用機械の費用比較の固定例。[項目別台帳](coverage-ar-heterogeneity.md)と[詳細](ar-heterogeneity.md) |
 | AR | AR-Security | Secure Processor Architectures | 107 | 依頼255〜259で範囲と権限、乱数、個体差、構成証明、暗号文での乗算、依頼383で信頼の起点を仮定した起動検証の固定例。[項目別台帳](coverage-ar-security.md)と[詳細](ar-security.md) |
 | AR | AR-Quantum | Quantum Architectures | 108 | 依頼74で一量子ビットの干渉、610で周期探索後処理、676〜679でベル状態・転送と複製、820〜822で Grover、Bernstein–Vazirani と Simon の固定例。[項目別台帳](coverage-ar-quantum.md)と[詳細](ar-quantum.md) |
-| AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間、844で塔の稼働台数と設備電力量、858で待機設定の架空模型。他は未対応。[項目別台帳](coverage-ar-sep.md)と[詳細](sep-sustainability.md) |
+| AR | AR-SEP | Sustainability Issues | 109 | 依頼91で装置の修理・製造と利用期間、844で塔の稼働台数と設備電力量、858で待機設定の架空模型、860で電子廃棄物の推計。他は未対応。[項目別台帳](coverage-ar-sep.md)と[詳細](sep-sustainability.md) |
 | DM | DM-Data | The Role of Data and the Data Life Cycle | 115 | 依頼122でライフサイクルの５段階の固定例。[詳細](dm-data.md) |
 | DM | DM-Core | Core Database System Concepts | 115 | 依頼123で列の変更とビューの固定例。問い合わせ・トランザクション等は別の固定例のみ。[詳細](dm-core.md) |
 | DM | DM-Modeling | Data Modeling | 116 | 依頼101・102で多対多、１対多、１対１の高々の制約とキーの固定例。他は未対応。[詳細](dm-modeling.md) |
@@ -148,7 +148,7 @@
 | SEP | SEP-IP | Intellectual Property | 277 | 依頼269・270でライセンスと出典・著作者の固定例。法的基礎、権利の種類などは未対応。[項目別台帳](coverage-sep-ip.md)と[詳細](sep-ip.md) |
 | SEP | SEP-Privacy | Privacy and Civil Liberties | 278 | 一部試作：依頼27で収集と閲覧の範囲、番号による結び付き。[項目別台帳](coverage-sep-privacy.md)と[詳細](sep-privacy.md) |
 | SEP | SEP-Communication | Communication | 279 | 依頼295で相手に合わせた架空の報告と未確認事項の固定例。他は未対応。[項目別台帳](coverage-sep-communication.md)と[詳細](sep-communication.md) |
-| SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の比較、802で利用回数と製造、858で待機設定、859で環境監視の架空比較。他は未対応。[項目別台帳](coverage-sep-sustainability.md)と[詳細](sep-sustainability.md) |
+| SEP | SEP-Sustainability | Sustainability | 281 | 依頼91で修理・製造・使用の比較、802で利用回数と製造、858で待機設定、859で環境監視の架空比較、860で電子廃棄物の推計。他は未対応。[項目別台帳](coverage-sep-sustainability.md)と[詳細](sep-sustainability.md) |
 | SEP | SEP-History | Computing History | 282 | 依頼363で三つの出来事と人々の役割を紹介。他は未対応。[項目別台帳](coverage-sep-history.md)と[詳細](sep-history.md) |
 | SEP | SEP-Economies | Economies of Computing | 283 | 依頼364で伝令網の接続と相互運用を比較。他は未対応。[項目別台帳](coverage-sep-economies.md)と[詳細](sep-economies.md) |
 | SEP | SEP-Security | Security Policies, Laws and Computer Crimes | 284 | 依頼365で偽・正規の伝令と別経路確認の固定例。他は未対応。[項目別台帳](coverage-sep-security.md)と[詳細](sep-security.md) |
