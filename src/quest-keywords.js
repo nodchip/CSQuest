@@ -21,6 +21,7 @@ export const questKeywords={
  'ruin-view-grid':['spatial partition','空間分割','可視範囲'],
  'workshop-frame-time':['game loop','frame','ゲームループ','時間刻み'],
  'sign-study':['usability testing','user study','利用者評価'],
+ 'guild-survey-workshop':['survey','questionnaire','nonresponse','質問紙','アンケート','無回答'],
  'guild-focus-dialog':['keyboard','focus','キーボード','フォーカス'],
  'guild-sets':['set','集合','ベン図'],
  'arrival-records':['mean','median','平均','中央値'],

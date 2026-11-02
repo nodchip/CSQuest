@@ -1,0 +1,19 @@
+export const surveyWorkshopLevel={id:'guild-survey-workshop',number:'960',kind:'survey-workshop',name:'村の声を集める質問票',tag:'質問紙調査と回答の偏り',title:'届かなかった声を探す',story:'村の案内方法を改善するため、ギルドは質問票を作ります。尋ね方と届け方を比べ、集まった声を読み解きましょう。'};
+export const surveyQuestions={
+ neutral:{label:'質問Ａ',text:'次の案内方法のうち、最初に使いたいものは？（掲示板／水晶／どちらも同じ／わからない／どちらも使わない／回答しない）',kind:'neutral',explanation:'一つの優先方法を尋ね、同じ場合や分からない場合、どちらも使わない場合、回答しない選択肢も示します。'},
+ leading:{label:'質問Ｂ',text:'便利な水晶の案内を、もちろん使いたいですよね？（はい／いいえ）',kind:'leading',explanation:'「便利」「もちろん」は回答を誘導し得ます。'},
+ double:{label:'質問Ｃ',text:'水晶は使いやすく、案内の時刻も正確ですか？（はい／いいえ）',kind:'double',explanation:'使いやすさと正確さの二つを一度に尋ねるため、片方だけ評価が異なる場合に答えにくくなります。'},
+ forced:{label:'質問Ｄ',text:'どちらを最初に使いますか？（掲示板／水晶）',kind:'forced',explanation:'どちらも使わない人や回答したくない人の選択肢がありません。'}
+};
+export const surveyKinds={neutral:'この目的に沿った選択肢がある',leading:'誘導する表現がある',double:'二つの異なることを同時に尋ねている',forced:'どちらも使わない人の選択肢がない'};
+// Fictional fixed population: A1–A4 prefer the board, B1–B4 the crystal.
+// Online invites A1,A2,A3,B1; B1 does not respond. The mixed mode also
+// invites A4,B2,B3,B4; A4 does not respond. No real people are surveyed.
+export const surveyResidents=[{id:'A1',preference:'board',online:true,responds:true},{id:'A2',preference:'board',online:true,responds:true},{id:'A3',preference:'board',online:true,responds:true},{id:'A4',preference:'board',online:false,responds:false},{id:'B1',preference:'crystal',online:true,responds:false},{id:'B2',preference:'crystal',online:false,responds:true},{id:'B3',preference:'crystal',online:false,responds:true},{id:'B4',preference:'crystal',online:false,responds:true}];
+export const surveyModes={online:'水晶だけで招待',mixed:'水晶と紙で招待'};
+export function surveyResult(mode){if(!Object.hasOwn(surveyModes,mode))throw new RangeError('配り方が不正です。');const invited=surveyResidents.filter(p=>mode==='mixed'||p.online),responded=invited.filter(p=>p.responds);return {population:surveyResidents.length,invited:invited.length,notInvited:surveyResidents.length-invited.length,responded:responded.length,nonresponse:invited.length-responded.length,board:responded.filter(p=>p.preference==='board').length,crystal:responded.filter(p=>p.preference==='crystal').length};}
+export function surveyCreate(){return {question:'neutral',choice:null,checked:[],last:null,mode:'online',seen:[],conclusion:null,privacy:null};}
+export function surveyCheck(q){if(!Object.hasOwn(surveyQuestions,q.question)||!Object.hasOwn(surveyKinds,q.choice))throw new RangeError('選択が不正です。');const correct=surveyQuestions[q.question].kind===q.choice;q.last={question:q.question,choice:q.choice,correct};if(correct&&!q.checked.includes(q.question))q.checked.push(q.question);}
+export function surveyInspect(q){surveyResult(q.mode);if(!q.seen.includes(q.mode))q.seen.push(q.mode);}
+export function surveyComplete(q){return Object.keys(surveyQuestions).every(id=>q.checked.includes(id))&&Object.keys(surveyModes).every(id=>q.seen.includes(id))&&q.conclusion==='limits'&&q.privacy==='minimize';}
+export function surveyRestore(q){if(!q||!Object.hasOwn(surveyQuestions,q.question)||!(q.choice===null||Object.hasOwn(surveyKinds,q.choice))||!Array.isArray(q.checked)||new Set(q.checked).size!==q.checked.length||q.checked.some(k=>!Object.hasOwn(surveyQuestions,k))||!Object.hasOwn(surveyModes,q.mode)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.hasOwn(surveyModes,k))||![null,'limits','all','guaranteed'].includes(q.conclusion)||![null,'minimize','publish','retain'].includes(q.privacy))throw new RangeError('記録が不正です。');let last=null;if(q.last!==null){const l=q.last;if(!l||!Object.hasOwn(surveyQuestions,l.question)||!Object.hasOwn(surveyKinds,l.choice)||l.correct!==(surveyQuestions[l.question].kind===l.choice))throw new RangeError('記録が不正です。');last={...l};}return {question:q.question,choice:q.choice,checked:[...q.checked],last,mode:q.mode,seen:[...q.seen],conclusion:q.conclusion,privacy:q.privacy};}
