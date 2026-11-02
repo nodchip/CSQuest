@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼888で４波長帯の灯り・布の反射率・架空の３受光器を操作し、同じ３値になる異なる反射率と光源変更を比較。[CIE のメタメリズム](https://www.cie.co.at/publications/special-metamerism-index-change-observer)と[Physically Based Rendering の色](https://pbr-book.org/4ed/Radiometry%2C_Spectra%2C_and_Color/Color)を参照。４条件の積と受光値、途中保存を検査し、`npm test` 2297件とビルドが成功。ブラウザーで４比較、図、再開、誤答・達成、キーボードと320・390・1280px幅を確認。４帯・架空の受光器と擬似色の模型で、連続スペクトル、標準観察者や実際の色知覚は未評価。
+
 - 2026-11-02: 依頼887で４つの光路の隣接候補と判定札を選び、寄与による採用・不採用と対称な提案の定常分布を比較。[Veach と Guibas の Metropolis Light Transport](https://graphics.stanford.edu/papers/metro/gamma-fixed/)を参照。32通りの遷移と詳細釣り合い、等号時の不採用と途中保存を検査し、`npm test` 2295件とビルドが成功。ブラウザーで入力不足、途中再開、４条件、誤答・達成、キーボードと320・390・1280px幅を確認。４状態・対称提案の模型で、実際の光路生成、画像の正規化と収束は未評価。
 
 - 2026-11-02: 依頼886で目側・光源側の部分経路をつなぎ、遮蔽と同じ道を２方法で見積もる例を比較。[Physically Based Rendering の双方向パストレーシング](https://pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods/Bidirectional_Path_Tracing)を参照。両方法・全４組の可視性、例示の重み、途中保存を検査。既存の二分探索木教材と内部名が重複したため新教材側の名前を分け、両方の関連テストと旧依頼794のノード選択を確認。`npm test` 2293件とビルドが成功し、ブラウザーで誤操作・途中再開・４条件・重み・誤答・達成、図、キーボードと320・390・1280px幅を確認。固定経路・例示の重みの模型で、確率密度、一般の MIS、散乱や実画像は未評価。

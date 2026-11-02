@@ -12,7 +12,7 @@
 | 1d | KA Core | メトロポリス光輸送 | 部分 | 887で４光路の対称な変化、確率による採用・不採用と定常分布を比較。実際の光路生成、非対称提案、画像の正規化や収束は未評価。 |
 | 2a | KA Core | 時間とモーションブラー | 部分 | 735で動く点の１・２・４時刻の標本平均と、８時刻から選ぶ循環運動の別例を比較。連続露光、実画像や一般の時間積分は未評価。 |
 | 2b | KA Core | レンズ位置と焦点 | 部分 | 64で投影、884で２距離・２映し板位置・２開口の近軸光線を比較。連続開口、回折、実カメラや画像は未評価。 |
-| 2c | KA Core | 波長と色 | 部分 | 515で RGB を操作。連続的な波長とスペクトル描画は未評価。 |
+| 2c | KA Core | 波長と色 | 部分 | 515で RGB、888で４波長帯・光源・反射率と架空の受光器を操作し、条件による等色の変化を比較。連続スペクトル、標準観察者や実画像は未評価。 |
 | 3 | KA Core | シャドウマッピング | 部分 | 187で３本の光の深度比較。２次元深度画像、投影やバイアスは未評価。 |
 | 4 | KA Core | 遮蔽カリング | 部分 | 734で深度の領域最大値と旗の最も近い深さから保守的に描画を省く。一般の視錐台・投影・実性能は未評価。 |
 | 5 | KA Core | BSDF とマイクロファセット | 部分 | 882で６枚の鏡の法線分布と反射方向を比較。遮蔽、フレネル、透過、連続分布や一般の BSDF は未評価。 |
@@ -38,4 +38,4 @@
 | 7 | KA Core | 画素単位の描画プログラム | 部分 | 870で色計算の係数・制限を選ぶ代替体験。プログラム作成や実 API は直接評価しない。 |
 | 8 | KA Core | BRDF・反射・屈折を用いたレイトレーサ | 部分 | 641・720で固定の交差・可視性を操作。BRDF、反射・屈折や実プログラムは未評価。 |
 
-関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/path-sampling.test.js`、`tests/microfacet-mirrors.test.js`、`tests/subsurface-walk.test.js`、`tests/thin-lens-focus.test.js`、`tests/photon-map.test.js`、`tests/bidirectional-path.test.js`、`tests/metropolis-light.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`、`tests/motion-exposure.test.js`。各模型の範囲に限る。
+関連検査は `tests/shadow-rays.test.js`、`tests/shadow-map.test.js`、`tests/ray-bounds.test.js`、`tests/area-light.test.js`、`tests/light-estimator.test.js`、`tests/path-sampling.test.js`、`tests/microfacet-mirrors.test.js`、`tests/subsurface-walk.test.js`、`tests/thin-lens-focus.test.js`、`tests/photon-map.test.js`、`tests/bidirectional-path.test.js`、`tests/metropolis-light.test.js`、`tests/spectral-metamer.test.js`、`tests/toon-shading.test.js`、`tests/render-pipeline.test.js`、`tests/depth-buffer.test.js`、`tests/hierarchical-depth.test.js`、`tests/motion-exposure.test.js`。各模型の範囲に限る。
