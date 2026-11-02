@@ -11,7 +11,7 @@
 | 1c | 動きの分析 | 部分 | 233で１方向の対応付けを操作。実動画の動きは未評価。 |
 | 1d | 生成モデル | 部分 | 458で乱れた像と条件付き復元の固定例。実モデルの学習・生成性能は未評価。 |
 | 2 | 音・音声認識 | 部分 | 930で環境音の種類と話された内容を、既知のラベルを使う固定例で区別。実音声・信号処理・認識器は未評価。 |
-| 3 | 触覚・固有感覚 | 未照合 | 対応する体験は未確認。 |
+| 3 | 触覚・固有感覚 | 部分 | 931で直線軸の位置と指先の接触を別々に読み、同じ位置で接触の有無が異なる例を比較。実センサー・力・すべりは未評価。 |
 | 4 | その他の感覚 | 未照合 | 対応する体験は未確認。 |
 | 5 | 認識のモジュール性 | 未照合 | 体系的な比較は未確認。 |
 | 6a | 分類と品質指標 | 部分 | 230で画素の誤検出・見逃し、118で分類指標を比較。実画像と一般の評価は未評価。 |
@@ -37,3 +37,5 @@
 前提は [AI の追加単位](ai-additional.md) を参照。`tests/threshold-segmentation.test.js`、`tests/region-growing.test.js`、`tests/shape-features.test.js`、`tests/block-motion.test.js` は各固定模型を検査する。
 
 依頼930は [Google の音分類](https://developers.google.com/edge/mediapipe/solutions/audio/audio_classifier)と [NIST の音声・話者認識の区別](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=151431)を参考に、既知ラベルから課題と出力を選ぶ固定模型。音声データの処理、未知話者、精度や本人確認は評価しない。
+
+依頼931は [IEEE Robotics のセンサーの説明](https://www.ieee-ras.org/ras-university/?ras_page=docs%2Fchap2_sensing%2Fsensors-and-sensing.html)を参考に、軸の送り位置と指先の接触を比較する固定模型。実センサーや物体の形・力・すべりを評価しない。
