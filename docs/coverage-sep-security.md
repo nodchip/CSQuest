@@ -34,4 +34,6 @@
 
 依頼985は NIST の [virus](https://csrc.nist.gov/glossary/term/virus)、[worm](https://csrc.nist.gov/glossary/term/worm)、[Trojan horse](https://csrc.nist.gov/glossary/term/trojan_horse) の定義を参考に、感染した札の実行、隣の塔への固定的な拡散、便利に見える道具の隠れた動作を比較する。道を区切る例と実行しない例は、それぞれこの模型に限る。現実の分類の重なり、実際の感染条件、検知、被害回復や実例の調査は評価しない。`tests/malware-paths.test.js` で各場面の遷移、１刻１辺の拡散、道の切断、保存と達成を検査する。
 
-依頼986は [英国会計検査院（NAO）の2017年報告](https://www.nao.org.uk/reports/investigation-wannacry-cyber%20attack-and-the-nhs/) と[報告書本文](https://www.nao.org.uk/wp-content/uploads/2017/10/Investigation-WannaCry-cyber-attack-and-the-NHS.pdf) を要約する。少なくとも81トラストに影響、5月12〜18日に6,912件の取消しを確認、約19,494件は推計という区別と、NHS Digital の患者情報に関する見解、地域レベルの訓練不足を扱う。2017年時点の報告であり、全被害、原因、現在の体制や法的救済を確定しない。`tests/wannacry-evidence.test.js` で各問いの記録と結論、保存・達成を検査する。
+依頼986は [英国会計検査院（NAO）の2017年報告](https://www.nao.org.uk/reports/investigation-wannacry-cyber%20attack-and-the-nhs/) と[報告書本文](https://www.nao.org.uk/wp-content/uploads/2017/10/Investigation-WannaCry-cyber-attack-and-the-NHS.pdf) を要約する。報告書本文では少なくとも80トラストに影響、紹介ページでは81と数が異なること、当初感染とされた37のうち３が後に感染ではなく業務への影響と再分類されたこと、5月12〜18日に6,912件の取消しを確認、約19,494件は推計という区別と、NHS Digital の患者情報に関する見解、地域レベルの訓練不足を扱う。2017年時点の報告であり、全被害、原因、現在の体制や法的救済を確定しない。`tests/wannacry-evidence.test.js` で各問いの記録と結論、保存・達成を検査する。
+
+報告書本文の表紙には2018年4月の日付があり、当初の分類の修正が本文に記される。紹介ページと本文で80・81と異なる理由は両資料からは断定しない。依頼986の旧版では81とだけ示していたが、現行版は両方を明示して本文を問う。旧クリアは保持し、旧版での達成は修正後の記述を確認した証拠ではない。

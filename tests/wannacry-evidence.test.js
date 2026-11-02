@@ -17,3 +17,9 @@ test('each report finding requires its relevant evidence and bounded conclusion'
 test('draft validation rejects unknown evidence and choices',()=>{
  const s=wannacryCreate();s.trials.scope.evidence='unknown';assert.throws(()=>wannacryRestore(s));s.trials.scope.evidence='scope';s.trials.scope.answer='exact';assert.throws(()=>wannacryRestore(s));
 });
+test('the organisation question identifies the source of the conflicting counts',()=>{
+ assert.match(wannacryEvidence.scope.text,/本文.*少なくとも80/);
+ assert.match(wannacryEvidence.scope.text,/３つは後に感染ではなく/);
+ assert.match(wannacryEvidence.scope.text,/紹介ページ.*少なくとも81/);
+ assert.match(wannacryQuestions.scope.choices.minimum,/本文.*少なくとも80/);
+});
