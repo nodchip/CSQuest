@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-fuzz-corpus':['fuzzing','coverage guided fuzzing','コーパス','ファジング','カバレッジ誘導'],
  'archive-mmap-page-lab':['mmap','MAP_SHARED','MAP_PRIVATE','ページ境界','コピーオンライト'],
  'archive-file-layout-device':['file locality','disk fragmentation','SSD','ファイル配置','局所性','断片化'],
  'forge-stealing-cost':['work stealing','scheduling overhead','仕事の横取り','負荷分散','移動費用'],
