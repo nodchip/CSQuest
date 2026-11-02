@@ -47,6 +47,11 @@ test('optional learning trails cover all quests, avoid duplicates within each pa
   for(const trail of learningTrails){assert.equal(new Set(trail.quests).size,trail.quests.length);assert.equal(findTrail(trail.id),trail);assert.deepEqual(trailQuests(trail,all).map(item=>item.level.id),trail.quests);assert.ok(trailQuests(trail,all).every(item=>all[item.index]===item.level));}
   assert.equal(findTrail('missing'),null);
 });
+test('circuit and oven trail connects circuit foundations to embedded diagnosis',()=>{
+ const trail=findTrail('circuit-oven-journey'),ids=trail.quests;
+ for(const [a,b] of [['circuit','lantern-adder'],['workshop-clocked-memory','workshop-register-transfer'],['workshop-register-transfer','workshop-two-bit-counter'],['forge-fpga-lut','workshop-hls-schedule'],['workshop-interrupt','workshop-mcu-timer'],['workshop-mmio-registers','workshop-mcu-timer'],['workshop-sensor-servo','workshop-sensor-adapter'],['workshop-sensor-sampling','workshop-sensor-adapter'],['workshop-sensor-adapter','workshop-oven-feedback'],['workshop-oven-feedback','workshop-oven-debug']])assert.ok(ids.indexOf(a)>=0&&ids.indexOf(a)<ids.indexOf(b),`${a} should precede ${b}`);
+ assert.ok(trailQuests(trail,all).every(q=>q.level));assert.equal(nextTrailQuest(trail,all,ids.slice(0,-1)).level.id,'workshop-oven-debug');assert.equal(nextTrailQuest(trail,all,ids),null);
+});
 test('the AI path connects introductions to search, learning, and applications',()=>{
  const trail=findTrail('ai-journey'),items=trail.quests;
  const before=(a,b)=>assert.ok(items.indexOf(a)>=0&&items.indexOf(a)<items.indexOf(b),`${a} should precede ${b}`);
