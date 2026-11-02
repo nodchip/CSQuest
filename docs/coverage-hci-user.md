@@ -67,4 +67,4 @@
 
 依頼650・288・655をそれぞれ `src/bridge-team.js`、`src/shared-schedule.js`、`src/version-journey.js` と対応するテストで照合した。関係者の事情・２画面の競合・接続断後の版の統合という限定例で、実際のチーム活動や複数利用者の行動は評価しない。依頼59は共通の元からの変更を整理する補助教材である。
 
-依頼965は [NetworkX の関節点](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.articulation_points.html)と[連結成分](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.connected_components.html)を参考に、架空の６人の双方向の連絡網で追加経路と２人の除去を比較する。`tests/social-links.test.js` は６条件の到達集合、予測・保存・達成条件を検査。中継は仮定であり、実際の社会関係、影響力や伝達を評価しない。
+依頼965は [NetworkX の関節点](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.articulation_points.html)と[連結成分](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.connected_components.html)を参考に、架空の６人の双方向の連絡網で追加経路と２人の除去を比較する。`tests/social-links.test.js` は６条件の到達集合、隣接をたどる経路、旧記録の復元、予測・保存・達成条件を検査。中継は仮定であり、実際の社会関係、影響力や伝達を評価しない。

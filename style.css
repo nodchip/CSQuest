@@ -195,3 +195,5 @@
 .lg-cell{display:flex;flex-direction:column;gap:.35rem;min-width:0}
 .lg-box{display:block;background:white;border:1px solid #657787;border-radius:.3rem;padding:.45rem;min-width:0}
 .quest-pages{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1.5rem 0 2rem}.quest-pages[hidden]{display:none}.quest-pages button{border:1px solid #8b9e8b;background:#fff;color:#244c3b;padding:.7rem 1rem}.quest-pages button:disabled{opacity:.5;cursor:not-allowed}
+
+.social-map{display:block;width:100%;max-width:480px;margin:18px auto;background:#eef4e9;border:1px solid #ccd9c9;border-radius:12px}.social-map line{stroke:#819a88;stroke-width:3}.social-map line.travelled{stroke:#a26614;stroke-width:6}.social-map circle{fill:#fffef8;stroke:#54745d;stroke-width:3}.social-map .travelled circle{fill:#f6e1ab;stroke:#965b12}.social-map .resting circle{fill:#e3e3e3;stroke:#888;stroke-dasharray:4 3}.social-map text{font-size:16px;font-weight:700;fill:#234733}.social-map .resting text{fill:#555}
