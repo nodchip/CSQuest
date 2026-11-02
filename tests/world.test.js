@@ -130,6 +130,12 @@ test('each field links to existing learning paths and the HCI path connects user
  assert.ok(findField('HCI').trails.includes('hci-journey'));const ids=findTrail('hci-journey').quests;
  for(const [before,after] of [['guild-user-needs','guild-journey-map'],['guild-prototype-fidelity','sign-study'],['sign-study','guild-observation-coding'],['guild-survey-workshop','guild-study-pairing'],['guild-study-order','guild-study-preregistration'],['guild-locale-time','guild-clock-transition'],['guild-clock-transition','guild-group-communication']])assert.ok(ids.indexOf(before)>=0&&ids.indexOf(before)<ids.indexOf(after),`${before} -> ${after}`);
 });
+test('software engineering and HCI paths connect stakeholder needs to collaborative design and revision',()=>{
+ assert.ok(findField('SE').trails.includes('se-journey'));
+ const paths={SE:findTrail('se-journey').quests,HCI:findTrail('hci-journey').quests};
+ for(const id of ['village-bridge-team','guild-revisions','guild-shared-schedule','guild-version-journey'])for(const [name,ids] of Object.entries(paths))assert.ok(ids.includes(id),`${name}: ${id}`);
+ for(const [before,after] of [['guild-user-needs','village-bridge-team'],['village-inventory-contract','village-inventory-design'],['ward-tests','village-test-levels'],['guild-revisions','guild-version-journey'],['guild-version-journey','guild-ci-forge'],['village-api-evolution','village-api-migration']])assert.ok(paths.SE.indexOf(before)>=0&&paths.SE.indexOf(before)<paths.SE.indexOf(after),`${before} -> ${after}`);
+});
 
 test('image trail connects representation, segmentation, filtering, restoration and a combined challenge',()=>{
  const trail=findTrail('image-journey'),ids=trail.quests;

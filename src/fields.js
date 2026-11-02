@@ -12,7 +12,7 @@ export const fields=[
  {id:'OS',name:'オペレーティングシステム',quests:['workshop-scheduling','page-address','archive-file-calls'],trails:['realtime-journey','virtualization-journey']},
  {id:'PDC',name:'並列・分散計算',quests:['shared-counter','counter-lock','forge-barrier'],trails:['systems']},
  {id:'SDF',name:'ソフトウェア開発の基礎',quests:['sequence','branch','loop'],trails:['first-steps','software-foundations']},
- {id:'SE',name:'ソフトウェア工学',quests:['ward-tests','guild-revisions','village-inventory-contract'],trails:['software-foundations']},
+ {id:'SE',name:'ソフトウェア工学',quests:['ward-tests','guild-revisions','village-inventory-contract'],trails:['se-journey','software-foundations']},
  {id:'SEC',name:'セキュリティ',quests:['castle-security-triad','castle-access','secret-lanterns'],trails:['security-journey']},
  {id:'SEP',name:'社会・倫理・専門職',quests:['village-choices','guild-credit-scrolls','guild-asset-license'],trails:['craft']},
  {id:'SF',name:'システムの基礎',quests:['instruction-engine','workshop-memory-power','shared-cache'],trails:['systems','virtualization-journey']},
