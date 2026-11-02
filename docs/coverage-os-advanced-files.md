@@ -21,7 +21,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
-| 1 | KA Core | ハードウェアの発展による設計・管理上の優先事項の変化 | 未照合 | ファイルシステム設計への影響の比較は未確認。 |
+| 1 | KA Core | ハードウェアの発展による設計・管理上の優先事項の変化 | 部分 | 976で円盤の移動費用を含む配置と移動費用０の水晶を比較。実装置の発展・書込み・摩耗や一般の優先事項は未評価。 |
 | 2 | KA Core | ファイル抽象と装置・インターフェースを対応づける | 部分 | 291で棚の接続と名前解決。実装置・インターフェースの対応は未評価。 |
 | 3 | KA Core | マウントの種類を識別・分類 | 部分 | 291で単一の接続例。他の種類と分類は未評価。 |
 | 4 | KA Core | 要件とそれを満たすファイルシステム機能を説明 | 部分 | 290で状態保持、736で復旧、745でプロセス情報・一時共有・再起動後の保存の用途を比較。他の要件と自由な説明は未評価。 |
@@ -41,3 +41,5 @@
 依頼745は [Linux tmpfs](https://docs.kernel.org/filesystems/tmpfs.html) と [proc(5)](https://man7.org/linux/man-pages/man5/proc.5.html) を参考に、プロセスの終了後、一時ファイルシステムの切離し後、保存に成功した記録の再起動後を比較する固定模型。終了状態の回収、新しい tmpfs の接続、保存成功を仮定し、実 API や障害は扱わない。`tests/special-filesystems.test.js` で状態と操作を検査する。
 
 関連検査は `tests/files.test.js`、`tests/snapshot-blocks.test.js`、`tests/mount-overlay.test.js`、`tests/mapped-file.test.js`、`tests/fs-journal.test.js`、`tests/log-structured.test.js`、`tests/log-checkpoint.test.js`、`tests/distributed-file.test.js`。各模型の範囲に限る。
+
+依頼976は [OSTEP のファイル配置と局所性](https://pages.cs.wisc.edu/~remzi/Classes/537/Fall2021/Book/file-ffs.pdf)を参考に、４枚の巻物の連続・分散配置を、距離に費用を置く円盤と移動費用０の水晶で比較する。`tests/file-layout-device.test.js` は４条件の距離・費用・途中記録を検査。回転待ち、キャッシュ、並列性、実機の速度やフラッシュの書換え・摩耗は評価しない。
