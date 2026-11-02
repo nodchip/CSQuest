@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼821で２ビットの Bernstein–Vazirani 問題について古典の２照会と量子の１照会、位相と H による干渉を比較。[IBM Quantum](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/quantum-query-algorithms/deutsch-jozsa-algorithm) を参照。４秘密の各段階の確率和・古典と量子の結果・復元を検査し、`npm test` 2145件成功。ブラウザーで誤操作・途中再開・４場面・320、390、1280px幅を確認。関数の約束と重ね合わせに作用できるオラクルを仮定し、実機・一般の関数・回路構築費用は未評価。
+
 - 2026-11-02: 依頼820で４候補の Grover 探索を操作し、目標の符号反転・平均を中心とする反転・反復しすぎた確率低下を比較。[IBM Quantum](https://quantum.cloud.ibm.com/learning/en/modules/computer-science/grovers) を参照。４目標の各段階の確率和・予想と保存復元を検査し、`npm test` 2140件成功。ブラウザーで誤操作・途中再開・４目標・320、390、1280px幅を確認。理想的な４候補・正解１つの模型で、実機・一般の入力や速度優位は未評価。
 
 - 2026-11-02: CS2023 印字 pp.107–109 と既存の調査・依頼を照合し、AR-Security と AR-Quantum のトピック・例示学習成果を項目別台帳に追加。固定例の限界、コード作成・自由な説明の直接評価を行わない方針、未照合項目を記録。新形式の台帳は166単位中112単位であり、教材完成率ではない。
