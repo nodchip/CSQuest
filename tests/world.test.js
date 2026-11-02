@@ -134,7 +134,7 @@ test('software engineering and HCI paths connect stakeholder needs to collaborat
  assert.ok(findField('SE').trails.includes('se-journey'));
  const paths={SE:findTrail('se-journey').quests,HCI:findTrail('hci-journey').quests};
  for(const id of ['village-bridge-team','guild-revisions','guild-shared-schedule','guild-version-journey'])for(const [name,ids] of Object.entries(paths))assert.ok(ids.includes(id),`${name}: ${id}`);
- for(const [before,after] of [['guild-user-needs','village-bridge-team'],['village-inventory-contract','village-inventory-design'],['ward-tests','village-test-levels'],['guild-revisions','guild-version-journey'],['guild-version-journey','guild-ci-forge'],['village-api-evolution','village-api-migration']])assert.ok(paths.SE.indexOf(before)>=0&&paths.SE.indexOf(before)<paths.SE.indexOf(after),`${before} -> ${after}`);
+ for(const [before,after] of [['guild-user-needs','village-bridge-team'],['village-inventory-contract','village-inventory-design'],['ward-tests','village-test-levels'],['guild-revisions','guild-version-journey'],['guild-version-journey','guild-ci-forge'],['guild-analysis-forge','workshop-fuzz-symbolic'],['workshop-fuzz-symbolic','parallel-workshop'],['parallel-workshop','forge-strong-weak-scaling'],['village-api-evolution','village-api-migration']])assert.ok(paths.SE.indexOf(before)>=0&&paths.SE.indexOf(before)<paths.SE.indexOf(after),`${before} -> ${after}`);
 });
 
 test('image trail connects representation, segmentation, filtering, restoration and a combined challenge',()=>{
