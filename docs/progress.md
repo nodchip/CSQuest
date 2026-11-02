@@ -1,5 +1,8 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼814で鍵の保持中の待機と、原子的比較交換による２人の更新・失敗・再試行を比較。[MDN compareExchange](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/compareExchange) と [C++ 作業草案の進行](https://eel.is/c++draft/intro.progress)を参照。２人の有限な比較交換の全順序で値と成功回数を照合し、`npm test` 2115件成功。配信用ビルドで誤操作・待機・再試行・再開・キーボードと320・390・1280px幅を確認。有限模型であり実装の進行保証・公平性・実機性能は未評価。
+
+
 - 2026-11-02: 依頼813で画像の最下位ビットに印を入れ、変更・２×２ DCT 量子化・別画像への同じ印を比較。[KIT の LSB watermarking](https://ies.iar.kit.edu/ies/download/lehre/idc/IDC-13-Dirty-Paper-Codes.pdf) と [Purdue の透かし](https://engineering.purdue.edu/~ace/water2/digwmk.html) を参照。全256画素値と両ビット、４場面、編集後の再検証と復元を検査し、`npm test` 2112件成功。配信用ビルドで誤答・途中再開・４場面・達成・キーボードと320・390・1280px幅を確認。鍵なし固定例で、一般の透かしや実 JPEG、真正性の証明は未評価。
 
 
