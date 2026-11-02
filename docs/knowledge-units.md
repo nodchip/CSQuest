@@ -115,7 +115,7 @@
 | OS | OS-Virtualization | Virtualization | 213 | 依頼135でコンテナと VM、754で門番と設定の切替え、755で符の読み替えとアクセス制限、756で二段階変換と共有の固定模型。残る範囲は[項目別台帳](coverage-os-virtualization.md)を参照。 |
 | OS | OS-Real-time | Real-time and Embedded Systems | 214 | 依頼133・134で期限と優先度、420で周期、395で停止距離、757で周期仕事、758で頁の固定、759で進捗監視、760で平均と期限要件、761で FreeRTOS の切替え、762で応答時間解析、763で切替えと頁準備を組み合わせる固定例。[項目別台帳](coverage-os-real-time.md) |
 | OS | OS-Faults | Fault tolerance | 214 | 依頼136・181・229・736〜738・752で記録・復元・装置復旧の固定例。[項目別台帳](coverage-os-faults.md) |
-| OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行の固定例。他は未対応。[項目別台帳](coverage-os-sep.md)と[詳細](os-society.md) |
+| OS | OS-SEP | Society, Ethics, and the Profession | 215 | 依頼361でサポート終了と移行、846で公開カーネルの修正とホスト・ゲストの固定例。他は未対応。[項目別台帳](coverage-os-sep.md)と[詳細](os-society.md) |
 | PDC | PDC-Programs | Programs | 219 | 依頼130・162で分割集約と SIMD・MIMD、418で計算の依存関係、419で選択・写像・平均、442で生産者・消費者の流れ作業の固定例。他は未対応。[詳細](pdc-programs.md) |
 | PDC | PDC-Communication | Communication | 220 | 依頼129・131で容量０・１の通信路と送信待ちの循環の固定例。他は未対応。[詳細](pdc-communication.md) |
 | PDC | PDC-Coordination | Coordination | 222 | 更新喪失、排他と循環待ち、90でバリア、814で比較交換と再試行、815で ABA、816で回収延期、817で分散リースの番号検査、818で楽観的な版確認の固定例。他は未評価。[項目別台帳](coverage-pdc-coordination.md) |
