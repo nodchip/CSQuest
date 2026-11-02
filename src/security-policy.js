@@ -1,0 +1,10 @@
+export const securityPolicyLevel={id:'castle-security-policy',number:'987',kind:'security-policy',name:'守りの方針を組み立てる',tag:'セキュリティと社会・方針',title:'城の方針と働く人を守ろう',story:'王城の記録係たちが、侵入への備えと働く人の私生活を両立する方針を考えています。'};
+export const policyCases={
+ password:{name:'合言葉',prompt:'職員が城の受付に入る合言葉の方針は？',context:'受付では合言葉だけで本人を確認します。漏えい済みの合言葉を照合でき、管理道具と貼り付けを使えます。',choices:{guard:'15文字以上とし、漏えい済みのものを拒否し、管理道具と貼り付けを許す。',rotate:'全員に毎週変更させ、貼り付けや管理道具は禁じる。',shared:'職員全員で同じ短い合言葉を使う。'},answer:'guard',reason:'漏えい済みの候補を避け、管理道具を許す方針です。NIST の例では一要素の合言葉には15文字以上を求め、根拠のない定期変更は求めません。実装や多要素認証は別途検討が必要です。'},
+ incident:{name:'漏えいへの対応',prompt:'特定の職員の合言葉が漏れた証拠が出たら？',context:'その職員の合言葉が外部に公開されたと確認されました。',choices:{change:'その合言葉を変更し、影響を調査する。',wait:'決められた次の年次変更まで待つ。',ignore:'本人が覚えているので、そのまま使い続ける。'},answer:'change',reason:'定期変更を求めないことと、漏えいの証拠がある場合に変更を求めることは両立します。調査と復旧の範囲は状況に依存します。'},
+ monitoring:{name:'記録と私生活',prompt:'門への不審な連続ログインを調べる方法は？',context:'目的は門への不審なログインの調査です。必要な範囲のログイン時刻・結果を記録すれば、この固定例では調査できます。',choices:{limited:'目的と対象を職員に知らせ、必要な記録に限り、閲覧権限と保存期間を決めて見直す。',all:'職員に知らせず私的な文章もすべて無期限に集める。',reuse:'調査目的で得た記録を、別の検討なしに勤務評価へ転用する。'},answer:'limited',reason:'目的を明確にし必要なデータに限り、透明性と保管・閲覧を検討します。これは架空例であり、通知だけで適法となるわけではありません。法域や状況ごとの根拠と必要性の確認が必要です。'}
+};
+export function policyCreate(){return {selected:'password',trials:Object.fromEntries(Object.keys(policyCases).map(id=>[id,{choice:null,checked:false}])),reflection:null};}
+export function policyDone(id,t){return !!policyCases[id]&&!!t&&t.checked&&t.choice===policyCases[id].answer;}
+export function policyComplete(s){return s.reflection==='balance'&&Object.keys(policyCases).every(id=>policyDone(id,s.trials[id]));}
+export function policyRestore(saved){if(!saved||!Object.hasOwn(policyCases,saved.selected)||![null,'balance','absolute','secret'].includes(saved.reflection))throw new RangeError('途中記録が不正です');const s=policyCreate();s.selected=saved.selected;s.reflection=saved.reflection;for(const [id,c] of Object.entries(policyCases)){const t=saved.trials?.[id];if(!t||!(t.choice===null||Object.hasOwn(c.choices,t.choice))||typeof t.checked!=='boolean')throw new RangeError('途中記録が不正です');s.trials[id]={choice:t.choice,checked:t.checked};}return s;}

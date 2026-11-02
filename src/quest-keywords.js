@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-security-policy':['方針','パスワード','合言葉','従業員','監視','プライバシー','NIST','ICO'],
  'castle-wannacry-evidence':['wannacry','ransomware','NHS','ランサムウェア','医療','社会的影響'],
  'castle-malware-paths':['malware','virus','worm','trojan','マルウェア','ウイルス','ワーム','トロイの木馬'],
  'workshop-interrupt-priority':['interrupt','nested interrupt','vector','割込み','優先順位','ベクタ'],
