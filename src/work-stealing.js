@@ -1,0 +1,13 @@
+export const workStealLevel={id:'forge-work-stealing',number:'974',kind:'work-stealing',name:'手の空いた精霊の手伝い',tag:'仕事の横取り・負荷分散',title:'二人で仕事の列を分ける',story:'宝石の工房で４つの仕事が一人の精霊に集まりました。もう一人が待機中に列から仕事を引き受け、完成までの時間を比べましょう。'};
+export const workStealJobs={A:{name:'赤の結晶',duration:3},B:{name:'青の結晶',duration:2},C:{name:'緑の結晶',duration:2},D:{name:'白の結晶',duration:1}};
+export const workStealModes={static:'引き受けなし',steal:'手の空いた人が引き受ける'};
+export function workStealInitial(mode){if(!Object.hasOwn(workStealModes,mode))throw new RangeError('方式が不正です。');return {mode,queue:['A','B','C','D'],a:null,b:null,completed:[],ticks:0,stolen:0,history:[]};}
+export function workStealAct(s,action){if(!s||!Array.isArray(s.history)||s.history.length>=32||!['steal','tick'].includes(action))return {ok:false,message:'この操作はできません。'};if(s.completed.length===4)return {ok:false,message:'すべての仕事は完了しています。'};
+ const n={...s,queue:[...s.queue],a:s.a?{...s.a}:null,b:s.b?{...s.b}:null,completed:[...s.completed],history:[...s.history]};let message='';
+ if(action==='steal'){if(n.mode!=='steal'||n.b||!n.queue.length)return {ok:false,message:'待機中の青い精霊と、まだ列に残る仕事が必要です。'};const id=n.queue.shift();n.b={id,remaining:workStealJobs[id].duration};n.stolen++;message=`青い精霊が列の先頭から${workStealJobs[id].name}を引き受けました。`;}
+ else {if(!n.a&&n.queue.length){const id=n.queue.pop();n.a={id,remaining:workStealJobs[id].duration};}if(!n.a&&!n.b)return {ok:false,message:'進める仕事がありません。'};n.ticks++;const finished=[];for(const worker of ['a','b'])if(n[worker]){n[worker].remaining--;if(n[worker].remaining===0){const id=n[worker].id;n.completed.push(id);finished.push(workStealJobs[id].name);n[worker]=null;}}message=finished.length?`${finished.join('と')}が完成しました。`:'作業が１刻み進みました。';}
+ n.history.push(action);return {ok:true,state:n,message};}
+export function workStealReplay(mode,history){if(!Array.isArray(history)||history.length>32)throw new RangeError('履歴が不正です。');let s=workStealInitial(mode);for(const action of history){const result=workStealAct(s,action);if(!result.ok)throw new RangeError('履歴が不正です。');s=result.state;}return s;}
+export function workStealCreate(){return {mode:'static',runs:{static:[],steal:[]},reflection:null};}
+export function workStealComplete(q){const a=workStealReplay('static',q.runs.static),b=workStealReplay('steal',q.runs.steal);return a.completed.length===4&&b.completed.length===4&&b.stolen>0&&b.ticks<=5&&q.reflection==='tradeoff';}
+export function workStealRestore(q){if(!q||!Object.hasOwn(workStealModes,q.mode)||!q.runs||![null,'tradeoff','always','free'].includes(q.reflection))throw new RangeError('記録が不正です。');const runs={};for(const mode of Object.keys(workStealModes)){workStealReplay(mode,q.runs[mode]);runs[mode]=[...q.runs[mode]];}return {mode:q.mode,runs,reflection:q.reflection};}
