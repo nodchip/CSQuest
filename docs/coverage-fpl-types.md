@@ -21,7 +21,7 @@
 | 6e | CS Core | コレクション等の汎用ライブラリ利用 | 部分 | 509で固定の袋を利用。実ライブラリや定義は未評価。 |
 | 6f | CS Core | アドホック多相とサブタイプ多相との比較 | 部分 | 945で固定例を横断して比較。原典の 6c と重なるため集計時は重複させない。 |
 | 6g | CS Core | 規範的・記述的な多相性 | 未照合 | 対応する教材を未確認。 |
-| 6h | CS Core | 多相型の実装モデル | 未照合 | 型消去等の実装を未確認。 |
+| 6h | CS Core | 多相型の実装モデル | 部分 | 946で型消去と型ごとの単相化の概念模型を比較。実コンパイラーの生成物や言語一般は未評価。 |
 | 6i | CS Core | サブタイプ | 部分 | 511で読取専用記録の受入れ。一般の置換は未評価。 |
 | 7 | KA Core | 構造・名前による型同値 | 部分 | 511で４記録を比較。一般の型同値は未評価。 |
 | 8 | KA Core | 静的・動的型付けの相補的な利点 | 部分 | 510で検査時点と両分岐を比較。一般の利点と制約は未評価。 |
@@ -70,3 +70,5 @@
 関連する `tests/type-checking.test.js`、`tests/generic-pouch.test.js`、`tests/record-compatibility.test.js`、`tests/overload-dispatch.test.js`、`tests/type-unification.test.js`、`tests/type-application.test.js`、`tests/type-safety.test.js`、`tests/type-safety-proof.test.js`、`tests/curry-howard.test.js`、`tests/dependent-vectors.test.js`、`tests/type-rescue.test.js` は各模型を検査するもので、原典の範囲全体や学習効果の検証を意味しない。
 
 依頼945は [Cornell の多相性の講義](https://www.cs.cornell.edu/courses/cs4110/2021fa/lectures/lecture24.pdf)を参考に、型変数による共通手順、宣言型による固定の多重定義、動物のサブタイプと実行時の手順を比較する模型。実言語の候補解決・変換・例外や自由な説明は未評価。
+
+依頼946は [Oracle の型消去](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)と [Rust の単相化](https://doc.rust-lang.org/book/ch10-01-syntax.html)を参考に、同じ型検査の後に共有処理か型ごとの処理を概念的に用意する模型。実コンパイラーの最適化、ABI、コードサイズ、実測性能や言語全般は評価しない。
