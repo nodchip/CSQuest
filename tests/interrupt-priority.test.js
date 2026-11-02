@@ -15,7 +15,14 @@ test('vector choice, deferred handling, nested preemption and return order',()=>
   }
   assert.equal(priorityInterruptReplay(mode,h).done,true);q.trials[mode]=h;
  }
- assert.equal(priorityInterruptComplete(q),false);q.reflection='scope';assert.equal(priorityInterruptComplete(q),true);const copy=priorityInterruptRestore(q);copy.trials.flat.pop();assert.equal(priorityInterruptComplete(copy),false);assert.equal(priorityInterruptComplete(q),true);
+ assert.equal(priorityInterruptComplete(q),false);q.reflection='scope';assert.equal(priorityInterruptComplete(q),false);q.trials.queued=['arrive:low','arrive:high','unmask','predict:high','vector:48','finish','vector:32','finish'];assert.equal(priorityInterruptComplete(q),true);const copy=priorityInterruptRestore(q);copy.trials.flat.pop();assert.equal(priorityInterruptComplete(copy),false);assert.equal(priorityInterruptComplete(q),true);
+});
+test('two requests accumulate while masked and the higher-priority vector runs first',()=>{
+ let h=[];h=add('queued',h,'arrive:low');assert.equal(priorityInterruptStep('queued',h,'vector:32').ok,false);h=add('queued',h,'arrive:high');assert.deepEqual(priorityInterruptReplay('queued',h).pending,['low','high']);assert.equal(priorityInterruptStep('queued',h,'predict:high').ok,false);
+ h=add('queued',h,'unmask');h=add('queued',h,'predict:high');assert.equal(priorityInterruptStep('queued',h,'vector:32').ok,false);h=add('queued',h,'vector:48');h=add('queued',h,'finish');assert.deepEqual(priorityInterruptReplay('queued',h).pending,['low']);h=add('queued',h,'vector:32');h=add('queued',h,'finish');assert.deepEqual(priorityInterruptReplay('queued',h).finished,['high','low']);
+});
+test('old drafts retain both original histories and start the additional condition empty',()=>{
+ const old={selected:'flat',trials:{flat:['arrive:low'],nested:[]},reflection:null},q=priorityInterruptRestore(old);assert.deepEqual(q.trials.flat,['arrive:low']);assert.deepEqual(q.trials.queued,[]);assert.equal(priorityInterruptComplete(q),false);
 });
 test('replay rejects skipped arrivals, incorrect priorities and duplicate operations',()=>{
  assert.throws(()=>priorityInterruptReplay('flat',['vector:32']));assert.throws(()=>priorityInterruptReplay('flat',['arrive:low','arrive:low']));assert.throws(()=>priorityInterruptReplay('nested',['arrive:low','vector:32','arrive:high','predict:low']));
