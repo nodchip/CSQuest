@@ -181,3 +181,5 @@
 .exposure-cell.lit { background:#f8db75; color:#4a3100; }
 
 .exposure-eight { grid-template-columns:repeat(4,minmax(0,1fr)); }
+
+.bst-delete-tree ul{list-style:none;margin:8px 0;padding-left:1em;border-left:2px solid #b8cbb9}.bst-delete-tree>ul{padding-left:0;border-left:0}.bst-delete-tree li{margin:8px 0}.bst-delete-tree button{max-width:100%;white-space:normal;text-align:left;border:1px solid #a8bfaa;background:#f8faf4;color:#31523e;padding:10px;font-size:12px}
