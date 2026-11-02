@@ -26,7 +26,7 @@
 | 6d | KA Core | 遅延評価と先行評価 | 部分 | 325・326で有限／無限の列、値・名前・必要呼びを比較。一般の評価規則は未評価。 |
 | 7 | Non-core | グラフ簡約機械と必要時評価 | 部分 | 326で計算の共有、775で共有・別々の節の更新と未使用引数を操作。一般のグラフ簡約機械や実装は未評価。 |
 | 8 | Non-core | 遅延評価の実装 | 部分 | 325・326で遅延と結果の共有を操作。一般のサンク・実言語での実装は評価しない。 |
-| 9 | Non-core | 等式論理・狭義化・待機・意味的単一化による論理型との統合 | 未照合 | 146で項の単一化はあるが、関数型との統合は未評価。 |
+| 9 | Non-core | 等式論理・狭義化・待機・意味的単一化による論理型との統合 | 部分 | 776で未知入力の待機、規則との単一化による枝分け、結果の等式条件を操作。一般の等式理論は未評価。 |
 | 10 | Non-core | 手続き型・オブジェクト指向などとの統合 | 部分 | 593で同一課題に対する３設計を比較。言語内の統合・実装は未評価。 |
 
 ## 例示学習成果
@@ -44,7 +44,7 @@
 | 9 | KA Core | 複数言語で反復子や集約操作を定義・利用 | 部分 | 51・773で用意された列・木の集約。複数の実言語での定義は評価しない。 |
 | 10 | Non-core | 共有部分式のラムダ式でグラフ簡約を例示 | 部分 | 775で引数を２回使う式について共有節・別々の節を更新し、１回と２回の計算を比較。任意のラムダ式や一般の機械は未評価。 |
 | 11 | Non-core | 入れ子のラムダ式を抽象機械で実行 | 部分 | 774で数を覚える関数を返して呼ぶ固定の抽象機械を操作。任意の式や SECD・ABC 機械は未評価。 |
-| 12 | Non-core | 狭義化・待機・意味的単一化を例示 | 未照合 | 一般の意味的単一化や関数型との統合は未評価。 |
+| 12 | Non-core | 狭義化・待機・意味的単一化を例示 | 部分 | 776で２規則に対する待機・枝分けと結果の等式条件を比較。一般の意味的単一化は未評価。 |
 | 13 | Non-core | 並行・逐次のバッファなどを用いた並行構文の例示 | 部分 | 178で一つの箱の送り手と受け手を交互に操作。実言語の構文や逐次との比較は未評価。 |
 
-`tests/tree-fold.test.js`、`tests/closure-boxes.test.js`、`tests/closure-machine.test.js`、`tests/evaluation-sharing.test.js`、`tests/graph-reduction.test.js`、`tests/evaluation-rescue.test.js`、`tests/lazy-stream.test.js`、`tests/semaphore-buffer.test.js` は各固定模型・操作を検査し、原典の範囲全体や学習効果を保証しない。
+`tests/tree-fold.test.js`、`tests/closure-boxes.test.js`、`tests/closure-machine.test.js`、`tests/evaluation-sharing.test.js`、`tests/graph-reduction.test.js`、`tests/narrowing.test.js`、`tests/evaluation-rescue.test.js`、`tests/lazy-stream.test.js`、`tests/semaphore-buffer.test.js` は各固定模型・操作を検査し、原典の範囲全体や学習効果を保証しない。
