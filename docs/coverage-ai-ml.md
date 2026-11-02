@@ -114,7 +114,7 @@
 | 24a | Non-core | k-means | 部分 | 380で一次元・２群。一般の群数やデータは未評価。 |
 | 24b | Non-core | ガウス混合モデル | 部分 | 937で固定分散の２つの正規分布と混合比を比較。一般の次元・成分数・分散の推定は未評価。 |
 | 24c | Non-core | 期待値最大化法 | 部分 | 937で所属確率の計算と重み付き平均・混合比の更新を反復。一般の EM や収束証明は未評価。 |
-| 24d | Non-core | 自己組織化写像 | 未照合 | 対応する体験と検証は未確認。 |
+| 24d | Non-core | 自己組織化写像 | 部分 | 940で２次元入力と１次元４ノードの勝者・近傍更新を比較。一般の格子・学習率調整・収束は未評価。 |
 | 25 | Non-core | グラフ解析 | 部分 | 依頼301で３頂点の PageRank、501で６頂点のラベル伝播を操作。一般のグラフ解析は未評価 |
 | 26 | Non-core | 半教師あり学習 | 部分 | 依頼501で２手本を固定し、ラベルのない４頂点を隣の平均で更新。実データや一般の手法は未対応 |
 | 27 | Non-core | グラフィカルモデル | 部分 | 81で３変数の固定ネットワークを操作。模型の学習と一般の構築は未評価。 |
@@ -183,3 +183,5 @@
 依頼938は [UC Berkeley の価値反復](https://inst.eecs.berkeley.edu/~cs188/textbook/mdp/value-iteration.html)と[方策反復](https://inst.eecs.berkeley.edu/~cs188/textbook/mdp/policies-iteration.html)を参考に、決定的な２状態・割引率0.5の模型で両手法を比較する。一般の確率遷移や収束証明、自由なプログラム実装は評価しない。
 
 依頼939は [UC Berkeley の価値反復](https://inst.eecs.berkeley.edu/~cs188/textbook/mdp/value-iteration.html)を参考に、失敗すると元の状態へ戻る２状態の遷移確率と割引報酬を扱う。更新幅0.01以下で停止する近似例であり、一般の収束や未知の遷移確率の学習は評価しない。
+
+依頼940は [Mississippi State University の機械学習講義](https://skim.math.msstate.edu/LectureNotes/Machine_Learning_Lecture.pdf)の自己組織化写像を参考に、２次元の固定入力と１次元の４ノードを更新する模型。入力は架空で、一般の高次元データ、広い格子や収束・位相保存の保証は未評価。

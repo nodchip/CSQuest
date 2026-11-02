@@ -1,0 +1,11 @@
+export const selfOrganizingMapLevel={id:'archive-self-organizing-map',number:'940',kind:'self-organizing-map',name:'星の地図を育てる',tag:'自己組織化写像',title:'星を近さで並べ直す',story:'書庫の精霊が、二つの特徴を持つ星を一本の地図に並べます。最も近い印と、その隣の印を動かして比べましょう。'};
+export const somSamples=[[0,0],[0,4],[4,0],[4,4]];
+export const somInitial=[[0,0],[1,1],[3,3],[4,4]];
+export const somModes={neighbors:'勝者と隣を更新',winner:'勝者だけ更新'};
+export function somDistances(weights,input){if(!Array.isArray(weights)||weights.length!==4||weights.some(p=>!Array.isArray(p)||p.length!==2||p.some(x=>!Number.isFinite(x)))||!Array.isArray(input)||input.length!==2||input.some(x=>!Number.isFinite(x)))throw new RangeError('座標が不正です。');return weights.map(p=>(p[0]-input[0])**2+(p[1]-input[1])**2);}
+export function somWinner(weights,input){const distances=somDistances(weights,input);return distances.indexOf(Math.min(...distances));}
+export function somMove(weights,input,winner,mode){if(!Object.hasOwn(somModes,mode)||!Number.isInteger(winner)||winner<0||winner>=4||somWinner(weights,input)!==winner)throw new RangeError('入力に最も近い印を選びましょう。同距離は番号の小さい印です。');return weights.map((p,i)=>{const rate=i===winner?0.5:mode==='neighbors'&&Math.abs(i-winner)===1?0.25:0;return p.map((v,j)=>v+rate*(input[j]-v));});}
+export function somState(mode,history){if(!Object.hasOwn(somModes,mode)||!Array.isArray(history)||history.length>8)throw new RangeError('記録が不正です。');let weights=somInitial.map(p=>[...p]);for(let i=0;i<history.length;i++)weights=somMove(weights,somSamples[i%somSamples.length],history[i],mode);return {weights,index:history.length,input:history.length<8?somSamples[history.length%somSamples.length]:null};}
+export function somCreate(){return {mode:'neighbors',runs:{neighbors:[],winner:[]},reflection:null};}
+export function somComplete(q){return Object.keys(somModes).every(m=>somState(m,q.runs[m]).index===8)&&q.reflection==='neighborhood';}
+export function somRestore(q){if(!q||!Object.hasOwn(somModes,q.mode)||!q.runs||![null,'neighborhood','labels','guarantee'].includes(q.reflection))throw new RangeError('記録が不正です。');const runs={};for(const m of Object.keys(somModes)){somState(m,q.runs[m]);runs[m]=[...q.runs[m]];}return {mode:q.mode,runs,reflection:q.reflection};}
