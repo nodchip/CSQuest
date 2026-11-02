@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼886で目側・光源側の部分経路をつなぎ、遮蔽と同じ道を２方法で見積もる例を比較。[Physically Based Rendering の双方向パストレーシング](https://pbr-book.org/3ed-2018/Light_Transport_III_Bidirectional_Methods/Bidirectional_Path_Tracing)を参照。両方法・全４組の可視性、例示の重み、途中保存を検査。既存の二分探索木教材と内部名が重複したため新教材側の名前を分け、両方の関連テストと旧依頼794のノード選択を確認。`npm test` 2293件とビルドが成功し、ブラウザーで誤操作・途中再開・４条件・重み・誤答・達成、図、キーボードと320・390・1280px幅を確認。固定経路・例示の重みの模型で、確率密度、一般の MIS、散乱や実画像は未評価。
+
 - 2026-11-02: 依頼885で光源から６粒を追って５件を記録し、観察点と円の半径を変えて量／面積を比較。[Jensen の Photon Maps](https://graphics.stanford.edu/~henrik/papers/ewr7/ewr7.html)を参照。円周上を含む４検索・吸収・面積と途中保存を検査し、`npm test` 2291件とビルドが成功。ブラウザーで早い検索、途中再開、４比較、図、誤答・達成、キーボードと320・390・1280px幅を確認。固定された平面と粒の模型で、実際の光子生成・材質・放射輝度や画像は未評価。
 
 - 2026-11-02: 依頼884で２距離の灯り、２つの映し板位置と開口を選び、薄いレンズの３光線を図示。[Physically Based Rendering の薄いレンズ](https://www.pbr-book.org/4ed/Cameras_and_Film/Projective_Camera_Models)と[OpenStax のレンズ式](https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses)を参照。８条件の光線と像位置・開口による広がり、途中保存を検査し、`npm test` 2289件とビルドが成功。ブラウザーで５比較、光線図、再開、誤答・達成、キーボードと320・390・1280px幅を確認。近軸３光線の模型で、連続開口、回折・収差・光量や実画像は未評価。
