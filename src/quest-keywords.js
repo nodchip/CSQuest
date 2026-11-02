@@ -23,6 +23,7 @@ export const questKeywords={
  'sign-study':['usability testing','user study','利用者評価'],
  'guild-survey-workshop':['survey','questionnaire','nonresponse','質問紙','アンケート','無回答'],
  'guild-journey-map':['persona','empathy map','journey map','ペルソナ','共感マップ','ジャーニーマップ'],
+ 'guild-resume-cues':['working memory','recognition','interruption','作業記憶','中断','再開','手がかり'],
  'guild-klm-workshop':['KLM','GOMS','keystroke level model','認知モデル','操作時間'],
  'guild-social-links':['social network','social computing','articulation point','社会的ネットワーク','関節点','連結成分'],
  'guild-group-communication':['synchronous','asynchronous','communication','collaboration','同期','非同期','集団通信','協働'],
