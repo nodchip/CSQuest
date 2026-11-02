@@ -163,14 +163,14 @@
 | SF | SF-Design | System Design | 297 | 設計基準に関連する固定例。代表的システムの設計は未対応。[詳細](sf-security-design.md) |
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 依頼269で２ライセンスの限定的な比較。権利と犯罪などは未対応。[詳細](sf-security-design.md) |
 | SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 依頼356で通信量・資源・遅れ、803で Web の３層の固定例。他は未対応。[項目別台帳](coverage-spd-common.md)と[詳細](spd-common.md) |
-| SPD | SPD-Web | Web Platforms | 303 | 依頼62で受付 API と再送、803で３層、804で状態維持、805でセッション固定と失効の固定例。実 Web アプリの開発・運用は未評価。[詳細](spd-web.md) |
-| SPD | SPD-Mobile | Mobile Platforms | 303 | 依頼354で圏外の保留と再送の固定例。他は未対応。[詳細](spd-mobile.md) |
-| SPD | SPD-Robot | Robot Platforms | 304 | 依頼28の観測・移動、71の地形・充電、690のトピック・受信待ち、691の機体・観測器選択の固定模型。実機や ROS の実行は未対応。[詳細](spd-robot.md) |
-| SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222のセンサーと駆動、133・134・420の期限・優先度・周期、395の安全性などの固定模型。実機や一般的な設計・検証は未対応。[詳細](spd-embedded.md) |
+| SPD | SPD-Web | Web Platforms | 303 | 依頼62で受付 API と再送、803で３層、804で状態維持、805でセッション固定と失効の固定例。実 Web アプリの開発・運用は未評価。[項目別台帳](coverage-spd-web.md)と[詳細](spd-web.md) |
+| SPD | SPD-Mobile | Mobile Platforms | 303 | 依頼354で圏外の保留と再送の固定例。他は未対応。[項目別台帳](coverage-spd-mobile.md)と[詳細](spd-mobile.md) |
+| SPD | SPD-Robot | Robot Platforms | 304 | 依頼28の観測・移動、71の地形・充電、690のトピック・受信待ち、691の機体・観測器選択の固定模型。実機や ROS の実行は未対応。[項目別台帳](coverage-spd-robot.md)と[詳細](spd-robot.md) |
+| SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222のセンサーと駆動、133・134・420の期限・優先度・周期、395の安全性などの固定模型。実機や一般的な設計・検証は未対応。[項目別台帳](coverage-spd-embedded.md)と[詳細](spd-embedded.md) |
 | SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の衝突・トンネリング、799で描画と固定時間の更新、800で区画による描画候補の固定例。他は未対応。[項目別台帳](coverage-spd-game.md)と[詳細](spd-game.md) |
 | SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノート、840で報道用の架空の集計と記事、841で架空のプログラム比較、842で３種類の音を並べる伴奏、843で描画の入力遅延の固定例。他は未対応。[項目別台帳](coverage-spd-interactive.md)と[詳細](spd-interactive.md) |
-| SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[詳細](spd-sep.md) |
-| SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し依頼393、通知と中断の選択に依頼398の固定例。他は未対応。[詳細](spd-sep.md) |
-| SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で字幕、398で休憩と通知、399で素材の利用条件、806でゲームの門の手がかりと操作方式の固定例。他は未対応。[詳細](spd-sep.md) |
-| SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 依頼395で停止距離と検知遮蔽、396で条件別の見落としと改良案を比較。他は未対応。[詳細](spd-sep.md) |
-| SPD | SPD-SEP/Interactive | Interactive の社会・倫理（作業用名） | 312 | 依頼397で生成下書きの照合と編集上の記録を操作。他は未対応。[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[項目別台帳](coverage-spd-sep-mobile.md)と[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し依頼393、通知と中断の選択に依頼398の固定例。他は未対応。[項目別台帳](coverage-spd-sep-web.md)と[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で字幕、398で休憩と通知、399で素材の利用条件、806でゲームの門の手がかりと操作方式の固定例。他は未対応。[項目別台帳](coverage-spd-sep-game.md)と[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Robotics | Robotics の社会・倫理（作業用名） | 311 | 依頼395で停止距離と検知遮蔽、396で条件別の見落としと改良案を比較。他は未対応。[項目別台帳](coverage-spd-sep-robotics.md)と[詳細](spd-sep.md) |
+| SPD | SPD-SEP/Interactive | Interactive の社会・倫理（作業用名） | 312 | 依頼397で生成下書きの照合と編集上の記録を操作。他は未対応。[項目別台帳](coverage-spd-sep-interactive.md)と[詳細](spd-sep.md) |
