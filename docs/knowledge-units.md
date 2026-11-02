@@ -136,12 +136,12 @@
 | SE | SE-Reliability | Software Reliability | 250 | 依頼238〜241で単一障害点、失敗枠、多数決と故障の依存の固定例。他は未対応。[詳細](se-reliability.md) |
 | SE | SE-Formal | Formal Methods | 251 | 依頼242〜244で有限状態の安全性・デッドロックと有限範囲の契約検査。他は未対応。[詳細](se-formal.md) |
 | SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
-| SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 依頼362で窓口停止の影響と不明点の固定例。他は未対応。[詳細](sec-society.md) |
-| SEC | SEC-Coding | Secure Coding | 259 | 依頼82で文字列連結とパラメータ化、578で容量計算の桁あふれと範囲外書込みの固定例。他は未対応。[詳細](sec-coding.md) |
+| SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 依頼362で窓口停止の影響と不明点の固定例。[項目別台帳](coverage-sec-sep.md)と[詳細](sec-society.md) |
+| SEC | SEC-Coding | Secure Coding | 259 | 依頼82でパラメータ化、524・528で境界と表示、578で桁あふれ、818で競合の固定例。[項目別台帳](coverage-sec-coding.md)と[詳細](sec-coding.md) |
 | SEC | SEC-Crypto | Cryptography | 260 | 依頼58・128・259〜264で鍵の再利用、署名、教材用 RSA、鍵交換、認証と衝突確率、425で HTTPS の証明確認、426でシフト暗号の固定例。他は未対応。[詳細](sec-crypto.md) |
 | SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 依頼328・329で脅威経路、対策の選択と修正前後の試験の固定模型。他は未対応。[詳細](sec-engineering.md) |
-| SEC | SEC-Forensics | Digital Forensics | 262 | 依頼195・286で監査、受け渡しと照合の固定例。他は未対応。[詳細](sec-forensics.md) |
-| SEC | SEC-Governance | Security Governance | 263 | 依頼353で復旧方針・保管・訓練の固定例。他は未対応。[詳細](sec-governance.md) |
+| SEC | SEC-Forensics | Digital Forensics | 262 | 依頼195・286で監査、受け渡しと照合の固定例。[項目別台帳](coverage-sec-forensics.md)と[詳細](sec-forensics.md) |
+| SEC | SEC-Governance | Security Governance | 263 | 依頼353で復旧方針・保管・訓練の固定例。[項目別台帳](coverage-sec-governance.md)と[詳細](sec-governance.md) |
 | SEP | SEP-Context | Social Context | 273 | 依頼358で申請経路と利用条件の固定例。他は未対応。[詳細](sep-context.md) |
 | SEP | SEP-Ethical-Analysis | Methods for Ethical Analysis | 274 | 一部試作：依頼63で架空の関係者の声と３案の影響を比較 |
 | SEP | SEP-Professional-Ethics | Professional Ethics | 276 | 依頼360・367で報告とレビューの固定例。他は未対応。[詳細](sep-professional-ethics.md) |

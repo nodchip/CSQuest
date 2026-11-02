@@ -40,4 +40,6 @@
 
 追加の項目別台帳：[FPL-Aspect](coverage-fpl-aspect.md)、[FPL-Analysis](coverage-fpl-analysis.md)、[FPL-Code](coverage-fpl-code.md)、[FPL-Run-Time](coverage-fpl-run-time.md)。
 
-現時点ではこの形式で見直したのは134単位。他の32単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この134/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
+追加の項目別台帳：[SEC-Coding](coverage-sec-coding.md)、[SEC-Forensics](coverage-sec-forensics.md)、[SEC-Governance](coverage-sec-governance.md)、[SEC-SEP](coverage-sec-sep.md)。
+
+現時点ではこの形式で見直したのは138単位。他の28単位には既存の個別文書や部分的な照合があるが、新しい台帳と同じ粒度での確認はまだ行っていない。この138/166 は台帳の整備状況であり、CS2023 全体の教材完成率ではない。今後は原典と既存の実装・検証を照合し、未照合を根拠なく未対応や完了に変えず、単位ごとに台帳へ追加する。
