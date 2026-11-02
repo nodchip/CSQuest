@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼877で川辺と遠方の判断を、通信あり・なしの４条件で比較。[NIST のエッジ計算](https://www.nist.gov/publications/task-management-cooperative-mobile-edge-computing)と[プライバシー](https://www.nist.gov/publications/analyzing-data-privacy-edge-systems)を参照。架空の期限・３拍と８拍・通信不能、手順と保存を検査し、`npm test` 2275件とビルドが成功。ブラウザーで誤操作、途中再開、４条件、誤答・達成、キーボードと320・390・1280px幅を確認。固定された時間と正常な装置の模型で、実機の安全性・誤差・負荷や情報保護は未評価。
+
 - 2026-11-02: 依頼876で４村の報告を中継塔で集約する方法と個別転送を比較。[Sapio ほかの SwitchML](https://www.usenix.org/system/files/nsdi21-sapio.pdf)を参照。24通りの到着順で合計16、区間別の通数、操作順と途中保存を検査し、`npm test` 2273件とビルドが成功。ブラウザーで誤操作、途中再開、２方法、誤答・達成、キーボードと320・390・1280px幅を確認。固定整数・損失なしの模型で、実機性能、再送、重複、容量や機密性は未評価。
 
 - 2026-11-02: 依頼875で２×２の積和器に数を流し、２行と１行の行列積を比較。[Google の TPU 行列計算器の説明](https://cloud.google.com/blog/products/ai-machine-learning/an-in-depth-look-at-googles-first-tensor-processing-unit-tpu)を参照。各刻みの積と行列積、待機枠、途中保存を検査し、`npm test` 2271件とビルドが成功。ブラウザーで途中再開、２条件、誤答・達成、キーボードと320・390・1280px幅を確認。出力保持の２×２模型であり、実 TPU の配置・数値精度・速度・電力は未評価。
