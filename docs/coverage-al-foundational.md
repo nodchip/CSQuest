@@ -29,7 +29,7 @@
 | 14b | KA Core | 桶・計数・基数整列 | 部分 | 166〜168の固定例。一般の入力と分析は未評価。 |
 | 15a | KA Core | 推移閉包 | 部分 | 170で経由地を増やす固定例。一般の証明は未評価。 |
 | 15b | KA Core | トポロジカルソート | 部分 | 56で順序と閉路を操作。一般の証明は未評価。 |
-| 16a | KA Core | 効率的な文字列照合 | 部分 | 714で KMP の重なり表を作り、不一致時に残す長さを選ぶ２例。Boyer–Moore、一般の実装や計算量の証明は未評価。 |
+| 16a | KA Core | 効率的な文字列照合 | 部分 | 714で KMP の重なり表、914で Boyer–Moore 系 Horspool 法の右端からの比較と送り幅を操作。完全な Boyer–Moore 法、一般の実装や計算量の証明は未評価。 |
 | 16b | KA Core | 最長共通部分列 | 部分 | 169で表と復元。一般の解析は未評価。 |
 | 16c | KA Core | 正規表現照合 | 部分 | 154で限定された表現。一般の照合と計算量は未評価。 |
 | 17 | Non-core | 暗号関連アルゴリズム | 部分 | 601で Web Crypto の SHA-256 と HMAC を比較。SHA-256 の内部アルゴリズムは未評価。 |
@@ -57,6 +57,8 @@
 | 9 | Non-core | 量子計算と応用への理解 | 部分 | 610で因数分解の後処理、820・861で探索の反転と反復、821・822でオラクル問題の固定例。一般的な応用・実機や自由な説明は未評価。 |
 
 固定例の検査には `tests/hash.test.js`、`tests/min-heap.test.js`、`tests/merge-sort.test.js`、`tests/odd-even-sort.test.js`、`tests/quantum-order.test.js` などがある。個別テストの成功は原典全体の網羅や一般的な説明・設計能力の証明ではない。
+
+依頼914は Horspool 法の右からの比較と、窓の右端の文字による送り幅を操作する。３例の照合開始位置はそれぞれ 0・2・6、0・4、0・2。２例目は右端以外の不一致文字 A ではなく、右端の D によって４文字送る。３例目では一致位置 0・2 の重なりを見つける。`tests/horspool-search.test.js` は送り表、各手順、一致位置を単純な全位置走査と照合し、誤操作と保存を検査。完全な Boyer–Moore 法、任意の文字列や計算量の証明は未評価。参考：[Rose-Hulman: Horspool's Algorithm](https://www.rose-hulman.edu/class/cs/csse473/201540/Slides/Day24-StringSearch-Horspool.pdf)。
 
 依頼913は３頂点の有向グラフ２例で、前段階の表から中継 A・B・C を許す更新を順に計算する。負の閉路がない例の最終行列は (0,4,2)、(1,0,−2)、(3,7,0)。もう一方は A→B→C→A の合計が −1 で、対角の負値を表示し、閉路を通れる経路の有限値を最短と主張しない。`tests/floyd-workshop.test.js` で各段階の行列、負の対角、単純路による独立照合と保存を検査。一般の経路復元や負の閉路の影響を受ける全ての組の分類は未評価。参考：[Princeton: FloydWarshall](https://algs4.cs.princeton.edu/code/javadoc/edu/princeton/cs/algs4/FloydWarshall.html)。
 
