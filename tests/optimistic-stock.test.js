@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {optimisticActions,optimisticInitial,optimisticExecute,optimisticReplay,optimisticCreate,optimisticStep,optimisticComplete,optimisticRestore} from '../src/optimistic-stock.js';
+
+for(const policy of ['unchecked','versioned'])for(const stock of ['one','two'])test(`${policy}/${stock}: two stale readers and retry or shortage`,()=>{
+ const s=optimisticInitial(policy,stock),h=[];for(const a of ['readA','readB','commitA:accept']){const op=a.split(':')[0];for(const wrong of Object.keys(optimisticActions).filter(x=>x!==op))assert.throws(()=>optimisticExecute(structuredClone(s),wrong));optimisticExecute(s,a);h.push(a);assert.deepEqual(optimisticReplay(policy,stock,h),s);}const before=structuredClone(s),answer=policy==='unchecked'?'accept':'reject';assert.throws(()=>optimisticExecute(structuredClone(s),`commitB:${answer==='accept'?'reject':'accept'}`));optimisticExecute(s,`commitB:${answer}`);h.push(`commitB:${answer}`);
+ if(policy==='unchecked'){assert.equal(s.orders.B,'確定');assert.equal(s.stock,before.stock);assert.equal(s.initial-s.stock,1);}else{assert.equal(s.orders.B,'競合');assert.equal(s.stock,before.stock);assert.equal(s.version,before.version);optimisticExecute(s,'refreshB');h.push('refreshB');const final=stock==='one'?'unavailableB':'retryB:accept';optimisticExecute(s,final);h.push(final);assert.equal(s.orders.B,stock==='one'?'在庫不足':'確定');assert.equal(s.stock,0);}assert.equal(s.stage,'done');assert.deepEqual(optimisticReplay(policy,stock,h),s);
+});
+test('all four cases and reflection required; invalid saved decisions fail',()=>{
+ const q=optimisticCreate();for(const p of ['unchecked','versioned'])for(const s of ['one','two']){q.policy=p;q.stock=s;const actions=['readA','readB','commitA:accept',p==='unchecked'?'commitB:accept':'commitB:reject',...(p==='unchecked'?[]:['refreshB',s==='one'?'unavailableB':'retryB:accept'])];for(const a of actions){optimisticStep(q,a);assert.deepEqual(optimisticRestore(q),q);}}assert(!optimisticComplete(q));q.answer='retry';assert(optimisticComplete(q));const bad=structuredClone(q);bad.trials['versioned:one'][3]='commitB:accept';assert.throws(()=>optimisticRestore(bad));
+});

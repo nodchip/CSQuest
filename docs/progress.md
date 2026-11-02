@@ -1,5 +1,8 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼818で在庫１・２束と版確認の有無を比較し、競合後の読直し・再試行・在庫不足を操作。[AWS: Optimistic locking](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BestPractices_OptimisticLocking.html) を参照。４場面の版・在庫・注文結果、誤予想と途中記録を検査し、`npm test` 2133件成功。配信用ビルドで誤操作・再開・４場面・キーボードと320・390・1280px幅を確認。単一台帳で条件確認と更新が一体の模型で、実 DB・重複送信・一般の競合や性能は未評価。
+
+
 - 2026-11-02: 依頼817で期限切れ後の古い要求を、保存先の番号検査の有無と２到着順で比較。[Martin Kleppmann: Distributed Locking](https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html) を参照。４場面の受理・拒否・最終値、誤予想と途中記録を検査し、`npm test` 2128件成功。配信用ビルドで誤操作・再挑戦・再開・４場面・キーボードと320・390・1280px幅を確認。単一保存先と単調な番号を仮定し、期限を直接検査しないため、新番号が届く前の古い要求は受理され得る。実サービス・故障・認証は未評価。
 
 
