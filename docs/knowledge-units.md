@@ -163,7 +163,7 @@
 | SF | SF-Design | System Design | 297 | 設計基準に関連する固定例。代表的システムの設計は未対応。[詳細](sf-security-design.md) |
 | SF | SF-SEP | Society, Ethics, and the Profession | 297 | 依頼269で２ライセンスの限定的な比較。権利と犯罪などは未対応。[詳細](sf-security-design.md) |
 | SPD | SPD-Common | Common Aspects/Shared Concerns | 302 | 依頼356で通信量・資源・遅れ、803で Web の３層の固定例。他は未対応。[項目別台帳](coverage-spd-common.md)と[詳細](spd-common.md) |
-| SPD | SPD-Web | Web Platforms | 303 | 一部試作：依頼62で受付 API と再送の固定例 |
+| SPD | SPD-Web | Web Platforms | 303 | 依頼62で受付 API と再送、803で３層、804で状態維持、805でセッション固定と失効の固定例。実 Web アプリの開発・運用は未評価。[詳細](spd-web.md) |
 | SPD | SPD-Mobile | Mobile Platforms | 303 | 依頼354で圏外の保留と再送の固定例。他は未対応。[詳細](spd-mobile.md) |
 | SPD | SPD-Robot | Robot Platforms | 304 | 依頼28の観測・移動、71の地形・充電、690のトピック・受信待ち、691の機体・観測器選択の固定模型。実機や ROS の実行は未対応。[詳細](spd-robot.md) |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222のセンサーと駆動、133・134・420の期限・優先度・周期、395の安全性などの固定模型。実機や一般的な設計・検証は未対応。[詳細](spd-embedded.md) |

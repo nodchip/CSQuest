@@ -1,6 +1,6 @@
 # SPD-Web の対応状況
 
-出典: [CS2023, SPD-Web](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 p. 303。原典を要約した作業用一覧。依頼62は実 Web アプリの作成や運用を評価しない。
+出典: [CS2023, SPD-Web](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 p. 303。原典を要約した作業用一覧。依頼62・803〜805は実 Web アプリの作成や運用を評価しない。
 
 ## トピック
 
@@ -10,7 +10,7 @@
 | 2 | KA Core | Web プラットフォーム、サービス、API | 依頼62で POST による受付と再送、803で３層の役割の固定例。実 API やプラットフォーム開発は未対応 |
 | 3 | KA Core | SaaS | 未着手 |
 | 4 | KA Core | DOM やアクセシビリティなど Web 標準 | 未着手 |
-| 5 | KA Core | セキュリティとプライバシー | 未着手 |
+| 5 | KA Core | セキュリティとプライバシー | 依頼805で認証前の番号維持・交換とログアウト時の失効を比較。実装、他の脅威やプライバシー全般は未評価 |
 | 6 | Non-core | Web アプリの要求分析 | 未着手 |
 | 7 | Non-core | クラウド、拡張性、費用 | 未着手 |
 | 8 | Non-core | データの所在と完全性・削除 | 未着手 |
