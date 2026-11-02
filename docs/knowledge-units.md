@@ -50,7 +50,7 @@
 | DM | DM-Unstructured | Semi-structured and Unstructured Databases | 122 | 依頼120で転置索引と TF-IDF の固定例。他は未対応。[詳細](dm-unstructured.md) |
 | DM | DM-SEP | Society, Ethics, and the Profession | 123 | 依頼194・196・330〜333で収集、推論、来歴、管理責任と準識別子の固定例。他は未対応。[詳細](dm-society.md) |
 | FPL | FPL-OOP | Object-Oriented Programming | 130 | 依頼65で個体ごとの状態と種類別の動的な振る舞い、579で非公開状態と操作による範囲検査、580で継承と合成、581で静的な候補選択と動的な呼出し、582でクラス変数と個体の変数、583で反復子と削除の固定例。[詳細](fpl-oop.md) |
-| FPL | FPL-Functional | Functional Programming | 131 | 51・52で列処理とクロージャ、590で永続的な鎖、325・326で遅延・共有、773で木の再帰的な集約を扱う。[項目別台帳](coverage-fpl-functional.md)と[詳細](fpl-functional.md)を参照。 |
+| FPL | FPL-Functional | Functional Programming | 131 | 51・52で列処理とクロージャ、590で永続的な鎖、325・326で遅延・共有、773で木の集約、774でクロージャの環境と回収を扱う。[項目別台帳](coverage-fpl-functional.md)と[詳細](fpl-functional.md)を参照。 |
 | FPL | FPL-Logic | Logic Programming | 133 | 依頼146〜150で有限の項の単一化、事実・規則・問い合わせ、探索と戻り、再帰的な関係、カットの固定例。他は未対応。[詳細](fpl-logic.md) |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜154で処理の受け渡し、失敗、終了状態、環境変数、正規表現の固定例。他は未対応。[詳細](fpl-scripting.md) |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
