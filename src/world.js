@@ -27,6 +27,13 @@ export function filterQuests(levels,regionId,query,status,completed,drafts=[]){
   });
 }
 
+export function questPage(matches,page,size=24){
+  const pages=Math.max(1,Math.ceil(matches.length/size));
+  const current=Math.min(Math.max(Number.isInteger(page)?page:0,0),pages-1);
+  const start=current*size;
+  return {items:matches.slice(start,start+size),page:current,pages,start,total:matches.length};
+}
+
 // Suggested paths are optional; players may still open any quest in any order.
 export const learningTrails=[
   {id:'first-steps',name:'精霊と始める',description:'順番、条件、繰り返しから、再帰やデータの処理へ進みます。',quests:['sequence','branch','loop','two-paths','workshop-assignment-swap','workshop-expression-parts','workshop-counting-loop','workshop-function-scope','guild-library-framework','archive-persistent-ledger','guild-api-ledger','castle-validation-boundary','workshop-parameter-passing','rune-arrangements','workshop-recursive-sum','workshop-recursion-iteration','forest-tree-fold','typed-spells','workshop-generic-pouch','workshop-type-checking','workshop-type-unification','workshop-type-application','workshop-type-safety','workshop-type-safety-proof','workshop-curry-howard','workshop-dependent-vectors','workshop-parametricity','workshop-semantics-comparison','workshop-type-rescue','workshop-behavioral-frame','archive-record-compatibility','guild-containers','workshop-operational-semantics','workshop-symbolic-path','workshop-fuzz-symbolic','workshop-orthogonal-language','workshop-lambda-reduction','workshop-structural-induction','workshop-shared-side-effect','workshop-scope-resolution','workshop-grammar-scroll','workshop-grammar-ambiguity','workshop-translation','workshop-jit','workshop-lexer-scroll','workshop-predictive-parser','workshop-compiler-stages','workshop-aspect-ledger','workshop-aspect-guard','workshop-lazy-stream','workshop-evaluation-sharing','workshop-graph-reduction','workshop-evaluation-rescue','workshop-read-recovery','workshop-garbage-collection','workshop-reference-counting','workshop-parser-recovery','workshop-environment-store','workshop-link-load','workshop-compiler-wrap','workshop-syntax-rail','workshop-cross-target','workshop-arena-reuse','workshop-runtime-regions','workshop-tail-frames','workshop-flow-machine','workshop-memory-addressing','workshop-dangling-reference','workshop-stack-heap','workshop-control-flow-map','workshop-reaching-definitions','workshop-dataflow-loop','workshop-dead-writes','workshop-write-effects','lantern-spirits','workshop-spirit-instances','archive-string-replace','village-inventory-contract','village-contract-notes','stone-pipeline','multiplier-seals','spell-syntax','event-lantern']},
