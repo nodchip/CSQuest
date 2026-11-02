@@ -78,10 +78,10 @@
 | GIT | GIT-Shading | Shading and Advanced Rendering | 159 | 依頼186・187で拡散光の段階化と光からの深さによる影の固定模型。他の手法や描画 API は未対応。[詳細](git-shading.md) |
 | GIT | GIT-Animation | Computer Animation | 160 | 依頼182〜185・633〜635・729で緩急、関節、スキニング、回転や架空の動作記録を操作。３次元回転・実際のリグ制作や収録は未評価。[詳細](git-animation.md) |
 | GIT | GIT-Simulation | Simulation | 161 | 依頼209〜215で粒子・ばね、接触と衝突応答、ライフゲーム、濃度移流と高さ場の固定例。流体全体や一般の衝突応答等は未対応。[詳細](git-simulation.md) |
-| GIT | GIT-Immersion | Immersion | 161 | 依頼216〜218で２視点の視差、古い視点情報によるずれ、現実物体の遮蔽の固定例。実際の立体表示・追跡・安全性等は未対応。[詳細](git-immersion.md) |
-| GIT | GIT-Interaction | Interaction | 162 | 依頼92・351で固定イベントと画面操作。他は未対応。[詳細](git-interaction.md) |
+| GIT | GIT-Immersion | Immersion | 161 | 依頼216〜218で２視点の視差、古い視点情報によるずれ、現実物体の遮蔽の固定例。実際の立体表示・追跡・安全性等は未対応。[項目別台帳](coverage-git-immersion.md)と[詳細](git-immersion.md) |
+| GIT | GIT-Interaction | Interaction | 162 | 依頼92・351で固定イベントと画面操作、427で複数手段の選択、806でアクセシビリティの固定例。[項目別台帳](coverage-git-interaction.md)と[詳細](git-interaction.md) |
 | GIT | GIT-Image | Image Processing | 163 | 依頼139〜141・144で膨張・収縮、高域フィルタ、連結成分の固定例。他は未対応。[詳細](git-image.md) |
-| GIT | GIT-Physical | Tangible/Physical Computing | 164 | 依頼219〜222で光の読み取り、サーボの目標・移動、閾値・量子化・標本化の固定例。実際の回路や製作等は未対応。[詳細](git-physical.md) |
+| GIT | GIT-Physical | Tangible/Physical Computing | 164 | 依頼219〜222で光の読み取り、サーボの目標・移動、閾値・量子化・標本化の固定例。実際の回路や製作等は未対応。[項目別台帳](coverage-git-physical.md)と[詳細](git-physical.md) |
 | GIT | GIT-SEP | Society, Ethics, and the Profession | 165 | 依頼352で室内情報の収集を比較。他は未対応。[詳細](git-society.md) |
 | HCI | HCI-User | Understanding the User: Individual goals and interactions with others | 174 | 依頼188で架空の旅人・維持担当の声と案内所の固定模型。実際の利用者調査や協働は未対応。[詳細](hci-user.md) |
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 依頼63・289で関係者と選択画面の固定例。他は未対応。[詳細](hci-accountability.md) |
@@ -168,7 +168,7 @@
 | SPD | SPD-Robot | Robot Platforms | 304 | 依頼28の観測・移動、71の地形・充電、690のトピック・受信待ち、691の機体・観測器選択の固定模型。実機や ROS の実行は未対応。[詳細](spd-robot.md) |
 | SPD | SPD-Embedded | Embedded Platforms | 305 | 依頼219〜222のセンサーと駆動、133・134・420の期限・優先度・周期、395の安全性などの固定模型。実機や一般的な設計・検証は未対応。[詳細](spd-embedded.md) |
 | SPD | SPD-Game | Game Platforms | 306 | 依頼94で一次元の衝突・トンネリング、799で描画と固定時間の更新、800で区画による描画候補の固定例。他は未対応。[項目別台帳](coverage-spd-game.md)と[詳細](spd-game.md) |
-| SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノートの固定例。他は未対応。[詳細](spd-interactive.md) |
+| SPD | SPD-Interactive | Interactive Computing Platforms | 308 | 依頼357で対話型ノートの固定例。他は未対応。[項目別台帳](coverage-spd-interactive.md)と[詳細](spd-interactive.md) |
 | SPD | SPD-SEP/Mobile | Mobile の社会・倫理（作業用名） | 309 | 依頼393で位置取得と手動の代替、394で操作対象の大きさ・間隔を比較。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Web | Web の社会・倫理（作業用名） | 310 | 原典にある mobile のプライバシーに関し依頼393、通知と中断の選択に依頼398の固定例。他は未対応。[詳細](spd-sep.md) |
 | SPD | SPD-SEP/Game | Game の社会・倫理（作業用名） | 310 | 依頼117で字幕、398で休憩と通知、399で素材の利用条件、806でゲームの門の手がかりと操作方式の固定例。他は未対応。[詳細](spd-sep.md) |
