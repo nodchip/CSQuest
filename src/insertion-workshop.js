@@ -1,9 +1,9 @@
 export const insertionWorkshopLevel={id:'archive-insertion-workshop',number:'894',kind:'insertion-workshop',name:'順にしまう魔石の棚',tag:'挿入ソートと安定性',title:'整った棚を一つずつ広げよう',story:'書庫の魔石を先頭から整えます。新しい魔石を左へ動かし、同じ値の順番も守りましょう。'};
-const labels=['A','B','C','D'];
-export function insertionValidInput(input){return Array.isArray(input)&&input.length===4&&input.every(v=>Number.isInteger(v)&&v>=1&&v<=3);}
+const labels=['A','B','C','D','E','F','G','H'];
+export function insertionValidInput(input){return Array.isArray(input)&&input.length>=2&&input.length<=8&&input.every(v=>Number.isInteger(v)&&v>=1&&v<=5);}
 export function insertionStart(input){if(!insertionValidInput(input))throw new RangeError('魔石の値が不正です。');return {items:input.map((value,i)=>({id:labels[i],value})),i:1,j:1,comparisons:0,swaps:0,done:false};}
 export function insertionAction(state,action){if(state.done||!['swap','settle'].includes(action))throw new RangeError('操作できません。');const {items,i,j}=state,needSwap=j>0&&items[j].value<items[j-1].value;if((action==='swap')!==needSwap)throw new RangeError(needSwap?'左の魔石より小さいので、入れ替えます。':'左端、または左が同じ値以下なので、この位置に収めます。');const copy=items.map(x=>({...x})),comparisons=state.comparisons+(j>0?1:0);if(needSwap){[copy[j-1],copy[j]]=[copy[j],copy[j-1]];return {...state,items:copy,j:j-1,comparisons,swaps:state.swaps+1};}const next=i+1;return {...state,items:copy,i:next,j:next,comparisons,done:next===copy.length};}
-export function insertionReplay(input,history){if(!Array.isArray(history)||history.length>16)throw new RangeError('記録が不正です。');let s=insertionStart(input);for(const a of history)s=insertionAction(s,a);return s;}
+export function insertionReplay(input,history){if(!insertionValidInput(input)||!Array.isArray(history)||history.length>(input.length*(input.length-1))/2+input.length-1)throw new RangeError('記録が不正です。');let s=insertionStart(input);for(const a of history)s=insertionAction(s,a);return s;}
 export function insertionCreate(){return {input:[3,2,2,1],history:[],reflection:null};}
 export function insertionComplete(q){const state=insertionReplay(q.input,q.history);return state.done&&state.swaps>0&&new Set(q.input).size<q.input.length&&q.reflection==='stable';}
 export function insertionRestore(q){if(!q||!insertionValidInput(q.input)||![null,'stable','reverse','always'].includes(q.reflection))throw new RangeError('記録が不正です。');insertionReplay(q.input,q.history);return {input:[...q.input],history:[...q.history],reflection:q.reflection};}
