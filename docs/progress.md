@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼873で CPU・GPU の別々の記録と共有記録を、仕事の順序を変えて比較。[NVIDIA の統合メモリ](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/understanding-memory.html)を参照。４条件の読み取り値、コピー・移動回数、古い記録の拒否と途中保存を検査し、`npm test` 2267件とビルドが成功。ブラウザーで誤操作、途中再開、４条件、誤答・達成、キーボードと320・390・1280px幅を確認。固定順序の１記録の模型で、遠隔アクセス、実際の転送時間や同時アクセスは未評価。
+
 - 2026-11-02: 依頼872で４人ずつの２組の SIMT 分岐を、混在と並べ替えで比較。[NVIDIA の SIMT 説明](https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html)を参照。70通りの分岐配置と各仕事の結果、保存を検査し、`npm test` 2265件とビルドが成功。ブラウザーで並べ替え、選択途中の再開、誤答・達成、キーボード、320・390・1280px幅を確認。実 GPU、再編成・メモリ費用や実行時間は未評価。
 
 - 2026-11-02: 依頼871で固定立方体の頂点・索引・シェーダーを使う実 WebGL 描画を追加し、一面・立方体・回転・深度判定を比較。[MDN の WebGL 立体描画](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Creating_3D_objects_using_WebGL)を参照。頂点・索引と保存を検査し、`npm test` 2263件とビルドが成功。ブラウザーで描画結果の画素、回転、深度の有無、途中再開、誤答・達成、キーボード、320・390・1280px幅、WebGL 不可時に達成が記録されないことを確認。自由なコード・モデル作成、透過、ライティングや実性能は未評価。
