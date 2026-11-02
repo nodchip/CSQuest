@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼915で赤黒木の一直線・折れ曲がり・赤いおじの挿入修復を操作。[MIT の赤黒木の講義](https://ocw.mit.edu/courses/6-046j-introduction-to-algorithms-sma-5503-fall-2005/resources/lecture-10-red-black-trees-rotations-insertions-deletions/)を参照。各段階の探索順序、最終的な色・枝・黒の数と保存再生を検査し、`npm test` 2362件とビルドが成功。ブラウザーで誤答・再挑戦、途中再開、３例、振り返り・達成、キーボードと320・390・1280px幅を確認。一般の挿入・削除・高さの証明は未評価。既存の依頼894の挿入ソートとテストも対応表に反映。
+
 - 2026-11-03: 依頼914で Horspool 法の右からの比較と送り幅を操作し、右端以外の不一致と重なる一致を含む３例を調べる。[Rose-Hulman の Horspool 法](https://www.rose-hulman.edu/class/cs/csse473/201540/Slides/Day24-StringSearch-Horspool.pdf)を参照。送り表、各手順と一致位置を単純な全位置走査と照合し、`npm test` 2359件とビルドが成功。ブラウザーで誤答・再挑戦、途中再開、３例、振り返り・達成、キーボードと320・390・1280px幅を確認。完全な Boyer–Moore 法、任意の文字列や計算量の証明は未評価。
 
 - 2026-11-02: 依頼913で３頂点の表に中継地点を順に加え、負の辺と負の閉路を比較。[Princeton の Floyd–Warshall](https://algs4.cs.princeton.edu/code/javadoc/edu/princeton/cs/algs4/FloydWarshall.html)を参照。各段階の行列と負の対角値、閉路のない例の最短距離を単純路の列挙と照合し、`npm test` 2355件とビルドが成功。ブラウザーで誤答・再挑戦、途中再開、２地図、負の閉路の表示、振り返り・達成、キーボードと320・390・1280px幅を確認。一般の経路復元や負の閉路の影響を受ける全組の分類は未評価。
