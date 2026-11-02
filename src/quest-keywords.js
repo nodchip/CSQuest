@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-io-notifications':['多重化','select','readiness','非同期','completion','I/O','通知'],
  'forest-channel-pressure':['バッファ','通信路','backpressure','待機','破棄','blocking queue'],
  'forest-queue-simulation':['待ち行列','シミュレーション','疑似乱数','指数分布','M/M/1','観測'],
  'forest-queue-observation':['待ち行列','Little','有限時間','滞在時間','通信','観測'],
