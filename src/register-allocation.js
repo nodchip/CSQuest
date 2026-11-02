@@ -15,6 +15,15 @@ export function allocationCheck(id,placements){
 }
 export function allocationCreate(){return {selected:'chain',trials:Object.fromEntries(Object.entries(allocationCases).map(([id,c])=>[id,{placements:[null,null,null,null],verified:false,pairs:[],graphVerified:false,liveRows:c.steps.map(()=>[]),liveVerified:false}])),answer:null};}
 export function allocationLiveToggle(q,row,value){const t=q.trials[q.selected];if(!Number.isInteger(row)||row<0||row>=t.liveRows.length||!Number.isInteger(value)||value<0||value>3)throw new RangeError('値が不正です。');const r=t.liveRows[row];t.liveRows[row]=r.includes(value)?r.filter(n=>n!==value):[...r,value];t.liveVerified=false;t.graphVerified=false;}
+export function allocationLiveUpdate(q,row){
+ const c=allocationCases[q.selected],t=q.trials[q.selected];
+ if(!c||!t||!Number.isInteger(row)||row<0||row>=c.steps.length)throw new RangeError('仕事が不正です。');
+ const step=c.steps[row],after=[...new Set(step.next.flatMap(i=>t.liveRows[i]))].sort((a,b)=>a-b);
+ const next=[...new Set([...step.use,...after.filter(v=>!step.def.includes(v))])].sort((a,b)=>a-b),before=[...t.liveRows[row]].sort((a,b)=>a-b);
+ const changed=before.length!==next.length||before.some((v,i)=>v!==next[i]);
+ if(changed){t.liveRows[row]=next;t.liveVerified=false;t.graphVerified=false;}
+ return {before,after,next,changed};
+}
 export function allocationLiveVerify(q){const t=q.trials[q.selected];t.liveVerified=allocationLiveCheck(q.selected,t.liveRows);return t.liveVerified;}
 export function allocationTogglePair(q,index){if(!Number.isInteger(index)||index<0||index>=allocationPairs.length)throw new RangeError('組が不正です。');const t=q.trials[q.selected];t.pairs=t.pairs.includes(index)?t.pairs.filter(i=>i!==index):[...t.pairs,index];t.graphVerified=false;}
 export function allocationGraphCheck(id,pairs){if(!Object.hasOwn(allocationCases,id)||!Array.isArray(pairs)||pairs.some(i=>!Number.isInteger(i)||i<0||i>=allocationPairs.length)||new Set(pairs).size!==pairs.length)throw new RangeError('組の記録が不正です。');const live=allocationCases[id].live;return allocationPairs.every(([a,b],i)=>pairs.includes(i)===live.some(set=>set.includes(a)&&set.includes(b)));}
