@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼885で光源から６粒を追って５件を記録し、観察点と円の半径を変えて量／面積を比較。[Jensen の Photon Maps](https://graphics.stanford.edu/~henrik/papers/ewr7/ewr7.html)を参照。円周上を含む４検索・吸収・面積と途中保存を検査し、`npm test` 2291件とビルドが成功。ブラウザーで早い検索、途中再開、４比較、図、誤答・達成、キーボードと320・390・1280px幅を確認。固定された平面と粒の模型で、実際の光子生成・材質・放射輝度や画像は未評価。
+
 - 2026-11-02: 依頼884で２距離の灯り、２つの映し板位置と開口を選び、薄いレンズの３光線を図示。[Physically Based Rendering の薄いレンズ](https://www.pbr-book.org/4ed/Cameras_and_Film/Projective_Camera_Models)と[OpenStax のレンズ式](https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses)を参照。８条件の光線と像位置・開口による広がり、途中保存を検査し、`npm test` 2289件とビルドが成功。ブラウザーで５比較、光線図、再開、誤答・達成、キーボードと320・390・1280px幅を確認。近軸３光線の模型で、連続開口、回折・収差・光量や実画像は未評価。
 
 - 2026-11-02: 依頼883で表面反射と、石の内部を散乱・吸収して別の位置へ出る経路を比較。[Physically Based Rendering の表面下散乱](https://pbr-book.org/4ed/Radiometry%2C_Spectra%2C_and_Color/Surface_Reflection)を参照。等確率の125通りで同位置28・別位置12・吸収50・未確定35を検査し、途中保存、`npm test` 2287件とビルドが成功。ブラウザーで表面と４結果、途中再開、誤答・達成、キーボードと320・390・1280px幅を確認。固定格子・最大３回の模型で、実材料の連続経路、色・屈折や画像は未評価。
