@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼832で鍵を持ったまま待つ仮想の失敗例と、条件待ち時の鍵の解放・通知後の再取得・条件の再確認を比較。[Oracle の Guarded Blocks](https://docs.oracle.com/javase/tutorial/essential/concurrency/guardmeth.html) を参照。`npm test` 2169件成功。ブラウザーで誤操作、途中再開、通知側の鍵保持、キーボード操作、２方式の達成と320、390、1280px幅を確認。２人と固定順序の模型で、実言語や一般の公平性は未評価。
+
 - 2026-11-02: 依頼831で異なるバイト順の工房が２つの数をそのまま、または共通形式で交換する４通りを比較。[Python のバイト順の説明](https://docs.python.org/3/library/struct.html#byte-order-size-and-alignment)を参照し、JavaScript DataView と Python struct で結果を照合。`npm test` 2167件成功。ブラウザーで誤答、途中再開、キーボード操作、４通りの達成と320、390、1280px幅を確認。符号なし16ビットの固定模型で、実言語間の呼出しや複合データは未評価。
 
 - 2026-11-02: CS2023 印字 pp.141–142、144–145、147 と既存教材を照合し、FPL-Semantics・Constructs・Pragmatics・SEP の項目別台帳を追加。778・780 の多重継承とミックスイン、308・791 のスコープと名前の模型を既存記録にも反映した。実言語や自由な作成・説明の未評価を明記。新形式の台帳は166単位中130単位であり、教材完成率ではない。
