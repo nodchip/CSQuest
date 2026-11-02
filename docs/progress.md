@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼879で一枚の製品と、検査済み２部品の横並び・積層を比較。[NIST のチップレットと３次元構造](https://www.nist.gov/news-events/news/2026/01/nanoscale-mechanical-characterization-hybrid-bonding-ready-structures)および[材料・放熱](https://www.nist.gov/programs-projects/accurate-cure-kinetics-stress-mechanical-properties-and-warpage)を参照。３方式の架空の良品費用と組立て失敗を検査し、`npm test` 2279件とビルドが成功。ブラウザーで途中再開、３比較、誤答・達成、キーボードと320・390・1280px幅を確認。完全な事前検査と一定の良品率を仮定した模型で、実製品の費用・接続・温度・性能は未評価。
+
 - 2026-11-02: 依頼878で４刻みの合図を選び、減衰と閾値、発火後のリセットを比較。[EPFL の積分発火模型](https://neuronaldynamics.epfl.ch/online/Ch1.S3.html)と[Intel の Loihi 2](https://download.intel.com/newsroom/2021/new-technologies/neuromorphic-computing-loihi-2-brief.pdf)を参照。16通り×２方式を独立した固定小数点計算で照合し、途中保存、`npm test` 2277件とビルドが成功。ブラウザーで条件変更・途中再開・４比較・誤答・達成、キーボードと320・390・1280px幅を確認。単一素子・離散時間の模型で、実チップ、学習や生物の神経全体は未評価。
 
 - 2026-11-02: 依頼877で川辺と遠方の判断を、通信あり・なしの４条件で比較。[NIST のエッジ計算](https://www.nist.gov/publications/task-management-cooperative-mobile-edge-computing)と[プライバシー](https://www.nist.gov/publications/analyzing-data-privacy-edge-systems)を参照。架空の期限・３拍と８拍・通信不能、手順と保存を検査し、`npm test` 2275件とビルドが成功。ブラウザーで誤操作、途中再開、４条件、誤答・達成、キーボードと320・390・1280px幅を確認。固定された時間と正常な装置の模型で、実機の安全性・誤差・負荷や情報保護は未評価。
