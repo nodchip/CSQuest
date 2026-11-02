@@ -94,14 +94,14 @@
 | MSF | MSF-Statistics | Statistics | 190 | 依頼47・84・112〜115で代表値、条件別集計、度数と回帰、431で二値観測の最尤推定、432で正規誤差の最尤推定と最小二乗、433で有限標本、434で既知の母標準偏差を使う正規母集団の信頼区間、435で最大事後推定と正則化、436で厳密な二項検定の固定例。他は未対応。[詳細](msf-statistics.md) |
 | MSF | MSF-Linear | Linear Algebra | 191 | 依頼50・86・142・296〜305で内積、行基本変形、線形結合、基底と座標、固有方向、対角化、射影、直交化、主成分分析、PageRank、SVDと２次ベジェ曲線の固定例。他は未対応。[詳細](msf-linear.md) |
 | MSF | MSF-Calculus | Calculus | 192 | 依頼473〜479で導関数、定積分、オイラー法、テイラー近似、勾配、極座標と制約付き最適化の固定例。一般の計算・証明は未対応。[詳細](msf-calculus.md) |
-| NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送、556でハブ・スイッチ・ルータ、557で ARP による次の受け手の解決、558で IP の砂時計型の固定例。他は未対応。[詳細](nc-fundamentals.md) |
+| NC | NC-Fundamentals | Fundamentals | 198 | 依頼78で階層とアドレス、271・272で待ち行列と蓄積転送、556〜558で転送・ARP・IP の砂時計型の固定例。[項目別台帳](coverage-nc-fundamentals.md)と[詳細](nc-fundamentals.md) |
 | NC | NC-Applications | Networked Applications | 199 | 依頼62で POST の再送、421で DNS、425で HTTPS の証明確認と GET、667で中央と仲間からの受信・複製、668で用途と転送方式、669で URI、670で条件付き GET を比較する固定模型。他は未対応。[詳細](nc-applications.md) |
 | NC | NC-Reliability | Reliability Support | 199 | 依頼10・649で消失・再送、422で送信窓・累積確認、423で混雑と AIMD、424で TCP 接続開始、798で受信箱の容量に合わせる固定例。他は未対応。[詳細](nc-reliability.md) |
 | NC | NC-Routing | Routing and Forwarding | 199 | 依頼480〜484で集約、距離ベクトル、リンクステート、AS 経路と IP 版の固定例。実網の経路制御は未対応。[詳細](nc-routing.md) |
-| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調、570で冗長経路とループ、571で STP の根とポート役割の固定例。実際の媒体アクセス制御などは未対応。[詳細](nc-single-hop.md) |
-| NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279・280で差し替え、認証、分離、門番と警報の固定例。他の攻撃・対策は未対応。[詳細](nc-security.md) |
-| NC | NC-Mobility | Mobility | 201 | 依頼316〜318で保存・中継、無線 LAN の再接続とセルラー登録区域の固定例。他は未対応。[詳細](nc-mobility.md) |
-| NC | NC-Emerging | Emerging Topics | 201 | 依頼319〜322で SDN、NAT、負荷分散と CDN の固定模型。他は未対応。[詳細](nc-emerging.md) |
+| NC | NC-SingleHop | Single Hop Communication | 200 | 依頼273〜278でスイッチ、VLAN、衝突、フレーム化と変調、570・571でループと STP の固定例。[項目別台帳](coverage-nc-single-hop.md)と[詳細](nc-single-hop.md) |
+| NC | NC-Security | Network Security | 200 | 依頼261〜263・274・279・280で差し替え、認証、分離、門番と警報の固定例。[項目別台帳](coverage-nc-security.md)と[詳細](nc-security.md) |
+| NC | NC-Mobility | Mobility | 201 | 依頼316〜318で保存・中継、無線 LAN の再接続とセルラー登録区域の固定例。[項目別台帳](coverage-nc-mobility.md)と[詳細](nc-mobility.md) |
+| NC | NC-Emerging | Emerging Topics | 201 | 依頼319〜322で SDN、NAT、負荷分散と CDN、678で量子テレポーテーションの固定例。[項目別台帳](coverage-nc-emerging.md)と[詳細](nc-emerging.md) |
 | OS | OS-Purpose | Role and Purpose of Operating Systems | 206 | 依頼176で切替え、依頼381で保護境界、依頼382で記録の仲介・同期・権限、依頼383で起動検証の固定例。OS の機能の全体像と体系的比較は未対応。依頼673で進化と旧窓口の互換性、674で装置仲介を比較。[詳細](os-purpose.md) |
 | OS | OS-Principles | Principles of Operating System | 207 | 依頼54で保護とシステムコール、依頼381で保護境界と切替え、依頼384でファイル操作の引数と返り値の固定例。他は未対応。依頼671で受付と依頼者の権限、672でタイマーと特権を比較。[詳細](os-principles.md) |
 | OS | OS-Concurrency | Concurrency | 208 | 依頼15・16・30・177〜179で競合・排他・待機・記録共有、567で原子的なスピンロック、568で再入と作業状態の固定例。実 OS の同期は未対応。[詳細](os-concurrency.md) |
