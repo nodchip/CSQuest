@@ -1,0 +1,10 @@
+export const halftoneLevel={id:'ruin-halftone-press',number:'954',kind:'halftone-press',name:'点で描く伝言',tag:'印刷とディザ',title:'濃淡の伝言を刷る',story:'書庫の印刷機は、白い紙に黒点を置くことだけができます。点を並べて濃淡を伝えましょう。'};
+// Rank order for an illustrative 2x2 dispersed-dot threshold screen.
+export const halftoneRanks=[0,2,3,1];
+export const halftoneLevels=[0,1,2,3,4];
+export function halftonePattern(level){if(!halftoneLevels.includes(level))throw new RangeError('濃さが不正です。');return halftoneRanks.map(rank=>rank<level);}
+export function halftoneCheckPattern(level,cells){if(!Array.isArray(cells)||cells.length!==4||cells.some(v=>typeof v!=='boolean'))throw new RangeError('点の記録が不正です。');const expected=halftonePattern(level),count=cells.filter(Boolean).length;return {count,correct:cells.every((v,i)=>v===expected[i]),countCorrect:count===level};}
+export function halftoneCreate(){return {level:2,cells:[false,false,false,false],completed:[],last:null,reflection:null};}
+export function halftoneInspect(q){const result=halftoneCheckPattern(q.level,q.cells);q.last={level:q.level,cells:[...q.cells],...result};if(result.correct&&!q.completed.includes(q.level))q.completed.push(q.level);}
+export function halftoneComplete(q){return halftoneLevels.every(n=>q.completed.includes(n))&&q.reflection==='area';}
+export function halftoneRestore(q){if(!q||!halftoneLevels.includes(q.level)||!Array.isArray(q.completed)||new Set(q.completed).size!==q.completed.length||q.completed.some(n=>!halftoneLevels.includes(n))||![null,'area','ink','guarantee'].includes(q.reflection))throw new RangeError('記録が不正です。');halftoneCheckPattern(q.level,q.cells);let last=null;if(q.last!==null){const l=q.last;if(!l)throw new RangeError('記録が不正です。');const result=halftoneCheckPattern(l.level,l.cells);if(l.count!==result.count||l.correct!==result.correct||l.countCorrect!==result.countCorrect)throw new RangeError('記録が不正です。');last={level:l.level,cells:[...l.cells],...result};}return {level:q.level,cells:[...q.cells],completed:[...q.completed],last,reflection:q.reflection};}
