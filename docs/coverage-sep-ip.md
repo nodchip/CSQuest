@@ -16,7 +16,7 @@
 | 8 | KA Core | 著作権の限界 | 部分 | 957で米国フェアユースの４要因と判決例を整理。first sale、一般の事案や法域ごとの条件は未評価。 |
 | 9 | KA Core | 著作権執行に関わる法律・条約 | 未照合 | 関連体験は未確認。 |
 | 10 | KA Core | 海賊版・DRM 等 | 未照合 | 関連体験は未確認。 |
-| 11 | KA Core | オープンソース運動の道徳・法的基礎 | 未照合 | ライセンス比較は運動の基礎を評価しない。 |
+| 11 | KA Core | オープンソース運動の道徳・法的基礎 | 部分 | 959で利用・改変・再配布の自由と架空の条件、商用制限・表示・同条件を比較。運動の歴史、倫理的対立や実ライセンスの全条項は未評価。 |
 | 12 | KA Core | 他者のデータを用いるシステム | 未照合 | 関連体験を原典の範囲と照合していない。 |
 
 ## 例示学習成果
@@ -36,7 +36,7 @@
 | 11 | KA Core | 権利の保護と義務を比較 | 部分 | 956で４種の対象と秘密の独立発見を比較。各権利の義務・範囲・期間の体系的比較は未評価。 |
 | 12 | KA Core | 法的保護の根拠を説明 | 未照合 | 法域を指定した説明は未確認。 |
 | 13 | KA Core | fair use と first sale による分析 | 部分 | 957で米国フェアユースの要因を整理。first sale と個別事案の法的分析は未評価。 |
-| 14 | KA Core | オープンソース運動の目的と他分野への影響 | 未照合 | 関連体験は未確認。 |
+| 14 | KA Core | オープンソース運動の目的と他分野への影響 | 部分 | 959で自由ソフトウェアの４つの自由とオープンソース定義の一部を比較。歴史・他分野への影響や自由な説明は未評価。 |
 | 15 | KA Core | 海賊版の国際性を要約 | 未照合 | 関連体験は未確認。 |
 | 16 | KA Core | DRM を複数の立場から批評 | 未照合 | 関連体験は未確認。 |
 | 17 | KA Core | 回避禁止法を議論 | 未照合 | 法域を指定した教材は未確認。 |
@@ -48,3 +48,5 @@
 依頼957は [米国著作権局のフェアユース解説](https://www.copyright.gov/fair-use/)、[割合に関する FAQ](https://www.copyright.gov/help/faq/faq-fairuse.html)と[米国最高裁 Google 対 Oracle 判決](https://www.supremecourt.gov/opinions/20pdf/18-956diff_n6p1.pdf)を参照。８つの架空の事実を主な４要因へ分類し、判決の限定された結論と割合・出典表示だけでは決まらないことを確認する。`tests/fair-use-ledger.test.js` は各札・選択と保存・達成条件を検査。実際の事実は複数要因に関連し得て、個別事案の可否は判定しない。
 
 依頼958は [西オーストラリア大学の文章一致の説明](https://guides.library.uwa.edu.au/textmatching)、[トゥルク大学のレポート解釈](https://utuguides.fi/Turnitin_en/interpreting_report)、[英国 ICO のデータ保護原則](https://ico.org.uk/for-organisations/advice-for-small-organisations/getting-started-with-gdpr/data-protection-principles-definitions-and-key-terms)を参考に、同位置の単語一致という架空の規則と４例の事情を比較する。`tests/similarity-review.test.js` は一致数、閾値、確認の順序、保存と達成条件を検査する。実検出器の性能や不正・法令違反の判定はしない。
+
+依頼959は [OSI の定義](https://opensource.org/osd)と [GNU の４つの自由](https://www.gnu.org/)を参照し、４種類の架空条件で利用・改変・配布と表示、商用、同条件を比較する。`tests/open-workshop.test.js` は４条件×７行動と保存・達成条件を検査。実ライセンスの全条項・適合性や一般の法的判断は扱わない。
