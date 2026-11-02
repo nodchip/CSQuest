@@ -54,7 +54,7 @@
 | FPL | FPL-Logic | Logic Programming | 133 | 146〜150で単一化・事実・規則・探索・再帰・カット、776で待機と規則に基づく未知値の探索、777で部分計算の記録と再利用を扱う。[項目別台帳](coverage-fpl-logic.md)と[詳細](fpl-logic.md)を参照。 |
 | FPL | FPL-Scripting | Shell Scripting | 133 | 依頼151〜154で処理の受け渡し、失敗、終了状態、環境変数、正規表現の固定例。他は未対応。[詳細](fpl-scripting.md) |
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
-| FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。他は未対応。[詳細](fpl-parallel.md) |
+| FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。[項目別台帳](coverage-fpl-parallel.md)と[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。他は未対応。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
 | FPL | FPL-Types | Type Systems | 136 | 依頼24・772で型検査と正しさ、764・765で型推論、766・767で進行と保存、768で命題と型、769で長さに依存する型を扱う。[項目別台帳](coverage-fpl-types.md)と[詳細](fpl-types.md)を参照。 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、201〜203の回収・別名、782の直接・間接・添字アクセス、783の制御フローから分岐・ジャンプ、784の末尾呼出しと枠、785の再帰とメモリ領域、786の棚再利用と世代付きキーの固定例。[項目別台帳](coverage-fpl-systems.md)と[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
@@ -68,8 +68,8 @@
 | FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 依頼325〜327で遅延評価、無限列と引数の共有の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-constructs) |
 | FPL | FPL-Pragmatics | Language Pragmatics | 144 | 依頼325〜327で遅延評価と先行評価の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-pragmatics) |
 | FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281〜284で操作的意味論・記号実行・ラムダ簡約・帰納法、766〜770で型安全性・命題と型・依存型・パラメトリシティ、771で３種の意味論を固定例で扱う。[項目別台帳](coverage-fpl-formalism.md)と[詳細](fpl-formalism.md)を参照。 |
-| FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 依頼242〜244・282・284・349で固定例の契約、模型探索、記号経路と入力変異。他は未対応。[詳細](fpl-methodologies.md) |
-| FPL | FPL-Design | Design Principles of Programming Languages | 146 | 依頼355で値と構成の組み合わせを比較。他は未対応。[詳細](fpl-design.md) |
+| FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 依頼242〜244・282・284・349で固定例の契約、模型探索、記号経路と入力変異、769で依存型を操作。[項目別台帳](coverage-fpl-methodologies.md)と[詳細](fpl-methodologies.md) |
+| FPL | FPL-Design | Design Principles of Programming Languages | 146 | 依頼355で値と構成の組み合わせを比較。[項目別台帳](coverage-fpl-design.md)と[詳細](fpl-design.md) |
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 依頼93・350で UTF-8 と言語・操作・日付の固定例。他は未対応。[詳細](fpl-society.md) |
 | GIT | GIT-Fundamentals | Fundamental Concepts | 155 | 依頼83で三角形の標本、依頼221・222で光の値の量子化と時間方向の読み取りの固定例。他は未対応。[詳細](git-fundamentals.md) |
 | GIT | GIT-Visualization | Visualization | 156 | 依頼111〜113で棒・点、軸範囲、条件別集計とヒストグラムの固定例。他は未対応。[詳細](git-visualization.md) |
