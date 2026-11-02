@@ -1,0 +1,9 @@
+export const shadeBudgetLevel={id:'ruin-shading-budget',number:'890',kind:'shading-budget',name:'光の工房の仕事量',tag:'描画の帯域と計算量',title:'限られた力で絵を届けよう',story:'遺跡の水晶に毎秒60枚の絵を届けます。色の記録を読む回数と絵の大きさを変え、工房の仕事量を比べましょう。'};
+export const shadeSizes={large:{label:'大きい絵：800 × 600',pixels:480000},small:{label:'小さい絵：400 × 300',pixels:120000}};
+export const shadeSamples={one:{label:'色の記録を１回読む',count:1},four:{label:'色の記録を４回読んで平均する',count:4}};
+export function shadeBudget(size,samples){if(!Object.hasOwn(shadeSizes,size)||!Object.hasOwn(shadeSamples,samples))throw new RangeError('条件が不正です。');const pixels=shadeSizes[size].pixels,n=shadeSamples[samples].count,readPerPixel=4*n,writePerPixel=4,arithmetic=n===1?8:20;return {pixels,readPerPixel,writePerPixel,arithmetic,readMB:pixels*readPerPixel*60/1e6,writeMB:pixels*writePerPixel*60/1e6,bandwidthMB:pixels*(readPerPixel+writePerPixel)*60/1e6,operationsM:pixels*arithmetic*60/1e6};}
+export function shadeCreate(){return {size:'large',samples:'one',seen:[],last:null,choice:null,reason:null};}
+const combinations=['large:one','large:four','small:one','small:four'];
+export function shadeInspect(q){const key=`${q.size}:${q.samples}`;if(!combinations.includes(key))throw new RangeError('条件が不正です。');if(!q.seen.includes(key))q.seen.push(key);q.last=key;}
+export function shadeComplete(q){return combinations.every(k=>q.seen.includes(k))&&q.choice==='small:four'&&q.reason==='both';}
+export function shadeRestore(q){if(!q||!Object.hasOwn(shadeSizes,q.size)||!Object.hasOwn(shadeSamples,q.samples)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!combinations.includes(k))||!(q.last===null||q.seen.includes(q.last))||![null,...combinations].includes(q.choice)||![null,'both','bandwidth','guarantee'].includes(q.reason))throw new RangeError('記録が不正です。');return {size:q.size,samples:q.samples,seen:[...q.seen],last:q.last,choice:q.choice,reason:q.reason};}
