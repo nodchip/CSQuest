@@ -1,5 +1,8 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼813で画像の最下位ビットに印を入れ、変更・２×２ DCT 量子化・別画像への同じ印を比較。[KIT の LSB watermarking](https://ies.iar.kit.edu/ies/download/lehre/idc/IDC-13-Dirty-Paper-Codes.pdf) と [Purdue の透かし](https://engineering.purdue.edu/~ace/water2/digwmk.html) を参照。全256画素値と両ビット、４場面、編集後の再検証と復元を検査し、`npm test` 2112件成功。配信用ビルドで誤答・途中再開・４場面・達成・キーボードと320・390・1280px幅を確認。鍵なし固定例で、一般の透かしや実 JPEG、真正性の証明は未評価。
+
+
 - 2026-11-02: 依頼812で３組の量子化済み係数を一様成分の差分と０の連長で送り、受け手で復元。[Cornell: JPEG の差分と連長](https://www.cs.cornell.edu/zeno/papers/cdp/cdp_rtij96.pdf) を参照。末尾０の12操作順、誤差分・不正連長・途中復元と達成を検査し、`npm test` 2109件成功。配信用ビルドで誤操作・再挑戦・再開・受信復元・キーボードと320・390・1280px幅を確認。２×２の固定例で、実 JPEG のビット列や圧縮率は未評価。
 
 
