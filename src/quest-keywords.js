@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-ot-posterior':['秘匿転送','条件付き確率','ベイズ','事前確率','posterior','bayes'],
  'castle-oblivious-transfer':['秘匿転送','oblivious transfer','OT','RSA','暗号','秘密計算'],
  'castle-log-policy':['監視','ログ','保存期間','最小化','職員','プライバシー','ログイン'],
  'castle-security-policy':['方針','パスワード','合言葉','従業員','監視','プライバシー','NIST','ICO'],
