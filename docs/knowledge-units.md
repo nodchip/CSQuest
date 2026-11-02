@@ -87,7 +87,7 @@
 | HCI | HCI-Accountability | Accountability and Responsibility in Design | 176 | 依頼63・289で関係者と選択画面、824で入力方法の情報露出の固定例。[項目別台帳](coverage-hci-accountability.md)と[詳細](hci-accountability.md) |
 | HCI | HCI-Accessibility | Accessibility and Inclusive Design | 177 | 依頼22で三つの利用条件、575で確認窓のフォーカスと操作名、793で参加型設計と評価の固定例。[項目別台帳](coverage-hci-accessibility.md)と[詳細](hci-accessibility.md) |
 | HCI | HCI-Evaluation | Evaluating the Design | 178 | 依頼60・529〜536で架空の観察、調査計画と分析の固定例。[項目別台帳](coverage-hci-evaluation.md)と[詳細](hci-evaluation.md) |
-| HCI | HCI-Design | System Design | 179 | 依頼287・288で反復設計と同期表示、427で利用条件、823で発散・収束、824で入力と AR のプライバシー、825で近接とラベル対応の固定例。[項目別台帳](coverage-hci-design.md)と[詳細](hci-design.md) |
+| HCI | HCI-Design | System Design | 179 | 依頼287・288で反復設計と同期表示、823で発散・収束、824で入力と AR のプライバシー、825で近接とラベル、826で試作の目的と粒度の固定例。[項目別台帳](coverage-hci-design.md)と[詳細](hci-design.md) |
 | HCI | HCI-SEP | Society, Ethics, and the Profession | 181 | 依頼359・823で架空の参加者と試作品、824で AR の情報露出を比較。[項目別台帳](coverage-hci-sep.md)と[詳細](hci-society.md) |
 | MSF | MSF-Discrete | Discrete Mathematics | 187 | 一部試作：有限集合、命題推論・反例、依頼95の帰納法、依頼400の鳩の巣原理、401・402の関係と関数、403の可算と対角線論法、404の順列・組合せ、405の合同算術、406の論理標準形、407の強い帰納法、408の再帰的な数え上げ、409の再帰木の固定例 |
 | MSF | MSF-Probability | Probability | 188 | 条件付き確率、期待値、依頼84で分散、428で連続一様分布、429で条件付き期待値、430で独立性の固定例。他は未対応。[詳細](msf-probability.md) |
