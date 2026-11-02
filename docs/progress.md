@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼858で [ENERGY STAR のコンピューター基準](https://www.energystar.gov/products/computers)の画面15分・本体30分の待機設定を参考に、架空の電力で連続60分と途中操作のある60分を比較。18条件を独立した分単位の計算と照合し、`npm test` 2237件とビルドが成功。ブラウザーで４条件、途中再開、誤答・達成、320・390・1280px幅を確認。実際の製品認証・電力測定、復帰時間、製造・廃棄・排出量は未評価。
+
 - 2026-11-02: 依頼857で GNU 計画・Linux 0.01・GNU 条件への移行を並べ、架空の無償更新・有償支援・専用版を利用条件に照らして比較。[GNU の歴史](https://www.gnu.org/gnu/gnu-history.html)、[Linux 0.01](https://www.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.01)、[0.12](https://www.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.12)、[OSI の定義](https://opensource.org/osd)を参照。年代の全順列と３場面の条件、保存記録を検査し、`npm test` 2235件とビルドが成功。ブラウザーで誤順序・誤選択、途中再開、各場面と振り返りの達成、320・390・1280px幅を確認。実際の製品の価格・契約や一般的な安全性の優劣は未評価。
 
 - 2026-11-02: 依頼856で２×２区画に煙を追加し、風を選んで圧力投影と濃さの半ラグランジュ移流を組み合わせる操作を追加。[Fedkiw ほかの煙のシミュレーション](https://graphics.stanford.edu/courses/cs448-01-spring/papers/fedkiw.pdf)を参考にした固定模型。625通りの風の投影、２種類の風による濃さ、履歴の再生を検査し、`npm test` 2233件とビルドが成功。ブラウザーで煙なしの操作、途中再開、風・煙の変更、投影後の差、振り返りと達成、320・390・1280px幅を確認。速度自体の移流、浮力、温度、粘性、障害物や厳密な煙量保存は未評価。
