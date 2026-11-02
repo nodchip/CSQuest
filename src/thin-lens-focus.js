@@ -1,0 +1,10 @@
+export const lensLevel={id:'ruin-thin-lens-focus',number:'884',kind:'thin-lens-focus',name:'焦点を探す水晶鏡',tag:'開口と被写界深度',title:'映し板と開口を動かそう',story:'遺跡の水晶鏡で近くと遠くの灯りを映します。映し板の位置と光を通す開口を変え、点がどのくらい広がるか調べましょう。'};
+export const lensDepths={near:{name:'近い灯り',distance:2},far:{name:'遠い灯り',distance:4}};
+export const lensScreens={near:{name:'近い灯りに合う位置',distance:2},far:{name:'遠い灯りに合う位置',distance:4/3}};
+export const lensApertures={narrow:{name:'狭い開口',points:[-0.02,0,0.02]},wide:{name:'広い開口',points:[-0.1,0,0.1]}};
+export function lensTrace(depth,screen,aperture){if(!Object.hasOwn(lensDepths,depth)||!Object.hasOwn(lensScreens,screen)||!Object.hasOwn(lensApertures,aperture))throw new RangeError('鏡の条件が不正です。');const d=lensDepths[depth].distance,s=lensScreens[screen].distance,rays=lensApertures[aperture].points.map(height=>({height,screen:height+s*(height/d-height)}));const values=rays.map(r=>r.screen);return {rays,width:Math.max(...values)-Math.min(...values),imageDistance:1/(1-1/d)};}
+export function lensKey(depth,screen,aperture){lensTrace(depth,screen,aperture);return `${depth}:${screen}:${aperture}`;}
+export function lensCreate(){return {depth:'near',screen:'near',aperture:'wide',seen:[],last:null,focus:null,limits:null};}
+export function lensInspect(q){const k=lensKey(q.depth,q.screen,q.aperture);if(!q.seen.includes(k))q.seen.push(k);q.last=k;}
+export function lensComplete(q){return ['near:near:wide','far:near:wide','far:near:narrow','far:far:wide','near:far:wide'].every(k=>q.seen.includes(k))&&q.focus==='geometry'&&q.limits==='diffraction';}
+export function lensRestore(q){if(!q||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.keys(lensDepths).some(d=>Object.keys(lensScreens).some(s=>Object.keys(lensApertures).some(a=>k===lensKey(d,s,a)))))||!(q.last===null||q.seen.includes(q.last))||![null,'geometry','same','always'].includes(q.focus)||![null,'diffraction','none','guarantee'].includes(q.limits))throw new RangeError('記録が不正です。');lensTrace(q.depth,q.screen,q.aperture);return {depth:q.depth,screen:q.screen,aperture:q.aperture,seen:[...q.seen],last:q.last,focus:q.focus,limits:q.limits};}
