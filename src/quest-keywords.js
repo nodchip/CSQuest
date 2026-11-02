@@ -23,6 +23,7 @@ export const questKeywords={
  'sign-study':['usability testing','user study','利用者評価'],
  'guild-survey-workshop':['survey','questionnaire','nonresponse','質問紙','アンケート','無回答'],
  'guild-journey-map':['persona','empathy map','journey map','ペルソナ','共感マップ','ジャーニーマップ'],
+ 'guild-clock-transition':['DST','daylight saving','夏時間','タイムゾーン','日時','時間帯'],
  'guild-locale-time':['internationalization','localization','locale','timezone','国際化','ロケール','時間帯'],
  'guild-focus-dialog':['keyboard','focus','キーボード','フォーカス'],
  'guild-sets':['set','集合','ベン図'],
