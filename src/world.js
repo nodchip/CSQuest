@@ -1,4 +1,5 @@
 import {questKeywords} from './quest-keywords.js';
+import {completionStatus} from './completion-revisions.js';
 
 // Regions describe where the existing quests take place; they do not lock access.
 export const regions=[
@@ -16,8 +17,8 @@ export function visibleQuests(levels,regionId){
   const region=findRegion(regionId);
   return levels.map((level,index)=>({level,index})).filter(({level})=>!region||region.quests.includes(level.id));
 }
-export function filterQuests(levels,regionId,query,status,completed,drafts=[]){
-  if(typeof query!=='string'||!['all','todo','done','draft'].includes(status)||!Array.isArray(completed)||!Array.isArray(drafts))throw new RangeError('検索条件が不正です。');
+export function filterQuests(levels,regionId,query,status,completed,drafts=[],completionRecords=[]){
+  if(typeof query!=='string'||!['all','todo','done','draft','review'].includes(status)||!Array.isArray(completed)||!Array.isArray(drafts)||!Array.isArray(completionRecords))throw new RangeError('検索条件が不正です。');
   const normalized=query.normalize('NFKC').toLowerCase().trim();
   const numberMatch=normalized.match(/^(?:quest\s*)?(\d+)$/u);
   const words=normalized.split(/\s+/u).filter(Boolean),done=new Set(completed),saved=new Set(drafts);
@@ -25,7 +26,7 @@ export function filterQuests(levels,regionId,query,status,completed,drafts=[]){
     const place=regions.find(region=>region.quests.includes(level.id));
     const text=[level.number,`quest ${level.number}`,level.name,level.title,level.tag,level.story,place?.name||'',...(questKeywords[level.id]||[])].join(' ').normalize('NFKC').toLowerCase();
     const matches=numberMatch?Number(level.number)===Number(numberMatch[1]):words.every(word=>text.includes(word));
-    return matches&&(status==='all'||status==='draft'&&saved.has(level.id)||status==='done'&&done.has(level.id)||status==='todo'&&!done.has(level.id));
+    return matches&&(status==='all'||status==='draft'&&saved.has(level.id)||status==='done'&&done.has(level.id)||status==='todo'&&!done.has(level.id)||status==='review'&&completionStatus(level.id,completed,completionRecords)==='unverified');
   });
 }
 
