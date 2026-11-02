@@ -15,7 +15,7 @@
 | AI | AI-SEP | Applications and Societal Impact | 75 | 依頼118で架空の公平性指標の固定例。依頼457で文章生成と根拠照合、458で乱れた像と条件付き復元、459で attention の重み付き和の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-LRR | Logical Representation and Reasoning | 76 | 依頼72・537〜540で命題、知識の種類、開世界、非単調推論、量化と推論方向の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Probability | Probabilistic Representation and Reasoning | 77 | 依頼81で３変数の有限分布から条件付き確率、562で観測による d 分離、563で共通結果を条件とする確率、564で変数消去の固定例。他は未対応。[詳細](ai-probability.md) |
-| AI | AI-Planning | Planning | 78 | 依頼85・100・541〜548で状態を含む移動、半順序、因果リンク、計画グラフ、操作の前提と効果、階層分解、観測と再計画、有限期間 MDP、複数主体の経路の固定例。他は未対応。[詳細](ai-planning.md) |
+| AI | AI-Planning | Planning | 78 | 依頼85・100・541〜548で状態を含む移動、半順序、因果リンク、計画グラフ、操作の前提と効果、階層分解、観測と再計画、有限期間 MDP、複数主体の経路、797で２回の道の変化と再計画の固定例。他は未対応。[詳細](ai-planning.md) |
 | AI | AI-Agents | Agents and Cognitive Systems | 79 | 依頼109で記憶を持つ主体、依頼379で行動価値を更新する主体の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-NLP | Natural Language Processing | 79 | 依頼119〜121で検索評価、転置索引と単語の並び、587で文法の表による認識、588で確率付き文法、589で HMM の品詞推定の固定例。他は未対応。[詳細](ai-additional.md) |
 | AI | AI-Robotics | Robotics | 80 | 依頼28・71で格子上の観測と移動、584・585で機体の大きさと向きを考慮した経路、586で不確かな観測と移動による位置推定の固定例。他は未対応。[詳細](ai-additional.md) |

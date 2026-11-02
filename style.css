@@ -183,3 +183,5 @@
 .exposure-eight { grid-template-columns:repeat(4,minmax(0,1fr)); }
 
 .bst-delete-tree ul{list-style:none;margin:8px 0;padding-left:1em;border-left:2px solid #b8cbb9}.bst-delete-tree>ul{padding-left:0;border-left:0}.bst-delete-tree li{margin:8px 0}.bst-delete-tree button{max-width:100%;white-space:normal;text-align:left;border:1px solid #a8bfaa;background:#f8faf4;color:#31523e;padding:10px;font-size:12px}
+
+.replan-map{display:block;width:100%;max-width:440px;margin:20px auto;background:#eef4e9}.replan-map line{stroke:#6c9276;stroke-width:4}.replan-map line.closed{stroke:#a34d43;stroke-dasharray:7 5}.replan-map circle.place{fill:#e4eee0;stroke:#6c9276;stroke-width:2}.replan-map circle.current{fill:#e9c874;stroke:#7b6131;stroke-width:3}.replan-map text{fill:#31523e;font-size:12px}

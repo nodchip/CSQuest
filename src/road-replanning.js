@@ -1,0 +1,13 @@
+export const replanLevel={id:'forest-road-replanning',number:'797',kind:'road-replanning',name:'変わりゆく森の道',tag:'計画・実行・再計画',title:'道を見直し灯りを届けよう',story:'ギルドから塔へ灯りを運びます。橋と森の道を巡り、変化に合わせて計画を立て直しましょう。'};
+export const replanPlaces={guild:'ギルド',bridge:'橋',forest:'森',tower:'塔'};
+const candidates={guild:[['bridge','tower'],['forest','tower']],bridge:[['tower'],['guild','forest','tower']],forest:[['tower'],['guild','bridge','tower']],tower:[]};
+export const replanRoads=[['guild','bridge'],['bridge','tower'],['guild','forest'],['forest','tower']];
+export function replanOpen(s,a,b){const connected=replanRoads.some(([x,y])=>(x===a&&y===b)||(x===b&&y===a));if(!connected)return false;if(s.epoch===1&&[a,b].includes('bridge')&&[a,b].includes('tower'))return false;if(s.epoch===2&&[a,b].includes('forest')&&[a,b].includes('tower'))return false;return true;}
+export function replanOptions(s){return candidates[s.place].map((path,index)=>({index,path:[...path],valid:path.every((to,i)=>replanOpen(s,i===0?s.place:path[i-1],to))}));}
+export function replanInitial(){return {place:'guild',epoch:0,planned:[],replanned:[false,false],steps:0,status:'traveling',history:[]};}
+export function replanExecute(s,action){if(s.status!=='traveling'||s.history.length>=80)throw new RangeError('旅を続けられません。最初からやり直しましょう');if(action==='plan:0'||action==='plan:1'){const option=replanOptions(s).find(x=>x.index===Number(action.slice(-1)));if(!option||!option.valid)throw new RangeError('閉じた道を含みます。地図を見直しましょう');s.planned=option.path;if(s.epoch>0)s.replanned[s.epoch-1]=true;}else if(action==='move'){if(s.planned.length===0)throw new RangeError('まず塔までの計画を選びましょう');const next=s.planned[0];if(!replanOpen(s,s.place,next))throw new RangeError('計画の次の道が閉じています。現在地から計画を立て直しましょう');s.place=next;s.planned.shift();s.steps++;if(s.epoch===0&&next==='bridge')s.epoch=1;else if(s.epoch===1&&next==='forest')s.epoch=2;if(next==='tower')s.status='arrived';}else throw new RangeError('操作が不正です');s.history.push(action);return s;}
+export function replanReplay(history){if(!Array.isArray(history)||history.length>80)throw new RangeError('記録が不正です');const s=replanInitial();for(const action of history)replanExecute(s,action);return s;}
+export function replanCreate(){return {history:[],answer:null};}
+export function replanStep(q,action){replanExecute(replanReplay(q.history),action);q.history.push(action);}
+export function replanComplete(q){const s=replanReplay(q.history);return s.status==='arrived'&&s.epoch===2&&s.replanned.every(Boolean)&&q.answer==='observe';}
+export function replanRestore(q){if(!q||!Array.isArray(q.history)||![null,'observe','ignore','restart'].includes(q.answer))throw new RangeError('記録が不正です');replanReplay(q.history);return {history:[...q.history],answer:q.answer};}
