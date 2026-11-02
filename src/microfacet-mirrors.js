@@ -1,0 +1,9 @@
+export const microLevel={id:'ruin-microfacet-mirrors',number:'882',kind:'microfacet-mirrors',name:'六枚の小さな鏡',tag:'微小面と反射の方向',title:'鏡の向きを比べよう',story:'祭壇の表面には六枚の小さな鏡が並んでいます。光源と見る位置を動かし、それぞれの鏡がどこへ光を返すか調べましょう。'};
+export const microSurfaces={smooth:{name:'向きがそろった面',normals:[0,0,0,0,0,0]},rough:{name:'向きが散らばった面',normals:[-30,-15,0,0,15,30]}};
+export const microAngles=[-30,0,30];
+export function microTrace(surface,light,view){if(!Object.hasOwn(microSurfaces,surface)||!microAngles.includes(light)||!microAngles.includes(view))throw new RangeError('条件が不正です。');const facets=microSurfaces[surface].normals.map((normal,i)=>({index:i,normal,out:2*normal-light,match:2*normal-light===view}));return {facets,matches:facets.filter(f=>f.match).length};}
+export function microKey(surface,light,view){microTrace(surface,light,view);return `${surface}:${light}:${view}`;}
+export function microCreate(){return {surface:'smooth',light:0,view:0,seen:[],last:null,reflection:null,limits:null};}
+export function microInspect(q){const key=microKey(q.surface,q.light,q.view);if(!q.seen.includes(key))q.seen.push(key);q.last=key;}
+export function microComplete(q){return ['smooth:0:0','smooth:0:30','rough:0:0','rough:0:30'].every(k=>q.seen.includes(k))&&q.reflection==='distribution'&&q.limits==='geometry';}
+export function microRestore(q){if(!q||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.keys(microSurfaces).some(s=>microAngles.some(l=>microAngles.some(v=>k===microKey(s,l,v)))))||!(q.last===null||q.seen.includes(q.last))||![null,'distribution','same','always'].includes(q.reflection)||![null,'geometry','complete','zero'].includes(q.limits))throw new RangeError('記録が不正です。');microTrace(q.surface,q.light,q.view);return {surface:q.surface,light:q.light,view:q.view,seen:[...q.seen],last:q.last,reflection:q.reflection,limits:q.limits};}
