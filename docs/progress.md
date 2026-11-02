@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼839で小さい LWE 公開鍵暗号模型の公開札の組合せ、復元と改変を操作。[Regev の解説](https://www.cs.columbia.edu/~tal/4261/Regev_lwesurvey.pdf)と[NIST FIPS 203](https://www.nist.gov/publications/module-lattice-based-key-encapsulation-mechanism-standard)を参照。非空７部分集合・２種類の知らせ・２条件の全28通りを別計算と照合し、`npm test` 2188件とビルド成功。ブラウザーで選択制約、誤答、途中再開、４場面の達成と320・390・1280px幅を確認。乱数・認証のない小さい模型で、ML-KEM の実装や安全性は未評価。
+
 - 2026-11-02: 依頼838で教科書的 RSA の選択メッセージ攻撃、未依頼対象と依頼済み対象の区別、固定の写し方で同じ積が失敗する例を操作。[Cornell の離散数学教材](https://www.cs.cornell.edu/~rafael/discmath.pdf)を参照。全署名の組合せと履歴の順序・復元を検査し、`npm test` 2186件とビルド成功。ブラウザーで早すぎる操作、偽造・失敗、途中再開、依頼済み対象、達成と320・390・1280px幅を確認。小さい写し方や実用署名の安全性は未証明。
 
 - 2026-11-02: 依頼837で RSA-CRT の小さい署名模型について、４種類の故障と２種類の送信方針を比較。[Boneh・DeMillo・Lipton](https://courses.csail.mit.edu/6.857/2010/handouts/faults.pdf) を参照。署名・検証・最大公約数と８場面の記録を検査し、`npm test` 2184件とビルド成功。ブラウザーで誤答、途中再開、８場面の達成と320・390・1280px幅を確認。既知の正しい署名と正しい検証器を仮定し、実機や一般の防御は未評価。

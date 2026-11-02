@@ -102,3 +102,5 @@
 依頼837は小さい RSA-CRT 署名で法7・法11の余りの一方または双方を1だけ変え、正しい署名との差と77の最大公約数、公開鍵による送信前検証を比較。正しい署名と対象を攻撃者が知り、検証器は正しく動作する仮定。故障モデルと防御の一般的安全性は未評価。参考：[Boneh・DeMillo・Lipton](https://courses.csail.mit.edu/6.857/2010/handouts/faults.pdf)。
 
 依頼838は法77の教科書的 RSA 署名で、選んだ札2・3の署名の積が未依頼の札6の署名になる例と、依頼済み札6の署名は新しい偽造ではないことを比較。札6を5に写す固定例では同じ積による偽造が失敗するが、安全なハッシュや実用署名方式の安全性は示さない。参考：[Cornell の離散数学教材](https://www.cs.cornell.edu/~rafael/discmath.pdf)、[Boneh・Shoup](https://crypto.stanford.edu/~dabo/cryptobook/BonehShoup_0_6.pdf)。
+
+依頼839は法17・秘密次元2・３公開札の小さい LWE 公開鍵暗号模型。札の部分集合を足し、0／8 を埋め込み、秘密の積を引いて円周上の距離で復元する。全７個の非空部分集合、２種類の知らせ、改変なしと +5 の結果を検査。固定札は総当たり可能で、乱数・認証・現実的安全性を提供しない。NIST ML-KEM は関連する Module-LWE に基づく別の鍵カプセル化方式であり、この模型はその実装ではない。参考：[Regev の解説](https://www.cs.columbia.edu/~tal/4261/Regev_lwesurvey.pdf)、[NIST FIPS 203](https://www.nist.gov/publications/module-lattice-based-key-encapsulation-mechanism-standard)。
