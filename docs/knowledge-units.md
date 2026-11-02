@@ -56,7 +56,7 @@
 | FPL | FPL-Event-Driven | Event-Driven and Reactive Programming | 134 | 依頼92で印・待ち行列・登録された処理と状態遷移の固定例。他は未対応。[詳細](fpl-event-driven.md) |
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。他は未対応。[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。他は未対応。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
-| FPL | FPL-Types | Type Systems | 136 | 依頼24で型検査、581で静的な候補選択、764・765で型推論、766・767で型の進行と保存の例と証明の道筋を扱う。[項目別台帳](coverage-fpl-types.md)と[詳細](fpl-types.md)を参照。 |
+| FPL | FPL-Types | Type Systems | 136 | 依頼24で型検査、764・765で型推論、766・767で進行と保存、768で命題と型の対応を扱う。[項目別台帳](coverage-fpl-types.md)と[詳細](fpl-types.md)を参照。 |
 | FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、依頼201〜203の回収・参照カウント・別名の固定例。実行時配置・一般のメモリ管理等は未対応。[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312・315で式の構造、解釈と翻訳段階の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 依頼75・154・199・306〜312などで構文木、正規表現、スコープ、引数渡しと副作用の固定例。他は未対応。[詳細](fpl-abstraction.md) |
@@ -67,7 +67,7 @@
 | FPL | FPL-Run-Time | Run-time Behavior and Systems | 143 | 呼出し・配列配置、依頼201・202の回収方式の固定例。実際の実行時機構は未対応。[詳細](fpl-execution-analysis.md#fpl-run-timenon-core) |
 | FPL | FPL-Constructs | Advanced Programming Constructs | 144 | 依頼325〜327で遅延評価、無限列と引数の共有の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-constructs) |
 | FPL | FPL-Pragmatics | Language Pragmatics | 144 | 依頼325〜327で遅延評価と先行評価の固定模型。他は未対応。[詳細](fpl-constructs-pragmatics.md#fpl-pragmatics) |
-| FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281〜284で操作的意味論、記号実行、ラムダ簡約と構造的帰納法の固定例。他は未対応。[詳細](fpl-formalism.md) |
+| FPL | FPL-Formalism | Formal Semantics | 145 | 依頼281〜284で操作的意味論、記号実行、ラムダ簡約と構造的帰納法、766〜768で型安全性と命題・型の対応の固定例。他は未評価。[詳細](fpl-formalism.md) |
 | FPL | FPL-Methodologies | Formal Development Methodologies | 146 | 依頼242〜244・282・284・349で固定例の契約、模型探索、記号経路と入力変異。他は未対応。[詳細](fpl-methodologies.md) |
 | FPL | FPL-Design | Design Principles of Programming Languages | 146 | 依頼355で値と構成の組み合わせを比較。他は未対応。[詳細](fpl-design.md) |
 | FPL | FPL-SEP | Society, Ethics, and the Profession | 147 | 依頼93・350で UTF-8 と言語・操作・日付の固定例。他は未対応。[詳細](fpl-society.md) |
