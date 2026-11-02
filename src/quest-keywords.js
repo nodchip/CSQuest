@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-election-overlap':['consensus','leader election','raft','quorum','合意','選挙','多数派'],
  'ruin-proof-outlines':['direct proof','contradiction','induction','直接証明','背理法','数学的帰納法'],
  'village-logic-domains':['propositional logic','predicate logic','quantifier','命題論理','述語論理','全称量化'],
  'archive-search-tradeoffs':['algorithm selection','linear search','binary search','hash','探索の選択','トレードオフ'],
