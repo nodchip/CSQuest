@@ -1,0 +1,7 @@
+export const labelGroupingLevel={id:'guild-label-grouping',number:'825',kind:'label-grouping',name:'二枚の札と受付箱',tag:'視覚的な近接とラベルの関係',title:'受付箱の札を分かりやすくしよう',story:'祭りの受付で、旅人は名前と行き先を届けます。札の配置と道具に伝える関係を組み替え、受付を分かりやすくしましょう。'};
+export const groupingLayouts={separate:'札と箱を離して並べる',near:'各札を対応する箱の近くに置く'};
+export const groupingRelations={missing:'道具に札との対応を伝えない',linked:'道具に札との対応を伝える'};
+export function groupingCreate(){return {layout:'separate',relation:'missing',seen:[],checked:false,answer:null};}
+export function groupingObserve(q){const key=`${q.layout}:${q.relation}`;if(!q.seen.includes(key))q.seen.push(key);q.checked=false;}
+export function groupingComplete(q){return q.seen.length===4&&q.layout==='near'&&q.relation==='linked'&&q.checked&&q.answer==='both';}
+export function groupingRestore(q){const keys=Object.keys(groupingLayouts).flatMap(x=>Object.keys(groupingRelations).map(y=>`${x}:${y}`));if(!q||!Object.hasOwn(groupingLayouts,q.layout)||!Object.hasOwn(groupingRelations,q.relation)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(x=>!keys.includes(x))||typeof q.checked!=='boolean'||![null,'both','visual','program'].includes(q.answer))throw new RangeError('記録が不正です。');if(q.checked&&(q.seen.length!==4||q.layout!=='near'||q.relation!=='linked'))throw new RangeError('記録が不正です。');return {layout:q.layout,relation:q.relation,seen:[...q.seen],checked:q.checked,answer:q.answer};}
