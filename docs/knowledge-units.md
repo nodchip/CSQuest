@@ -138,7 +138,7 @@
 | SEC | SEC-Foundations | Foundational Security | 257 | 一部試作：認証結果、役割別の認可と最小権限 |
 | SEC | SEC-SEP | Society, Ethics, and the Profession | 258 | 依頼362で窓口停止の影響と不明点の固定例。[項目別台帳](coverage-sec-sep.md)と[詳細](sec-society.md) |
 | SEC | SEC-Coding | Secure Coding | 259 | 依頼82でパラメータ化、524・528で境界と表示、578で桁あふれ、818で競合の固定例。[項目別台帳](coverage-sec-coding.md)と[詳細](sec-coding.md) |
-| SEC | SEC-Crypto | Cryptography | 260 | 依頼58・128・259〜264の固定例、600〜603の Web Crypto、604〜617の量子鍵配送・曲線・暗号部品・プロトコル、835の小さいコミットメント、836のチャレンジ応答と記録の逆算を扱う。[項目別台帳](coverage-sec-crypto.md)と[詳細](sec-crypto.md) |
+| SEC | SEC-Crypto | Cryptography | 260 | 依頼58・128・259〜264の固定例、600〜603の Web Crypto、604〜617の量子鍵配送・曲線・暗号部品・プロトコル、835の小さいコミットメント、836のチャレンジ応答と記録の逆算、837の RSA-CRT 故障模型を扱う。[項目別台帳](coverage-sec-crypto.md)と[詳細](sec-crypto.md) |
 | SEC | SEC-Engineering | Security Analysis, Design, and Engineering | 261 | 依頼328・329で脅威経路、対策の選択と修正前後の試験の固定模型。他は未対応。[詳細](sec-engineering.md) |
 | SEC | SEC-Forensics | Digital Forensics | 262 | 依頼195・286で監査と受け渡し、834で記録時刻と空白の固定例。[項目別台帳](coverage-sec-forensics.md)と[詳細](sec-forensics.md) |
 | SEC | SEC-Governance | Security Governance | 263 | 依頼353で復旧方針・保管・訓練の固定例。[項目別台帳](coverage-sec-governance.md)と[詳細](sec-governance.md) |
