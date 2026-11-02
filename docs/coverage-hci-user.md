@@ -30,8 +30,8 @@
 | 4e | KA Core | 標本・一般化・障害経験など評価の課題 | 部分 | 188で架空の調査は代表性を示さないと説明。実際の標本設計や一般化は未評価。 |
 | 4f | KA Core | ユニバーサルデザイン | 部分 | 22で異なる利用条件への工夫を操作。原則全体と参加型設計は未評価。 |
 | 5a | KA Core | 複数利用者の状況 | 部分 | 188で旅人と維持担当の事情を比較。実際の複数利用者システムは未評価。 |
-| 5b | KA Core | 同期的な集団通信 | 未照合 | 対応する依頼は未確認。 |
-| 5c | KA Core | 非同期の集団通信 | 未照合 | 対応する依頼は未確認。 |
+| 5b | KA Core | 同期的な集団通信 | 部分 | 964で２時刻の生放送と受信者を比較。実際の会議や相互作用は未評価。 |
+| 5c | KA Core | 非同期の集団通信 | 部分 | 964で掲示板の記録と後からの確認を比較。実際の掲示板や配信保証は未評価。 |
 | 5d | KA Core | 社会的計算・ソーシャルネットワーク分析 | 未照合 | 対応する依頼は未確認。 |
 | 5e | KA Core | オンライン協働 | 未照合 | 対応する依頼は未確認。 |
 | 5f | KA Core | 社会的調整とオンライン共同体 | 未照合 | 対応する依頼は未確認。 |
@@ -62,3 +62,5 @@
 依頼962は [W3C の日付形式](https://www.w3.org/International/questions/qa-date-format.en)と [MDN の日時書式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)を参考に、固定された１瞬間を３表示方法・３時間帯で比較する。`tests/locale-time-workshop.test.js` は９組の年月日・時分、保存と達成条件を検査。言語と時間帯を別々に選ぶ例で、翻訳やすべての文化・暦・夏時間境界は未評価。
 
 依頼963は [NIST の夏時間の説明](https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst)と [MDN の現地時刻の曖昧さ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours)を参考に、2024年ニューヨークの秋の重複と春の欠落、および東京の通常日の固定例を比較する。`tests/clock-transition.test.js` は候補の現地表示、全選択組合せ、保存・達成条件を検査。候補は各３個であり、全時間帯や年、繰り返し予定の一般的な処理は評価しない。
+
+依頼964は [W3C 協働ツールのアクセシビリティ](https://www.w3.org/TR/ctaur/)を参考に、２時刻・３人の参加状況を固定し、生放送と記録の残る掲示板で知らせを届ける。`tests/group-communication.test.js` は操作順と受信者、記録と達成条件を検査する。掲示板の確認と通信成功は仮定で、実際の利用者、相互作用や共同編集・通知・理解は評価しない。
