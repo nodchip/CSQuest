@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-02: 依頼889で左右の７画素から中間視点を単純混合・奥行き付き再投影し、両入力で隠れた旗を比較。[Levoy と Hanrahan の Light Field Rendering](https://graphics.stanford.edu/papers/light/)を参照。再投影・遮蔽・途中保存を検査し、`npm test` 2299件とビルドが成功。ブラウザーで入力不足、途中再開、４比較、誤答・達成、キーボードと320・390・1280px幅を確認。正確な奥行きと丸め前の点の位置を仮定した模型で、実写真・深度推定・表面・穴埋めは未評価。
+
 - 2026-11-02: 依頼888で４波長帯の灯り・布の反射率・架空の３受光器を操作し、同じ３値になる異なる反射率と光源変更を比較。[CIE のメタメリズム](https://www.cie.co.at/publications/special-metamerism-index-change-observer)と[Physically Based Rendering の色](https://pbr-book.org/4ed/Radiometry%2C_Spectra%2C_and_Color/Color)を参照。４条件の積と受光値、途中保存を検査し、`npm test` 2297件とビルドが成功。ブラウザーで４比較、図、再開、誤答・達成、キーボードと320・390・1280px幅を確認。４帯・架空の受光器と擬似色の模型で、連続スペクトル、標準観察者や実際の色知覚は未評価。
 
 - 2026-11-02: 依頼887で４つの光路の隣接候補と判定札を選び、寄与による採用・不採用と対称な提案の定常分布を比較。[Veach と Guibas の Metropolis Light Transport](https://graphics.stanford.edu/papers/metro/gamma-fixed/)を参照。32通りの遷移と詳細釣り合い、等号時の不採用と途中保存を検査し、`npm test` 2295件とビルドが成功。ブラウザーで入力不足、途中再開、４条件、誤答・達成、キーボードと320・390・1280px幅を確認。４状態・対称提案の模型で、実際の光路生成、画像の正規化と収束は未評価。
