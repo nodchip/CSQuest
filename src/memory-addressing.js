@@ -1,0 +1,10 @@
+export const addressingLevel={id:'workshop-memory-addressing',number:'782',kind:'memory-addressing',name:'三つの読み方と二枚の札',tag:'直接・間接・添字アクセスと別名',title:'記憶の棚を正しくたどろう',story:'魔導機関は棚の番号と中身を使って宝石を探します。三つの読み方と、同じ箱を指す二枚の札を調べましょう。'};
+export const addressingCases={direct:{name:'直接読む',address:10,value:100},indirect:{name:'札をたどる',address:100,value:7},indexed:{name:'札から１つ先',address:101,value:12},alias:{name:'二枚の札と書換え',address:100,value:9}};
+export const addressingAddresses=[10,11,100,101,102];
+export const addressingValues=[5,7,9,12,100];
+export function addressingCreate(){return {selected:'direct',trials:Object.fromEntries(Object.keys(addressingCases).map(k=>[k,{address:null,guess:null,wrote:false,checked:false}])),answer:null};}
+export function addressingMemory(t){return {10:100,11:100,100:t.wrote?9:7,101:12,102:5};}
+export function addressingWrite(q){const t=q.trials[q.selected];if(q.selected!=='alias'||t.wrote||t.address!==100)return false;t.wrote=true;t.address=null;t.guess=null;return true;}
+export function addressingRead(q){const t=q.trials[q.selected],c=addressingCases[q.selected];if(q.selected==='alias'&&!t.wrote)return false;if(t.address!==c.address||t.guess!==addressingMemory(t)[c.address])return false;t.checked=true;return true;}
+export function addressingComplete(q){return Object.values(q.trials).every(t=>t.checked)&&q.answer==='alias';}
+export function addressingRestore(q){if(!q||!Object.hasOwn(addressingCases,q.selected)||!q.trials||![null,'alias','copy','index'].includes(q.answer))throw new RangeError('記録が不正です');const out=addressingCreate();out.selected=q.selected;out.answer=q.answer;for(const [id,c] of Object.entries(addressingCases)){const t=q.trials[id];if(!t||![null,...addressingAddresses].includes(t.address)||![null,...addressingValues].includes(t.guess)||typeof t.wrote!=='boolean'||typeof t.checked!=='boolean'||(id!=='alias'&&t.wrote)||(t.checked&&((id==='alias'&&!t.wrote)||t.address!==c.address||t.guess!==c.value)))throw new RangeError('記録が不正です');out.trials[id]={address:t.address,guess:t.guess,wrote:t.wrote,checked:t.checked};}return out;}

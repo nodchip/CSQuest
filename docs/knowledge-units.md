@@ -57,7 +57,7 @@
 | FPL | FPL-Parallel | Parallel and Distributed Computing | 135 | 依頼15・16・90・129〜131・156・157等で順序、同期、通信、分割集約、非同期の結果待ちの固定例。他は未対応。[詳細](fpl-parallel.md) |
 | FPL | FPL-Aspect | Aspect-Oriented Programming | 136 | 依頼323・324で操作の節目を選び、共通の記録と元の処理へ進む判断を行う固定模型。他は未対応。[詳細](fpl-execution-analysis.md#fpl-aspectnon-core) |
 | FPL | FPL-Types | Type Systems | 136 | 依頼24・772で型検査と正しさ、764・765で型推論、766・767で進行と保存、768で命題と型、769で長さに依存する型を扱う。[項目別台帳](coverage-fpl-types.md)と[詳細](fpl-types.md)を参照。 |
-| FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、依頼201〜203の回収・参照カウント・別名の固定例。実行時配置・一般のメモリ管理等は未対応。[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
+| FPL | FPL-Systems | Systems Execution and Memory Model | 138 | リスト・配列・再帰・呼出し、201〜203の回収・別名、782の直接・間接・添字アクセスの固定例。[項目別台帳](coverage-fpl-systems.md)と[詳細](fpl-execution-analysis.md#fpl-systemscs-core) |
 | FPL | FPL-Translation | Language Translation and Execution | 139 | 依頼75・311・312・315で式の構造、解釈と翻訳段階の固定例。他は未対応。[詳細](fpl-syntax.md) |
 | FPL | FPL-Abstraction | Program Abstraction and Representation | 140 | 依頼75・154・199・306〜312などで構文木、正規表現、スコープ、引数渡しと副作用の固定例。他は未対応。[詳細](fpl-abstraction.md) |
 | FPL | FPL-Syntax | Syntax Analysis | 141 | 依頼75・313・314で式の構造、字句解析と先読みの固定例。他は未対応。[詳細](fpl-syntax.md) |
