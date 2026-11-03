@@ -32,6 +32,7 @@ export const questKeywords={
  'archive-text-frequency-visual':['テキスト可視化','単語頻度','文章長','正規化','term frequency'],
  'ruin-horn-meaning':['Horn節','一階論理','含意','真理値表','規則','Horn clause'],
  'forest-map-projection':['地理空間','地図投影','緯度','経度','メルカトル','Mercator'],
+ 'castle-sandbox-origin':['サンドボックス','iframe','同一オリジン','sandbox'],
  'workshop-method-hash':['メソッド探索','ハッシュ表','method lookup','衝突'],
  'ruin-pca-three':['主成分分析','PCA','SVD','次元削減','三次元'],
  'workshop-virtual-dispatch':['仮想メソッド表','仮想関数表','vtable','動的ディスパッチ'],

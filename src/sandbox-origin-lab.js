@@ -1,0 +1,6 @@
+export const sandboxOriginLevel={id:'castle-sandbox-origin',number:'1207',kind:'sandbox-origin',name:'封印された巻物',tag:'サンドボックスとオリジン',title:'巻物を別の部屋で試そう',story:'王城に届いた巻物を試す前に、実行する部屋と親の記録への境界を調べます。信頼された実験用の巻物で、二つの設定を比べましょう。'};
+export const sandboxOriginModes={opaque:{name:'別のオリジンとして扱う',flags:'allow-scripts'},same:{name:'同じオリジンを許す',flags:'allow-scripts allow-same-origin'}};
+export function sandboxOriginCreate(){return {mode:'opaque',prediction:null,seen:[],answer:null,checked:false};}
+export function sandboxOriginRecord(q,mode,accessible){if(!Object.hasOwn(sandboxOriginModes,mode)||typeof accessible!=='boolean')throw new RangeError('観測が不正です。');const correct=q.prediction===(accessible?'yes':'no');if(correct&&!q.seen.includes(mode))q.seen.push(mode);return correct;}
+export function sandboxOriginDone(q){return Object.keys(sandboxOriginModes).every(k=>q.seen.includes(k))&&q.answer==='weak'&&q.checked;}
+export function sandboxOriginRestore(q){if(!q||!Object.hasOwn(sandboxOriginModes,q.mode)||![null,'yes','no'].includes(q.prediction)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.hasOwn(sandboxOriginModes,k))||![null,'weak','safe'].includes(q.answer)||typeof q.checked!=='boolean')throw new RangeError('記録が不正です。');return {...q,seen:[...q.seen]};}
