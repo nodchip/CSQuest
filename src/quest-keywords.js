@@ -2,6 +2,7 @@
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
  'village-order-program':['条件分岐','反復','辞書','試験','デバッグ','制御フロー'],
+ 'archive-text-units':['文字列','符号位置','符号単位','unicode','utf-16','code point'],
  'forest-tuple-record-route':['タプル','レコード','順序','フィールド','tuple','record'],
  'village-order-inventory-lab':['列','辞書','試験','境界値','在庫','未登録'],
  'village-order-inventory':['列','辞書','順序','在庫','未登録','連想配列'],

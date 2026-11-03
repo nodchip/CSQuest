@@ -2435,3 +2435,5 @@
 - 2026-11-03: 依頼1127の追加試験に、組み立てた入力を６件まで保存し、選択した手順にまとめて実行・再実行する機能を追加。[ISTQB のテスト分析者シラバス](https://istqb.org/wp-content/uploads/sdm-uploads/ISTQB-CTAL-TA-Syllabus-v4.0-EN.pdf)を参考に SDF-Practices の部分対応を更新。手順や試験を変えると合否を未実行に戻し、保存例は個別に開き直せる。関連10テスト・ビルド成功。ブラウザーで空列だけでは誤手順を検出できず、未登録例で検出して修正・再実行、保存復元、削除、320/390/1280pxを確認。有限例と模型上の期待値であり、実際のテスト記述や全入力の正しさは評価しない。
 
 - 2026-11-03: 依頼1128で２地点のタプルの値の交換と、名前付き記録の項目・値を組にした表示順変更を比較。[Rust のタプル](https://doc.rust-lang.org/stable/reference/types/tuple.html)と[構造体](https://doc.rust-lang.org/stable/reference/types/struct.html)を参照し AL-Foundational 3 を部分対応として記録。表示と判定は共通のデータから生成。関連32テストとビルド成功。ブラウザーで誤答、途中再開、４条件・達成、320/390/1280pxを確認。実メモリ配置や一般の言語の型規則は評価しない。
+
+- 2026-11-03: 依頼1129で A・狐・e と結合用アクセントの３文字列から、JavaScript の UTF-16 符号単位と Unicode 符号位置を実際に取り出して比較。[MDN の長さ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)と[Unicode の文字区切り](https://www.unicode.org/reports/tr29/)を参照し AL-Foundational 2a を部分対応として記録。関連32テストとビルド成功。ブラウザーで途中再開、狐の２単位・１符号位置、結合アクセントの２符号位置、６条件・達成、320/390/1280pxを確認。一般の書記素分割と全表示環境は評価しない。
