@@ -2407,3 +2407,5 @@
 - 2026-11-03: 依頼1117で４人×３色の記録を人ごと・色ごとに並べ、全員の赤と１人の全色を読む４通りについて、触れた４セル単位の区画数を比較。[NVIDIA のデータ指向設計](https://developer.nvidia.com/blog/multi-gpu-programming-with-standard-parallel-c-part-1/)と[Intel のメモリー配置](https://www.intel.com/content/www/us/en/developer/articles/technical/memory-layout-transformations.html)を参照し、SE-Design のデータ指向を部分対応として記録。４通りの位置・区画数と復元を検査し npm test 2861件・ビルド成功。ブラウザーで途中再開、４通り、誤答・達成、Enter、320/390/1280pxを確認。固定模型の区画数であり、実行時間・実機性能やシステム全体のアーキテクチャーは未評価。
 
 - 2026-11-03: 台帳の異なる表形式から状態列を読み、各ファイルと全体の記録行数を出す scripts/coverage_rows.py を追加。親子の重複を含み完成率ではないこと、原典との照合や欠落ファイルは検査しないことを明示。３種類の状態・列位置・不正行を Python の３テストで確認し、Pages のワークフローにも検査を追加。集計時点は164ファイル、未照合633行・部分2987行・完了０行。
+
+- 2026-11-03: 依頼234・237を SE-Design の API 拡張性と既存設計の変更に部分対応として照合。[Microsoft の API 設計](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/api-design)を参照。237は途中で利用不能が発生しても順調に移行したと表示していたため、操作履歴から中断を再現して達成時に表示するよう修正。５テストとビルドが成功し、ブラウザーで中断・復旧・途中再開、無中断の操作、320/390/1280pxを確認。３人の固定模型で、操作間の状態や実サービスの可用性は評価しない。

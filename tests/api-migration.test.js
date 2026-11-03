@@ -7,3 +7,10 @@ test('removing old too early interrupts old users, while staged migration preser
 test('discovery is required, unavailable new window is visible, and histories are replayed',()=>{
  let s=createMigration();s=stepMigration(s,'traveler');assert.equal(s.clients.traveler,'old');s=stepMigration(s,'screen');assert.equal(migrationResult(s,'screen').ok,false);const copy=restoreMigration({...s,new:true});assert.equal(copy.new,false);assert.throws(()=>restoreMigration({history:['invalid']}),RangeError);
 });
+test('a temporary interruption remains visible after recovery and after restoring a draft',()=>{
+ let s=createMigration();
+ for(const action of ['removeOld','restoreOld','addNew','survey','screen','desk','traveler','removeOld','test'])s=stepMigration(s,action);
+ assert.equal(migrationComplete(s),true);assert.equal(s.interrupted,true);assert.equal(restoreMigration({history:s.history}).interrupted,true);
+ let safe=createMigration();for(const action of ['addNew','survey','screen','desk','traveler','removeOld','test'])safe=stepMigration(safe,action);
+ assert.equal(migrationComplete(safe),true);assert.equal(safe.interrupted,false);
+});
