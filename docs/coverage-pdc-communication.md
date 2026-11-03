@@ -28,7 +28,7 @@
 | 5j | KA Core | 逐次一貫性と release/acquire | 部分 | 依頼508で逐次一貫性と書込み待機を比較し、1001で２つの原子的変数、1002で原子的・非原子的な品物の release/acquire と relaxed を比較。一般の実行や実装は未評価。 |
 | 5k | KA Core | 共有データの解放と参照管理 | 部分 | 816で使用中の目印と再確認、1003で生の参照と安全な所有権取得を固定した順序で比較。一般の回収方式や実装は未評価。 |
 | 5l | KA Core | データ配置・転送、局所性、通信量の削減 | 部分 | 依頼294の２拠点の結合、874の近傍集計、876の中継塔での集約を比較。配置形式や転送と計算の重なりは未評価。 |
-| 5m | KA Core | 分散共有メモリ、RDMA | 部分 | 1004で通常の RDMA 書込みと伝言、登録範囲・鍵・権限・通知を固定例で比較。分散共有メモリ全般と実装は未評価。 |
+| 5m | KA Core | 分散共有メモリ、RDMA | 部分 | 1004で通常の RDMA 書込みと伝言、登録範囲・鍵・権限・通知を固定例で比較。1005で分散共有メモリの写しの無効化と完了順序を固定例で比較。一般の整合性モデルと実装は未評価。 |
 | 5n | KA Core | ストアの原子性、線形化可能性、因果順序、結果整合性等 | 部分 | 依頼190・193・293で複製の遅れや分散取引の固定例。列挙された整合性の一般比較は未評価。 |
 | 5o | KA Core | 分断・部分障害・投票・合意プロトコル | 部分 | 依頼293で分散取引の調整役停止と待機を操作。Paxos・Raft や一般の合意は未評価。 |
 | 5p | KA Core | 一貫性・可用性・分断への耐性の兼ね合い | 部分 | 依頼190で更新完了後の分断された分館の読み取りを、古い値で応答する方式と待つ方式で比較。形式的な一般証明や実サービスの保証は未評価。 |
@@ -79,3 +79,5 @@
 依頼816は読み手が目印を公表して先頭を再確認する固定例で、回収済みの参照や回収の延期を扱う。依頼1003は共有欄が一つの所有権を持つ模型で、生の位置の読取り後の回収、同じ鍵による保護、一体の所有権取得が削除より前・後となる４順序を比べる。[C++ working draft の atomic smart pointer](https://eel.is/c++draft/util.smartptr.atomic) と [IBM Research の hazard pointers](https://research.ibm.com/publications/hazard-pointers-safe-memory-reclamation-for-lock-free-objects) を参照。標準では所有数の減少・削除は原子的更新の一部とは限らず、この模型の回収完了時刻は単純化している。実装、ロックフリー性、循環参照や回収の一般的な証明は評価しない。`tests/hazard-reclaim.test.js` と `tests/shared-ownership.test.js` で固定履歴、回収・所有状態、復元と達成を検査する。
 
 依頼1004は通常の RDMA 書込みの固定模型で、接続・送信元登録を済ませ、遠隔の登録範囲・鍵・書込み権限を変えて結果を比較する。成功した送信側の完了確認と受信側アプリへの別の通知・処理を区別し、伝言を受信側が記録に写す模型と比較する。[NVIDIA の RDMA プログラミング資料](https://docs.nvidia.com/rdma-aware-networks-programming-user-manual-1-7.pdf) は通常の write と通知を伴う write with immediate を区別する。実際の API、受信側への通知方式、順序、障害、整合性、メモリー登録の実装や性能は評価しない。`tests/rdma-transfer.test.js` で伝言・書込み、鍵・範囲・権限の失敗、途中記録と達成を検査する。
+
+依頼1005は一つの値と一つの写しに限定し、無効化が遅れる例、書込み完了前に無効化を待つ例、RDMA で更新された元の値とアプリが別に管理する写しを比較する。[UC Berkeley の講義](https://people.eecs.berkeley.edu/~kubitron/courses/cs252-S12/lectures/lec20-sharedmemory3.pdf) は無効化と書込み完了の関係を説明する。[USENIX の論文](https://www.usenix.org/conference/osdi-94/message-driven-relaxed-consistency-software-distributed-shared-memory) はソフトウェア DSM の緩和された整合性を扱う。例は特定の順序に限られ、一般的な線形化可能性や実機のキャッシュ整合性を証明しない。`tests/dsm-cache.test.js` で値と完了時点、途中記録を検査する。

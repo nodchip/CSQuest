@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-dsm-cache':['DSM','分散共有メモリー','整合性','無効化','distributed shared memory'],
  'forest-rdma-transfer':['RDMA','遠隔メモリ','remote memory','メモリー登録','rkey'],
  'forge-shared-ownership':['参照数','所有権','shared_ptr','回収','並行','memory reclamation'],
  'forge-publication-race':['data race','データ競合','未定義動作','release','acquire','原子性'],
