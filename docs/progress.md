@@ -2421,3 +2421,5 @@
 - 2026-11-03: 依頼1122で共有メモリ・共有ディスク・共有なしの２書記について、指定された記憶領域と保存棚へのアクセスを比較。[Oracle の並列構成](https://docs.oracle.com/cd/A57673_01/DOC/server/doc/SPS73/chap3.htm)と[DeWitt・Gray の論文](https://people.csail.mit.edu/tdanford/6830papers/dewitt-gray-parallel-databases.pdf)を参照し DM-Distributed 2a を部分対応として記録。関連31テストとビルド成功。ブラウザーで予測前の案内、誤答、途中再開、６条件・達成、320/390/1280pxを確認。固定模型で接続の物理構成、実性能や故障時の可用性は評価しない。
 
 - 2026-11-03: 依頼1123で依頼人・受付・遠隔サーバーの読取りを進め、同種接続、異種接続の不一致と仲介、遠隔停止を比較。[Oracle の分散 DB](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/admin/distributed-database-concepts.html)と[異種接続](https://docs.oracle.com/en/database/oracle/oracle-database/19/heter/address-synchronous-information-integration.html)を参考に DM-Distributed 1d・1e を部分対応とし、概要の1122の記載も更新。関連31テストとビルド成功。ブラウザーで途中再開、４条件・達成、320/390/1280pxを確認。模型上の真値と受付が得た値を区別し、実変換・同時更新・実ネットワークは評価しない。
+
+- 2026-11-03: データ管理に分割・複製・異種接続・分散結合へ進む道を追加。遠征1124で依頼1123・294の模型を再利用し、接続を修正し、２方式で同じ３行を得て伝令６と４を比較して報告する。関連32テストとビルド成功。ブラウザーで進行制限、誤接続・誤選択の修正、途中再開、達成、320/390/1280pxと分野から道への移動を確認。固定例・単純費用模型で、一般の実性能や DB の動作は評価しない。

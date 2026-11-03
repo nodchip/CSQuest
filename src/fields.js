@@ -3,7 +3,7 @@ export const fields=[
  {id:'AI',name:'人工知能',quests:['workshop-ai-kinds','forest-search','crystal-neighbors'],trails:['ai-journey']},
  {id:'AL',name:'アルゴリズムと計算量',quests:['forest-search','weighted-roads','forest-bst-delete'],trails:['paths']},
  {id:'AR',name:'計算機構成',quests:['circuit','number-lanterns','instruction-engine'],trails:['circuit-oven-journey','logic']},
- {id:'DM',name:'データ管理',quests:['herb-catalog','village-join','transfer-ledger'],trails:['relational','data']},
+ {id:'DM',name:'データ管理',quests:['herb-catalog','village-join','transfer-ledger'],trails:['relational','distributed-data','data']},
  {id:'FPL',name:'プログラミング言語の基礎',quests:['typed-spells','workshop-lexer-scroll','workshop-type-unification'],trails:['type-journey','oop-journey']},
  {id:'GIT',name:'グラフィックスと対話技術',quests:['matrix-mirror','ruin-view-grid','workshop-frame-time'],trails:['image-journey','animation-journey']},
  {id:'HCI',name:'人間とコンピューターの相互作用',quests:['guild-sign','sign-study','guild-focus-dialog'],trails:['hci-journey']},
