@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1051で手元の単体試験、コミット・共有、共有版の統合試験、失敗後の修理と再試験を追加。[GitHub の CI](https://docs.github.com/en/actions/get-started/continuous-integration)と [Git のフックに関する FAQ](https://git-scm.com/docs/gitfaq#_hooks)を参照。全2,695件の自動テストとビルドが成功。配信用ビルドで早すぎる共有・記録、途中再開、誤答、達成、320・390・1280px幅とフォーカスを確認。既存の復旧教材も開けることを確認。３版と所要時間は模型で、実際の Git や CI の実行は未評価。
+
 - 2026-11-03: 依頼1050で小数加算・ゼロ付近・大きな値・NaN を、厳密一致と２つの許容差基準で予測・比較。[Python の浮動小数点](https://docs.python.org/3/tutorial/floatingpoint.html)と[近さの判定](https://docs.python.org/3/library/math.html#math.isclose)を参照。全2,693件の自動テストが成功。配信用ビルドで誤予測、途中再開、12通り・振り返り・達成、320・390・1280px幅とフォーカスを確認。許容幅は固定された練習用であり、一般の数値計算の正しさを示さない。
 
 - 2026-11-03: 依頼1049で２つの種を使う疑似乱数の試験、失敗の再現、入力の絞り込みと修理後の再試験を追加。[Python の再現性](https://docs.python.org/3/library/random.html#notes-on-reproducibility)と [LLVM libFuzzer](https://llvm.org/docs/LibFuzzer.html) を参照。全2,691件の自動テストとビルドが成功。配信用ビルドで途中再開、早すぎる修理、誤答、達成、320・390・1280px幅とフォーカスを確認。試験は固定された小さな模型で、実際のファジングや全入力の正しさは検証しない。
