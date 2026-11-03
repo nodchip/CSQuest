@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-incident-recovery':['マルウェア','調査','封じ込め','隔離','復旧','インシデント対応'],
  'workshop-security-fuzz':['ファジング','侵入試験','許可','脆弱性','再現','回帰試験'],
  'castle-malware-classifier':['マルウェア','機械学習','検知','データ汚染','見逃し'],
  'castle-ransomware-defense':['ランサムウェア','バックアップ','復旧','隔離','ransomware'],

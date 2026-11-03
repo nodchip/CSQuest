@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1155で２塔の感染状況を調べ、隔離、記録保全、必要な塔の作り直しと復元後確認を操作。[CISA の対応手引き](https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf)を参考にした。関連36テストとビルドが成功。配信用画面で早すぎる復元・隔離漏れ、途中再開、２場面、誤答・達成、320/390/1280px幅を確認。検査・復旧が成功する模型で、実物の除去や安全性は未評価。
+
 - 2026-11-04: 依頼1154で978の入力変化模型を再利用し、許可された架空の複製で異常発見・再現・範囲外の拒否・回帰確認を操作。[NIST SP 800-115](https://www.nist.gov/publications/technical-guide-information-security-testing-and-assessment)を参考にした。全８入力の修正前後を含む関連34テストとビルドが成功。配信用画面で試験の順序、途中再開、誤答・達成と320/390/1280px幅を確認。実環境・一般の安全性は評価しない。
 
 - 2026-11-04: 依頼1153で495の最近傍模型を架空の危険な道具の検知へ再利用し、手本２条件・３検体、見逃しと適合率を比較。[NIST の敵対的機械学習](https://www.nist.gov/publications/adversarial-machine-learning-taxonomy-and-terminology-attacks-and-mitigations-0)を参考に、関連34テストとビルドが成功。配信用画面で誤答、途中再開、６条件、適合率の分母０、振り返り・達成と320/390/1280px幅を確認。実ファイルや実検知性能は未評価。
