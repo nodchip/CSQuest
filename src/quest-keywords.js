@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-possibility-measures':['可能性理論','必然性','不確実性','確率','possibility'],
  'ruin-clause-workshop':['節形式','連言標準形','CNF','命題論理','ド・モルガン','分配法則'],
  'forest-interval-reasoning':['Allen','時間区間','空間推論','区間関係','定性的推論'],
  'village-argument-boards':['議論','反論','argumentation','grounded','stable','受理'],
