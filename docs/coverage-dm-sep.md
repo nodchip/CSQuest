@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | 1 | CS Core | 規模に関わる問題 | 部分 | 1031で映画評価の照合、アプリ利用者の友人の情報取得、医療費の代理指標を実例から比較。規模だけで影響が決まるとは扱わず、一般の影響は未評価。 |
 | 2 | CS Core | データプライバシー全般 | 部分 | 194で収集・通信・閲覧を比較。プライバシー全般は未評価。 |
-| 2a | CS Core | 設計段階からの法令順守 | 未照合 | 194は架空の手順であり法令適合は扱わない。 |
+| 2a | CS Core | 設計段階からの法令順守 | 部分 | 1113で GDPR が適用される場合のデータ最小化と初期設定を参考に２目的の収集項目を比較。適用判断・法令全体の適合は未評価。 |
 | 3 | CS Core | データの匿名性 | 部分 | 27・196・332・333で番号、集計と準識別子を比較。一般の匿名性は未評価。 |
 | 4 | CS Core | データの所有・管理責任 | 部分 | 331で本人・管理係・利用者の固定の立場を比較。一般の所有権や法的責任は未評価。 |
 | 5 | CS Core | 意図した用途と意図しない用途 | 部分 | 196・331で集計からの推測と宣伝利用を比較。一般の用途や影響は未評価。 |
@@ -30,3 +30,5 @@
 各依頼の前提と出典は [DM-SEP](dm-society.md) を参照。`tests/data-lineage.test.js`、`tests/data-stewardship.test.js`、`tests/quasi-identifiers.test.js`、`tests/privacy-release.test.js` は各固定例を検査し、法令適合や実データの安全性は保証しない。
 
 依頼1031は [Narayanan・Shmatikov の映画評価データ研究](https://arxiv.org/abs/cs/0610105)、[米 FTC の Cambridge Analytica 事例の説明](https://www.ftc.gov/business-guidance/blog/2019/12/commission-issues-opinion-cambridge-analytica-case)、[Obermeyer らの医療支援予測研究](https://pubmed.ncbi.nlm.nih.gov/31649194/)を参照する。前者は公開情報による一部記録の照合可能性、FTC は利用者と友人の情報取得や米国での判断、医療研究は支出を代理指標とした場合の集団差を扱う。`tests/data-scale-cases.test.js` で各事例の３仕組み×３調査、復元・達成を検査。調査案が単独で安全性や法令適合を保証するとは扱わず、法域ごとの一般的な判断や自由な列挙は評価しない。
+
+依頼1113は [GDPR 第５条１項(c)・第25条２項](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng/) と [EDPB の設計・初期設定による保護](https://www.edpb.europa.eu/topics/ai-and-technology/privacy-by-design-and-by-default_en) を参考に、配達と電子便の架空の目的ごとに不足・不要・必要な項目だけの３状態を比較する。項目の必要性は各場面の仮定であり、GDPR の適用の有無、処理の法的根拠、保存期間、保護措置や実システムの適法性を判定しない。`tests/privacy-design-law.test.js` は２目的×16選択、途中記録・達成を検査する。

@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-privacy-design-law':['データ最小化','個人情報','gdpr','privacy by design','初期設定'],
  'village-dataflow-notes':['データフロー','文書化','実装説明','コメント','dataflow','documentation'],
  'guild-pair-work':['ペアプログラミング','モブプログラミング','協働','pair','mob','チーム'],
  'forge-pipe-eof':['パイプ','通信路','入出力','eof','pipe','read','非ブロッキング'],
