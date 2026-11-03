@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-shared-ownership':['参照数','所有権','shared_ptr','回収','並行','memory reclamation'],
  'forge-publication-race':['data race','データ競合','未定義動作','release','acquire','原子性'],
  'forge-release-acquire':['release','acquire','relaxed','happens-before','原子操作','メモリ順序'],
  'forge-channel-reachability':['CSP','状態空間','デッドロック','通信路','model checking','reachability'],
