@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-platform-offline':['offline','オフライン','service worker','サービスワーカー','キャッシュ','プラットフォーム制約'],
  'archive-feature-transfer':['transfer learning','転移学習','固定特徴','事前学習','特徴抽出','評価漏洩'],
  'archive-dependent-signs':['条件付き独立','XOR','naive bayes','ナイーブベイズ','相互作用','特徴の積'],
  'archive-naive-linear':['naive bayes','ナイーブベイズ','対数オッズ','ロジスティック','条件付き独立'],
