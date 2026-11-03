@@ -1,0 +1,7 @@
+export const polyViewsLevel={id:'workshop-polymorphism-views',number:'1105',kind:'polymorphism-views',name:'品を返す二つの門',tag:'型の二つの見方',title:'多相の約束と観察を比べる',story:'同じ品を返す魔法を、門の規則として使う方法と、もとの魔法の働きを調べる方法で比べます。'};
+export const polyViewsModes={prescriptive:'先に許す型を決める門',descriptive:'魔法の働きを調べる門'};
+export const polyViewsItems={number:'数の石',word:'言葉の札',light:'灯りの珠'};
+export function polyViewsRun(mode,item){if(!Object.hasOwn(polyViewsModes,mode)||!Object.hasOwn(polyViewsItems,item))throw new RangeError('門または品が不正です。');const accepted=mode==='descriptive'||item!=='light';return {accepted,returned:accepted?item:null};}
+export function polyViewsCreate(){return {mode:'prescriptive',item:'number',seen:[],relation:null,meaning:null,checked:false};}
+export function polyViewsDone(q){return Object.keys(polyViewsModes).every(m=>Object.keys(polyViewsItems).every(i=>q.seen.includes(`${m}:${i}`)))&&q.relation==='same'&&q.meaning==='roles'&&q.checked;}
+export function polyViewsRestore(q){const keys=Object.keys(polyViewsModes).flatMap(m=>Object.keys(polyViewsItems).map(i=>`${m}:${i}`));if(!q||!Object.hasOwn(polyViewsModes,q.mode)||!Object.hasOwn(polyViewsItems,q.item)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!keys.includes(k))||![null,'same','number'].includes(q.relation)||![null,'roles','identical'].includes(q.meaning)||typeof q.checked!=='boolean')throw new RangeError('途中記録が不正です。');return {...q,seen:[...q.seen]};}

@@ -20,7 +20,7 @@
 | 6d | CS Core | ジェネリック引数と型付け | 部分 | 509で袋に型を指定。一般の規則は未評価。 |
 | 6e | CS Core | コレクション等の汎用ライブラリ利用 | 部分 | 509で固定の袋を利用。実ライブラリや定義は未評価。 |
 | 6f | CS Core | アドホック多相とサブタイプ多相との比較 | 部分 | 945で固定例を横断して比較。原典の 6c と重なるため集計時は重複させない。 |
-| 6g | CS Core | 規範的・記述的な多相性 | 未照合 | 対応する教材を未確認。 |
+| 6g | CS Core | 規範的・記述的な多相性 | 部分 | 1105で許す型を定める門と元の振る舞いを記述する門を比較。３型の固定例であり、原典の用語の解釈や実言語の一般的な型解析は未確定・未評価。 |
 | 6h | CS Core | 多相型の実装モデル | 部分 | 946で型消去と型ごとの単相化の概念模型を比較。実コンパイラーの生成物や言語一般は未評価。 |
 | 6i | CS Core | サブタイプ | 部分 | 511で読取専用記録の受入れ。一般の置換は未評価。 |
 | 7 | KA Core | 構造・名前による型同値 | 部分 | 511で４記録を比較。一般の型同値は未評価。 |
@@ -74,3 +74,5 @@
 依頼946は [Oracle の型消去](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)と [Rust の単相化](https://doc.rust-lang.org/book/ch10-01-syntax.html)を参考に、同じ型検査の後に共有処理か型ごとの処理を概念的に用意する模型。実コンパイラーの最適化、ABI、コードサイズ、実測性能や言語全般は評価しない。
 
 依頼1041は [Rust の型](https://doc.rust-lang.org/book/ch03-02-data-types.html)と [Python の TypeError](https://docs.python.org/3/library/exceptions.html#TypeError)を参考に、数字と文字列の加算を到達する場合・しない場合で比較する。`scripts/check_type_language_examples.py` で rustc 1.99.1 は両方をコンパイル時 E0277 とし、Python 3.13.15 は分岐を通る場合のみ TypeError、通らない場合は done を表示することを確認した。画面はこの結果の再現で実コンパイラーを起動しない。`tests/language-type-check.test.js` は４条件・選択肢・保存を検査する。実言語の全規則、外部静的解析、独自のコード作成や自由な説明は評価しない。
+
+依頼1105は CS2023 が定義を示さない prescriptive / descriptive の解釈の一例として、[Pfenning の論理プログラミングにおける型の見方](https://www.cs.cmu.edu/~fp/papers/iclp90.pdf) と [多相型の二つの役割](https://scholar.lib.vt.edu/ejournals/JFLP/jflp-mirror/articles/2001/S01-01/JFLP-A01-01.pdf) を参考にする。３種類すべてをそのまま返す架空の操作に対して、許可する型を数・言葉に限定した門と、元の振る舞いを変えずに３型を調べる門を比較する。有限の観察は一般のプログラムの型や健全な近似の証明ではなく、型が規範と記述の役割を併せ持つ場合もある。`tests/polymorphism-views.test.js` は６条件・達成・復元を検査する。
