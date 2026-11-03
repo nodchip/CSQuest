@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-elastic-workshop':['水平伸縮','クラウド','オートスケール','elasticity','autoscaling'],
  'village-design-security-journey':['互換性','安全側の初期値','設計','遠征','api'],
  'castle-access-defaults':['安全側の初期値','初期拒否','fail safe defaults','default deny'],
  'forge-data-layout-design':['データ指向','データ配置','aos','soa','局所性','data oriented'],

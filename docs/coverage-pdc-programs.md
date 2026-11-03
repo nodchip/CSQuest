@@ -28,7 +28,7 @@
 | 5a | KA Core | 命令・データ並列 | 部分 | 158で命令の重なり、162でデータ並列を操作。実機は未評価。 |
 | 5b | KA Core | SIMD・異種データ並列 | 部分 | 162で SIMD・MIMD の固定例。実 GPU や異種構成は未評価。 |
 | 5c | KA Core | マルチコア・タスク・アクター | 部分 | 628で作業の生成と合流、829で伝言を処理するアクターの固定例。一般の実行環境とアクターシステムは未評価。 |
-| 5d | KA Core | クラスタ・クラウド・伸縮 | 未照合 | 関連依頼との対応は未確認。 |
+| 5d | KA Core | クラスタ・クラウド・伸縮 | 部分 | 1120で固定人数と手動の水平伸縮を比較。実クラスタ・クラウドの構成や自動調整は未評価。 |
 | 5e | KA Core | ネットワーク分散システム | 部分 | 129・667で通信と複製の固定例。実網と一般の方式は未評価。 |
 | 5f | KA Core | 量子・分子などの新技術 | 部分 | 677〜679で量子状態の固定模型。分子計算や実機は未評価。 |
 
@@ -47,3 +47,5 @@
 依頼1043は [Rutgers の分散システムの説明](https://people.cs.rutgers.edu/pxk/classes/417/notes/engineering-distributed-systems.html)と [Brown の復旧の教材](https://cs.brown.edu/courses/csci1270/website_2021/project/recovery.html)を参考に、二人の逐次更新と揮発性記録の停止、更新の消失、非同期複製の古い読取りと同期後の主停止を操作する。原典は純粋な逐次プログラムで一貫性・耐障害性が生じない理由を挙げるが、ここでは複数主体の不一致を対象外にした抽象的逐次モデルと、故障し得る実装装置を明確に区別する。`tests/order-fault-journey.test.js` は更新順序、停止と揮発性の喪失、同期前後の複製、保存と達成を検査する。一般の一貫性、永続性、合意、自動復旧や自由な説明は評価しない。
 
 依頼1116は [Kubernetes の資源要求と配置](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) と [望む状態の管理](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) を参考に、１種類の資源と２活動の固定模型で、手動準備と管理役による準備、資源不足と再調整、通信・集約・返却を比較する。実際の Kubernetes の内部動作やネットワーク、配置制約、障害、自動復旧は再現・評価しない。`tests/provisioning-activities.test.js` は不足・準備・復元・達成を検査する。
+
+依頼1120は [Kubernetes の水平オートスケーリング](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/)を参考に、６刻みの到着に対して固定２人と手動で増減する人数を比べる独自の模型である。変更は次の刻みから反映され、１人１刻みを資源１とする。実際の HPA の測定・制御、起動時間、個別の待ち時間・料金・障害やクラスタ自体の伸縮は再現しない。`tests/elastic-workshop.test.js` は到着・処理・残数、資源、１刻みの遅れ、復元と達成を検査する。
