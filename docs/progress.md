@@ -2173,3 +2173,5 @@
 - 2026-11-03: 依頼1014で本流と公開保守の枝を分け、新機能と修正の祖先関係、２つの目印、修正の試験、２親の統合を操作。[Git の分岐と統合](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)と[タグ](https://git-scm.com/docs/git-tag)を参照。一時 Git リポジトリで４版の内容・統合の親・タグ参照を照合し npm test 2605件・ビルド成功。ブラウザで早すぎる操作・誤答、途中再開、統合と達成、キーボード、320/390/1280px を確認。競合、実際の配信とチーム協働は未評価。
 
 - 2026-11-03: 依頼1015で２端点・２中継塔の経路を操作し、初回の手紙または返事の消失、時間切れ後の再送と重複を比較。[RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) と [RFC 791](https://www.rfc-editor.org/rfc/rfc791.html) を参照。到着・配達・確認と途中記録を検査し npm test 2607件・ビルド成功。ブラウザで誤操作、途中再開、２場面と重複排除・達成、キーボード、320/390/1280px を確認。時間切れは消失後だけ操作できる固定模型で、実 TCP・実通信や故障が続く場合は未評価。
+
+- 2026-11-03: 依頼1016で実 HTML の小さな受付板のキーボード操作、操作名、状態通知を検査・修正する体験を追加。[W3C のキーボード](https://www.w3.org/WAI/WCAG22/Understanding/keyboard)、[名前・役割・値](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value)、[状態メッセージ](https://www.w3.org/WAI/WCAG22/Understanding/status-messages)を参照。検査記録の無効化と復元を検査し npm test 2609件・ビルド成功。ブラウザで初期の非フォーカス要素、修正後の名前付きボタン・状態領域、Tab/Enter/Space、途中再開と達成、320/390/1280px を確認。実際の読み上げや利用者による評価、規格全体の適合は未評価。

@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-accessibility-audit':['accessibility','WCAG','キーボード','操作名','状態通知','アクセシビリティ'],
  'forest-end-to-end':['end to end','エンドツーエンド','中継','再送','重複','端点'],
  'guild-release-branches':['Git','trunk','branch','release','hotfix','tag','マージ','リリース分岐'],
  'workshop-language-safety':['C','Java','Rust','メモリー安全','借用','境界検査','安全な言語'],
