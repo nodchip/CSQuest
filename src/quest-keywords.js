@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-flock-rules':['群れ','群知能','マルチエージェント','ボイド','Boids','flocking'],
  'forest-translation-scroll':['機械翻訳','翻訳','語順','曖昧性','評価','machine translation'],
  'forest-agent-auction':['マルチエージェント','競売','オークション','入札','利得','auction'],
  'forge-fault-tradeoff':['障害耐性','可用性','複製','冗長性','性能','fault tolerance'],
