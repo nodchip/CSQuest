@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-inverse-reward-trails':['逆強化学習','実演からの学習','報酬推定','inverse reinforcement learning','imitation learning'],
  'workshop-assignment-path-repair':['確実な代入','初期化','静的解析','definite assignment','must analysis'],
  'workshop-instruction-tiles':['命令選択','命令パターン','機械語','instruction selection','tree covering'],
  'workshop-calling-convention-bridge':['呼出し規約','分割コンパイル','レジスター','ABI','calling convention'],
