@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-dependent-signs':['条件付き独立','XOR','naive bayes','ナイーブベイズ','相互作用','特徴の積'],
  'archive-naive-linear':['naive bayes','ナイーブベイズ','対数オッズ','ロジスティック','条件付き独立'],
  'archive-finite-generalization':['generalization bound','汎化境界','有限仮説','PAC','union bound','和集合限界'],
  'archive-vc-lanterns':['VC dimension','VC次元','シャッタリング','仮説集合','分類境界'],
