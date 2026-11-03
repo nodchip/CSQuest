@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-skipgram-embedding':['Word2Vec','skip-gram','単語埋め込み','共起'],
  'forest-event-timeline':['イベント計算','時間推論','event calculus','出来事'],
  'forest-situation-door':['状況計算','行動の前提条件','フレーム問題','situation calculus'],
  'village-timestamp-order':['タイムスタンプ順序','並行制御','timestamp ordering','read timestamp','write timestamp'],

@@ -6,7 +6,7 @@
 |---|---|---|---|
 | 1 | 非構造データのベクトル化・ベクトル保存 | 部分 | 120で単語頻度と得点、121で隣接２語を比較。埋込みベクトルの保存や実データは未評価。 |
 | 1a | N グラム付き TF-IDF | 部分 | 120で隣接２語の出現回数と文書頻度から TF-IDF を求める。一般の N グラム・分割・検索品質は未評価。 |
-| 1b | Word2Vec | 未照合 | 該当する学習・推論の体験は未確認。 |
+| 1b | Word2Vec | 部分 | 1037で３候補の Skip-gram・全語 softmax と２次元ベクトルの更新を操作。実コーパス、負例サンプリングや一般の埋込み品質は未評価。 |
 | 1c | 配列 DB・配列型 | 未照合 | 配列を DB に格納・検索する体験は未確認。 |
 | 2a-i | 入れ子データの符号化・圧縮 | 未照合 | 189に文書の固定例はあるが、入れ子の符号化や圧縮は未確認。 |
 | 2b-i | B 木・スキップ索引・Bloom filter | 部分 | 120で固定語の Bloom filter、662で固定キーの B+ 木を操作。半構造データの索引やスキップ索引は未評価。 |
@@ -16,3 +16,5 @@
 | 2c-ii | 半構造データを扱う製品事例 | 未照合 | Postgres/JSON、MongoDB、Snowflake/JSON の事例は未確認。 |
 
 依頼120の頻度・IDF の前提は [DM-Unstructured](dm-unstructured.md)、189の文書模型は [DM-NoSQL](dm-nosql.md) を参照。`tests/word-index.test.js` は固定した転置索引と得点を検査し、実データ・製品の機能を保証しない。
+
+依頼1037は [Mikolov らの Word2Vec 論文](https://research.google/pubs/efficient-estimation-of-word-representations-in-vector-space/)と [Stanford の単語ベクトル講義](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)を参考に、中心語１個、周囲語３候補、２次元の全語 softmax で１組の手本を３回学習する。２手本は同じ初期値から独立に学習する。中心と出力の８座標の勾配を数値微分と照合し、確率の和と各更新の損失を `tests/skipgram-embedding.test.js` で確認。実コーパス、単語の分割、負例サンプリング、一般の意味や性能は評価しない。
