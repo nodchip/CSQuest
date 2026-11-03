@@ -1,0 +1,7 @@
+export const feedIntervalLevel={id:'guild-feed-intervals',number:'1142',kind:'feed-intervals',name:'研究の差と不確実性',tag:'実験・信頼区間',title:'二つの区間を比べよう',story:'案内板の研究を読んだあなたに、学者が２つの推定結果を見せました。差の大きさと不確かさを分けて確かめましょう。'};
+// Gauthier et al. (2026), main text Fig. 1: estimates in percentage points.
+export const feedIntervalOutcomes={conservative:{name:'保守的なアカウントを１つ以上フォロー',estimate:3.7,low:.5,high:7.0,p:.025},activist:{name:'政治活動家のアカウントを１つ以上フォロー',estimate:2.3,low:-.1,high:4.8,p:.061}};
+export function feedIntervalContainsZero(id){if(!Object.hasOwn(feedIntervalOutcomes,id))throw new RangeError('指標が不正です。');const x=feedIntervalOutcomes[id];return x.low<=0&&x.high>=0;}
+export function feedIntervalCreate(){return {selected:'conservative',seen:[],detect:null,zero:null,comparison:null,scope:null,checked:false};}
+export function feedIntervalDone(q){return Object.keys(feedIntervalOutcomes).every(k=>q.seen.includes(k))&&q.detect==='conservative'&&q.zero==='uncertain'&&q.comparison==='direct'&&q.scope==='limits'&&q.checked;}
+export function feedIntervalRestore(q){if(!q||!Object.hasOwn(feedIntervalOutcomes,q.selected)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.hasOwn(feedIntervalOutcomes,k))||![null,'conservative','activist','both'].includes(q.detect)||![null,'uncertain','none','probability'].includes(q.zero)||![null,'direct','proven','equal'].includes(q.comparison)||![null,'limits','universal','guarantee'].includes(q.scope)||typeof q.checked!=='boolean')throw new RangeError('区間の記録が不正です。');return {...q,seen:[...q.seen]};}

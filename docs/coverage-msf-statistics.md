@@ -11,7 +11,7 @@
 | 3 | KA Core | 多変量の推定・相関・回帰 | 部分 | 115で１説明変数の直線、708で２特徴の分類回帰を操作。一般の多変量推定や相関分析は未評価。 |
 | 4 | KA Core | 次元削減・平滑化 | 部分 | 300で２次元の射影、718で中心付き移動平均を比較。一般の平滑化や次元削減は未評価。 |
 | 5 | KA Core | 統計モデル・アルゴリズム | 部分 | 18・115・551で固定例の適合や交差検証を比較。一般的なモデル設計と検証は未評価。 |
-| 6 | KA Core | 仮説検定 | 部分 | 436で二値観測の厳密検定。一般の検定・検出力・複数検定は未評価。原典に独立の例示成果はない。 |
+| 6 | KA Core | 仮説検定 | 部分 | 436で二値観測の厳密検定、1142で実研究の区間と p 値を読む。一般の検定・検出力・複数検定の計算は未評価。原典に独立の例示成果はない。 |
 
 ## 例示学習成果
 
@@ -45,3 +45,5 @@
 原典の仮説検定トピック６には独立の例示成果がないため、トピックとして追跡する。関連検査は `tests/histogram.test.js`、`tests/bernoulli-likelihood.test.js`、`tests/confidence-interval.test.js`、`tests/pca-axis.test.js`、`tests/iris-cross-validation.test.js` など。各模型の範囲を検査し、原典全体の達成を保証しない。
 
 依頼1071は [scikit-learn のリッジ回帰](https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification)と [ISLR の正則化と事前分布](https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/ISLRv2_website.pdf)を参考に、架空の５手本へ a+b×x² を当てはめる。独立な分散１の正規誤差を仮定し、罰なしでは最尤推定、罰 λ>0 では b の事前分布を N(0,1/λ)、a を平坦な非正則化の事前分布として二乗誤差＋λb²を最小化する。二組の手本と各２つの別の札は公開された固定例で、正規性の実証や独立な未知データの評価ではない。`tests/polynomial-map.test.js` は８条件の正規方程式と誤差、保存・達成を検査する。
+
+依頼1142は [Gauthier らの研究](https://www.nature.com/articles/s41586-026-10098-2)の図１と本文に報告された２指標の差、95％信頼区間と両側 p 値を読み、０を含む区間、有意判定の違いと指標間の直接比較を区別する。推定差は3.7ポイント（0.5〜7.0、p＝0.025）と2.3ポイント（−0.1〜4.8、p＝0.061）。`tests/feed-intervals.test.js` は転記値・０の位置・保存と達成を検査。[NIST の区間解釈](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm)も参照する。丸め済みの固定値であり、２効果の差の検定、複数検定の調整、任意の区間計算や別集団への一般化は評価しない。
