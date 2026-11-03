@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-vr-rescue-journey':['分散VR','追跡','視差','同期','仮想空間'],
  'ruin-shared-vr':['共有仮想空間','分散VR','同期','順不同','snapshot','multiplayer'],
  'ruin-panorama-parallax':['パノラマ','360度映像','視差','画像ベース','panorama','parallax'],
  'ruin-tracking-occlusion':['インサイドアウト','アウトサイドイン','位置追跡','遮蔽','inside-out','outside-in'],
