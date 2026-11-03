@@ -1,0 +1,13 @@
+import {spawnSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+import {timedOrders,timedLate,timedAggregate,timedReplay} from '../src/timed-ledger.js';
+const result=spawnSync(process.platform==='win32'?'python':'python3',['scripts/check-timed-ledger.py'],{encoding:'utf8'});
+if(result.status!==0)throw new Error(result.stderr||'SQLite comparison failed');
+const sql=JSON.parse(result.stdout),query=(mode,guess)=>({type:'query',mode,guess});
+assert.deepEqual(timedAggregate(timedOrders,'exact').buckets,sql.exact);
+assert.deepEqual(timedAggregate(timedOrders,'asof').buckets,sql.before);
+assert.deepEqual(timedAggregate([...timedOrders,timedLate],'asof').buckets,sql.after);
+const prefix=[query('exact',0),query('raw',5),query('view',5),{type:'insert'}];
+assert.deepEqual(timedReplay(prefix).cache,sql.stale);
+assert.deepEqual(timedReplay([...prefix,query('raw',6),query('view',5),{type:'refresh'}]).cache,sql.fresh);
+console.log(`SQLite ${sql.sqlite_version}: exact join, as-of join, late arrival and saved aggregates matched.`);

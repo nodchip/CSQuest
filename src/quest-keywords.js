@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-timed-ledger':['時系列','集計','時刻結合','実体化ビュー','materialized view','鮮度'],
  'archive-ledger-update':['SQL','UPDATE','NULL','条件','更新','制約','rollback'],
  'guild-estimate-schedule':['見積り','工数','依存関係','スケジュール','人日','実績'],
  'archive-polynomial-map':['多項式回帰','最尤推定','最大事後推定','リッジ回帰','regularization','MAP'],
