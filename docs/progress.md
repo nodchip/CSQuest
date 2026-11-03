@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1134で旧式の範囲外読取りと安全な取得・失敗処理を３方式×５番号で比較。[Rust の取得](https://doc.rust-lang.org/std/primitive.slice.html#method.get)と[回復可能な失敗](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)を参照。関連34テストとビルド成功。Rust 1.99.1 で５番号の取得と失敗時の無条件取出しを別途照合。配信用画面で未選択、誤予想、途中再開、９比較、誤答・達成、320/390/1280px幅を確認。実コードの書換えや一般の安全性は評価しない。
+
 - 2026-11-04: 依頼1133で参加者２人の希望を聞き、図の項目・数値、具体的な読み上げ、字幕の８組合せを比較。[W3C の発表の指針](https://www.w3.org/WAI/teach-advocate/accessible-presentations/)を参照。８条件・誤予想・保存を含む関連33テストとビルドが成功。配信用画面で早すぎる発表、誤予想、途中再開、５比較、誤答・達成、320/390/1280px幅を確認。実際の発表・字幕や利用者による検証は未評価。
 
 - 2026-11-04: 依頼1132で、962の同じ瞬間を２人の希望する言葉・時間帯で案内し、年のない曖昧な日付を見直す。[W3C の日付形式](https://www.w3.org/International/questions/qa-date-format)と[言語選択](https://www.w3.org/International/questions/qa-when-lang-neg)を参照。24条件、日付時刻・保存を含む関連35テストとビルドが成功。配信用画面で希望の確認、曖昧な日付、途中再開、日本語・英語、誤答と達成、320/390/1280px幅を確認。実翻訳や実利用者との対話は評価しない。
