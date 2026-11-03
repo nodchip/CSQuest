@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-calling-convention-bridge':['呼出し規約','分割コンパイル','レジスター','ABI','calling convention'],
  'workshop-call-effects-cache':['呼出し効果','副作用','modref','読み直し','call effects'],
  'workshop-control-data-graphs':['制御フローグラフ','データフローグラフ','値の依存','CFG','DFG'],
  'workshop-pointer-constraints':['別名解析','指し先解析','ポインタ解析','may alias','points-to'],
