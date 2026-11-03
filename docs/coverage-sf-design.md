@@ -14,7 +14,9 @@
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
 | 1 | CS Core | 一般的な設計基準を説明 | 部分 | 依頼242・244で排他違反と行き止まりを比べる。活性の一般的な保証や自由な説明は評価しない。 |
-| 2 | CS Core | 機能要件と基準から高水準設計を提示 | 未照合 | 依頼243は与えられた倉庫の約束を有限範囲で検査する例。一般の要件から高水準設計を提示する体験は確認できていない。 |
+| 2 | CS Core | 機能要件と基準から高水準設計を提示 | 部分 | 依頼1189で受付・同時更新・記録・確定の４選択を組み合わせ、通常と４つの品質場面を試す。一般の要件から自由に設計を提示する力は評価しない。 |
 | 3 | KA Core | 代表的なシステムの設計を説明 | 未照合 | 実在システムの設計の説明・検証を確認できていない。 |
 
 対応する実装と検証は `src/model-checking.js`・`tests/model-checking.test.js`、`src/deadlock-checking.js`・`tests/deadlock-checking.test.js`、`src/contract-exhaustive.js`・`tests/contract-exhaustive.test.js` を参照。有限モデルの網羅は実システム一般の性質を証明しない。
+
+依頼1189は [CMU の設計と品質要件](https://www.cs.cmu.edu/~schmerl/courses/15-413/deliverables.html) と [SQLite の原子的な確定](https://www.sqlite.org/atomiccommit.html)を参考に、受付・同時更新・保存・確定の４選択を組み、通常受取り・再起動・同時依頼・確定前停止・権限の５場面を試す。各仕組みの振る舞いは教材用の仮定で、実システムの可用性、保管装置の故障、性能や一般の安全性を保証しない。`tests/warehouse-architecture.test.js` で16設計と全場面・途中復元を検査する。

@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-warehouse-architecture':['高水準設計','機能要件','品質特性','architecture','quality attributes','設計基準'],
  'ruin-deep-q-workshop':['深層強化学習','DQN','deep reinforcement learning','経験再生','目標ネットワーク'],
  'ruin-inverse-reward-trails':['逆強化学習','実演からの学習','報酬推定','inverse reinforcement learning','imitation learning'],
  'workshop-assignment-path-repair':['確実な代入','初期化','静的解析','definite assignment','must analysis'],
