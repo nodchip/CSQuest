@@ -32,6 +32,7 @@ export const questKeywords={
  'archive-text-frequency-visual':['テキスト可視化','単語頻度','文章長','正規化','term frequency'],
  'ruin-horn-meaning':['Horn節','一階論理','含意','真理値表','規則','Horn clause'],
  'forest-map-projection':['地理空間','地図投影','緯度','経度','メルカトル','Mercator'],
+ 'archive-heap-file':['ヒープファイル','heap file','空き領域','全走査'],
  'archive-morton-index':['空間索引','Z順','モートン順','空間充填曲線','Morton','z-order'],
  'archive-graphql-selection':['GraphQL','問い合わせ','フィールド','スキーマ','型','null'],
  'village-aries-recovery':['ARIES','先行ログ','復旧','redo','undo','補償ログ','CLR'],
