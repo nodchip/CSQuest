@@ -1,0 +1,7 @@
+import {agentStyleScenes,agentStylePolicies,agentStyleRun} from './agent-styles.js';
+export const navigationCompareLevel={id:'forest-navigation-compare',number:'1148',kind:'navigation-compare',name:'三つの道案内',tag:'ロボットの移動方針',title:'人形たちの道を比べる',story:'薬を運ぶ人形に、印への反応、最短の道、期待費用を比べる道案内を試します。'};
+export {agentStyleScenes as navigationScenes,agentStylePolicies as navigationPolicies};
+export function navigationOutcome(scene,policy){const result=agentStyleRun(scene,policy);return {...result,label:result.arrives?result.route:'blocked'};}
+export function navigationCreate(){return {scene:'clear',policy:'reflex',guess:null,seen:[],reflection:null,limits:null,checked:false};}
+export function navigationDone(q){return Object.keys(agentStyleScenes).every(s=>Object.keys(agentStylePolicies).every(p=>q.seen.includes(`${s}:${p}`)))&&q.reflection==='tradeoff'&&q.limits==='model'&&q.checked;}
+export function navigationRestore(q){if(!q||!Object.hasOwn(agentStyleScenes,q.scene)||!Object.hasOwn(agentStylePolicies,q.policy)||![null,'short','safe','blocked'].includes(q.guess)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.keys(agentStyleScenes).some(s=>Object.keys(agentStylePolicies).some(p=>`${s}:${p}`===k)))||![null,'tradeoff','always'].includes(q.reflection)||![null,'model','guarantee'].includes(q.limits)||typeof q.checked!=='boolean')throw new RangeError('道案内の記録が不正です');return {...q,seen:[...q.seen]};}
