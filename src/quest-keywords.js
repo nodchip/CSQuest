@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-base-offset':['アドレッシング','基底','オフセット','整列','addressing'],
  'workshop-array-machine':['配列','アセンブリ','番地','ループ','load','assembly'],
  'forge-coalesced-load':['GPU','メモリ','コアレッシング','coalescing','帯域'],
  'forge-quantization-energy':['量子化','int8','fp32','quantization','エネルギー'],
