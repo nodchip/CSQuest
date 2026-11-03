@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-order-fault-journey':['逐次','並行','複製','部分障害','更新の消失'],
  'archive-face-audit-study':['Gender Shades','顔分類','公平性','集団別評価','誤分類率'],
  'archive-language-type-check':['静的型付け','動的型付け','Rust','Python','TypeError'],
  'forge-dvfs-phases':['DVFS','動的調整','計算待機','切替え費用'],
