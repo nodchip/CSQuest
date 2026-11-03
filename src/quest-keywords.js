@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-peer-review':['コードレビュー','レビュー','境界値','権限','失敗','回帰試験'],
  'archive-imagenet-stress-study':['ImageNet','ImageNet-C','ObjectNet','仕様不足','頑健性','標準偏差'],
  'workshop-underspecification':['仕様不足','評価','分布シフト','背景','underspecification'],
  'village-probability-axioms':['確率の公理','加法','排反','包除原理','確率空間'],
