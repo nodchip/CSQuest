@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-parallel-specification':['並列化','仕様','順序','集約','parallel','specification'],
  'village-os-influences':['オペレーティングシステム','セキュリティ','通信','音声','並行処理','operating system'],
  'village-event-worlds':['イベント駆動','リスナー','ロボット','サーバー','gui','listener','callback'],
  'ruin-curve-gradient':['ベクトル値関数','勾配','連鎖律','chain rule','速度','偏微分'],
