@@ -3,6 +3,14 @@ export const seedScenes={balanced:{name:'似た見つけやすさ',planted:[0,0,
 export const seedDoors=['太陽','月','星','風'];
 const original=[1,1,3,3];
 export function seedExperiment(scene,mask){if(!Object.hasOwn(seedScenes,scene)||!Number.isInteger(mask)||mask<0||mask>15)throw new RangeError('試験条件が不正です');const found=xs=>xs.filter(i=>(mask&(1<<i))!==0).length,planted=found(seedScenes[scene].planted),natural=found(original);return {planted,natural,totalSeeded:4,estimatedTotal:planted?natural*4/planted:null,estimatedRemaining:planted?natural*4/planted-natural:null};}
+// The assessment uses the same two doors in every scene; exploratory masks have their own results.
+export function seedAnswerFeedback(scene,answer){
+ if(!Object.hasOwn(seedScenes,scene)||![null,'four','two','unknown'].includes(answer))throw new RangeError('回答が不正です');
+ if(answer===null)return '見積もりを選びましょう。';
+ const r=seedExperiment(scene,3),correct=r.estimatedTotal===null?'unknown':r.estimatedTotal===4?'four':'two';
+ if(r.estimatedTotal===null)return `${answer===correct?'その通りです。':'見直しましょう。'} 追加分の発見数が０件なので、０では割れず、この比率では推定できません。`;
+ return `${answer===correct?'その通りです。':'見直しましょう。'} 追加分 ${r.planted}/4 と同じ割合だと仮定すると、元の発見 ${r.natural} × 4 ÷ ${r.planted} = ${r.estimatedTotal} 件です。`;
+}
 export const densityBaselines={low:{name:'過去の工房Ａ',defects:2,thousands:1},high:{name:'過去の工房Ｂ',defects:12,thousands:2}};
 export function densityEstimate(id){if(!Object.hasOwn(densityBaselines,id))throw new RangeError('比較する記録が不正です');const c=densityBaselines[id],density=c.defects/c.thousands,total=density*3;return {density,total,remaining:total-3};}
 export function seedCreate(){return {scene:'balanced',mask:3,results:{balanced:null,easy:null,missed:null},answers:{balanced:null,easy:null,missed:null},reflection:null,density:{selected:'low',answers:{low:null,high:null},reflection:null}};}
