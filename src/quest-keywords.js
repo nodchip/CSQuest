@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-team-project-cycle':['チーム運営','役割分担','レビュー','再試験','teamwork','project'],
  'village-inclusive-team-design':['多様性','包摂','開発チーム','参加','アクセシビリティ','diversity','inclusive teams'],
  'archive-spark-shuffle':['Spark','RDD','シャッフル','遅延評価','分散集計','shuffle','lazy evaluation'],
  'archive-collection-impacts':['大規模収集','データ保護','GDPR','目的限定','透明性','data minimisation'],
