@@ -20,7 +20,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
-| 1 | CS Core | 大規模収集の社会・法律上の問題を各３つ挙げる | 未照合 | 実例や法域を含む列挙は未確認。 |
+| 1 | CS Core | 大規模収集の社会・法律上の問題を各３つ挙げる | 部分 | 1191で架空の３場面の社会的懸念と GDPR の透明性・目的限定・最小化を比較。自由な列挙、適用判断や適法性の評価は未対応。 |
 | 2 | CS Core | プライバシーの価値を説明 | 部分 | 194・196で不要な収集と推測の固定例。自由な説明は未評価。 |
 | 3 | CS Core | 所有について利害が競合する関係者を特定 | 部分 | 331で村人・管理係・配達係・調査員・商人の立場を比較。一般の所有権分析は未評価。 |
 | 4 | CS Core | 実在するデータ中心の応用の意図しない負の結果を３つ挙げる | 部分 | 1031で映画評価の照合、友人情報の取得、医療費の代理指標による偏りを比較。自由な列挙、各事例の全影響や一般化は未評価。 |
@@ -32,3 +32,5 @@
 依頼1031は [Narayanan・Shmatikov の映画評価データ研究](https://arxiv.org/abs/cs/0610105)、[米 FTC の Cambridge Analytica 事例の説明](https://www.ftc.gov/business-guidance/blog/2019/12/commission-issues-opinion-cambridge-analytica-case)、[Obermeyer らの医療支援予測研究](https://pubmed.ncbi.nlm.nih.gov/31649194/)を参照する。前者は公開情報による一部記録の照合可能性、FTC は利用者と友人の情報取得や米国での判断、医療研究は支出を代理指標とした場合の集団差を扱う。`tests/data-scale-cases.test.js` で各事例の３仕組み×３調査、復元・達成を検査。調査案が単独で安全性や法令適合を保証するとは扱わず、法域ごとの一般的な判断や自由な列挙は評価しない。
 
 依頼1113は [GDPR 第５条１項(c)・第25条２項](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng/) と [EDPB の設計・初期設定による保護](https://www.edpb.europa.eu/topics/ai-and-technology/privacy-by-design-and-by-default_en) を参考に、配達と電子便の架空の目的ごとに不足・不要・必要な項目だけの３状態を比較する。項目の必要性は各場面の仮定であり、GDPR の適用の有無、処理の法的根拠、保存期間、保護措置や実システムの適法性を判定しない。`tests/privacy-design-law.test.js` は２目的×16選択、途中記録・達成を検査する。
+
+依頼1191は [欧州データ保護会議の基本解説](https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en)を参考に、GDPR 適用を仮定した架空の３場面で透明性、目的の限定、データ最小化と３つの社会的懸念を選ぶ。懸念は可能性であり必然ではなく、各原則は単独で適法性を示さない。法的根拠、健康情報の特別な取扱い、他法域や自由な列挙は評価しない。`tests/collection-impacts.test.js` は全回答組合せ・復元・達成を検査する。
