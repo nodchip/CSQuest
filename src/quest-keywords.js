@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-memory-cells':['SRAM','DRAM','リフレッシュ','静的メモリ','動的メモリ','揮発性'],
  'workshop-device-path':['input output','I/O','入出力装置','センサー','アクチュエーター','タッチ画面'],
  'guild-terminology-migration':['inclusive language','包摂的な言葉','用語','互換性','OSPF','RFC 9454'],
  'guild-accessibility-audit':['accessibility','WCAG','キーボード','操作名','状態通知','アクセシビリティ'],

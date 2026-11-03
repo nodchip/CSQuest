@@ -2181,3 +2181,5 @@
 - 2026-11-03: 依頼1017で [RFC 9454](https://www.rfc-editor.org/rfc/rfc9454.html) の OSPF 用語・旗名の更新を題材に、名前と旗の値を区別し、架空の旧入力・新入力の互換性を比較。[Google の技術文書指針](https://developers.google.com/style/inclusive-documentation)も参照。４旗条件・６入力条件と保存を検査し npm test 2612件・ビルド成功。ブラウザで早すぎる選択、誤った旗、途中再開、全条件・達成、キーボード、320/390/1280px を確認。入力は実 OSPF コマンドではなく、実システムの移行や個々の受け止め方は未評価。
 
 - 2026-11-03: 依頼1018で文字・接触・温度・画像を扱う４作業の入出力装置を選び、タッチ画面の両役割と温度30・80のモーター制御を操作。[Linux の入力イベント](https://www.kernel.org/doc/html/latest/input/event-codes.html) と [映像入力](https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/video.html)を参照。全装置の組合せ、温度条件と保存を検査し npm test 2614件・ビルド成功。ブラウザで誤選択、途中再開、４作業・達成、キーボード、320/390/1280px を確認。機能・温度は固定模型で、実装置・ドライバー・障害は未評価。
+
+- 2026-11-03: 依頼1019で典型的な SRAM・DRAM の保持、リフレッシュと電源断の６条件を比較し、仮の費用と時間で２階層を配置。[MIT の DRAM 解説](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/resources/dram-5-10-/)と[Georgia Tech の資料](https://ece2020.ece.gatech.edu/readings/memory/memory.pdf)を参照。６条件・４配置と保存を検査し npm test 2617件・ビルド成功。ブラウザで早すぎる回答、途中再開、６条件、費用超過から修正・達成、キーボード、320/390/1280px を確認。３刻の保持や費用・時間は架空で、実機の測定や一般の性能は未評価。
