@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-nullspace-gates':['零空間','同次方程式','階数','直交補空間','nullspace','rank'],
  'ruin-subspace-gates':['部分空間','零ベクトル','閉包','反例','subspace'],
  'guild-peer-review':['コードレビュー','レビュー','境界値','権限','失敗','回帰試験'],
  'archive-imagenet-stress-study':['ImageNet','ImageNet-C','ObjectNet','仕様不足','頑健性','標準偏差'],
