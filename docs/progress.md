@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1072で架空の４作業について３値の平均・固定実績を比較し、依存関係と１人・２人の担当を操作。[NASA の３点見積り](https://www.nasa.gov/pdf/420297main_NASA-SP-2010-3403.pdf)と [CMU の日程](https://www.cmu.edu/cee/projects/PMbook/10_Fundamental_Scheduling_Procedures.html)を参照。合法な作業順序の列挙、保存、達成を検査し、全2,744件の自動テストとビルドが成功。配信用ビルドで前提違反・並行中の再開・３条件・誤答・達成、320・390・1280px幅とフォーカスを確認。固定時間、１仕事１人の模型で、実案件や期限達成確率は評価しない。
+
 - 2026-11-03: 依頼1071で２組の架空の手本に切片と二乗項の曲線を合わせ、最尤推定と正規事前分布に対応する罰を比較。[リッジ回帰](https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification)と [ISLR](https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/ISLRv2_website.pdf)を参照。８条件の正規方程式・誤差・保存を検査し、全2,741件の自動テストとビルドが成功。配信用ビルドで係数と誤差、途中再開、２手本・複数の罰、誤答・達成、図の代替テキスト、320・390・1280px幅とフォーカスを確認。固定の正規誤差・事前分布と２係数の模型で、独立な実データの評価やコード作成は評価しない。
 
 - 2026-11-03: 依頼1070で架空の数値分類について、元の値と二乗した特徴の境界を両向きに操作し、別の値や判定条件が変わった場合を比較。[scikit-learn の多項式特徴](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html)を参照。全条件の出力と保存を検査し、全2,739件の自動テストとビルドが成功。配信用ビルドで境界、途中再開、３組の札、誤答・達成、320・390・1280px幅とフォーカスを確認。固定された架空例で、実際の学習や独立な未知データの性能は評価しない。

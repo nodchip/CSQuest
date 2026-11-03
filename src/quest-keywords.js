@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-estimate-schedule':['見積り','工数','依存関係','スケジュール','人日','実績'],
  'archive-polynomial-map':['多項式回帰','最尤推定','最大事後推定','リッジ回帰','regularization','MAP'],
  'archive-square-features':['二乗','特徴量','基底展開','分類','polynomial features'],
  'ruin-vector-angle-lab':['ベクトル','角度','内積','零ベクトル','スカラー倍','dot product'],
