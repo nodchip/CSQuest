@@ -2403,3 +2403,5 @@
 - 2026-11-03: 遠征1115で依頼1109の MPI 封筒照合と1110のパイプ模型を再利用し、野営地から塔・中継所を通って村に薬を届ける。誤った受信指定からの再挑戦、通信路の終わりと場所ごとの進行条件を扱う。`tests/communications-journey.test.js` で進行制限・再挑戦・復元を検査し npm test 2857件・ビルド成功。ブラウザーで両地点の通行制限、受信待ちの途中再開、全操作・到着、Enter、320/390/1280pxを確認。元の模型と同様、実 API・障害や実行中の待機は評価しない。
 
 - 2026-11-03: 依頼1116で２活動に各１の資源と通信路を用意し、手動準備と管理役への依頼、資源不足、増設と再調整、集約・返却を比較。[Kubernetes の資源要求と配置](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)と[望む状態の管理](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)を参考に PDC-Programs の活動準備を部分対応として記録。操作順・不足・復元を検査し npm test 2859件・ビルド成功。ブラウザーで早すぎる開始、不足、途中再開、２方式、誤答・達成、Enter、320/390/1280pxを確認。１種類の資源と２活動の固定模型で、実プラットフォーム・障害や配置の一般性は評価しない。
+
+- 2026-11-03: 依頼1117で４人×３色の記録を人ごと・色ごとに並べ、全員の赤と１人の全色を読む４通りについて、触れた４セル単位の区画数を比較。[NVIDIA のデータ指向設計](https://developer.nvidia.com/blog/multi-gpu-programming-with-standard-parallel-c-part-1/)と[Intel のメモリー配置](https://www.intel.com/content/www/us/en/developer/articles/technical/memory-layout-transformations.html)を参照し、SE-Design のデータ指向を部分対応として記録。４通りの位置・区画数と復元を検査し npm test 2861件・ビルド成功。ブラウザーで途中再開、４通り、誤答・達成、Enter、320/390/1280pxを確認。固定模型の区画数であり、実行時間・実機性能やシステム全体のアーキテクチャーは未評価。

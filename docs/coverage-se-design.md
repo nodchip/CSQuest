@@ -13,7 +13,7 @@
 | 1c | CS Core | 情報隠蔽 | 部分 | 224で内部記録への依存を公開操作に変更。一般の設計は未評価。 |
 | 1d | CS Core | 結合度・凝集度 | 部分 | 225で変更の波及を比較。一般の評価は未評価。 |
 | 2a-i | CS Core | トップダウン・層構造 | 部分 | 1010で受付・審査・薬棚の層を通る／飛ばす固定例を比較。トップダウン設計全般と実システムは未評価。 |
-| 2a-ii | CS Core | データ指向アーキテクチャ | 未照合 | 関連依頼との対応は未確認。 |
+| 2a-ii | CS Core | データ指向アーキテクチャ | 部分 | 1117でデータ構造と処理を共に考える配置の一例を比較。原典の語の範囲は未定義で、システム全体のアーキテクチャや実性能は未評価。 |
 | 2a-iii | CS Core | オブジェクト指向の分析・設計 | 部分 | 1108で２棚の状態と操作を分け、直接変更・共有状態と比較。一般の分析・設計、実装と並行更新は未評価。 |
 | 2a-iv | CS Core | イベント駆動設計 | 部分 | 92でイベントの登録と待ち行列を操作。一般の設計は未評価。 |
 | 2b | CS Core | 標準アーキテクチャ | 部分 | 1010で層・パイプとフィルター・発行購読の３模型を比較。標準方式の体系的比較は未評価。 |
@@ -61,3 +61,5 @@
 依頼1011は依頼1008・1009・1010の限定模型を遠征内で再利用し、命令の実行、記憶の読取り、薬棚の審査を順に使う。`tests/guild-relay.test.js` で進行条件、失敗からの回復、途中記録を検査する。個々の題材の限界は上記の通り。
 
 依頼1108は [MDN のクラスとカプセル化](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming)を参考に、甲１個・乙０個の薬棚に対し、棚ごとの状態・共有状態と直接変更・検査付き操作を比較する。状態を持つ別インスタンスと、共通の設計・公開操作を扱う固定模型であり、他の有効な設計、実言語・並行性や一般の正しさを評価しない。`tests/object-design.test.js` は３構成の結果、保存・達成を検査する。
+
+依頼1117は [NVIDIA のデータ指向設計の説明](https://developer.nvidia.com/blog/multi-gpu-programming-with-standard-parallel-c-part-1/) と [Intel の配置変換のトレードオフ](https://www.intel.com/content/www/us/en/developer/articles/technical/memory-layout-transformations.html) を参考に、４人×３値の配置と２つの仕事を比較する。４値単位の区画と初期状態は固定模型で、実機のキャッシュや速度は測定しない。原典の data-oriented architecture の語は本文中で定義されておらず、データ配置を軸とする低水準の設計はその一解釈に限る。`tests/data-layout-design.test.js` は４条件の番地・区画・復元を検査する。
