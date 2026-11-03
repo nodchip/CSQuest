@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-mpi-envelope':['mpi','通信','ランク','タグ','コミュニケーター','受信','並列'],
  'village-object-design':['オブジェクト指向','クラス','インスタンス','カプセル化','設計','oop'],
  'village-alert-review':['顔認識','誤検知','人間の監督','異議申立て','fairness','false positive'],
  'archive-film-recorder':['フィルム','画像出力','ネガ','ポジ','film','exposure'],
