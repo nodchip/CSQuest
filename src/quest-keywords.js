@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-spark-shuffle':['Spark','RDD','シャッフル','遅延評価','分散集計','shuffle','lazy evaluation'],
  'archive-collection-impacts':['大規模収集','データ保護','GDPR','目的限定','透明性','data minimisation'],
  'archive-linux-vfs-trail':['Linux','VFS','仮想ファイルシステム','ファイル記述子','procfs','ext4'],
  'village-warehouse-architecture':['高水準設計','機能要件','品質特性','architecture','quality attributes','設計基準'],
