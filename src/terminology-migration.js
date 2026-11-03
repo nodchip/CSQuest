@@ -1,0 +1,13 @@
+export const terminologyLevel={id:'guild-terminology-migration',number:'1017',kind:'terminology-migration',name:'古い案内と新しい言葉',tag:'包摂・技術用語・互換性',title:'案内板の言葉を更新しよう',story:'ギルドは古い案内の言葉を見直します。意味を分かりやすくしながら、既存の利用者も案内を使えるようにしましょう。'};
+export const termLabels={legacy:'旧名称',revised:'Leader / Follower'};
+export const termParsers={old:'旧入力だけ',new:'新入力だけ',both:'両方を受け付ける'};
+export const termInputs={old:'旧入力 slave',new:'新入力 follower'};
+export function termFlag(label,bit){if(!Object.hasOwn(termLabels,label)||![1,2].includes(bit))throw new RangeError('不正な旗');const leader=(1&bit)!==0;return {leader,label:leader?(label==='legacy'?'Master':'Leader'):(label==='legacy'?'Slave':'Follower')};}
+export function termParse(parser,input){if(!Object.hasOwn(termParsers,parser)||!Object.hasOwn(termInputs,input))throw new RangeError('不正な入力');const accepted=parser==='both'||parser===input;return {accepted,role:accepted?'follower':null};}
+export function termCreate(){return {labels:'legacy',bit:1,parser:'old',input:'old',flagTried:0,parserTried:0,flagApproved:false,parserApproved:false,reflection:null};}
+export function termRunFlag(q){const bit=(q.labels==='revised'?2:0)+(q.bit===2?1:0);q.flagTried|=1<<bit;return termFlag(q.labels,q.bit);}
+export function termRunParser(q){const bit=Object.keys(termParsers).indexOf(q.parser)*2+(q.input==='new'?1:0);q.parserTried|=1<<bit;return termParse(q.parser,q.input);}
+export function termApproveFlag(q){if(q.flagTried!==15)return {ok:false,message:'４つの表示名と旗の組合せを試しましょう。'};if(q.labels!=='revised'||q.bit!==1)return {ok:false,message:'RFC の新しい役割名と、元と同じ旗の値を確かめましょう。'};q.flagApproved=true;return {ok:true,message:'新しい役割名と元の旗の値を選びました。'};}
+export function termApproveParser(q){if(q.parserTried!==63)return {ok:false,message:'３方式と２入力の６通りを試しましょう。'};if(q.parser!=='both')return {ok:false,message:'古い入力と新しい入力の両方が必要な移行期間を考えましょう。'};q.parserApproved=true;return {ok:true,message:'この移行例では、旧入力と新入力を受け付けます。'};}
+export function termDone(q){return q.flagApproved&&q.parserApproved&&q.reflection==='context';}
+export function termRestore(saved){if(!saved||!Object.hasOwn(termLabels,saved.labels)||![1,2].includes(saved.bit)||!Object.hasOwn(termParsers,saved.parser)||!Object.hasOwn(termInputs,saved.input)||!Number.isInteger(saved.flagTried)||saved.flagTried<0||saved.flagTried>15||!Number.isInteger(saved.parserTried)||saved.parserTried<0||saved.parserTried>63||typeof saved.flagApproved!=='boolean'||typeof saved.parserApproved!=='boolean'||![null,'context','rename','ignore'].includes(saved.reflection))throw new RangeError('不正な途中記録');if(saved.flagApproved&&(saved.flagTried!==15||saved.labels!=='revised'||saved.bit!==1)||saved.parserApproved&&(saved.parserTried!==63||saved.parser!=='both'))throw new RangeError('不正な承認記録');return {...saved};}
