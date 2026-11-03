@@ -35,3 +35,5 @@
 各依頼の前提・出典と検証、実際の状況に一般化できない範囲は[既存調査](sep-deia.md)を参照する。
 
 依頼1016は実 HTML の試作品をボタン・操作名・状態通知の３点で確認し、改善後にキーボードで実際に操作する。[W3C のキーボード](https://www.w3.org/WAI/WCAG22/Understanding/keyboard)、[名前・役割・値](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value)、[状態メッセージ](https://www.w3.org/WAI/WCAG22/Understanding/status-messages)を参照。検査は限定した試作品と３条件であり、実際の支援技術や利用者の評価、WCAG 全体の適合判定を意味しない。`tests/accessibility-audit.test.js` は３検査、改善による記録の無効化と復元を検査する。
+
+依頼1016はタッチ等で Enter 操作を画面上から模擬して進める経路も持つ。模擬と実際のキーボード入力の記録・達成後の説明は区別し、前者を実際の入力確認と主張しない。旧途中記録は模擬なしとして復元し、改善を切り替えると両方の操作確認を無効化する。
