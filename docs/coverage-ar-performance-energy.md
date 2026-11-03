@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | 1 | KA Core | 性能、電力、記憶、通信の費用の評価 | 部分 | 161 は架空の所要時間・平均電力・エネルギー。記憶・通信や実測は未評価。 |
 | 2 | KA Core | 分岐予測、投機、順序外実行、Tomasulo 法 | 部分 | 159・160 は予測と投機結果の固定例。順序外実行と Tomasulo 法は未評価。 |
-| 3 | KA Core | ベクトルプロセッサと GPU の改良 | 未照合 | 対応教材を要照合。 |
+| 3 | KA Core | ベクトルプロセッサと GPU の改良 | 部分 | 1085で４読み取りと32バイト区画のまとまりを比較。実 GPU の実行・性能や他の改良は未評価。 |
 | 4a | KA Core | マルチスレッド支援：競合 | 部分 | 814 は競合と比較交換の抽象模型。実機の支援は未評価。 |
 | 4b | KA Core | マルチスレッド支援：ロック実装 | 部分 | 814 はロックと原子的操作の模型。実機実装は未評価。 |
 | 4c | KA Core | マルチスレッド支援：２点間同期 | 未照合 | ハードウェア支援を含む対応を要照合。 |
@@ -39,3 +39,5 @@
 依頼1083は [NVIDIA のスレッドとベクトル加算の説明](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html)を参考に、２組×４人から６要素への担当番号、要素ごとの整数加算、範囲外２人の抑止を操作する。全８担当と途中保存を `tests/parallel-vector-add.test.js` で検査。実際の GPU・プログラム記述・メモリ転送・性能・整数の桁あふれは未評価。
 
 依頼1084は [ONNX Runtime の量子化](https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html)と [PyTorch の説明](https://pytorch.org/blog/quantization-in-practice/)を参考に、２縮尺・６値の丸めと切り詰め、仮の転送・変換費用を比較する。`tests/quantization-energy.test.js` で全12条件と費用を検査。実機のエネルギー、モデル精度や他の量子化方式は未評価。
+
+依頼1085は [NVIDIA のメモリアクセスの説明](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/writing-cuda-kernels.html)を参考に、４人の４バイト読み取りを32バイト区画ごとにまとめる固定模型。連続・逆順・境界またぎ・飛び飛び・同一棚と、代表256組の区画・順序を `tests/coalesced-load.test.js` で検査。実 GPU のスレッド数、キャッシュ、書き込みや実測は未評価。
