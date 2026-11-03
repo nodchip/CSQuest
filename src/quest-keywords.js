@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-release-acquire':['release','acquire','relaxed','happens-before','原子操作','メモリ順序'],
  'forge-channel-reachability':['CSP','状態空間','デッドロック','通信路','model checking','reachability'],
  'workshop-message-frame':['serialization','整列化','フレーム','圧縮','RLE','入力検証'],
  'castle-message-protection':['通信','暗号化','完全性','認証','認可','機密性','integrity'],
