@@ -7,7 +7,7 @@ export const reviewCases=[
 export function reviewCreate(){return {current:0,cases:reviewCases.map(()=>({draft:[],line:null,comment:null,accepted:false,fixed:[]})),reflection:null};}
 export function reviewRun(index,version,test){if(!Number.isInteger(index)||index<0||index>=reviewCases.length||!['draft','fixed'].includes(version)||!['normal','edge'].includes(test))throw new RangeError('試験条件が不正です。');const c=reviewCases[index],i=test==='normal'?0:1;return {actual:c[version][i],expected:c.expected[i],pass:c[version][i]===c.expected[i]};}
 export function reviewCommentValid(index,line,comment){return line===(index===2?0:1)&&comment==='issue';}
-export function reviewReady(c){return c.draft.includes('normal')&&c.draft.includes('edge')&&c.accepted&&c.fixed.includes('edge');}
+export function reviewReady(c){return c.draft.includes('normal')&&c.draft.includes('edge')&&c.accepted&&c.fixed.includes('edge')&&c.fixed.includes('normal');}
 export function reviewDone(q){return q.cases.every(reviewReady)&&q.reflection==='limits';}
 export function reviewRestore(q){
  if(!q||!Number.isInteger(q.current)||q.current<0||q.current>=reviewCases.length||!Array.isArray(q.cases)||q.cases.length!==reviewCases.length||![null,'limits','guarantee'].includes(q.reflection))throw new RangeError('記録が不正です。');
