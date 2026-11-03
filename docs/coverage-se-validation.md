@@ -47,7 +47,7 @@
 | 12a | Non-core | 処理量と遅延 | 部分 | 254 の固定４件 |
 | 12b | Non-core | 負荷増大と処理順 | 未照合 | 対応する教材の確認が必要。 |
 | 12c-i | Non-core | Amdahl の法則 | 部分 | 66で固定仕事量の逐次部分と均等分担の時間を比較。法則の一般式の導出や実測は未評価。 |
-| 12c-ii | Non-core | Gustafson の法則 | 未照合 | 対応する教材の確認が必要。 |
+| 12c-ii | Non-core | Gustafson の法則 | 部分 | 1052で人数に応じた仕事量と、その同じ仕事を１人で行う基準を比較。追加費用のない模型であり、実測や一般の分析は未評価。 |
 | 12c-iii | Non-core | 強・弱スケーリング | 部分 | 437で固定仕事量と１人あたり固定の仕事量を比較。実測と一般の分析は未評価。 |
 | 12d | Non-core | 性能指標の特定・測定 | 部分 | 254 の固定指標。実測は未評価 |
 | 12e-i | Non-core | 計算によるボトルネック | 未照合 | 715は逐次準備の改善を扱うが、計算律速か帯域・遅延律速かは判別しない。 |
@@ -67,6 +67,8 @@
 依頼1050は [Python の浮動小数点解説](https://docs.python.org/3/tutorial/floatingpoint.html)と[近さの判定](https://docs.python.org/3/library/math.html#math.isclose)を参照。小数加算、ゼロ付近、大きい値、NaN を３つの固定基準で比較し、判定の予測・再挑戦と用途に応じた許容幅を扱う。JavaScript の実際の数値演算を使うが、選択した閾値は模型の例で、一般の数値計算の正しさを示さない。検査：`tests/numeric-testing.test.js`。
 
 依頼1051は [GitHub の継続的インテグレーション](https://docs.github.com/en/actions/get-started/continuous-integration)と [Git のフックに関する FAQ](https://git-scm.com/docs/gitfaq#_hooks)を参照。固定された３つの版で、共有前の手元の試験、コミットと共有、共有版の統合試験、修理後の再試験を操作する。手元の合格を記録の前提とするのはこの模型の規則であり、実際の Git の必須条件ではない。検査：`tests/checkpoint-tests.test.js`。
+
+依頼1052は [Cornell の性能とスケーリング](https://www.cs.cornell.edu/~bindel/nmds/00-Background/02-Performance.html)を参照。固定仕事量と１人あたり固定の仕事量について準備・箱の時間・人数を選び、同じ仕事を１人で処理した時間と比較する。逐次準備一定、均等分担、追加費用なしの模型で、実機や一般の速度向上を保証しない。検査：`tests/scaled-speedup.test.js`。
 
 ## 例示学習成果
 

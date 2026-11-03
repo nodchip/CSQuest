@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-scaled-speedup':['Gustafson','グスタフソン','ガスタフソン','スケーリング','速度向上率'],
  'guild-checkpoint-tests':['コミット前','コミット後','ローカル試験','継続的インテグレーション','CI'],
  'workshop-numeric-testing':['数値試験','浮動小数点','許容誤差','NaN','相対誤差'],
  'workshop-random-replay':['疑似乱数','乱数','再現','欠陥追跡','テスト'],
