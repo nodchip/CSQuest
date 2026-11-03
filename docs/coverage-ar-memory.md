@@ -44,3 +44,5 @@
 依頼1019は典型的な SRAM・DRAM の保持方式、リフレッシュ、電源断を６条件で比較し、架空の費用と速度による２階層を選ぶ。[MIT の DRAM 解説](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/resources/dram-5-10-/)と[Georgia Tech の資料](https://ece2020.ece.gatech.edu/readings/memory/memory.pdf)を参照。DRAM の３刻は架空の保証範囲で、保証できないことを０への反転とは扱わない。価格・速度は模型値で、実製品の数値、障害や消費電力は未評価。`tests/memory-cells.test.js` で６条件、４配置と保存を検査する。
 
 依頼1023は [Ambit の論文](https://www.cs.cmu.edu/~18742/papers/Seshadri2017.pdf)の専用３行の同時活性化とビットごとの多数決を参考に、同じサブアレイで元の２行を作業行に写し、３行目を０・１に初期化して AND・OR を作る。３作業行は結果で上書きされる。４列で全８通りの入力と定数を扱い、`tests/memory-majority.test.js` で正誤・順序・保存を検査。外部を通る行データを CPU 側処理３行、記憶内処理０行とするのは、元２行の読取りと結果１行の書戻しを仮定した比較であり、制御命令や実性能は含めない。通常の DRAM にこの機能があるとは仮定せず、電気的信頼性・実機・一般の処理は未評価。
+
+依頼1024は1023の多数決を再利用し、４箇所の知らせの OR、許可を絞る AND、結果を伝える信号の選択を遠征としてつなぐ。`tests/lantern-mask-relay.test.js` で８種類の多数決、選べる札と定数の組、段階と保存を検査。実際の DRAM の通信・原子性・安全性は評価しない。
