@@ -39,7 +39,7 @@
 | 5a | 重要な関数のテイラー級数を導出 | 部分 | 476で指数関数の原点周りの固定近似。一般の導出は未評価。 |
 | 5b | テイラー級数を近似に適用 | 部分 | 476で４次までの近似を比較。一般の誤差評価は未評価。 |
 | 6a | 偏微分と勾配を計算 | 部分 | 477で二変数二次関数の固定例を操作。一般の関数は未評価。 |
-| 6b | ベクトル値関数と勾配表記 | 未照合 | 対応する依頼は未確認。 |
+| 6b | ベクトル値関数と勾配表記 | 部分 | 1101で曲線の速度とスカラー関数の勾配、連鎖律の内積を３時刻で比較。一般のベクトル値関数、任意次元や自由な導出は未評価。 |
 | 6c | 最適化への応用 | 部分 | 116・477・479で固定条件の最小化を操作。一般の最適化は未評価。 |
 | 7a | 積分にオイラー法を適用 | 部分 | 475で増加率を用いた離散的な更新を操作。一般の積分への適用は未評価。 |
 | 7b | 一変数の微分方程式にオイラー法を適用 | 部分 | 475で初期値問題を３刻み幅で近似。一般の方程式は未評価。 |
@@ -54,3 +54,5 @@
 依頼1099は [OpenStax のロピタルの定理](https://openstax.org/books/calculus-volume-1/pages/4-8-lhopitals-rule) と [CLP の結論できない例](https://math.libretexts.org/Bookshelves/Calculus/CLP-1_Differential_Calculus_(Feldman_Rechnitzer_and_Yeager)/04%3A_Applications_of_derivatives/4.07%3A_L%27Hopital%27s_Rule_and_Indeterminate_Forms)を参照。４つの固定例で不定形、微分可能性等の条件、導関数の比と元の比の区別を扱う。`tests/hopital-gates.test.js` で選択・途中記録と、振動する導関数の比の２部分列を検査。一般の証明や任意の関数の処理は未評価。
 
 依頼1100は [OpenStax の原始関数](https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives) と [広義積分](https://openstax.org/books/calculus-volume-2/pages/3-7-improper-integrals) を参照。５関数の原始関数・端点の差と、1/x を０で分けた広義積分の発散を比較する。`tests/integral-rules.test.js` は独立した数値微分・Simpson 積分および選択・途中記録を検査。固定例であり一般の積分法・自由な証明は未評価。
+
+依頼1101は [OpenStax のベクトル値関数の微分](https://openstax.org/books/calculus-volume-3/pages/3-2-calculus-of-vector-valued-functions) と [多変数の連鎖律](https://openstax.org/books/calculus-volume-3/pages/4-5-the-chain-rule) を参照。r(t)=(t,t²) と f(x,y)=x²+y² の３時刻で速度、勾配、内積を比較し、確認後に２矢印を同倍率で図示する。`tests/curve-gradient.test.js` は独立した中心差分・内積・復元を検査。固定例で一般の関数や自由な証明は未評価。
