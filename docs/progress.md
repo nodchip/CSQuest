@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1154で978の入力変化模型を再利用し、許可された架空の複製で異常発見・再現・範囲外の拒否・回帰確認を操作。[NIST SP 800-115](https://www.nist.gov/publications/technical-guide-information-security-testing-and-assessment)を参考にした。全８入力の修正前後を含む関連34テストとビルドが成功。配信用画面で試験の順序、途中再開、誤答・達成と320/390/1280px幅を確認。実環境・一般の安全性は評価しない。
+
 - 2026-11-04: 依頼1153で495の最近傍模型を架空の危険な道具の検知へ再利用し、手本２条件・３検体、見逃しと適合率を比較。[NIST の敵対的機械学習](https://www.nist.gov/publications/adversarial-machine-learning-taxonomy-and-terminology-attacks-and-mitigations-0)を参考に、関連34テストとビルドが成功。配信用画面で誤答、途中再開、６条件、適合率の分母０、振り返り・達成と320/390/1280px幅を確認。実ファイルや実検知性能は未評価。
 
 - 2026-11-04: 依頼1152で感染済みの塔からの１経路を前提に、更新・道の遮断・予備記録の切り離し８条件と復旧の４状態を比較。[CISA・MS-ISAC のガイド](https://www.cisa.gov/sites/default/files/2023-01/CISA_MS-ISAC_Ransomware%20Guide_S508C.pdf)を参考にした。関連38テストとビルドが成功。配信用画面で８条件、４状態、途中再開、誤答・達成と320/390/1280px幅を確認。実環境や安全・完全復旧は評価しない。
