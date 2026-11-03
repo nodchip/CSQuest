@@ -112,6 +112,8 @@ test('statistics trail links summaries and probability to inference and PCA foun
  const before=(a,b)=>assert.ok(items.indexOf(a)>=0&&items.indexOf(a)<items.indexOf(b),`${a} should precede ${b}`);
  before('arrival-records','harvest-histogram');before('harvest-histogram','harvest-quartiles');before('treasure-expectation','treasure-variance');before('lantern-signals','village-event-independence');before('crystal-regression','crystal-gaussian-likelihood');before('village-bernoulli-likelihood','crystal-gaussian-likelihood');before('crystal-gaussian-likelihood','crystal-map-ridge');before('village-confidence-interval','village-normal-interval');before('village-normal-interval','village-hypothesis-test');before('village-hypothesis-test','guild-study-pairing');before('guild-study-pairing','guild-study-order');before('guild-study-order','guild-paired-permutation');before('guild-paired-permutation','guild-study-preregistration');before('ruin-eigen-directions','ruin-pca-axis');before('ruin-orthogonal-projection','ruin-pca-axis');
  before('village-bernoulli-likelihood','village-bayes-update');
+ for (const [a,b] of [['village-hypothesis-test','guild-feed-order'],['guild-feed-order','guild-feed-study'],['guild-feed-study','guild-feed-intervals'],['guild-feed-intervals','guild-many-tests'],['guild-many-tests','guild-study-pairing']]) before(a,b);
+ assert.equal(nextTrailQuest(trail,all,items.slice(0,items.indexOf('guild-many-tests'))).level.id,'guild-many-tests');
  assert.equal(nextTrailQuest(trail,all,['arrival-records','harvest-quartiles']).level.id,'harvest-histogram');
 });
 
