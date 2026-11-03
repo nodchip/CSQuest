@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-guide-check':['手順書','文書検証','documentation','非コード','verification'],
  'forge-actual-benchmark':['実測','性能測定','ベンチマーク','benchmark','タイマー','探索'],
  'guild-fault-seeding':['欠陥推定','欠陥埋め込み','fault seeding','defect','試験終了'],
  'workshop-runtime-guard':['動的解析','サニタイザ','asan','addresssanitizer','use after free','領域外','障害封じ込め'],
