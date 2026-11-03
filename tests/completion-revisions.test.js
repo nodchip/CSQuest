@@ -8,6 +8,7 @@ test('earlier completion remains recorded but expanded activities stay unverifie
  assert.equal(completionStatus(id,[],[]),'uncompleted');assert.equal(completionStatus(id,legacy,[]),'unverified');assert.match(completionLabel(id,legacy,[]),/追加条件は未確認/);
  const extra=markCurrentCompletion(id,[]);assert.deepEqual(extra,[token]);assert.equal(completionStatus(id,legacy,extra),'current');assert.equal(completionStatus(id,[],extra),'uncompleted');assert.deepEqual(markCurrentCompletion(id,extra),extra);
  assert.equal(completionStatus('ordinary',['ordinary'],[]),'current');assert.deepEqual(markCurrentCompletion('ordinary',['future']),['future']);
+ assert.equal(completionStatus('crystal-sequence-limit',['crystal-sequence-limit'],[]),'unverified');
  assert.equal(completionStatus('workshop-interrupt-priority',['workshop-interrupt-priority'],[]),'unverified');
 });
 test('markers survive old-format parsing, unknown records and cross-tab union',()=>{

@@ -21,9 +21,9 @@
 | 番号 | 要約 | 状態 | 対応例と限界 |
 |---|---|---|---|
 | 1a | 無限集合と数列の違い | 未照合 | 関連依頼との対応は未確認。 |
-| 1b | 極限の形式的定義 | 部分 | 1093で数列 1/n の３つの幅と開始番号を選び、任意の幅とそれ以降すべての条件を確認。一般の数列や関数の極限・自由な証明は未評価。 |
-| 1c | 数列・級数の極限を導出 | 部分 | 116で近づく数列の４歩を観察。一般の極限の導出は未評価。 |
-| 1d | 収束と発散 | 部分 | 116で近づきと往復を比較。一般の定義や証明は未評価。 |
+| 1b | 極限の形式的定義 | 部分 | 1093で数列 1/n の３つの幅と開始番号を選び、任意の幅についての証明の札を並べる。一般の数列や関数の極限・自由な証明は未評価。 |
+| 1c | 数列・級数の極限を導出 | 部分 | 116で近づく数列の４歩を観察し、1093で 1/n → 0 の証明を並べる。一般の数列・級数の導出は未評価。 |
+| 1d | 収束と発散 | 部分 | 116で近づきと往復を比較し、1093で 1/n の収束と (−1)ⁿ が任意の実数に収束しない理由を比較。一般の数列の証明は未評価。 |
 | 1e | ロピタルの定理などを適用 | 未照合 | 対応する依頼は未確認。 |
 | 2a | 導関数を極限として説明 | 部分 | 473で差商の両側の変化を操作。一般の定義と自由な説明は未評価。 |
 | 2b | 関数としての導関数 | 部分 | 116で二次誤差の各位置の傾きを扱う。一般の関数は未評価。 |
@@ -48,3 +48,5 @@
 `tests/gradient.test.js`、`tests/derivative-limit.test.js`、`tests/product-growth.test.js`、`tests/integral-area.test.js`、`tests/polar-circle.test.js`、`tests/taylor-growth.test.js`、`tests/partial-gradient.test.js`、`tests/euler-growth.test.js` 等は各固定模型の一部を検査する。前提と出典は[既存の調査](msf-calculus.md)を参照。未照合は未実装の証拠ではない。
 
 依頼1093は [Morris and Morris の数列の収束](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Proofs_and_Concepts_-_The_Fundamentals_of_Abstract_Mathematics_(Morris_and_Morris)/05%3A_Sample_Topics/5.03%3A_Real_analysis-_convergent_sequences) を参考とし、n ≥ N の同値な定義を用いる。３つの幅の厳密な境界と以降の項の不等式、保存を `tests/sequence-limit.test.js` で検査。有限例の試行自体は任意の幅に対する証明ではない。
+
+依頼1093の追加場面は [Dumas and McCarthy の数列と発散の例](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_(Dumas_and_McCarthy)/00%3A_Front_Matter/Source) を参考に、1/n の証明の順序と、(−1)ⁿ の３候補に対する反例を操作する。任意の実数候補に対する論拠を選択肢で扱うが、任意の数列や自由な証明は直接評価しない。旧達成は保持し、追加条件の確認は別に記録する。
