@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruins-control-unit':['固定制御','マイクロプログラム','制御信号','control unit'],
  'castle-crypto-perspectives':['RSA','暗号の数学','公開鍵の確認','逆元'],
  'village-data-scale-cases':['大規模収集','再識別','Netflix','Cambridge Analytica','医療費','代理指標'],
  'guild-platform-offline':['offline','オフライン','service worker','サービスワーカー','キャッシュ','プラットフォーム制約'],

@@ -1,0 +1,12 @@
+export const controlUnitLevel={id:'ruins-control-unit',number:'1033',kind:'control-unit',name:'刻を導く二つの仕組み',tag:'固定回路とマイクロプログラム',title:'計算の制御札を組み立てる',story:'遺跡の計算機が止まりました。二つの制御器で同じ計算を動かし、信号の作られ方を調べましょう。'};
+export const controlModes={hard:'固定回路',micro:'マイクロプログラム'};
+export const controlOps={add:'足す',sub:'引く'};
+export const controlSignals={add:'加算器を選ぶ',sub:'減算器を選ぶ',latch:'計算結果を一時石へ保存',write:'一時石を結果石へ保存'};
+// The microstore is an explicit, fixed control-word table for this teaching machine.
+const microstore={add:[['add','latch'],['write']],sub:[['sub','latch'],['write']]};
+export function controlExpected(mode,op,step){if(!Object.hasOwn(controlModes,mode)||!Object.hasOwn(controlOps,op)||![0,1].includes(step))throw new RangeError('制御状態が不正です。');if(mode==='micro')return [...microstore[op][step]];return step===1?['write']:[op,'latch'];}
+export function controlState(mode,op,history){if(!Array.isArray(history)||history.length>2)throw new RangeError('履歴が不正です。');let temp=null,result=0;for(let i=0;i<history.length;i++){const signal=history[i],expected=controlExpected(mode,op,i);if(!Array.isArray(signal)||new Set(signal).size!==signal.length||signal.length!==expected.length||signal.some(s=>!expected.includes(s)))throw new RangeError('制御札が正しくありません。');if(i===0)temp=signal.includes('add')?7+3:7-3;else result=temp;}return {temp,result,step:history.length,done:history.length===2};}
+export function controlCreate(){return {mode:'hard',op:'add',selected:[],histories:{'hard:add':[],'hard:sub':[],'micro:add':[],'micro:sub':[]},reflection:null};}
+export function controlStep(q){const h=q.histories[`${q.mode}:${q.op}`];try{controlState(q.mode,q.op,[...h,[...q.selected]]);h.push([...q.selected]);q.selected=[];return true;}catch{return false;}}
+export function controlComplete(q){return Object.keys(controlModes).every(m=>Object.keys(controlOps).every(o=>controlState(m,o,q.histories[`${m}:${o}`]).done))&&q.reflection==='source';}
+export function controlRestore(q){if(!q||!Object.hasOwn(controlModes,q.mode)||!Object.hasOwn(controlOps,q.op)||!Array.isArray(q.selected)||new Set(q.selected).size!==q.selected.length||q.selected.some(s=>!Object.hasOwn(controlSignals,s))||!q.histories||![null,'source','result','universal'].includes(q.reflection))throw new RangeError('途中記録が不正です。');const histories={};for(const m of Object.keys(controlModes))for(const o of Object.keys(controlOps)){const k=`${m}:${o}`;controlState(m,o,q.histories[k]);histories[k]=q.histories[k].map(s=>[...s]);}return {mode:q.mode,op:q.op,selected:[...q.selected],histories,reflection:q.reflection};}
