@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-latency-bottlenecks':['計算律速','帯域律速','遅延','ボトルネック','性能'],
  'forge-scaled-speedup':['Gustafson','グスタフソン','ガスタフソン','スケーリング','速度向上率'],
  'guild-checkpoint-tests':['コミット前','コミット後','ローカル試験','継続的インテグレーション','CI'],
  'workshop-numeric-testing':['数値試験','浮動小数点','許容誤差','NaN','相対誤差'],
