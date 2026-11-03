@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-ransomware-defense':['ランサムウェア','バックアップ','復旧','隔離','ransomware'],
  'archive-ud-corpus':['コーパス','UD','English EWT','品詞','Universal Dependencies'],
  'forest-quantifier-scope':['自然言語','量化','量化の範囲','predicate logic','quantifier scope'],
  'forest-temporal-language':['自然言語','時間関係','前後','temporal relation','出来事'],
