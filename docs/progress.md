@@ -2419,3 +2419,5 @@
 - 2026-11-03: 依頼1121で６件の受信を、毎回の共有更新と２塔の小計の後追い集約で比較。途中の共通帳面の古さ、最後の集約と共通更新回数を操作。[Linux の CPU ごとの計数](https://docs.kernel.org/6.2/core-api/this_cpu_ops.html)を参考に PDC-Programs・Coordination のイベント計数を部分対応として記録。関連31テストとビルド成功。ブラウザーで早すぎる読取り、途中再開、集約前の値、２回の集約・達成、320/390/1280pxを確認。更新の正しさと順序を仮定する模型で、実コード・同時実行・速度・障害は評価しない。
 
 - 2026-11-03: 依頼1122で共有メモリ・共有ディスク・共有なしの２書記について、指定された記憶領域と保存棚へのアクセスを比較。[Oracle の並列構成](https://docs.oracle.com/cd/A57673_01/DOC/server/doc/SPS73/chap3.htm)と[DeWitt・Gray の論文](https://people.csail.mit.edu/tdanford/6830papers/dewitt-gray-parallel-databases.pdf)を参照し DM-Distributed 2a を部分対応として記録。関連31テストとビルド成功。ブラウザーで予測前の案内、誤答、途中再開、６条件・達成、320/390/1280pxを確認。固定模型で接続の物理構成、実性能や故障時の可用性は評価しない。
+
+- 2026-11-03: 依頼1123で依頼人・受付・遠隔サーバーの読取りを進め、同種接続、異種接続の不一致と仲介、遠隔停止を比較。[Oracle の分散 DB](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/admin/distributed-database-concepts.html)と[異種接続](https://docs.oracle.com/en/database/oracle/oracle-database/19/heter/address-synchronous-information-integration.html)を参考に DM-Distributed 1d・1e を部分対応とし、概要の1122の記載も更新。関連31テストとビルド成功。ブラウザーで途中再開、４条件・達成、320/390/1280pxを確認。模型上の真値と受付が得た値を区別し、実変換・同時更新・実ネットワークは評価しない。

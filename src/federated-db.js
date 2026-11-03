@@ -1,0 +1,10 @@
+export const federatedDbLevel={id:'archive-federated-db',number:'1123',kind:'federated-db',name:'二つの薬棚を尋ねる書記',tag:'分散 DB と異種接続',title:'二つの記録庫から在庫を集める',story:'書庫の受付は、手元の薬棚と遠くの薬棚を調べます。遠隔の方式と接続を確かめ、二つの結果を届けましょう。'};
+export const federatedCases={same:'遠隔も青い台帳',different:'遠隔は赤い台帳'};
+export const federatedRoutes={native:'青い台帳の接続',gateway:'赤い台帳用の仲介役'};
+export const federatedAvailability={up:'遠隔は稼働中',down:'遠隔は停止中'};
+export function federatedResult(kind,route,availability){if(!Object.hasOwn(federatedCases,kind)||!Object.hasOwn(federatedRoutes,route)||!Object.hasOwn(federatedAvailability,availability))throw new RangeError('接続の条件が不正です。');if(availability==='down')return {status:'down',total:null};if((kind==='same')!==(route==='native'))return {status:'mismatch',total:null};return {status:'ok',total:6};}
+const required=['same:native:up','different:native:up','different:gateway:up','different:gateway:down'];
+export function federatedCreate(){return {kind:'same',route:'native',availability:'up',phase:0,seen:[],answer:null,checked:false};}
+export function federatedStep(q){if(!Number.isInteger(q.phase)||q.phase<0||q.phase>=3)throw new RangeError('この問い合わせは終了しました。条件を変えて試しましょう。');const result=federatedResult(q.kind,q.route,q.availability);q.phase++;if(q.phase===3){const k=`${q.kind}:${q.route}:${q.availability}`;if(required.includes(k)&&!q.seen.includes(k))q.seen.push(k);}return result;}
+export function federatedDone(q){return required.every(k=>q.seen.includes(k))&&q.answer==='partial'&&q.checked;}
+export function federatedRestore(q){if(!q||!Object.hasOwn(federatedCases,q.kind)||!Object.hasOwn(federatedRoutes,q.route)||!Object.hasOwn(federatedAvailability,q.availability)||!Number.isInteger(q.phase)||q.phase<0||q.phase>3||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!required.includes(k))||![null,'partial','zero','guarantee'].includes(q.answer)||typeof q.checked!=='boolean')throw new RangeError('問い合わせの記録が不正です。');return {kind:q.kind,route:q.route,availability:q.availability,phase:q.phase,seen:[...q.seen],answer:q.answer,checked:q.checked};}
