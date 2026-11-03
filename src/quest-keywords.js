@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-gaussian-process':['ガウス過程','回帰','カーネル','事後分布','不確かさ','Gaussian process'],
  'archive-multimodal-embedding':['マルチモーダル','画像','文章','埋込み','コサイン類似度','CLIP'],
  'forge-pdc-landscape':['並列','分散','マルチコア','リアクティブ','データ並列','クラスタ','クラウド','開放分散系'],
  'castle-ifc-workshop':['情報フロー','暗黙の流れ','秘密','非干渉','ifc'],
