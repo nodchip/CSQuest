@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-morton-index':['空間索引','Z順','モートン順','空間充填曲線','Morton','z-order'],
  'archive-graphql-selection':['GraphQL','問い合わせ','フィールド','スキーマ','型','null'],
  'village-aries-recovery':['ARIES','先行ログ','復旧','redo','undo','補償ログ','CLR'],
  'ruin-orthogonal-polynomials':['多項式','内積','直交多項式','ルジャンドル','Legendre'],
