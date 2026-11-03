@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-film-recorder':['フィルム','画像出力','ネガ','ポジ','film','exposure'],
  'workshop-polymorphism-views':['多相性','規範的','記述的','型','polymorphism','prescriptive','descriptive'],
  'forge-parallel-specification':['並列化','仕様','順序','集約','parallel','specification'],
  'village-os-influences':['オペレーティングシステム','セキュリティ','通信','音声','並行処理','operating system'],
