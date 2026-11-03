@@ -18,7 +18,7 @@
 | 5a | Non-core | 楽観的並行性制御 | 部分 | 451で版確認と競合時の拒否を比較。一般の DBMS の検証・確定手順は未評価。 |
 | 5b | Non-core | タイムスタンプによる制御 | 部分 | 1034で１項目の基本的な読取り・書込みの時刻順序判定を操作。複数項目、確定・復旧、実 DBMS は未評価。 |
 | 6a | Non-core | 先行ログ | 部分 | 136で完全なログと単一取引の前後値による復旧を操作。実 DBMS や並行取引は未評価。 |
-| 6b | Non-core | ARIES | 未照合 | 分析・REDO・UNDO を含む ARIES の教材は未確認。 |
+| 6b | Non-core | ARIES | 部分 | 1167で２取引・２頁の分析、REDO、UNDO、補償ログと復旧中の再障害を操作。一般のチェックポイント・並行更新や実 DBMS は未評価。 |
 
 ## 例示学習成果
 
@@ -31,3 +31,5 @@
 依頼35・38・39・136の前提は [DM-Internals](dm-internals.md)、193・293は [DM-NoSQL](dm-nosql.md)・[DM-Distributed](dm-distributed.md) を参照。`tests/serial.test.js`、`tests/wal-recovery.test.js`、`tests/quorum.test.js`、`tests/two-phase-commit.test.js` は固定模型を検査する。
 
 依頼1034は [CMU の基本的な時刻順序制御](https://15445.courses.cs.cmu.edu/fall2022/notes/17-timestampordering.pdf)を参考に、１項目・時刻10と20の４場面で読取り札と書込み札を更新し、順序違反では依頼を中止する。拒否された操作は札と値を変えない。確定、巻戻し、再開、連鎖中止や複数項目、実 DBMS の安全性と性能は扱わない。`tests/timestamp-order.test.js` は両札と時刻の判定の組合せ、４履歴、保存と達成を検査する。
+
+依頼1167は [CMU の ARIES 講義](https://15445.courses.cs.cmu.edu/fall2019/notes/21-recovery.pdf)を参考に、耐久化済みログと２頁の固定例で分析・履歴の再現・未確定取引の取消し、CLR の耐久化と復旧中の再障害を扱う。再障害では復旧中の頁が未書出し、CLR は耐久化済みと仮定する。`tests/aries-recovery.test.js` は全段階、頁 LSN とログ、再障害、復元・達成を検査。一般の DBMS の完全な ARIES 実装・頁の部分書込み等は未評価。

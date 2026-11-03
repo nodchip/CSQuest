@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-aries-recovery':['ARIES','先行ログ','復旧','redo','undo','補償ログ','CLR'],
  'ruin-orthogonal-polynomials':['多項式','内積','直交多項式','ルジャンドル','Legendre'],
  'ruin-polynomial-bases':['多項式','ベクトル空間','基底','ベルンシュタイン','ベジェ','Bernstein'],
  'guild-parallel-coordinates':['平行座標','多次元','可視化','絞り込み','parallel coordinates'],
