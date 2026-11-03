@@ -41,3 +41,5 @@
 依頼1084は [ONNX Runtime の量子化](https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html)と [PyTorch の説明](https://pytorch.org/blog/quantization-in-practice/)を参考に、２縮尺・６値の丸めと切り詰め、仮の転送・変換費用を比較する。`tests/quantization-energy.test.js` で全12条件と費用を検査。実機のエネルギー、モデル精度や他の量子化方式は未評価。
 
 依頼1085は [NVIDIA のメモリアクセスの説明](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/writing-cuda-kernels.html)を参考に、４人の４バイト読み取りを32バイト区画ごとにまとめる固定模型。連続・逆順・境界またぎ・飛び飛び・同一棚と、代表256組の区画・順序を `tests/coalesced-load.test.js` で検査。実 GPU のスレッド数、キャッシュ、書き込みや実測は未評価。
+
+依頼1089は1083・1085・1088の関数を遠征で再利用し、８人の担当、２つの読み取り配置、16ブロックの暗号装置の比較を順に操作する。`tests/compute-rescue-journey.test.js` は進行条件・誤答・途中復元を検査。各模型の実機・性能上の限界は元の依頼と同じ。

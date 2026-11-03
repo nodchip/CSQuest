@@ -31,3 +31,5 @@
 | 5 | KA Core | 仮想マシン向け TEE の設計課題を説明 | 部分 | 258 は構成証明の固定例。実装全体と自由な説明は未評価。 |
 
 依頼1088は [Intel の AES 専用命令](https://www.intel.com/content/www/us/en/developer/articles/technical/advanced-encryption-standard-instructions-aes-ni.html)と [Arm の暗号アクセラレータ](https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/PSA/DEN0083_PSA_TBSA-M_1.0-bet2.pdf)を参考に、汎用命令・CPU の専用命令・外付け装置の仮の時間を比較する。`tests/crypto-acceleration.test.js` で９条件、保存と達成を検査。時間は架空であり、実際の暗号実行、性能、電力や安全性は未評価。
+
+依頼1089は暗号加速の比較に加え、暗号化のみと改ざん検出を備える保護を選ぶ。鍵の安全な共有と認証付き暗号の正しい実行を仮定し、実暗号・鍵管理・実装の安全性は評価しない。`tests/compute-rescue-journey.test.js` は順序と選択を検査する。
