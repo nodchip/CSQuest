@@ -1,0 +1,7 @@
+export const corpusStudyLevel={id:'archive-ud-corpus',number:'1151',kind:'ud-corpus',name:'実際の言葉の台帳',tag:'自然言語・標準コーパス',title:'同じ単語と品詞を調べる',story:'学者が外の世界の言葉を集めた台帳を持ってきました。単語の分類と、台帳から分かる範囲を調べましょう。'};
+export const corpusStudyCases={that:{word:'that',answer:'both'},this:{word:'this',answer:'both'},what:{word:'what',answer:'both'},whatever:{word:'whatever',answer:'both'},which:{word:'which',answer:'both'},everybody:{word:'everybody',answer:'pron'},another:{word:'another',answer:'det'}};
+export const corpusStudyAnswers={both:'両方に現れる',pron:'代名詞だけ',det:'限定詞だけ'};
+export function corpusStudyCreate(){return {selected:'that',guess:null,seen:[],union:null,limits:null,checked:false};}
+export function corpusStudyCorrect(id,guess){if(!Object.hasOwn(corpusStudyCases,id)||!Object.hasOwn(corpusStudyAnswers,guess))throw new RangeError('見出し語か分類が不正です');return corpusStudyCases[id].answer===guess;}
+export function corpusStudyDone(q){return Object.keys(corpusStudyCases).every(k=>q.seen.includes(k))&&q.union==='69'&&q.limits==='context'&&q.checked;}
+export function corpusStudyRestore(q){if(!q||!Object.hasOwn(corpusStudyCases,q.selected)||![null,...Object.keys(corpusStudyAnswers)].includes(q.guess)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.hasOwn(corpusStudyCases,k))||![null,'69','74','47'].includes(q.union)||![null,'context','universal'].includes(q.limits)||typeof q.checked!=='boolean')throw new RangeError('記録が不正です');return {...q,seen:[...q.seen]};}

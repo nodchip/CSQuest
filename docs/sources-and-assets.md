@@ -9,6 +9,7 @@
 | [DM Sans](https://github.com/google/fonts/blob/main/ofl/dmsans/OFL.txt) | © 2014 The DM Sans Project Authors。SIL Open Font License 1.1。現在は Google Fonts から実行時に読み込み、フォントファイルをリポジトリには同梱しない。 |
 | [Noto Serif JP](https://github.com/google/fonts/blob/main/ofl/notoserifjp/OFL.txt) | © 2012 Google Inc.。SIL Open Font License 1.1。同じく実行時に読み込み、フォントファイルは同梱しない。 |
 | [Iris](https://doi.org/10.24432/C56C76) | R. A. Fisher (1936), Iris [Dataset], UCI Machine Learning Repository。配布元は [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) を指定。`data/iris.data` は原データ、`src/iris-samples.js` は Versicolor・Virginica の花弁の長さと幅を 0.1 cm 単位に変換して抽出したもの。`src/iris-setosa.js` は Setosa 50件の花弁の長さと幅を同じ単位で抽出したもの。依頼553の仮変更は実験中のみで原データを書き換えない。原データ SHA-256 は `6f608b71a7317216319b4d27b4d9bc84e6abd734eda7872b71a458569e2656c0`。 |
+| [UD English EWT 2.18](https://github.com/UniversalDependencies/UD_English-EWT/blob/r2.18/README.md) | 注釈 © 2013–2021 The Board of Trustees of The Leland Stanford Junior University、[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。依頼1151は[公式の公開統計](https://universaldependencies.org/treebanks/en_ewt/)から７見出し語と種類数を選び、学習用に整理した。元の文章は収録しない。原文の権利は複数の出所に属する旨が README に記載されており、注釈と同一の条件だとは主張しない。 |
 | その他 | 現在の追跡対象には画像・音声・動画・フォントのファイルは見当たらない。図は HTML、CSS、インライン SVG で描画する。個別の教材が参照する RFC、仕様、マニュアル等は各対応文書や画面にリンクする。 |
 
 確認範囲は現在のリポジトリのファイル名、HTML/CSS の外部読み込み、上記の原典・ライセンス表示。独立した著作権監査や全文章の類似性調査を完了したことは意味しない。
