@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1083で２組×４人の精霊に６要素の整数ベクトル加算を割り当て、範囲外２人を読み書きさせない操作を追加。[NVIDIA のスレッドとベクトル加算](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html)を参照。８担当と結果・保存・達成条件を検査し、全2,773件の自動テストとビルドが成功。配信用ビルドで未選択・誤番号・範囲外の誤答、途中再開、８人と誤った振り返りによる達成抑止、320・390・1280px幅、Enter とフォーカスを確認。実 GPU の実行、プログラム記述、転送や桁あふれは未評価。
+
 - 2026-11-03: 依頼1082で８核の計算炉に電力上限を設け、通常・低速の核数、待機電力、上限と仕事量を比較。[電力制約とダークシリコンの研究](https://act-lab.org/doc/paper/2012-tocs-dark_silicon.pdf)を参照。18条件・上限と等しい場合・復元と達成を検査し、全2,770件の自動テストとビルドが成功。配信用ビルドで未選択・誤予想、途中再開、５比較、誤った振り返りによる達成抑止、320・390・1280px幅と Enter・フォーカスを確認。固定の電力と完全並列の模型で、実機の温度、漏れ、他回路や実測は未評価。
 
 - 2026-11-03: 依頼1081で３特徴について全６順序の増分を予想し、Shapley 値と基準からの差、因果解釈の限界を比較。[Lundberg・Lee の SHAP 論文](https://proceedings.neurips.cc/paper_files/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html)と [SHAP の因果解釈の注意](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%20insights.html)を参照。６順序の増分・平均・途中記録を独立した期待値で照合し、全2,767件の自動テストとビルドが成功。配信用ビルドで未選択・誤答、途中再開、全順序・誤った振り返りによる達成抑止、320・390・1280px幅とキーボード操作を確認。欠損特徴の得点を直接与える固定模型で、実データの条件付き期待値や因果推論は未評価。
