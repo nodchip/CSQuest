@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1139で個別伝言・生放送・掲示を２時刻の模型で比較。[W3C の同期・非同期参加](https://www.w3.org/WAI/about/groups/apawg/decision-policy/)を参考にし、既存の依頼964の集団通信を再利用。関連34テストとビルド成功。配信用画面で不在時の連絡、再送、後からの掲示閲覧、途中再開、誤答・達成、320/390/1280px幅を確認。現実の送受信、理解や秘匿性は評価しない。
+
 - 2026-11-04: 依頼1138で [D’Amour らの研究](https://jmlr.org/papers/volume23/20-1335/20-1335.pdf)の表２のモデル対の不一致を６条件で調べ、表１の正解率と区別して追加評価を検討。転記値・保存を含む関連34テストとビルドが成功。配信用画面で途中再開、６条件、誤答・達成、320/390/1280px幅を確認。実利用者・利用環境の調査や安全性・公平性は評価しない。
 
 - 2026-11-04: 依頼1137で1136の URL 解析を再利用し、最初だけの照合と転送のたびの照合を８経路で比較。[OWASP の転送](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)と [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections)を参照。16条件と保存を含む関連34テスト・ビルドが成功。配信用画面で外部への転送、相対指定２回、循環、不正、途中再開、９比較、誤答・達成、外部移動なし、320/390/1280px幅を確認。実 HTTP や認可は評価しない。
