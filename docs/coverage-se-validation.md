@@ -41,11 +41,11 @@
 | 10b | Non-core | コードカバレッジ | 部分 | 251 の固定判定 |
 | 10c | Non-core | ファジング | 部分 | 349で３ビット入力を変異、978で新しい道を通る正常な入力を種に残す。自動生成、実際の計測や実プログラムは未評価。 |
 | 10d | Non-core | 動的解析・障害封じ込め | 未照合 | 対応する教材の確認が必要。 |
-| 10e | Non-core | 記録・欠陥追跡 | 未照合 | 対応する教材の確認が必要。 |
+| 10e | Non-core | 記録・欠陥追跡 | 部分 | 247で失敗記録の項目を選び原因を区別し、1049で種・入力と再試験を使って再現。実際の追跡ツールや優先順位付けは未評価。 |
 | 11a | Non-core | 欠陥推定と試験終了 | 未照合 | 対応する教材の確認が必要。 |
 | 11b | Non-core | 乱数・疑似乱数を用いる試験 | 部分 | 1049の２つの種による固定の疑似乱数列を比較。実乱数や一般の生成・試験戦略は未評価。 |
 | 12a | Non-core | 処理量と遅延 | 部分 | 254 の固定４件 |
-| 12b | Non-core | 負荷増大と処理順 | 未照合 | 対応する教材の確認が必要。 |
+| 12b | Non-core | 負荷増大と処理順 | 部分 | 1094で到着間隔の違いと FIFO・LIFO を操作し、平均と個別の待ちを比較。継続的な高負荷、実負荷試験や実装の挙動は未評価。 |
 | 12c-i | Non-core | Amdahl の法則 | 部分 | 66で固定仕事量の逐次部分と均等分担の時間を比較。法則の一般式の導出や実測は未評価。 |
 | 12c-ii | Non-core | Gustafson の法則 | 部分 | 1052で人数に応じた仕事量と、その同じ仕事を１人で行う基準を比較。追加費用のない模型であり、実測や一般の分析は未評価。 |
 | 12c-iii | Non-core | 強・弱スケーリング | 部分 | 437で固定仕事量と１人あたり固定の仕事量を比較。実測と一般の分析は未評価。 |
@@ -121,3 +121,5 @@
 依頼1066は [GitHub のレビュー手順](https://docs.github.com/en/pull-requests/concepts/giving-reviews)と [Google のレビュー観点](https://google.github.io/eng-practices/review/reviewer/looking-for.html)を参考に、境界、権限、失敗時の３つの架空変更について、通常と問題の条件の試験、具体的な指摘、修正後の再試験を行う。結果と修正は固定であり、実際のコード実行や他者との協働、欠陥の網羅的検出を評価しない。`tests/peer-review.test.js` で条件、レビューと復元を検査する。
 
 依頼1076は [NASA の MC/DC の説明](https://swehb.nasa.gov/spaces/SWEHBVD/pages/105709626/SWE-219%2B-%2BCode%2BCoverage%2Bfor%2BSafety%2BCritical%2BSoftware)を参考に、要求・水位・センサー有効の３条件がすべて真なら開く固定模型を扱う。全真と各条件だけ偽の４入力で論理上の独立した影響を比較し、３つの欠陥の反例と修理後の同条件の再試験を操作する。`tests/safety-conditions.test.js` は８入力、欠陥、修理と復元を検査する。条件の真偽値は外から与え、実コードの短絡評価、計測された MC/DC、センサーの正確性、実水門の安全性や一般の試験計画は評価しない。
+
+依頼1094は [MIT の待ち行列](https://ocw.mit.edu/courses/1-203j-logistical-and-transportation-planning-methods-fall-2006/a9235f5e4e0aee12a55778e5beaf0ddb_lec5.pdf) と [Google SRE の負荷と待ち行列](https://sre.google/sre-book/addressing-cascading-failures/) を参考に、一定の処理時間と４通の有限履歴で待ち時間と順序を比較する。`tests/load-queue.test.js` は到着・選択・待ちの算定と復元を検査する。有限の混雑を継続的な過負荷や実測と同一視しない。
