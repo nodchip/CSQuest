@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-vc-lanterns':['VC dimension','VC次元','シャッタリング','仮説集合','分類境界'],
  'forest-mask-relay':['遠征','PIM','AND','OR','bus','データバス','多数決'],
  'workshop-memory-majority':['PIM','processing in memory','Ambit','メモリ内処理','多数決','DRAM'],
  'workshop-bus-topology':['I2C','I²C','USB','PCIe','ハブ','ルートポート'],
