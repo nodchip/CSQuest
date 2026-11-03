@@ -12,6 +12,11 @@ export function benchmarkPair(index,clock){
  for(const kind of order){const begin=clock(),sum=benchmarkSearch(kind,items,targets),end=clock();if(!Number.isFinite(begin)||!Number.isFinite(end)||end<begin||sum!==benchmarkChecksum)throw new RangeError('計測か探索結果を確認できません');durations[kind]=end-begin;checksum=sum;}
  return {first,linearMs:durations.linear,binaryMs:durations.binary,checksum};
 }
+export function benchmarkBars(samples){
+ if(!Array.isArray(samples)||samples.length>10||samples.some(s=>!s||!Number.isFinite(s.linearMs)||s.linearMs<0||!Number.isFinite(s.binaryMs)||s.binaryMs<0))throw new RangeError('測定値が不正です');
+ const max=Math.max(0,...samples.flatMap(s=>[s.linearMs,s.binaryMs]));
+ return {max,rows:samples.map(s=>({linear:max?s.linearMs/max*100:0,binary:max?s.binaryMs/max*100:0}))};
+}
 export function actualBenchmarkCreate(){return {warmed:false,samples:[],reflection:null,timer:null};}
 export function actualBenchmarkRestore(q){if(!q||typeof q.warmed!=='boolean'||!Array.isArray(q.samples)||q.samples.length>10||!q.samples.every((s,i)=>s&&s.first===(i%2===0?'linear':'binary')&&Number.isFinite(s.linearMs)&&s.linearMs>=0&&Number.isFinite(s.binaryMs)&&s.binaryMs>=0&&s.checksum===benchmarkChecksum)||(!q.warmed&&q.samples.length)||![null,'context','universal'].includes(q.reflection)||![null,'resolution','exact'].includes(q.timer))throw new RangeError('途中記録が不正です');return {warmed:q.warmed,samples:q.samples.map(s=>({...s})),reflection:q.reflection,timer:q.timer};}
 export function actualBenchmarkDone(q){return q.warmed&&q.samples.length>=3&&q.reflection==='context'&&q.timer==='resolution';}
