@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-enclave-boundary':['エンクレーブ','TEE','信頼境界','enclave','TOCTOU'],
  'castle-confidential-container':['TEE','コンフィデンシャルコンピューティング','コンテナ','構成証明','attestation'],
  'forge-compute-rescue':['遠征','並列処理','メモリ','暗号','認証'],
  'forge-crypto-acceleration':['暗号加速','AES-NI','AES','アクセラレータ','cryptographic acceleration'],

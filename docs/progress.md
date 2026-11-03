@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1091でエンクレーブの外側の値を検査後に再読取する方法と内部へ写す方法、秘密そのものと条件だけを返す方法を比較。[Intel のエンクレーブ境界](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sgx-web-based-training.html)と [境界を越えるデータ](https://www.intel.com/content/www/us/en/developer/articles/code-sample/intel-software-guard-extensions-developing-a-sample-enclave-application.html)を参照。４操作列・順序・保存・達成を検査し、全2,795件の自動テストとビルドが成功。分離ブラウザーで早すぎる操作、途中再開、全方法、誤った振り返りでの達成抑止、320・390・1280px幅と Enter・フォーカスを確認。単一値の安定した写しと理想隔離の模型で、実 TEE・コピー中の競合・サイドチャネルは未評価。
+
 - 2026-11-03: 依頼1090で、コンテナーへ秘密を渡す前に署名、今回の照会、容器の識別値、信頼基盤、宛先を照合する固定模型を追加。[Google Cloud の構成証明](https://docs.cloud.google.com/docs/security/confidential-space)と [Confidential Containers の方針](https://confidentialcontainers.org/docs/attestation/policies/)を参照。６証拠・24通りの確認順・無効署名・保存を検査し、全2,792件の自動テストとビルドが成功。分離ブラウザーで確認前の拒否、途中再開、６証拠・誤答・達成、320・390・1280px幅と Enter・フォーカスを確認。検証器と照合基準は正しいという仮定で、実 TEE、署名検証や容器の安全性は未評価。
 
 - 2026-11-03: 依頼1089の遠征で、1083の並列加算、1085のメモリアクセス、1088の暗号加速の計算を再利用し、改ざん検出を選んで塔へ届ける。未完了・誤答・不適切な選択による進行抑止、順不同の担当、途中記録の再検証を検査。全2,790件の自動テストとビルドが成功し、その後に誤選択の理由表示を追加して関連テストとビルドを再確認。分離ブラウザーで誤答、途中再開、全段階と達成、320・390・1280px幅、Enter・フォーカスを確認。固定模型で、実 GPU・暗号装置・鍵共有・通信の安全性は評価しない。
