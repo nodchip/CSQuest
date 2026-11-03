@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-diagnosis-methods':['事例ベース推論','モデルベース推論','規則ベース','専門家システム','診断'],
  'archive-rdf-join':['RDF','SPARQL','IRI','セマンティック Web','グラフ結合'],
  'forge-paired-benchmark':['ベンチマーク','信頼区間','対応のある観測','統計','性能測定'],
  'forge-latency-bottlenecks':['計算律速','帯域律速','遅延','ボトルネック','性能'],
