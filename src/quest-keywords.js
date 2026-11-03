@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-order-inventory':['列','辞書','順序','在庫','未登録','連想配列'],
  'archive-distributed-data-journey':['分散データベース','分散結合','半結合','遠征','ゲートウェイ'],
  'archive-federated-db':['異種データベース','分散データベース','ゲートウェイ','クライアント','サーバー','federation'],
  'archive-parallel-db-architecture':['並列データベース','共有メモリ','共有ディスク','共有なし','shared nothing'],

@@ -2423,3 +2423,5 @@
 - 2026-11-03: 依頼1123で依頼人・受付・遠隔サーバーの読取りを進め、同種接続、異種接続の不一致と仲介、遠隔停止を比較。[Oracle の分散 DB](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/admin/distributed-database-concepts.html)と[異種接続](https://docs.oracle.com/en/database/oracle/oracle-database/19/heter/address-synchronous-information-integration.html)を参考に DM-Distributed 1d・1e を部分対応とし、概要の1122の記載も更新。関連31テストとビルド成功。ブラウザーで途中再開、４条件・達成、320/390/1280pxを確認。模型上の真値と受付が得た値を区別し、実変換・同時更新・実ネットワークは評価しない。
 
 - 2026-11-03: データ管理に分割・複製・異種接続・分散結合へ進む道を追加。遠征1124で依頼1123・294の模型を再利用し、接続を修正し、２方式で同じ３行を得て伝令６と４を比較して報告する。関連32テストとビルド成功。ブラウザーで進行制限、誤接続・誤選択の修正、途中再開、達成、320/390/1280pxと分野から道への移動を確認。固定例・単純費用模型で、一般の実性能や DB の動作は評価しない。
+
+- 2026-11-03: 依頼1125で注文の列と薬草名を鍵にした在庫辞書を併用し、重複注文、在庫０・未登録、空の列を処理。[MDN の鍵付きの集まり](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections)と[鍵の有無](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has)を参考に SDF-Fundamentals を部分対応として記録。関連32テストとビルド成功。ブラウザーで早すぎる操作、在庫切れと未登録での誤り、読取り後の再開、３場面・達成、320/390/1280pxを確認。固定模型で、実言語の開発、任意入力や同時更新は評価しない。

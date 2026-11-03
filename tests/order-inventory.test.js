@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {orderInventoryCreate,orderInventoryAct,orderInventoryReplay,orderInventoryDone,orderInventoryRestore} from '../src/order-inventory.js';
+test('repeated orders deplete the right key while missing differs from zero',()=>{
+ const q=orderInventoryCreate(),act=a=>orderInventoryAct(q,a);assert.throws(()=>act('take'),RangeError);for(const a of ['read','take','read','take','read'])act(a);assert.throws(()=>act('take'),RangeError);for(const a of ['empty','finish'])act(a);let s=orderInventoryReplay('mixed',q.runs.mixed);assert.deepEqual(s.stock,{sun:0,moon:0});assert.deepEqual(s.results.map(x=>x.result),['take','take','empty']);
+ q.selected='missing';for(const a of ['read','empty','read'])act(a);assert.throws(()=>act('empty'),RangeError);for(const a of ['missing','read','empty','finish'])act(a);s=orderInventoryReplay('missing',q.runs.missing);assert.equal(Object.hasOwn(s.stock,'star'),false);assert.equal(s.stock.moon,0);q.selected='empty';act('finish');q.answer='structures';q.checked=true;assert.equal(orderInventoryDone(q),true);
+});
+test('a draft resumes between reading and acting and rejects forged history',()=>{const q=orderInventoryCreate();orderInventoryAct(q,'read');const copy=orderInventoryRestore(q);assert.equal(orderInventoryReplay('mixed',copy.runs.mixed).reading,true);orderInventoryAct(copy,'take');assert.equal(q.runs.mixed.length,1);assert.throws(()=>orderInventoryRestore({...q,runs:{...q.runs,mixed:['read','empty']}}),RangeError);});
