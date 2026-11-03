@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1075で架空の４候補について直接・間接依存、既知の注意情報、照合値と互換性試験を比較。[GitHub の依存グラフ](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph-data)と [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html)を参照。判断と保存を検査し、全2,750件の自動テストとビルドが成功。配信用ビルドで誤答・途中再開・不一致時の試験抑止・４候補・達成、320・390・1280px幅とフォーカスを確認。架空の記号と固定結果であり、実際のハッシュ計算やパッケージの安全性は未評価。既存の985・986も SEC-Coding の部分対応として記録。
+
 - 2026-11-03: 依頼1074で固定の取引と価格の同時刻・直前時刻の結合、２区間の集計、遅れた取引と保存済み集計の更新を操作。[PostgreSQL の実体化ビュー](https://www.postgresql.org/docs/current/rules-materializedviews.html)を参照。SQLite 3.50.4 の相関副問合せと保存済み表で結果を照合し、全2,748件の自動テストとビルドが成功。配信用ビルドで誤予想、追加前の順序、更新前の再開、鮮度と達成、320・390・1280px幅とフォーカスを確認。固定模型であり、SQL 記述、差分更新、同時処理や実測性能は未評価。既存の1055について SPARQL 風の固定三つ組結合を DM-Querying の部分対応として追記。
 
 - 2026-11-03: 依頼1073で４行の台帳の更新条件、NULL、確定・取消しと制約違反を操作。[SQLite の式](https://www.sqlite.org/lang_expr.html)と[制約違反](https://www.sqlite.org/conflict.html)を参照。５条件×３変更を SQLite 3.50.4 と照合し、取消しも実機で確認。全2,746件の自動テストとビルドが成功。配信用ビルドで途中再開、NULL の対象件数、制約違反、３依頼の達成、320・390・1280px幅とフォーカスを確認。固定模型であり、SQL の自由な記述、他の競合解決方式や同時更新は未評価。
