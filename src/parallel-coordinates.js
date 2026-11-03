@@ -1,0 +1,10 @@
+export const pcLevel={id:'guild-parallel-coordinates',number:'1164',kind:'parallel-coordinates',name:'四つの条件の乗り物',tag:'多次元データと平行座標',title:'荷物を運ぶ乗り物を選ぶ',story:'ギルドは重さ・距離・積載量・費用の４条件で乗り物を探しています。線の地図を並べ替え、条件に合う候補を見つけましょう。'};
+export const pcAxes={weight:'重さ',range:'距離',capacity:'積載量',cost:'費用'};
+export const pcOrders={first:['weight','range','capacity','cost'],second:['range','capacity','cost','weight']};
+export const pcItems=[{id:'lantern',name:'灯',weight:4,range:9,capacity:3,cost:8},{id:'cloud',name:'雲',weight:5,range:8,capacity:7,cost:4},{id:'leaf',name:'葉',weight:8,range:10,capacity:8,cost:3},{id:'stone',name:'石',weight:3,range:6,capacity:8,cost:5}];
+export const pcFilters={weight:'重さ５以下',range:'距離８以上',capacity:'積載量７以上'};
+export function pcSelected(filters){if(!Array.isArray(filters)||new Set(filters).size!==filters.length||filters.some(k=>!Object.hasOwn(pcFilters,k)))throw new RangeError('条件が不正です');return pcItems.filter(p=>(!filters.includes('weight')||p.weight<=5)&&(!filters.includes('range')||p.range>=8)&&(!filters.includes('capacity')||p.capacity>=7)).map(p=>p.id);}
+export function pcMarker(filters){const s=new Set(filters);return s.size===0?'all':s.size===1&&s.has('weight')?'weight':s.size===3?'combined':null;}
+export function pcCreate(){return {order:'first',filters:[],seen:[],orders:['first'],answer:null,checked:false};}
+export function pcDone(q){return ['all','weight','combined'].every(k=>q.seen.includes(k))&&Object.keys(pcOrders).every(k=>q.orders.includes(k))&&q.answer==='cloud'&&q.checked;}
+export function pcRestore(q){if(!q||!Object.hasOwn(pcOrders,q.order)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!['all','weight','combined'].includes(k))||!Array.isArray(q.orders)||new Set(q.orders).size!==q.orders.length||q.orders.some(k=>!Object.hasOwn(pcOrders,k))||!q.orders.includes(q.order)||![null,...pcItems.map(p=>p.id)].includes(q.answer)||typeof q.checked!=='boolean')throw new RangeError('記録が不正です');pcSelected(q.filters);return {...q,filters:[...q.filters],seen:[...q.seen],orders:[...q.orders]};}
