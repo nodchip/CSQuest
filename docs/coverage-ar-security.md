@@ -16,7 +16,7 @@
 | 4c | KA Core | ISA 水準の保護 | 部分 | 255 は範囲と許可の模型。タグ、導出、命令と実装は未評価。 |
 | 5a | KA Core | TEE の信頼基盤の保護 | 部分 | 258 は証明検証器と署名への信頼を仮定。信頼基盤の構成・保護は未評価。 |
 | 5b | KA Core | TEE による仮想マシンの保護 | 部分 | 258 は構成証明と鍵の受渡しの模型。実際の隔離と実機は未評価。 |
-| 5c | KA Core | TEE によるコンテナの保護 | 未照合 | 対応教材を要照合。 |
+| 5c | KA Core | TEE によるコンテナの保護 | 部分 | 1090で署名と容器の識別値等を確認し秘密の受渡しを選ぶ。実際の隔離・検証・鍵管理は未評価。 |
 | 5d | KA Core | 信頼されたソフトウェアモジュール | 未照合 | エンクレーブの対応教材を要照合。 |
 | 6 | KA Core | プライバシーを保つ処理と準同型暗号 | 部分 | 259 は教科書的 RSA の乗算の模型。安全な方式、加算や実用費用は未評価。 |
 
@@ -33,3 +33,5 @@
 依頼1088は [Intel の AES 専用命令](https://www.intel.com/content/www/us/en/developer/articles/technical/advanced-encryption-standard-instructions-aes-ni.html)と [Arm の暗号アクセラレータ](https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/PSA/DEN0083_PSA_TBSA-M_1.0-bet2.pdf)を参考に、汎用命令・CPU の専用命令・外付け装置の仮の時間を比較する。`tests/crypto-acceleration.test.js` で９条件、保存と達成を検査。時間は架空であり、実際の暗号実行、性能、電力や安全性は未評価。
 
 依頼1089は暗号加速の比較に加え、暗号化のみと改ざん検出を備える保護を選ぶ。鍵の安全な共有と認証付き暗号の正しい実行を仮定し、実暗号・鍵管理・実装の安全性は評価しない。`tests/compute-rescue-journey.test.js` は順序と選択を検査する。
+
+依頼1090は [Google Cloud の保護された容器と構成証明](https://docs.cloud.google.com/docs/security/confidential-space)および [Confidential Containers の方針](https://confidentialcontainers.org/docs/attestation/policies/)を参考に、署名を確認した後、照会・容器の識別値・信頼基盤・宛先の固定結果と方針を照合する。`tests/confidential-container.test.js` は６証拠と24通りの項目確認順、署名無効、途中復元と達成を検査する。検証器・鍵・基準は正しいと仮定し、実装、TEE の隔離、容器の脆弱性や出力は未評価。

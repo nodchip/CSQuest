@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1090で、コンテナーへ秘密を渡す前に署名、今回の照会、容器の識別値、信頼基盤、宛先を照合する固定模型を追加。[Google Cloud の構成証明](https://docs.cloud.google.com/docs/security/confidential-space)と [Confidential Containers の方針](https://confidentialcontainers.org/docs/attestation/policies/)を参照。６証拠・24通りの確認順・無効署名・保存を検査し、全2,792件の自動テストとビルドが成功。分離ブラウザーで確認前の拒否、途中再開、６証拠・誤答・達成、320・390・1280px幅と Enter・フォーカスを確認。検証器と照合基準は正しいという仮定で、実 TEE、署名検証や容器の安全性は未評価。
+
 - 2026-11-03: 依頼1089の遠征で、1083の並列加算、1085のメモリアクセス、1088の暗号加速の計算を再利用し、改ざん検出を選んで塔へ届ける。未完了・誤答・不適切な選択による進行抑止、順不同の担当、途中記録の再検証を検査。全2,790件の自動テストとビルドが成功し、その後に誤選択の理由表示を追加して関連テストとビルドを再確認。分離ブラウザーで誤答、途中再開、全段階と達成、320・390・1280px幅、Enter・フォーカスを確認。固定模型で、実 GPU・暗号装置・鍵共有・通信の安全性は評価しない。
 
 - 2026-11-03: 依頼1088で汎用命令・CPU 専用命令・外付け暗号装置の準備と処理の仮の時間を比較し、加速と認証・鍵管理を区別。[Intel の AES 専用命令](https://www.intel.com/content/www/us/en/developer/articles/technical/advanced-encryption-standard-instructions-aes-ni.html)と [Arm の暗号アクセラレータ](https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/PSA/DEN0083_PSA_TBSA-M_1.0-bet2.pdf)を参照。９条件・保存・達成を検査し、全2,788件の自動テストとビルドが成功。分離ブラウザーで誤予想、途中再開、９比較、誤った振り返りでの達成抑止、320・390・1280px幅と Enter・フォーカスを確認。時間は架空で、実暗号・実機性能・安全性は未評価。
