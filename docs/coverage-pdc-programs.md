@@ -16,7 +16,7 @@
 | 2b | CS Core | 少数の処理装置による並行動作 | 部分 | 53で複数仕事の切替えを操作。一般の仮想化・実装は未評価。 |
 | 2c | CS Core | 場所と主体の識別 | 部分 | 129・130で２主体の役割を区別。実 ID の管理は未評価。 |
 | 2d | CS Core | 場所をまたぐ通信 | 部分 | 129で固定の通信を操作。一般の媒体と実通信は未評価。 |
-| 3a | CS Core | 活動の設定・資源と通信の準備 | 未照合 | 自動設定・管理との対応は未確認。 |
+| 3a | CS Core | 活動の設定・資源と通信の準備 | 部分 | 1116で手動準備と管理役への依頼を比べ、資源不足・再調整・通信路・返却を操作。実環境の設定や管理は未評価。 |
 | 3b | CS Core | 手続きによる複数活動の開始 | 部分 | 628で作業の生成と終了待ちを操作。実スレッドの生成は未評価。 |
 | 3c | CS Core | イベントに反応する活動の開始 | 部分 | 452で知らせごとに活動を作る。実サービスや一般のイベント処理は未評価。 |
 | 3d | CS Core | 他の完了に依存する活動 | 部分 | 90・130で先行作業の完了後に集計。一般の依存制御は未評価。 |
@@ -45,3 +45,5 @@
 `tests/parallel-dag.test.js`、`tests/task-grain.test.js`、`tests/event-workers.test.js`、`tests/parallel-energy.test.js` は固定模型の一部を検査する。前提・出典は既存の調査を参照。未照合は未実装の証拠ではない。
 
 依頼1043は [Rutgers の分散システムの説明](https://people.cs.rutgers.edu/pxk/classes/417/notes/engineering-distributed-systems.html)と [Brown の復旧の教材](https://cs.brown.edu/courses/csci1270/website_2021/project/recovery.html)を参考に、二人の逐次更新と揮発性記録の停止、更新の消失、非同期複製の古い読取りと同期後の主停止を操作する。原典は純粋な逐次プログラムで一貫性・耐障害性が生じない理由を挙げるが、ここでは複数主体の不一致を対象外にした抽象的逐次モデルと、故障し得る実装装置を明確に区別する。`tests/order-fault-journey.test.js` は更新順序、停止と揮発性の喪失、同期前後の複製、保存と達成を検査する。一般の一貫性、永続性、合意、自動復旧や自由な説明は評価しない。
+
+依頼1116は [Kubernetes の資源要求と配置](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) と [望む状態の管理](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) を参考に、１種類の資源と２活動の固定模型で、手動準備と管理役による準備、資源不足と再調整、通信・集約・返却を比較する。実際の Kubernetes の内部動作やネットワーク、配置制約、障害、自動復旧は再現・評価しない。`tests/provisioning-activities.test.js` は不足・準備・復元・達成を検査する。
