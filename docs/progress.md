@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1055で例示 IRI の RDF 三つ組を表示し、同じ IRI と異なる IRI の固定２条件の照合を比較。[W3C RDF 概念](https://www.w3.org/TR/rdf-concepts/)と [SPARQL のグラフパターン](https://www.w3.org/TR/sparql11-query/#BasicGraphPatterns)を参照。結合と保存を検査し、全2,703件の自動テストとビルドが成功。配信用ビルドで予測なし・誤予測、途中再開、両例・誤答・達成、表示、320・390・1280px幅とキーボードを確認。外部通信・汎用パーサー・SPARQL 実行や推論は未評価。
+
 - 2026-11-03: 依頼1054で架空の２種類の対の記録から差の平均・標本標準偏差・95％ t 信頼区間を比較し、前提と解釈を追加。[NIST の対応のある観測](https://www.itl.nist.gov/div898/handbook/prc/section3/prc311.htm)と[平均の信頼区間](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm)を参照。計算と保存を検査し、全2,701件の自動テストとビルドが成功。配信用ビルドで途中再開、両区間、誤答・達成、320・390・1280px幅とフォーカスを確認。固定データであり、実測や統計的な前提の成立は未評価。
 
 - 2026-11-03: 依頼1053で計算・転送・固定の返事待ちを逐次に行う３仕事について、３種類の改良を比較。[NERSC の性能分析](https://docs.nersc.gov/tools/performance/roofline/)と[並列処理と遅延](https://docs.nersc.gov/performance/parallelism/)を参照。９通りの時間と保存を検査し、全2,699件の自動テストとビルドが成功。配信用ビルドで途中再開、誤答・達成、320・390・1280px幅とフォーカスを確認。時間は架空で、処理の重なり、並列性や実機の性能測定は未評価。
