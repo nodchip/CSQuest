@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'crystal-sequence-limit':['数列','極限','収束','イプシロン','epsilon','limit'],
  'village-event-origins':['イベント駆動','送信元','イベント引数','タイマー','event'],
  'castle-enclave-boundary':['エンクレーブ','TEE','信頼境界','enclave','TOCTOU'],
  'castle-confidential-container':['TEE','コンフィデンシャルコンピューティング','コンテナ','構成証明','attestation'],
