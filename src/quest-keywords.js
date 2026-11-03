@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-language-safety':['C','Java','Rust','メモリー安全','借用','境界検査','安全な言語'],
  'workshop-bank-interleave':['memory interleaving','メモリインターリーブ','バンク競合','帯域','遅延'],
  'forest-guild-relay':['遠征','命令長','ECC','層構造','複合依頼'],
  'guild-architecture-workshop':['architecture','アーキテクチャ','層構造','パイプ','イベント駆動','publish subscribe'],
