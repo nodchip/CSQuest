@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1129の振り返りに、未選択・２種類の誤答・正答かつ未観察の各説明を追加。関連33テストとビルドが成功。配信用画面の390px幅で各説明、途中再開、早期達成の抑止と表示幅を確認。台帳集計を未照合623行・部分2997行・完了0行に更新。この集計は教材の完成率を表さない。
+
 - 2026-11-03: 依頼1092で外部の２つの板と仕組みが予約する知らせを１つの FIFO 行列に入れ、送信元・対象・増分と２通りの処理順を比較。[MDN のタイマー](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)と [実行モデル](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model)を参照。２順序・値・途中記録と達成を検査し、全2,798件の自動テストとビルドが成功。分離ブラウザーで空の行列、途中再開、２場面、誤った振り返りでの達成抑止、320・390・1280px幅と Enter・フォーカスを確認。実ブラウザーの複数タスク源・マイクロタスクや実 API の実装は未評価。
 
 - 2026-11-03: 依頼1091でエンクレーブの外側の値を検査後に再読取する方法と内部へ写す方法、秘密そのものと条件だけを返す方法を比較。[Intel のエンクレーブ境界](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sgx-web-based-training.html)と [境界を越えるデータ](https://www.intel.com/content/www/us/en/developer/articles/code-sample/intel-software-guard-extensions-developing-a-sample-enclave-application.html)を参照。４操作列・順序・保存・達成を検査し、全2,795件の自動テストとビルドが成功。分離ブラウザーで早すぎる操作、途中再開、全方法、誤った振り返りでの達成抑止、320・390・1280px幅と Enter・フォーカスを確認。単一値の安定した写しと理想隔離の模型で、実 TEE・コピー中の競合・サイドチャネルは未評価。
