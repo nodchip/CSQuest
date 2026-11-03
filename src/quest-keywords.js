@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-robot-cooperation':['複数ロボット','人とロボット','協働','安全確認','混合主導'],
  'forest-visual-control':['視覚制御','ビジュアルサーボ','ロボット','フィードバック','visual servo'],
  'archive-adversarial-distribution':['生成モデル','敵対的生成ネットワーク','GAN','生成器','識別器'],
  'archive-text-bayes':['文章分類','自然言語処理','ナイーブベイズ','naive bayes','単語の袋','加算平滑化'],
