@@ -1,0 +1,9 @@
+export const volumeLevel={id:'ruin-volume-ray',number:'1173',kind:'volume-ray',name:'霧の奥を映す光線',tag:'直接ボリュームレンダリング',title:'霧の層を手前から重ねる',story:'遺跡の水晶には異なる濃さの霧が封じられています。光線を一層ずつ進め、映る明るさを調べましょう。'};
+export const volumeSamples=[{name:'薄霧',value:1},{name:'霧',value:2},{name:'核',value:3}];
+export const volumeModes={all:'すべての層',focus:'薄霧を透明に'};
+export const volumeDirections={forward:'薄霧の側から',reverse:'核の側から'};
+const transfer={all:{1:[.2,.25],2:[.6,.5],3:[1,.75]},focus:{1:[.2,0],2:[.6,.25],3:[1,.75]}};
+export function volumeTrace(mode,direction,steps=3){if(!Object.hasOwn(volumeModes,mode)||!Object.hasOwn(volumeDirections,direction)||!Number.isInteger(steps)||steps<0||steps>3)throw new RangeError('条件が不正です');const samples=direction==='forward'?volumeSamples:[...volumeSamples].reverse();let color=0,alpha=0;return samples.slice(0,steps).map(s=>{const [brightness,opacity]=transfer[mode][s.value];color+=(1-alpha)*opacity*brightness;alpha+=(1-alpha)*opacity;return {name:s.name,brightness,opacity,color,alpha};});}
+export function volumeCreate(){return {mode:'all',direction:'forward',steps:0,seen:[],reflection:null,checked:false};}
+export function volumeDone(q){return Object.keys(volumeModes).every(m=>Object.keys(volumeDirections).every(d=>q.seen.includes(`${m}:${d}`)))&&q.reflection==='order'&&q.checked;}
+export function volumeRestore(q){const keys=Object.keys(volumeModes).flatMap(m=>Object.keys(volumeDirections).map(d=>`${m}:${d}`));if(!q||!Object.hasOwn(volumeModes,q.mode)||!Object.hasOwn(volumeDirections,q.direction)||!Number.isInteger(q.steps)||q.steps<0||q.steps>3||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!keys.includes(k))||q.steps===3&&!q.seen.includes(`${q.mode}:${q.direction}`)||![null,'order','same'].includes(q.reflection)||typeof q.checked!=='boolean')throw new RangeError('途中記録が不正です');return {...q,seen:[...q.seen]};}

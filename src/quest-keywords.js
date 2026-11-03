@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-volume-ray':['ボリュームレンダリング','不透明度','転送関数','volume rendering','alpha compositing'],
  'archive-text-frequency-visual':['テキスト可視化','単語頻度','文章長','正規化','term frequency'],
  'ruin-horn-meaning':['Horn節','一階論理','含意','真理値表','規則','Horn clause'],
  'forest-map-projection':['地理空間','地図投影','緯度','経度','メルカトル','Mercator'],
