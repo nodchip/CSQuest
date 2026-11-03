@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-quantization-energy':['量子化','int8','fp32','quantization','エネルギー'],
  'forge-vector-add':['ベクトル加算','並列','GPU','スレッド','vector addition'],
  'forge-dark-silicon':['ダークシリコン','dark silicon','電力','性能','並列処理'],
  'archive-shapley-lab':['Shapley','SHAP','シャープレイ','特徴の寄与','説明可能AI'],

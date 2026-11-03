@@ -28,7 +28,7 @@
 | 4 | KA Core | 並列の整数ベクトル加算プログラムを作る | 部分 | 1083で２組８人へ６要素を割り当て、範囲外を避けて加算を操作。実際の GPU 実行とプログラム記述能力は直接評価しない。 |
 | 5 | KA Core | 代替アーキテクチャの設計選択を提案 | 部分 | 163 は固定の費用と仕事量から選ぶ。一般的な設計提案は未評価。 |
 | 6 | KA Core | 電圧・周波数の動的調整の要点を挙げる | 部分 | 1039・1040で電圧・周波数、基礎電力、期限、切替え費用を模型で比較。実機制御や自由な説明は未評価。 |
-| 7 | KA Core | ８ビット量子化と32ビットの省エネルギー改善を測る | 未照合 | 対応教材と測定を要照合。 |
+| 7 | KA Core | ８ビット量子化と32ビットの省エネルギー改善を測る | 部分 | 1084で縮尺・丸め・範囲と架空の費用を比較。実機のエネルギー測定と改善は未評価。 |
 
 依頼1039は [Linux の性能調整](https://www.kernel.org/doc/html/next/admin-guide/pm/cpufreq.html)と [Berkeley の動的電力の説明](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-146.pdf)を参考に、３つの固定電圧・周波数组と一定の基礎電力で、60億周期の所要時間と実行中のエネルギーを比較する。３設定×２基礎電力×２期限を `tests/dvfs-workshop.test.js` で独立した期待値と照合する。一定周期数・基礎電力・切替費用なしの模型であり、実行中の変更、電圧・温度に依存する漏れ、終了後の待機、実機の性能や消費は評価しない。
 
@@ -37,3 +37,5 @@
 依頼1082は [Esmaeilzadeh らの電力制約とダークシリコンの研究](https://act-lab.org/doc/paper/2012-tocs-dark_silicon.pdf)を参考に、８核・電力上限16.5 W・待機１核0.5 W の固定模型で、通常５核と低速８核の仕事量を比較する。18条件を `tests/dark-silicon.test.js` で検査。実機の温度、電圧依存の漏れ、回路の異質性や実測は未評価。
 
 依頼1083は [NVIDIA のスレッドとベクトル加算の説明](https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/intro-to-cuda-cpp.html)を参考に、２組×４人から６要素への担当番号、要素ごとの整数加算、範囲外２人の抑止を操作する。全８担当と途中保存を `tests/parallel-vector-add.test.js` で検査。実際の GPU・プログラム記述・メモリ転送・性能・整数の桁あふれは未評価。
+
+依頼1084は [ONNX Runtime の量子化](https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html)と [PyTorch の説明](https://pytorch.org/blog/quantization-in-practice/)を参考に、２縮尺・６値の丸めと切り詰め、仮の転送・変換費用を比較する。`tests/quantization-energy.test.js` で全12条件と費用を検査。実機のエネルギー、モデル精度や他の量子化方式は未評価。
