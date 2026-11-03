@@ -68,3 +68,5 @@ C の範囲外・寿命・データ競合の根拠は [C11 委員会草案 N1570
 依頼1135には、０〜４の番号を最大４件まで並べる任意の試験を追加した。空列を含む781列×６構成について、処理された番号列と仕様の通過判定を独立した期待値と比較した。任意試験は完成条件に含まず、旧版の途中記録も復元できる。負の番号や５以上の番号、４件を超える列、実プログラムは評価しない。
 
 依頼1136は [OWASP の XSS 対策](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)と [MDN の URL 解析](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL)を参考に、HTML 属性向け文字処理のみの受付と、解析後に HTTPS と固定オリジンを照合する受付を比較する。相対、紛らわしい名前、スクリプト形式、改行入り、壊れた形式など８例×２方式を `tests/link-gate.test.js` で検査。リンクを作成・実行せず、リダイレクト、認可、同一オリジン内の危険な宛先、他の XSS 文脈や実アプリの安全性は評価しない。
+
+依頼1137は [OWASP の未検証の転送](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)と [MDN の HTTP 転送](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections)を参考に、1136の URL 解析を再利用する。最初だけの照合と転送のたびの照合で、８種類の固定経路を操作。相対指定は直前の URL に対して解決し、外部への未確認の進行は実行せず可能性を示すところで停止する。`tests/redirect-route.test.js` は16条件、連続した相対指定、外部・循環・不正と保存を検査する。実際の HTTP、認可、同一オリジン内の危険な操作やネットワークの安全性は評価しない。

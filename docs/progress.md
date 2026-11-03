@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1137で1136の URL 解析を再利用し、最初だけの照合と転送のたびの照合を８経路で比較。[OWASP の転送](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)と [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections)を参照。16条件と保存を含む関連34テスト・ビルドが成功。配信用画面で外部への転送、相対指定２回、循環、不正、途中再開、９比較、誤答・達成、外部移動なし、320/390/1280px幅を確認。実 HTTP や認可は評価しない。
+
 - 2026-11-04: 依頼1136で文字のエスケープと URL 解析後の HTTPS・オリジン照合を８例×２方式で比較。[OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) と [MDN](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL)を参照。関連32テストとビルド成功。配信用画面で未選択・誤予想、途中再開、８比較、誤答・達成、外部移動なし、320/390/1280px幅を確認。実リンク、リダイレクト、認可と実アプリの安全性は評価しない。
 
 - 2026-11-04: 依頼1135に０〜４の番号を最大４件並べる任意試験を追加。781列×６構成の処理位置・通過判定、旧版の途中記録と新たな保存を含む関連36テストとビルドが成功。配信用画面で範囲外の連続と後続注文、途中再開、４件の上限、クリア後の列の保持、320/390/1280px幅を確認。固定４場面の達成条件は変更せず、実際のコードや任意長の入力は評価しない。

@@ -2,6 +2,7 @@
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
  'village-order-program':['条件分岐','反復','辞書','試験','デバッグ','制御フロー'],
+ 'castle-redirect-route':['転送','リダイレクト','url','オリジン','redirect'],
  'castle-link-gate':['xss','url','javascript','オリジン','リンク'],
  'workshop-reader-migration':['型安全','範囲外','エラー処理','試験','rust'],
  'workshop-safer-reader':['型安全','範囲外','rust','option','安全な取得','エラー'],
