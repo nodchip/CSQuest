@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-systolic-array':['TPU','シストリック','行列積','積和','機械学習ハードウェア'],
  'village-order-program':['条件分岐','反復','辞書','試験','デバッグ','制御フロー'],
  'guild-many-tests':['多重検定','ボンフェローニ','誤検出','多重比較','bonferroni'],
  'guild-feed-intervals':['信頼区間','有意差','実験','p値','フィード'],

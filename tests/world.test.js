@@ -84,6 +84,7 @@ test('the AI path connects introductions to search, learning, and applications',
  before('crystal-neighbors','castle-adversarial-watch');
  before('castle-adversarial-watch','castle-watch-ensemble');
  before('archive-kmeans','forest-label-propagation');
+ for(const [a,b] of [['archive-deep-features','forge-vector-add'],['forge-vector-add','forge-parallel-matrix'],['forge-parallel-matrix','workshop-systolic-array'],['workshop-systolic-array','forge-coalesced-load'],['forge-coalesced-load','forge-quantization-energy']]) before(a,b);
  assert.equal(nextTrailQuest(trail,all,['workshop-ai-kinds']).level.id,'forest-search');
 });
 test('introductory and subject paths recommend related foundations before later topics',()=>{
