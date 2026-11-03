@@ -38,3 +38,5 @@
 `tests/machine.test.js`、`tests/instruction-cards.test.js`、`tests/instruction-pipeline.test.js` 等は固定模型の一部を検査する。前提・出典は[既存の調査](ar-assembly.md)を参照。未照合は未実装の証拠ではない。
 
 依頼1008は架空の１・２バイト命令と固定２バイト命令で同じ２作業を実行し、命令の先頭と容量を比較する。[RISC-V 仕様の命令長](https://docs.riscv.org/reference/isa/v20240411/unpriv/intro.html) は基本 ISA の32ビット固定長と圧縮拡張による16・32ビット等の長さを説明する。本教材の符号・単位・命令は実 ISA ではなく、一般のコード密度や性能は評価しない。`tests/instruction-length.test.js` で命令解読、途中で切れた命令、４実行と復元を検査する。
+
+依頼1011は依頼1008・1009・1010の限定模型を遠征内で再利用し、命令の実行、記憶の読取り、薬棚の審査を順に使う。`tests/guild-relay.test.js` で進行条件、失敗からの回復、途中記録を検査する。個々の題材の限界は上記の通り。

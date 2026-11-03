@@ -57,3 +57,5 @@
 `tests/inventory-design.test.js`、`tests/composition-design.test.js`、`tests/design-smells.test.js`、`tests/design-journey.test.js` は固定模型の一部を検査する。前提・出典は既存の調査を参照。未照合は未実装の証拠ではない。
 
 依頼1010は厳密な隣接層による受付、二つのフィルターの順序、仲介役を介した発行と購読を固定例で比較する。[Microsoft の設計方式](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/) と[パイプとフィルター](https://learn.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters)を参照。点検を飛ばす経路はモデル内の設計比較であり、すべての層構造が隣接層しか呼べないわけではない。イベント配達の１回成功は模型の仮定であり、実際の障害耐性や最適性を保証しない。`tests/architecture-workshop.test.js` で４受付条件、２工程順、４購読構成と保存・達成を検査する。
+
+依頼1011は依頼1008・1009・1010の限定模型を遠征内で再利用し、命令の実行、記憶の読取り、薬棚の審査を順に使う。`tests/guild-relay.test.js` で進行条件、失敗からの回復、途中記録を検査する。個々の題材の限界は上記の通り。
