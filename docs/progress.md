@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1032で法55の RSA の逆元、暗号化、公開鍵と受取人の対応確認を比較。[Cambridge の講義](https://www.cl.cam.ac.uk/teaching/2627/Crypto/)と [NIST 鍵管理](https://csrc.nist.gov/projects/key-management/faqs)を参照。３段階の選択肢、独立した整数計算、保存と達成を検査し、全2,650テストとビルドが成功。配信用ビルドで誤答、途中再開、３段階と振り返り、320・390・1280px幅を確認。法55の模型で実際の通信・安全性・本人確認や自由な説明は評価しない。
+
 - 2026-11-03: 依頼1031で映画評価データの外部照合、アプリ利用者の友人情報の取得、医療費を代理とした支援予測の３実例を比較。[研究論文](https://arxiv.org/abs/cs/0610105)、[米 FTC の説明](https://www.ftc.gov/business-guidance/blog/2019/12/commission-issues-opinion-cambridge-analytica-case)、[医療予測研究](https://pubmed.ncbi.nlm.nih.gov/31649194/)を参照し、３事例×３仕組み×３調査、保存と達成を検査。配信用ビルドで誤答・再挑戦・途中再開・３事例・振り返り・達成、320・390・1280px幅とキーボードを確認。事例ごとの経緯と限界を示し、調査案による安全性・法令適合や自由な分析は評価しない。
 
 - 2026-11-03: 依頼1030で Web の通信のみの設計と事前保存する設計を、通信可能な初訪問・通信なしの再訪・通信なしの初訪問という固定条件で比較。[MDN のサービスワーカー](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)と[キャッシュ](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching)を参考に、２設計×３場面、復元と達成を検査。配信用ビルドで誤答・再挑戦・途中再開・６条件・振り返り・達成、320・390・1280px幅とキーボードを確認。ブラウザーの対応・事前準備と保存保持を仮定する模型で、実際の保存削除や送信成功は評価しない。
