@@ -21,7 +21,7 @@
 | 番号 | 区分 | 内容 | 状態 | 対応例と限界 |
 |---|---|---|---|---|
 | 1 | CS Core | 割込み制御図を分析し制御・データ転送への利用を説明 | 部分 | 105 の単一通知を操作。一般の制御図、転送機構と自由な説明は未評価。 |
-| 2 | CS Core | コンピュータ内の各種バスを列挙 | 部分 | 1021で簡略なシステムバスのアドレス・データ・制御の役割を区別。接続先や実規格による種類の比較・自由な列挙は未評価。 |
+| 2 | CS Core | コンピュータ内の各種バスを列挙 | 部分 | 1021でアドレス・データ・制御の役割、1022で I²C・USB・PCIe の固定接続例を区別。各規格の一般的な構成や自由な列挙は未評価。 |
 | 3 | CS Core | 磁気ディスクと SSD の利点を比較 | 部分 | 749 は位置決め費用の固定例。容量、価格、耐久性や実測は未評価。 |
 
 依頼984は [Arm Cortex-M4 Datasheet](https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/Processor%20Datasheets/Arm%20Cortex-M4%20Processor%20Datasheet.pdf) の優先度・入れ子と状態の保存・復帰を参考にした固定模型。低優先の処理中に高優先が到着し、入れ子を許す場合と許さない場合の入口と完了順を比較する。入口32・48は架空の番号であり、実機のベクタや配置ではない。同時到着、同優先度、実際のマスク機構、応答時間や実ハードウェアは扱わない。`tests/interrupt-priority.test.js` で両方式の順序、入口、戻り先、保存を検査する。
@@ -31,3 +31,5 @@
 依頼1018は文字、接触、温度、画像を受け、表示または回転につなぐ固定例。タッチ画面の入力と表示を区別し、温度30・80と閾値50は架空の条件である。[Linux の入力イベント](https://www.kernel.org/doc/html/latest/input/event-codes.html) と [映像入力](https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/video.html)を参照。実機の接続、ドライバーや個々の製品の機能を評価しない。`tests/device-path.test.js` で装置組合せ、温度条件と保存を検査する。
 
 依頼1021は CPU と記憶の読取り・書込みの６つの札を、番地・内容・操作の合図に分類する。[University of Washington のシステムバスの図](https://courses.cs.washington.edu/courses/cse390b/23wi/lectures/Lecture%209.pdf)と [University of Pittsburgh の信号解説](https://people.cs.pitt.edu/~cho/cs1541/current/handouts/lect-io_2up.pdf)を参照。`tests/bus-signals.test.js` で６札と３選択の18通り、保存と達成条件を検査する。役割別の簡略模型で、実規格、時分割された信号や各バスの接続先・タイミングは評価しない。
+
+依頼1022は同じ I²C バスにある２装置の重複する住所、USB ホストからハブの２枝、PCIe の２ルートポートと各リンク先を比べる固定例。各装置が選べる住所と接続は架空の条件である。[Linux の I²C バスと装置](https://docs.kernel.org/i2c/i2c-sysfs.html)、[USB のツリー](https://docs.kernel.org/driver-api/usb/usb.html)、[PCIe ルートとリンク](https://docs.kernel.org/PCI/controller/pci-controller-drivers.html)を参照。`tests/bus-topology.test.js` で４住所組合せ、各２ポート、保存と達成条件を検査。列挙・アドレス割当、電気的条件、実ドライバー・性能や各規格の全機能は評価しない。
