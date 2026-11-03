@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-temporal-language':['自然言語','時間関係','前後','temporal relation','出来事'],
  'forest-navigation-compare':['ロボット','移動','反射','経路計画','期待費用','navigation'],
  'forest-robot-cooperation':['複数ロボット','人とロボット','協働','安全確認','混合主導'],
  'forest-visual-control':['視覚制御','ビジュアルサーボ','ロボット','フィードバック','visual servo'],

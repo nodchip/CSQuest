@@ -1,0 +1,7 @@
+export const temporalLanguageLevel={id:'forest-temporal-language',number:'1149',kind:'temporal-language',name:'前と後の伝言',tag:'自然言語・出来事の時間関係',title:'灯りと鐘の順番を読む',story:'森に届いた伝言から、灯りと鐘の出来事の順番を台帳に表しましょう。'};
+export const temporalCases={after:{label:'後の伝言',text:'灯りがともった後に、鐘が鳴った。',relation:'fire'},before:{label:'前の伝言',text:'鐘が鳴る前に、灯りがともった。',relation:'fire'},reverse:{label:'逆の伝言',text:'灯りがともる前に、鐘が鳴った。',relation:'bell'},unknown:{label:'順番のない伝言',text:'灯りがともり、鐘も鳴った。どちらが先かは記録されていない。',relation:'unknown'}};
+export const temporalAnswers={fire:'灯り → 鐘',bell:'鐘 → 灯り',unknown:'順番は分からない'};
+export function temporalCreate(){return {selected:'after',answer:null,seen:[],equivalence:null,missing:null,checked:false};}
+export function temporalCorrect(id,answer){if(!Object.hasOwn(temporalCases,id)||!Object.hasOwn(temporalAnswers,answer))throw new RangeError('伝言か答えが不正です');return temporalCases[id].relation===answer;}
+export function temporalDone(q){return Object.keys(temporalCases).every(id=>q.seen.includes(id))&&q.equivalence==='same'&&q.missing==='unknown'&&q.checked;}
+export function temporalRestore(q){if(!q||!Object.hasOwn(temporalCases,q.selected)||![null,...Object.keys(temporalAnswers)].includes(q.answer)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(id=>!Object.hasOwn(temporalCases,id))||![null,'same','different'].includes(q.equivalence)||![null,'unknown','reverse'].includes(q.missing)||typeof q.checked!=='boolean')throw new RangeError('記録が不正です');return {...q,seen:[...q.seen]};}
