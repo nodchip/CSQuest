@@ -64,9 +64,9 @@
 | 8b | KA Core | PCA と次元削減 | 部分 | 300で平面の点を１方向に射影。高次元は未評価。 |
 | 8c | KA Core | PCA と最小二乗 | 部分 | 300で射影残差の二乗を比較。一般の導出は未評価。 |
 | 8d | KA Core | PCA と固有ベクトル | 部分 | 300で最大固有値に対応する方向を比較。一般の計算は未評価。 |
-| 8e | KA Core | 高次元データに PCA を適用 | 未照合 | ２次元の固定例のみ確認。高次元データの対応は未確認。 |
+| 8e | KA Core | 高次元データに PCA を適用 | 部分 | 依頼1205で６記録・３属性を中心化し、３方向から２方向を選択。任意の高次元データや独力の計算は未評価。 |
 | 8f | KA Core | PageRank と固有ベクトルの関係 | 部分 | 301で３塔の分布を反復。一般の導出や大規模なグラフは未評価。 |
-| 8g | KA Core | SVD と PCA の幾何的な違い | 未照合 | 300・302は個別模型。両者の比較課題は未確認。 |
+| 8g | KA Core | SVD と PCA の幾何的な違い | 部分 | 依頼1205で中心化した６×３行列の特異値と主成分を比較。一般の行列分解や幾何の自由な説明は未評価。 |
 | 8h | KA Core | SVD を具体例に適用 | 部分 | 302で２種類の２次元変換を操作。推薦などの応用は未評価。 |
 
 `tests/vectors.test.js`、`tests/matrix.test.js`、`tests/matrix-product.test.js`、`tests/vector-span.test.js`、`tests/orthogonal-projection.test.js`、`tests/gram-schmidt.test.js`、`tests/eigen-directions.test.js` 等は対応する固定模型の一部を検査する。各前提と根拠は[既存の調査](msf-linear.md)を参照。未照合は教材が存在しない証拠ではない。
@@ -84,3 +84,5 @@
 依頼1202は [OpenStax の連立方程式の応用](https://openstax.org/books/intermediate-algebra-2e/pages/4-2-solve-applications-with-systems-of-equations) を参考に、２つの固定された物資報告から変数と係数を対応させ、両方の合計を確認する。`tests/linear-story.test.js` は選択可能な袋数の全組と誤係数、保存を検査する。任意の文章題や実数解は評価しない。
 
 依頼1203は [MIT の固有値と固有ベクトル](https://math.mit.edu/~djk/18_022/chapter16/section04.html) を参考に、４つの２×２行列の特性多項式・実固有値・独立な実固有方向を比較する。重根でも固有方向の数が異なる例と、実固有値がない回転を含む。`tests/characteristic-mirror.test.js` は625行列の係数を直接の行列式と比較する。一般の行列や複素固有ベクトルは評価しない。
+
+依頼1205は [Penn State の PCA と SVD](https://online.stat.psu.edu/stat508/Lesson07.html)を参考に、３属性・６記録を中心化して３つの２軸部分空間に射影し、復元と誤差を比較する。共分散は６で割る規約で、特異値の二乗を６で割った固有値を示す。`tests/pca-three-dimensions.test.js` は散布行列・固有方向・３通りの復元誤差を独立計算と照合。一般の高次元データ・標準化は未評価。
