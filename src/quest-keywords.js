@@ -2,6 +2,7 @@
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
  'village-order-program':['条件分岐','反復','辞書','試験','デバッグ','制御フロー'],
+ 'guild-language-notice':['多言語','文化','国際化','日付','時間帯'],
  'guild-lantern-manual':['資料','ドキュメント','API','参照','リファレンス','版'],
  'guild-document-finder':['資料','ドキュメント','チュートリアル','API','参照','リファレンス'],
  'archive-text-units':['文字列','符号位置','符号単位','unicode','utf-16','code point'],
