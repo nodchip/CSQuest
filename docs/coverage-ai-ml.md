@@ -156,7 +156,7 @@
 
 2026-11-03 の照合では、原典 pp.71–74 の該当項目と `src/health-proxy-study.js`・`src/digit-lab.js`・`src/pca-transfer.js`・`src/iris-curve.js`、各個別テストを確認した。705は公表研究の表の比較であり予測器の開発ではない。936は前処理済み数字の一部を使う分類例であり独立した将来データでの実用性能を示さない。897の主成分分析と618の境界・最近傍による学習曲線を、深層ネットワークや既存可視化ツールの使用と混同しない。
 
-依頼1020は入力２値の排他的論理和を４手本で学ぶ、２隠れ層・各２ユニットの固定模型。隠れ層には tanh、出力にはシグモイドを使い、平均交差エントロピーの全件勾配で学習率１の同時更新を行う。０・100・1000・2000回の値を同じ初期値から再計算し、各層の２出力を固定尺度の座標に表示する。各層の役割と逆伝播は [Google の隠れ層](https://developers.google.com/machine-learning/crash-course/neural-networks/nodes-hidden-layers)・[逆伝播](https://developers.google.com/machine-learning/crash-course/neural-networks/backpropagation)を参照。`tests/deep-features.test.js` で15パラメータの勾配を中心差分と照合し、最終的な４手本の判別・保存・達成条件を検査する。この固定模型の図は各ユニットの値であり、一般の特徴の意味、実データや未知の入力での性能を示さない。
+依頼1020は入力２値の排他的論理和を４手本で学ぶ、２隠れ層・各２ユニットの固定模型。隠れ層には tanh、出力にはシグモイドを使い、平均交差エントロピーの全件勾配で学習率１の同時更新を行う。０・100・1000・2000回の値を同じ初期値から再計算し、各層の２出力を固定尺度の座標に表示する。入力１・２を各０・0.25・0.5・0.75・１に選び、中間値の出力と層の位置を観察できる。中間値の正解は与えておらず、[汎化](https://developers.google.com/machine-learning/crash-course/overfitting/generalization)の性能測定ではない。各層の役割と逆伝播は [Google の隠れ層](https://developers.google.com/machine-learning/crash-course/neural-networks/nodes-hidden-layers)・[逆伝播](https://developers.google.com/machine-learning/crash-course/neural-networks/backpropagation)を参照。`tests/deep-features.test.js` で15パラメータの勾配を中心差分と照合し、最終的な４手本の判別、25点のうち４隅と手本の一致、旧保存データと達成条件を検査する。この固定模型の図は各ユニットの値であり、一般の特徴の意味、実データや未知の入力での性能を示さない。
 
 ## 例示学習成果
 

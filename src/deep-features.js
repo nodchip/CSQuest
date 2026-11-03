@@ -20,7 +20,9 @@ export function deepMetrics(p){
  return {...r,input,target};});return {loss,grad,rows};
 }
 export function deepTrain(steps){if(![0,100,1000,2000].includes(steps))throw new RangeError('訓練回数が不正です。');let p=[...deepInitial];for(let i=0;i<steps;i++){const g=deepMetrics(p).grad;p=p.map((v,j)=>v-g[j]);}return p;}
-export function deepCreate(){return {step:0,layer:'first',seen:[],reflection:null};}
+export const deepGridValues=[0,0.25,0.5,0.75,1];
+export function deepProbe(p,xIndex,yIndex){if(!Number.isInteger(xIndex)||!Number.isInteger(yIndex)||xIndex<0||xIndex>=deepGridValues.length||yIndex<0||yIndex>=deepGridValues.length)throw new RangeError('試す入力が不正です。');return deepForward(p,[deepGridValues[xIndex],deepGridValues[yIndex]]);}
+export function deepCreate(){return {step:0,layer:'first',seen:[],reflection:null,probe:[2,2]};}
 export function deepInspect(q){const k=`${q.step}:${q.layer}`;if(![0,100,1000,2000].includes(q.step)||!['first','second'].includes(q.layer))throw new RangeError('条件が不正です。');if(!q.seen.includes(k))q.seen.push(k);}
 export function deepComplete(q){return [0,1000,2000].every(n=>['first','second'].every(layer=>q.seen.includes(`${n}:${layer}`)))&&q.reflection==='limited';}
-export function deepRestore(q){const valid=k=>/^(0|100|1000|2000):(first|second)$/.test(k);if(!q||![0,100,1000,2000].includes(q.step)||!['first','second'].includes(q.layer)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>typeof k!=='string'||!valid(k))||![null,'limited','guarantee','same'].includes(q.reflection))throw new RangeError('途中記録が不正です。');return {...q,seen:[...q.seen]};}
+export function deepRestore(q){const valid=k=>/^(0|100|1000|2000):(first|second)$/.test(k),probe=q?.probe===undefined?[2,2]:q.probe;if(!q||![0,100,1000,2000].includes(q.step)||!['first','second'].includes(q.layer)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>typeof k!=='string'||!valid(k))||![null,'limited','guarantee','same'].includes(q.reflection)||!Array.isArray(probe)||probe.length!==2||probe.some(n=>!Number.isInteger(n)||n<0||n>=deepGridValues.length))throw new RangeError('途中記録が不正です。');return {...q,seen:[...q.seen],probe:[...probe]};}
