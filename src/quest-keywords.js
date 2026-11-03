@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-architecture-workshop':['architecture','アーキテクチャ','層構造','パイプ','イベント駆動','publish subscribe'],
  'workshop-memory-scrub':['ECC','scrubbing','巡回点検','メモリスクラブ','記憶の信頼性'],
  'workshop-instruction-length':['固定長','可変長','instruction encoding','命令長','ISA'],
  'forest-raft-vote':['Raft','リーダー選挙','選挙','投票','ログの新しさ','leader election'],
