@@ -9,8 +9,10 @@
 | 1c | 分散トランザクション | 部分 | 293で二相コミットの準備・決定・通知と停止を操作。一般の故障・実システムは未評価。 |
 | 1d | 同種・異種の解決策 | 未照合 | 同種・異種の分散 DB の対応を確認していない。 |
 | 1e | クライアント・サーバー型分散 DB | 未照合 | DB を使った構成の例を確認していない。 |
-| 2a | 共有メモリ・共有ディスク・共有なし | 未照合 | 並列 DBMS の３構成の比較を確認していない。 |
+| 2a | 共有メモリ・共有ディスク・共有なし | 部分 | 1122で２書記のメモリ・保存棚の共有と通信を比較。実構成・性能や障害時の挙動は未評価。 |
 | 2b | 速度向上・規模拡大と MapReduce | 部分 | 130で固定の分担・集約、285で累積和を操作。実 DB の評価と規模拡大の一般分析は未評価。 |
 | 2c | 複製と弱い整合性 | 部分 | 190・193で配送の遅れ・読み書きの重なりを比較。他の整合性モデルと実装の保証は未評価。 |
 
 依頼293・294の前提と参考は [DM-Distributed](dm-distributed.md)、190・191・193は [DM-NoSQL](dm-nosql.md) を参照。`tests/two-phase-commit.test.js`、`tests/distributed-join.test.js`、`tests/replica-lag.test.js`、`tests/shard-routing.test.js`、`tests/quorum.test.js` は各固定模型を検査する。
+
+依頼1122は [Oracle の並列構成](https://docs.oracle.com/cd/A57673_01/DOC/server/doc/SPS73/chap3.htm) と [DeWitt・Gray の論文](https://people.csail.mit.edu/tdanford/6830papers/dewitt-gray-parallel-databases.pdf) を参考に、共有メモリ、共有ディスク、共有なしの２書記の固定模型を比較する。「直接」は他の書記への依頼を介さない意味で、共有棚への物理的な接続方式や距離は限定しない。配置・競合・キャッシュ整合性や故障時の可用性、実機の性能は判定しない。`tests/parallel-db-architecture.test.js` は６条件・保存と達成を検査する。

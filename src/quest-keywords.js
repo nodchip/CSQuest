@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-parallel-db-architecture':['並列データベース','共有メモリ','共有ディスク','共有なし','shared nothing'],
  'forge-event-batch-count':['イベント計数','パケット','小計','集約','カウンタ','counter'],
  'forge-elastic-workshop':['水平伸縮','クラウド','オートスケール','elasticity','autoscaling'],
  'village-design-security-journey':['互換性','安全側の初期値','設計','遠征','api'],

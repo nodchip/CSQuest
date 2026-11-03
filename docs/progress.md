@@ -2417,3 +2417,5 @@
 - 2026-11-03: 依頼1120で６刻みの知らせの到着と処理について、固定２人と手動の人数増減、次刻みへの反映、待ちと人数分の資源を比較。[Kubernetes の水平オートスケーリング](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/)を参考に PDC-Programs のクラウド・伸縮を部分対応として記録。関連31テストとビルドが成功。ブラウザーで早すぎる確認、途中再開、２方式、増減と比較、達成、320/390/1280pxを確認。固定到着・手動調整の模型で、実クラスタ・自動制御・個別待ち時間や料金は評価しない。
 
 - 2026-11-03: 依頼1121で６件の受信を、毎回の共有更新と２塔の小計の後追い集約で比較。途中の共通帳面の古さ、最後の集約と共通更新回数を操作。[Linux の CPU ごとの計数](https://docs.kernel.org/6.2/core-api/this_cpu_ops.html)を参考に PDC-Programs・Coordination のイベント計数を部分対応として記録。関連31テストとビルド成功。ブラウザーで早すぎる読取り、途中再開、集約前の値、２回の集約・達成、320/390/1280pxを確認。更新の正しさと順序を仮定する模型で、実コード・同時実行・速度・障害は評価しない。
+
+- 2026-11-03: 依頼1122で共有メモリ・共有ディスク・共有なしの２書記について、指定された記憶領域と保存棚へのアクセスを比較。[Oracle の並列構成](https://docs.oracle.com/cd/A57673_01/DOC/server/doc/SPS73/chap3.htm)と[DeWitt・Gray の論文](https://people.csail.mit.edu/tdanford/6830papers/dewitt-gray-parallel-databases.pdf)を参照し DM-Distributed 2a を部分対応として記録。関連31テストとビルド成功。ブラウザーで予測前の案内、誤答、途中再開、６条件・達成、320/390/1280pxを確認。固定模型で接続の物理構成、実性能や故障時の可用性は評価しない。
