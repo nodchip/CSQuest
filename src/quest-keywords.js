@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'village-argument-boards':['議論','反論','argumentation','grounded','stable','受理'],
  'workshop-case-cycle':['事例ベース推論','検索','再利用','修正','事例の保存'],
  'workshop-diagnosis-methods':['事例ベース推論','モデルベース推論','規則ベース','専門家システム','診断'],
  'archive-rdf-join':['RDF','SPARQL','IRI','セマンティック Web','グラフ結合'],
