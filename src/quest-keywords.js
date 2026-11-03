@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-firmware-layers':['UEFI','LoJax','ファームウェア','起動','永続化'],
  'village-team-relay':['非同期','対立解決','チーム','参加','記録'],
  'village-order-fault-journey':['逐次','並行','複製','部分障害','更新の消失'],
  'archive-face-audit-study':['Gender Shades','顔分類','公平性','集団別評価','誤分類率'],
