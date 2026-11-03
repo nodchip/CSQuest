@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-pair-work':['ペアプログラミング','モブプログラミング','協働','pair','mob','チーム'],
  'forge-pipe-eof':['パイプ','通信路','入出力','eof','pipe','read','非ブロッキング'],
  'forge-mpi-envelope':['mpi','通信','ランク','タグ','コミュニケーター','受信','並列'],
  'village-object-design':['オブジェクト指向','クラス','インスタンス','カプセル化','設計','oop'],
