@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-language-type-check':['静的型付け','動的型付け','Rust','Python','TypeError'],
  'forge-dvfs-phases':['DVFS','動的調整','計算待機','切替え費用'],
  'forge-dvfs-workshop':['DVFS','電圧','周波数','電力','エネルギー'],
  'archive-negative-sampling':['Word2Vec','negative sampling','負例サンプリング','雑音'],

@@ -51,7 +51,7 @@
 | 1 | CS Core | 基本型と複合型の値を説明 | 部分 | 24・595で固定型の値。一般の型と自由な説明は未評価。 |
 | 2 | CS Core | 静的に禁止される操作を説明 | 部分 | 24で不適合な接続。実言語と自由な説明は未評価。 |
 | 3 | CS Core | 型が検出する誤りの例を説明 | 部分 | 24で入力型の不一致。自由な説明は未評価。 |
-| 4 | CS Core | 複数言語で静的・動的に検査される性質を区別 | 未照合 | 510は架空の模型であり、複数の実言語は未評価。 |
+| 4 | CS Core | 複数言語で静的・動的に検査される性質を区別 | 部分 | 1041で Rust と Python の分岐中の加算の検査時点を比較。言語全般や自由な説明は未評価。 |
 | 5 | CS Core | 検査に通らないが実行しても誤りのない例を説明 | 部分 | 510で通らない分岐の不適合を比較。実言語と自由な説明は未評価。 |
 | 6 | CS Core | 型とエラーを用いてプログラムを作成・修正 | 部分 | 24・772で固定の道具を修正。実言語での作成は評価しない。 |
 | 7 | KA Core | 型規則と許される操作の関係を説明 | 部分 | 24で入出力の型に基づく接続。自由な説明は未評価。 |
@@ -72,3 +72,5 @@
 依頼945は [Cornell の多相性の講義](https://www.cs.cornell.edu/courses/cs4110/2021fa/lectures/lecture24.pdf)を参考に、型変数による共通手順、宣言型による固定の多重定義、動物のサブタイプと実行時の手順を比較する模型。実言語の候補解決・変換・例外や自由な説明は未評価。
 
 依頼946は [Oracle の型消去](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)と [Rust の単相化](https://doc.rust-lang.org/book/ch10-01-syntax.html)を参考に、同じ型検査の後に共有処理か型ごとの処理を概念的に用意する模型。実コンパイラーの最適化、ABI、コードサイズ、実測性能や言語全般は評価しない。
+
+依頼1041は [Rust の型](https://doc.rust-lang.org/book/ch03-02-data-types.html)と [Python の TypeError](https://docs.python.org/3/library/exceptions.html#TypeError)を参考に、数字と文字列の加算を到達する場合・しない場合で比較する。`scripts/check_type_language_examples.py` で rustc 1.99.1 は両方をコンパイル時 E0277 とし、Python 3.13.15 は分岐を通る場合のみ TypeError、通らない場合は done を表示することを確認した。画面はこの結果の再現で実コンパイラーを起動しない。`tests/language-type-check.test.js` は４条件・選択肢・保存を検査する。実言語の全規則、外部静的解析、独自のコード作成や自由な説明は評価しない。

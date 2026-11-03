@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1041で Rust と Python の不適合な加算を、到達する分岐と到達しない分岐で比較。[Rust の型](https://doc.rust-lang.org/book/ch03-02-data-types.html)、[Python の TypeError](https://docs.python.org/3/library/exceptions.html#TypeError)を参照し、rustc 1.99.1 と Python 3.13.15 で４条件を `scripts/check_type_language_examples.py` により確認。全2,670件の自動テストとビルドが成功。配信用ビルドで誤答、途中再開、４条件、振り返り・達成、320・390・1280px幅とフォーカスを確認。画面は固定例の結果を再現し、実行環境や全言語規則、コード作成能力は評価しない。
+
 - 2026-11-03: 依頼1040で計算と固定待機の２段階に異なる動作点を選び、２つの切替え費用を比較。[Linux の負荷と周波数](https://www.kernel.org/doc/html/next/admin-guide/pm/cpufreq.html)を参照。18条件を独立計算、期限と最小値、保存・達成を検査し、全2,668件の自動テストとビルドが成功。配信用ビルドで誤答、途中再開、２条件、振り返り・達成、320・390・1280px幅とフォーカスを確認。固定待機と切替え時間０の模型で、実機の測定や負荷推定は未評価。
 
 - 2026-11-03: 依頼1039で３つの電圧・周波数组、２種類の基礎電力と２期限について、実行時間・電力・消費を比較。[Linux](https://www.kernel.org/doc/html/next/admin-guide/pm/cpufreq.html)と [Berkeley](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-146.pdf)を参照。12条件の独立した期待値、期限、保存・達成を検査し、全2,666件の自動テストとビルドが成功。配信用ビルドで誤答、途中再開、４条件、振り返り・達成、320・390・1280px幅とフォーカスを確認。一定周期数・基礎電力、切替費用なしの模型で、実機や終了後の消費は未評価。

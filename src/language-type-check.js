@@ -1,0 +1,9 @@
+export const languageCheckLevel={id:'archive-language-type-check',number:'1041',kind:'language-type-check',name:'二つの言葉と分かれ道',tag:'Rust と Python の型検査',title:'検査の時点を見比べる',story:'鑑定士の書庫に二つの言葉で書かれた指示があります。通らない分岐にある不適合が、いつ見つかるか調べましょう。'};
+export const languageCheckLanguages={rust:'Rust',python:'Python'};
+export const languageCheckBranches={off:'分岐を通らない',on:'分岐を通る'};
+export const languageCheckAnswers={compile:'実行前のコンパイルで型エラー',done:'最後の表示まで実行',runtime:'実行中に TypeError'};
+export function languageCheckResult(language,branch){if(!Object.hasOwn(languageCheckLanguages,language)||!Object.hasOwn(languageCheckBranches,branch))throw new RangeError('条件が不正です。');return language==='rust'?'compile':branch==='on'?'runtime':'done';}
+export function languageCheckCreate(){return {language:'rust',branch:'off',answer:null,seen:[],reflection:null};}
+export function languageCheckSubmit(q){if(!Object.hasOwn(languageCheckAnswers,q.answer))throw new RangeError('予想が必要です。');const ok=q.answer===languageCheckResult(q.language,q.branch),key=`${q.language}:${q.branch}`;if(ok&&!q.seen.includes(key))q.seen.push(key);return ok;}
+export function languageCheckComplete(q){return Object.keys(languageCheckLanguages).every(l=>Object.keys(languageCheckBranches).every(b=>q.seen.includes(`${l}:${b}`)))&&q.reflection==='example';}
+export function languageCheckRestore(q){const keys=Object.keys(languageCheckLanguages).flatMap(l=>Object.keys(languageCheckBranches).map(b=>`${l}:${b}`));if(!q||!Object.hasOwn(languageCheckLanguages,q.language)||!Object.hasOwn(languageCheckBranches,q.branch)||!(q.answer===null||Object.hasOwn(languageCheckAnswers,q.answer))||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!keys.includes(k))||![null,'example','always','correct'].includes(q.reflection))throw new RangeError('記録が不正です。');return {...q,seen:[...q.seen]};}
