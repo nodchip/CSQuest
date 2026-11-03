@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-knapsack-relief':['ナップサック','動的計画法','貪欲法','最適化','knapsack','dynamic programming'],
  'village-ethical-learning-cycle':['専門職倫理','継続学習','自己評価','professional ethics','continuous learning'],
  'castle-synthetic-evidence':['ディープフェイク','合成メディア','来歴','偽情報','deepfake','provenance'],
  'castle-incident-motives':['サイバー犯罪','ハクティビズム','サイバーテロ','動機','被害','hacktivism','cybercrime'],
