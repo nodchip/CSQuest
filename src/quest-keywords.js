@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-integral-rules':['積分','原始関数','広義積分','微積分','integral','対数'],
  'ruin-hopital-gates':['極限','ロピタル','不定形','lhopital','limit','微分'],
  'village-guide-check':['手順書','文書検証','documentation','非コード','verification'],
  'forge-actual-benchmark':['実測','性能測定','ベンチマーク','benchmark','タイマー','探索'],

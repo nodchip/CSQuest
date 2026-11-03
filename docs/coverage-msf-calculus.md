@@ -31,7 +31,7 @@
 | 2d | 和・積・商の微分規則 | 部分 | 473で２辺が伸びる長方形の面積を分け、積の変化率の固定例を操作。和・商や一般の規則の適用は未評価。 |
 | 2e | 重要な関数の例を扱う | 部分 | 473で二次関数の固定例。一般の関数は未評価。 |
 | 3a | 定積分と不定積分の定義 | 部分 | 474で区間の面積と位置の変化を比較。不定積分の一般の定義は未評価。 |
-| 3b | 積分規則を重要な関数に適用 | 未照合 | 一般の規則を扱う依頼は未確認。 |
+| 3b | 積分規則を重要な関数に適用 | 部分 | 1100でべき・逆数・三角・指数の５固定例について原始関数と定積分を選択。一般の積分法や自由な計算は未評価。 |
 | 3c | 微積分の基本定理の利用 | 部分 | 474で速度と位置変化の固定例を比較。一般の証明は未評価。 |
 | 3d | 積分を問題に適用 | 部分 | 474で区間の移動距離を扱う。一般の問題は未評価。 |
 | 4a | 媒介変数による曲線 | 部分 | 478で円の固定例。一般の曲線は未評価。 |
@@ -52,3 +52,5 @@
 依頼1093の追加場面は [Dumas and McCarthy の数列と発散の例](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_(Dumas_and_McCarthy)/00%3A_Front_Matter/Source) を参考に、1/n の証明の順序と、(−1)ⁿ の３候補に対する反例を操作する。任意の実数候補に対する論拠を選択肢で扱うが、任意の数列や自由な証明は直接評価しない。旧達成は保持し、追加条件の確認は別に記録する。
 
 依頼1099は [OpenStax のロピタルの定理](https://openstax.org/books/calculus-volume-1/pages/4-8-lhopitals-rule) と [CLP の結論できない例](https://math.libretexts.org/Bookshelves/Calculus/CLP-1_Differential_Calculus_(Feldman_Rechnitzer_and_Yeager)/04%3A_Applications_of_derivatives/4.07%3A_L%27Hopital%27s_Rule_and_Indeterminate_Forms)を参照。４つの固定例で不定形、微分可能性等の条件、導関数の比と元の比の区別を扱う。`tests/hopital-gates.test.js` で選択・途中記録と、振動する導関数の比の２部分列を検査。一般の証明や任意の関数の処理は未評価。
+
+依頼1100は [OpenStax の原始関数](https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives) と [広義積分](https://openstax.org/books/calculus-volume-2/pages/3-7-improper-integrals) を参照。５関数の原始関数・端点の差と、1/x を０で分けた広義積分の発散を比較する。`tests/integral-rules.test.js` は独立した数値微分・Simpson 積分および選択・途中記録を検査。固定例であり一般の積分法・自由な証明は未評価。
