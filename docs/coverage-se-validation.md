@@ -36,7 +36,7 @@
 | 9a | KA Core | 性能試験・ベンチマーク | 部分 | 254 の固定記録。実測は未評価 |
 | 9b | KA Core | 非同期・並列・並行処理 | 部分 | 658 の６順序。実プログラム全体は未評価 |
 | 9c | KA Core | 安全性が重要な領域 | 未照合 | 対応する教材の確認が必要。 |
-| 9d | KA Core | 数値に関する試験 | 未照合 | 対応する教材の確認が必要。 |
+| 9d | KA Core | 数値に関する試験 | 部分 | 1050で厳密一致、固定の絶対差、絶対・相対許容差を４例で比較。一般の誤差解析・実装の検証は未評価。 |
 | 10a | Non-core | 静的解析 | 部分 | 657 の一規則。実ツールは未評価 |
 | 10b | Non-core | コードカバレッジ | 部分 | 251 の固定判定 |
 | 10c | Non-core | ファジング | 部分 | 349で３ビット入力を変異、978で新しい道を通る正常な入力を種に残す。自動生成、実際の計測や実プログラムは未評価。 |
@@ -63,6 +63,8 @@
 依頼1047は [ISTQB CTFL シラバス](https://www.istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) と [NIST IR 8397](https://csrc.nist.gov/pubs/ir/8397/final) を参照。入力 0〜4 に限定した模型で、単一判定の真偽両結果を通過しても欠陥を見逃す例と、修理後の再試験を示す。短絡評価される各条件の網羅や、一般の入力に対する正しさは示さない。検査：`tests/test-gate-battle.test.js`。
 
 依頼1049は [Python の再現性の説明](https://docs.python.org/3/library/random.html#notes-on-reproducibility)と [LLVM libFuzzer](https://llvm.org/docs/LibFuzzer.html) を参照。独自の小さい疑似乱数模型の２つの種と各６回を比較し、同一条件による失敗の再現、入力の絞り込み、修理後の再試験を操作する。種だけであらゆる環境で再現できるとは限らない。実際のツール・真の乱数・一般の試験戦略は扱わない。検査：`tests/random-replay.test.js`。
+
+依頼1050は [Python の浮動小数点解説](https://docs.python.org/3/tutorial/floatingpoint.html)と[近さの判定](https://docs.python.org/3/library/math.html#math.isclose)を参照。小数加算、ゼロ付近、大きい値、NaN を３つの固定基準で比較し、判定の予測・再挑戦と用途に応じた許容幅を扱う。JavaScript の実際の数値演算を使うが、選択した閾値は模型の例で、一般の数値計算の正しさを示さない。検査：`tests/numeric-testing.test.js`。
 
 ## 例示学習成果
 
