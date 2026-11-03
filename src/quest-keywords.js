@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-raft-vote':['Raft','リーダー選挙','選挙','投票','ログの新しさ','leader election'],
  'forest-raft-log':['Raft','合意','consensus','多数決','複製ログ','確定'],
  'forest-dsm-cache':['DSM','分散共有メモリー','整合性','無効化','distributed shared memory'],
  'forest-rdma-transfer':['RDMA','遠隔メモリ','remote memory','メモリー登録','rkey'],
