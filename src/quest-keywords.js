@@ -2,6 +2,7 @@
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
  'village-order-program':['条件分岐','反復','辞書','試験','デバッグ','制御フロー'],
+ 'guild-feed-study':['研究','実験','フィード','社会','ランダム化','政治'],
  'guild-feed-order':['情報の並び','推薦','フィード','社会','表示'],
  'guild-mediated-messages':['交流','同期','非同期','ネットワーク','コミュニケーション'],
  'archive-model-disagreement':['不一致','empirical','実証','評価','imagenet','objectnet'],
