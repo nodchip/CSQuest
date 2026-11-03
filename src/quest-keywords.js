@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-situation-door':['状況計算','行動の前提条件','フレーム問題','situation calculus'],
  'village-timestamp-order':['タイムスタンプ順序','並行制御','timestamp ordering','read timestamp','write timestamp'],
  'ruins-control-unit':['固定制御','マイクロプログラム','制御信号','control unit'],
  'castle-crypto-perspectives':['RSA','暗号の数学','公開鍵の確認','逆元'],
