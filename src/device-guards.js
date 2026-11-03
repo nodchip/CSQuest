@@ -1,0 +1,8 @@
+export const deviceGuardLevel={id:'workshop-device-guards',number:'1046',kind:'device-guards',name:'二つの装置と二重の門',tag:'装置利用の認可と DMA 保護',title:'通信と演算の道具を守る',story:'工房の通信装置と演算補助装置を、二人の利用者が共有します。依頼と記憶への道を別々に守りましょう。'};
+export const deviceGuardDevices={network:'通信装置',accelerator:'演算補助装置'};
+export function deviceGuardEvaluate(mask){if(!Number.isInteger(mask)||mask<0||mask>3)throw new RangeError('設定が不正です。');return {own:true,other:!(mask&1),rogue:!(mask&2)};}
+export function deviceGuardCreate(){return {device:'network',mask:0,runs:{network:{seen:[],checked:false},accelerator:{seen:[],checked:false}},reflection:null};}
+export function deviceGuardObserve(q){const r=q.runs[q.device];if(!r.seen.includes(q.mask))r.seen.push(q.mask);}
+export function deviceGuardCheck(q){const r=q.runs[q.device];if(r.seen.length!==4||q.mask!==3)return false;r.checked=true;return true;}
+export function deviceGuardComplete(q){return Object.keys(deviceGuardDevices).every(k=>q.runs[k].checked)&&q.reflection==='both';}
+export function deviceGuardRestore(q){if(!q||!Object.hasOwn(deviceGuardDevices,q.device)||!Number.isInteger(q.mask)||q.mask<0||q.mask>3||!q.runs||![null,'both','auth','iommu'].includes(q.reflection))throw new RangeError('記録が不正です。');const runs={};for(const k of Object.keys(deviceGuardDevices)){const r=q.runs[k];if(!r||!Array.isArray(r.seen)||new Set(r.seen).size!==r.seen.length||r.seen.some(x=>!Number.isInteger(x)||x<0||x>3)||typeof r.checked!=='boolean'||(r.checked&&r.seen.length!==4))throw new RangeError('記録が不正です。');runs[k]={seen:[...r.seen],checked:r.checked};}return {device:q.device,mask:q.mask,runs,reflection:q.reflection};}

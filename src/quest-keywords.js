@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-device-guards':['IOMMU','DMA','装置保護','コプロセッサ','ネットワーク装置'],
  'castle-firmware-layers':['UEFI','LoJax','ファームウェア','起動','永続化'],
  'village-team-relay':['非同期','対立解決','チーム','参加','記録'],
  'village-order-fault-journey':['逐次','並行','複製','部分障害','更新の消失'],
