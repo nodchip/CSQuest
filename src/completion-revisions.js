@@ -1,5 +1,5 @@
 // These quests gained required activities after the original completion record existed.
-const revisedIds=new Set(['forest-load-queue','crystal-sequence-limit','guild-child-environment','village-aggregate-inference','archive-generated-scroll','castle-proof-fork','guild-inclusive-cycle','forest-bst-delete','archive-search-tradeoffs','forge-election-overlap','workshop-interrupt-priority']);
+const revisedIds=new Set(['guild-fault-seeding','forest-load-queue','crystal-sequence-limit','guild-child-environment','village-aggregate-inference','archive-generated-scroll','castle-proof-fork','guild-inclusive-cycle','forest-bst-delete','archive-search-tradeoffs','forge-election-overlap','workshop-interrupt-priority']);
 export function completionRevisionToken(id){return revisedIds.has(id)?`csquest-current-completion:${id}:1`:null;}
 export function completionStatus(id,completed,extra){
  if(!completed.includes(id))return 'uncompleted';
