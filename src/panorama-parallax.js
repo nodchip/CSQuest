@@ -1,0 +1,9 @@
+import {ibrScenes} from './image-view-synthesis.js';
+export const panoramaLevel={id:'ruin-panorama-parallax',number:'1177',kind:'panorama-parallax',name:'一枚の景色と動く景色',tag:'360度映像と視点移動',title:'景色の手前と奥を見比べる',story:'依頼889の二つの旗を使い、精霊が固定位置の全方位の記録と、奥行きを持つ模型の見え方を比べます。'};
+export const panoramaModes={geometry:'奥行きのある模型',panorama:'固定位置の全方位記録'};
+export const panoramaPositions={left:{name:'左の位置',camera:-1},middle:{name:'中央の位置',camera:0},right:{name:'右の位置',camera:1}};
+export const panoramaChoices={same:'左の位置と同じ',wider:'左の位置より広がる',narrower:'左の位置より狭まる'};
+export function panoramaView(mode,position){if(!Object.hasOwn(panoramaModes,mode)||!Object.hasOwn(panoramaPositions,position))throw new RangeError('条件が不正です');const camera=mode==='panorama'?-1:panoramaPositions[position].camera;const points=ibrScenes.open.objects.map(o=>({id:o.id,u:2*(o.x-camera)/o.z,depth:o.z}));const gap=points[1].u-points[0].u,reference=.5;return {points,gap,choice:gap===reference?'same':gap>reference?'wider':'narrower'};}
+export function panoramaCreate(){return {mode:'geometry',position:'left',guess:null,seen:[],show:false,answer:null,checked:false};}
+export function panoramaDone(q){return Object.keys(panoramaModes).every(m=>Object.keys(panoramaPositions).every(p=>q.seen.includes(`${m}:${p}`)))&&q.answer==='single'&&q.checked;}
+export function panoramaRestore(q){const keys=Object.keys(panoramaModes).flatMap(m=>Object.keys(panoramaPositions).map(p=>`${m}:${p}`));if(!q||!Object.hasOwn(panoramaModes,q.mode)||!Object.hasOwn(panoramaPositions,q.position)||![null,...Object.keys(panoramaChoices)].includes(q.guess)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!keys.includes(k))||typeof q.show!=='boolean'||q.show&&(!q.seen.includes(`${q.mode}:${q.position}`)||q.guess!==panoramaView(q.mode,q.position).choice)||![null,'single','all'].includes(q.answer)||typeof q.checked!=='boolean')throw new RangeError('途中記録が不正です');return {...q,seen:[...q.seen]};}

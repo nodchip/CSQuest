@@ -1,4 +1,4 @@
-export const trackingLevel={id:'ruin-tracking-occlusion',number:'1176',kind:'tracking-occlusion',name:'二つの目で旅人を追う',tag:'内向き・外向き追跡',title:'遮りを越えて位置の手がかりを探す',story:'依頼217の魔法の眼鏡に位置を知らせるため、精霊は装着側と部屋側の二つの観測方法を試します。'};
+export const trackingLevel={id:'ruin-tracking-occlusion',number:'1176',kind:'tracking-occlusion',name:'二つの目で旅人を追う',tag:'インサイドアウト・アウトサイドイン追跡',title:'遮りを越えて位置の手がかりを探す',story:'依頼217の魔法の眼鏡に位置を知らせるため、精霊は装着側と部屋側の二つの観測方法を試します。'};
 export const trackingPositions={near:{name:'外部の目に近い位置',x:1},far:{name:'外部の目から遠い位置',x:3}};
 export const trackingWalls={open:'壁なし',closed:'壁あり'};
 export const trackingChoices={both:'両方の目印が見える',inside:'装着側だけ見える',outside:'外部側だけ見える',neither:'どちらも見えない'};
