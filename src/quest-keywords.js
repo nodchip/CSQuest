@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-community-archive':['文化','共同体','データ管理','同意','再利用','cultural heritage','consent'],
  'village-name-access-workshop':['名前','文化','アイデンティティ','国際化','プライバシー','personal names','internationalization'],
  'ruin-knapsack-relief':['ナップサック','動的計画法','貪欲法','最適化','knapsack','dynamic programming'],
  'village-ethical-learning-cycle':['専門職倫理','継続学習','自己評価','professional ethics','continuous learning'],
