@@ -16,7 +16,7 @@
 | 3c | KA Core | クォーラムによる整合性 | 部分 | 193で３複製に対する２書込み・２読取りの重なりを操作。同時更新・障害や一般の保証は未評価。 |
 | 4a | KA Core | 復旧とバッファ管理の関係 | 部分 | 136で先行ログと一部書出し後の復旧を扱う。一般のバッファ管理と復旧の関係は未評価。 |
 | 5a | Non-core | 楽観的並行性制御 | 部分 | 451で版確認と競合時の拒否を比較。一般の DBMS の検証・確定手順は未評価。 |
-| 5b | Non-core | タイムスタンプによる制御 | 未照合 | 対応する DB の操作と検証は未確認。 |
+| 5b | Non-core | タイムスタンプによる制御 | 部分 | 1034で１項目の基本的な読取り・書込みの時刻順序判定を操作。複数項目、確定・復旧、実 DBMS は未評価。 |
 | 6a | Non-core | 先行ログ | 部分 | 136で完全なログと単一取引の前後値による復旧を操作。実 DBMS や並行取引は未評価。 |
 | 6b | Non-core | ARIES | 未照合 | 分析・REDO・UNDO を含む ARIES の教材は未確認。 |
 
@@ -29,3 +29,5 @@
 | 3 | KA Core | 直列化可能性の原理を概説 | 部分 | 39で２作業の競合順を比較。一般の判定と自由な説明は未評価。 |
 
 依頼35・38・39・136の前提は [DM-Internals](dm-internals.md)、193・293は [DM-NoSQL](dm-nosql.md)・[DM-Distributed](dm-distributed.md) を参照。`tests/serial.test.js`、`tests/wal-recovery.test.js`、`tests/quorum.test.js`、`tests/two-phase-commit.test.js` は固定模型を検査する。
+
+依頼1034は [CMU の基本的な時刻順序制御](https://15445.courses.cs.cmu.edu/fall2022/notes/17-timestampordering.pdf)を参考に、１項目・時刻10と20の４場面で読取り札と書込み札を更新し、順序違反では依頼を中止する。拒否された操作は札と値を変えない。確定、巻戻し、再開、連鎖中止や複数項目、実 DBMS の安全性と性能は扱わない。`tests/timestamp-order.test.js` は両札と時刻の判定の組合せ、４履歴、保存と達成を検査する。
