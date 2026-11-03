@@ -62,3 +62,5 @@ C の範囲外・寿命・データ競合の根拠は [C11 委員会草案 N1570
 依頼1075は [GitHub の依存グラフ](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph-data)と [OWASP の CI/CD セキュリティ](https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html)を参考に、架空の４候補の直接・間接依存、注意情報、照合値と互換性試験を比較する。期待値は信頼できる経路から取得済みという仮定で、記号は実ハッシュではない。`tests/supply-review.test.js` は判断と記録を検査し、実パッケージの取得・解析・安全性を保証しない。
 
 依頼1134は [Rust のスライス取得](https://doc.rust-lang.org/std/primitive.slice.html#method.get)と[回復可能な失敗](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)を参考に、長さ３の棚でポインターによる無検査の読取り、安全な取得後の無条件の取出し、失敗の報告を比較する。`tests/safer-reader.test.js` は３方式×５番号、予想、９比較と保存を検査。Rust 1.99.1 で０〜２が各値、３・４が取得失敗となり、失敗の無条件取出しがパニックすることを別途確認した。C の範囲外を実行せず未定義動作として扱う。負の入力、他の脆弱性、実際のコードの書換えや一般の正しさは評価しない。
+
+依頼1135は1134の読取り模型を使い、取得方法と失敗の扱いを組み立てて４つの注文列を段階的に試す。範囲外を０にすると報告の仕様を満たさず、無検査の範囲外の後は追跡を打ち切る。`tests/reader-migration.test.js` は６構成、正常時の値、失敗と後続処理、保存を検査する。手順変更後は試験結果を取り消す。実プログラムの書換え、負の番号、任意の入力や他の安全性は評価しない。
