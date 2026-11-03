@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-assignment-path-repair':['確実な代入','初期化','静的解析','definite assignment','must analysis'],
  'workshop-instruction-tiles':['命令選択','命令パターン','機械語','instruction selection','tree covering'],
  'workshop-calling-convention-bridge':['呼出し規約','分割コンパイル','レジスター','ABI','calling convention'],
  'workshop-call-effects-cache':['呼出し効果','副作用','modref','読み直し','call effects'],
