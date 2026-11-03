@@ -1,0 +1,7 @@
+export const scopeLevel={id:'forest-quantifier-scope',number:'1150',kind:'quantifier-scope',name:'旅人と案内人の約束',tag:'自然言語・量化の範囲',title:'同じ案内人は必要？',story:'二人の旅人と二人の案内人について、伝言が表す約束の違いを確かめます。'};
+export const scopeTasks={empty:{name:'まだ誰も案内しない',description:'線をすべて消し、二つの約束が成り立たない配置'},split:{name:'それぞれの案内人',description:'全員に案内人はいるが、全員に共通する案内人はいない配置'},shared:{name:'共通の案内人',description:'全員を案内する同じ案内人がいる配置'}};
+export function scopeValues(mask){if(!Number.isInteger(mask)||mask<0||mask>15)throw new RangeError('配置が不正です');const has=(i,j)=>!!(mask&(1<<(i*2+j)));return {each:[0,1].every(i=>[0,1].some(j=>has(i,j))),shared:[0,1].some(j=>[0,1].every(i=>has(i,j)))};}
+export function scopeTaskMatches(task,mask){if(!Object.hasOwn(scopeTasks,task))throw new RangeError('依頼が不正です');const x=scopeValues(mask);return task==='empty'?mask===0:task==='split'?x.each&&!x.shared:x.shared;}
+export function scopeCreate(){return {task:'empty',mask:0,seen:[],implication:null,meaning:null,checked:false};}
+export function scopeDone(q){return Object.keys(scopeTasks).every(k=>q.seen.includes(k))&&q.implication==='shared'&&q.meaning==='scope'&&q.checked;}
+export function scopeRestore(q){if(!q||!Object.hasOwn(scopeTasks,q.task)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.hasOwn(scopeTasks,k))||![null,'shared','each'].includes(q.implication)||![null,'scope','same'].includes(q.meaning)||typeof q.checked!=='boolean')throw new RangeError('記録が不正です');scopeValues(q.mask);return {...q,seen:[...q.seen]};}
