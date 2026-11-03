@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1076で水門の３条件の独立した影響、３種類の欠陥の発見・修理・同条件での再試験を操作。[NASA の安全重視ソフトウェアの条件と判定](https://swehb.nasa.gov/spaces/SWEHBVD/pages/105709626/SWE-219%2B-%2BCode%2BCoverage%2Bfor%2BSafety%2BCritical%2BSoftware)を参照。全８入力、修理と保存を検査し、全2,752件の自動テストとビルドが成功。配信用ビルドで誤予想、途中再開、３つの早すぎる修理、全４門・達成、320・390・1280px幅とフォーカスを確認。真偽値を外部から与える固定模型で、実コードの網羅率や実機の安全性は評価しない。
+
 - 2026-11-03: 依頼1075で架空の４候補について直接・間接依存、既知の注意情報、照合値と互換性試験を比較。[GitHub の依存グラフ](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph-data)と [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html)を参照。判断と保存を検査し、全2,750件の自動テストとビルドが成功。配信用ビルドで誤答・途中再開・不一致時の試験抑止・４候補・達成、320・390・1280px幅とフォーカスを確認。架空の記号と固定結果であり、実際のハッシュ計算やパッケージの安全性は未評価。既存の985・986も SEC-Coding の部分対応として記録。
 
 - 2026-11-03: 依頼1074で固定の取引と価格の同時刻・直前時刻の結合、２区間の集計、遅れた取引と保存済み集計の更新を操作。[PostgreSQL の実体化ビュー](https://www.postgresql.org/docs/current/rules-materializedviews.html)を参照。SQLite 3.50.4 の相関副問合せと保存済み表で結果を照合し、全2,748件の自動テストとビルドが成功。配信用ビルドで誤予想、追加前の順序、更新前の再開、鮮度と達成、320・390・1280px幅とフォーカスを確認。固定模型であり、SQL 記述、差分更新、同時処理や実測性能は未評価。既存の1055について SPARQL 風の固定三つ組結合を DM-Querying の部分対応として追記。
