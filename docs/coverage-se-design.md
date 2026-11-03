@@ -33,8 +33,8 @@
 | 10 | Non-core | クラス図・ER 図・シーケンス図 | 部分 | 226で送り手・受け手と順序を配置。一般の図法は未評価。 |
 | 11 | Non-core | 設計品質の測定・分析 | 未照合 | 関連依頼との対応は未確認。 |
 | 12a | Non-core | 最小権限 | 部分 | 11で役割別の許可を選択。一般の設計は未評価。 |
-| 12b | Non-core | 安全側の初期値 | 未照合 | 関連依頼との対応は未確認。 |
-| 12c | Non-core | 心理的受容性 | 未照合 | 関連依頼との対応は未確認。 |
+| 12b | Non-core | 安全側の初期値 | 部分 | 1118で明示の許可を基準にする場合と拒否を基準にする場合を比較。一般の設計や障害時の振る舞いは未評価。 |
+| 12c | Non-core | 心理的受容性 | 部分 | 916で復旧方法と本人・第三者の結果を比較。実利用者の操作や受容性は未評価。 |
 | 13 | Non-core | 効率・信頼性・使いやすさ等のトレードオフ | 部分 | 680で重複・変更時の不一致と振る舞いを比較。一般の効率・安全性評価は未評価。 |
 
 ## 例示学習成果
@@ -51,7 +51,7 @@
 | 8 | KA Core | 提示 API のためのデータ構造を設計 | 部分 | 228で二つの記録方式を比較。一般の設計・実装は未評価。 |
 | 9 | KA Core | 設計が満たす要件を特定 | 部分 | 223で固定要件・試験と規則を比較。一般の追跡は未評価。 |
 | 10 | Non-core | 自然言語の設計をクラス図に変換 | 未照合 | 関連依頼との対応は未確認。 |
-| 11 | Non-core | 最小権限・安全側の初期値に沿う修正 | 部分 | 11で役割別許可を選択。初期値と一般の設計修正は未評価。 |
+| 11 | Non-core | 最小権限・安全側の初期値に沿う修正 | 部分 | 11で役割別許可、1118で初期判断を選ぶ。一般の設計修正や実装は未評価。 |
 | 12 | Non-core | 異なる品質で２設計を比較 | 部分 | 680で重複・変更時の不一致を比較。一般の効率・使いやすさの比較は未評価。 |
 
 `tests/inventory-design.test.js`、`tests/composition-design.test.js`、`tests/design-smells.test.js`、`tests/design-journey.test.js` は固定模型の一部を検査する。前提・出典は既存の調査を参照。未照合は未実装の証拠ではない。
@@ -65,3 +65,5 @@
 依頼1117は [NVIDIA のデータ指向設計の説明](https://developer.nvidia.com/blog/multi-gpu-programming-with-standard-parallel-c-part-1/) と [Intel の配置変換のトレードオフ](https://www.intel.com/content/www/us/en/developer/articles/technical/memory-layout-transformations.html) を参考に、４人×３値の配置と２つの仕事を比較する。４値単位の区画と初期状態は固定模型で、実機のキャッシュや速度は測定しない。原典の data-oriented architecture の語は本文中で定義されておらず、データ配置を軸とする低水準の設計はその一解釈に限る。`tests/data-layout-design.test.js` は４条件の番地・区画・復元を検査する。
 
 依頼234・237は新旧窓口の併存と既定値の異なる窓口への移行を固定例で扱う。[Microsoft の API 設計](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/api-design) は互換性と旧版の併存、利用者の移行を説明する。234の順序は公開契約ではなく、利用者の暗黙の依存による影響を比較する。237の３利用者は固定で、各操作後に利用不能な利用者がいたかを記録し、復旧して達成しても中断を表示する。操作間の任意のタイミングや実サービスの無停止は保証しない。`tests/api-evolution.test.js`、`tests/api-migration.test.js` は固定例と記録の再現を検査する。
+
+依頼1118は [Saltzer と Schroeder の設計原則](https://www.cs.virginia.edu/~evans/cs551/saltzer/) に基づき、明示された許可を基準とする初期拒否と拒否記録を基準とする初期許可を、許可済み・拒否済み・未登録の３人で比較する。人の権利と記録が既知で正しい固定模型で、認証・記録の管理・障害時・実システムは評価しない。依頼916は同文献の心理的受容性に関連し、３種類の復旧手段を４場面で比較するが、実利用者による検証は行っていない。`tests/access-defaults.test.js` と `tests/recovery-usability.test.js` は各模型を検査する。

@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-access-defaults':['安全側の初期値','初期拒否','fail safe defaults','default deny'],
  'forge-data-layout-design':['データ指向','データ配置','aos','soa','局所性','data oriented'],
  'forge-provisioning-activities':['資源','並列','プロビジョニング','配置','provisioning','scheduler'],
  'forest-communications-journey':['伝令','通信','mpi','パイプ','eof','遠征'],
