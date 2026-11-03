@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-agent-auction':['マルチエージェント','競売','オークション','入札','利得','auction'],
  'forge-fault-tradeoff':['障害耐性','可用性','複製','冗長性','性能','fault tolerance'],
  'castle-safety-conditions':['安全','安全性','条件網羅','MC/DC','安全重視','safety'],
  'castle-supply-review':['依存関係','サプライチェーン','脆弱性','整合性','ライブラリ','dependency'],
