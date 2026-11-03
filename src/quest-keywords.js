@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-test-gate-battle':['ブラックボックス','ホワイトボックス','分岐網羅','境界値','試験'],
  'workshop-device-guards':['IOMMU','DMA','装置保護','コプロセッサ','ネットワーク装置'],
  'castle-firmware-layers':['UEFI','LoJax','ファームウェア','起動','永続化'],
  'village-team-relay':['非同期','対立解決','チーム','参加','記録'],

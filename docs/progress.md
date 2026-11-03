@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-03: 依頼1047で仕様の境界と単一判定の２分岐を試し、両分岐の通過後にも境界の欠陥を発見できる例、修理と入力0〜4の再試験を追加。[ISTQB CTFL](https://www.istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) と [NIST IR 8397](https://csrc.nist.gov/pubs/ir/8397/final) を参照。全2,686件の自動テストとビルドが成功。配信用ビルドで早すぎる修理、途中再開、分岐と欠陥、修理・再試験・達成および320・390・1280px幅を確認。固定模型であり、各条件の網羅や一般の入力に対する正しさは示さない。
+
 - 2026-11-03: 依頼1046で通信装置と演算補助装置について、受付の認可と DMA の記憶制限を４設定で比較。[Linux VFIO](https://kernel.org/doc/html/v6.15/driver-api/vfio.html)と [DMA 対応付け](https://www.kernel.org/doc/html/v6.8/core-api/dma-api-howto.html)を参照。正当利用、他人の操作列への依頼、不正な DMA の３経路、保存と達成を検査し、全2,683件の自動テストとビルドが成功。配信用ビルドで誤選択、途中再開、両装置・４設定、振り返り・達成、320・390・1280px幅とフォーカスを確認。固定された装置・権限・記憶対応の模型で、実機の隔離や安全性は未評価。
 
 - 2026-11-03: 依頼1045で OS 再設置と起動前の層の復旧を区別し、再起動で OS 側が再び汚染される固定模型を比較。[ESET の LoJax 調査](https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-courtesy-sednit-group/)と [NIST SP 800-193](https://csrc.nist.gov/pubs/sp/800/193/final)を参照。２場面の状態・順序、保存と達成を検査し、全2,681件の自動テストとビルドが成功。配信用ビルドで誤操作、途中再開、両場面、振り返り・達成、320・390・1280px幅とフォーカスを確認。正しい状態表示と復旧は模型の仮定で、実機の検出・修復や安全性は評価しない。
