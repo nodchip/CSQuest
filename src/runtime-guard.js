@@ -1,0 +1,11 @@
+export const runtimeGuardLevel={id:'workshop-runtime-guard',number:'1095',kind:'runtime-guard',name:'壊れた箱と見張りの灯',tag:'動的解析と障害の範囲',title:'危ない読み取りを見つけよう',story:'工房の仕分け機が、特定の操作で壊れた箱を開いてしまいます。見張りの灯を使って問題を再現し、直した後に試し直しましょう。'};
+export const guardCases={valid:{name:'有効な箱の中の札を読む'},bounds:{name:'箱の外の札を読む'},freed:{name:'返却済みの箱を読む'}};
+export const guardScopes={shared:'同じ作業場で続けて実行',isolated:'別々の作業場で実行'};
+export function guardResult(id,fixed){if(!Object.hasOwn(guardCases,id)||typeof fixed!=='boolean')throw new RangeError('試験条件が不正です');if(id==='valid')return 'success';if(!fixed)return id==='bounds'?'out-of-bounds':'use-after-free';return id==='bounds'?'rejected':'success';}
+export function guardScopeResult(id){if(!Object.hasOwn(guardScopes,id))throw new RangeError('作業場が不正です');return {first:'detected-and-stopped',second:id==='shared'?'not-run':'success'};}
+export function guardCreate(){return {case:'valid',fixed:false,before:{valid:false,bounds:false,freed:false},after:{valid:false,bounds:false,freed:false},scopes:{shared:false,isolated:false},reflection:null};}
+export function guardReady(q){return Object.keys(guardCases).every(id=>q.before[id]);}
+export function guardRun(q){const stage=q.fixed?'after':'before';return {...q,[stage]:{...q[stage],[q.case]:true}};}
+export function guardRepair(q){if(!guardReady(q)||q.fixed)throw new RangeError('まず３つの入力を修理前に試しましょう');return {...q,fixed:true};}
+export function guardDone(q){return q.fixed&&guardReady(q)&&Object.keys(guardCases).every(id=>q.after[id])&&Object.keys(guardScopes).every(id=>q.scopes[id])&&q.reflection==='limited';}
+export function guardRestore(q){if(!q||!Object.hasOwn(guardCases,q.case)||typeof q.fixed!=='boolean'||![null,'limited','all','sandbox'].includes(q.reflection))throw new RangeError('途中記録が不正です');const s=guardCreate();s.case=q.case;s.fixed=q.fixed;s.reflection=q.reflection;for(const stage of ['before','after'])for(const id of Object.keys(guardCases)){if(typeof q[stage]?.[id]!=='boolean')throw new RangeError('途中記録が不正です');s[stage][id]=q[stage][id];}for(const id of Object.keys(guardScopes)){if(typeof q.scopes?.[id]!=='boolean')throw new RangeError('途中記録が不正です');s.scopes[id]=q.scopes[id];}if((s.fixed&&!guardReady(s))||(!s.fixed&&Object.values(s.after).some(Boolean)))throw new RangeError('試験の順序が不正です');return s;}
