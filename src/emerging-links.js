@@ -1,0 +1,10 @@
+export const emergingLinksLevel={id:'forest-emerging-links',number:'1161',kind:'emerging-links',name:'三つの通信路を調べる',tag:'衛星・ミリ波・可視光',title:'塔を結ぶ道を選ぼう',story:'遠くの塔と部屋の中の水晶を結びます。通信路を選び、遮蔽物や反射、軌道の違いを調べましょう。'};
+export const emergingKinds={satellite:'衛星中継',millimeter:'ミリ波',visible:'可視光'};
+export const emergingPaths={clear:'直達路あり',blocked:'直達路を遮る',reflected:'直達路を遮り、反射路を使う'};
+export const emergingOrbits={geo:{name:'静止軌道の例',altitude:35786},low:{name:'低軌道の例',altitude:600}};
+export const emergingMarkers=['satellite:geo','satellite:low',...['millimeter','visible'].flatMap(k=>Object.keys(emergingPaths).map(p=>`${k}:${p}`))];
+export function emergingResult(kind,path,orbit){if(!Object.hasOwn(emergingKinds,kind)||!Object.hasOwn(emergingPaths,path)||!Object.hasOwn(emergingOrbits,orbit))throw new RangeError('条件が不正です');if(kind==='satellite'){const altitude=emergingOrbits[orbit].altitude;return {kind,distance:2*altitude,ms:2*altitude/299792.458*1000};}if(kind==='millimeter'){const direct=-60-20*Math.log10(10)-(path==='clear'?0:22),power=path==='reflected'?Math.max(direct,-85):direct;return {kind,direct,power,passes:power>=-90};}const direct=path==='clear'?1/(5*5):0,power=path==='reflected'?0.02:direct;return {kind,direct,power,passes:power>=0.01};}
+export function emergingKey(q){return q.kind==='satellite'?`satellite:${q.orbit}`:`${q.kind}:${q.path}`;}
+export function emergingCreate(){return {kind:'satellite',path:'clear',orbit:'geo',seen:[],show:false,reflection:null,checked:false};}
+export function emergingDone(q){return emergingMarkers.every(k=>q.seen.includes(k))&&q.reflection==='model'&&q.checked;}
+export function emergingRestore(q){if(!q||!Object.hasOwn(emergingKinds,q.kind)||!Object.hasOwn(emergingPaths,q.path)||!Object.hasOwn(emergingOrbits,q.orbit)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(x=>!emergingMarkers.includes(x))||typeof q.show!=='boolean'||q.show&&!q.seen.includes(emergingKey(q))||![null,'model','guarantee'].includes(q.reflection)||typeof q.checked!=='boolean')throw new RangeError('途中記録が不正です');return {...q,seen:[...q.seen]};}

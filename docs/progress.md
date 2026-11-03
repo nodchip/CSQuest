@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1161で２種類の衛星高度による片道伝搬時間の下限と、ミリ波・可視光の遮蔽と反射の架空の条件を比較。[NASA の軌道解説](https://science.nasa.gov/earth/earth-observatory/catalog-of-earth-satellite-orbits/)、[NIST のミリ波資料](https://www.nist.gov/ctl/wireless-networks-division/millimeter-wave-channel-sounding-and-modeling)、[IEEE の光通信資料](https://mentor.ieee.org/802.11/dcn/17/11-17-1048-02-00lc-lc-for-802-11-pdf.pdf)を参考にした。８条件の数値・復元・達成を含む関連32テストとビルドが成功。配信用画面で８条件、途中再開、誤答・達成と320/390/1280px幅を確認。仮定された路と閾値の模型であり、実際の速度や接続は未評価。
+
 - 2026-11-04: 依頼1160で道ごとに２専門家の配分を選び、混合予測と既知の３記録に対する平均絶対誤差を比較。[Jacobs らの論文](https://www.cs.toronto.edu/~fritz/absps/jjnh91.pdf)を参考にした。27配分の数値と復元・達成を含む関連32テストとビルドが成功。配信用画面で３配分の誤差、保存再開、誤答・達成と320/390/1280px幅を確認。手動配分・固定記録であり、専門家やゲートの学習と未知の例の性能は未評価。
 
 - 2026-11-04: 依頼1159でガウス過程回帰の観測点と RBF の長さを操作し、予測平均・潜在関数の標準偏差・周辺区間を比較。[Gaussian Processes for Machine Learning 第２章](https://gaussianprocess.org/gpml/chapters/RW2.pdf)に基づき、１点・２点の解析解、点順、分散、保存・達成を含む関連33テストとビルドが成功。配信用画面で条件変更、２点の途中状態、保存再開、誤答・達成と320/390/1280px幅を確認。固定の架空データと仮定であり、実データの精度やモデルの妥当性は未評価。
