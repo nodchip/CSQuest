@@ -2171,3 +2171,5 @@
 - 2026-11-03: 依頼1013で C11、通常の Java、安全な Rust の境界外、参照寿命、同期のない同時書込みを９条件で比較。[C11 草案](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)、[Java 配列](https://docs.oracle.com/javase/specs/jls/se21/html/jls-10.html)・[スレッド](https://docs.oracle.com/javase/specs/jls/se21/html/jls-17.html)、[Rust の借用](https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html)を参照。Rust 1.99.1 で寿命・重複借用の拒否と実行時添字のパニックを確認し、npm test 2603件・ビルド成功。ブラウザで誤答、途中再開、９条件・達成、キーボード、320/390/1280px を確認。Java の実行、言語全般、FFI や実コードの書換え能力は未評価。
 
 - 2026-11-03: 依頼1014で本流と公開保守の枝を分け、新機能と修正の祖先関係、２つの目印、修正の試験、２親の統合を操作。[Git の分岐と統合](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)と[タグ](https://git-scm.com/docs/git-tag)を参照。一時 Git リポジトリで４版の内容・統合の親・タグ参照を照合し npm test 2605件・ビルド成功。ブラウザで早すぎる操作・誤答、途中再開、統合と達成、キーボード、320/390/1280px を確認。競合、実際の配信とチーム協働は未評価。
+
+- 2026-11-03: 依頼1015で２端点・２中継塔の経路を操作し、初回の手紙または返事の消失、時間切れ後の再送と重複を比較。[RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) と [RFC 791](https://www.rfc-editor.org/rfc/rfc791.html) を参照。到着・配達・確認と途中記録を検査し npm test 2607件・ビルド成功。ブラウザで誤操作、途中再開、２場面と重複排除・達成、キーボード、320/390/1280px を確認。時間切れは消失後だけ操作できる固定模型で、実 TCP・実通信や故障が続く場合は未評価。
