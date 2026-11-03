@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-malware-classifier':['マルウェア','機械学習','検知','データ汚染','見逃し'],
  'castle-ransomware-defense':['ランサムウェア','バックアップ','復旧','隔離','ransomware'],
  'archive-ud-corpus':['コーパス','UD','English EWT','品詞','Universal Dependencies'],
  'forest-quantifier-scope':['自然言語','量化','量化の範囲','predicate logic','quantifier scope'],
