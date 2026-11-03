@@ -67,3 +67,5 @@
 依頼234・237は新旧窓口の併存と既定値の異なる窓口への移行を固定例で扱う。[Microsoft の API 設計](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/api-design) は互換性と旧版の併存、利用者の移行を説明する。234の順序は公開契約ではなく、利用者の暗黙の依存による影響を比較する。237の３利用者は固定で、各操作後に利用不能な利用者がいたかを記録し、復旧して達成しても中断を表示する。操作間の任意のタイミングや実サービスの無停止は保証しない。`tests/api-evolution.test.js`、`tests/api-migration.test.js` は固定例と記録の再現を検査する。
 
 依頼1118は [Saltzer と Schroeder の設計原則](https://www.cs.virginia.edu/~evans/cs551/saltzer/) に基づき、明示された許可を基準とする初期拒否と拒否記録を基準とする初期許可を、許可済み・拒否済み・未登録の３人で比較する。人の権利と記録が既知で正しい固定模型で、認証・記録の管理・障害時・実システムは評価しない。依頼916は同文献の心理的受容性に関連し、３種類の復旧手段を４場面で比較するが、実利用者による検証は行っていない。`tests/access-defaults.test.js` と `tests/recovery-usability.test.js` は各模型を検査する。
+
+遠征1119は依頼234の窓口の互換性と1118の初期判断の模型を村と王城で再利用する。村の一覧と王城の秘密の記録は別物で、各場所で３人を試し、不適切な案は変更して試し直す。`tests/design-security-journey.test.js` は進行制限・再試験・復元を検査する。両模型の制約はそのままで、一般的な API 設計や実際の権限管理の能力を直接評価しない。
