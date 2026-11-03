@@ -1,0 +1,9 @@
+import {wordDocuments} from './word-index.js';
+export const textVisualLevel={id:'archive-text-frequency-visual',number:'1172',kind:'text-frequency-visual',name:'巻物の言葉を比べる',tag:'テキスト可視化と文章長',title:'言葉の回数と割合を比べる',story:'書庫の精霊は二つの巻物に現れる言葉を報告します。巻物の長さにも目を向け、同じ言葉を比べましょう。'};
+export const tvDocuments={short:{name:'短い巻物',words:[...wordDocuments.a]},long:{name:'長い巻物',words:[...Array(3)].flatMap(()=>wordDocuments.b).concat([...Array(10)].flatMap(()=>wordDocuments.d))}};
+export const tvTerms={moon:'月草',antidote:'解毒',flame:'炎'};
+export const tvModes={count:'出現回数',share:'全単語に占める割合'};
+export function tvStats(term,mode){if(!Object.hasOwn(tvTerms,term)||!Object.hasOwn(tvModes,mode))throw new RangeError('表示条件が不正です');const rows=Object.fromEntries(Object.entries(tvDocuments).map(([k,d])=>{const count=d.words.filter(w=>w===tvTerms[term]).length,total=d.words.length;return [k,{count,total,share:count/total,value:mode==='count'?count:count/total}];}));return {rows,winner:rows.short.value===rows.long.value?'tie':rows.short.value>rows.long.value?'short':'long'};}
+export function tvCreate(){return {term:'moon',mode:'count',guess:null,seen:[],show:false,reflection:null,checked:false};}
+export function tvDone(q){return Object.keys(tvTerms).every(t=>Object.keys(tvModes).every(m=>q.seen.includes(`${t}:${m}`)))&&q.reflection==='length'&&q.checked;}
+export function tvRestore(q){if(!q||!Object.hasOwn(tvTerms,q.term)||!Object.hasOwn(tvModes,q.mode)||![null,'short','long','tie'].includes(q.guess)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.keys(tvTerms).some(t=>Object.keys(tvModes).some(m=>`${t}:${m}`===k)))||typeof q.show!=='boolean'||q.show&&(!q.seen.includes(`${q.term}:${q.mode}`)||q.guess!==tvStats(q.term,q.mode).winner)||![null,'length','meaning'].includes(q.reflection)||typeof q.checked!=='boolean')throw new RangeError('途中記録が不正です');return {...q,seen:[...q.seen]};}
