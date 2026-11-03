@@ -1,0 +1,9 @@
+import {vfVector,vfFields,vfSeeds} from './vector-field-map.js';
+export const eulerVectorLevel={id:'ruin-euler-vector',number:'1163',kind:'euler-vector',name:'刻みを変えて風をたどる',tag:'連立微分方程式とオイラー法',title:'二つの位置を一緒に更新する',story:'風の地図を進む光の粒の位置を、異なる刻みで計算します。同じ時刻の近似と厳密な位置を比較しましょう。'};
+export const evSteps=[4,8,16];
+export function evTrace(field,n,count=n){if(!Object.hasOwn(vfFields,field)||!evSteps.includes(n)||!Number.isInteger(count)||count<0||count>n)throw new RangeError('計算条件が不正です');const h=1/n,points=[{...vfSeeds[0]}];for(let i=0;i<count;i++){const p=points.at(-1),v=vfVector(field,p.x,p.y);points.push({x:p.x+h*v.x,y:p.y+h*v.y});}return points;}
+export function evExact(field,t=1){if(!Object.hasOwn(vfFields,field)||!Number.isFinite(t))throw new RangeError('計算条件が不正です');const {x,y}=vfSeeds[0];if(field==='outward')return {x:x*Math.exp(t),y:y*Math.exp(t)};if(field==='saddle')return {x:x*Math.exp(t),y:y*Math.exp(-t)};return {x:x*Math.cos(t)-y*Math.sin(t),y:x*Math.sin(t)+y*Math.cos(t)};}
+export function evError(field,n){const p=evTrace(field,n).at(-1),e=evExact(field);return Math.hypot(p.x-e.x,p.y-e.y);}
+export function evCreate(){return {field:'rotation',n:4,count:0,manual:false,seen:[],reflection:null,checked:false};}
+export function evDone(q){return Object.keys(vfFields).every(f=>evSteps.every(n=>q.seen.includes(`${f}:${n}`)))&&q.manual&&q.reflection==='fixed-time'&&q.checked;}
+export function evRestore(q){if(!q||!Object.hasOwn(vfFields,q.field)||!evSteps.includes(q.n)||!Number.isInteger(q.count)||q.count<0||q.count>q.n||typeof q.manual!=='boolean'||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.keys(vfFields).some(f=>evSteps.some(n=>`${f}:${n}`===k)))||q.count===q.n&&!q.seen.includes(`${q.field}:${q.n}`)||![null,'fixed-time','guarantee'].includes(q.reflection)||typeof q.checked!=='boolean')throw new RangeError('途中記録が不正です');return {...q,seen:[...q.seen]};}

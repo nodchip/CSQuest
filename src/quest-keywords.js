@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'ruin-euler-vector':['オイラー法','連立微分方程式','数値積分','刻み幅','Euler'],
  'ruin-vector-field-map':['ベクトル場','可視化','発散','回転','オイラー法','vector field'],
  'forest-emerging-links':['衛星','ミリ波','可視光通信','伝搬遅延','遮蔽','反射'],
  'archive-gated-experts':['ゲート付きアンサンブル','専門家の混合','mixture of experts','ensemble','機械学習'],

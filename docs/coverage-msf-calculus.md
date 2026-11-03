@@ -43,7 +43,7 @@
 | 6c | 最適化への応用 | 部分 | 116・477・479で固定条件の最小化を操作。一般の最適化は未評価。 |
 | 7a | 積分にオイラー法を適用 | 部分 | 475で増加率を用いた離散的な更新を操作。一般の積分への適用は未評価。 |
 | 7b | 一変数の微分方程式にオイラー法を適用 | 部分 | 475で初期値問題を３刻み幅で近似。一般の方程式は未評価。 |
-| 7c | 複数変数の微分方程式にオイラー法を適用 | 未照合 | 対応する依頼は未確認。 |
+| 7c | 複数変数の微分方程式にオイラー法を適用 | 部分 | 1162の風を1163で２座標の同時更新に再利用し、３場・３刻みを厳密解と比較。一般の連立方程式・自由な導出は未評価。 |
 
 `tests/gradient.test.js`、`tests/derivative-limit.test.js`、`tests/product-growth.test.js`、`tests/integral-area.test.js`、`tests/polar-circle.test.js`、`tests/taylor-growth.test.js`、`tests/partial-gradient.test.js`、`tests/euler-growth.test.js` 等は各固定模型の一部を検査する。前提と出典は[既存の調査](msf-calculus.md)を参照。未照合は未実装の証拠ではない。
 
@@ -56,3 +56,5 @@
 依頼1100は [OpenStax の原始関数](https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives) と [広義積分](https://openstax.org/books/calculus-volume-2/pages/3-7-improper-integrals) を参照。５関数の原始関数・端点の差と、1/x を０で分けた広義積分の発散を比較する。`tests/integral-rules.test.js` は独立した数値微分・Simpson 積分および選択・途中記録を検査。固定例であり一般の積分法・自由な証明は未評価。
 
 依頼1101は [OpenStax のベクトル値関数の微分](https://openstax.org/books/calculus-volume-3/pages/3-2-calculus-of-vector-valued-functions) と [多変数の連鎖律](https://openstax.org/books/calculus-volume-3/pages/4-5-the-chain-rule) を参照。r(t)=(t,t²) と f(x,y)=x²+y² の３時刻で速度、勾配、内積を比較し、確認後に２矢印を同倍率で図示する。`tests/curve-gradient.test.js` は独立した中心差分・内積・復元を検査。固定例で一般の関数や自由な証明は未評価。
+
+依頼1163は [MIT の数値解法](https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-2012/a9d2bd9be098f0ada172af40379a17cc_MIT18_330S12_Chapter5.pdf)を参考に、1162の３つの線形の風を再利用し、２座標をオイラー法で同時に更新する。時刻１で４・８・16分割の近似と既知の厳密解を比較する。`tests/euler-vector.test.js` は手計算・閉形式、誤差の比較と保存・達成を検査。一般の方程式や誤差・安定性の保証は未評価。

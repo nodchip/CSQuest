@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1163で1162の３つの風を２変数の微分方程式として再利用し、４・８・16分割のオイラー法を時刻１の厳密解と比較。[MIT の数値解法](https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-2012/a9d2bd9be098f0ada172af40379a17cc_MIT18_330S12_Chapter5.pdf)を参考にした。閉形式との照合、誤差、保存・達成を含む関連34テストとビルドが成功。配信用画面で１歩の同時更新、途中再開、９条件、誤答・達成、320/390/1280px幅と比較表を確認。固定された線形の３例で、一般の方程式や誤差保証は未評価。
+
 - 2026-11-04: 依頼1162で３つのベクトル場、矢印の正規化と粒のオイラー近似を比較。[MIT の資料](https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/mitres_18_001_f17_ch15.pdf)を参考にした。関連32テスト、ビルド、ブラウザーで３場・保存再開・誤答・達成・320/390/1280px幅を確認。一般のベクトル場、実データや数値積分の誤差保証は未評価。依頼を開く巨大な分岐でブラウザーのスタック上限に達したため平坦化し、既存1157分岐の種類と処理本体を旧版と照合。依頼01・300・600・900・1161もブラウザーで開けることを確認した。
 
 - 2026-11-04: 依頼1161で２種類の衛星高度による片道伝搬時間の下限と、ミリ波・可視光の遮蔽と反射の架空の条件を比較。[NASA の軌道解説](https://science.nasa.gov/earth/earth-observatory/catalog-of-earth-satellite-orbits/)、[NIST のミリ波資料](https://www.nist.gov/ctl/wireless-networks-division/millimeter-wave-channel-sounding-and-modeling)、[IEEE の光通信資料](https://mentor.ieee.org/802.11/dcn/17/11-17-1048-02-00lc-lc-for-802-11-pdf.pdf)を参考にした。８条件の数値・復元・達成を含む関連32テストとビルドが成功。配信用画面で８条件、途中再開、誤答・達成と320/390/1280px幅を確認。仮定された路と閾値の模型であり、実際の速度や接続は未評価。
