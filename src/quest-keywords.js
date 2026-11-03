@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-multimodal-embedding':['マルチモーダル','画像','文章','埋込み','コサイン類似度','CLIP'],
  'forge-pdc-landscape':['並列','分散','マルチコア','リアクティブ','データ並列','クラスタ','クラウド','開放分散系'],
  'castle-ifc-workshop':['情報フロー','暗黙の流れ','秘密','非干渉','ifc'],
  'castle-incident-recovery':['マルウェア','調査','封じ込め','隔離','復旧','インシデント対応'],
