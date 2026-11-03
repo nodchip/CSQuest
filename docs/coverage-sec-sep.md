@@ -12,7 +12,7 @@
 | 4 | CS Core | 安全設計・プライバシーと職業倫理、倫理的な調査 | 部分 | 360で欠陥の確認と報告を操作。実際の設計や調査は未評価。 |
 | 5 | KA Core | 設計段階からのセキュリティ | 部分 | 328で固定の脅威と対策を比較。一般の設計は未評価。 |
 | 6 | KA Core | 設計段階からのプライバシー | 部分 | 194・352で収集範囲を比較。一般の実装は未評価。 |
-| 7 | KA Core | 悪意ある AI・機械学習と安全・プライバシー | 未照合 | 対応教材を要照合。 |
+| 7 | KA Core | 悪意ある AI・機械学習と安全・プライバシー | 部分 | 1196で架空の声と画像について来歴・別経路・文脈を比較。実際の合成検出やプライバシー影響の網羅は未評価。 |
 | 8 | KA Core | IoT 等の新技術が社会の安全・プライバシーに与える影響 | 部分 | 352で室内情報収集の固定例。実社会と技術全般は未評価。 |
 
 ## 例示学習成果
@@ -28,3 +28,5 @@
 362の20件は停止窓口の申請予定数であり、原因・流出・被害人数を示さない。[NIST のインシデント対応](https://csrc.nist.gov/projects/incident-response)への参照と模型の前提は[既存調査](sec-society.md)を参照。
 
 2026-11-04 に原典の SEC-SEP 項目と依頼1113の画面・模型・検証を照合した。1113は [EDPB の設計・初期設定による保護](https://www.edpb.europa.eu/topics/ai-and-technology/privacy-by-design-and-by-default_en)と [GDPR の原則の解説](https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en)を参考に、２つの架空の目的に必要な項目の不足・過剰・適切な組合せを比較する。GDPR が適用されるという仮定の下でのデータ最小化の一部であり、法域の適用条件、処理の法的根拠、保存・アクセス・組織措置の実装や適法性は確認しない。`tests/privacy-design-law.test.js` は問題文と別に固定した必要項目と全32組合せを照合し、保存と達成条件を検査する。1191は３原則と架空の影響の比較で、全法域や個別の法的判断を評価しない。
+
+依頼1196は [NIST の合成コンテンツの透明性とリスクに関する報告](https://www.nist.gov/publications/reducing-risks-posed-synthetic-content-overview-technical-approaches-digital-content) を参考に、架空の声と２画像で、本人に似た印象、来歴の欠如、署名の検証結果と文脈を別経路の記録と比較する。署名・別経路の結果は模型の仮定で、実際のメディア解析、署名検証、検出精度や安全性は評価しない。`tests/synthetic-evidence.test.js` は全選択肢と資料確認・途中保存を検査する。

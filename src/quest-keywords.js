@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'castle-synthetic-evidence':['ディープフェイク','合成メディア','来歴','偽情報','deepfake','provenance'],
  'castle-incident-motives':['サイバー犯罪','ハクティビズム','サイバーテロ','動機','被害','hacktivism','cybercrime'],
  'village-team-project-cycle':['チーム運営','役割分担','レビュー','再試験','teamwork','project'],
  'village-inclusive-team-design':['多様性','包摂','開発チーム','参加','アクセシビリティ','diversity','inclusive teams'],
