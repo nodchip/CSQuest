@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forge-fault-tradeoff':['障害耐性','可用性','複製','冗長性','性能','fault tolerance'],
  'castle-safety-conditions':['安全','安全性','条件網羅','MC/DC','安全重視','safety'],
  'castle-supply-review':['依存関係','サプライチェーン','脆弱性','整合性','ライブラリ','dependency'],
  'archive-timed-ledger':['時系列','集計','時刻結合','実体化ビュー','materialized view','鮮度'],
