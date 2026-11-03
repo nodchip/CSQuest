@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-pointer-constraints':['別名解析','指し先解析','ポインタ解析','may alias','points-to'],
  'ruin-spatial-cargo-3d':['３次元操作','空間操作','回転','断面','3d manipulation'],
  'ruin-vr-rescue-journey':['分散VR','追跡','視差','同期','仮想空間'],
  'ruin-shared-vr':['共有仮想空間','分散VR','同期','順不同','snapshot','multiplayer'],
