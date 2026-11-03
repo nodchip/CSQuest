@@ -1,0 +1,6 @@
+export const ganLevel={id:'archive-adversarial-distribution',number:'1145',kind:'adversarial-distribution',name:'二色の宝石を見分ける',tag:'生成モデル・敵対的学習',title:'宝石を作る精霊と見分ける精霊',story:'宝石を作る精霊と見分ける精霊が、赤と青の宝石で腕を競います。二人の狙いと釣り合う状態を調べましょう。'};
+export const ganChoices=[.25,.5,.75];
+export function ganModel(p){if(!ganChoices.includes(p))throw new RangeError('割合が不正です');const dRed=.5/(.5+p),dBlue=.5/(1.5-p);const value=.5*Math.log(dRed)+.5*Math.log(dBlue)+p*Math.log(1-dRed)+(1-p)*Math.log(1-dBlue);const costs=ganChoices.map(x=>x*Math.log(1-dRed)+(1-x)*Math.log(1-dBlue));const min=Math.min(...costs);return {dRed,dBlue,value,bestResponses:ganChoices.filter((x,i)=>Math.abs(costs[i]-min)<1e-12)};}
+export function ganCreate(){return {p:.25,guess:null,seen:[],response:null,equilibrium:null,checked:false};}
+export function ganDone(q){return ganChoices.every(p=>q.seen.includes(p))&&q.response==='oscillate'&&q.equilibrium==='match'&&q.checked;}
+export function ganRestore(q){if(!q||!ganChoices.includes(q.p)||![null,...ganChoices].includes(q.guess)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(p=>!ganChoices.includes(p))||![null,'oscillate','converge'].includes(q.response)||![null,'match','perfect'].includes(q.equilibrium)||typeof q.checked!=='boolean')throw new RangeError('記録が不正です');return {...q,seen:[...q.seen]};}

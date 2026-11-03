@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-adversarial-distribution':['生成モデル','敵対的生成ネットワーク','GAN','生成器','識別器'],
  'archive-text-bayes':['文章分類','自然言語処理','ナイーブベイズ','naive bayes','単語の袋','加算平滑化'],
  'workshop-systolic-array':['TPU','シストリック','行列積','積和','機械学習ハードウェア'],
  'village-order-program':['条件分岐','反復','辞書','試験','デバッグ','制御フロー'],
