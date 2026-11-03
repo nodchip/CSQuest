@@ -24,7 +24,7 @@
 | 1b | 極限の形式的定義 | 部分 | 1093で数列 1/n の３つの幅と開始番号を選び、任意の幅についての証明の札を並べる。一般の数列や関数の極限・自由な証明は未評価。 |
 | 1c | 数列・級数の極限を導出 | 部分 | 116で近づく数列の４歩を観察し、1093で 1/n → 0 の証明を並べる。一般の数列・級数の導出は未評価。 |
 | 1d | 収束と発散 | 部分 | 116で近づきと往復を比較し、1093で 1/n の収束と (−1)ⁿ が任意の実数に収束しない理由を比較。一般の数列の証明は未評価。 |
-| 1e | ロピタルの定理などを適用 | 未照合 | 対応する依頼は未確認。 |
+| 1e | ロピタルの定理などを適用 | 部分 | 1099で０/０・∞/∞、直接適用できない形と、導関数の比から結論できない例を比較。一般の関数や自由な導出は未評価。 |
 | 2a | 導関数を極限として説明 | 部分 | 473で差商の両側の変化を操作。一般の定義と自由な説明は未評価。 |
 | 2b | 関数としての導関数 | 部分 | 116で二次誤差の各位置の傾きを扱う。一般の関数は未評価。 |
 | 2c | 極限から基本的な導関数を計算 | 部分 | 473で二次関数の固定点を扱う。任意の関数・点は未評価。 |
@@ -50,3 +50,5 @@
 依頼1093は [Morris and Morris の数列の収束](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Proofs_and_Concepts_-_The_Fundamentals_of_Abstract_Mathematics_(Morris_and_Morris)/05%3A_Sample_Topics/5.03%3A_Real_analysis-_convergent_sequences) を参考とし、n ≥ N の同値な定義を用いる。３つの幅の厳密な境界と以降の項の不等式、保存を `tests/sequence-limit.test.js` で検査。有限例の試行自体は任意の幅に対する証明ではない。
 
 依頼1093の追加場面は [Dumas and McCarthy の数列と発散の例](https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_(Dumas_and_McCarthy)/00%3A_Front_Matter/Source) を参考に、1/n の証明の順序と、(−1)ⁿ の３候補に対する反例を操作する。任意の実数候補に対する論拠を選択肢で扱うが、任意の数列や自由な証明は直接評価しない。旧達成は保持し、追加条件の確認は別に記録する。
+
+依頼1099は [OpenStax のロピタルの定理](https://openstax.org/books/calculus-volume-1/pages/4-8-lhopitals-rule) と [CLP の結論できない例](https://math.libretexts.org/Bookshelves/Calculus/CLP-1_Differential_Calculus_(Feldman_Rechnitzer_and_Yeager)/04%3A_Applications_of_derivatives/4.07%3A_L%27Hopital%27s_Rule_and_Indeterminate_Forms)を参照。４つの固定例で不定形、微分可能性等の条件、導関数の比と元の比の区別を扱う。`tests/hopital-gates.test.js` で選択・途中記録と、振動する導関数の比の２部分列を検査。一般の証明や任意の関数の処理は未評価。
