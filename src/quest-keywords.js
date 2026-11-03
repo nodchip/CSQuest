@@ -32,6 +32,7 @@ export const questKeywords={
  'archive-text-frequency-visual':['テキスト可視化','単語頻度','文章長','正規化','term frequency'],
  'ruin-horn-meaning':['Horn節','一階論理','含意','真理値表','規則','Horn clause'],
  'forest-map-projection':['地理空間','地図投影','緯度','経度','メルカトル','Mercator'],
+ 'guild-ethics-rules':['倫理','法律','社会規範','共同体'],
  'guild-remote-impact':['在宅勤務','リモートワーク','持続可能性','環境負荷'],
  'castle-sandbox-origin':['サンドボックス','iframe','同一オリジン','sandbox'],
  'workshop-method-hash':['メソッド探索','ハッシュ表','method lookup','衝突'],
