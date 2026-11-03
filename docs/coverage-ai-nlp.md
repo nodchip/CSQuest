@@ -41,3 +41,5 @@
 固定模型の前提は [AI の追加単位](ai-additional.md)・[DM-Unstructured](dm-unstructured.md) を参照。`tests/cyk-scroll.test.js`、`tests/weighted-cyk.test.js`、`tests/hmm-tags.test.js`、`tests/word-index.test.js` は各固定例を検査する。
 
 依頼1144は３語の語彙と各係２件の手本で、多項ナイーブベイズの事前確率と加算平滑化（各語に１）を計算する。語順が逆の伝言は同じ単語数のため同じ得点となる。`tests/text-bayes.test.js` は手計算による数値、語順、途中復元と達成を検査する。[scikit-learn の多項ナイーブベイズ](https://scikit-learn.org/stable/modules/naive_bayes.html#multinomial-naive-bayes)を参照。２件の試験は手本そのもので、残りも設計済みの固定例であり、独立な実データの汎化性能を測らない。
+
+1144の追加比較では、試験対象の「火・ない」を薬の手本にも加えた場合を操作する。手本数による事前確率と単語の確率が変化し、同じ伝言の判定は火から薬に変わる。試験例を学習に含めた結果を未知例への性能とみなせない点を示す。[scikit-learn のデータ漏洩の説明](https://scikit-learn.org/stable/common_pitfalls.html#data-leakage)を参照。これは単一の固定例で、漏洩の影響の大きさを一般化しない。追加比較は従来の達成条件に含めない。
