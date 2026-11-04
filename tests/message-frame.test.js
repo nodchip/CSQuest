@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {frameMessages,frameInputs,frameModes,frameStreamPatterns,frameStreamTrace,frameEncode,frameDecode,messageFrameCreate,messageFrameDone,messageFrameComplete,messageFrameRestore} from '../src/message-frame.js';
+import {frameMessages,frameInputs,frameModes,frameStreamPatterns,frameStreamTrace,frameIssueTrace,frameEncode,frameDecode,messageFrameCreate,messageFrameDone,messageFrameComplete,messageFrameRestore} from '../src/message-frame.js';
 
 test('both formats round-trip every symbol sequence up to eight and can grow or shrink',()=>{
  for(let len=0;len<=8;len++)for(let bits=0;bits<2**len;bits++){const symbols=Array.from({length:len},(_,i)=>1+((bits>>i)&1));for(const mode of frameModes)assert.deepEqual(frameDecode(frameEncode(symbols,mode)),{ok:true,symbols});}
@@ -26,4 +26,13 @@ test('chunk boundaries do not determine message boundaries in the fixed stream',
  assert.equal(messageFrameRestore(old).streamStep,0);
  assert.equal(messageFrameRestore({...old,streamPattern:'split',streamStep:2}).streamStep,2);
  assert.throws(()=>messageFrameRestore({...old,streamPattern:'whole',streamStep:2}));
+});
+test('EOF distinguishes a clean boundary and truncated frames; oversized length is rejected immediately',()=>{
+ const complete=frameIssueTrace('complete');assert.deepEqual(complete.map(s=>s.status),['open','open','complete']);assert.deepEqual(complete.at(-1).messages,[[1,2]]);
+ const header=frameIssueTrace('header');assert.deepEqual(header.map(s=>s.status),['open','truncated-header']);
+ const body=frameIssueTrace('body');assert.deepEqual(body.map(s=>s.status),['open','truncated-body']);
+ const length=frameIssueTrace('length');assert.deepEqual(length.map(s=>s.status),['invalid-header']);assert.deepEqual(length[0].buffer,[0,9]);
+ assert.throws(()=>frameIssueTrace('unknown'));const old=messageFrameCreate();delete old.issueCase;delete old.issueStep;
+ assert.equal(messageFrameRestore(old).issueStep,0);assert.equal(messageFrameRestore({...old,issueCase:'body',issueStep:2}).issueStep,2);
+ assert.throws(()=>messageFrameRestore({...old,issueCase:'length',issueStep:2}));
 });
