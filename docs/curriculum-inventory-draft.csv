@@ -1620,7 +1620,7 @@ GIT-Interaction:トピック:Non-core:8,GIT,GIT-Interaction,トピック,Non-cor
 GIT-Interaction:学習成果:KA Core:1,GIT,GIT-Interaction,学習成果,KA Core,1,マウス・キーボードに反応するゲームを作る,部分,351 の完成済み模型を操作。自作能力は直接評価しない。,coverage-git-interaction.md,35,原典照合結果は監査記録参照
 GIT-Interaction:学習成果:KA Core:2,GIT,GIT-Interaction,学習成果,KA Core,2,タッチに反応するアプリを作る,部分,351 のボタンは click を使う。実タッチ検証やアプリ作成は未評価。,coverage-git-interaction.md,36,原典照合結果は監査記録参照
 GIT-Interaction:学習成果:KA Core:3,GIT,GIT-Interaction,学習成果,KA Core,3,異なるイベントに応じるアプリを設計・作成する,部分,92 の印と処理の対応、351 の２入力を操作。一般的な設計・作成は未評価。,coverage-git-interaction.md,37,原典照合結果は監査記録参照
-GIT-Interaction:学習成果:Non-core:4,GIT,GIT-Interaction,学習成果,Non-core,4,複数プラットフォームのタッチ操作の一貫性を評価,未照合,比較対象・試験を確認できていない。,coverage-git-interaction.md,38,原典照合結果は監査記録参照
+GIT-Interaction:学習成果:Non-core:4,GIT,GIT-Interaction,学習成果,Non-core,4,複数プラットフォームのタッチ操作の一貫性を評価,部分,1298で同じ移動量が２つの仮想的な閾値で異なる結果になることを予想・比較。実機・実プラットフォーム間の評価は未実施。,coverage-git-interaction.md,38,原典照合結果は監査記録参照
 GIT-Interaction:学習成果:Non-core:5,GIT,GIT-Interaction,学習成果,Non-core,5,触覚フィードバックのアプリを設計・作成,未照合,実際の触覚出力と設計は未評価。,coverage-git-interaction.md,39,原典照合結果は監査記録参照
 GIT-Interaction:学習成果:Non-core:6,GIT,GIT-Interaction,学習成果,Non-core,6,ジェスチャーで制御するプログラムを作る,部分,1298で横方向のジェスチャーと代替ボタンを操作。プログラムの作成能力は直接評価しない。,coverage-git-interaction.md,40,原典照合結果は監査記録参照
 GIT-Modeling:トピック:未記載:1,GIT,GIT-Modeling,トピック,未記載,1,二次元図形の交差・近接判定,部分,94で一次元の衝突、720で水平な視線と長方形の交差を操作。一般の２次元形状・近接は未評価。,coverage-git-modeling.md,9,原典照合結果は監査記録参照・区分を要確認
