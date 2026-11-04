@@ -23,7 +23,7 @@
 | 6b | KA Core | モーションキャプチャのクリップ合成 | 部分 | 729で２つの架空の位置記録を重み付きで合成。実際の収録、関節と接地は未評価。 |
 | 6c | KA Core | キャプチャとキーフレームの合成 | 部分 | 1252で架空の５刻の角度記録に補間したキーフレーム調整を加算・置換して比較。実収録、３次元回転や制作ソフトは未評価。 |
 | 6d-i | KA Core | 一つの歩行を標準とみなさない | 部分 | 1255で架空の３位置列と１・２見本の照合を比較し、不一致だけで良し悪しを決めないことを扱う。実際の多様な歩行データは未評価。 |
-| 6d-ii | KA Core | アクセシビリティ | 未照合 | 実利用者を含む評価は未確認。 |
+| 6d-ii | KA Core | アクセシビリティ | 部分 | 1256で架空の二人の希望を聞き収録計画を調整。実利用者との共同設計や評価は未実施。 |
 | 6d | KA Core | 倫理的配慮 | 部分 | 635で記録の別用途への利用条件を確認。実際の同意や法的判断は未評価。 |
 
 ## 例示学習成果
@@ -54,3 +54,5 @@
 依頼1254は [Autodesk のモーショングラフィックスの説明](https://www.autodesk.com/uk/solutions/motion-graphics)を参考に、文字と紋章を３時刻に配置し、その間を補間して案内を再生する。`tests/motion-poster.test.js` は時刻間の補間、記録・再生・復元を検査する。固定された２要素と３時刻の模型で、実際のデザイン制作、映像出力や可読性の利用者評価は扱わない。
 
 依頼1255は [EqualMotion の多様な動きと収録](https://uwe-repository.worktribe.com/output/15028182/equalmotion-accessible-motion-capture-for-the-creative-industries)を参考に、架空の３つの位置列と１・２見本の完全一致を比較する。`tests/movement-diversity.test.js` は６条件・誤答・復元を検査する。位置列は実際の歩行記録や身体的特性の代用ではなく、実利用者との共同設計やアクセシビリティ評価も行っていない。
+
+依頼1256は [EqualMotion の共同設計](https://uwe-repository.worktribe.com/output/15028182/equalmotion-accessible-motion-capture-for-the-creative-industries)を参考に、架空の参加者の希望に応じて収録計画を見直す。`tests/capture-accessibility.test.js` は二人と各準備の組合せ、達成条件、復元を検査する。実際の同意、当事者との共同設計、装置や環境の評価は行っていない。
