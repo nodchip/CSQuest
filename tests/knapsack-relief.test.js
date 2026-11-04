@@ -10,4 +10,9 @@ test('capacity exploration compares greedy choices and all optimal packs',()=>{
  const old=knapsackCreate();delete old.exploreCapacity;assert.equal(knapsackRestore(old).exploreCapacity,5);
  assert.equal(knapsackRestore({...old,exploreCapacity:0}).exploreCapacity,0);
  assert.throws(()=>knapsackRestore({...old,exploreCapacity:8}));
+ delete old.exploreGuess;delete old.exploreChecked;
+ assert.equal(knapsackRestore(old).exploreChecked,false);
+ assert.equal(knapsackRestore({...old,exploreGuess:'better',exploreChecked:true}).exploreGuess,'better');
+ assert.throws(()=>knapsackRestore({...old,exploreChecked:true}));
+ assert.throws(()=>knapsackRestore({...old,exploreGuess:'other'}));
 });
