@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1291で一体型と分割型の作業場を、正常・注文側の作業場停止・共通入口の停止の６条件で比較。[Microsoft のマイクロサービス設計](https://learn.microsoft.com/en-us/azure/architecture/microservices/)と[データと依存](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations)を参照。全3257テスト・台帳検査８件・ビルドが成功。ブラウザで誤答・途中再開・６条件・達成、320・390・1280px幅と再挑戦のキーボード操作を確認。報告は注文側に依存せず、両方が入口を通る固定模型で、実サービスの性能・安全性・一般の故障伝播は未評価。台帳は未照合435・部分3186・完了２行で、重複を含み完成率ではない。
+
 - 2026-11-04: 依頼1290で遠隔の共有サービスと端末導入型について、通信あり・なしの記録の場所と更新・責任の分担を比較。[NIST の SaaS 定義](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf)と[CISA の役割分担](https://www.cisa.gov/sites/default/files/2024-05/Software%20Transparency%20in%20SaaS%20Environments.pdf)を参照。全3255テスト・台帳検査８件・ビルドが成功。ブラウザで誤答、途中再開、４条件・達成、320・390・1280px幅と再挑戦のキーボード操作を確認。控えと同期のない固定例で、実製品・費用・契約や他の障害は未評価。台帳は未照合437・部分3184・完了２行で、重複を含み完成率ではない。
 
 - 2026-11-04: DM-Modeling（12トピック・５成果）、DM-Relational（13・９）、DM-Unstructured（12・成果列挙なし）の分母候補を原典と照合。半構造化 DB の概要と OLTP・OLAP 用途の問合せ処理を子項目だけでは表せないため未照合として台帳に追加。分母候補の照合は８／166単位。教材や判定の完成はこの照合からは分からない。台帳行は未照合439・部分3182・完了２で、重複を含み完成率ではない。

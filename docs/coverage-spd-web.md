@@ -19,7 +19,7 @@
 | 7c | Non-core | サービス費用の見積り | 未照合 | 料金モデルと見積りを要照合。 |
 | 8a | Non-core | データ所在・アクセス経路 | 未照合 | 保存地とアクセス経路の検討を要照合。 |
 | 8b | Non-core | データのアクセスと必要時の削除 | 未照合 | 原典の記載を追跡。完全性と可用性・削除の概念は一般には区別し、実運用を要照合。 |
-| 9a | Non-core | モノリスとマイクロサービス | 未照合 | 構成と制約の比較を要照合。 |
+| 9a | Non-core | モノリスとマイクロサービス | 部分 | 1291で一体型と２作業場の停止・共通の門の固定例を比較。実サービスの設計・性能と他の依存は未評価。 |
 | 9b | Non-core | マイクロフロントエンド | 未照合 | 対応例を要照合。 |
 | 9c | Non-core | イベント駆動と REST の構成 | 未照合 | 長所・短所の比較を要照合。 |
 | 9d | Non-core | サーバーレスとオンデマンド | 未照合 | 対応例を要照合。 |
@@ -30,7 +30,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 代替と限界 |
 |---|---|---|---|---|
-| 1 | KA Core | マイクロサービスの Web アプリ設計・実装 | 未照合 | 実装能力は直接評価しない。 |
+| 1 | KA Core | マイクロサービスの Web アプリ設計・実装 | 部分 | 1291で分割した作業場と共通の入口の障害を比較。設計・実装の能力や実 Web アプリは直接評価しない。 |
 | 2 | KA Core | ホスティング・サービス・拡張の制約 | 未照合 | 体系的な比較を要照合。 |
 | 3 | KA Core | Web と汎用プログラミングの比較 | 未照合 | 比較を要照合。 |
 | 4 | KA Core | SaaS と従来製品の比較 | 部分 | 1290で記録の場所・通信断・更新担当を固定例で比較。実際の製品、費用や自由な説明は未評価。 |
@@ -42,3 +42,5 @@
 依頼1289では見出し追加、色と枠、ボタンによる灯りの切替えに対応する札を選び、実際に見本を操作する。言語ごとにできることは重なるため、HTML の操作要素・CSS の状態による表現・JavaScript による内容変更もあると明示する。`tests/web-layers.test.js` は各札の選択・試行・操作・判定と保存の検証を行う。見本は固定されており、実際のコードの読み書き、PHP や他の技術を評価しない。参考：[MDN HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content)、[CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content)、[JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity)。
 
 依頼1290は [NIST の SaaS の定義](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf)と [CISA の SaaS での役割分担](https://www.cisa.gov/sites/default/files/2024-05/Software%20Transparency%20in%20SaaS%20Environments.pdf)を参考に、遠隔の共有記録と同期しない端末内の記録を、通信あり・なしの４条件で比べる。遠隔側はオフラインの控えがなく、端末側は常に利用可能という仮定。提供者の本体更新と、利用者による権限や復元の確認を区別する。`tests/software-service.test.js` は４条件、誤答、達成と復元を検査。実際の SaaS や導入型製品の機能・料金・契約、通信以外の障害、実サービスの責任分担は評価しない。
+
+依頼1291は [Microsoft のマイクロサービス設計](https://learn.microsoft.com/en-us/azure/architecture/microservices/)と[サービスのデータと依存関係](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations)を参考に、１作業場と別々の２作業場について、故障なし・注文の作業場停止・共通の門の停止を比較する。両方とも共通の門を使い、分割した報告は注文側に問い合わせないという固定の仮定。`tests/service-boundaries.test.js` は６条件の正答・誤答・保存と達成を検査する。実サービスやネットワーク、一般の障害伝播、運用費用・性能・可用性、自由な設計やプログラミング能力は評価しない。

@@ -3610,13 +3610,13 @@ SPD-Web:トピック:Non-core:7b,SPD,SPD-Web,トピック,Non-core,7b,拡張性�
 SPD-Web:トピック:Non-core:7c,SPD,SPD-Web,トピック,Non-core,7c,サービス費用の見積り,未照合,料金モデルと見積りを要照合。,coverage-spd-web.md,19,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8a,SPD,SPD-Web,トピック,Non-core,8a,データ所在・アクセス経路,未照合,保存地とアクセス経路の検討を要照合。,coverage-spd-web.md,20,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8b,SPD,SPD-Web,トピック,Non-core,8b,データのアクセスと必要時の削除,未照合,原典の記載を追跡。完全性と可用性・削除の概念は一般には区別し、実運用を要照合。,coverage-spd-web.md,21,原典照合結果は監査記録参照
-SPD-Web:トピック:Non-core:9a,SPD,SPD-Web,トピック,Non-core,9a,モノリスとマイクロサービス,未照合,構成と制約の比較を要照合。,coverage-spd-web.md,22,原典照合結果は監査記録参照
+SPD-Web:トピック:Non-core:9a,SPD,SPD-Web,トピック,Non-core,9a,モノリスとマイクロサービス,部分,1291で一体型と２作業場の停止・共通の門の固定例を比較。実サービスの設計・性能と他の依存は未評価。,coverage-spd-web.md,22,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:9b,SPD,SPD-Web,トピック,Non-core,9b,マイクロフロントエンド,未照合,対応例を要照合。,coverage-spd-web.md,23,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:9c,SPD,SPD-Web,トピック,Non-core,9c,イベント駆動と REST の構成,未照合,長所・短所の比較を要照合。,coverage-spd-web.md,24,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:9d,SPD,SPD-Web,トピック,Non-core,9d,サーバーレスとオンデマンド,未照合,対応例を要照合。,coverage-spd-web.md,25,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:10a,SPD,SPD-Web,トピック,Non-core,10a,関係データベース,部分,13で結合の固定例。Web アプリへの実接続は未評価。,coverage-spd-web.md,26,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:10b,SPD,SPD-Web,トピック,Non-core,10b,NoSQL,部分,189で鍵と文書の固定例。Web アプリへの実接続は未評価。,coverage-spd-web.md,27,原典照合結果は監査記録参照
-SPD-Web:学習成果:KA Core:1,SPD,SPD-Web,学習成果,KA Core,1,マイクロサービスの Web アプリ設計・実装,未照合,実装能力は直接評価しない。,coverage-spd-web.md,33,原典照合結果は監査記録参照
+SPD-Web:学習成果:KA Core:1,SPD,SPD-Web,学習成果,KA Core,1,マイクロサービスの Web アプリ設計・実装,部分,1291で分割した作業場と共通の入口の障害を比較。設計・実装の能力や実 Web アプリは直接評価しない。,coverage-spd-web.md,33,原典照合結果は監査記録参照
 SPD-Web:学習成果:KA Core:2,SPD,SPD-Web,学習成果,KA Core,2,ホスティング・サービス・拡張の制約,未照合,体系的な比較を要照合。,coverage-spd-web.md,34,原典照合結果は監査記録参照
 SPD-Web:学習成果:KA Core:3,SPD,SPD-Web,学習成果,KA Core,3,Web と汎用プログラミングの比較,未照合,比較を要照合。,coverage-spd-web.md,35,原典照合結果は監査記録参照
 SPD-Web:学習成果:KA Core:4,SPD,SPD-Web,学習成果,KA Core,4,SaaS と従来製品の比較,部分,1290で記録の場所・通信断・更新担当を固定例で比較。実際の製品、費用や自由な説明は未評価。,coverage-spd-web.md,36,原典照合結果は監査記録参照
