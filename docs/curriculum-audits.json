@@ -200,6 +200,30 @@
       "topics": 6,
       "outcomes": 6,
       "scope_sha256": "75e53081a860cd0fbf1c6cbd829501384f1132d6517ee25bb8a4a71d3cc7e896"
+    },
+    "NC-Security": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-security.md",
+      "topics": 5,
+      "outcomes": 3,
+      "scope_sha256": "8ccd4c31bef81e7b47e1e2ebc92e2012990ff6fd484dbd944fd002f768210c3c"
+    },
+    "NC-Mobility": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-mobility.md",
+      "topics": 4,
+      "outcomes": 4,
+      "scope_sha256": "2ea8658efe15963eab450317b759d268dc29eef8974f27708e482245bb6e4d8a"
+    },
+    "NC-Emerging": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-emerging.md",
+      "topics": 4,
+      "outcomes": 3,
+      "scope_sha256": "23f9b35c43b12b0921357f56bde0a4bffb4907c821090b245ca00ad0a7949d28"
     }
   }
 }
