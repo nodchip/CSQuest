@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-hash-resize-lab':['ハッシュ表','線形探索','再ハッシュ','拡張','衝突','反例'],
  'archive-hash-resize-workshop':['ハッシュ表','線形探索','再ハッシュ','拡張','衝突'],
  'guild-transition-test-workshop':['テスト','状態遷移','操作列','状態','試験'],
  'guild-boundary-test-workshop':['テスト','同値分割','境界値','欠陥','試験'],
