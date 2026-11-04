@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1285で６単位の仕事について速さ・期限・稼働基本電力を変え、６刻全体の消費を比較。[Pillai・Shin](https://www.cs.cmu.edu/~15-821/assets/READINGS/PAPERS/pillai2001.pdf)と[Martin・Siewiorek](https://www.cs.cmu.edu/~tlm/papers/islped99_8_2.pdf)を参照。12条件・各刻・期限・４条件の最小選択と復元を検査し、全3239テストとビルドが成功。ブラウザで期限違反・再開・12条件・達成、320・390・1280px幅とキーボード操作を確認。電力は架空で実測や実 OS の期限保証は未評価。
+
 - 2026-11-04: 依頼1284で架空の３位置と移動・目印記録を使い、２つの目印候補と３修正方法を比較。[GTSAM の位置グラフ](https://gtsam.org/tutorials/intro.html)と[Latif らの誤対応研究](https://webdiis.unizar.es/~ylatif/papers/ICRA2013_DetectingTheCorrectGraph.pdf)を参照。正規方程式・目的値・６条件・保存を検査し、全3237テストとビルドが成功。ブラウザで途中再開・６条件・達成、320・390・1280px幅とキーボード操作を確認。一次元の固定模型で、実機・汎用 SLAM と目印の正しさは未評価。
 
 - 2026-11-04: 依頼1283で２候補の位置と地図を観測・移動・再観測で更新し、同時確率と独立と仮定した積を比較。[Hähnel らの SLAM 研究](https://robots.stanford.edu/papers/Haehnel03c.pdf)を参照。重み・確率・操作順・保存を検査し、全3235テストとビルドが成功。ブラウザで誤操作・再開・３操作・達成、320・390・1280px幅とキーボード操作を確認。２候補の固定模型で、汎用 SLAM と実機は未評価。
