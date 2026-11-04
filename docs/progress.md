@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+2026-11-04：依頼1225で ACID の４性質をそれぞれ対策あり・なしの８条件で識別。[IBM](https://www.ibm.com/docs/en/cics-tx/11.1.0?topic=processing-acid-properties-transactions)と[PostgreSQL](https://www.postgresql.org/docs/current/transaction-iso.html)を参照。全3115テスト・ビルドと SQLite によるロールバック、制約、競合の再試行、再接続の照合が成功。配信用ビルドで誤答、再開、８条件、320・390・1280px幅とキーボード操作を確認。原典の４性質の列挙は選択操作による代替と限界を記録して完了。電源断時の耐久性、実 DB の一般的な保証や自由記述は未評価。
+
 2026-11-04：依頼1224で原典 DM-Data の５段階を２事例・14場面から識別し、保管後の再集計と確認中の保管継続を操作。[CS2023 原典](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf)と[NIST のデータ管理](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/1500-18/NIST.SP.1500-18r2.html)を参照。全3113テストとビルドが成功。ローカル390px幅で誤答・途中再開・14場面・達成を確認。例示学習成果の「５段階の識別」を完了として記録。任意の実務判断・自由記述・実際の安全な消去は評価しない。
 
 2026-11-04：依頼1223で正しい翻訳と誤った候補を４入力で比較し、翻訳費用と実行回数による総費用を操作。[Clang](https://clang.llvm.org/docs/CommandGuide/clang.html)と[OpenJDK](https://openjdk.org/projects/leyden/slides/leyden-heidinga-devnexus-2024-03.pdf)を参照。全3111テストとビルドが成功。ローカル390px幅で誤った翻訳、誤答、再開、３注文数と達成を確認。実コンパイラや実測性能は未評価。既存1013・787・1184を言語設計の対応表に限定付きで照合。
