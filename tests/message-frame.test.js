@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {frameMessages,frameInputs,frameModes,frameStreamPatterns,frameStreamTrace,frameIssueTrace,frameEncode,frameDecode,messageFrameCreate,messageFrameDone,messageFrameComplete,messageFrameRestore} from '../src/message-frame.js';
+import {frameMessages,frameInputs,frameModes,frameStreamPatterns,frameStreamTrace,frameIssueTrace,frameIssueExpectation,frameEncode,frameDecode,messageFrameCreate,messageFrameDone,messageFrameComplete,messageFrameRestore} from '../src/message-frame.js';
 
 test('both formats round-trip every symbol sequence up to eight and can grow or shrink',()=>{
  for(let len=0;len<=8;len++)for(let bits=0;bits<2**len;bits++){const symbols=Array.from({length:len},(_,i)=>1+((bits>>i)&1));for(const mode of frameModes)assert.deepEqual(frameDecode(frameEncode(symbols,mode)),{ok:true,symbols});}
@@ -41,4 +41,15 @@ test('validation continues after a valid frame and rejects malformed bodies',()=
  assert.deepEqual(after[0].messages,[[1,2]]);assert.deepEqual(after[0].buffer,[0,9]);
  const bad=frameIssueTrace('invalid');assert.equal(bad.length,1);assert.equal(bad[0].status,'invalid-body');
  assert.deepEqual(bad[0].messages,[]);assert.deepEqual(bad[0].buffer,[0,2,1,9]);
+});
+test('each fixed receive event has an appropriate predicted state',()=>{
+ assert.deepEqual([0,1,2].map(i=>frameIssueExpectation('complete',i)),['waiting','waiting','complete']);
+ for(const id of ['header','body'])assert.deepEqual([0,1].map(i=>frameIssueExpectation(id,i)),['waiting','truncated']);
+ for(const id of ['length','after','invalid'])assert.equal(frameIssueExpectation(id,0),'rejected');
+ assert.throws(()=>frameIssueExpectation('body',2));
+ const old=messageFrameCreate();delete old.issueGuess;delete old.issueMiss;
+ assert.equal(messageFrameRestore(old).issueGuess,null);
+ assert.equal(messageFrameRestore({...old,issueGuess:'waiting',issueMiss:true}).issueMiss,true);
+ assert.throws(()=>messageFrameRestore({...old,issueMiss:true}));
+ assert.throws(()=>messageFrameRestore({...old,issueCase:'length',issueStep:1,issueGuess:'waiting'}));
 });
