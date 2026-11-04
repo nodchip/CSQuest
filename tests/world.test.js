@@ -165,7 +165,7 @@ test('software engineering and HCI paths connect stakeholder needs to collaborat
 test('image trail connects representation, segmentation, filtering, restoration and a combined challenge',()=>{
  const trail=findTrail('image-journey'),ids=trail.quests;
  for(const prerequisite of ['ruin-media-delivery','ruin-temporal-sampling','ruin-color-mixing','ruin-lcd-workshop','ruin-halftone-press'])assert.ok(ids.indexOf(prerequisite)>=0&&ids.indexOf(prerequisite)<ids.indexOf('ruin-image-rescue'));
- for(const [a,b] of [['ruin-vector-raster','ruin-image-hue'],['ruin-image-contrast','ruin-threshold-segmentation'],['ruin-threshold-segmentation','ruin-morphology'],['ruin-morphology','ruin-morphology-sequence'],['ruin-highpass','ruin-image-kernel'],['ruin-image-kernel','ruin-image-inpaint'],['ruin-image-inpaint','ruin-emblem-rescue']])assert.ok(ids.indexOf(a)>=0&&ids.indexOf(a)<ids.indexOf(b));
+ for(const [a,b] of [['ruin-vector-raster','ruin-image-hue'],['ruin-image-contrast','ruin-threshold-segmentation'],['ruin-threshold-segmentation','ruin-morphology'],['ruin-morphology','ruin-morphology-sequence'],['ruin-highpass','ruin-image-kernel'],['ruin-image-kernel','ruin-image-inpaint'],['ruin-image-inpaint','guild-asset-license'],['guild-asset-license','archive-training-rights'],['archive-training-rights','ruin-emblem-rescue']])assert.ok(ids.indexOf(a)>=0&&ids.indexOf(a)<ids.indexOf(b));
  assert.equal(nextTrailQuest(trail,all,ids.slice(0,-1)).level.id,'ruin-emblem-rescue');assert.equal(nextTrailQuest(trail,all,ids),null);
 });
 

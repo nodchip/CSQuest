@@ -1706,8 +1706,8 @@ GIT-SEP:トピック:KA Core:2e-ii,GIT,GIT-SEP,トピック,KA Core,2e-ii,正確
 GIT-SEP:トピック:KA Core:2f,GIT,GIT-SEP,トピック,KA Core,2f,健康情報などのプライバシー,未照合,352は室内の例であり、健康情報は未評価。,coverage-git-sep.md,17,原典照合結果は監査記録参照
 GIT-SEP:トピック:KA Core:2g-i,GIT,GIT-SEP,トピック,KA Core,2g-i,偽画像,未照合,対応例を要照合。,coverage-git-sep.md,18,原典照合結果は監査記録参照
 GIT-SEP:トピック:KA Core:2g-ii,GIT,GIT-SEP,トピック,KA Core,2g-ii,肌色・髪型等による誤認識,未照合,対応例を要照合。,coverage-git-sep.md,19,原典照合結果は監査記録参照
-GIT-SEP:トピック:KA Core:3a,GIT,GIT-SEP,トピック,KA Core,3a,生成 AI の訓練画像と知的財産,未照合,具体的な権利・法域の分析を要照合。,coverage-git-sep.md,20,原典照合結果は監査記録参照
-GIT-SEP:トピック:KA Core:3b,GIT,GIT-SEP,トピック,KA Core,3b,生成画像と知的財産,未照合,具体的な権利・法域の分析を要照合。,coverage-git-sep.md,21,原典照合結果は監査記録参照
+GIT-SEP:トピック:KA Core:3a,GIT,GIT-SEP,トピック,KA Core,3a,生成 AI の訓練画像と知的財産,部分,1267で架空の絵の作者・来歴と学習・公開の条件を確認。実際の権利や法域の分析は未評価。,coverage-git-sep.md,20,原典照合結果は監査記録参照
+GIT-SEP:トピック:KA Core:3b,GIT,GIT-SEP,トピック,KA Core,3b,生成画像と知的財産,部分,1267で元の絵に似た出力と記録された条件を分けて確認。実際の生成物の法的判断は未評価。,coverage-git-sep.md,21,原典照合結果は監査記録参照
 GIT-SEP:トピック:KA Core:4,GIT,GIT-SEP,トピック,KA Core,4,この分野の現在・過去の貢献者,未照合,対応例を要照合。,coverage-git-sep.md,22,原典照合結果は監査記録参照
 GIT-SEP:学習成果:KA Core:1,GIT,GIT-SEP,学習成果,KA Core,1,位置タグに内在する安全性の問題,部分,352で室内の位置が機微になりうると扱う。位置タグ固有の攻撃や自由な議論は未評価。,coverage-git-sep.md,28,原典照合結果は監査記録参照
 GIT-SEP:学習成果:KA Core:2,GIT,GIT-SEP,学習成果,KA Core,2,顔認識の倫理と利用条件,未照合,対応例を要照合。,coverage-git-sep.md,29,原典照合結果は監査記録参照
@@ -3175,11 +3175,11 @@ SEP-IP:トピック:KA Core:8,SEP,SEP-IP,トピック,KA Core,8,著作権の限�
 SEP-IP:トピック:KA Core:9,SEP,SEP-IP,トピック,KA Core,9,著作権執行に関わる法律・条約,未照合,関連体験は未確認。,coverage-sep-ip.md,17,原典照合結果は監査記録参照
 SEP-IP:トピック:KA Core:10,SEP,SEP-IP,トピック,KA Core,10,海賊版・DRM 等,未照合,関連体験は未確認。,coverage-sep-ip.md,18,原典照合結果は監査記録参照
 SEP-IP:トピック:KA Core:11,SEP,SEP-IP,トピック,KA Core,11,オープンソース運動の道徳・法的基礎,部分,959で利用・改変・再配布の自由と架空の条件、商用制限・表示・同条件を比較。運動の歴史、倫理的対立や実ライセンスの全条項は未評価。,coverage-sep-ip.md,19,原典照合結果は監査記録参照
-SEP-IP:トピック:KA Core:12,SEP,SEP-IP,トピック,KA Core,12,他者のデータを用いるシステム,未照合,関連体験を原典の範囲と照合していない。,coverage-sep-ip.md,20,原典照合結果は監査記録参照
+SEP-IP:トピック:KA Core:12,SEP,SEP-IP,トピック,KA Core,12,他者のデータを用いるシステム,部分,1267で他者の絵を学習資料とする架空の模型の来歴・条件・生成物を確認。実際の権利や法域別の判断は未評価。,coverage-sep-ip.md,20,原典照合結果は監査記録参照
 SEP-IP:学習成果:CS Core:1,SEP,SEP-IP,学習成果,CS Core,1,デジタル著作権侵害の法令・判例を説明し批評,部分,957で米国 Google 対 Oracle 判決の限定された結論を確認。判例の自由な批評や他法域・判例は未評価。,coverage-sep-ip.md,26,原典照合結果は監査記録参照
 SEP-IP:学習成果:CS Core:2,SEP,SEP-IP,学習成果,CS Core,2,無形のデジタル知的財産の例を特定,部分,956でデジタル文章と記録媒体を区別。一般の例と自由な説明は未評価。,coverage-sep-ip.md,27,原典照合結果は監査記録参照
 SEP-IP:学習成果:CS Core:3,SEP,SEP-IP,学習成果,CS Core,3,目的に合うソフトウェアライセンスを選択,部分,269は改変ソース配布の２条件を比較。399は販売用の画像素材であり、ソフトウェアライセンスの選定ではない。一般の選定は未評価。,coverage-sep-ip.md,28,原典照合結果は監査記録参照
-SEP-IP:学習成果:CS Core:4,SEP,SEP-IP,学習成果,CS Core,4,著作物の合法的・倫理的利用を擁護,未照合,固定例は法域に応じた擁護を評価しない。,coverage-sep-ip.md,29,原典照合結果は監査記録参照
+SEP-IP:学習成果:CS Core:4,SEP,SEP-IP,学習成果,CS Core,4,著作物の合法的・倫理的利用を擁護,部分,399で販売用の絵の条件と表示を比較し、1267で架空の許諾と来歴を確認。実事案の法的判断や自由な擁護は未評価。,coverage-sep-ip.md,29,原典照合結果は監査記録参照
 SEP-IP:学習成果:CS Core:5,SEP,SEP-IP,学習成果,CS Core,5,ライセンスの意図と実装を解釈,部分,269で表示・変更明示・許諾の３条件を比較。全条項と自由な解釈は未評価。,coverage-sep-ip.md,30,原典照合結果は監査記録参照
 SEP-IP:学習成果:CS Core:6,SEP,SEP-IP,学習成果,CS Core,6,fair use の可能性を議論,部分,957で米国の４要因に架空の事実を整理し、単一の割合や出典表示で決まらないことを確認。個別事案の結論と自由な議論は未評価。,coverage-sep-ip.md,31,原典照合結果は監査記録参照
 SEP-IP:学習成果:CS Core:7,SEP,SEP-IP,学習成果,CS Core,7,剽窃検出の倫理問題を分析,部分,958で一致の閾値、引用・題文・言換えの見逃し、事情の確認、異議の機会と記録の扱いを比較。実際の検出器の性能・制度や自由な分析は未評価。,coverage-sep-ip.md,32,原典照合結果は監査記録参照
