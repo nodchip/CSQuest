@@ -20,7 +20,7 @@
 | 番号 | 区分 | 内容 | 状態 | 対応例と限界 |
 |---|---|---|---|---|
 | 1 | CS Core | システムの安全性破綻による影響を計算 | 部分 | 362で停止した２窓口の申請予定20件を集計。原因や被害人数は未確定。 |
-| 2 | CS Core | 安全に関する法に適合するシステムを構築 | 部分 | 1319で FDA の対象医療機器に関する一部要件を参考に、架空の部品一覧・更新・監視・連絡を操作。実システム構築・法令適合や全要件は未評価。 |
+| 2 | CS Core | 安全に関する法に適合するシステムを構築 | 部分 | 1319で FDA の対象医療機器に関する一部要件を参考に、架空の部品一覧・更新・監視・連絡を操作。1320で版の異なる３灯台を巡り、模型の更新・代替・点検を行う。実システム構築・法令適合や全要件は未評価。 |
 | 3 | CS Core | プライバシー規制を適用して設計 | 部分 | 1113で GDPR 適用を仮定し、２目的に必要な受付項目を選択。実システムの設計・実装や法令全体への適合は未評価。 |
 | 4 | KA Core | 法令に適合しないシステムの法的影響を評価 | 未照合 | 対応教材を要照合。 |
 | 5 | KA Core | 利用者のプライバシーへの害を避けるシステムを構築 | 部分 | 194・352の固定の選択。実システムの構築は評価しない。 |
@@ -32,3 +32,5 @@
 依頼1196は [NIST の合成コンテンツの透明性とリスクに関する報告](https://www.nist.gov/publications/reducing-risks-posed-synthetic-content-overview-technical-approaches-digital-content) を参考に、架空の声と２画像で、本人に似た印象、来歴の欠如、署名の検証結果と文脈を別経路の記録と比較する。署名・別経路の結果は模型の仮定で、実際のメディア解析、署名検証、検出精度や安全性は評価しない。`tests/synthetic-evidence.test.js` は全選択肢と資料確認・途中保存を検査する。
 
 依頼1319は [FDA の医療機器サイバーセキュリティ FAQ](https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity-medical-devices-frequently-asked-questions-faqs) と [2026年ガイダンス](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cybersecurity-medical-devices-quality-management-system-considerations-and-content-premarket) を参考に、３部品の架空の版一覧、弱点を知らせる条件、修正、継続的な対応と連絡を操作する。524B の適用対象と実際の法令要件・ガイダンスを区別し、模型の一覧を完全な SBOM や法令適合と主張しない。`tests/device-security-plan.test.js` は８一覧、更新後の一覧無効化と復元を検査。実機・医療安全・実際の構築と法令全体の適合は未評価。
+
+依頼1320は1319の架空の版を使い、２灯台の1.0を更新し、１灯台の1.1は更新対象外とする。版が不明な記録は確認するまで判断しない。停止・代替の調整、更新札の確認と点検の成功は模型の仮定で、実際の試験・署名・医療安全・法令適合は評価しない。`tests/device-update-journey.test.js` で手順の順序、版別の更新、復元を検査。参考：[FDA FAQ](https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity-medical-devices-frequently-asked-questions-faqs)。
