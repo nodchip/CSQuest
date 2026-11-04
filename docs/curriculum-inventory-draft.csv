@@ -1607,7 +1607,7 @@ GIT-Interaction:トピック:KA Core:2b,GIT,GIT-Interaction,トピック,KA Core
 GIT-Interaction:トピック:KA Core:2c,GIT,GIT-Interaction,トピック,KA Core,2c,メニュー,部分,1297でポインターだけとキーボードでも操作できる一覧を比較。実装や一般的なメニュー設計は未評価。,coverage-git-interaction.md,17,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:2d,GIT,GIT-Interaction,トピック,KA Core,2d,ポインティングデバイス,部分,351 の方向ボタンで操作。デバイス間の比較は未評価。,coverage-git-interaction.md,18,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:3,GIT,GIT-Interaction,トピック,KA Core,3,アクセシビリティ,部分,117 の字幕、806 の形・読み上げ名・キーボードの固定模型。実利用者の評価や適合は未評価。,coverage-git-interaction.md,19,原典照合結果は監査記録参照
-GIT-Interaction:トピック:Non-core:4a,GIT,GIT-Interaction,トピック,Non-core,4a,タッチ画面のジェスチャー,未照合,複数機種のジェスチャーを確認できていない。,coverage-git-interaction.md,20,原典照合結果は監査記録参照
+GIT-Interaction:トピック:Non-core:4a,GIT,GIT-Interaction,トピック,Non-core,4a,タッチ画面のジェスチャー,部分,1298で横方向の指・ポインター操作とボタンの代替を体験。複数機種や複数指の操作は未評価。,coverage-git-interaction.md,20,原典照合結果は監査記録参照
 GIT-Interaction:トピック:Non-core:4b,GIT,GIT-Interaction,トピック,Non-core,4b,手・身体のジェスチャー,未照合,身体のジェスチャーと認識を確認できていない。,coverage-git-interaction.md,21,原典照合結果は監査記録参照
 GIT-Interaction:トピック:Non-core:5a,GIT,GIT-Interaction,トピック,Non-core,5a,触覚機器の外部駆動装置,未照合,触覚フィードバックと実機の対応は未確認。,coverage-git-interaction.md,22,原典照合結果は監査記録参照
 GIT-Interaction:トピック:Non-core:5b,GIT,GIT-Interaction,トピック,Non-core,5b,触覚グローブ,未照合,グローブによる触覚提示は未確認。,coverage-git-interaction.md,23,原典照合結果は監査記録参照
@@ -1622,7 +1622,7 @@ GIT-Interaction:学習成果:KA Core:2,GIT,GIT-Interaction,学習成果,KA Core,
 GIT-Interaction:学習成果:KA Core:3,GIT,GIT-Interaction,学習成果,KA Core,3,異なるイベントに応じるアプリを設計・作成する,部分,92 の印と処理の対応、351 の２入力を操作。一般的な設計・作成は未評価。,coverage-git-interaction.md,37,原典照合結果は監査記録参照
 GIT-Interaction:学習成果:Non-core:4,GIT,GIT-Interaction,学習成果,Non-core,4,複数プラットフォームのタッチ操作の一貫性を評価,未照合,比較対象・試験を確認できていない。,coverage-git-interaction.md,38,原典照合結果は監査記録参照
 GIT-Interaction:学習成果:Non-core:5,GIT,GIT-Interaction,学習成果,Non-core,5,触覚フィードバックのアプリを設計・作成,未照合,実際の触覚出力と設計は未評価。,coverage-git-interaction.md,39,原典照合結果は監査記録参照
-GIT-Interaction:学習成果:Non-core:6,GIT,GIT-Interaction,学習成果,Non-core,6,ジェスチャーで制御するプログラムを作る,未照合,操作模型と実装の対応は未確認。,coverage-git-interaction.md,40,原典照合結果は監査記録参照
+GIT-Interaction:学習成果:Non-core:6,GIT,GIT-Interaction,学習成果,Non-core,6,ジェスチャーで制御するプログラムを作る,部分,1298で横方向のジェスチャーと代替ボタンを操作。プログラムの作成能力は直接評価しない。,coverage-git-interaction.md,40,原典照合結果は監査記録参照
 GIT-Modeling:トピック:未記載:1,GIT,GIT-Modeling,トピック,未記載,1,二次元図形の交差・近接判定,部分,94で一次元の衝突、720で水平な視線と長方形の交差を操作。一般の２次元形状・近接は未評価。,coverage-git-modeling.md,9,原典照合結果は監査記録参照・区分を要確認
 GIT-Modeling:トピック:未記載:2a,GIT,GIT-Modeling,トピック,未記載,2a,曲面の分割,部分,145で平面五角形の耳切り。一般の３次元曲面は未評価。,coverage-git-modeling.md,10,原典照合結果は監査記録参照・区分を要確認
 GIT-Modeling:トピック:未記載:2b,GIT,GIT-Modeling,トピック,未記載,2b,メッシュ表現・平滑化・生成,部分,145で２次元多角形の三角形分割。曲面メッシュ、Delaunay・marching cubes 等は未評価。,coverage-git-modeling.md,11,原典照合結果は監査記録参照・区分を要確認
