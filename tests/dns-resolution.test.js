@@ -16,3 +16,14 @@ test('predicted answer changes at expiration and old drafts remain compatible',(
  assert.equal(restoreDns(old).experimentChecked,false);assert.equal(restoreDns({...old,experimentGuess:'new',experimentChecked:true}).experimentGuess,'new');
  assert.throws(()=>restoreDns({...old,experimentChecked:true}));
 });
+test('different TTLs affect whether the same later lookup uses a stale record',()=>{
+ assert.equal(dnsExperiment(3,2).answer,'192.0.2.84');
+ assert.equal(dnsExperiment(3,4).answer,'192.0.2.42');
+ assert.equal(dnsExperiment(4,4).source,'authority');
+ assert.equal(dnsExperiment(4,6).source,'cache');
+ for(const ttl of [2,4,6])for(const time of [0,1,3,4,5]){
+  const result=dnsExperiment(time,ttl);assert.equal(result.source,time<ttl?'cache':'authority');
+  assert.equal(dnsExperimentCorrect(time,result.answer==='192.0.2.42'?'old':'new',ttl),true);
+ }
+ assert.throws(()=>dnsExperiment(1,3));const old=createDns();delete old.experimentTtl;assert.equal(restoreDns(old).experimentTtl,4);assert.equal(restoreDns({...old,experimentTtl:6}).experimentTtl,6);assert.throws(()=>restoreDns({...old,experimentTtl:3}));
+});
