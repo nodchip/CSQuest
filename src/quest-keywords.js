@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-mobile-callback-race':['モバイル','非同期','コールバック','応答順','失敗','競合'],
  'forest-device-update-journey':['医療機器','セキュリティ','脆弱性','構成部品','更新','運用'],
  'workshop-device-security-plan':['医療機器','セキュリティ','SBOM','脆弱性','FDA','更新','開示'],
  'guild-education-access-plan':['教育','参加','包摂','予算','支援','障壁','DEIA'],
