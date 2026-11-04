@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: SPD-Common と DM-Distributed の分母候補を原典と照合。SPD-Common の親にある複数プラットフォームの概要が子項目にないため、未照合の `1-本体` を追加し、12トピック・４成果として追跡。DM-Distributed は８トピック・成果列挙なし。SPD-Web と合わせ３単位の照合記録・範囲ハッシュを作り、台帳の対象変更を検出する。原典の項目照合であり、教材の完成や内容の正確性は別途検証する。台帳行は未照合437・部分3182・完了２、重複を含み完成率ではない。
+
 - 2026-11-04: 完成率を根拠付きで計算する準備として、166知識単位の台帳からトピック・成果を分けて候補目録を生成し、候補 ID・行・限界と親子重複候補を記録。全3,620行中78行に機械的な親子重複候補。SPD-Web について原典と照合し、トピック19・成果６の分母候補と親見出しの扱いを記録。原典の網羅・完成判定の監査は全体では未完了で、候補数を完成率に使わない。台帳との同期を CI で検査。
 
 - 2026-11-04: 依頼1289で HTML の見出し、CSS の装飾、JavaScript の押下への反応を札で選び、掲示板の見本で比較する。役割は重なることと固定例の限界も明示。[MDN の HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content)、[CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content)、[JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity)を参照。全3253テストとビルドが成功。ブラウザで誤答、途中再開、３仕事・達成、320・390・1280px幅と再挑戦のキーボード操作を確認。実際の言語の記述、PHP や他のプラットフォームの言語は未評価。台帳の未照合436行・部分3182行・完了2行は重複を含み、完成率ではない。

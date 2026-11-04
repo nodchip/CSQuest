@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "units": {
+    "SPD-Web": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-web.md",
+      "topics": 19,
+      "outcomes": 6,
+      "scope_sha256": "bebf626d0adb529efaf921bec1c9bd3862e22c1893a8821373ae6cc6d7b0c076"
+    },
+    "SPD-Common": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-common.md",
+      "topics": 12,
+      "outcomes": 4,
+      "scope_sha256": "aa25dc5309a7e48281ffbcdbc419af7a6fee635d12945e90eb2fb37267468dfe"
+    },
+    "DM-Distributed": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-distributed.md",
+      "topics": 8,
+      "outcomes": 0,
+      "scope_sha256": "4996556e68e720b81499a7134252a1a4494dc3dee5414b359f5f665123245f95"
+    }
+  }
+}

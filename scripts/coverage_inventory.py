@@ -1,6 +1,8 @@
 """Export an unverified inventory of curriculum ledger rows, not a completion percentage."""
 from collections import Counter
 import argparse
+import hashlib
+import json
 import csv
 import re
 import sys
@@ -86,8 +88,8 @@ def parse_inventory(root):
             summary_index = next((i for i, h in enumerate(header) if h in ('要約', '内容', '内容の要約')), None)
             if summary_index is None:
                 raise ValueError(f'{path}:{line_no}: 要約列が不明')
-            flags = ['原典との照合未確認']
-            if not re.fullmatch(r'\d+[a-z]?(?:\.[a-z0-9]+)?', label):
+            flags = ['原典照合結果は監査記録参照']
+            if not re.fullmatch(r'\d+[a-z]?(?:[.-][a-z0-9]+)*', label):
                 flags.append('番号を要確認')
             if core == '未記載':
                 flags.append('区分を要確認')
@@ -107,17 +109,53 @@ def parse_inventory(root):
         # Never discard a parent automatically: its own text may contain scope not in its children.
         number = r['原典番号']
         for other in records:
-            if (r is not other and r['知識単位'] == other['知識単位'] and r['種別'] == other['種別'] and r['区分'] == other['区分'] and re.fullmatch(r'\d+[a-z]?(?:\.[a-z0-9]+)?', number) and re.fullmatch(re.escape(number) + r'(?:[a-z]|\.[a-z0-9]+)', other['原典番号'])):
+            if (r is not other and r['知識単位'] == other['知識単位'] and r['種別'] == other['種別'] and r['区分'] == other['区分'] and re.fullmatch(r'\d+[a-z]?(?:[.-][a-z0-9]+)*', number) and re.fullmatch(re.escape(number) + (r'(?:[a-z]|[.-][a-z0-9]+)' if number.isdecimal() else r'[.-][a-z0-9]+'), other['原典番号'])):
                 r['要確認'].append('親子重複候補')
                 break
         r['要確認'] = '・'.join(r['要確認'])
     return records
 
 
+def scope_digest(rows):
+    # Descriptions and identifiers are audited; evidence/status updates alone do not alter the denominator.
+    items = sorted((row['候補ID'], row['要約']) for row in rows)
+    payload = json.dumps(items, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+    return hashlib.sha256(payload).hexdigest()
+
+
+def validate_audits(root, records, audit_file):
+    data = json.loads(Path(audit_file).read_text(encoding='utf-8'))
+    if data.get('version') != 1 or not isinstance(data.get('units'), dict):
+        raise ValueError('照合記録の形式が不正です')
+    groups = {}
+    for row in records:
+        groups.setdefault(row['知識単位'], []).append(row)
+    for unit, audit in data['units'].items():
+        if unit not in groups or not isinstance(audit, dict):
+            raise ValueError(f'{unit}: 知識単位が不正です')
+        rows = groups[unit]
+        ids = [r['候補ID'] for r in rows]
+        if len(ids) != len(set(ids)):
+            raise ValueError(f'{unit}: 候補 ID が重複しています')
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', audit.get('date', '')):
+            raise ValueError(f'{unit}: 照合日が不正です')
+        if audit.get('source') != 'https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf':
+            raise ValueError(f'{unit}: 原典が不正です')
+        doc = audit.get('document', '')
+        if not re.fullmatch(r'docs/curriculum-audit-[a-z0-9-]+\.md', doc) or not (Path(root) / doc).is_file():
+            raise ValueError(f'{unit}: 照合記録がありません')
+        if (audit.get('topics') != sum(r['種別'] == 'トピック' for r in rows)
+                or audit.get('outcomes') != sum(r['種別'] == '学習成果' for r in rows)
+                or audit.get('scope_sha256') != scope_digest(rows)):
+            raise ValueError(f'{unit}: 台帳の範囲が照合時から変わりました。原典と照合し直してください')
+    return len(data['units'])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--csv', type=Path, help='候補行を UTF-8 CSV に保存')
     parser.add_argument('--check', type=Path, help='保存済み CSV が台帳と一致するか検査')
+    parser.add_argument('--audit', type=Path, help='分母の照合記録と台帳の範囲を検査')
     args = parser.parse_args()
     records = parse_inventory(Path(__file__).resolve().parents[1])
     if args.csv:
@@ -130,10 +168,13 @@ def main():
             reader = csv.DictReader(source)
             if reader.fieldnames != list(COLUMNS) or list(reader) != records:
                 raise ValueError(f'{args.check}: 目録が台帳と一致しません。--csv で再生成してください')
+    if args.audit:
+        n = validate_audits(Path(__file__).resolve().parents[1], records, args.audit)
+        print(f'原典と分母候補を照合済み: {n} / 166 知識単位（教材の完成・正確性は別途監査）')
     kinds = Counter(r['種別'] for r in records)
     print(f'台帳の候補行: {len(records)}（トピック {kinds["トピック"]}、学習成果 {kinds["学習成果"]}）')
     print(f'候補ID重複: {sum("候補ID重複" in r["要確認"] for r in records)} 行、親子重複候補: {sum("親子重複候補" in r["要確認"] for r in records)} 行')
-    print('原典との照合・親子の扱い・完成根拠の監査が必要。候補行数は完成率の分母ではありません。')
+    print('未照合単位・親子の扱い・完成根拠の監査が必要。候補行数は完成率の分母ではありません。')
 
 
 if __name__ == '__main__':
