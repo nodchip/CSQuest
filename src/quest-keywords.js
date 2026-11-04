@@ -218,6 +218,7 @@ export const questKeywords={
  'forest-dsm-cache':['DSM','分散共有メモリー','整合性','無効化','distributed shared memory'],
  'forest-rdma-transfer':['RDMA','遠隔メモリ','remote memory','メモリー登録','rkey'],
  'forge-shared-ownership':['参照数','所有権','shared_ptr','回収','並行','memory reclamation'],
+ 'forge-hazard-reclaim':['ハザードポインタ','メモリ回収','hazard pointers','memory reclamation'],
  'forge-publication-race':['data race','データ競合','未定義動作','release','acquire','原子性'],
  'forge-release-acquire':['release','acquire','relaxed','happens-before','原子操作','メモリ順序'],
  'forge-channel-reachability':['CSP','状態空間','デッドロック','通信路','model checking','reachability'],

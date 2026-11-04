@@ -63,6 +63,8 @@ test('reviewed aliases point to real quests and support subject discovery withou
   assert.ok(search('stored procedure','village').includes('village-stored-procedure'));
   assert.ok(search('analogical reasoning','guild').includes('guild-ethical-analogy'));
   assert.ok(search('microservices','village').includes('village-communications-expedition'));
+  assert.ok(search('hazard pointers','workshop').includes('forge-hazard-reclaim'));
+  assert.ok(search('ハザードポインタ','workshop').includes('forge-hazard-reclaim'));
   assert.ok(!search('stored procedure','guild').includes('village-stored-procedure'));
   assert.deepEqual(search('949'),['ruin-media-delivery']);
 });
@@ -223,3 +225,4 @@ test('name workshop follows ethical learning in the engineering trail',()=>{cons
 test('community archive follows collection impacts in the data trail',()=>{const ids=findTrail('data').quests;assert.ok(ids.indexOf('archive-collection-impacts')>=0&&ids.indexOf('archive-collection-impacts')<ids.indexOf('archive-community-archive'));});
 
 test('systems trail connects worker measurement with replica recovery',()=>{const ids=findTrail('systems').quests;assert.ok(ids.indexOf('forest-worker-reuse')>=0);assert.ok(ids.indexOf('village-mirror-recovery')>ids.indexOf('forest-worker-reuse'));assert.ok(ids.indexOf('village-mirror-recovery')<ids.indexOf('forge-parallel-specification'));});
+test('systems trail connects ABA, reclamation and shared ownership',()=>{const ids=findTrail('systems').quests;assert.ok(ids.indexOf('forge-aba-stack')>=0);assert.equal(ids.indexOf('forge-hazard-reclaim'),ids.indexOf('forge-aba-stack')+1);assert.equal(ids.indexOf('forge-shared-ownership'),ids.indexOf('forge-hazard-reclaim')+1);});
