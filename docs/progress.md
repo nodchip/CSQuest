@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 完成率を根拠付きで計算する準備として、166知識単位の台帳からトピック・成果を分けて候補目録を生成し、候補 ID・行・限界と親子重複候補を記録。全3,620行中78行に機械的な親子重複候補。SPD-Web について原典と照合し、トピック19・成果６の分母候補と親見出しの扱いを記録。原典の網羅・完成判定の監査は全体では未完了で、候補数を完成率に使わない。台帳との同期を CI で検査。
+
 - 2026-11-04: 依頼1289で HTML の見出し、CSS の装飾、JavaScript の押下への反応を札で選び、掲示板の見本で比較する。役割は重なることと固定例の限界も明示。[MDN の HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content)、[CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content)、[JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity)を参照。全3253テストとビルドが成功。ブラウザで誤答、途中再開、３仕事・達成、320・390・1280px幅と再挑戦のキーボード操作を確認。実際の言語の記述、PHP や他のプラットフォームの言語は未評価。台帳の未照合436行・部分3182行・完了2行は重複を含み、完成率ではない。
 
 - 2026-11-04: 依頼800の区画による候補選別を、描画範囲と探索者の衝突範囲の双方に結び付け、全７個との比較と候補３・４個の正確な重なり確認を表示。登録・検索・重複排除の費用や実時間の短縮は評価しないと明示。[MDN の２次元衝突判定](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)を参照。既存の全整数長方形による候補網羅テスト、全3251テスト、台帳検査３テストとビルドが成功。ブラウザで誤答・再開・両場面・達成、320・390・1280px幅と再挑戦のキーボード操作を確認。固定された長方形の模型で、移動中の衝突や実プログラムの最適化は未評価。
