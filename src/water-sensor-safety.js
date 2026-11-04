@@ -5,6 +5,8 @@ export const waterSensorRequired=['normal:off','stale:off','stale:on','spoof:on'
 export function waterSensorTrace(mode,guard,steps){if(!Object.hasOwn(waterSensorModes,mode)||!Object.hasOwn(waterSensorGuards,guard)||!Number.isInteger(steps)||steps<0||steps>4)throw new RangeError('条件が不正です。');let level=1,delivered=0,hazard=false;const rows=[];for(let t=0;t<steps;t++){const reading=mode==='normal'?level:1,fresh=mode!=='stale'||t===0,closed=guard==='on'&&!fresh,inflow=closed?0:1,drain=reading>=2?1:0;level+=inflow-drain;delivered+=inflow;hazard ||= level>2;rows.push({time:t+1,reading,fresh,closed,inflow,drain,level,delivered,hazard});}return {level,delivered,hazard,rows};}
 const run=()=>({steps:0,guess:null,checked:false});
 export function waterSensorCreate(){return {mode:'normal',guard:'off',runs:Object.fromEntries(Object.keys(waterSensorModes).flatMap(m=>Object.keys(waterSensorGuards).map(g=>[`${m}:${g}`,run()]))),reflection:null};}
+export function waterSensorGuess(q,guess){const r=q.runs[`${q.mode}:${q.guard}`];if(r.steps!==0||!['safe','hazard'].includes(guess))return false;r.guess=guess;r.checked=false;return true;}
+export function waterSensorRetry(q){q.runs[`${q.mode}:${q.guard}`]=run();}
 export function waterSensorAdvance(q){const r=q.runs[`${q.mode}:${q.guard}`];if(r.steps>=4||r.guess===null)return false;r.steps++;return true;}
 export function waterSensorCheck(q){const r=q.runs[`${q.mode}:${q.guard}`];if(r.steps!==4||r.guess===null)return null;const result=waterSensorTrace(q.mode,q.guard,4),ok=(r.guess==='hazard')===result.hazard;r.checked=ok;return {...result,ok};}
 export function waterSensorDone(q){return waterSensorRequired.every(k=>q.runs[k].checked)&&q.reflection==='freshness';}
