@@ -3264,7 +3264,7 @@ SEP-Sustainability:トピック:CS Core:3,SEP,SEP-Sustainability,トピック,CS
 SEP-Sustainability:トピック:KA Core:4,SEP,SEP-Sustainability,トピック,KA Core,4,複雑な技術のシステム的影響,部分,802 は利用回数を変えた架空の総負荷を比較。実際のシステム全体や因果関係は未評価。,coverage-sep-sustainability.md,12,原典照合結果は監査記録参照
 SEP-Sustainability:トピック:KA Core:5,SEP,SEP-Sustainability,トピック,KA Core,5,日常に組み込まれた情報処理と持続可能性,部分,859で環境監視の観測間隔・欠測を架空模型で比較。実測、交通や社会的応用は未評価。,coverage-sep-sustainability.md,13,原典照合結果は監査記録参照
 SEP-Sustainability:トピック:KA Core:6,SEP,SEP-Sustainability,トピック,KA Core,6,社会システムとソフトウェアの相互依存,部分,802 は利用回数の仮定による違いを示す。利用者の技能、組織、政策や因果関係は未評価。,coverage-sep-sustainability.md,14,原典照合結果は監査記録参照
-SEP-Sustainability:学習成果:CS Core:1,SEP,SEP-Sustainability,学習成果,CS Core,1,特定分野・企画で持続可能に行動する方法,未照合,実際の企画での行動は未評価。,coverage-sep-sustainability.md,20,原典照合結果は監査記録参照
+SEP-Sustainability:学習成果:CS Core:1,SEP,SEP-Sustainability,学習成果,CS Core,1,特定分野・企画で持続可能に行動する方法,部分,1301で工房の修理・新調を期間・予算・停止時間と架空の負荷点で比較し選択。実際の企画での行動は未評価。,coverage-sep-sustainability.md,20,原典照合結果は監査記録参照
 SEP-Sustainability:学習成果:CS Core:2,SEP,SEP-Sustainability,学習成果,CS Core,2,導入に伴う環境影響を評価,部分,91・802 の架空の集計範囲・期間。実際の環境影響や廃棄は未評価。,coverage-sep-sustainability.md,21,原典照合結果は監査記録参照
 SEP-Sustainability:学習成果:CS Core:3,SEP,SEP-Sustainability,学習成果,CS Core,3,計算機使用と廃棄の世界的影響,部分,860で電子廃棄物全体の世界推計と不適切な処理の健康リスクを扱う。機器別・地域別の実態や自由な説明は未評価。,coverage-sep-sustainability.md,22,原典照合結果は監査記録参照
 SEP-Sustainability:学習成果:CS Core:4,SEP,SEP-Sustainability,学習成果,CS Core,4,現代の活動による持続可能性への影響,部分,依頼1208で在宅勤務の移動・家庭・建物・通信の架空負荷を比較。実測や活動全般は未評価。,coverage-sep-sustainability.md,23,原典照合結果は監査記録参照
