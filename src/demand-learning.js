@@ -1,0 +1,13 @@
+export const demandLearningLevel={id:'village-demand-learning',number:'1264',kind:'demand-learning',name:'祭りの仕入れを学ぶ',tag:'需要予測と費用',title:'何個仕入れる鑑定法を選ぶ？',story:'村の商人が祭り用の灯石を用意します。過去の需要と不足・余りの費用から、一定数を予測する方法を選びましょう。'};
+export const demandAmounts=[1,2,4];
+export const demandModes={equal:{name:'不足と余りを同じ費用にする',shortage:1},shortage:{name:'不足の費用を２倍にする',shortage:2}};
+export const demandSamples={train:[0,1,1,2,4],test:[0,4,4]};
+export function demandCost(mode,qty,sample){if(!Object.hasOwn(demandModes,mode)||!demandAmounts.includes(qty)||!Object.hasOwn(demandSamples,sample))throw new RangeError('条件が不正です。');const rows=demandSamples[sample].map(demand=>{const short=Math.max(0,demand-qty),extra=Math.max(0,qty-demand);return {demand,short,extra,cost:short*demandModes[mode].shortage+extra};});return {rows,total:rows.reduce((s,r)=>s+r.cost,0)};}
+export function demandBest(mode){const values=demandAmounts.map(qty=>demandCost(mode,qty,'train').total),min=Math.min(...values);return demandAmounts.filter((_,i)=>values[i]===min);}
+const trial=()=>({seen:[],chosen:null,tested:false});
+export function demandCreate(){return {mode:'equal',qty:1,trials:{equal:trial(),shortage:trial()},reflection:null};}
+export function demandRunTrain(q){const t=q.trials[q.mode];if(!t.seen.includes(q.qty))t.seen.push(q.qty);return demandCost(q.mode,q.qty,'train');}
+export function demandChoose(q){const t=q.trials[q.mode];if(!demandAmounts.every(n=>t.seen.includes(n)))return {ok:false,message:'まず３つの候補を過去の記録で比べましょう。'};if(!demandBest(q.mode).includes(q.qty))return {ok:false,message:'過去の費用の合計が最も小さい候補を選びましょう。'};t.chosen=q.qty;t.tested=false;return {ok:true,message:'過去の記録だけで方法を選びました。保留した後の記録で確かめましょう。'};}
+export function demandRunTest(q){const t=q.trials[q.mode];if(t.chosen===null)return null;t.tested=true;return demandCost(q.mode,t.chosen,'test');}
+export function demandDone(q){return Object.values(q.trials).every(t=>t.tested)&&q.reflection==='limits';}
+export function demandRestore(q){if(!q||!Object.hasOwn(demandModes,q.mode)||!demandAmounts.includes(q.qty)||![null,'limits','guarantee'].includes(q.reflection)||!q.trials)throw new RangeError('記録が不正です。');const trials={};for(const mode of Object.keys(demandModes)){const t=q.trials[mode];if(!t||!Array.isArray(t.seen)||new Set(t.seen).size!==t.seen.length||t.seen.some(n=>!demandAmounts.includes(n))||![null,...demandAmounts].includes(t.chosen)||typeof t.tested!=='boolean'||t.chosen!==null&&(!demandBest(mode).includes(t.chosen)||t.seen.length!==3)||t.tested&&t.chosen===null)throw new RangeError('記録が不正です。');trials[mode]={seen:[...t.seen],chosen:t.chosen,tested:t.tested};}return {mode:q.mode,qty:q.qty,trials,reflection:q.reflection};}
