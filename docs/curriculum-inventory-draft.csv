@@ -3601,7 +3601,7 @@ SPD-Web:トピック:KA Core:1,SPD,SPD-Web,トピック,KA Core,1,Web の言語,
 SPD-Web:トピック:KA Core:2-本体,SPD,SPD-Web,トピック,KA Core,2-本体,Web プラットフォーム・フレームワーク,未照合,フレームワークやメタフレームワークの役割を要照合。,coverage-spd-web.md,10,原典照合結果は監査記録参照・番号を要確認
 SPD-Web:トピック:KA Core:2a,SPD,SPD-Web,トピック,KA Core,2a,プラットフォームとクラウド,未照合,実サービス・フレームワークとの対応を要照合。,coverage-spd-web.md,11,原典照合結果は監査記録参照
 SPD-Web:トピック:KA Core:2b,SPD,SPD-Web,トピック,KA Core,2b,API と Web Components,部分,62で受付と再送、803で画面・受付・台帳の役割を操作。実 API と Web Components は未評価。,coverage-spd-web.md,12,原典照合結果は監査記録参照
-SPD-Web:トピック:KA Core:3,SPD,SPD-Web,トピック,KA Core,3,SaaS,部分,1290で遠隔の共有サービスと端末導入型の固定条件を比較。実サービス、契約・料金や多様な提供方式は未評価。,coverage-spd-web.md,13,原典照合結果は監査記録参照
+SPD-Web:トピック:KA Core:3,SPD,SPD-Web,トピック,KA Core,3,SaaS,部分,1290で遠隔の共有サービスと端末導入型の固定条件を比較し、1292で通信断時の村の要件に適用。実サービス、契約・料金や多様な提供方式は未評価。,coverage-spd-web.md,13,原典照合結果は監査記録参照
 SPD-Web:トピック:KA Core:4,SPD,SPD-Web,トピック,KA Core,4,DOM・アクセシビリティ等の Web 標準,部分,806で形・読み上げ名・キーボードの固定例。実 Web アプリの標準適合は未評価。,coverage-spd-web.md,14,原典照合結果は監査記録参照
 SPD-Web:トピック:KA Core:5,SPD,SPD-Web,トピック,KA Core,5,セキュリティとプライバシー,部分,805でセッション固定・番号交換・失効の模型。実装やプライバシー全般は未評価。,coverage-spd-web.md,15,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:6,SPD,SPD-Web,トピック,Non-core,6,Web アプリの要件分析,未照合,Web 固有の要件分析との対応を要照合。,coverage-spd-web.md,16,原典照合結果は監査記録参照
@@ -3610,7 +3610,7 @@ SPD-Web:トピック:Non-core:7b,SPD,SPD-Web,トピック,Non-core,7b,拡張性�
 SPD-Web:トピック:Non-core:7c,SPD,SPD-Web,トピック,Non-core,7c,サービス費用の見積り,未照合,料金モデルと見積りを要照合。,coverage-spd-web.md,19,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8a,SPD,SPD-Web,トピック,Non-core,8a,データ所在・アクセス経路,未照合,保存地とアクセス経路の検討を要照合。,coverage-spd-web.md,20,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8b,SPD,SPD-Web,トピック,Non-core,8b,データのアクセスと必要時の削除,未照合,原典の記載を追跡。完全性と可用性・削除の概念は一般には区別し、実運用を要照合。,coverage-spd-web.md,21,原典照合結果は監査記録参照
-SPD-Web:トピック:Non-core:9a,SPD,SPD-Web,トピック,Non-core,9a,モノリスとマイクロサービス,部分,1291で一体型と２作業場の停止・共通の門の固定例を比較。実サービスの設計・性能と他の依存は未評価。,coverage-spd-web.md,22,原典照合結果は監査記録参照
+SPD-Web:トピック:Non-core:9a,SPD,SPD-Web,トピック,Non-core,9a,モノリスとマイクロサービス,部分,1291で一体型と２作業場の停止・共通の門の固定例を比較し、1292で受付の要件に適用。実サービスの設計・性能と他の依存は未評価。,coverage-spd-web.md,22,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:9b,SPD,SPD-Web,トピック,Non-core,9b,マイクロフロントエンド,未照合,対応例を要照合。,coverage-spd-web.md,23,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:9c,SPD,SPD-Web,トピック,Non-core,9c,イベント駆動と REST の構成,未照合,長所・短所の比較を要照合。,coverage-spd-web.md,24,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:9d,SPD,SPD-Web,トピック,Non-core,9d,サーバーレスとオンデマンド,未照合,対応例を要照合。,coverage-spd-web.md,25,原典照合結果は監査記録参照
