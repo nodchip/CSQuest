@@ -23,8 +23,8 @@ test('successful-search distribution counts each existing book equally',()=>{
  assert.deepEqual([b.minimum,b.maximum,b.total,b.count],[1,4,21,8]);
  assert.deepEqual(b.histogram,[{count:1,frequency:1},{count:2,frequency:2},{count:3,frequency:4},{count:4,frequency:1}]);
  for(const size of growthDistributionSizes)for(const mode of ['linear','binary']){const d=growthDistribution(size,mode);assert.equal(d.histogram.reduce((sum,h)=>sum+h.frequency,0),size);assert.equal(d.histogram.reduce((sum,h)=>sum+h.count*h.frequency,0),d.total);}
- assert.throws(()=>growthDistribution(7,'linear'));assert.throws(()=>growthDistribution(8,'other'));
- const old=createGrowth();delete old.distributionSize;assert.equal(restoreGrowth(old).distributionSize,8);assert.equal(restoreGrowth({...old,distributionSize:64}).distributionSize,64);assert.throws(()=>restoreGrowth({...old,distributionSize:7}));
+ assert.throws(()=>growthDistribution(6,'linear'));assert.throws(()=>growthDistribution(8,'other'));
+ const old=createGrowth();delete old.distributionSize;assert.equal(restoreGrowth(old).distributionSize,8);assert.equal(restoreGrowth({...old,distributionSize:64}).distributionSize,64);assert.throws(()=>restoreGrowth({...old,distributionSize:6}));
 });
 test('changing the query distribution changes means and keeps gaps equally weighted',()=>{
  assert.deepEqual([growthDistribution(8,'linear','first').total,growthDistribution(8,'binary','first').total],[1,3]);
@@ -47,4 +47,14 @@ test('average predictions respect the query distribution and restore old drafts'
  assert.equal(restoreGrowth({...old,distributionGuess:'linear',distributionChecked:true}).distributionGuess,'linear');
  assert.throws(()=>restoreGrowth({...old,distributionChecked:true}));
  assert.throws(()=>restoreGrowth({...old,distributionGuess:'invalid'}));
+});
+test('non-power-of-two search reports each target and its actual path length',()=>{
+ const seven=growthDistribution(7,'binary','present'),nine=growthDistribution(9,'binary','present');
+ assert.deepEqual([seven.total,seven.maximum],[17,3]);assert.deepEqual([nine.total,nine.maximum],[25,4]);
+ assert.deepEqual(seven.rows.map(r=>r.comparisons),[3,2,3,1,3,2,3]);
+ assert.deepEqual(nine.rows.map(r=>r.target),[2,4,6,8,10,12,14,16,18]);
+ for(const scenario of ['present','first','missing'])for(const method of ['linear','binary']){
+  const result=growthDistribution(9,method,scenario);
+  for(const row of result.rows)assert.equal(row.comparisons,searchTrace(9,row.target,method).visited.length);
+ }
 });

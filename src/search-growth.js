@@ -1,7 +1,7 @@
 export const growthLevel={id:'archive-search-growth',number:'88',kind:'growth',name:'増え続ける書庫の本',tag:'探索の計算量',title:'本が増えると探し方は？',story:'鑑定士の書庫が広がっています。並んだ本を順に探す方法と半分に絞る方法で、調べる回数を比べましょう。'};
 export const growthCases={small:{name:'８冊・存在しない番号',size:8,target:17},large:{name:'64冊・存在しない番号',size:64,target:129},first:{name:'64冊・最初の番号',size:64,target:2}};
 export const growthOptions=[1,4,6,7,8,16,32,64];
-export const growthDistributionSizes=[8,16,32,64];
+export const growthDistributionSizes=[7,8,9,15,16,17,32,64];
 export const growthDistributionScenarios={present:'ある本を一様に選ぶ',first:'先頭の本だけを選ぶ',missing:'各隙間のない番号を一様に選ぶ'};
 export function searchTrace(size,target,method){
   if(!Number.isInteger(size)||size<1||size>64||!Number.isInteger(target)||target<0||target>2*size+1||!['linear','binary'].includes(method))throw new RangeError('探索の条件が不正です。');
@@ -14,9 +14,10 @@ export function worstComparisons(size,method){return Math.max(...Array.from({len
 export function growthDistribution(size,method,scenario='present'){
  if(!growthDistributionSizes.includes(size)||!['linear','binary'].includes(method)||!Object.hasOwn(growthDistributionScenarios,scenario))throw new RangeError('探索の条件が不正です。');
  const targets=scenario==='present'?Array.from({length:size},(_,i)=>2*(i+1)):scenario==='first'?[2]:Array.from({length:size+1},(_,i)=>2*i+1);
- const counts=targets.map(target=>searchTrace(size,target,method).visited.length);
+ const rows=targets.map(target=>({target,comparisons:searchTrace(size,target,method).visited.length}));
+ const counts=rows.map(row=>row.comparisons);
  const histogram=Object.entries(counts.reduce((h,count)=>(h[count]=(h[count]||0)+1,h),{})).map(([count,frequency])=>({count:Number(count),frequency}));
- return {minimum:Math.min(...counts),maximum:Math.max(...counts),total:counts.reduce((a,b)=>a+b,0),count:targets.length,histogram};
+ return {minimum:Math.min(...counts),maximum:Math.max(...counts),total:counts.reduce((a,b)=>a+b,0),count:targets.length,histogram,rows};
 }
 export function growthDistributionWinner(size,scenario){
  const a=growthDistribution(size,'linear',scenario),b=growthDistribution(size,'binary',scenario);
