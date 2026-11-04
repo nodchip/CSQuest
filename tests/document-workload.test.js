@@ -15,6 +15,7 @@ test('every order of the three independent changes has the same final records',(
   let q=createDocumentWorkload();for(const action of actions){const r=documentWorkloadStep(q,action);assert.equal(r.ok,true);q=r.state;}
   assert.deepEqual(q.documents.map(d=>[d.id,d.delivery.count]),[['A',2],['B',4],['D',4],['E',2]]);
   assert.equal(documentTotal(q.documents),12);assert.equal(q.summary,10);
+  assert.equal(documentTotal(q.documents,'north'),4);assert.equal(documentTotal(q.documents,'south'),4);assert.equal(documentTotal(q.documents,'west'),4);
  }
 });
 test('replay restores drafts without trusting saved records and rejects invalid histories',()=>{
@@ -22,6 +23,11 @@ test('replay restores drafts without trusting saved records and rejects invalid 
  assert.deepEqual(restoreNosqlSet(old).workload,createDocumentWorkload());
  const saved=documentWorkloadStep(createDocumentWorkload(),'update').state;saved.guess=11;saved.checked=true;old.workload=saved;
  assert.deepEqual(restoreNosqlSet(old).workload,saved);
+ const prior=structuredClone(saved);delete prior.scope;assert.equal(restoreDocumentWorkload(prior).scope,'all');
+ saved.scope='north';saved.guess=3;assert.equal(restoreDocumentWorkload(saved).scope,'north');
+ assert.equal(documentWorkloadStep(saved,'insert').state.scope,'north');
+ assert.throws(()=>documentTotal(saved.documents,'unknown'));
+ assert.throws(()=>restoreDocumentWorkload({...saved,scope:'unknown'}));
  assert.throws(()=>restoreDocumentWorkload({...saved,history:['remove','remove']}));
  assert.throws(()=>restoreDocumentWorkload({...saved,guess:null,checked:true}));
 });

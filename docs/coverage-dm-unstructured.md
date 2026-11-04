@@ -27,6 +27,8 @@
 
 依頼189の配達札は入れ子の束数を持つ４記録から始め、１記録の更新・追加・削除と全記録の合計を操作する。控えは手動で作り直すまで古くなり得るという固定方針で、即時維持が不可能という意味ではない。`tests/document-workload.test.js` は３変更の全６順序、控えと再集計、旧記録と履歴を検査する。[AWS の処理用途の説明](https://docs.aws.amazon.com/redshift/latest/dg/c_redshift-and-postgres-sql.html)を参照。実 DB、一般の索引や処理費用、同時実行・障害・性能は未評価。
 
+集計範囲は全村または北・南・西から選び、選択した村の札だけを足す。更新・追加・削除の後も範囲を保ち、全村の控えとの一致は全村の集計時だけ比較する。一般の問い合わせ言語や実行計画は扱わない。
+
 同じ依頼で巻物順を A・B・C・D と A・C・B・D に変えると、月草の印はそれぞれ `1100` と `1010`、同値の連続は２組と４組になる。印の各位置はその順の巻物に対応する。実際の符号化サイズは数えていない。
 
 依頼1037は [Mikolov らの Word2Vec 論文](https://research.google/pubs/efficient-estimation-of-word-representations-in-vector-space/)と [Stanford の単語ベクトル講義](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)を参考に、中心語１個、周囲語３候補、２次元の全語 softmax で１組の手本を３回学習する。２手本は同じ初期値から独立に学習する。中心と出力の８座標の勾配を数値微分と照合し、確率の和と各更新の損失を `tests/skipgram-embedding.test.js` で確認。実コーパス、単語の分割、負例サンプリング、一般の意味や性能は評価しない。
