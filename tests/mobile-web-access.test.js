@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {mobileWebCreate,mobileWebInstall,mobileWebOpen,mobileWebDone,mobileWebRestore} from '../src/mobile-web-access.js';
+test('first visit, caching and installation determine availability in the specified examples',()=>{const q=mobileWebCreate();assert.match(mobileWebOpen(q),/開けません/);q.online=true;assert.match(mobileWebOpen(q),/保存/);q.online=false;assert.match(mobileWebOpen(q),/事前に保存/);q.kind='native';assert.match(mobileWebOpen(q),/導入が必要/);assert.throws(()=>mobileWebInstall(q));q.online=true;mobileWebInstall(q);q.online=false;assert.match(mobileWebOpen(q),/含まれた地図/);assert.equal(mobileWebDone(q),false);q.reflection='depends';q.checked=true;assert.equal(mobileWebDone(q),true);});
+test('draft restoration copies seen observations and rejects invalid input',()=>{const q=mobileWebCreate();mobileWebOpen(q);const copy=mobileWebRestore(q);copy.seen.pop();assert.equal(q.seen.length,1);assert.throws(()=>mobileWebRestore({...q,seen:['web-online','web-online']}));assert.throws(()=>mobileWebRestore({...q,checked:true,reflection:'webnever'}));assert.throws(()=>mobileWebInstall(q));});
