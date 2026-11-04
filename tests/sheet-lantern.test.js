@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {sheetResult,sheetCreate,sheetTry,sheetDone,sheetRestore} from '../src/sheet-lantern.js';
+test('copied references and values for every lock and input combination',()=>{for(const herb2 of [5,7])for(const factor of [2,3])for(const a of [false,true])for(const b of [false,true]){const r=sheetResult(a,b,herb2,factor);assert.equal(r.first,3*factor);assert.equal(r.second,(a?3:herb2)*(b?factor:4));assert.equal(r.formula3,`${a?'$B$2':'B3'} × ${b?'$E$2':'E3'}`);assert.equal(r.correct,!a&&b);}assert.throws(()=>sheetResult(false,false,6,2),RangeError);});
+test('four reference settings and both input changes must be tried',()=>{const q=sheetCreate();for(const a of [false,true])for(const b of [false,true]){q.lockHerb=a;q.lockFactor=b;sheetTry(q);}q.lockHerb=false;q.lockFactor=true;q.reflection='references';assert.equal(sheetDone(q),false);q.herb2=7;sheetTry(q);q.factor=3;sheetTry(q);assert.equal(sheetDone(sheetRestore(q)),true);const copy=sheetRestore(q);copy.seen.pop();assert.equal(q.seen.length,4);assert.throws(()=>sheetRestore({...q,seen:['0:0','0:0']}),RangeError);});
