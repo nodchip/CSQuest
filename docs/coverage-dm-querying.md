@@ -15,7 +15,7 @@
 | 5 | Non-core | QBE と第４世代環境 | 未照合 | 関連教材と実環境の機能は未確認。 |
 | 6 | Non-core | 一般言語からの非手続き問い合わせの呼出し | 部分 | 依頼463で固定結果を反復する模型。呼出し方法の比較と実言語での実行は未評価。 |
 | 7 | Non-core | XPath・SPARQL などの問い合わせ言語 | 部分 | 1055で SPARQL の基本グラフパターンを参考に固定三つ組の結合を操作。SPARQL・XPath の記述や実際の実行は未評価。 |
-| 8 | Non-core | ストアドプロシージャ | 未照合 | 関連教材と実 DB での手続きは未確認。 |
+| 8 | Non-core | ストアドプロシージャ | 部分 | 依頼1293で保存された手続きに２種類の数量を渡し、呼出し権限と在庫条件を比較。実 DB の定義・権限設定や同時実行は未評価。 |
 
 ## 例示学習成果
 
@@ -30,3 +30,5 @@
 依頼664・125・462・463・465の固定例と限界は [問い合わせの記録](dm-querying.md) を参照。関連する `tests/query-rewrite.test.js`、`tests/roster-projection.test.js`、`tests/correlated-query.test.js`、`tests/result-cursor.test.js`、`tests/null-constraint.test.js` は各例の結果・復元等を検査するが、大学水準の問い合わせ作成能力を証明するものではない。
 
 依頼1073は [SQLite の NULL を含む式](https://www.sqlite.org/lang_expr.html)と [既定の ABORT による制約違反](https://www.sqlite.org/conflict.html)を参考に、４行の固定模型で条件・更新・取消しを操作する。条件式の不明は対象とせず、NULL の加算は NULL、０以上の CHECK に対する NULL は許される。制約違反時はその文の更新を戻すが、別の競合解決方式や過去の文の扱いは模型化しない。`node scripts/check-ledger-update.mjs` は Python の SQLite と15条件の結果・成功時の対象件数を照合し、取消しも SQLite で確認する。2026-11-03、SQLite 3.50.4 で一致。実 SQL の記述、接続、同時更新は評価しない。
+
+依頼1293は [PostgreSQL の手続き定義](https://www.postgresql.org/docs/current/sql-createprocedure.html)と[呼出し](https://www.postgresql.org/docs/current/sql-call.html)を参考に、保存された手続きへの引数と呼出し権限を扱う。５束から始まる独立した４試行で、許可されていなければ手続きを実行せず、許可された場合は数量を在庫と比較する。`tests/stored-procedure.test.js` は４条件・誤答・復元を検査。架空の条件付き更新であり、実 DB での手続き作成、権限やトランザクションの設定は評価しない。

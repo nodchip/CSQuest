@@ -977,7 +977,7 @@ DM-Querying:トピック:Non-core:4,DM,DM-Querying,トピック,Non-core,4,関�
 DM-Querying:トピック:Non-core:5,DM,DM-Querying,トピック,Non-core,5,QBE と第４世代環境,未照合,関連教材と実環境の機能は未確認。,coverage-dm-querying.md,15,原典照合結果は監査記録参照
 DM-Querying:トピック:Non-core:6,DM,DM-Querying,トピック,Non-core,6,一般言語からの非手続き問い合わせの呼出し,部分,依頼463で固定結果を反復する模型。呼出し方法の比較と実言語での実行は未評価。,coverage-dm-querying.md,16,原典照合結果は監査記録参照
 DM-Querying:トピック:Non-core:7,DM,DM-Querying,トピック,Non-core,7,XPath・SPARQL などの問い合わせ言語,部分,1055で SPARQL の基本グラフパターンを参考に固定三つ組の結合を操作。SPARQL・XPath の記述や実際の実行は未評価。,coverage-dm-querying.md,17,原典照合結果は監査記録参照
-DM-Querying:トピック:Non-core:8,DM,DM-Querying,トピック,Non-core,8,ストアドプロシージャ,未照合,関連教材と実 DB での手続きは未確認。,coverage-dm-querying.md,18,原典照合結果は監査記録参照
+DM-Querying:トピック:Non-core:8,DM,DM-Querying,トピック,Non-core,8,ストアドプロシージャ,部分,依頼1293で保存された手続きに２種類の数量を渡し、呼出し権限と在庫条件を比較。実 DB の定義・権限設定や同時実行は未評価。,coverage-dm-querying.md,18,原典照合結果は監査記録参照
 DM-Querying:学習成果:CS Core:1,DM,DM-Querying,学習成果,CS Core,1,選択・射影・結合・和・共通・差・除算を含む SQL を作る,部分,依頼664で選択・内部結合・射影を連続実行、125・126で集合演算と全称条件を別に操作。SQL の記述と任意の問い合わせの構築は対象外。,coverage-dm-querying.md,24,原典照合結果は監査記録参照
 DM-Querying:学習成果:CS Core:2,DM,DM-Querying,学習成果,CS Core,2,入れ子の問い合わせの相関を判別,部分,依頼462で村を参照する／参照しない存在判定と空の台帳を比較。任意の SQL の分析は未評価。,coverage-dm-querying.md,25,原典照合結果は監査記録参照
 DM-Querying:学習成果:CS Core:3,DM,DM-Querying,学習成果,CS Core,3,プログラムで取得結果を反復,部分,依頼463で２行・０行のカーソルを進め、合計し閉じる。実言語・接続・例外処理は対象外。,coverage-dm-querying.md,26,原典照合結果は監査記録参照
