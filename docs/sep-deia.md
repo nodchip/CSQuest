@@ -31,3 +31,5 @@
 依頼366では、三人が確保済みの練習時間を４・２・１時間、準備に必要な時間を各４時間、追加支援を６時間と仮定する。２時間ずつでは合計６・４・３時間、１・２・３時間では５・４・４時間。これは条件を考慮する例であり、人の能力や価値の測定ではない。実際には本人の意見、アクセス可能な教材、制度上の障壁や継続的な検討が必要である。平等と公平の導入的な区別は [UNESCO](https://www.unesco.org/en/query-list/e/equity-vs-equality-education) を参考にした。
 
 依頼498は [NASA のジョンソンの経歴](https://www.nasa.gov/people-of-nasa/katherine-g-johnson/)、[NASA のハミルトンのアポロ・ソフトウェア](https://science.nasa.gov/people/margaret-hamilton/)、[英国政府のチューリングの恩赦に関する記録](https://www.gov.uk/government/news/royal-pardon-for-ww2-code-breaker-dr-alan-turing)を要約し、業績と当時の状況を選ぶ。要約が制度上の障壁を記載しない場合は「この要約にない」とし、障壁の不在を断定しない。全選択肢と保存復元を検証した。３資料は各人の人生・歴史全体を網羅せず、実際の自由な分析を評価しない。
+
+依頼1317は架空の地域と学び舎について、対象者・申込み・参加の構成を異なる分母で比較し、原因を断定せず追加調査を考える。実際の所属機関や地域社会の構成・格差の調査ではない。詳細・出典は [項目別対応表](coverage-sep-deia.md) を参照。

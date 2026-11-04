@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-education-representation':['参加率','構成比','教育','DEIA','母数','申込み','格差'],
  'castle-access-purpose-gate':['最小権限','認証','認可','アクセス制御','利用目的','倫理'],
  'guild-access-purpose-records':['アクセス権限','情報の悪用','CFAA','Van Buren','コンピュータ犯罪','倫理'],
  'workshop-ewaste-cooperation':['電子廃棄物','E-waste','持続可能性','回収','修理','政策','専門家'],

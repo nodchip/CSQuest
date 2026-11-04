@@ -3114,7 +3114,7 @@ SEP-DEIA:学習成果:CS Core:1,SEP,SEP-DEIA,学習成果,CS Core,1,公平・平
 SEP-DEIA:学習成果:CS Core:2,SEP,SEP-DEIA,学習成果,CS Core,2,職場・チームの包摂的な言葉や行動を特定,部分,依頼359で架空の声を聞く固定例。職場の実践や用語の分析は未対応,coverage-sep-deia.md,24,原典照合結果は監査記録参照
 SEP-DEIA:学習成果:CS Core:3,SEP,SEP-DEIA,学習成果,CS Core,3,教室・実習室・Web ページのアクセシビリティ評価,部分,1016で小さな Web 試作品の鍵盤操作・操作名・状態通知を確認し修正。教室や実サイト全体、利用者・支援技術による評価は未実施。,coverage-sep-deia.md,25,原典照合結果は監査記録参照
 SEP-DEIA:学習成果:CS Core:4,SEP,SEP-DEIA,学習成果,CS Core,4,異なるアイデンティティを持つチーム員への敬意と協働,部分,依頼359は固定された選択。実際の協働は未評価,coverage-sep-deia.md,26,原典照合結果は監査記録参照
-SEP-DEIA:学習成果:CS Core:5,SEP,SEP-DEIA,学習成果,CS Core,5,所属機関の専攻者の構成と格差の要因を比較,未照合,対応例を要照合。,coverage-sep-deia.md,27,原典照合結果は監査記録参照
+SEP-DEIA:学習成果:CS Core:5,SEP,SEP-DEIA,学習成果,CS Core,5,所属機関の専攻者の構成と格差の要因を比較,部分,1317で架空の２地域の対象者・申込み・参加を比べ、原因を断定せず追加調査を考える。実際の所属機関の構成・要因分析は未評価。,coverage-sep-deia.md,27,原典照合結果は監査記録参照
 SEP-DEIA:学習成果:CS Core:6,SEP,SEP-DEIA,学習成果,CS Core,6,設計に埋め込まれた開発者の前提と価値,部分,依頼358で単一の申請経路の前提を比較。一般的な分析は未評価,coverage-sep-deia.md,28,原典照合結果は監査記録参照
 SEP-DEIA:学習成果:CS Core:7,SEP,SEP-DEIA,学習成果,CS Core,7,多様なチームの利点と不足のコスト,部分,1193で参加者・参加方法を比較し、固定例の見落としを確かめる。実際の成果や費用の測定、自由な説明は未評価。,coverage-sep-deia.md,29,原典照合結果は監査記録参照
 SEP-DEIA:学習成果:KA Core:8,SEP,SEP-DEIA,学習成果,KA Core,8,多様な専門家の業績の分析,部分,依頼498で３人の業績を資料と照合。自由な分析や幅広い業績は未対応,coverage-sep-deia.md,30,原典照合結果は監査記録参照
