@@ -3211,7 +3211,7 @@ SEP-Privacy:学習成果:CS Core:5,SEP,SEP-Privacy,学習成果,CS Core,5,文化
 SEP-Privacy:学習成果:KA Core:6,SEP,SEP-Privacy,学習成果,KA Core,6,法的保護の哲学的基礎を議論,未照合,関連体験の対応は未確認。,coverage-sep-privacy.md,29,原典照合結果は監査記録参照
 SEP-Privacy:学習成果:KA Core:7,SEP,SEP-Privacy,学習成果,KA Core,7,法令や法を超える原則を批評,未照合,法域を指定した比較と自由な批評は未確認。,coverage-sep-privacy.md,30,原典照合結果は監査記録参照
 SEP-Privacy:学習成果:KA Core:8,SEP,SEP-Privacy,学習成果,KA Core,8,適切な表現の自由を可能にする戦略,未照合,関連体験の対応は未確認。,coverage-sep-privacy.md,31,原典照合結果は監査記録参照
-SEP-Professional-Ethics:トピック:CS Core:1,SEP,SEP-Professional-Ethics,トピック,CS Core,1,共同体の価値観と法律,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,9,原典照合結果は監査記録参照
+SEP-Professional-Ethics:トピック:CS Core:1,SEP,SEP-Professional-Ethics,トピック,CS Core,1,共同体の価値観と法律,部分,1209で架空の町の規則・慣習・旅人への影響を比較。実際の共同体や法の判断は未評価。,coverage-sep-professional-ethics.md,9,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:CS Core:2,SEP,SEP-Professional-Ethics,トピック,CS Core,2,専門職の性質、注意、規律、信認、指導,部分,依頼367で作り手を明らかにし別の担当者の確認を受ける固定例。信認や指導は未対応,coverage-sep-professional-ethics.md,10,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:CS Core:3,SEP,SEP-Professional-Ethics,トピック,CS Core,3,技術・法・倫理の継続的学習と自己評価,部分,1197で２つの架空例について不足の認識・学習・改善・再確認を選ぶ。実際の自己評価、法的判断や学習は未評価。,coverage-sep-professional-ethics.md,11,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:CS Core:4,SEP,SEP-Professional-Ethics,トピック,CS Core,4,資格・倫理綱領・行動規範,部分,依頼360・367で ACM の倫理綱領の考え方を参照。各規範や資格の比較は未対応,coverage-sep-professional-ethics.md,12,原典照合結果は監査記録参照
@@ -3230,7 +3230,7 @@ SEP-Professional-Ethics:学習成果:CS Core:1,SEP,SEP-Professional-Ethics,学�
 SEP-Professional-Ethics:学習成果:CS Core:2,SEP,SEP-Professional-Ethics,学習成果,CS Core,2,特定の状況での対応を議論,部分,依頼360・367の選択式の対応。自由な議論は未評価,coverage-sep-professional-ethics.md,30,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:CS Core:3,SEP,SEP-Professional-Ethics,学習成果,CS Core,3,正しさ・信頼性・安全性を確保する倫理的責任とその根拠,部分,依頼360・367で綱領を参照し有限検査と報告を扱う。法令や規範全体からの説明は未対応,coverage-sep-professional-ethics.md,31,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:CS Core:4,SEP,SEP-Professional-Ethics,学習成果,CS Core,4,倫理に関する継続的学習の仕組み,部分,1197で資料・本人の意見・仲間の確認・再評価を固定例でたどる。実際の学習計画や継続は未評価。,coverage-sep-professional-ethics.md,32,原典照合結果は監査記録参照
-SEP-Professional-Ethics:学習成果:CS Core:5,SEP,SEP-Professional-Ethics,学習成果,CS Core,5,専門職の規範の長所・短所,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,33,原典照合結果は監査記録参照
+SEP-Professional-Ethics:学習成果:CS Core:5,SEP,SEP-Professional-Ethics,学習成果,CS Core,5,専門職の規範の長所・短所,部分,1302で規範を判断の手がかりとしつつ事実確認を要する２例。一般の規範の比較や自由な説明は未評価。,coverage-sep-professional-ethics.md,33,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:CS Core:6,SEP,SEP-Professional-Ethics,学習成果,CS Core,6,世界的な問題と専門家・政府の役割の分析,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,34,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:KA Core:7,SEP,SEP-Professional-Ethics,学習成果,KA Core,7,公共政策への貢献,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,35,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:KA Core:8,SEP,SEP-Professional-Ethics,学習成果,KA Core,8,不適切な専門職行動の結果,部分,依頼367で検査結果を過大に断言する選択を比較。現実の影響は未評価,coverage-sep-professional-ethics.md,36,原典照合結果は監査記録参照

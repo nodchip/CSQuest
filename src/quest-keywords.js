@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-professional-code':['倫理規範','専門職','行動規範','ACM','code of ethics','professional ethics'],
  'workshop-sustain-project':['持続可能性','修理','ライフサイクル','予算','停止時間','sustainability','repair'],
  'guild-design-accountability':['説明責任','設計責任','データ保護','GDPR','accountability','privacy by design'],
  'archive-left-recursion':['左再帰','文法変換','構文解析','left recursion','grammar transformation'],
