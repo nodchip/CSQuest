@@ -120,6 +120,46 @@
       "topics": 9,
       "outcomes": 6,
       "scope_sha256": "54d9b09282fa6b79d6d73b433a59d492272fbb89141d4b4d3f8ead624b399a3f"
+    },
+    "SDF-Fundamentals": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sdf-fundamentals.md",
+      "topics": 12,
+      "outcomes": 14,
+      "scope_sha256": "df12646ee735225c73b6676969692d587542574394d37865b227f5df15b19294"
+    },
+    "SDF-Data-Structures": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sdf-data-structures.md",
+      "topics": 4,
+      "outcomes": 4,
+      "scope_sha256": "d594e72f84caebfb9825ac9b9454be4710ca20f952c914982184dcb611233752"
+    },
+    "SDF-Algorithms": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sdf-algorithms.md",
+      "topics": 3,
+      "outcomes": 4,
+      "scope_sha256": "6e5c6e4e80b43a6a2fe6fc8f9d893cc27deceb460cc599fa5bcefece51539039"
+    },
+    "SDF-Practices": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sdf-practices.md",
+      "topics": 4,
+      "outcomes": 5,
+      "scope_sha256": "678b7af834c39586f6aa617d56269f7ab9956ba982950060193872f4df28335d"
+    },
+    "SDF-SEP": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sdf-sep.md",
+      "topics": 4,
+      "outcomes": 4,
+      "scope_sha256": "3fe7ae1d98ad29e84211858d36c0adb503b20532e4bef3401f4b30a858ce1bf7"
     }
   }
 }

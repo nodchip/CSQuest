@@ -57,6 +57,11 @@ test('reviewed aliases point to real quests and support subject discovery withou
   assert.ok(!search('GIF','guild').includes('ruin-media-delivery'));
   assert.ok(search('GIF','ruins','done',['ruin-media-delivery']).includes('ruin-media-delivery'));
   assert.ok(!search('GIF','ruins','todo',['ruin-media-delivery']).includes('ruin-media-delivery'));
+  assert.ok(search('ストアドプロシージャ','village').includes('village-stored-procedure'));
+  assert.ok(search('stored procedure','village').includes('village-stored-procedure'));
+  assert.ok(search('analogical reasoning','guild').includes('guild-ethical-analogy'));
+  assert.ok(search('microservices','village').includes('village-communications-expedition'));
+  assert.ok(!search('stored procedure','guild').includes('village-stored-procedure'));
   assert.deepEqual(search('949'),['ruin-media-delivery']);
 });
 test('saved drafts can be found independently of completion and region',()=>{
