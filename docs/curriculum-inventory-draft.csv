@@ -2159,7 +2159,7 @@ NC-Applications:トピック:未記載:1,NC,NC-Applications,トピック,未記�
 NC-Applications:トピック:未記載:2,NC,NC-Applications,トピック,未記載,2,クライアント・サーバー、P2P、クラウド、エッジ等,部分,62で端末と受付、667で中央書庫と既知の仲間からの受信・複製を比較。クラウド、エッジ等の一般の構成は未評価。,coverage-nc-applications.md,10,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:トピック:未記載:3,NC,NC-Applications,トピック,未記載,3,遅延・帯域・損失耐性など用途ごとの要求,部分,668で完全性・期限と、荷物の大きさ・伝送速度・伝播時間を固定例で比較。一般の要求分析と実通信は未評価。,coverage-nc-applications.md,11,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:トピック:未記載:4,NC,NC-Applications,トピック,未記載,4,HTTP などアプリケーション層プロトコル,部分,62で POST の再送、670で条件付き GET の固定例を操作。HTTP 全体や実通信は未評価。,coverage-nc-applications.md,12,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:トピック:未記載:5,NC,NC-Applications,トピック,未記載,5,TCP・UDP・ソケット API との相互作用,部分,424で接続開始、668で順序付きバイト列とデータグラムの損失時を操作。実ソケット API や実通信は未評価。,coverage-nc-applications.md,13,原典照合結果は監査記録参照・区分を要確認
+NC-Applications:トピック:未記載:5,NC,NC-Applications,トピック,未記載,5,TCP・UDP・ソケット API との相互作用,部分,424で接続開始、668で順序付きバイト列とデータグラムの損失時、999で順序付きバイト列から伝言を区切る固定例を操作。実ソケット API や実通信は未評価。,coverage-nc-applications.md,13,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:学習成果:未記載:1,NC,NC-Applications,学習成果,未記載,1,名前・住所・資源の位置の原則を定義,部分,421・669で DNS と URI の固定例を操作。一般の定義と自由な説明は未評価。,coverage-nc-applications.md,19,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:学習成果:未記載:2,NC,NC-Applications,学習成果,未記載,2,ネットワークアプリの要求を分析,部分,668で損失・期限と、荷物の大きさによる到着時間を比較。一般の分析や実測は未評価。,coverage-nc-applications.md,20,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:学習成果:未記載:3,NC,NC-Applications,学習成果,未記載,3,アプリケーション層プロトコルの詳細を説明,部分,62・670で POST 再送と条件付き GET を操作。HTTP 全体や自由な説明は未評価。,coverage-nc-applications.md,21,原典照合結果は監査記録参照・区分を要確認
