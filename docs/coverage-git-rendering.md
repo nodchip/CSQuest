@@ -12,8 +12,8 @@
 | 2a | ピンホールカメラ・相似三角形・投影 | 部分 | 64で奥行きの異なる２点の透視投影を比較。一般の３次元点は未評価。 |
 | 2b | カメラモデル | 部分 | 64・636で投影や横移動を比較。一般の姿勢やカメラモデルは未評価。 |
 | 2c | 射影幾何 | 部分 | 64で相似を使った固定点の投影。一般の射影幾何は未評価。 |
-| 3a | 放射測定 | 未照合 | 放射輝度・放射束等の定量的な扱いは未確認。 |
-| 3b | レンダリング方程式 | 未照合 | 一般の方程式と積分の教材は未確認。 |
+| 3a | 放射測定 | 部分 | 1258で放射輝度・立体角と余弦を使う固定例。放射束や一般の測定は未評価。 |
+| 3b | レンダリング方程式 | 部分 | 1258で２方向領域の反射と放出を近似し、半球の積分に結び付ける。一般の積分・間接光は未評価。 |
 | 3c | 自然界での放出・散乱等 | 部分 | 186・507で拡散光と遮蔽の固定模型。一般の散乱・放射輸送は未評価。 |
 | 4a | 三角形のラスタ化 | 部分 | 83で中心・４標本の固定例。一般の三角形と実装は未評価。 |
 | 4b | シェーダーを用いる API による描画 | 部分 | 639で描画工程の模型、871で WebGL の頂点・索引・シェーダーを使う固定立方体を描画。自由な API やシェーダーの作成は未評価。 |
@@ -43,3 +43,5 @@
 | 14 | カメラ変換とモデル変換を比較 | 部分 | 636でカメラと２物体の横移動を比較。回転・透視・一般の変換は未評価。 |
 
 関連検査には `tests/raster.test.js`、`tests/scene-hierarchy.test.js`、`tests/texture-filter.test.js`、`tests/render-pipeline.test.js`、`tests/transform-space.test.js`、`tests/visibility-paths.test.js` がある。各固定模型の範囲を検査し、一般的な描画や実装能力の証明ではない。
+
+依頼1258は [Physically Based Rendering の光輸送方程式](https://pbr-book.org/4ed/Introduction/Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm)と[放射測定の積分](https://pbr-book.org/4ed/Radiometry%2C_Spectra%2C_and_Color/Working_with_Radiometric_Integrals)を参考に、各１ sr の２領域の代表値と一定 BRDF を用いた粗い数値近似を扱う。`tests/rendering-equation.test.js` は５条件の寄与と合計、誤答・復元を検査する。残りの方向は入射光０と仮定し、一般の積分、複雑な材質、スペクトル、間接光の計算と実装は扱わない。
