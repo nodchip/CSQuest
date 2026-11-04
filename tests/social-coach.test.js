@@ -1,0 +1,4 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {socialScenes,socialCoachCreate,socialCoachAsk,socialCoachChoose,socialCoachDone,socialCoachRestore} from '../src/social-coach.js';
+test('the interaction requires asking, respects each response, and keeps state on a wrong action',()=>{let q=socialCoachCreate();assert.equal(socialCoachChoose(q,'picture'),null);for(const scene of socialScenes){assert.equal(socialCoachAsk(q),true);q=socialCoachRestore(q);const wrong=scene.correct==='stop'?'picture':'stop';assert.equal(socialCoachChoose(q,wrong).ok,false);assert.equal(q.asked,true);assert.equal(socialCoachChoose(q,scene.correct).ok,true);}assert.equal(socialCoachDone(q),false);q.reflection='choice';assert.equal(socialCoachDone(socialCoachRestore(q)),true);assert.equal(socialCoachAsk(q),false);assert.throws(()=>socialCoachRestore({...q,asked:true}),RangeError);});
