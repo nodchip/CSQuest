@@ -1,5 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {finiteSizes,finiteSamples,finiteBound,finiteCreate,finiteCheck,finiteComplete,finiteRestore} from '../src/finite-generalization.js';
+import {finiteSizes,finiteSamples,finiteBound,finiteSampling,finiteCreate,finiteCheck,finiteComplete,finiteRestore} from '../src/finite-generalization.js';
 test('six bounds match independent rational computations and the 5 percent threshold',()=>{const expected=[false,true,true,false,false,true];let i=0;for(const size of finiteSizes)for(const n of finiteSamples){const bound=finiteBound(size,n);assert.ok(Math.abs(bound-Math.min(1,size*3**n/4**n))<1e-14);assert.equal(bound<=0.05,expected[i++]);}assert.throws(()=>finiteBound(5,10));});
 test('wrong predictions do not count, and all six comparisons and reflection are required',()=>{const q=finiteCreate();assert.throws(()=>finiteCheck(q));q.guess='within';assert.equal(finiteCheck(q).ok,false);assert.deepEqual(q.seen,[]);for(const size of finiteSizes)for(const samples of finiteSamples){q.size=size;q.samples=samples;q.guess=finiteBound(size,samples)<=0.05?'within':'not-within';assert.equal(finiteCheck(q).ok,true);finiteCheck(q);}assert.equal(q.seen.length,6);assert.equal(finiteComplete(q),false);q.reflection='assumptions';assert.equal(finiteComplete(q),true);const copy=finiteRestore(q);copy.seen.pop();assert.equal(q.seen.length,6);assert.throws(()=>finiteRestore({...q,seen:['4:10','4:10']}));assert.throws(()=>finiteRestore({...q,samples:5}));});
+test('independent draws and repeated draws have the same marginal but different joint probabilities',()=>{
+ const independent=finiteSampling('independent'),repeated=finiteSampling('repeated');
+ assert.deepEqual([independent.missed,independent.total],[9,16]);
+ assert.deepEqual([repeated.missed,repeated.total],[3,4]);
+ for(const sample of [independent,repeated])for(const index of [0,1])assert.equal(sample.pairs.filter(p=>p[index]===4).length/sample.total,1/4);
+ assert.throws(()=>finiteSampling('other'));
+ const old=finiteCreate();delete old.compareMode;assert.equal(finiteRestore(old).compareMode,null);
+ assert.equal(finiteRestore({...old,compareMode:'repeated'}).compareMode,'repeated');
+ assert.throws(()=>finiteRestore({...old,compareMode:'other'}));
+});
