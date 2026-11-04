@@ -27,3 +27,5 @@
 依頼189の追加比較では、単一鍵の読書きのみを要する用途と、複数記録の一括確定・結合を要する用途について、機能を明示した２つの架空の箱を選ぶ。後者では例の鍵の箱は条件を満たさないが、NoSQL 全般の制約ではない。例えば [DynamoDB の複数項目取引](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transactions.html)がある。`tests/storage-choice.test.js` は選択肢と旧形式の保存・復元を検査する。実製品の比較や一般の設計は未評価。
 
 同じ依頼では４個の架空オブジェクトについて、`north/` の接頭辞と鍵全体の違いを操作する。[Amazon S3 の鍵](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html)に基づく固定例で、`tests/object-archive.test.js` は接頭辞と旧記録の復元を検査する。実際のバケット操作やアクセス管理は未評価。
+
+削除対象の候補の比較では、`north/` に一致する２件と `north` に一致する３件を表示する。実際の削除は行わない。対象を列挙する固定模型であり、実サービスの一覧や一括処理の仕様を再現するものではない。

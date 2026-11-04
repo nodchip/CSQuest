@@ -4,6 +4,12 @@ export const archiveCases={
   identity:{question:'同じ保管庫にある north/map.png と south/map.png は同じ鍵でしょうか？',answer:'different',explanation:'鍵は接頭辞を含む文字列全体です。同じ末尾でも鍵は異なります。'}
 };
 export function archiveMatches(prefix){return archiveObjects.filter(key=>key.startsWith(prefix));}
+export const archivePrefixes=['north/','north'];
+export function restoreArchivePrefix(saved){
+ if(saved===undefined)return 'north/';
+ if(!archivePrefixes.includes(saved))throw new RangeError('接頭辞の記録が不正です。');
+ return saved;
+}
 export function createArchiveAnswers(){return Object.fromEntries(Object.keys(archiveCases).map(id=>[id,{choice:null,checked:false}]));}
 export function restoreArchiveAnswers(saved){
  if(saved===undefined)return createArchiveAnswers();

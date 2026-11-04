@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {archiveMatches,archiveCases,createArchiveAnswers,restoreArchiveAnswers} from '../src/object-archive.js';
+import {archiveMatches,archiveCases,createArchiveAnswers,restoreArchiveAnswers,restoreArchivePrefix} from '../src/object-archive.js';
 import {createNosqlSet,restoreNosqlSet} from '../src/nosql-models.js';
 
 test('prefix includes the slash, and full keys distinguish identical basenames',()=>{
@@ -11,8 +11,11 @@ test('prefix includes the slash, and full keys distinguish identical basenames',
 test('answers survive a draft; older drafts start with no archive answers',()=>{
  const s=createNosqlSet(),draft={selected:'kv',histories:{kv:[],document:[]},formats:s.formats,schema:s.schema,choices:s.choices};
  assert.deepEqual(restoreNosqlSet(draft).archive,createArchiveAnswers());
+ assert.equal(restoreNosqlSet(draft).archivePrefix,'north/');
  draft.archive={north:{choice:'two',checked:true},identity:{choice:'same',checked:true}};
  assert.deepEqual(restoreNosqlSet(draft).archive,draft.archive);
+ draft.archivePrefix='north';assert.equal(restoreNosqlSet(draft).archivePrefix,'north');
+ assert.throws(()=>restoreArchivePrefix('south'));
  assert.throws(()=>restoreArchiveAnswers({...draft.archive,north:{choice:'different',checked:true}}));
  assert.throws(()=>restoreArchiveAnswers({...draft.archive,identity:{choice:null,checked:true}}));
 });
