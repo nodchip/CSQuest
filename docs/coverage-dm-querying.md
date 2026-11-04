@@ -33,4 +33,4 @@
 
 依頼1293は [PostgreSQL の手続き定義](https://www.postgresql.org/docs/current/sql-createprocedure.html)と[呼出し](https://www.postgresql.org/docs/current/sql-call.html)を参考に、保存された手続きへの引数と呼出し権限を扱う。５束から始まる独立した４試行で、許可されていなければ手続きを実行せず、許可された場合は数量を在庫と比較する。`tests/stored-procedure.test.js` は４条件・誤答・復元を検査。架空の条件付き更新であり、実 DB での手続き作成、権限やトランザクションの設定は評価しない。
 
-依頼1295は [IBM の QBE の説明](https://public.dhe.ibm.com/software/data/qmf/xhtml/QMFusing/dsqk2mst11.htm)と[Cornell の存在条件の例](https://www.cs.cornell.edu/~ross/publications/proofgen/proofgen_tate_popl10_tr.pdf)を参考に、４行の配達台帳について条件・返す項目を選ぶ。条件に合う配達がある村を重複なく求め、全配達が条件に合うことと区別する。`tests/example-query.test.js` は18条件の結果、固定の境界・誤答・復元・達成を検査。一般の関係論理、実際の QBE・第４世代環境や問い合わせ言語の記述は評価しない。
+依頼1295は [IBM の QBE の説明](https://public.dhe.ibm.com/software/data/qmf/xhtml/QMFusing/dsqk2mst11.htm)と[Cornell の存在条件の例](https://www.cs.cornell.edu/~ross/publications/proofgen/proofgen_tate_popl10_tr.pdf)を参考に、４行と５行の２つの配達台帳について条件・返す項目を選ぶ。条件に合う配達がある村を重複なく求め、全配達が条件に合うことと区別する。同じ結果になった２条件が別の日には異なる例も試せる。`tests/example-query.test.js` は36条件の結果、固定の境界・誤答・旧形式を含む復元・達成を検査。`node scripts/check-example-query.mjs` は SQLite と36条件の順序を除く結果を照合する。一般の関係論理、実際の QBE・第４世代環境や問い合わせ言語の記述は評価しない。
