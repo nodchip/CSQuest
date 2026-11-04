@@ -10,7 +10,7 @@
 | 2-本体 | KA Core | Web プラットフォーム・フレームワーク | 未照合 | フレームワークやメタフレームワークの役割を要照合。 |
 | 2a | KA Core | プラットフォームとクラウド | 未照合 | 実サービス・フレームワークとの対応を要照合。 |
 | 2b | KA Core | API と Web Components | 部分 | 62で受付と再送、803で画面・受付・台帳の役割を操作。実 API と Web Components は未評価。 |
-| 3 | KA Core | SaaS | 未照合 | サービス提供方式の比較を要照合。 |
+| 3 | KA Core | SaaS | 部分 | 1290で遠隔の共有サービスと端末導入型の固定条件を比較。実サービス、契約・料金や多様な提供方式は未評価。 |
 | 4 | KA Core | DOM・アクセシビリティ等の Web 標準 | 部分 | 806で形・読み上げ名・キーボードの固定例。実 Web アプリの標準適合は未評価。 |
 | 5 | KA Core | セキュリティとプライバシー | 部分 | 805でセッション固定・番号交換・失効の模型。実装やプライバシー全般は未評価。 |
 | 6 | Non-core | Web アプリの要件分析 | 未照合 | Web 固有の要件分析との対応を要照合。 |
@@ -33,10 +33,12 @@
 | 1 | KA Core | マイクロサービスの Web アプリ設計・実装 | 未照合 | 実装能力は直接評価しない。 |
 | 2 | KA Core | ホスティング・サービス・拡張の制約 | 未照合 | 体系的な比較を要照合。 |
 | 3 | KA Core | Web と汎用プログラミングの比較 | 未照合 | 比較を要照合。 |
-| 4 | KA Core | SaaS と従来製品の比較 | 未照合 | 比較を要照合。 |
+| 4 | KA Core | SaaS と従来製品の比較 | 部分 | 1290で記録の場所・通信断・更新担当を固定例で比較。実際の製品、費用や自由な説明は未評価。 |
 | 5 | KA Core | Web 標準が開発に与える影響 | 部分 | 806で３つの利用条件と改善策の固定例。Web 標準全般の議論は未評価。 |
 | 6 | KA Core | Web アプリを標準に照らし評価 | 未照合 | 実アプリへの評価・適合は未確認。 |
 
 803・804・805は画面と受付、状態、認証の模型で、実ネットワーク・サーバー・本人認証を再現しない。対象の前提と検査は[既存調査](spd-web.md)および `tests/web-three-tier.test.js`、`tests/web-session.test.js`、`tests/session-fixation.test.js` を参照。
 
 依頼1289では見出し追加、色と枠、ボタンによる灯りの切替えに対応する札を選び、実際に見本を操作する。言語ごとにできることは重なるため、HTML の操作要素・CSS の状態による表現・JavaScript による内容変更もあると明示する。`tests/web-layers.test.js` は各札の選択・試行・操作・判定と保存の検証を行う。見本は固定されており、実際のコードの読み書き、PHP や他の技術を評価しない。参考：[MDN HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content)、[CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content)、[JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity)。
+
+依頼1290は [NIST の SaaS の定義](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf)と [CISA の SaaS での役割分担](https://www.cisa.gov/sites/default/files/2024-05/Software%20Transparency%20in%20SaaS%20Environments.pdf)を参考に、遠隔の共有記録と同期しない端末内の記録を、通信あり・なしの４条件で比べる。遠隔側はオフラインの控えがなく、端末側は常に利用可能という仮定。提供者の本体更新と、利用者による権限や復元の確認を区別する。`tests/software-service.test.js` は４条件、誤答、達成と復元を検査。実際の SaaS や導入型製品の機能・料金・契約、通信以外の障害、実サービスの責任分担は評価しない。
