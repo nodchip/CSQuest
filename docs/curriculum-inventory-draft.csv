@@ -943,7 +943,7 @@ DM-NoSQL:学習成果:KA Core:2,DM,DM-NoSQL,学習成果,KA Core,2,キー・バ�
 DM-Processing:トピック:未記載:1,DM,DM-Processing,トピック,未記載,1,ページ構造,部分,依頼662で葉と案内頁の容量・分割。実際の頁のヘッダーや配置は未評価。,coverage-dm-processing.md,9,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:トピック:未記載:2a,DM,DM-Processing,トピック,未記載,2a,B+ 木索引,部分,依頼662で一意な６鍵の挿入、探索、範囲走査。削除・重複・実頁の実装は未評価。,coverage-dm-processing.md,10,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:トピック:未記載:2b,DM,DM-Processing,トピック,未記載,2b,静的・動的ハッシュ索引,部分,依頼663で拡張可能ハッシュの固定例。静的ハッシュ、削除や一般の衝突は未評価。,coverage-dm-processing.md,11,原典照合結果は監査記録参照・区分を要確認
-DM-Processing:トピック:未記載:2c,DM,DM-Processing,トピック,未記載,2c,SQL による索引作成,未照合,操作の対応は未確認。SQL 文の記述は対象外。,coverage-dm-processing.md,12,原典照合結果は監査記録参照・区分を要確認
+DM-Processing:トピック:未記載:2c,DM,DM-Processing,トピック,未記載,2c,SQL による索引作成,部分,依頼89で名前・表・列順を札で選び、２種類の作成指示を組み立てる。実際の実行と任意の SQL 記述は未評価。,coverage-dm-processing.md,12,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:トピック:未記載:3a,DM,DM-Processing,トピック,未記載,3a,ヒープファイル,部分,依頼1201で空き頁への挿入・削除・全走査を操作。可変長レコード、実ファイルや同時実行は未評価。,coverage-dm-processing.md,13,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:トピック:未記載:3b,DM,DM-Processing,トピック,未記載,3b,ハッシュファイル,部分,依頼663で桶と案内表を操作。ファイル構造全般や実ディスクの利用は未評価。,coverage-dm-processing.md,14,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:トピック:未記載:4a,DM,DM-Processing,トピック,未記載,4a,外部整列,部分,依頼665で８頁を３・４頁の机で整列・併合し、４条件で回数を見積もる。一般の最適化や実装は未評価。,coverage-dm-processing.md,15,原典照合結果は監査記録参照・区分を要確認
@@ -961,7 +961,7 @@ DM-Processing:トピック:未記載:8a,DM,DM-Processing,トピック,未記載,
 DM-Processing:トピック:未記載:8b,DM,DM-Processing,トピック,未記載,8b,索引の性能への影響,部分,依頼89・469で候補や頁の模型を比較。実測・更新費用・環境への影響は未評価。,coverage-dm-processing.md,27,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:トピック:未記載:8c,DM,DM-Processing,トピック,未記載,8c,非正規化,部分,依頼470で結合と写しの更新漏れを比較。実測や一般のチューニングは未評価。,coverage-dm-processing.md,28,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:学習成果:未記載:1,DM,DM-Processing,学習成果,未記載,1,B+ 木・ハッシュ索引の目的と構成を説明,部分,依頼662・663で木と桶を探索。一般の構成や自由な説明は未評価。,coverage-dm-processing.md,34,原典照合結果は監査記録参照・区分を要確認
-DM-Processing:学習成果:未記載:2,DM,DM-Processing,学習成果,未記載,2,SQL で索引を作る,未照合,関連操作は未確認。SQL 文の記述は対象外。,coverage-dm-processing.md,35,原典照合結果は監査記録参照・区分を要確認
+DM-Processing:学習成果:未記載:2,DM,DM-Processing,学習成果,未記載,2,SQL で索引を作る,部分,依頼89で２つの作成指示を札の選択で組み立てる代替体験。任意の SQL の記述や実 DB の操作は直接評価しない。,coverage-dm-processing.md,35,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:学習成果:未記載:3,DM,DM-Processing,学習成果,未記載,3,外部整列・重複除去・各結合アルゴリズムの手順を示す,部分,依頼665・666で外部整列、ハッシュ結合と整列済み台帳の併合結合の固定手順。その他の演算子や自由な説明は未評価。,coverage-dm-processing.md,36,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:学習成果:未記載:4,DM,DM-Processing,学習成果,未記載,4,各アルゴリズムの I/O 数を導く,部分,依頼665で４条件の列数・併合回数から読書きを予測。一般の導出や他の演算子は未評価。,coverage-dm-processing.md,37,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:学習成果:未記載:5,DM,DM-Processing,学習成果,未記載,5,関係代数を左深・パイプライン向けに変換,部分,依頼664で条件の位置を比較。左深木・パイプラインへの一般の変換は未評価。,coverage-dm-processing.md,38,原典照合結果は監査記録参照・区分を要確認
