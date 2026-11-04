@@ -40,6 +40,30 @@
       "topics": 12,
       "outcomes": 9,
       "scope_sha256": "7c184be259343b023dfbf9835e5b77e1a6f61190150bb57967da11db4a66b0b6"
+    },
+    "DM-Modeling": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-modeling.md",
+      "topics": 12,
+      "outcomes": 5,
+      "scope_sha256": "2a2db7ee2e7a3a303f3f770c4e85bb7ceeac51c5e3656a5b9c4c79019331457d"
+    },
+    "DM-Relational": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-relational.md",
+      "topics": 13,
+      "outcomes": 9,
+      "scope_sha256": "3ab1121de2e185abd9085d31603feaadc46ce961f0d3f123d5c4d62dd3985ea5"
+    },
+    "DM-Unstructured": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-unstructured.md",
+      "topics": 12,
+      "outcomes": 0,
+      "scope_sha256": "be3e4f477eac365e3baf95ab667b37c1982ca5e0347a12e66cbf45566cdb5fe2"
     }
   }
 }
