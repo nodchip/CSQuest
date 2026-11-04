@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1287で同じ８・32仕事について Web Worker の毎回作成と再利用を実測比較。[MDN の Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)を参照。係の数、各返事、中断・保存を検査し、1286でも中断後の保留イベントを無視するよう修正。全3247テストとビルドが成功。ブラウザで実 Worker の４条件・再開・中断・達成と従来の測定、320・390・1280px幅を確認。逐次の固定仕事で、同時並列・メモリや一般性能は未評価。
+
 - 2026-11-04: 依頼1286で実際の Web Worker へ64・256枚を１枚または16枚ずつ逐次往復させ、応答・全体時間と処理量を測る。[MDN の Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)を参照。応答の和・順序・件数、中断、復元を検査し、全3242テストとビルドが成功。ブラウザで実 Worker の４条件・保存再開・中断・達成、320・390・1280px幅を確認。実測値は端末依存で、ネットワークや一般性能は未評価。
 
 - 2026-11-04: 依頼1285で６単位の仕事について速さ・期限・稼働基本電力を変え、６刻全体の消費を比較。[Pillai・Shin](https://www.cs.cmu.edu/~15-821/assets/READINGS/PAPERS/pillai2001.pdf)と[Martin・Siewiorek](https://www.cs.cmu.edu/~tlm/papers/islped99_8_2.pdf)を参照。12条件・各刻・期限・４条件の最小選択と復元を検査し、全3239テストとビルドが成功。ブラウザで期限違反・再開・12条件・達成、320・390・1280px幅とキーボード操作を確認。電力は架空で実測や実 OS の期限保証は未評価。

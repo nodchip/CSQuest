@@ -36,7 +36,7 @@
 | 9 | KA Core | 複数実装のスループットを実測比較 | 部分 | 1286で１枚ずつ・16枚ずつの Worker への送り方を２規模で実測。固定計算・逐次往復であり、一般の並列実装やネットワークは未評価。 |
 | 10 | KA Core | 通信・データ遅延の問題を特定・修正 | 部分 | 1286で送信単位を切り替え、往復回数・初回応答と全体時間を実測。一般の実装の原因特定や修正は未評価。 |
 | 11 | KA Core | 通信・データ遅延の問題を特定・修正 | 部分 | 原典の10と同文。1286で送信単位と実測を比較するが、一般の実装の原因特定や修正は未評価。 |
-| 12 | KA Core | 資源管理のオーバーヘッドの問題を特定・修正 | 未照合 | 実装での特定と修正は未確認。 |
+| 12 | KA Core | 資源管理のオーバーヘッドの問題を特定・修正 | 部分 | 1287で Worker の毎回作成と再利用を実測比較。起動のみの分離測定、一般の実装の原因特定・修正は未評価。 |
 | 13 | KA Core | 信頼性・可用性の問題を特定・修正 | 未照合 | 実装での特定と修正は未確認。 |
 
 関連する検査には `tests/temporal-traces.test.js`、`tests/liveness-queue.test.js`、`tests/pdc-scaling.test.js`、`tests/parallel-dag.test.js`、`tests/availability-attack.test.js` がある。各模型で定めた条件の検査であり、原典全体の達成を保証しない。
@@ -44,3 +44,5 @@
 依頼1104では [Oracle のストリームの順序と並列処理](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html) を参考に、順序をもつ逐次出力を二つに分割し、到着順と元の番号順の集約を比較。各工房が担当分を正しく１回だけ返すという仮定の下、両方を待つ条件と順序・網羅の維持を選ぶ。実 API や通信の重複・紛失・故障、待機が終了する保証は評価しない。`tests/parallel-specification.test.js` で２順序、早い公開、保存と達成を検査する。
 
 依頼1286は [MDN の Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)と [performance.now](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) を参照。ブラウザ内で実際に専用 Worker へ64・256個の整数を１個または16個ずつ、返答を待ちながら送り、二乗和と件数を検査する。Worker の準備後から最終応答までの時間、最初の返答、往復回数、全体処理量を記録。最初の返答の対象件数は異なる。`tests/message-benchmark.test.js` は通信の順序、和、件数、失敗・中断・保存を検査し、公開ビルドのブラウザで実 Worker も確認する。実ネットワーク、逐次往復以外、データの到着待ち、他の端末や実サービスへの一般化は扱わない。
+
+依頼1287は [MDN の Web Worker の作成・通信・終了](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)を参考に、各仕事で16整数の二乗和を求める処理を８・32仕事、返答を待ちながら実際に処理する。各仕事で作成・終了する方法と１ Worker の再利用を比較。最初の生成直前から最後の返事までを測り、起動、途中の終了呼出し、メッセージ、計算と待ちを含み、最後の終了呼出しは含まない。`tests/worker-reuse.test.js` は生成回数、各返事、終了、中断と保存を検査。1286も中断後の保留イベントを無視するよう補強。実ネットワーク、同時並列、メモリ使用量や一般の最適性は未評価。
