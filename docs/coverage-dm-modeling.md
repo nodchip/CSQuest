@@ -41,6 +41,6 @@
 
 依頼1170は固定の緯度経度を球面上の領域として扱い、正距円筒・球面メルカトルの座標と見え方を比較する。出典と検査、模型の限界は [GIT-Visualization](coverage-git-visualization.md) を参照。
 
-依頼1228は [Microsoft の参照の説明](https://support.microsoft.com/en-us/excel/switch-between-relative-absolute-and-mixed-references)を参考に、２行の乗算で相対・絶対参照の４設定と２種類の値の変更を比較する。固定された下方向コピーのみを模型化し、値の変更後は再度コピー操作で計算する。`tests/sheet-lantern.test.js` で全16入力・設定と保存・達成を検査し、配信用ビルドで４設定・再開・値の変更と320・390・1280px幅、キーボード操作を確認。一般の関数、混合参照、循環参照、実際の表計算ファイルは未評価。
+依頼1228は [Microsoft の参照の説明](https://support.microsoft.com/en-us/excel/switch-between-relative-absolute-and-mixed-references)を参考に、２行の乗算で相対・絶対参照の４設定と２種類の値の変更を比較する。固定された下方向コピーと、コピー済み式の参照先を変更したときの自動再計算を模型化する。[Microsoft の再計算の説明](https://support.microsoft.com/en-us/excel/change-formula-recalculation-iteration-or-precision-in-excel)を参照。既存の途中記録はコピー済み式なしとして復元する。`tests/sheet-lantern.test.js` で全16入力・設定、自動再計算、旧記録の復元と達成を検査し、配信用ビルドで４設定・再開・値の変更と320・390・1280px幅、キーボード操作を確認。一般の関数、混合参照、循環参照、実際の表計算ファイルは未評価。
 
 依頼192は有向ラベル付きの固定グラフで「集める」「使う」の順に２辺を操作し、２症状のすべての経路と重複を除いた薬師を選ぶ。原典 DM-Modeling のグラフデータとリンク走査に対応する固定例として照合し、既存テストと配信用画面で両症状の達成を確認した。一般の経路長・グラフ問合せ言語や実 DB は未評価。
