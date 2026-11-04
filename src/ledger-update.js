@@ -26,6 +26,17 @@ export function ledgerReplay(index,events){
  }
  return {values,pending,proof,committed,done:committed&&proof&&values.every((x,i)=>x===mission.target[i])};
 }
+export function ledgerAppend(index,history,event){
+ const state=ledgerReplay(index,history);
+ let base=history;
+ if(history.length>=24&&!state.committed){
+  // Before commit the stored values are unchanged. Preserve the required
+  // observation and any pending preview, not the discarded experiments.
+  base=state.proof?index===0?[{type:'preview',filter:'all',operation:'plus1'},{type:'rollback'}]:index===1?[{type:'preview',filter:'eqnull',operation:'zero'},{type:'rollback'}]:[{type:'preview',filter:'all',operation:'minus2'}]:[];
+  if(state.pending)base.push({type:'preview',filter:state.pending.filter,operation:state.pending.operation});
+ }
+ const next=[...base,event];ledgerReplay(index,next);return next;
+}
 export function ledgerCreate(){return {current:0,filter:'all',operation:'plus1',histories:[[],[],[]],reflection:null};}
 export function ledgerDone(q){return q.histories.every((h,i)=>ledgerReplay(i,h).done)&&q.reflection==='unknown';}
 export function ledgerRestore(q){
