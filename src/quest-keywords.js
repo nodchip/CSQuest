@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-negative-cycle-journey':['最短路','負の閉路','到達可能性','下限','フロイド'],
  'village-assembly-privacy':['プライバシー','市民的自由','集会','監視','萎縮効果','表現'],
  'village-cultural-archive':['文化','プライバシー','市民的自由','記録','同意','UNESCO'],
  'archive-history-web-journey':['Web史','情報共有','ハイパーテキスト','CERN','インターネット','歴史'],

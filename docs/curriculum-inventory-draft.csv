@@ -545,7 +545,7 @@ AL-Foundational:トピック:CS Core:11b,AL,AL-Foundational,トピック,CS Core
 AL-Foundational:トピック:CS Core:11c,AL,AL-Foundational,トピック,CS Core,11c,木の深さ・幅優先探索,部分,08・21で固定グラフを探索。木での一般的な解析は未評価。,coverage-al-foundational.md,23,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:12a,AL,AL-Foundational,トピック,CS Core,12a,二次時間の整列,部分,05で隣接交換、713で選択ソート、894で挿入ソートと安定性を操作。一般の正しさと計算量の証明は未評価。,coverage-al-foundational.md,24,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:12b,AL,AL-Foundational,トピック,CS Core,12b,対数線形時間の整列,部分,55で安定なマージ、909で３分割クイックソートの基準選択と重複を比較。Tim sort、一般の平均計算量や正しさの証明は未評価。,coverage-al-foundational.md,25,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:13a,AL,AL-Foundational,トピック,CS Core,13a,最短路,部分,09・138でダイクストラ法と負辺の緩和、912で全域木との目的、913で全点対の更新と負の閉路を比較。一般の証明・経路復元は未評価。,coverage-al-foundational.md,26,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:13a,AL,AL-Foundational,トピック,CS Core,13a,最短路,部分,09・138でダイクストラ法と負辺の緩和、912で全域木との目的、913で全点対の更新と負の閉路を比較、1309で負の閉路の到達可能性と地点間への影響を分類。一般の証明・経路復元は未評価。,coverage-al-foundational.md,26,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:13b,AL,AL-Foundational,トピック,CS Core,13b,最小全域木,部分,32でクラスカル法、910でプリム法、912で最短経路木と比較。一般の証明や実装効率は未評価。,coverage-al-foundational.md,27,原典照合結果は監査記録参照
 AL-Foundational:トピック:KA Core:14a,AL,AL-Foundational,トピック,KA Core,14a,ヒープ整列,部分,165の固定例。一般の計算量と安定性は未評価。,coverage-al-foundational.md,28,原典照合結果は監査記録参照
 AL-Foundational:トピック:KA Core:14b,AL,AL-Foundational,トピック,KA Core,14b,桶・計数・基数整列,部分,166〜168の固定例。一般の入力と分析は未評価。,coverage-al-foundational.md,29,原典照合結果は監査記録参照
