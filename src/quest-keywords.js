@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'forest-floyd-gates':['フロイド','全点対最短路','負の閉路','中継','経路表'],
  'forest-negative-cycle-gates':['負の閉路','最短路','反例','到達可能性','有向グラフ'],
  'forest-cycle-repair':['負の閉路','最短路','到達可能性','封鎖','配送'],
  'forest-negative-cycle-journey':['最短路','負の閉路','到達可能性','下限','フロイド'],
