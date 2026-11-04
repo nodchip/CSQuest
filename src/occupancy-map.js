@@ -1,0 +1,8 @@
+export const occupancyLevel={id:'forest-occupancy-map',number:'1282',kind:'occupancy-map',name:'霧の区画の地図',tag:'観測から作る地図',title:'見えない壁を記録する',story:'霧の道で、人形は自分の場所を知っています。２つの区画を観測し、まだ見えない場所と比べながら地図を作りましょう。'};
+export const occupancyCells={a:'区画Ａ',b:'区画Ｂ',c:'区画Ｃ'};
+export const occupancyEvidence={a:['hit','hit'],b:['hit','clear'],c:[]};
+export function occupancyProbability(history){if(!Array.isArray(history)||history.length>2||history.some(x=>!['hit','clear'].includes(x)))throw new RangeError('観測が不正です。');let occupied=1,free=1;for(const x of history){occupied*=x==='hit'?4:1;free*=x==='hit'?1:4;}return {occupied,free,total:occupied+free};}
+export function occupancyCreate(){return {selected:'a',histories:{a:[],b:[],c:[]},answer:null,limit:null};}
+export function occupancyScan(q){const key=q.selected,seq=occupancyEvidence[key],h=q.histories[key];if(h.length>=seq.length)return null;const result=seq[h.length];h.push(result);return result;}
+export function occupancyDone(q){return q.histories.a.length===2&&q.histories.b.length===2&&q.answer==='a'&&q.limit==='assumptions';}
+export function occupancyRestore(q){if(!q||!Object.hasOwn(occupancyCells,q.selected)||!q.histories||![null,'a','b','c'].includes(q.answer)||![null,'assumptions','certain'].includes(q.limit))throw new RangeError('記録が不正です。');const histories={};for(const k of Object.keys(occupancyCells)){const h=q.histories[k];if(!Array.isArray(h)||h.length>occupancyEvidence[k].length||h.some((x,i)=>x!==occupancyEvidence[k][i]))throw new RangeError('観測の記録が不正です。');histories[k]=[...h];}return {selected:q.selected,histories,answer:q.answer,limit:q.limit};}
