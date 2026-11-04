@@ -6,6 +6,7 @@ export function finiteReplay(history){if(!Array.isArray(history)||history.length
  if(['sum','order'].includes(action)&&!fail){const d=finitePropagate(s,action);s.x=d.x;s.y=d.y;if(!s.x.length||!s.y.length)s.sawFailure=true;}
  else if(action.startsWith('choose:')&&!fail&&!s.stack){const value=Number(action.slice(7));if(!Number.isInteger(value)||!s.x.includes(value)||action!==`choose:${value}`)throw new RangeError('候補にない札です。');s.stack={x:[...s.x],y:[...s.y]};s.x=[value];}
  else if(action==='undo'&&s.stack){s.x=s.stack.x;s.y=s.stack.y;s.stack=null;if(fail)s.backtracked=true;}
+ else if(action==='root'){s.x=[1,2,3,4];s.y=[1,2,3,4];s.stack=null;if(fail)s.backtracked=true;}
  else if(action==='save'&&!fail&&s.stack&&s.x.length===1&&s.y.length===1){const pair={x:s.x[0],y:s.y[0]};if(pair.x+pair.y!==5||pair.x>=pair.y||s.solutions.some(p=>same(p,pair)))throw new RangeError('解が不正か記録済みです。');s.solutions.push(pair);}
  else throw new RangeError('その操作はできません。');}return s;}
 export function finiteCreate(){return {history:[],reflection:null};}
