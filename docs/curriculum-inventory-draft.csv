@@ -937,8 +937,8 @@ DM-NoSQL:トピック:Non-core:4,DM,DM-NoSQL,トピック,Non-core,4,分割と�
 DM-NoSQL:トピック:Non-core:5,DM,DM-NoSQL,トピック,Non-core,5,グラフ DB,部分,192で有向ラベル付き関係を２段階たどる。問合せ言語と実 DB は未評価。,coverage-dm-nosql.md,13,原典照合結果は監査記録参照
 DM-NoSQL:トピック:Non-core:6,DM,DM-NoSQL,トピック,Non-core,6,更新・読取り、クォーラムと CAP,部分,190で分断中の古い応答・待機、193で書込みと読取りの重なりを比較。一般の証明・同時更新は未評価。,coverage-dm-nosql.md,14,原典照合結果は監査記録参照
 DM-NoSQL:トピック:Non-core:7,DM,DM-NoSQL,トピック,Non-core,7,MapReduce と段階的処理,部分,130で分担した小計を集約。実基盤と増分処理は未評価。,coverage-dm-nosql.md,15,原典照合結果は監査記録参照
-DM-NoSQL:トピック:Non-core:8,DM,DM-NoSQL,トピック,Non-core,8,クラウド保存等の事例と NoSQL が不適な場合,未照合,実製品の事例と不適な場合の比較は未確認。,coverage-dm-nosql.md,16,原典照合結果は監査記録参照
-DM-NoSQL:学習成果:KA Core:1,DM,DM-NoSQL,学習成果,KA Core,1,関係 DB より NoSQL を使う用途を設計,部分,189で検索方法を比較。実際の要件に基づく用途の設計は未評価。,coverage-dm-nosql.md,22,原典照合結果は監査記録参照
+DM-NoSQL:トピック:Non-core:8,DM,DM-NoSQL,トピック,Non-core,8,クラウド保存等の事例と NoSQL が不適な場合,部分,189で必要な機能と２つの架空の箱を比較し、DynamoDB の複数項目取引を参照。S3 等の事例や実際の要件に基づく製品選択は未評価。,coverage-dm-nosql.md,16,原典照合結果は監査記録参照
+DM-NoSQL:学習成果:KA Core:1,DM,DM-NoSQL,学習成果,KA Core,1,関係 DB より NoSQL を使う用途を設計,部分,189で検索方法と２つの架空用途を比較。実際の要件に基づく用途の設計は未評価。,coverage-dm-nosql.md,22,原典照合結果は監査記録参照
 DM-NoSQL:学習成果:KA Core:2,DM,DM-NoSQL,学習成果,KA Core,2,キー・バリューと文書モデルの特徴を説明,部分,189で鍵取得と札の構造・索引を操作。一般的な特徴の自由な説明は未評価。,coverage-dm-nosql.md,23,原典照合結果は監査記録参照
 DM-Processing:トピック:未記載:1,DM,DM-Processing,トピック,未記載,1,ページ構造,部分,依頼662で葉と案内頁の容量・分割。実際の頁のヘッダーや配置は未評価。,coverage-dm-processing.md,9,原典照合結果は監査記録参照・区分を要確認
 DM-Processing:トピック:未記載:2a,DM,DM-Processing,トピック,未記載,2a,B+ 木索引,部分,依頼662で一意な６鍵の挿入、探索、範囲走査。削除・重複・実頁の実装は未評価。,coverage-dm-processing.md,10,原典照合結果は監査記録参照・区分を要確認
