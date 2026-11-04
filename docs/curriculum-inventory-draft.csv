@@ -3231,7 +3231,7 @@ SEP-Professional-Ethics:学習成果:CS Core:2,SEP,SEP-Professional-Ethics,学�
 SEP-Professional-Ethics:学習成果:CS Core:3,SEP,SEP-Professional-Ethics,学習成果,CS Core,3,正しさ・信頼性・安全性を確保する倫理的責任とその根拠,部分,依頼360・367で綱領を参照し有限検査と報告を扱う。法令や規範全体からの説明は未対応,coverage-sep-professional-ethics.md,31,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:CS Core:4,SEP,SEP-Professional-Ethics,学習成果,CS Core,4,倫理に関する継続的学習の仕組み,部分,1197で資料・本人の意見・仲間の確認・再評価を固定例でたどる。実際の学習計画や継続は未評価。,coverage-sep-professional-ethics.md,32,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:CS Core:5,SEP,SEP-Professional-Ethics,学習成果,CS Core,5,専門職の規範の長所・短所,部分,1302で規範を判断の手がかりとしつつ事実確認を要する２例。一般の規範の比較や自由な説明は未評価。,coverage-sep-professional-ethics.md,33,原典照合結果は監査記録参照
-SEP-Professional-Ethics:学習成果:CS Core:6,SEP,SEP-Professional-Ethics,学習成果,CS Core,6,世界的な問題と専門家・政府の役割の分析,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,34,原典照合結果は監査記録参照
+SEP-Professional-Ethics:学習成果:CS Core:6,SEP,SEP-Professional-Ethics,学習成果,CS Core,6,世界的な問題と専門家・政府の役割の分析,部分,1314で電子廃棄物の世界推計を参照し、架空の６台について技術者・行政・地域の役割を比較。実際の政策・組織と自由な分析は未評価。,coverage-sep-professional-ethics.md,34,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:KA Core:7,SEP,SEP-Professional-Ethics,学習成果,KA Core,7,公共政策への貢献,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,35,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:KA Core:8,SEP,SEP-Professional-Ethics,学習成果,KA Core,8,不適切な専門職行動の結果,部分,依頼367で検査結果を過大に断言する選択を比較。現実の影響は未評価,coverage-sep-professional-ethics.md,36,原典照合結果は監査記録参照
 SEP-Professional-Ethics:学習成果:KA Core:9,SEP,SEP-Professional-Ethics,学習成果,KA Core,9,内部告発の知識,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,37,原典照合結果は監査記録参照
@@ -3259,7 +3259,7 @@ SEP-Security:学習成果:KA Core:6,SEP,SEP-Security,学習成果,KA Core,6,個�
 SEP-Security:学習成果:KA Core:7,SEP,SEP-Security,学習成果,KA Core,7,パスワード・従業員監視を含む組織方針の設計,部分,987で合言葉と監視の方針を選び、988で固定した目的に必要なログ項目と保存期間を構成する。自由な方針設計、法域ごとの適法性、実組織での実施は未評価。,coverage-sep-security.md,30,原典照合結果は監査記録参照
 SEP-Security:学習成果:KA Core:8,SEP,SEP-Security,学習成果,KA Core,8,地域を越える法令の影響,未照合,対応例を要照合。,coverage-sep-security.md,31,原典照合結果は監査記録参照
 SEP-Sustainability:トピック:CS Core:1,SEP,SEP-Sustainability,トピック,CS Core,1,実装判断の環境・社会・文化への影響,部分,91・802 は架空の負荷と集計範囲を比較。社会・文化・経済の影響は未評価。,coverage-sep-sustainability.md,9,原典照合結果は監査記録参照
-SEP-Sustainability:トピック:CS Core:2,SEP,SEP-Sustainability,トピック,CS Core,2,計算機の使用・製造・廃棄による地域・世界の影響,部分,91・802 は使用と製造の架空モデル、860は世界の電子廃棄物推計。地域差、供給網と実測は未評価。,coverage-sep-sustainability.md,10,原典照合結果は監査記録参照
+SEP-Sustainability:トピック:CS Core:2,SEP,SEP-Sustainability,トピック,CS Core,2,計算機の使用・製造・廃棄による地域・世界の影響,部分,91・802 は使用と製造の架空モデル、860・1314は世界の電子廃棄物推計と架空の処理体制。地域差、供給網と実測は未評価。,coverage-sep-sustainability.md,10,原典照合結果は監査記録参照
 SEP-Sustainability:トピック:CS Core:3,SEP,SEP-Sustainability,トピック,CS Core,3,持続可能な設計標準の指針,部分,858で ENERGY STAR の待機時間の一部を参考に架空の設定を比較。製品認証や基準全体は未評価。,coverage-sep-sustainability.md,11,原典照合結果は監査記録参照
 SEP-Sustainability:トピック:KA Core:4,SEP,SEP-Sustainability,トピック,KA Core,4,複雑な技術のシステム的影響,部分,802 は利用回数を変えた架空の総負荷を比較。実際のシステム全体や因果関係は未評価。,coverage-sep-sustainability.md,12,原典照合結果は監査記録参照
 SEP-Sustainability:トピック:KA Core:5,SEP,SEP-Sustainability,トピック,KA Core,5,日常に組み込まれた情報処理と持続可能性,部分,859で環境監視の観測間隔・欠測を架空模型で比較。実測、交通や社会的応用は未評価。,coverage-sep-sustainability.md,13,原典照合結果は監査記録参照
