@@ -1,6 +1,14 @@
 export const graphemeLevel={id:'archive-grapheme-workshop',number:'1344',kind:'grapheme-workshop',name:'文字のまとまりと鏡',tag:'Unicode・文字列・正規化',title:'どの単位で文字札を数える？',story:'書庫で同じように見える文字札と、複数の印がつながった絵文字を調べます。数える単位と比較の方法を変えてみましょう。'};
 export const graphemeCases={composed:{name:'一つの符号位置で表す é',text:'\u00e9'},decomposed:{name:'e と結合するアクセント',text:'e\u0301'},emoji:{name:'人物と道具をつないだ絵文字',text:'\u{1f469}\u200d\u{1f4bb}'}};
 export const graphemeModes={units:'UTF-16 符号単位',points:'Unicode 符号位置',clusters:'書記素クラスタ'};
+export function graphemeEncoding(id){
+ if(!Object.hasOwn(graphemeCases,id))throw new RangeError('文字札が不正です。');
+ const text=graphemeCases[id].text;
+ return {
+  units:Array.from({length:text.length},(_,i)=>text.charCodeAt(i).toString(16).toUpperCase().padStart(4,'0')),
+  points:Array.from(text,c=>'U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0'))
+ };
+}
 export function graphemeCount(id,mode,Segmenter=Intl.Segmenter){if(!Object.hasOwn(graphemeCases,id)||!Object.hasOwn(graphemeModes,mode))throw new RangeError('条件が不正です。');const text=graphemeCases[id].text;if(mode==='units')return text.length;if(mode==='points')return Array.from(text).length;if(typeof Segmenter!=='function')return null;return Array.from(new Segmenter('und',{granularity:'grapheme'}).segment(text)).length;}
 export function graphemeCompare(){const a=graphemeCases.composed.text,b=graphemeCases.decomposed.text;return {raw:a===b,nfc:a.normalize('NFC')===b.normalize('NFC')};}
 export function graphemeCreate(){return {caseId:'composed',mode:'units',guess:null,seen:[],compared:false,reflection:null,checked:false};}
