@@ -25,6 +25,8 @@
 
 依頼120では月草と解毒の４冊に対するビット列の AND・OR を比較し、結果の連続する同値を値と個数の組で表す。`tests/bitmap-postings.test.js` は４冊の２集合の全256組で AND・OR と集合の一致、連続区間の展開を検査する。[Berkeley Lab の索引圧縮研究](https://escholarship.org/uc/item/0ks802t8)を参考にした単純模型で、WAH 実装、半構造 DB、実際の大きさや性能は評価しない。
 
+同じ依頼で巻物順を A・B・C・D と A・C・B・D に変えると、月草の印はそれぞれ `1100` と `1010`、同値の連続は２組と４組になる。印の各位置はその順の巻物に対応する。実際の符号化サイズは数えていない。
+
 依頼1037は [Mikolov らの Word2Vec 論文](https://research.google/pubs/efficient-estimation-of-word-representations-in-vector-space/)と [Stanford の単語ベクトル講義](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)を参考に、中心語１個、周囲語３候補、２次元の全語 softmax で１組の手本を３回学習する。２手本は同じ初期値から独立に学習する。中心と出力の８座標の勾配を数値微分と照合し、確率の和と各更新の損失を `tests/skipgram-embedding.test.js` で確認。実コーパス、単語の分割、負例サンプリング、一般の意味や性能は評価しない。
 
 依頼1038は [Mikolov らの負例サンプリング](https://arxiv.org/abs/1310.4546)を参考に、１手本・１対比の二値損失で中心と２語の出力を同時に更新する。対比語２種類は固定選択し、３語のシグモイドは正規化された分布と扱わない。選ばれていない出力ベクトルは直接更新されないが、共有中心の変更により内積は変わり得る。`tests/negative-sampling.test.js` は８座標を数値微分と照合し、未選択出力、損失、保存と達成を検査。実際の雑音分布からの抽出、複数負例、実コーパスや一般の性能は未評価。
