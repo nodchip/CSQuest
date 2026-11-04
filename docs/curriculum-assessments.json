@@ -79,6 +79,21 @@
         "tests/validation-boundary.test.js": "162da09a99682d0bdb936fc111eff69a1613ef40b5130950eef16e63342d72cb",
         "tests/acid-workshop.test.js": "c622c03e23d4417430d1817d800534a534483c294a7faadf1ac549d8756d2890"
       }
+    },
+    "DM-Unstructured:トピック:未記載:2-本体": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-dm-unstructured-overview.md",
+      "row_sha256": "ed3fd4ec53c3d3a658b398277f7eaa92234f27b423e14e515dc475fb58c247e6",
+      "files": {
+        "src/app.js": "389e7ffebcc8b2bfec3753001111a5a29b83b72367a95a443b7cd4921ab106aa",
+        "src/nosql-models.js": "3040cd115bb3a300eec3b4c48655c518bff977736115c0aa64d156b7236c170e",
+        "src/data-formats.js": "2262a31be5849eaac86fc3e05097913e5cd96d67bdb876e5db2d68b0ed200650",
+        "src/document-schema.js": "309277d61a120def08e8e018f5995472f1797e301decd1fa137ce47554eaf7a3",
+        "tests/nosql-models.test.js": "fc3f361374eb38c9c7e72441e6af645d5c56cc34db8de75b790a46cce07a3aa8",
+        "tests/data-formats.test.js": "6dfb0e7aff5e5fabe75c6e597c3aa0aa77a778446aaa828a829cfd8308e1fbf5",
+        "tests/document-schema.test.js": "ea509eaf8c66ab1d5d05dc2ac8bc9d54b39d561048848686c3fab83ac0689d03"
+      }
     }
   }
 }
