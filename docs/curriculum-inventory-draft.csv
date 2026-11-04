@@ -3489,7 +3489,7 @@ SPD-Interactive:学習成果:未記載:10,SPD,SPD-Interactive,学習成果,未�
 SPD-Mobile:トピック:KA Core:1a,SPD,SPD-Mobile,トピック,KA Core,1a,モバイルの言語,未照合,実言語・環境を用いた開発は未評価。,coverage-spd-mobile.md,9,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:1b,SPD,SPD-Mobile,トピック,KA Core,1b,開発環境,未照合,実開発環境の操作を要照合。,coverage-spd-mobile.md,10,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:2a,SPD,SPD-Mobile,トピック,KA Core,2a,UI の制約,部分,394で対象の大きさと間隔の固定比較。実端末・利用者は未評価。,coverage-spd-mobile.md,11,原典照合結果は監査記録参照
-SPD-Mobile:トピック:KA Core:2b,SPD,SPD-Mobile,トピック,KA Core,2b,セキュリティの制約,未照合,モバイル固有の制約を要照合。,coverage-spd-mobile.md,12,原典照合結果は監査記録参照
+SPD-Mobile:トピック:KA Core:2b,SPD,SPD-Mobile,トピック,KA Core,2b,セキュリティの制約,部分,1323で架空の位置権限の拒否・精度・変更と手動代替を試す。実端末・OS・他のセキュリティ制約は未評価。,coverage-spd-mobile.md,12,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3a,SPD,SPD-Mobile,トピック,KA Core,3a,API によるデータへのアクセス,部分,354でオフライン保留・再送の模型。実 API への接続は未評価。,coverage-spd-mobile.md,13,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3b,SPD,SPD-Mobile,トピック,KA Core,3b,モバイル向け API 設計上の注意,部分,354で同一識別子による再送と重複の固定例。一般の設計は未評価。,coverage-spd-mobile.md,14,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3c,SPD,SPD-Mobile,トピック,KA Core,3c,ネットワークと Web インターフェース,部分,354で接続回復・応答喪失を仮定。実通信・設計は未評価。,coverage-spd-mobile.md,15,原典照合結果は監査記録参照

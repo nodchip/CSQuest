@@ -9,7 +9,7 @@
 | 1a | KA Core | モバイルの言語 | 未照合 | 実言語・環境を用いた開発は未評価。 |
 | 1b | KA Core | 開発環境 | 未照合 | 実開発環境の操作を要照合。 |
 | 2a | KA Core | UI の制約 | 部分 | 394で対象の大きさと間隔の固定比較。実端末・利用者は未評価。 |
-| 2b | KA Core | セキュリティの制約 | 未照合 | モバイル固有の制約を要照合。 |
+| 2b | KA Core | セキュリティの制約 | 部分 | 1323で架空の位置権限の拒否・精度・変更と手動代替を試す。実端末・OS・他のセキュリティ制約は未評価。 |
 | 3a | KA Core | API によるデータへのアクセス | 部分 | 354でオフライン保留・再送の模型。実 API への接続は未評価。 |
 | 3b | KA Core | モバイル向け API 設計上の注意 | 部分 | 354で同一識別子による再送と重複の固定例。一般の設計は未評価。 |
 | 3c | KA Core | ネットワークと Web インターフェース | 部分 | 354で接続回復・応答喪失を仮定。実通信・設計は未評価。 |
@@ -44,3 +44,5 @@
 依頼1321は [MDN の非同期処理とコールバック](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing) を参考に、架空の２要求について返事の到着と処理を分け、古い返事の上書きと依頼番号の確認を比較する。画面処理が待つ模型と待機中に操作を受ける模型も比較するが、非同期なら常に快適・別スレッドと主張しない。`tests/mobile-callback-race.test.js` は成功・失敗と２方式の６通り、段階・保存を検査。実端末、実 API・コールバック実装やコードの試験は評価しない。
 
 依頼1322は [Node.js のテストランナー](https://nodejs.org/api/test.html) と [MDN の Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) を参考に、1321と同じ６条件で手動完了する練習用 Promise の成功・失敗を制御し、処理の完了を待って期待表示と比較する。`tests/mobile-async-harness.test.js` は実際の Promise による６結果を独立期待値・1321の模型と照合し、期待表示と保存を検査する。実端末や実通信、任意の例外・競合のテストは評価しない。
+
+依頼1323は [Android の位置権限](https://developer.android.com/develop/sensors-and-location/location/permissions) と [拒否時の対応](https://developer.android.com/training/permissions/requesting) を参考に、架空の許可・固定位置・手動代替を操作する。取得中に許可が変わっても結果が届くという模型で、使う前の再確認を示す。実 OS の全挙動を再現せず、詳しい位置からおおよその位置に変更時のプロセス再起動等も画面に明記。`tests/mobile-permission-journey.test.js` は開始時と返事時の６組合せ、拒否・代替と保存を検査。実位置・端末・個人情報の削除は評価しない。

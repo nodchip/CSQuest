@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-mobile-permission-journey':['モバイル','位置情報','権限','拒否','おおよそ','Android'],
  'guild-mobile-async-harness':['非同期','テスト','Promise','コールバック','返事','失敗'],
  'guild-mobile-callback-race':['モバイル','非同期','コールバック','応答順','失敗','競合'],
  'forest-device-update-journey':['医療機器','セキュリティ','脆弱性','構成部品','更新','運用'],
