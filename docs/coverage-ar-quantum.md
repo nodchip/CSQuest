@@ -20,8 +20,8 @@
 | 6d | KA Core | Grover の探索 | 部分 | 820 で４候補の符号反転と拡散、861で４・８・16候補の反復回数と確率を比較。一般の候補数・正解数、オラクルの構築費用、実機や計算量の証明は未評価。 |
 | 7a | KA Core | 量子ビットの物理的実装 | 部分 | 1216 で超伝導回路・捕捉イオン・光子の構成例を比較。半導体・中性原子など他方式、実機の構築や性能は未評価。 |
 | 7b | KA Core | QPU の古典制御 | 未照合 | 対応教材を要照合。 |
-| 7c | KA Core | 誤りの緩和・制御、NISQ とその先 | 未照合 | 対応教材を要照合。 |
-| 7d | KA Core | 測定手法 | 部分 | 74・676 は理想的な測定確率。1216 は共振器、蛍光、偏光を分けた光子検出の代表例を対応づける。詳細な測定理論と誤りは未評価。 |
+| 7c | KA Core | 誤りの緩和・制御、NISQ とその先 | 部分 | 1217 で１ビットの読取り誤差を較正し、集計の補正と負の推定値を比較。ゲート誤り・量子誤り訂正・NISQ 全般や実機は未評価。 |
+| 7d | KA Core | 測定手法 | 部分 | 74・676 は理想的な測定確率。1216 は３方式の読取り例、1217 は１ビットの読取り誤差の固定模型。詳細な測定理論と実機は未評価。 |
 | 8a | KA Core | 耐量子暗号 | 部分 | 依頼839で LWE の小模型の復元と改変を操作し、関連する ML-KEM と模型の違いを確認。実用方式の実装、安全性や量子攻撃への証明は未評価。 |
 | 8b | KA Core | 量子インターネット | 未照合 | 対応教材を要照合。 |
 | 8c | KA Core | 断熱量子計算と量子アニーリング | 未照合 | 対応教材を要照合。 |
@@ -48,3 +48,5 @@
 依頼1215の位置と運動量の不確定性とガウス波束は [MIT 量子力学の講義資料](https://ocw.mit.edu/courses/8-321-quantum-theory-i-fall-2017/2ecc07c095d8ae56600f7145c6fb4a6a_MIT8_321F17_lec5.pdf) を参照。位置・運動量の正規密度を数値積分して規格化と分散を `tests/wave-packet.test.js` で照合。最小不確定性を持つ固定例であり、一般の量子状態や時間発展は未評価。
 
 依頼1216は [NIST の方式比較](https://www.nist.gov/quantum-information-science/quantum-computing-explained)、[IBM の共振器読取り](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)、[NIST のイオン蛍光読取り](https://www.nist.gov/publications/state-readout-trapped-ion-qubit-using-trap-integrated-superconducting-photon-detector)を参照。`tests/qubit-devices.test.js` は各工房の27組合せと保存・達成条件を検査する。指定された例以外の組合せを不可能と主張しない。
+
+依頼1217の読取り誤差の較正・分布の補正・負の推定値は [IBM の解説](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)を参照。`tests/readout-mitigation.test.js` は非対称な読み違い率、順方向・逆方向と範囲外、保存・達成条件を検査。誤り率の変動、有限回の統計モデル、他の誤りや実機は扱わない。

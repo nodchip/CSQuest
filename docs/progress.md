@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+2026-11-04：依頼1217で読み違い率の較正と１ビットの集計補正、確率の範囲外になる例を追加。[IBM の読取り誤差緩和](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)を参照。全3099テストとビルドが成功。ローカル390px幅で誤答・再開・３記録・負の推定値・振り返り・達成を確認。誤り率の変動、複数量子ビット、量子ゲートの誤りや実機は未評価。
+
 2026-11-04：依頼1216で超伝導回路・捕捉イオン・光子の各構成例について、準備・操作・読取りを比較。[NIST の方式比較](https://www.nist.gov/quantum-information-science/quantum-computing-explained)、[IBM の共振器読取り](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)、[NIST のイオン蛍光読取り](https://www.nist.gov/publications/state-readout-trapped-ion-qubit-using-trap-integrated-superconducting-photon-detector)を参照。全3097テストとビルドが成功。ローカル画面390px幅で誤答・再開・３構成・振り返り・達成を確認。他方式、実機の実装や性能は未評価。
 
 2026-11-04：依頼1215で位置と運動量の広がりを持つ３つの１次元ガウス波束を比較。[MIT の量子力学の資料](https://ocw.mit.edu/courses/8-321-quantum-theory-i-fall-2017/2ecc07c095d8ae56600f7145c6fb4a6a_MIT8_321F17_lec5.pdf)を参照。分布の数値積分・分散を含む全3095テストとビルドが成功。ローカル画面の390px幅で誤答、２グラフ、途中再開、３条件、振り返りと達成を確認。一般の量子状態、時間発展、実験装置は未評価。
