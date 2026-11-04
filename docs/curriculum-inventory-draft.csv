@@ -2155,7 +2155,7 @@ MSF-Statistics:学習成果:KA Core:6b,MSF,MSF-Statistics,学習成果,KA Core,6
 MSF-Statistics:学習成果:KA Core:6c,MSF,MSF-Statistics,学習成果,KA Core,6c,線形回帰を曲線への当てはめに適用,部分,115で直線候補、1071で二乗特徴と切片の２係数を推定。一般の曲線・多項式や自由な実装は未評価。,coverage-msf-statistics.md,41,原典照合結果は監査記録参照
 MSF-Statistics:学習成果:KA Core:6d,MSF,MSF-Statistics,学習成果,KA Core,6d,過学習の説明,部分,18・377で既知と未使用の結果を比較。一般の説明と自由記述は未評価。,coverage-msf-statistics.md,42,原典照合結果は監査記録参照
 MSF-Statistics:学習成果:KA Core:6e,MSF,MSF-Statistics,学習成果,KA Core,6e,過学習・モデル選択で交差検証を適用,部分,551で実測 Iris の４分割と４手法を比較。公開済み同一標本の再利用で、一般的な分割・将来性能は未評価。,coverage-msf-statistics.md,43,原典照合結果は監査記録参照
-NC-Applications:トピック:未記載:1,NC,NC-Applications,トピック,未記載,1,DNS・URI などの名前と住所,部分,421で DNS、669で相対参照・検索条件・フラグメントを操作。一般の名前付けや実通信は未評価。,coverage-nc-applications.md,9,原典照合結果は監査記録参照・区分を要確認
+NC-Applications:トピック:未記載:1,NC,NC-Applications,トピック,未記載,1,DNS・URI などの名前と住所,部分,421で DNS の名前解決・期限と権威側の更新、669で相対参照・検索条件・フラグメントを操作。一般の名前付けや実通信は未評価。,coverage-nc-applications.md,9,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:トピック:未記載:2,NC,NC-Applications,トピック,未記載,2,クライアント・サーバー、P2P、クラウド、エッジ等,部分,62で端末と受付、667で中央書庫と既知の仲間からの受信・複製を比較。クラウド、エッジ等の一般の構成は未評価。,coverage-nc-applications.md,10,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:トピック:未記載:3,NC,NC-Applications,トピック,未記載,3,遅延・帯域・損失耐性など用途ごとの要求,部分,668で完全性・期限と、荷物の大きさ・伝送速度・伝播時間を固定例で比較。一般の要求分析と実通信は未評価。,coverage-nc-applications.md,11,原典照合結果は監査記録参照・区分を要確認
 NC-Applications:トピック:未記載:4,NC,NC-Applications,トピック,未記載,4,HTTP などアプリケーション層プロトコル,部分,62で POST の再送、670で条件付き GET の固定例を操作。HTTP 全体や実通信は未評価。,coverage-nc-applications.md,12,原典照合結果は監査記録参照・区分を要確認

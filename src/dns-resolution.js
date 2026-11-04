@@ -1,5 +1,11 @@
 export const dnsLevel={id:'forest-dns-resolution',number:'421',kind:'dns-resolution',name:'名前をたどる伝令',tag:'DNS とキャッシュ',title:'書庫の住所を探そう',story:'伝令は書庫の名前だけを知っています。案内役と一緒に住所を調べ、覚えた答えの期限を確かめましょう。'};
-export function createDns(){return {time:0,phase:'idle',expiry:null,first:false,fresh:false,expired:false,history:[],answer:null,checked:false};}
+export const dnsExperimentTimes=[0,1,3,4,5];
+export function dnsExperiment(time){
+ if(!dnsExperimentTimes.includes(time))throw new RangeError('時刻が不正です。');
+ const authoritative=time<1?'192.0.2.42':'192.0.2.84',source=time<4?'cache':'authority';
+ return {authoritative,source,answer:source==='cache'?'192.0.2.42':authoritative,stale:time>=1&&time<4};
+}
+export function createDns(){return {time:0,phase:'idle',expiry:null,first:false,fresh:false,expired:false,history:[],answer:null,checked:false,experimentTime:0};}
 export function dnsStep(s,action){if(s.history.length>=20)throw new RangeError('操作が多くなりました。最初から試してください。');const n={...s,history:[...s.history,action],checked:false};if(action==='query'&&s.phase==='idle'){if(s.expiry!==null&&s.time<s.expiry){if(s.time===2)n.fresh=true;}else n.phase='root';}else if(action==='root'&&s.phase==='root')n.phase='tld';else if(action==='tld'&&s.phase==='tld')n.phase='authority';else if(action==='authority'&&s.phase==='authority'){n.phase='idle';if(s.first&&s.fresh&&s.expiry!==null&&s.time>=s.expiry)n.expired=true;n.first=true;n.expiry=s.time+4;}else if(action==='wait'&&s.phase==='idle'&&s.first&&(s.time===0||s.time===2&&s.fresh))n.time+=2;else throw new RangeError('現在の段階と記録を確認しましょう。');return n;}
 export function dnsComplete(s){return s.first&&s.fresh&&s.expired&&s.answer==='cache'&&s.checked;}
-export function restoreDns(s){if(!s||!Array.isArray(s.history)||s.history.length>20||![null,'cache','permanent','root'].includes(s.answer)||typeof s.checked!=='boolean')throw new RangeError('途中記録が不正です');let n=createDns();for(const action of s.history)n=dnsStep(n,action);n.answer=s.answer;n.checked=s.checked;return n;}
+export function restoreDns(s){if(!s||!Array.isArray(s.history)||s.history.length>20||![null,'cache','permanent','root'].includes(s.answer)||typeof s.checked!=='boolean'||s.experimentTime!==undefined&&!dnsExperimentTimes.includes(s.experimentTime))throw new RangeError('途中記録が不正です');let n=createDns();for(const action of s.history)n=dnsStep(n,action);n.answer=s.answer;n.checked=s.checked;n.experimentTime=s.experimentTime??0;return n;}
