@@ -53,4 +53,4 @@
 
 依頼1267は他者の絵を学習に使う架空例で、出所・作者・学習と公開の条件、元の絵に似た生成物を区別する。依頼399は販売用の絵について CC BY と BY-NC を比べ、表示・変更の明示を選ぶ。いずれも条件と利用範囲を限定した模型で、実際の例外・契約・権利の成立、個別事案の適法性や自由な擁護は評価しない。前提と検査は [AI-ML](coverage-ai-ml.md) および[既存調査](sep-ip.md)を参照。
 
-依頼1304は米国に限定し、[米国議会の憲法上の立法権限の資料](https://constitution.congress.gov/static/files/constitutional-authority-statements.pdf)と[米国著作権法第１章](https://www.copyright.gov/title17/92chap1.html)の §102・§106 を短く要約して、憲法の権限、著作物と着想・手順の区別、権利と制限の関係を整理する。`tests/copyright-foundations.test.js` は資料の選択・閲覧・再開を検査する。判例、各制限の要件、特許等の法体系、米国外や個別事案は評価しない。
+依頼1304は米国に限定し、[米国議会の憲法上の立法権限の資料](https://constitution.congress.gov/static/files/constitutional-authority-statements.pdf)と[米国著作権法第１章](https://www.copyright.gov/title17/92chap1.html)の §102・§106 を短く要約して、憲法の権限、著作物と着想・手順の区別、権利と制限の関係を整理する。独創的な文章表現と説明された手順そのものを２つの固定例で区別し、個別の侵害や他の権利は別途検討が必要と示す。`tests/copyright-foundations.test.js` は資料・例の選択と以前の途中記録からの再開を検査する。判例、各制限の要件、特許等の法体系、米国外や個別事案は評価しない。
