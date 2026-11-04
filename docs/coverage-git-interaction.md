@@ -43,4 +43,4 @@
 
 依頼1213は [MDN の Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)を参考に、同一サイトの固定 JSON を取得して応答の状態・内容を確認し、対応する灯りを変える。失敗・取消しは受信済みにしない。`tests/network-event-lantern.test.js` は固定ファイルと内容検証・振り分け・復元を検査し、通信成功と失敗はブラウザで検査する。双方向通信・任意サーバーや実アプリの作成は未評価。
 
-依頼1297は窓の終了後の戻り先、絵に併記する文字、キーボードで操作できる一覧について各２案を比較する。操作結果は記述された固定模型であり、実際のウィンドウ・メニューの実装や、支援技術・実利用者による評価を行わない。参考：[W3C メニューボタン](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/)、[W3C モーダルダイアログ](https://www.w3.org/WAI/WCAG22/Techniques/html/H102)、[W3C ラベルと名前](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)。
+依頼1297は窓の終了後の戻り先、絵に併記する文字、キーボードで操作できる一覧について各２案を比較する。比較の結果は記述された固定模型。加えて実際の HTML ダイアログと開閉式一覧を操作できる。開閉式一覧と矢印キーで項目を移るアプリ型メニューは区別する。実アプリの作成、支援技術・実利用者による評価や適合性は評価しない。参考：[W3C メニューボタン](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/)、[W3C モーダルダイアログ](https://www.w3.org/WAI/WCAG22/Techniques/html/H102)、[W3C ラベルと名前](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)。
