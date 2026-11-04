@@ -483,51 +483,51 @@ AI-Vision:学習成果:未記載:8,AI,AI-Vision,学習成果,未記載,8,分類�
 AI-Vision:学習成果:未記載:9,AI,AI-Vision,学習成果,未記載,9,特徴抽出を別方式と比較,部分,936で UCI 数字データの64特徴と16平均特徴による分類結果を比較。実用性能と一般的比較は未評価。,coverage-ai-vision.md,33,原典照合結果は監査記録参照・区分を要確認
 AI-Vision:学習成果:未記載:10,AI,AI-Vision,学習成果,未記載,10,３種類以上の分類手法を説明,部分,935で高さの規則・最近傍・重心を画素から抽出した特徴で比較。一般的な長短と自由な説明は未評価。,coverage-ai-vision.md,34,原典照合結果は監査記録参照・区分を要確認
 AI-Vision:学習成果:未記載:11,AI,AI-Vision,学習成果,未記載,11,深層学習による視覚問題を実装・評価,部分,661で１次元の畳み込みとプーリングを操作。実画像の学習・評価と自由な実装は未評価。,coverage-ai-vision.md,35,原典照合結果は監査記録参照・区分を要確認
-AL-Complexity:トピック:CS Core:1a,AL,AL-Complexity,トピック,CS Core,1a,最良・平均・最悪,部分,88で探索位置ごとの比較回数と最大を調べる。一般の平均・最悪分析は未評価。,coverage-al-complexity.md,9,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:1b,AL,AL-Complexity,トピック,CS Core,1b,実測と成長の尺度,部分,344で２規模の不在探索を測り比較回数と併記。一般の実験計画は未評価。,coverage-al-complexity.md,10,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:1c,AL,AL-Complexity,トピック,CS Core,1c,入力規模と基本操作,部分,88・334で冊数と比較・操作回数を変える。一般の分析は未評価。,coverage-al-complexity.md,11,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:1d,AL,AL-Complexity,トピック,CS Core,1d,時間と領域の効率,部分,341で表の保持と再計算を比較。一般の効率評価は未評価。,coverage-al-complexity.md,12,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2a,AL,AL-Complexity,トピック,CS Core,2a,O・Ω・Θ の形式的記法,部分,335で固定関数と上界を比較。３記法の形式的な証明全体は未評価。,coverage-al-complexity.md,13,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-i,AL,AL-Complexity,トピック,CS Core,2b-i,定数,部分,334で指定された棚を１回で直接参照する模型を比較。一般のデータ構造や実機の性能は未評価。,coverage-al-complexity.md,14,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-ii,AL,AL-Complexity,トピック,CS Core,2b-ii,対数,部分,88・334で二分探索などを比較。一般の導出は未評価。,coverage-al-complexity.md,15,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-iii,AL,AL-Complexity,トピック,CS Core,2b-iii,線形,部分,88・334で逐次操作を比較。一般の導出は未評価。,coverage-al-complexity.md,16,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-iv,AL,AL-Complexity,トピック,CS Core,2b-iv,n log n,部分,342で２のべきの入力について併合段階の書戻しを調べる。一般の証明は未評価。,coverage-al-complexity.md,17,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-v,AL,AL-Complexity,トピック,CS Core,2b-v,二次,部分,334で二重の操作回数を比較。一般の証明は未評価。,coverage-al-complexity.md,18,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-vi,AL,AL-Complexity,トピック,CS Core,2b-vi,多項式,部分,334の二次の例。一般の多項式と代表例の比較は未評価。,coverage-al-complexity.md,19,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-vii,AL,AL-Complexity,トピック,CS Core,2b-vii,指数,部分,334で３・４個の全部分集合の数、336で４個の全候補を調べる。一般の増大と他の問題は未評価。,coverage-al-complexity.md,20,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:2b-viii,AL,AL-Complexity,トピック,CS Core,2b-viii,階乗,部分,334で３・４個の全順列の数を比較。一般の証明や実際の巡回問題は未評価。,coverage-al-complexity.md,21,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:3,AL,AL-Complexity,トピック,CS Core,3,性能の実測,部分,344で２規模の探索をブラウザで測定。測定環境や一般の性能評価は未評価。,coverage-al-complexity.md,22,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:4a,AL,AL-Complexity,トピック,CS Core,4a,P・NP・NP完全,部分,414で３クラスの性質を整理。一般の証明は未評価。,coverage-al-complexity.md,23,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:4b,AL,AL-Complexity,トピック,CS Core,4b,NP完全問題,部分,411・412で頂点被覆・独立集合・SAT の固定例。一般の説明は未評価。,coverage-al-complexity.md,24,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:4c,AL,AL-Complexity,トピック,CS Core,4c,帰着,部分,411・413で２つの固定変換を操作。一般の構築と証明は未評価。,coverage-al-complexity.md,25,原典照合結果は監査記録参照
-AL-Complexity:トピック:CS Core:5,AL,AL-Complexity,トピック,CS Core,5,時間・領域のトレードオフ,部分,338・341で表の保持と再計算を比較。一般の評価は未対応。,coverage-al-complexity.md,26,原典照合結果は監査記録参照
-AL-Complexity:トピック:KA Core:6,AL,AL-Complexity,トピック,KA Core,6,little-o・little-Ω・little-Θ,部分,343で２つの関数比を比較。他の記法と一般の証明は未評価。,coverage-al-complexity.md,27,原典照合結果は監査記録参照
-AL-Complexity:トピック:KA Core:7,AL,AL-Complexity,トピック,KA Core,7,再帰の形式的分析,部分,342・409で固定の分割と書込みの漸化式を比較。一般の導出・証明は未評価。,coverage-al-complexity.md,28,原典照合結果は監査記録参照
-AL-Complexity:トピック:KA Core:8,AL,AL-Complexity,トピック,KA Core,8,償却解析,部分,339・340で容量拡張と会計法を操作。一般の証明は未評価。,coverage-al-complexity.md,29,原典照合結果は監査記録参照
-AL-Complexity:トピック:KA Core:9a-i,AL,AL-Complexity,トピック,KA Core,9a-i,チューリング機械の時間計算量・P・NP・NP-C・EXP,部分,414で P・NP・NP完全、865で遷移数、868で PSPACE と EXP の包含を扱う。各クラスの機械に基づく一般的な定義は未評価。,coverage-al-complexity.md,30,原典照合結果は監査記録参照
-AL-Complexity:トピック:KA Core:9a-ii,AL,AL-Complexity,トピック,KA Core,9a-ii,Cook–Levin の定理,部分,867で１回の選択を行う架空機械の入力・遷移・終点・受理を論理式に写し、定理を説明。一般の構成と多項式上界の証明は未評価。,coverage-al-complexity.md,31,原典照合結果は監査記録参照
-AL-Complexity:トピック:KA Core:9b-i,AL,AL-Complexity,トピック,KA Core,9b-i,非決定性・決定性の領域計算量,部分,865で決定性１帯機械の訪問マスを数える。非決定性・一般の入力は未評価。,coverage-al-complexity.md,32,原典照合結果は監査記録参照
-AL-Complexity:トピック:KA Core:9b-ii,AL,AL-Complexity,トピック,KA Core,9b-ii,Savitch の定理,部分,866で５門の到達可能性を中継点に分け、領域再利用と定理の条件を説明。一般の構成・領域上界の証明は未評価。,coverage-al-complexity.md,33,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:1,AL,AL-Complexity,学習成果,CS Core,1,初学者向けに基礎を発表,部分,88・334・341・344で一部の概念を操作。全概念と自由な発表は未評価。,coverage-al-complexity.md,39,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:2,AL,AL-Complexity,学習成果,CS Core,2,各基本的成長を例で説明,部分,88・334・336・342の固定例。全種類と自由な説明は未評価。,coverage-al-complexity.md,40,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:3,AL,AL-Complexity,学習成果,CS Core,3,各成長を示すアルゴリズムを説明,部分,88・334・342の固定例。全種類と自由な説明は未評価。,coverage-al-complexity.md,41,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:4,AL,AL-Complexity,学習成果,CS Core,4,基礎単位の各アルゴリズムの計算量と理由,部分,88・342などの操作回数。全アルゴリズムと一般的な理由は未評価。,coverage-al-complexity.md,42,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:5,AL,AL-Complexity,学習成果,CS Core,5,単純な手順の成長を非形式的に評価,部分,334で３種類の操作を比較。未知の手順への適用は未評価。,coverage-al-complexity.md,43,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:6,AL,AL-Complexity,学習成果,CS Core,6,実装と実行の実行可能性を考え解法を選択,部分,344で固定探索の比較。一般の設計と実行可能性は未評価。,coverage-al-complexity.md,44,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:7,AL,AL-Complexity,学習成果,CS Core,7,規模を変えた実測と理論分析を比較,部分,344で２規模の不在探索を測定。一般の仮説・実験計画は未評価。,coverage-al-complexity.md,45,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:8,AL,AL-Complexity,学習成果,CS Core,8,時間と領域のトレードオフを例示,部分,341で保持と再計算を比較。自由な説明は未評価。,coverage-al-complexity.md,46,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:9,AL,AL-Complexity,学習成果,CS Core,9,木の平衡と探索効率,部分,57で木の形と探索回数、348で回転を操作。一般の分析は未評価。,coverage-al-complexity.md,47,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:10,AL,AL-Complexity,学習成果,CS Core,10,非技術者に実行可能性と O を説明,部分,334・335で固定例を比較。自由な説明は未評価。,coverage-al-complexity.md,48,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:11,AL,AL-Complexity,学習成果,CS Core,11,NP完全性の意義,部分,414で P と NP への含意を整理。一般の説明は未評価。,coverage-al-complexity.md,49,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:12,AL,AL-Complexity,学習成果,CS Core,12,NP困難・NP・NP完全の関係,部分,414で性質を整理。一般の証明は未評価。,coverage-al-complexity.md,50,原典照合結果は監査記録参照
-AL-Complexity:学習成果:CS Core:13,AL,AL-Complexity,学習成果,CS Core,13,NP完全問題の例,部分,411・412で固定例を操作。一般の説明は未評価。,coverage-al-complexity.md,51,原典照合結果は監査記録参照
-AL-Complexity:学習成果:KA Core:14,AL,AL-Complexity,学習成果,KA Core,14,漸化式による再帰の時間分析,部分,409で固定の書込みを比較。一般の導出は未評価。,coverage-al-complexity.md,52,原典照合結果は監査記録参照
-AL-Complexity:学習成果:KA Core:15,AL,AL-Complexity,学習成果,KA Core,15,マスター定理を使う,部分,409・410で固定した２分割と費用を比較。一般の条件は未評価。,coverage-al-complexity.md,53,原典照合結果は監査記録参照
-AL-Complexity:学習成果:KA Core:16,AL,AL-Complexity,学習成果,KA Core,16,O 記法による時間・領域の上界,部分,335で固定関数の上界を比較。一般の時間・領域分析は未評価。,coverage-al-complexity.md,54,原典照合結果は監査記録参照
-AL-Complexity:学習成果:KA Core:17,AL,AL-Complexity,学習成果,KA Core,17,Cook–Levin の定理と SAT の NP 完全性,部分,867で受理する記録と充足割当ての固定対応、SAT の候補検証と NP 完全性を説明。一般の証明と自由な説明は未評価。,coverage-al-complexity.md,55,原典照合結果は監査記録参照
-AL-Complexity:学習成果:KA Core:18,AL,AL-Complexity,学習成果,KA Core,18,P と NP,部分,412・414で候補検証とクラスの関係を操作。一般の説明は未評価。,coverage-al-complexity.md,56,原典照合結果は監査記録参照
-AL-Complexity:学習成果:KA Core:19,AL,AL-Complexity,学習成果,KA Core,19,帰着による NP 完全性の証明,部分,411・413で固定の問題変換を操作。完全な証明の構築は未評価。,coverage-al-complexity.md,57,原典照合結果は監査記録参照
-AL-Complexity:学習成果:KA Core:20,AL,AL-Complexity,学習成果,KA Core,20,PSPACE と EXP の関係,部分,868で有限の構成数と決定的な再訪を操作し、PSPACE ⊆ EXP を説明。一般の構成数上界や自由な証明は未評価。,coverage-al-complexity.md,58,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:1a,AL,AL-Complexity,トピック,CS Core,1a,最良・平均・最悪,部分,88で探索位置ごとの比較回数と最大を調べる。一般の平均・最悪分析は未評価。,coverage-al-complexity.md,11,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:1b,AL,AL-Complexity,トピック,CS Core,1b,実測と成長の尺度,部分,344で２規模の不在探索を測り比較回数と併記。一般の実験計画は未評価。,coverage-al-complexity.md,12,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:1c,AL,AL-Complexity,トピック,CS Core,1c,入力規模と基本操作,部分,88・334で冊数と比較・操作回数を変える。一般の分析は未評価。,coverage-al-complexity.md,13,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:1d,AL,AL-Complexity,トピック,CS Core,1d,時間と領域の効率,部分,341で表の保持と再計算を比較。一般の効率評価は未評価。,coverage-al-complexity.md,14,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2a,AL,AL-Complexity,トピック,CS Core,2a,O・Ω・Θ の形式的記法,部分,335で固定関数と上界を比較。３記法の形式的な証明全体は未評価。,coverage-al-complexity.md,15,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-i,AL,AL-Complexity,トピック,CS Core,2b-i,定数,部分,334で指定された棚を１回で直接参照する模型を比較。一般のデータ構造や実機の性能は未評価。,coverage-al-complexity.md,16,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-ii,AL,AL-Complexity,トピック,CS Core,2b-ii,対数,部分,88・334で二分探索などを比較。一般の導出は未評価。,coverage-al-complexity.md,17,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-iii,AL,AL-Complexity,トピック,CS Core,2b-iii,線形,部分,88・334で逐次操作を比較。一般の導出は未評価。,coverage-al-complexity.md,18,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-iv,AL,AL-Complexity,トピック,CS Core,2b-iv,n log n,部分,342で２のべきの入力について併合段階の書戻しを調べる。一般の証明は未評価。,coverage-al-complexity.md,19,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-v,AL,AL-Complexity,トピック,CS Core,2b-v,二次,部分,334で二重の操作回数を比較。一般の証明は未評価。,coverage-al-complexity.md,20,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-vi,AL,AL-Complexity,トピック,CS Core,2b-vi,多項式,部分,334の二次の例。一般の多項式と代表例の比較は未評価。,coverage-al-complexity.md,21,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-vii,AL,AL-Complexity,トピック,CS Core,2b-vii,指数,部分,334で３・４個の全部分集合の数、336で４個の全候補を調べる。一般の増大と他の問題は未評価。,coverage-al-complexity.md,22,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:2b-viii,AL,AL-Complexity,トピック,CS Core,2b-viii,階乗,部分,334で３・４個の全順列の数を比較。一般の証明や実際の巡回問題は未評価。,coverage-al-complexity.md,23,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:3,AL,AL-Complexity,トピック,CS Core,3,性能の実測,部分,344で２規模の探索をブラウザで測定。測定環境や一般の性能評価は未評価。,coverage-al-complexity.md,24,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:4a,AL,AL-Complexity,トピック,CS Core,4a,P・NP・NP完全,部分,414で３クラスの性質を整理。一般の証明は未評価。,coverage-al-complexity.md,25,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:4b,AL,AL-Complexity,トピック,CS Core,4b,NP完全問題,部分,411・412で頂点被覆・独立集合・SAT の固定例。一般の説明は未評価。,coverage-al-complexity.md,26,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:4c,AL,AL-Complexity,トピック,CS Core,4c,帰着,部分,411・413で２つの固定変換を操作。一般の構築と証明は未評価。,coverage-al-complexity.md,27,原典照合結果は監査記録参照
+AL-Complexity:トピック:CS Core:5,AL,AL-Complexity,トピック,CS Core,5,時間・領域のトレードオフ,部分,338・341で表の保持と再計算を比較。一般の評価は未対応。,coverage-al-complexity.md,28,原典照合結果は監査記録参照
+AL-Complexity:トピック:KA Core:6,AL,AL-Complexity,トピック,KA Core,6,little-o・little-Ω・little-Θ,部分,343で２つの関数比を比較。他の記法と一般の証明は未評価。,coverage-al-complexity.md,29,原典照合結果は監査記録参照
+AL-Complexity:トピック:KA Core:7,AL,AL-Complexity,トピック,KA Core,7,再帰の形式的分析,部分,342・409で固定の分割と書込みの漸化式を比較。一般の導出・証明は未評価。,coverage-al-complexity.md,30,原典照合結果は監査記録参照
+AL-Complexity:トピック:KA Core:8,AL,AL-Complexity,トピック,KA Core,8,償却解析,部分,339・340で容量拡張と会計法を操作。一般の証明は未評価。,coverage-al-complexity.md,31,原典照合結果は監査記録参照
+AL-Complexity:トピック:KA Core:9a-i,AL,AL-Complexity,トピック,KA Core,9a-i,チューリング機械の時間計算量・P・NP・NP-C・EXP,部分,414で P・NP・NP完全、865で遷移数、868で PSPACE と EXP の包含を扱う。各クラスの機械に基づく一般的な定義は未評価。,coverage-al-complexity.md,32,原典照合結果は監査記録参照
+AL-Complexity:トピック:KA Core:9a-ii,AL,AL-Complexity,トピック,KA Core,9a-ii,Cook–Levin の定理,部分,867で１回の選択を行う架空機械の入力・遷移・終点・受理を論理式に写し、定理を説明。一般の構成と多項式上界の証明は未評価。,coverage-al-complexity.md,33,原典照合結果は監査記録参照
+AL-Complexity:トピック:KA Core:9b-i,AL,AL-Complexity,トピック,KA Core,9b-i,非決定性・決定性の領域計算量,部分,865で決定性１帯機械の訪問マスを数える。非決定性・一般の入力は未評価。,coverage-al-complexity.md,34,原典照合結果は監査記録参照
+AL-Complexity:トピック:KA Core:9b-ii,AL,AL-Complexity,トピック,KA Core,9b-ii,Savitch の定理,部分,866で５門の到達可能性を中継点に分け、領域再利用と定理の条件を説明。一般の構成・領域上界の証明は未評価。,coverage-al-complexity.md,35,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:1,AL,AL-Complexity,学習成果,CS Core,1,初学者向けに基礎を発表,部分,88・334・341・344で一部の概念を操作。全概念と自由な発表は未評価。,coverage-al-complexity.md,41,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:2,AL,AL-Complexity,学習成果,CS Core,2,各基本的成長を例で説明,部分,88・334・336・342の固定例。全種類と自由な説明は未評価。,coverage-al-complexity.md,42,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:3,AL,AL-Complexity,学習成果,CS Core,3,各成長を示すアルゴリズムを説明,部分,88・334・342の固定例。全種類と自由な説明は未評価。,coverage-al-complexity.md,43,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:4,AL,AL-Complexity,学習成果,CS Core,4,基礎単位の各アルゴリズムの計算量と理由,部分,88・342などの操作回数。全アルゴリズムと一般的な理由は未評価。,coverage-al-complexity.md,44,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:5,AL,AL-Complexity,学習成果,CS Core,5,単純な手順の成長を非形式的に評価,部分,334で３種類の操作を比較。未知の手順への適用は未評価。,coverage-al-complexity.md,45,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:6,AL,AL-Complexity,学習成果,CS Core,6,実装と実行の実行可能性を考え解法を選択,部分,344で固定探索の比較。一般の設計と実行可能性は未評価。,coverage-al-complexity.md,46,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:7,AL,AL-Complexity,学習成果,CS Core,7,規模を変えた実測と理論分析を比較,部分,344で２規模の不在探索を測定。一般の仮説・実験計画は未評価。,coverage-al-complexity.md,47,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:8,AL,AL-Complexity,学習成果,CS Core,8,時間と領域のトレードオフを例示,部分,341で保持と再計算を比較。自由な説明は未評価。,coverage-al-complexity.md,48,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:9,AL,AL-Complexity,学習成果,CS Core,9,木の平衡と探索効率,部分,57で木の形と探索回数、348で回転を操作。一般の分析は未評価。,coverage-al-complexity.md,49,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:10,AL,AL-Complexity,学習成果,CS Core,10,非技術者に実行可能性と O を説明,部分,334・335で固定例を比較。自由な説明は未評価。,coverage-al-complexity.md,50,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:11,AL,AL-Complexity,学習成果,CS Core,11,NP完全性の意義,部分,414で P と NP への含意を整理。一般の説明は未評価。,coverage-al-complexity.md,51,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:12,AL,AL-Complexity,学習成果,CS Core,12,NP困難・NP・NP完全の関係,部分,414で性質を整理。一般の証明は未評価。,coverage-al-complexity.md,52,原典照合結果は監査記録参照
+AL-Complexity:学習成果:CS Core:13,AL,AL-Complexity,学習成果,CS Core,13,NP完全問題の例,部分,411・412で固定例を操作。一般の説明は未評価。,coverage-al-complexity.md,53,原典照合結果は監査記録参照
+AL-Complexity:学習成果:KA Core:14,AL,AL-Complexity,学習成果,KA Core,14,漸化式による再帰の時間分析,部分,409で固定の書込みを比較。一般の導出は未評価。,coverage-al-complexity.md,54,原典照合結果は監査記録参照
+AL-Complexity:学習成果:KA Core:15,AL,AL-Complexity,学習成果,KA Core,15,マスター定理を使う,部分,409・410で固定した２分割と費用を比較。一般の条件は未評価。,coverage-al-complexity.md,55,原典照合結果は監査記録参照
+AL-Complexity:学習成果:KA Core:16,AL,AL-Complexity,学習成果,KA Core,16,O 記法による時間・領域の上界,部分,335で固定関数の上界を比較。一般の時間・領域分析は未評価。,coverage-al-complexity.md,56,原典照合結果は監査記録参照
+AL-Complexity:学習成果:KA Core:17,AL,AL-Complexity,学習成果,KA Core,17,Cook–Levin の定理と SAT の NP 完全性,部分,867で受理する記録と充足割当ての固定対応、SAT の候補検証と NP 完全性を説明。一般の証明と自由な説明は未評価。,coverage-al-complexity.md,57,原典照合結果は監査記録参照
+AL-Complexity:学習成果:KA Core:18,AL,AL-Complexity,学習成果,KA Core,18,P と NP,部分,412・414で候補検証とクラスの関係を操作。一般の説明は未評価。,coverage-al-complexity.md,58,原典照合結果は監査記録参照
+AL-Complexity:学習成果:KA Core:19,AL,AL-Complexity,学習成果,KA Core,19,帰着による NP 完全性の証明,部分,411・413で固定の問題変換を操作。完全な証明の構築は未評価。,coverage-al-complexity.md,59,原典照合結果は監査記録参照
+AL-Complexity:学習成果:KA Core:20,AL,AL-Complexity,学習成果,KA Core,20,PSPACE と EXP の関係,部分,868で有限の構成数と決定的な再訪を操作し、PSPACE ⊆ EXP を説明。一般の構成数上界や自由な証明は未評価。,coverage-al-complexity.md,60,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:1・1a,AL,AL-Foundational,トピック,CS Core,1・1a,抽象データ型・辞書操作,部分,174で２方式の登録・更新・削除・検索。一般の仕様と実装は未評価。,coverage-al-foundational.md,9,原典照合結果は監査記録参照・番号を要確認
 AL-Foundational:トピック:CS Core:2a,AL,AL-Foundational,トピック,CS Core,2a,数値・非数値配列、文字列,部分,173で数値の配置、1129・1344で符号単位・符号位置・書記素と正規化を固定例で比較。配列の各型と一般の文字処理は未評価。,coverage-al-foundational.md,10,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:2b,AL,AL-Foundational,トピック,CS Core,2b,一次元・多次元配列,部分,173で３×３の２通りの配置。一般の添字・実装は未評価。,coverage-al-foundational.md,11,原典照合結果は監査記録参照

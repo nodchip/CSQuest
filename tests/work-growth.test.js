@@ -1,7 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {workCount,workGrowthCorrect,createWorkGrowth,restoreWorkGrowth,workGrowthComplete,extraWorkCount,extraGrowthCorrect} from '../src/work-growth.js';
+import {workCount,growthScale,workGrowthCorrect,createWorkGrowth,restoreWorkGrowth,workGrowthComplete,extraWorkCount,extraGrowthCorrect} from '../src/work-growth.js';
 test('the three mechanisms count single items, ordered pairs and halving rounds',()=>{assert.deepEqual(['linear','pairs','halve'].map(id=>[workCount(id,4),workCount(id,8)]),[[4,8],[16,64],[2,3]]);assert.throws(()=>workCount('pairs',7));});
 test('each prediction and growth comparison must be checked and drafts are copied',()=>{const s=createWorkGrowth();s.choices.linear={four:4,eight:8,growth:'double',checked:true};s.choices.pairs={four:16,eight:64,growth:'fourfold',checked:true};s.choices.halve={four:2,eight:3,growth:'plusone',checked:true};s.checked=true;assert.equal(workGrowthComplete(s),false);s.extra.constant={three:1,four:1,checked:true};s.extra.subsets={three:8,four:16,checked:true};s.extra.permutations={three:6,four:24,checked:true};assert.equal(workGrowthComplete(s),true);const copy=restoreWorkGrowth(s);copy.choices.pairs.growth='double';assert.equal(workGrowthCorrect('pairs',copy.choices.pairs),false);assert.equal(workGrowthComplete(s),true);assert.throws(()=>restoreWorkGrowth({...s,selected:'other'}));});
 test('counts agree with independently enumerated subsets and orderings',()=>{for(const n of [3,4]){const items=Array.from({length:n},(_,i)=>i),subsets=items.reduce(acc=>acc.flatMap(a=>[a,[...a,1]]),[[]]);const permutations=items.reduce(acc=>acc.flatMap(a=>Array.from({length:a.length+1},(_,i)=>[...a.slice(0,i),1,...a.slice(i)])),[[]]);assert.equal(extraWorkCount('constant',n),1);assert.equal(extraWorkCount('subsets',n),subsets.length);assert.equal(extraWorkCount('permutations',n),permutations.length);}assert.throws(()=>extraWorkCount('constant',5));});
 test('old drafts retain existing predictions and require the new observations',()=>{const s=createWorkGrowth();s.choices.linear={four:4,eight:8,growth:'double',checked:true};delete s.extra;const restored=restoreWorkGrowth(s);assert.equal(restored.choices.linear.checked,true);assert.equal(extraGrowthCorrect('constant',restored.extra.constant),false);restored.extra.constant={three:1,four:1,checked:true};assert.equal(extraGrowthCorrect('constant',restoreWorkGrowth(restored).extra.constant),true);assert.throws(()=>restoreWorkGrowth({...restored,extra:{...restored.extra,constant:{three:99,four:1,checked:true}}}));});
+test('larger scales preserve exact integer counts and old drafts restore',()=>{
+ assert.deepEqual(growthScale(4),{constant:'1',halve:'2',linear:'4',pairs:'16',subsets:'16',permutations:'24'});
+ const big=growthScale(32);assert.equal(big.halve,'5');assert.equal(big.pairs,'1024');assert.equal(big.subsets,'4294967296');assert.equal(big.permutations,'263130836933693530167218012160000000');
+ assert.throws(()=>growthScale(5));
+ const old=createWorkGrowth();delete old.scaleSize;assert.equal(restoreWorkGrowth(old).scaleSize,4);
+ assert.equal(restoreWorkGrowth({...old,scaleSize:32}).scaleSize,32);
+ assert.throws(()=>restoreWorkGrowth({...old,scaleSize:5}));
+});
