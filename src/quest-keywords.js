@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-agent-report-ledger':['AI','エージェント','知識表現','情報更新','時刻','出所','来歴'],
  'guild-agent-coordination-learning':['AI','複数主体','協調','強化学習','探索','貪欲'],
  'guild-agent-joint-learning':['AI','複数主体','協調','報酬','学習','非定常'],
  'guild-agent-bdi-courier':['AI','BDI','エージェント','信念','目的','意図','認知アーキテクチャ'],
