@@ -214,3 +214,5 @@ test('knapsack follows subset reconstruction in the logic trail',()=>{const ids=
 test('name workshop follows ethical learning in the engineering trail',()=>{const ids=findTrail('se-journey').quests;assert.ok(ids.indexOf('village-ethical-learning-cycle')>=0&&ids.indexOf('village-ethical-learning-cycle')<ids.indexOf('village-name-access-workshop'));});
 
 test('community archive follows collection impacts in the data trail',()=>{const ids=findTrail('data').quests;assert.ok(ids.indexOf('archive-collection-impacts')>=0&&ids.indexOf('archive-collection-impacts')<ids.indexOf('archive-community-archive'));});
+
+test('systems trail connects worker measurement with replica recovery',()=>{const ids=findTrail('systems').quests;assert.ok(ids.indexOf('forest-worker-reuse')>=0);assert.ok(ids.indexOf('village-mirror-recovery')>ids.indexOf('forest-worker-reuse'));assert.ok(ids.indexOf('village-mirror-recovery')<ids.indexOf('forge-parallel-specification'));});
