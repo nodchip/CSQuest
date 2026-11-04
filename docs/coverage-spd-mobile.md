@@ -13,7 +13,7 @@
 | 3a | KA Core | API によるデータへのアクセス | 部分 | 354でオフライン保留・再送の模型。実 API への接続は未評価。 |
 | 3b | KA Core | モバイル向け API 設計上の注意 | 部分 | 354で同一識別子による再送と重複の固定例。一般の設計は未評価。 |
 | 3c | KA Core | ネットワークと Web インターフェース | 部分 | 354で接続回復・応答喪失を仮定。実通信・設計は未評価。 |
-| 4a | Non-core | ネイティブとクロスプラットフォーム | 未照合 | 比較と評価を要照合。 |
+| 4a | Non-core | ネイティブとクロスプラットフォーム | 部分 | 1325で別々の実装と処理の共有を条件付きで比較。実開発・網羅的評価は未実施。 |
 | 4b | Non-core | モバイルの設計パターン | 未照合 | 実設計を要照合。 |
 | 5a | Non-core | レスポンシブ UI | 未照合 | 異なる画面の設計・評価を要照合。 |
 | 5b | Non-core | 端末の多様性と移動 | 部分 | 354で圏外と通信回復。多様な実端末は未評価。 |
@@ -37,7 +37,7 @@
 | 2 | KA Core | 位置と API を使うアプリ | 部分 | 393で位置取得の選択。API 統合・実アプリ開発は未評価。 |
 | 3 | KA Core | センサーデータの遠隔記録 | 部分 | 1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。 |
 | 4 | KA Core | 電話・メッセージアプリ | 未照合 | 実装と代替を要照合。 |
-| 5 | KA Core | ネイティブと共通開発の長短 | 未照合 | 体系的な比較を要照合。 |
+| 5 | KA Core | ネイティブと共通開発の長短 | 部分 | 1325でコード共有、端末固有機能、対応状況と試験を固定条件で比較。一般的・実測に基づく評価は未実施。 |
 
 354の再送は固定された受付の重複抑止を仮定し、実 API や認証は扱わない。393・394は実位置・実端末・利用者の評価ではない。根拠と前提は[既存調査](spd-mobile.md)、[社会・倫理の調査](spd-sep.md)、`tests/mobile-retry.test.js`、`tests/mobile-location.test.js`、`tests/touch-targets.test.js` を参照。
 
@@ -48,3 +48,5 @@
 依頼1323は [Android の位置権限](https://developer.android.com/develop/sensors-and-location/location/permissions) と [拒否時の対応](https://developer.android.com/training/permissions/requesting) を参考に、架空の許可・固定位置・手動代替を操作する。取得中に許可が変わっても結果が届くという模型で、使う前の再確認を示す。実 OS の全挙動を再現せず、詳しい位置からおおよその位置に変更時のプロセス再起動等も画面に明記。`tests/mobile-permission-journey.test.js` は開始時と返事時の６組合せ、拒否・代替と保存を検査。実位置・端末・個人情報の削除は評価しない。
 
 依頼1324は [Android のオフライン時の書込み](https://developer.android.com/topic/architecture/data-layer/offline-first) と [センサーの概要](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview) を参考に、２つの架空の温度・時刻・番号を保存し、圏外・通信回復・初回の返事喪失・同一番号の再送を模型で操作する。`tests/mobile-sensor-queue.test.js` は送信順２通り、重複抑止と保存を検査。実センサー・ネットワーク・サーバー、全失敗や耐障害性は評価しない。
+
+依頼1325は [Android の Kotlin Multiplatform 事例](https://developer.android.com/codelabs/kmp-get-started) と [環境の準備](https://developer.android.com/kotlin/multiplatform/setup) を参考に、共通の計算と端末ごとの画面を組み合わせる方式、および端末ごとに別々に作る方式を三つの固定条件で比較する。共通化の可否や費用は前提次第であり、実機・実開発・性能・費用の評価ではない。`tests/mobile-platform-choice.test.js` は各条件の正誤と保存状態を検査する。

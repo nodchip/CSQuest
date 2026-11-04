@@ -3493,7 +3493,7 @@ SPD-Mobile:トピック:KA Core:2b,SPD,SPD-Mobile,トピック,KA Core,2b,セキ
 SPD-Mobile:トピック:KA Core:3a,SPD,SPD-Mobile,トピック,KA Core,3a,API によるデータへのアクセス,部分,354でオフライン保留・再送の模型。実 API への接続は未評価。,coverage-spd-mobile.md,13,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3b,SPD,SPD-Mobile,トピック,KA Core,3b,モバイル向け API 設計上の注意,部分,354で同一識別子による再送と重複の固定例。一般の設計は未評価。,coverage-spd-mobile.md,14,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3c,SPD,SPD-Mobile,トピック,KA Core,3c,ネットワークと Web インターフェース,部分,354で接続回復・応答喪失を仮定。実通信・設計は未評価。,coverage-spd-mobile.md,15,原典照合結果は監査記録参照
-SPD-Mobile:トピック:Non-core:4a,SPD,SPD-Mobile,トピック,Non-core,4a,ネイティブとクロスプラットフォーム,未照合,比較と評価を要照合。,coverage-spd-mobile.md,16,原典照合結果は監査記録参照
+SPD-Mobile:トピック:Non-core:4a,SPD,SPD-Mobile,トピック,Non-core,4a,ネイティブとクロスプラットフォーム,部分,1325で別々の実装と処理の共有を条件付きで比較。実開発・網羅的評価は未実施。,coverage-spd-mobile.md,16,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:4b,SPD,SPD-Mobile,トピック,Non-core,4b,モバイルの設計パターン,未照合,実設計を要照合。,coverage-spd-mobile.md,17,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:5a,SPD,SPD-Mobile,トピック,Non-core,5a,レスポンシブ UI,未照合,異なる画面の設計・評価を要照合。,coverage-spd-mobile.md,18,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:5b,SPD,SPD-Mobile,トピック,Non-core,5b,端末の多様性と移動,部分,354で圏外と通信回復。多様な実端末は未評価。,coverage-spd-mobile.md,19,原典照合結果は監査記録参照
@@ -3512,7 +3512,7 @@ SPD-Mobile:学習成果:KA Core:1,SPD,SPD-Mobile,学習成果,KA Core,1,モバ�
 SPD-Mobile:学習成果:KA Core:2,SPD,SPD-Mobile,学習成果,KA Core,2,位置と API を使うアプリ,部分,393で位置取得の選択。API 統合・実アプリ開発は未評価。,coverage-spd-mobile.md,37,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:3,SPD,SPD-Mobile,学習成果,KA Core,3,センサーデータの遠隔記録,部分,1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。,coverage-spd-mobile.md,38,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:4,SPD,SPD-Mobile,学習成果,KA Core,4,電話・メッセージアプリ,未照合,実装と代替を要照合。,coverage-spd-mobile.md,39,原典照合結果は監査記録参照
-SPD-Mobile:学習成果:KA Core:5,SPD,SPD-Mobile,学習成果,KA Core,5,ネイティブと共通開発の長短,未照合,体系的な比較を要照合。,coverage-spd-mobile.md,40,原典照合結果は監査記録参照
+SPD-Mobile:学習成果:KA Core:5,SPD,SPD-Mobile,学習成果,KA Core,5,ネイティブと共通開発の長短,部分,1325でコード共有、端末固有機能、対応状況と試験を固定条件で比較。一般的・実測に基づく評価は未実施。,coverage-spd-mobile.md,40,原典照合結果は監査記録参照
 SPD-Robot:トピック:未記載:1,SPD,SPD-Robot,トピック,未記載,1,ロボットのプラットフォームと機器の種類,部分,依頼691で架空の車輪型・飛行型と観測器を比較。実際の機器全般は未確認。,coverage-spd-robot.md,11,原典照合結果は監査記録参照・区分を要確認
 SPD-Robot:トピック:未記載:2,SPD,SPD-Robot,トピック,未記載,2,センサー、組込み計算、動作器,部分,依頼28・690・691で観測と移動の固定模型を操作。実機の計算・信号処理は扱わない。,coverage-spd-robot.md,12,原典照合結果は監査記録参照・区分を要確認
 SPD-Robot:トピック:未記載:3,SPD,SPD-Robot,トピック,未記載,3,ロボット用言語とライブラリ,部分,依頼690で Python と rclpy、C++ と rclcpp の組を選ぶ。実言語・ライブラリの利用や一般のロボット用言語は未評価。,coverage-spd-robot.md,13,原典照合結果は監査記録参照・区分を要確認

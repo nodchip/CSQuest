@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-mobile-platform-choice':['モバイル','ネイティブ','クロスプラットフォーム','共通コード','試験'],
  'forest-mobile-sensor-queue':['モバイル','センサー','オフライン','再送','温度','重複'],
  'guild-mobile-permission-journey':['モバイル','位置情報','権限','拒否','おおよそ','Android'],
  'guild-mobile-async-harness':['非同期','テスト','Promise','コールバック','返事','失敗'],
