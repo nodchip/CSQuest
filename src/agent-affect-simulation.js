@@ -1,0 +1,8 @@
+export const affectSimulationLevel={id:'guild-agent-affect-simulation',number:'1338',kind:'agent-affect-simulation',name:'表情を作る案内人形',tag:'AI・感情の模型・表現',title:'出来事と表情の規則を比べよう',story:'案内人形が道の状況を知らせます。出来事から作る架空の状態と、その表示方法を比べましょう。'};
+export const affectEvents={open:{name:'道が開いた',state:'よろこび風',action:'進めると知らせる'},blocked:{name:'道がふさがった',state:'心配風',action:'立ち止まるよう知らせる'}};
+export const affectModes={expressive:'表情風の印と文字',plain:'文字だけ'};
+export function affectResult(event,mode){if(!Object.hasOwn(affectEvents,event)||!Object.hasOwn(affectModes,mode))throw new RangeError('条件が不正です。');const e=affectEvents[event];return {state:e.state,action:e.action,display:mode==='expressive'?(event==='open'?'明るい印':'注意の印'):'印なし'};}
+export function affectCreate(){return {event:'open',mode:'expressive',seen:[],reflection:null,checked:false};}
+export function affectTry(q){const result=affectResult(q.event,q.mode),key=q.event+':'+q.mode;if(!q.seen.includes(key))q.seen.push(key);return result;}
+export function affectDone(q){return Object.keys(affectEvents).every(e=>Object.keys(affectModes).every(m=>q.seen.includes(e+':'+m)))&&q.reflection==='simulation'&&q.checked;}
+export function affectRestore(q){const keys=Object.keys(affectEvents).flatMap(e=>Object.keys(affectModes).map(m=>e+':'+m));if(!q||!Object.hasOwn(affectEvents,q.event)||!Object.hasOwn(affectModes,q.mode)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!keys.includes(k))||![null,'simulation','feels','detects'].includes(q.reflection)||typeof q.checked!=='boolean'||q.checked&&q.reflection!=='simulation')throw new RangeError('途中記録が不正です。');return {...q,seen:[...q.seen]};}

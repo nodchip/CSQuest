@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {affectResult,affectCreate,affectTry,affectDone,affectRestore} from '../src/agent-affect-simulation.js';
+test('the simulated state and action depend on the event while the display mode only changes the symbol',()=>{for(const event of ['open','blocked']){const a=affectResult(event,'expressive'),b=affectResult(event,'plain');assert.equal(a.state,b.state);assert.equal(a.action,b.action);assert.notEqual(a.display,b.display);}assert.equal(affectResult('blocked','plain').action,'立ち止まるよう知らせる');});
+test('all four combinations and the reflection are required',()=>{const q=affectCreate();for(const event of ['open','blocked'])for(const mode of ['expressive','plain']){q.event=event;q.mode=mode;affectTry(q);affectTry(q);}assert.equal(q.seen.length,4);assert.equal(affectDone(q),false);q.reflection='simulation';q.checked=true;assert.equal(affectDone(q),true);const copy=affectRestore(q);copy.seen.pop();assert.equal(q.seen.length,4);assert.throws(()=>affectRestore({...q,seen:['open:plain','open:plain']}));});
