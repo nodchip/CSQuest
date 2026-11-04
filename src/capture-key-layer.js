@@ -1,0 +1,9 @@
+export const captureKeyLayerLevel={id:'ruins-capture-key-layer',number:'1252',kind:'capture-key-layer',name:'記録した動きに手を加える',tag:'モーションキャプチャとキーフレーム',title:'精霊の合図を調整しよう',story:'精霊が腕を上げる動きを記録しました。祭りの二つの合図に合わせ、元の記録の上から手を加えましょう。'};
+export const captureLayerBase=[0,10,20,10,0];
+export const captureLayerCases={greeting:{name:'高いあいさつ',peak:40,offset:20},signal:{name:'控えめな合図',peak:30,offset:10}};
+export const captureLayerModes={add:'元の動きに加える',replace:'調整で置き換える'};
+export function captureLayerValue(frame,offset,mode){if(!Number.isInteger(frame)||frame<0||frame>4||![-20,-10,0,10,20].includes(offset)||!Object.hasOwn(captureLayerModes,mode))throw new RangeError('時刻または調整が不正です。');const adjustment=offset*[0,.5,1,.5,0][frame]||0;return {base:captureLayerBase[frame],adjustment,result:(mode==='add'?captureLayerBase[frame]:0)+adjustment};}
+export function captureLayerCreate(){return {selected:'greeting',trials:Object.fromEntries(Object.keys(captureLayerCases).map(k=>[k,{mode:'add',offset:0,ticks:0,seen:false}])),reflection:null};}
+export function captureLayerStep(q){const t=q.trials[q.selected];if(t.ticks>=5)return false;t.ticks++;if(t.ticks===5&&t.mode==='add'&&t.offset===captureLayerCases[q.selected].offset)t.seen=true;return true;}
+export function captureLayerDone(q){return Object.keys(captureLayerCases).every(k=>q.trials[k].seen)&&q.reflection==='layer';}
+export function captureLayerRestore(q){if(!q||!Object.hasOwn(captureLayerCases,q.selected)||!q.trials||![null,'layer','overwrite'].includes(q.reflection))throw new RangeError('記録が不正です。');const r=captureLayerCreate();r.selected=q.selected;r.reflection=q.reflection;for(const k of Object.keys(captureLayerCases)){const t=q.trials[k];if(!t||!Object.hasOwn(captureLayerModes,t.mode)||![-20,-10,0,10,20].includes(t.offset)||!Number.isInteger(t.ticks)||t.ticks<0||t.ticks>5||typeof t.seen!=='boolean')throw new RangeError('記録が不正です。');r.trials[k]={...t};}return r;}
