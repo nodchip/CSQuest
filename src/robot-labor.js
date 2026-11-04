@@ -1,0 +1,9 @@
+export const robotLaborLevel={id:'archive-robot-labor',number:'1275',kind:'robot-labor',name:'人形と働き手の記録',tag:'ロボットと雇用',title:'二つの推定を読み分ける',story:'書庫の鑑定士が、機械と働き手の関係を調べた実際の研究を見つけました。地域と全国の推定を読み分けましょう。'};
+export const robotScopes={local:'地域の相対的な推定',national:'全国の模型による推定'};
+export const robotMeasures={employment:'就業者／人口の割合',wage:'賃金'};
+export const robotEstimates={local:{employment:0.39,wage:0.77},national:{employment:0.20,wage:0.42}};
+export function robotLaborValue(scope,measure,exposure){if(!Object.hasOwn(robotScopes,scope)||!Object.hasOwn(robotMeasures,measure)||![0,1].includes(exposure))throw new RangeError('条件が不正です。');const delta=robotEstimates[scope][measure]*exposure,baseline=measure==='employment'?60:100;return {delta,baseline,result:measure==='employment'?baseline-delta:baseline*(1-delta/100)};}
+export function robotLaborCreate(){return {scope:'local',measure:'employment',exposure:0,seen:[],unit:null,limits:null};}
+export function robotLaborInspect(q){if(q.exposure===1){const key=`${q.scope}:${q.measure}`;if(!q.seen.includes(key))q.seen.push(key);}return robotLaborValue(q.scope,q.measure,q.exposure);}
+export function robotLaborDone(q){return Object.keys(robotScopes).every(s=>Object.keys(robotMeasures).every(m=>q.seen.includes(`${s}:${m}`)))&&q.unit==='points'&&q.limits==='context';}
+export function robotLaborRestore(q){if(!q||!Object.hasOwn(robotScopes,q.scope)||!Object.hasOwn(robotMeasures,q.measure)||![0,1].includes(q.exposure)||![null,'points','percent'].includes(q.unit)||![null,'context','universal'].includes(q.limits)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.keys(robotScopes).some(s=>Object.keys(robotMeasures).some(m=>k===`${s}:${m}`))))throw new RangeError('記録が不正です。');return {scope:q.scope,measure:q.measure,exposure:q.exposure,seen:[...q.seen],unit:q.unit,limits:q.limits};}
