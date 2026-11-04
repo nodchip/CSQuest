@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-left-recursion':['左再帰','文法変換','構文解析','left recursion','grammar transformation'],
  'guild-gesture-map':['ジェスチャー','スワイプ','タッチ','gesture','swipe','touch','代替操作'],
  'guild-interface-workshop':['GUI','window','icon','menu','dialog','アクセシビリティ','窓','アイコン','メニュー'],
  'forge-hazard-scheduler':['ハザードポインタ','メモリ回収','インターリーブ','hazard pointers','interleaving'],
