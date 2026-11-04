@@ -1821,8 +1821,8 @@ HCI-Accountability:トピック:CS Core:1d,HCI,HCI-Accountability,トピック,C
 HCI-Accountability:トピック:CS Core:2a,HCI,HCI-Accountability,トピック,CS Core,2a,設計手法・解決策における AI の役割,部分,118 の分類結果と集団別指標。一般の設計倫理や実運用は未評価。,coverage-hci-accountability.md,13,原典照合結果は監査記録参照
 HCI-Accountability:トピック:CS Core:2b,HCI,HCI-Accountability,トピック,CS Core,2b,関係者の影響と人間要因を考慮する責任,部分,63・188・289 の架空の声と選択画面。責任の実践全般は未評価。,coverage-hci-accountability.md,14,原典照合結果は監査記録参照
 HCI-Accountability:トピック:CS Core:2c,HCI,HCI-Accountability,トピック,CS Core,2c,利用者の必要を満たす設計の役割,部分,188・823 の固定された声と設計選択。実利用者の調査は未評価。,coverage-hci-accountability.md,15,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:3a,HCI,HCI-Accountability,トピック,CS Core,3a,設計の所有責任,未照合,対応教材を要照合。,coverage-hci-accountability.md,16,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:3b,HCI,HCI-Accountability,トピック,CS Core,3b,法的枠組みと遵守要件,未照合,対応教材を要照合。法令適合は評価しない。,coverage-hci-accountability.md,17,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:3a,HCI,HCI-Accountability,トピック,CS Core,3a,設計の所有責任,部分,1300で架空の担当分担と運営組織の継続的な確認を考える。実際の責任分担や実践は未評価。,coverage-hci-accountability.md,16,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:3b,HCI,HCI-Accountability,トピック,CS Core,3b,法的枠組みと遵守要件,部分,1300で GDPR の説明責任と設計段階の保護の例を学ぶ。適用判断や法令適合は評価しない。,coverage-hci-accountability.md,17,原典照合結果は監査記録参照
 HCI-Accountability:トピック:CS Core:3c,HCI,HCI-Accountability,トピック,CS Core,3c,直接の必要を超える問題分析とデジタルウェルビーイング,部分,398 で休息に関する固定例。反復的な問題分析や実際の効果は未評価。,coverage-hci-accountability.md,18,原典照合結果は監査記録参照
 HCI-Accountability:トピック:KA Core:4a,HCI,HCI-Accountability,トピック,KA Core,4a,直接・間接の関係者の特定,部分,63・188 は固定の関係者の声。間接の関係者全般は未評価。,coverage-hci-accountability.md,19,原典照合結果は監査記録参照
 HCI-Accountability:トピック:KA Core:4b,HCI,HCI-Accountability,トピック,KA Core,4b,多様な関係者の価値を特定して含める,部分,359・823 は架空の利用条件を比較。価値体系の体系的分析は未評価。,coverage-hci-accountability.md,20,原典照合結果は監査記録参照
