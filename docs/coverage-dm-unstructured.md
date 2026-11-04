@@ -35,6 +35,8 @@
 
 依頼189では６枚の文書を２枚ずつ３区画に分け、入れ子の束数の区画別最小・最大から「指定値以上」に一致し得ない区画を除く。残る区画の札も個別に確認する。`tests/document-skip-index.test.js` は境界０〜10で全走査との一致・候補の包含と旧記録を検査する。[ClickHouse のスキップ索引](https://clickhouse.com/docs/optimize/skipping-indexes)を参考にした固定模型で、要約は正確と仮定し、実 DB・更新の保守・性能は評価しない。
 
+別の例では B を３から７に変え、古い最大値３を使うと B を見落とす一方、新しい最大値７を使うと B と F を返すことを比較する。故意に古い要約を使う模型であり、実 DB が不正な要約で読み飛ばすと主張するものではない。
+
 依頼1037は [Mikolov らの Word2Vec 論文](https://research.google/pubs/efficient-estimation-of-word-representations-in-vector-space/)と [Stanford の単語ベクトル講義](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes01-wordvecs1.pdf)を参考に、中心語１個、周囲語３候補、２次元の全語 softmax で１組の手本を３回学習する。２手本は同じ初期値から独立に学習する。中心と出力の８座標の勾配を数値微分と照合し、確率の和と各更新の損失を `tests/skipgram-embedding.test.js` で確認。実コーパス、単語の分割、負例サンプリング、一般の意味や性能は評価しない。
 
 依頼1038は [Mikolov らの負例サンプリング](https://arxiv.org/abs/1310.4546)を参考に、１手本・１対比の二値損失で中心と２語の出力を同時に更新する。対比語２種類は固定選択し、３語のシグモイドは正規化された分布と扱わない。選ばれていない出力ベクトルは直接更新されないが、共有中心の変更により内積は変わり得る。`tests/negative-sampling.test.js` は８座標を数値微分と照合し、未選択出力、損失、保存と達成を検査。実際の雑音分布からの抽出、複数負例、実コーパスや一般の性能は未評価。
