@@ -19,8 +19,8 @@
 | 6c | KA Core | Shor の因数分解 | 部分 | 610 は固定の測定結果と古典的後処理。量子回路と一般の因数分解は未評価。 |
 | 6d | KA Core | Grover の探索 | 部分 | 820 で４候補の符号反転と拡散、861で４・８・16候補の反復回数と確率を比較。一般の候補数・正解数、オラクルの構築費用、実機や計算量の証明は未評価。 |
 | 7a | KA Core | 量子ビットの物理的実装 | 部分 | 1216 で超伝導回路・捕捉イオン・光子の構成例を比較。半導体・中性原子など他方式、実機の構築や性能は未評価。 |
-| 7b | KA Core | QPU の古典制御 | 未照合 | 対応教材を要照合。 |
-| 7c | KA Core | 誤りの緩和・制御、NISQ とその先 | 部分 | 1217 で１ビットの読取り誤差を較正し、集計の補正と負の推定値を比較。ゲート誤り・量子誤り訂正・NISQ 全般や実機は未評価。 |
+| 7b | KA Core | QPU の古典制御 | 部分 | 1218 で補助測定の古典結果に応じて X を選ぶ条件付き制御の固定模型。制御装置、遅延、制御信号や実機は未評価。 |
+| 7c | KA Core | 誤りの緩和・制御、NISQ とその先 | 部分 | 1217 で読取り誤差を較正・補正し、1218 で３量子ビット反復符号の１個の X と限界を比較。一般の誤り訂正・NISQ 全般や実機は未評価。 |
 | 7d | KA Core | 測定手法 | 部分 | 74・676 は理想的な測定確率。1216 は３方式の読取り例、1217 は１ビットの読取り誤差の固定模型。詳細な測定理論と実機は未評価。 |
 | 8a | KA Core | 耐量子暗号 | 部分 | 依頼839で LWE の小模型の復元と改変を操作し、関連する ML-KEM と模型の違いを確認。実用方式の実装、安全性や量子攻撃への証明は未評価。 |
 | 8b | KA Core | 量子インターネット | 未照合 | 対応教材を要照合。 |
@@ -50,3 +50,5 @@
 依頼1216は [NIST の方式比較](https://www.nist.gov/quantum-information-science/quantum-computing-explained)、[IBM の共振器読取り](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)、[NIST のイオン蛍光読取り](https://www.nist.gov/publications/state-readout-trapped-ion-qubit-using-trap-integrated-superconducting-photon-detector)を参照。`tests/qubit-devices.test.js` は各工房の27組合せと保存・達成条件を検査する。指定された例以外の組合せを不可能と主張しない。
 
 依頼1217の読取り誤差の較正・分布の補正・負の推定値は [IBM の解説](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)を参照。`tests/readout-mitigation.test.js` は非対称な読み違い率、順方向・逆方向と範囲外、保存・達成条件を検査。誤り率の変動、有限回の統計モデル、他の誤りや実機は扱わない。
+
+依頼1218は [IBM の反復符号](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/repetition-codes)と[古典フィードフォワード](https://quantum.cloud.ibm.com/docs/en/guides/execute-dynamic-circuits)を参照。`tests/syndrome-control.test.js` は８種類の X 反転マスクの合図、２つの反転と位相反転の限界、保存・達成を検査。測定と制御に誤りのない固定模型で、実機・一般の誤り訂正を評価しない。

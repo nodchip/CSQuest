@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+2026-11-04：依頼1218で３量子ビットの反復符号の合図から条件付き修正を選ぶ古典制御を追加。単一 X と２個の X・位相反転の限界を比較。[IBM の反復符号](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/repetition-codes)と[古典制御](https://quantum.cloud.ibm.com/docs/en/guides/execute-dynamic-circuits)を参照。全3101テストとビルドが成功。ローカル390px幅で規則、誤答、再開、６場面と達成を確認。測定・制御は理想化し、一般の誤り訂正や実機は未評価。
+
 2026-11-04：依頼1217で読み違い率の較正と１ビットの集計補正、確率の範囲外になる例を追加。[IBM の読取り誤差緩和](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)を参照。全3099テストとビルドが成功。ローカル390px幅で誤答・再開・３記録・負の推定値・振り返り・達成を確認。誤り率の変動、複数量子ビット、量子ゲートの誤りや実機は未評価。
 
 2026-11-04：依頼1216で超伝導回路・捕捉イオン・光子の各構成例について、準備・操作・読取りを比較。[NIST の方式比較](https://www.nist.gov/quantum-information-science/quantum-computing-explained)、[IBM の共振器読取り](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)、[NIST のイオン蛍光読取り](https://www.nist.gov/publications/state-readout-trapped-ion-qubit-using-trap-integrated-superconducting-photon-detector)を参照。全3097テストとビルドが成功。ローカル画面390px幅で誤答・再開・３構成・振り返り・達成を確認。他方式、実機の実装や性能は未評価。
