@@ -1,5 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createMemoryTrade,memoryTradeStep,memoryTradeComplete,restoreMemoryTrade} from '../src/subset-memory.js';
+import {createMemoryTrade,memoryTradeCosts,memoryTradeStep,memoryTradeComplete,restoreMemoryTrade} from '../src/subset-memory.js';
 test('both strategies recover the same witness but use different rows and cell evaluations',()=>{const s=createMemoryTrade();for(const id of ['full','rolling']){let t=s.trials[id];for(let i=0;i<4;i++)t=memoryTradeStep(id,t,'build');if(id==='rolling')assert.equal(memoryTradeStep(id,t,'use').history.length,t.history.length);for(const a of ['use','skip','use','skip']){if(id==='rolling')t=memoryTradeStep(id,t,'recompute');t=memoryTradeStep(id,t,a);}assert.equal(t.mask,10);assert.equal(t.remaining,0);s.trials[id]=t;}assert.deepEqual([s.trials.full.peak,s.trials.full.cells,s.trials.rolling.peak,s.trials.rolling.cells],[5,40,2,100]);s.answer='tradeoff';s.checked=true;assert.equal(memoryTradeComplete(s),true);assert.deepEqual(restoreMemoryTrade(s),s);s.trials.rolling.history.push('use');assert.throws(()=>restoreMemoryTrade(s));});
 test('invalid decisions do not change history or the chosen subset',()=>{let t=createMemoryTrade().trials.full;for(let i=0;i<4;i++)t=memoryTradeStep('full',t,'build');const next=memoryTradeStep('full',t,'skip');assert.equal(next.history.length,4);assert.equal(next.mask,0);});
+test('cost breakdown distinguishes initial row construction and each rebuilding step',()=>{
+ let t=createMemoryTrade().trials.rolling;
+ for(let i=0;i<4;i++)t=memoryTradeStep('rolling',t,'build');
+ assert.deepEqual(memoryTradeCosts(t),{build:40,recompute:0});
+ for(const [action,recomputed] of [['use',30],['skip',50],['use',60],['skip',60]]){
+  t=memoryTradeStep('rolling',t,'recompute');assert.deepEqual(memoryTradeCosts(t),{build:40,recompute:recomputed});
+  t=memoryTradeStep('rolling',t,action);
+ }
+ assert.equal(t.cells,100);
+});
