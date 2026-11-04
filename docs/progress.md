@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+2026-11-04：依頼1221で２経路の干渉計により１ビットの Deutsch 問題を比較。古典１回の曖昧さと量子の位相問い合わせ・干渉を操作。[IBM](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/quantum-query-algorithms/deutsch-algorithm)と[MIT](https://ocw.mit.edu/courses/22-51-quantum-theory-of-radiation-interactions-fall-2012/693972cea9cf9da5e4e9e86fbc72c9e7_MIT22_51F12_Notes.pdf)を参照。全3107テストとビルドが成功。ローカル390px幅で問い合わせの回数、誤答、再開、４関数と達成を確認。一般入力、補助量子ビットや実機は未評価。
+
 2026-11-04：依頼1220で三地点のもつれ交換、４つの中継測定結果、古典通信と条件付き修正を操作。[NIST の量子中継](https://www.nist.gov/programs-projects/quantum-communications-and-networks)を参照。全3105テストとビルドが成功。ローカル390px幅で測定の順序、フォーカス、誤答、途中再開、４結果と達成を確認。４量子ビットの枝の確率・相関と無条件の混合状態を検査。損失、測定失敗、安全性と実機は未評価。
 
 2026-11-04：依頼1219で１量子ビットの断熱計算模型を追加。２つの目的と５段階で基底状態・エネルギー差を比較し、方式の違いを振り返る。[Farhi ら](https://arxiv.org/abs/quant-ph/0001106)と[D-Wave](https://docs.dwavequantum.com/en/latest/quantum_research/quantum_annealing_intro.html)を参照。全3103テストとビルドが成功。ローカル390px幅で誤答、再開、10条件、振り返り・達成を確認。時間発展、実機、一般問題の効率は未評価。
