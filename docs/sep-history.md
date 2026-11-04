@@ -20,8 +20,10 @@
 | KA Core 3 歴史上の形成的・重大な傾向を特定 | 依頼363で三時点を並べる固定例。傾向の一般的な分析は未対応 |
 | KA Core 4 先駆者・組織の貢献を特定 | 依頼363でラブレス、ENIAC に関わる女性たち、CERN の Web 提案、498でジョンソン、ハミルトン、チューリングの資料を紹介。他の貢献者は未対応 |
 | KA Core 5 重要な出来事の歴史的文脈を議論 | 依頼363で研究者間の情報共有という Web の目的に触れる。広い文脈の議論は未対応 |
-| KA Core 6 大きな発展の前後の日常生活の比較 | 未対応 |
+| KA Core 6 大きな発展の前後の日常生活の比較 | 依頼1306で研究記録の紙の目録とリンクによる探索を架空の模型で比較。日常生活全体や地域による違いは未対応 |
 
 依頼363の年と内容は、[Computer History Museum のラブレスの注記](https://www.computerhistory.org/babbage/adalovelace)、[Smithsonian の ENIAC と女性たち](https://womenshistory.si.edu/human-computer-project)、[CERN の Web の歴史](https://home.cern/science/computing/the-birth-of-the-web) を参照した。Web の1989年は提案の年であり、インターネットそのものの発明年ではない。
 
 依頼1305は [Computer History Museum の年表](https://www.computerhistory.org/timeline/1946/) と [Jean Bartik の記録](https://computerhistory.org/events/an-evening-with-jean-jennings-bartik/) を参照。どちらも現在の博物館による紹介で、当時の一次史料そのものではない。資料の焦点を比較する例であり、両記事をもって ENIAC の全史を網羅したり、当時の全報道が貢献を無視したと断定したりはしない。
+
+依頼1306は [1989年の提案](https://www.w3.org/History/1989/proposal.html) と [CERN の Web 史](https://home.cern/science/computing/the-birth-of-the-web/short-history-web/) を参照。二つの探索経路はゲーム用の架空例であり、Web 以前にネットワークや他の情報探索手段がなかったという主張ではない。

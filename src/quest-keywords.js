@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-history-web-journey':['Web史','情報共有','ハイパーテキスト','CERN','インターネット','歴史'],
  'guild-history-perspectives':['ENIAC','計算史','歴史','史料','プログラマー','Bartik'],
  'archive-copyright-foundations':['知的財産','著作権法','米国憲法','copyright','intellectual property','idea expression'],
  'forest-route-method-journey':['幅優先探索','ダイクストラ法','重み付き最短経路','BFS','Dijkstra','説明'],
