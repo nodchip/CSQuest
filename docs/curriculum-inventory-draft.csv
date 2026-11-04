@@ -2498,8 +2498,8 @@ PDC-Coordination:トピック:CS Core:3e,PDC,PDC-Coordination,トピック,CS Co
 PDC-Coordination:トピック:CS Core:3f,PDC,PDC-Coordination,トピック,CS Core,3f,複製・読取専用・所有権・非ブロッキング,部分,814で原子的比較交換、1003で所有権の一体取得と回収を固定模型で操作。1003の一体取得は内部で鍵を使わない保証がない。複製・読取専用や実装の進行保証は未評価。,coverage-pdc-coordination.md,22,原典照合結果は監査記録参照
 PDC-Coordination:トピック:KA Core:4a,PDC,PDC-Coordination,トピック,KA Core,4a,進行特性・公平性・優先度,部分,177で優先度と飢餓を比較。ロックフリー等の一般保証は未評価。,coverage-pdc-coordination.md,23,原典照合結果は監査記録参照
 PDC-Coordination:トピック:KA Core:4b,PDC,PDC-Coordination,トピック,KA Core,4b,競合・粒度・スケーリングの性能,部分,630で共通鍵と棚別の鍵を比較。実測や一般性能は未評価。,coverage-pdc-coordination.md,24,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4c,PDC,PDC-Coordination,トピック,KA Core,4c,非ブロッキング構造・アルゴリズム,部分,814で比較交換による２更新、815でスタックの ABA と更新番号、816で回収延期の固定模型。一般の構造、実装と進行保証は未評価。,coverage-pdc-coordination.md,25,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4d,PDC,PDC-Coordination,トピック,KA Core,4d,所有権と資源制御,部分,816で読み手の公表と回収延期、1003で参照の取得順と所有数・回収を比較。一般的な所有権管理、実装と資源制御は未評価。,coverage-pdc-coordination.md,26,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4c,PDC,PDC-Coordination,トピック,KA Core,4c,非ブロッキング構造・アルゴリズム,部分,814で比較交換による２更新、815でスタックの ABA と更新番号、816・1296で回収延期を操作。一般の構造、実装と進行保証は未評価。,coverage-pdc-coordination.md,25,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4d,PDC,PDC-Coordination,トピック,KA Core,4d,所有権と資源制御,部分,816・1296で読み手の公表と回収延期、1003で参照の取得順と所有数・回収を比較。一般的な所有権管理、実装と資源制御は未評価。,coverage-pdc-coordination.md,26,原典照合結果は監査記録参照
 PDC-Coordination:トピック:KA Core:4e,PDC,PDC-Coordination,トピック,KA Core,4e,ロックの変種・再入・スピンと待機,部分,567・568でスピンと再入の固定例。一般のロックや実装は未評価。,coverage-pdc-coordination.md,27,原典照合結果は監査記録参照
 PDC-Coordination:トピック:KA Core:4f,PDC,PDC-Coordination,トピック,KA Core,4f,楽観的・保守的な取引制御,部分,39で競合順序、818で版の不一致と読み直しの固定例を操作。悲観的制御との一般比較や実装は未評価。,coverage-pdc-coordination.md,28,原典照合結果は監査記録参照
 PDC-Coordination:トピック:KA Core:4g,PDC,PDC-Coordination,トピック,KA Core,4g,分散ロックと信頼性,部分,817で期限切れの古い要求と保存先での番号検査を、２つの到着順で比較。実サービス、障害・認証や一般の保証は未評価。,coverage-pdc-coordination.md,29,原典照合結果は監査記録参照
