@@ -529,7 +529,7 @@ AL-Complexity:学習成果:KA Core:18,AL,AL-Complexity,学習成果,KA Core,18,P
 AL-Complexity:学習成果:KA Core:19,AL,AL-Complexity,学習成果,KA Core,19,帰着による NP 完全性の証明,部分,411・413で固定の問題変換を操作。完全な証明の構築は未評価。,coverage-al-complexity.md,57,原典照合結果は監査記録参照
 AL-Complexity:学習成果:KA Core:20,AL,AL-Complexity,学習成果,KA Core,20,PSPACE と EXP の関係,部分,868で有限の構成数と決定的な再訪を操作し、PSPACE ⊆ EXP を説明。一般の構成数上界や自由な証明は未評価。,coverage-al-complexity.md,58,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:1・1a,AL,AL-Foundational,トピック,CS Core,1・1a,抽象データ型・辞書操作,部分,174で２方式の登録・更新・削除・検索。一般の仕様と実装は未評価。,coverage-al-foundational.md,9,原典照合結果は監査記録参照・番号を要確認
-AL-Foundational:トピック:CS Core:2a,AL,AL-Foundational,トピック,CS Core,2a,数値・非数値配列、文字列,部分,173で数値の配置、1129で３文字列の UTF-16 符号単位と符号位置を比較。配列の各型と一般の文字処理は未評価。,coverage-al-foundational.md,10,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:2a,AL,AL-Foundational,トピック,CS Core,2a,数値・非数値配列、文字列,部分,173で数値の配置、1129・1344で符号単位・符号位置・書記素と正規化を固定例で比較。配列の各型と一般の文字処理は未評価。,coverage-al-foundational.md,10,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:2b,AL,AL-Foundational,トピック,CS Core,2b,一次元・多次元配列,部分,173で３×３の２通りの配置。一般の添字・実装は未評価。,coverage-al-foundational.md,11,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:3,AL,AL-Foundational,トピック,CS Core,3,レコード・タプル・オブジェクト,部分,511でレコード型、65でオブジェクト、1128で位置で読むタプルと名前で読む記録を比較。一般の言語・実装は未評価。,coverage-al-foundational.md,12,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:4a,AL,AL-Foundational,トピック,CS Core,4a,単方向・双方向、直線・循環リスト,部分,171で単方向の挿入・切離し、911で双方向循環リストの参照変更を操作。一般の実装、番兵やメモリ管理は未評価。,coverage-al-foundational.md,13,原典照合結果は監査記録参照
