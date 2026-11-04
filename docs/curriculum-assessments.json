@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "items": {
+    "DM-Data:トピック:CS Core:1": {
+      "date": "2026-11-04",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-dm-data-core.md",
+      "row_sha256": "b080189ed152e2f1538a61d9598f356ee86604fa38ac50716a11f49e72381bad",
+      "files": {
+        "src/lifecycle-expedition.js": "3a454e5141d6665b32abe10a603931c5accde54d2f36fd2195b831bd13551f8a",
+        "tests/lifecycle-expedition.test.js": "ac25bf747812027bb01d06d87755409e89ea6156a44a39ebc46028da10d7b4e6"
+      }
+    },
+    "DM-Data:学習成果:CS Core:1": {
+      "date": "2026-11-04",
+      "status": "完了",
+      "document": "docs/curriculum-assessment-dm-data-core.md",
+      "row_sha256": "e7e60f07aa736de6243d95cd4095428de1f22d11411d8f39b997a66a8572f6fd",
+      "files": {
+        "src/lifecycle-expedition.js": "3a454e5141d6665b32abe10a603931c5accde54d2f36fd2195b831bd13551f8a",
+        "tests/lifecycle-expedition.test.js": "ac25bf747812027bb01d06d87755409e89ea6156a44a39ebc46028da10d7b4e6"
+      }
+    },
+    "DM-Core:トピック:CS Core:5": {
+      "date": "2026-11-04",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-dm-data-core.md",
+      "row_sha256": "76e1ff780756d8514d84b40e71e7ec7ba6a896ad69025ff913e8ab100afbdbdd",
+      "files": {
+        "src/acid-workshop.js": "c2d6303289d45629abe482994d645a5bacbe8b734dec1cb97676dffb425fd235",
+        "tests/acid-workshop.test.js": "c622c03e23d4417430d1817d800534a534483c294a7faadf1ac549d8756d2890"
+      }
+    },
+    "DM-Core:学習成果:CS Core:6": {
+      "date": "2026-11-04",
+      "status": "完了",
+      "document": "docs/curriculum-assessment-dm-data-core.md",
+      "row_sha256": "12b52628e3a1b9bbd6ea4002eabc70294141e7dac7664866f43112283188c593",
+      "files": {
+        "src/acid-workshop.js": "c2d6303289d45629abe482994d645a5bacbe8b734dec1cb97676dffb425fd235",
+        "tests/acid-workshop.test.js": "c622c03e23d4417430d1817d800534a534483c294a7faadf1ac549d8756d2890"
+      }
+    }
+  }
+}

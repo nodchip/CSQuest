@@ -151,11 +151,52 @@ def validate_audits(root, records, audit_file):
     return len(data['units'])
 
 
+def assessment_digest(row):
+    payload = json.dumps([row['候補ID'], row['要約'], row['台帳状態'], row['根拠と残る範囲']], ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+    return hashlib.sha256(payload).hexdigest()
+
+
+def validate_assessments(root, records, assessment_file, audit_file):
+    # A validated record means its stated review is traceable, not that the judgment is automatically true.
+    data = json.loads(Path(assessment_file).read_text(encoding='utf-8'))
+    scopes = json.loads(Path(audit_file).read_text(encoding='utf-8'))
+    if data.get('version') != 1 or not isinstance(data.get('items'), dict):
+        raise ValueError('項目別評価の形式が不正です')
+    rows = {}
+    for row in records:
+        if row['候補ID'] in rows:
+            rows[row['候補ID']] = None
+        else:
+            rows[row['候補ID']] = row
+    for key, entry in data['items'].items():
+        row = rows.get(key)
+        if row is None or not isinstance(entry, dict) or row['知識単位'] not in scopes.get('units', {}):
+            raise ValueError(f'{key}: 項目が一意でないか、分母未照合です')
+        if entry.get('status') != row['台帳状態'] or entry.get('row_sha256') != assessment_digest(row):
+            raise ValueError(f'{key}: 台帳の内容が評価時から変わりました')
+        doc = entry.get('document', '')
+        if not re.fullmatch(r'docs/curriculum-assessment-[a-z0-9-]+\.md', doc) or not (Path(root) / doc).is_file():
+            raise ValueError(f'{key}: 評価記録がありません')
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', entry.get('date', '')):
+            raise ValueError(f'{key}: 評価日が不正です')
+        files = entry.get('files')
+        if not isinstance(files, dict) or not files:
+            raise ValueError(f'{key}: 検査対象のファイルがありません')
+        for name, digest in files.items():
+            if not re.fullmatch(r'(?:src|tests)/[a-z0-9.-]+\.(?:js|mjs)', name):
+                raise ValueError(f'{key}: 対象ファイル名が不正です')
+            path = Path(root) / name
+            if not path.is_file() or hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest() != digest:
+                raise ValueError(f'{key}: 対象ファイルが評価時から変わりました: {name}')
+    return len(data['items'])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--csv', type=Path, help='候補行を UTF-8 CSV に保存')
     parser.add_argument('--check', type=Path, help='保存済み CSV が台帳と一致するか検査')
     parser.add_argument('--audit', type=Path, help='分母の照合記録と台帳の範囲を検査')
+    parser.add_argument('--assessments', type=Path, help='項目別評価と検証対象を検査')
     args = parser.parse_args()
     records = parse_inventory(Path(__file__).resolve().parents[1])
     if args.csv:
@@ -171,6 +212,11 @@ def main():
     if args.audit:
         n = validate_audits(Path(__file__).resolve().parents[1], records, args.audit)
         print(f'原典と分母候補を照合済み: {n} / 166 知識単位（教材の完成・正確性は別途監査）')
+    if args.assessments:
+        if not args.audit:
+            raise ValueError('項目別評価の検査には --audit が必要です')
+        count = validate_assessments(Path(__file__).resolve().parents[1], records, args.assessments, args.audit)
+        print(f'項目別評価の記録と対象が一致: {count} 行（判定の正しさは別途確認）')
     kinds = Counter(r['種別'] for r in records)
     print(f'台帳の候補行: {len(records)}（トピック {kinds["トピック"]}、学習成果 {kinds["学習成果"]}）')
     print(f'候補ID重複: {sum("候補ID重複" in r["要確認"] for r in records)} 行、親子重複候補: {sum("親子重複候補" in r["要確認"] for r in records)} 行')

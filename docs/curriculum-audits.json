@@ -24,6 +24,22 @@
       "topics": 8,
       "outcomes": 0,
       "scope_sha256": "4996556e68e720b81499a7134252a1a4494dc3dee5414b359f5f665123245f95"
+    },
+    "DM-Data": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-data.md",
+      "topics": 1,
+      "outcomes": 1,
+      "scope_sha256": "b455a4bf76e7962d6800882d286043484e7c51013165d09f225d24cf8f8adc2f"
+    },
+    "DM-Core": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-core.md",
+      "topics": 12,
+      "outcomes": 9,
+      "scope_sha256": "7c184be259343b023dfbf9835e5b77e1a6f61190150bb57967da11db4a66b0b6"
     }
   }
 }

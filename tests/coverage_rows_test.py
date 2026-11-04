@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from coverage_rows import count_rows
-from coverage_inventory import parse_inventory, validate_audits, COLUMNS
+from coverage_inventory import parse_inventory, validate_audits, validate_assessments, COLUMNS
 
 
 class CoverageRowsTest(unittest.TestCase):
@@ -78,6 +78,24 @@ class CoverageInventoryTest(unittest.TestCase):
             validate_audits(root, changed, audits)
         with self.assertRaises(ValueError):
             validate_audits(root, [r for r in rows if r['候補ID'] != row['候補ID']], audits)
+
+    def test_assessments_require_audited_items_and_detect_stale_ledger(self):
+        root = Path(__file__).resolve().parents[1]
+        rows = parse_inventory(root)
+        audits = root / 'docs/curriculum-audits.json'
+        assessments = root / 'docs/curriculum-assessments.json'
+        self.assertGreaterEqual(validate_assessments(root, rows, assessments, audits), 4)
+        changed = copy.deepcopy(rows)
+        row = next(r for r in changed if r['知識単位'] == 'DM-Data' and r['種別'] == '学習成果')
+        row['台帳状態'] = '部分'
+        with self.assertRaises(ValueError):
+            validate_assessments(root, changed, assessments, audits)
+        row['台帳状態'] = '完了'
+        row['根拠と残る範囲'] += ' changed'
+        with self.assertRaises(ValueError):
+            validate_assessments(root, changed, assessments, audits)
+        with self.assertRaises(ValueError):
+            validate_assessments(root, [r for r in rows if r['候補ID'] != row['候補ID']], assessments, audits)
 
     def test_checked_in_draft_matches_current_ledger(self):
         root = Path(__file__).resolve().parents[1]
