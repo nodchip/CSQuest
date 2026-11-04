@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-boundary-test-workshop':['テスト','同値分割','境界値','欠陥','試験'],
  'guild-agent-belief-worlds':['AI','エージェント','信念','可能世界','様相論理','BDI'],
  'guild-agent-affect-simulation':['AI','エージェント','感情','表現','模倣','状態'],
  'guild-agent-supply-chain':['AI','エージェント','供給網','在庫','補充','協調'],

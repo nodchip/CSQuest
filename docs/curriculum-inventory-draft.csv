@@ -2587,11 +2587,11 @@ SDF-Algorithms:学習成果:CS Core:1,SDF,SDF-Algorithms,学習成果,CS Core,1,
 SDF-Algorithms:学習成果:CS Core:2,SDF,SDF-Algorithms,学習成果,CS Core,2,異なる性質のアルゴリズムで同じ問題を解く,部分,依頼29で線形探索と二分探索を比較。多様な問題と実装は未評価。,coverage-sdf-core.md,32,原典照合結果は監査記録参照
 SDF-Algorithms:学習成果:CS Core:3,SDF,SDF-Algorithms,学習成果,CS Core,3,代表的なアルゴリズムを説明,部分,整列・探索・走査の固定例と、894で値を選んだ挿入ソートを操作。一般の説明・証明は未評価。,coverage-sdf-core.md,33,原典照合結果は監査記録参照
 SDF-Algorithms:学習成果:CS Core:4,SDF,SDF-Algorithms,学習成果,CS Core,4,アルゴリズムの時間・空間性能への影響を説明,部分,依頼88の比較回数と369の候補最大数を比較。全メモリ量・実測・自由な説明は未評価。,coverage-sdf-core.md,34,原典照合結果は監査記録参照
-SDF-Practices:トピック:CS Core:1,SDF,SDF-Practices,トピック,CS Core,1,テストケース設計を含む基礎的なテスト,部分,23で境界を含む候補を選択、1127で入力を組み立て保存し、手順の変更後にまとめて再試験。実モジュールのテスト作成は未評価。,coverage-sdf-core.md,42,原典照合結果は監査記録参照
+SDF-Practices:トピック:CS Core:1,SDF,SDF-Practices,トピック,CS Core,1,テストケース設計を含む基礎的なテスト,部分,23で候補選択、1127で入力を保存・再試験、1340で同値分割と境界の固定例を比較。実モジュールのテスト作成は未評価。,coverage-sdf-core.md,42,原典照合結果は監査記録参照
 SDF-Practices:トピック:CS Core:2,SDF,SDF-Practices,トピック,CS Core,2,汎用 IDE とデバッガ,部分,依頼198で反復の状態を追う固定模型。実 IDE とデバッガの利用は未評価。,coverage-sdf-core.md,43,原典照合結果は監査記録参照
 SDF-Practices:トピック:CS Core:3,SDF,SDF-Practices,トピック,CS Core,3,読みやすさを高めるスタイル,部分,依頼555で名前・注釈・字下げの候補を比較。一般のプログラム作成は未評価。,coverage-sdf-core.md,44,原典照合結果は監査記録参照
 SDF-Practices:トピック:CS Core:4,SDF,SDF-Practices,トピック,CS Core,4,自然言語によるモジュール機能の仕様化,部分,依頼523で説明候補と振る舞いを照合。自由な文章作成は直接評価しない。,coverage-sdf-core.md,45,原典照合結果は監査記録参照
-SDF-Practices:学習成果:CS Core:1,SDF,SDF-Practices,学習成果,CS Core,1,モジュールのテストを作り複数の設計戦略を適用,部分,23で固定候補を選び、1127で自分の入力例を保存・再試験。設計戦略の体系的比較や実際のテスト記述は未評価。,coverage-sdf-core.md,46,原典照合結果は監査記録参照
+SDF-Practices:学習成果:CS Core:1,SDF,SDF-Practices,学習成果,CS Core,1,モジュールのテストを作り複数の設計戦略を適用,部分,1127で入力例を保存・再試験、1340で代表値と境界値を選び欠陥を比較。一般の戦略比較や実際のテスト記述は未評価。,coverage-sdf-core.md,46,原典照合結果は監査記録参照
 SDF-Practices:学習成果:CS Core:2,SDF,SDF-Practices,学習成果,CS Core,2,テストの限界を説明,部分,依頼23で欠陥が一部入力では現れない例、198で有限例の限界を扱う。自由な説明は未評価。,coverage-sdf-core.md,47,原典照合結果は監査記録参照
 SDF-Practices:学習成果:CS Core:3,SDF,SDF-Practices,学習成果,CS Core,3,IDE 等でビルド・実行・デバッグ,部分,依頼198で固定した状態記録を読む。実開発環境の操作は直接評価しない。,coverage-sdf-core.md,48,原典照合結果は監査記録参照
 SDF-Practices:学習成果:CS Core:4,SDF,SDF-Practices,学習成果,CS Core,4,コメント・字下げ・名前等のスタイルを適用,部分,依頼555で候補を選び動作・処理範囲と比較。自由な記述や一般の言語は未評価。,coverage-sdf-core.md,49,原典照合結果は監査記録参照
