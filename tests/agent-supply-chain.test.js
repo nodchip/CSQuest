@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {agentSupplyTrace,agentSupplyCreate,agentSupplyStep,agentSupplyDone,agentSupplyRestore} from '../src/agent-supply-chain.js';
+test('the order after day one arrives before day two; without replenishment day three is short',()=>{const a=agentSupplyTrace('none',3),b=agentSupplyTrace('reorder',3);assert.equal(a.fulfilled,2);assert.equal(a.shortage,1);assert.equal(b.fulfilled,3);assert.equal(b.shortage,0);assert.deepEqual(b.rows.map(r=>[r.received,r.served,r.stock,r.order]),[[0,1,1,2],[2,1,2,0],[0,1,1,0]]);});
+test('both trials and reflection are required and drafts copy independent day counts',()=>{const q=agentSupplyCreate();for(const mode of ['none','reorder']){q.mode=mode;for(let i=0;i<3;i++)agentSupplyStep(q);assert.throws(()=>agentSupplyStep(q));}assert.equal(agentSupplyDone(q),false);q.reflection='delay';q.checked=true;assert.equal(agentSupplyDone(q),true);const copy=agentSupplyRestore(q);copy.days.none=0;assert.equal(q.days.none,3);assert.throws(()=>agentSupplyRestore({...q,days:{none:4,reorder:3}}));});

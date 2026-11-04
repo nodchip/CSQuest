@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-agent-supply-chain':['AI','エージェント','供給網','在庫','補充','協調'],
  'guild-agent-communication':['AI','人とロボット','言語','非言語','身ぶり','確認','アクセシビリティ'],
  'guild-agent-ledger-evaluation':['AI','エージェント','知識','評価','時刻','報告','試験'],
  'guild-agent-report-ledger':['AI','エージェント','知識表現','情報更新','時刻','出所','来歴'],
