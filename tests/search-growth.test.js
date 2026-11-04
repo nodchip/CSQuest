@@ -26,3 +26,15 @@ test('successful-search distribution counts each existing book equally',()=>{
  assert.throws(()=>growthDistribution(7,'linear'));assert.throws(()=>growthDistribution(8,'other'));
  const old=createGrowth();delete old.distributionSize;assert.equal(restoreGrowth(old).distributionSize,8);assert.equal(restoreGrowth({...old,distributionSize:64}).distributionSize,64);assert.throws(()=>restoreGrowth({...old,distributionSize:7}));
 });
+test('changing the query distribution changes means and keeps gaps equally weighted',()=>{
+ assert.deepEqual([growthDistribution(8,'linear','first').total,growthDistribution(8,'binary','first').total],[1,3]);
+ const a=growthDistribution(8,'linear','missing'),b=growthDistribution(8,'binary','missing');
+ assert.deepEqual([a.total,a.count,a.minimum,a.maximum],[72,9,8,8]);
+ assert.deepEqual([b.total,b.count,b.minimum,b.maximum],[29,9,3,4]);
+ assert.deepEqual(b.histogram,[{count:3,frequency:7},{count:4,frequency:2}]);
+ assert.throws(()=>growthDistribution(8,'linear','unknown'));
+ const old=createGrowth();delete old.distributionScenario;
+ assert.equal(restoreGrowth(old).distributionScenario,'present');
+ assert.equal(restoreGrowth({...old,distributionScenario:'missing'}).distributionScenario,'missing');
+ assert.throws(()=>restoreGrowth({...old,distributionScenario:'unknown'}));
+});
