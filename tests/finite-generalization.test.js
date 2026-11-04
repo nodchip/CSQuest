@@ -12,4 +12,9 @@ test('independent draws and repeated draws have the same marginal but different 
  const old=finiteCreate();delete old.compareMode;assert.equal(finiteRestore(old).compareMode,null);
  assert.equal(finiteRestore({...old,compareMode:'repeated'}).compareMode,'repeated');
  assert.throws(()=>finiteRestore({...old,compareMode:'other'}));
+ delete old.compareGuess;delete old.compareChecked;
+ assert.equal(finiteRestore(old).compareChecked,false);
+ assert.equal(finiteRestore({...old,compareGuess:'same',compareChecked:true}).compareGuess,'same');
+ assert.throws(()=>finiteRestore({...old,compareChecked:true}));
+ assert.throws(()=>finiteRestore({...old,compareGuess:'other'}));
 });
