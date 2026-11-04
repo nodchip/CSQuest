@@ -45,4 +45,4 @@
 
 依頼1197は [ACM 倫理綱領](https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-and-professional-conduct.pdf) の能力維持と専門的レビュー、[W3C の利用者を含む評価](https://www.w3.org/WAI/test-evaluate/involving-users/)、[EDPB の保護原則](https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en)を参考に、架空の鍵盤操作と不要な記録について、未確認事項・資料と声・改善・再確認を選ぶ。規則の適用判断、実装・実利用者の参加や継続的な実践は評価しない。`tests/ethical-learning-cycle.test.js` は両例の選択・順序・保存を検査する。
 
-依頼1302は鍵盤操作と保守記録の２例で、規範の原則を問題発見の手がかりにしながら、実際の操作や記録条件を別途調べる必要を考える。[ACM 倫理規範](https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-and-professional-conduct.pdf)は倫理判断の基礎であり、各問題の答えを自動的に導く手順ではないと説明する。`tests/professional-code.test.js` は固定例の選択と復元を検査する。現実の調査、法令適用や自由な議論は未評価。
+依頼1302は鍵盤操作と保守記録の２例で、規範の原則・未確認の事実・次の調査をそれぞれ選び、規範を問題発見の手がかりにしながら実際の操作や記録条件を別途調べる必要を考える。[ACM 倫理規範](https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-and-professional-conduct.pdf)は倫理判断の基礎であり、各問題の答えを自動的に導く手順ではないと説明する。`tests/professional-code.test.js` は固定例の選択、以前の途中記録の引継ぎと復元を検査する。現実の調査、法令適用や自由な議論は未評価。
