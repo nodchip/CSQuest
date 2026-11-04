@@ -5,6 +5,11 @@ export function boundProof(c,start){
  if(!boundProofOptions.includes(c)||!boundProofOptions.includes(start))throw new RangeError('定数または開始点が不正です。');
  return {valid:c*start>=8,left:8*start,right:c*start*start};
 }
+export function boundLowerCounterexample(c,start){
+ if(!boundProofOptions.includes(c)||!boundProofOptions.includes(start))throw new RangeError('定数または開始点が不正です。');
+ const n=Math.max(start,Math.floor(8/c)+1);
+ return {n,left:8*n,right:c*n*n};
+}
 export function boundCounts(n){if(!boundSizes.includes(n))throw new RangeError('石の数が不正です');let linear=0,pairs=0;for(let i=0;i<n;i++){for(let j=0;j<8;j++)linear++;for(let j=0;j<n;j++)pairs++;}return {linear,pairs};}
 export function boundWinner(n){const {linear,pairs}=boundCounts(n);return linear<pairs?'linear':linear>pairs?'pairs':'same';}
 export function createBound(){return {size:4,trials:Object.fromEntries(boundSizes.map(n=>[n,{guess:null,checked:false}])),answer:null,checked:false,proofC:1,proofStart:1};}
