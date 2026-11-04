@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+2026-11-04：依頼1223で正しい翻訳と誤った候補を４入力で比較し、翻訳費用と実行回数による総費用を操作。[Clang](https://clang.llvm.org/docs/CommandGuide/clang.html)と[OpenJDK](https://openjdk.org/projects/leyden/slides/leyden-heidinga-devnexus-2024-03.pdf)を参照。全3111テストとビルドが成功。ローカル390px幅で誤った翻訳、誤答、再開、３注文数と達成を確認。実コンパイラや実測性能は未評価。既存1013・787・1184を言語設計の対応表に限定付きで照合。
+
 2026-11-04：依頼1222で15を対象に周期２・４の条件付き状態と逆 QFT の測定分布を比較。依頼610の古典的周期候補検査を再利用し、情報が不足する測定値も扱う。[IBM](https://quantum.cloud.ibm.com/docs/en/tutorials/shors-algorithm)と[MIT](https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/766eb82809dd269944b11e838ed1814b_MIT8_06S16_chap5.pdf)を参照。全3109テストとビルドが成功。ローカル390px幅で誤答・再開・６状態・測定値と達成を確認。一般周期、ゲート回路、実際のコード分析や実機は未評価。
 
 2026-11-04：依頼1221で２経路の干渉計により１ビットの Deutsch 問題を比較。古典１回の曖昧さと量子の位相問い合わせ・干渉を操作。[IBM](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/quantum-query-algorithms/deutsch-algorithm)と[MIT](https://ocw.mit.edu/courses/22-51-quantum-theory-of-radiation-interactions-fall-2012/693972cea9cf9da5e4e9e86fbc72c9e7_MIT22_51F12_Notes.pdf)を参照。全3107テストとビルドが成功。ローカル390px幅で問い合わせの回数、誤答、再開、４関数と達成を確認。一般入力、補助量子ビットや実機は未評価。
