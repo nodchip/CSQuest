@@ -1,0 +1,4 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {incidentEvidence,robotIncidentCreate,robotIncidentOpen,robotIncidentCheck,robotIncidentDone,robotIncidentRestore} from '../src/robot-incident.js';
+test('each sourced factor requires opening and a matching role; wrong matches do not count',()=>{let q=robotIncidentCreate();q.choice='perception';assert.equal(robotIncidentCheck(q),null);for(const [id,e] of Object.entries(incidentEvidence)){robotIncidentOpen(q,id);q.choice=e.category==='monitor'?'perception':'monitor';assert.equal(robotIncidentCheck(q),false);q.choice=e.category;assert.equal(robotIncidentCheck(q),true);q=robotIncidentRestore(q);}assert.equal(robotIncidentDone(q),false);q.reflection='layers';assert.equal(robotIncidentDone(robotIncidentRestore(q)),true);assert.throws(()=>robotIncidentRestore({...q,opened:[],matched:['operator']}),RangeError);});
