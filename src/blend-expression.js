@@ -1,0 +1,7 @@
+export const blendExpressionLevel={id:'ruins-blend-expression',number:'1249',kind:'blend-expression',name:'精霊の表情を重ねる',tag:'ブレンド形状',title:'二つの表情を合わせよう',story:'祭りの人形師は、精霊の笑顔と開いた口を組み合わせたいそうです。二つの形の強さを調整し、見本の表情を作りましょう。'};
+export const blendExpressionCases={gentle:{name:'半分の笑顔',smile:1,open:0},open:{name:'大きく開いた口',smile:0,open:2},both:{name:'笑顔で半分開く',smile:2,open:1}};
+export function blendExpressionShape(smile,open){if(![0,1,2].includes(smile)||![0,1,2].includes(open))throw new RangeError('強さが不正です。');return {corner:75-5*smile,upper:75+12*smile,lower:75+12*smile+24*open};}
+export function blendExpressionCreate(){return {selected:'gentle',smile:0,open:0,seen:[],reflection:null};}
+export function blendExpressionCheck(q){const target=blendExpressionCases[q.selected];if(!target)return false;const ok=q.smile===target.smile&&q.open===target.open;if(ok&&!q.seen.includes(q.selected))q.seen.push(q.selected);return ok;}
+export function blendExpressionDone(q){return Object.keys(blendExpressionCases).every(k=>q.seen.includes(k))&&q.reflection==='offset';}
+export function blendExpressionRestore(q){if(!q||!Object.hasOwn(blendExpressionCases,q.selected)||![0,1,2].includes(q.smile)||![0,1,2].includes(q.open)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!Object.hasOwn(blendExpressionCases,k))||![null,'offset','replace'].includes(q.reflection))throw new RangeError('記録が不正です。');return {...q,seen:[...q.seen]};}

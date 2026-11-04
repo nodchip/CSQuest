@@ -17,7 +17,7 @@
 | 5a | KA Core | スキニングの捕捉 | 未照合 | 対応する手順は未確認。 |
 | 5b | KA Core | 線形ブレンドと双対クォータニオン | 部分 | 185で平面２変換の線形ブレンド。双対クォータニオンと一般のメッシュは未評価。 |
 | 5c | KA Core | リギング | 未照合 | 自由なリグ構築は未確認。 |
-| 5d | KA Core | ブレンド形状 | 未照合 | 対応する形状制作・比較は未確認。 |
+| 5d | KA Core | ブレンド形状 | 部分 | 1249で基準の２次元の口に笑顔と開口の変化を重み付きで加え、３見本に合わせる。３次元形状の制作や実ソフトは未評価。 |
 | 5e | KA Core | 姿勢空間変形 | 未照合 | 対応教材は未確認。 |
 | 6a | KA Core | モーションキャプチャの準備と基礎 | 部分 | 635で遮蔽と欠測の模型。実際の装置の準備・測定は未評価。 |
 | 6b | KA Core | モーションキャプチャのクリップ合成 | 部分 | 729で２つの架空の位置記録を重み付きで合成。実際の収録、関節と接地は未評価。 |
@@ -40,3 +40,5 @@
 関連検査は `tests/keyframe-motion.test.js`、`tests/forward-kinematics.test.js`、`tests/inverse-kinematics.test.js`、`tests/linear-skinning.test.js`、`tests/rotation-interpolation.test.js`、`tests/spline-motion.test.js`、`tests/motion-capture-gap.test.js`、`tests/motion-blend.test.js`、`tests/gimbal-lock.test.js`、`tests/spherical-rotation.test.js`。各検査は限定された模型に限る。
 
 学びの道「精霊の動きを紡ぐ」は、補間・回転から関節、スキニング、動作記録・合成まで11依頼を案内する。道の達成はアニメーション全体の網羅を意味しない。
+
+依頼1249は [Blender のシェイプキーの説明](https://docs.blender.org/manual/en/3.6/animation/shape_keys/introduction.html)を参考に、基準の２次元の口に笑顔と開口の相対的な変化を重み付きで加える。`tests/blend-expression.test.js` は９通りの加算、見本、復元を検査する。３次元メッシュ、頂点対応、実際の形状制作や実ソフトの操作は評価しない。
