@@ -3507,7 +3507,7 @@ SPD-Mobile:トピック:Non-core:7,SPD,SPD-Mobile,トピック,Non-core,7,仕様
 SPD-Mobile:トピック:Non-core:8a,SPD,SPD-Mobile,トピック,Non-core,8a,同期処理との違い,部分,1321で画面の処理が待つ場合と操作を受ける場合を比較。実端末・一般の並行処理は未評価。,coverage-spd-mobile.md,27,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:8b,SPD,SPD-Mobile,トピック,Non-core,8b,コールバックによる成功処理,部分,1321で返事の到着と結果を扱う処理を分け、到着順を比較。実コードと一般の API は未評価。,coverage-spd-mobile.md,28,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:8c,SPD,SPD-Mobile,トピック,Non-core,8c,非同期エラー,部分,354で返事の喪失を扱う固定例。一般の非同期エラーは未評価。,coverage-spd-mobile.md,29,原典照合結果は監査記録参照
-SPD-Mobile:トピック:Non-core:8d,SPD,SPD-Mobile,トピック,Non-core,8d,非同期コードの試験,部分,1321で成功順２通り・失敗と遅延を固定模型で比較。実コードや実端末の試験は未評価。,coverage-spd-mobile.md,30,原典照合結果は監査記録参照
+SPD-Mobile:トピック:Non-core:8d,SPD,SPD-Mobile,トピック,Non-core,8d,非同期コードの試験,部分,1321で成功順２通り・失敗と遅延を固定模型で比較し、1322で制御した Promise の結果を待つ試験を実行。実端末・実アプリの試験は未評価。,coverage-spd-mobile.md,30,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:1,SPD,SPD-Mobile,学習成果,KA Core,1,モバイルと汎用プログラミングの比較,未照合,一般的な比較を要照合。,coverage-spd-mobile.md,36,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:2,SPD,SPD-Mobile,学習成果,KA Core,2,位置と API を使うアプリ,部分,393で位置取得の選択。API 統合・実アプリ開発は未評価。,coverage-spd-mobile.md,37,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:3,SPD,SPD-Mobile,学習成果,KA Core,3,センサーデータの遠隔記録,未照合,センサーからサーバーまでの実接続を要照合。,coverage-spd-mobile.md,38,原典照合結果は監査記録参照

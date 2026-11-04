@@ -27,7 +27,7 @@
 | 8a | Non-core | 同期処理との違い | 部分 | 1321で画面の処理が待つ場合と操作を受ける場合を比較。実端末・一般の並行処理は未評価。 |
 | 8b | Non-core | コールバックによる成功処理 | 部分 | 1321で返事の到着と結果を扱う処理を分け、到着順を比較。実コードと一般の API は未評価。 |
 | 8c | Non-core | 非同期エラー | 部分 | 354で返事の喪失を扱う固定例。一般の非同期エラーは未評価。 |
-| 8d | Non-core | 非同期コードの試験 | 部分 | 1321で成功順２通り・失敗と遅延を固定模型で比較。実コードや実端末の試験は未評価。 |
+| 8d | Non-core | 非同期コードの試験 | 部分 | 1321で成功順２通り・失敗と遅延を固定模型で比較し、1322で制御した Promise の結果を待つ試験を実行。実端末・実アプリの試験は未評価。 |
 
 ## 例示学習成果
 
@@ -42,3 +42,5 @@
 354の再送は固定された受付の重複抑止を仮定し、実 API や認証は扱わない。393・394は実位置・実端末・利用者の評価ではない。根拠と前提は[既存調査](spd-mobile.md)、[社会・倫理の調査](spd-sep.md)、`tests/mobile-retry.test.js`、`tests/mobile-location.test.js`、`tests/touch-targets.test.js` を参照。
 
 依頼1321は [MDN の非同期処理とコールバック](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing) を参考に、架空の２要求について返事の到着と処理を分け、古い返事の上書きと依頼番号の確認を比較する。画面処理が待つ模型と待機中に操作を受ける模型も比較するが、非同期なら常に快適・別スレッドと主張しない。`tests/mobile-callback-race.test.js` は成功・失敗と２方式の６通り、段階・保存を検査。実端末、実 API・コールバック実装やコードの試験は評価しない。
+
+依頼1322は [Node.js のテストランナー](https://nodejs.org/api/test.html) と [MDN の Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) を参考に、1321と同じ６条件で手動完了する練習用 Promise の成功・失敗を制御し、処理の完了を待って期待表示と比較する。`tests/mobile-async-harness.test.js` は実際の Promise による６結果を独立期待値・1321の模型と照合し、期待表示と保存を検査する。実端末や実通信、任意の例外・競合のテストは評価しない。
