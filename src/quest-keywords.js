@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-interface-workshop':['GUI','window','icon','menu','dialog','アクセシビリティ','窓','アイコン','メニュー'],
  'forge-hazard-scheduler':['ハザードポインタ','メモリ回収','インターリーブ','hazard pointers','interleaving'],
  'village-example-query':['問い合わせ','関係論理','存在条件','例による問い合わせ','QBE','relational calculus','query by example'],
  'village-stored-procedure':['ストアドプロシージャ','保存手続き','データベース','stored procedure','database procedure'],

@@ -1602,9 +1602,9 @@ GIT-Interaction:トピック:KA Core:1c,GIT,GIT-Interaction,トピック,KA Core
 GIT-Interaction:トピック:KA Core:1d,GIT,GIT-Interaction,トピック,KA Core,1d,センサー,部分,219 で光の３値を読み、目標を操作する模型。実機のイベント処理は未評価。,coverage-git-interaction.md,12,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:1e,GIT,GIT-Interaction,トピック,KA Core,1e,メッセージ通信,部分,92 は架空の印を待ち行列へ送り処理を選ぶ。通信機構の実装は未評価。,coverage-git-interaction.md,13,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:1f,GIT,GIT-Interaction,トピック,KA Core,1f,ネットワークイベント,部分,依頼1213で固定ファイルを Fetch し、応答内容に応じて灯りを操作。双方向通信や実アプリの設計は未評価。,coverage-git-interaction.md,14,原典照合結果は監査記録参照
-GIT-Interaction:トピック:KA Core:2a,GIT,GIT-Interaction,トピック,KA Core,2a,ウィンドウ,未照合,ウィンドウの操作・設計を確認できていない。,coverage-git-interaction.md,15,原典照合結果は監査記録参照
-GIT-Interaction:トピック:KA Core:2b,GIT,GIT-Interaction,トピック,KA Core,2b,アイコン,未照合,アイコンの設計・評価を確認できていない。,coverage-git-interaction.md,16,原典照合結果は監査記録参照
-GIT-Interaction:トピック:KA Core:2c,GIT,GIT-Interaction,トピック,KA Core,2c,メニュー,未照合,メニューの設計・評価を確認できていない。,coverage-git-interaction.md,17,原典照合結果は監査記録参照
+GIT-Interaction:トピック:KA Core:2a,GIT,GIT-Interaction,トピック,KA Core,2a,ウィンドウ,部分,1297で確認の窓を閉じた後の戻り先を比較。実際のウィンドウ管理や実装は未評価。,coverage-git-interaction.md,15,原典照合結果は監査記録参照
+GIT-Interaction:トピック:KA Core:2b,GIT,GIT-Interaction,トピック,KA Core,2b,アイコン,部分,1297で絵のみと文字付きの札を比較。実利用者や一般的な図案の評価は未対応。,coverage-git-interaction.md,16,原典照合結果は監査記録参照
+GIT-Interaction:トピック:KA Core:2c,GIT,GIT-Interaction,トピック,KA Core,2c,メニュー,部分,1297でポインターだけとキーボードでも操作できる一覧を比較。実装や一般的なメニュー設計は未評価。,coverage-git-interaction.md,17,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:2d,GIT,GIT-Interaction,トピック,KA Core,2d,ポインティングデバイス,部分,351 の方向ボタンで操作。デバイス間の比較は未評価。,coverage-git-interaction.md,18,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:3,GIT,GIT-Interaction,トピック,KA Core,3,アクセシビリティ,部分,117 の字幕、806 の形・読み上げ名・キーボードの固定模型。実利用者の評価や適合は未評価。,coverage-git-interaction.md,19,原典照合結果は監査記録参照
 GIT-Interaction:トピック:Non-core:4a,GIT,GIT-Interaction,トピック,Non-core,4a,タッチ画面のジェスチャー,未照合,複数機種のジェスチャーを確認できていない。,coverage-git-interaction.md,20,原典照合結果は監査記録参照
