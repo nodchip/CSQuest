@@ -94,6 +94,50 @@
         "tests/data-formats.test.js": "6dfb0e7aff5e5fabe75c6e597c3aa0aa77a778446aaa828a829cfd8308e1fbf5",
         "tests/document-schema.test.js": "ea509eaf8c66ab1d5d05dc2ac8bc9d54b39d561048848686c3fab83ac0689d03"
       }
+    },
+    "NC-Mobility:トピック:KA Core:3": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
+      "row_sha256": "4e48b8e1f20f773b0f946d00b844361599b74352e0f41cb2845dc502fabd9773",
+      "files": {
+        "src/delay-tolerant.js": "64d236e158f1b6500702658f568dee2e252d85843af05b3c3786d4307aacd418",
+        "src/app.js": "d6a89d994dbd5e9295c194c1b08a51b7b0945ba5e3d1c4fea82d2cf9f4b96f20",
+        "tests/delay-tolerant.test.js": "88b363ab29a810ef7a70f72cc58cbe939e582a57328e46eaf95cd577c85b3bde"
+      }
+    },
+    "NC-Mobility:トピック:KA Core:4": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
+      "row_sha256": "23677bdfed8b75f8c78cda62f3947cc33169c3914a092e809b485fa138527647",
+      "files": {
+        "src/delay-tolerant.js": "64d236e158f1b6500702658f568dee2e252d85843af05b3c3786d4307aacd418",
+        "src/app.js": "d6a89d994dbd5e9295c194c1b08a51b7b0945ba5e3d1c4fea82d2cf9f4b96f20",
+        "tests/delay-tolerant.test.js": "88b363ab29a810ef7a70f72cc58cbe939e582a57328e46eaf95cd577c85b3bde"
+      }
+    },
+    "NC-Mobility:学習成果:KA Core:3": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
+      "row_sha256": "9c41a83d6006041f2749959469c75b4d2fa3bcd31bf590783472673214932dcb",
+      "files": {
+        "src/delay-tolerant.js": "64d236e158f1b6500702658f568dee2e252d85843af05b3c3786d4307aacd418",
+        "src/app.js": "d6a89d994dbd5e9295c194c1b08a51b7b0945ba5e3d1c4fea82d2cf9f4b96f20",
+        "tests/delay-tolerant.test.js": "88b363ab29a810ef7a70f72cc58cbe939e582a57328e46eaf95cd577c85b3bde"
+      }
+    },
+    "NC-Mobility:学習成果:KA Core:4": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
+      "row_sha256": "b24d4ac726391a570df9d0cf04d3ed9fab23d45d10f30e983ee4f05bb1388dd4",
+      "files": {
+        "src/delay-tolerant.js": "64d236e158f1b6500702658f568dee2e252d85843af05b3c3786d4307aacd418",
+        "src/app.js": "d6a89d994dbd5e9295c194c1b08a51b7b0945ba5e3d1c4fea82d2cf9f4b96f20",
+        "tests/delay-tolerant.test.js": "88b363ab29a810ef7a70f72cc58cbe939e582a57328e46eaf95cd577c85b3bde"
+      }
     }
   }
 }
