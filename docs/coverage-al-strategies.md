@@ -40,3 +40,5 @@
 `tests/search-growth.test.js`、`tests/merge-sort.test.js`、`tests/subset-table.test.js`、`tests/subset-memory.test.js`、`tests/recursion-iteration.test.js`、`tests/vertex-approximation.test.js` はそれぞれの模型を検査する。
 
 依頼1198は [MIT の 0/1 ナップサックと動的計画法](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/resources/mit6_006f11_rec21/) を参考に、重さ２・３・４、価値６・８・９の３物資について容量５と７を比較する。価値／重さ順の貪欲法は両容量で価値14、表の最善はそれぞれ14・17。容量は上限であり、同じ物資は一度だけ選ぶ。`tests/knapsack-relief.test.js` は全容量・全部分集合を独立列挙し、表・選択・復元を検査する。一般の証明、自由な入力や実際の輸送は評価しない。
+
+同じ依頼の追加比較では容量０〜７を選び、価値密度順に入る物資を選んだ結果と、表による最善の価値・全ての最善の組合せを表示する。容量３・４・６・７では貪欲法の価値は最善より小さい。８容量と全８組合せをテストで照合した。物資の種類と容量範囲は固定で、一般のナップサックに対する性能保証は示さない。
