@@ -16,7 +16,7 @@
 | 5 | KA Core | 複製不能定理と量子テレポーテーション | 部分 | 678 の４入力・４測定と 679 の複製の固定例。一般の証明や実機は未評価。 |
 | 6a | KA Core | Bernstein–Vazirani と Simon のアルゴリズム | 部分 | 821 で２ビットの Bernstein–Vazirani 問題、822 で Simon の測定結果から３ビットの非ゼロ周期を絞る固定例。Simon の量子回路、ゼロ周期、一般入力、オラクルの実装費用や実機は未評価。 |
 | 6b | KA Core | Mach–Zehnder 干渉計での Deutsch–Jozsa | 部分 | 1221 で２経路の理想干渉計と位相問い合わせを使う１ビットの Deutsch 問題。一般の入力数、補助量子ビット、実機は未評価。 |
-| 6c | KA Core | Shor の因数分解 | 部分 | 610 は固定の測定結果と古典的後処理。量子回路と一般の因数分解は未評価。 |
+| 6c | KA Core | Shor の因数分解 | 部分 | 610 は固定の測定結果と古典的後処理。1222 は周期２・４の逆 QFT と測定値からの候補を比較。一般の周期・量子回路と因数分解は未評価。 |
 | 6d | KA Core | Grover の探索 | 部分 | 820 で４候補の符号反転と拡散、861で４・８・16候補の反復回数と確率を比較。一般の候補数・正解数、オラクルの構築費用、実機や計算量の証明は未評価。 |
 | 7a | KA Core | 量子ビットの物理的実装 | 部分 | 1216 で超伝導回路・捕捉イオン・光子の構成例を比較。半導体・中性原子など他方式、実機の構築や性能は未評価。 |
 | 7b | KA Core | QPU の古典制御 | 部分 | 1218 で補助測定の古典結果に応じて X を選ぶ条件付き制御の固定模型。制御装置、遅延、制御信号や実機は未評価。 |
@@ -34,7 +34,7 @@
 | 2 | KA Core | 量子の確率的性質を論じる | 部分 | 74・676 の固定された測定確率。一般的説明と自由記述は未評価。 |
 | 3 | KA Core | 非古典的相関と超光速通信不能について考察 | 部分 | 676 は固定の相関と１局所操作後の周辺分布。一般の証明と自由記述は未評価。 |
 | 4 | KA Core | 量子並列性と建設的・破壊的干渉の役割を説明 | 部分 | 74 の干渉、820 の探索、1221 の Deutsch 問題で振幅を比較。アルゴリズム全般と自由な説明は未評価。 |
-| 5 | KA Core | Shor の QFT の役割をコードから分析 | 未照合 | 610 は古典的後処理のみ。コード分析に相当する教材を要照合。 |
+| 5 | KA Core | Shor の QFT の役割をコードから分析 | 部分 | 1222 で周期的状態から逆 QFT の測定分布と周期候補を操作して比較。一般の周期、回路構成、実際のコード分析は未評価。 |
 | 6 | KA Core | シミュレーターで Shor のプログラムを作り古典部分を示す | 部分 | 610 は後処理の固定例。プログラム作成能力は直接評価しない。 |
 | 7 | KA Core | 各種量子ビットの物理方式の特徴を列挙 | 部分 | 1216 で３方式の媒体・準備・操作・読取りの構成例を選ぶ。他方式、一般的な性能比較や自由記述は未評価。 |
 | 8 | KA Core | 断熱方式とゲート方式及び適する問題を比較 | 部分 | 1219 で２方式の操作と２候補のエネルギー最小化を比較。問題全般の適性、実装、自由な説明は未評価。 |
@@ -58,3 +58,5 @@
 依頼1220は [NIST の量子中継と通信](https://www.nist.gov/programs-projects/quantum-communications-and-networks)を参照。`tests/entanglement-swap.test.js` で４量子ビットの４測定結果の確率・２種類の相関・補正と、結果を無視したときの両端の混合状態を検査。理想的な単一の中継であり、実機の損失や安全性は未評価。
 
 依頼1221は [IBM の Deutsch 問題](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/quantum-query-algorithms/deutsch-algorithm)と [MIT の Deutsch–Jozsa 講義](https://ocw.mit.edu/courses/22-51-quantum-theory-of-radiation-interactions-fall-2012/693972cea9cf9da5e4e9e86fbc72c9e7_MIT22_51F12_Notes.pdf)を参照。`tests/deutsch-interferometer.test.js` は全４関数の干渉、全体位相と分類、保存・達成を検査する。理想的な１ビットの位相問い合わせで、一般の入力や補助量子ビットは未評価。
+
+依頼1222は [IBM の Shor のアルゴリズム](https://quantum.cloud.ibm.com/docs/en/tutorials/shors-algorithm)と [MIT の量子フーリエ変換](https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/766eb82809dd269944b11e838ed1814b_MIT8_06S16_chap5.pdf)を参照。`tests/period-qft.test.js` は周期２・４の条件付き状態６種の逆 QFT の確率と複素位相を照合し、依頼610の後処理を再利用する。周期が16を割る固定例であり、一般の位相推定、ゲート回路、プログラム作成とコード分析は評価しない。
