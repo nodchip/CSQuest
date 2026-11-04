@@ -1,5 +1,6 @@
 export const gestureMapLevel={id:'guild-gesture-map',number:'1298',kind:'gesture-map',name:'指先でめくる旅の地図',tag:'ジェスチャーと代替操作',title:'地図を動かす方法を比べよう',story:'旅の地図に三つの場所が描かれています。地図を左右に動かし、誰もが使える操作方法を考えましょう。'};
 export const gesturePlaces=['西の森','ギルド','東の村'];
+export const gestureProbes={horizontal:{name:'左へ60・縦は0',dx:-60,dy:0},diagonal:{name:'左へ60・下へ70',dx:-60,dy:70},equal:{name:'左へ60・下へ60',dx:-60,dy:60}};
 export function gestureDirection(dx,dy,threshold=40){if(!Number.isFinite(dx)||!Number.isFinite(dy)||!Number.isFinite(threshold)||threshold<=0)throw new RangeError('移動量または判定距離が不正です。');return Math.abs(dx)>=threshold&&Math.abs(dx)>Math.abs(dy)?(dx<0?1:-1):0;}
 export function gestureCreate(){return {position:1,visited:[false,true,false],comparison:{selected:'40',trials:{'40':{guess:null,checked:false},'80':{guess:null,checked:false}}},reflection:null};}
 export function gestureMove(q,direction){if(direction!==-1&&direction!==1)throw new RangeError('移動方向が不正です。');q.position=Math.max(0,Math.min(2,q.position+direction));q.visited[q.position]=true;return q.position;}
