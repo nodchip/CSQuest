@@ -11,7 +11,7 @@
 | 3 | CS Core | 技術・法・倫理の継続的学習と自己評価 | 部分 | 1197で２つの架空例について不足の認識・学習・改善・再確認を選ぶ。実際の自己評価、法的判断や学習は未評価。 |
 | 4 | CS Core | 資格・倫理綱領・行動規範 | 部分 | 依頼360・367で ACM の倫理綱領の考え方を参照。各規範や資格の比較は未対応 |
 | 5 | CS Core | 説明責任、責任、法的責任、安全性、脆弱性の開示 | 部分 | 依頼360で警報の不具合を報告、367で有限検査の限界を伝える固定例。法的責任や開示の一般的判断は未対応 |
-| 6 | CS Core | 技術の作成と利用に関する諸理論 | 未照合 | 対応例を要照合。 |
+| 6 | CS Core | 技術の作成と利用に関する諸理論 | 部分 | 1313で道具としての見方、技術と社会の仕組み、障害当事者の参加に注目する問いを比較。各理論全体、脱植民地モデルと一般の分析は未評価。 |
 | 7 | CS Core | 法律や倫理綱領に反する可能性のある設計・行動の認識と報告 | 部分 | 依頼360で架空の欠陥の確認と報告。違反の認定や一般の報告方法は未対応 |
 | 8 | KA Core | 公共政策における専門家・専門団体の役割 | 未照合 | 対応例を要照合。 |
 | 9 | KA Core | 結果を意識し続けること | 部分 | 依頼367で３例の検査の限界に触れる固定例。長期的な影響は未対応 |
@@ -46,3 +46,5 @@
 依頼1197は [ACM 倫理綱領](https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-and-professional-conduct.pdf) の能力維持と専門的レビュー、[W3C の利用者を含む評価](https://www.w3.org/WAI/test-evaluate/involving-users/)、[EDPB の保護原則](https://www.edpb.europa.eu/sme/learn-the-basics/data-protection-basics_en)を参考に、架空の鍵盤操作と不要な記録について、未確認事項・資料と声・改善・再確認を選ぶ。規則の適用判断、実装・実利用者の参加や継続的な実践は評価しない。`tests/ethical-learning-cycle.test.js` は両例の選択・順序・保存を検査する。
 
 依頼1302は鍵盤操作と保守記録の２例で、規範の原則・未確認の事実・次の調査をそれぞれ選び、規範を問題発見の手がかりにしながら実際の操作や記録条件を別途調べる必要を考える。[ACM 倫理規範](https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-and-professional-conduct.pdf)は倫理判断の基礎であり、各問題の答えを自動的に導く手順ではないと説明する。`tests/professional-code.test.js` は固定例の選択、以前の途中記録の引継ぎと復元を検査する。現実の調査、法令適用や自由な議論は未評価。
+
+依頼1313は [CS2023 の専門職倫理](https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm) と [W3C の利用者参加](https://www.w3.org/WAI/test-evaluate/involving-users/) を参考に、掲示板の３設定と異なる問いを比較する。道具としての視点と中立性の議論は同一視せず、障害の正義を参加のみと断定しない。`tests/technology-perspectives.test.js` は８設定と問い・保存を検査。模型は実際の技術・社会の分析や当事者協働を評価しない。

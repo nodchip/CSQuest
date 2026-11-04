@@ -3216,7 +3216,7 @@ SEP-Professional-Ethics:トピック:CS Core:2,SEP,SEP-Professional-Ethics,ト�
 SEP-Professional-Ethics:トピック:CS Core:3,SEP,SEP-Professional-Ethics,トピック,CS Core,3,技術・法・倫理の継続的学習と自己評価,部分,1197で２つの架空例について不足の認識・学習・改善・再確認を選ぶ。実際の自己評価、法的判断や学習は未評価。,coverage-sep-professional-ethics.md,11,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:CS Core:4,SEP,SEP-Professional-Ethics,トピック,CS Core,4,資格・倫理綱領・行動規範,部分,依頼360・367で ACM の倫理綱領の考え方を参照。各規範や資格の比較は未対応,coverage-sep-professional-ethics.md,12,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:CS Core:5,SEP,SEP-Professional-Ethics,トピック,CS Core,5,説明責任、責任、法的責任、安全性、脆弱性の開示,部分,依頼360で警報の不具合を報告、367で有限検査の限界を伝える固定例。法的責任や開示の一般的判断は未対応,coverage-sep-professional-ethics.md,13,原典照合結果は監査記録参照
-SEP-Professional-Ethics:トピック:CS Core:6,SEP,SEP-Professional-Ethics,トピック,CS Core,6,技術の作成と利用に関する諸理論,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,14,原典照合結果は監査記録参照
+SEP-Professional-Ethics:トピック:CS Core:6,SEP,SEP-Professional-Ethics,トピック,CS Core,6,技術の作成と利用に関する諸理論,部分,1313で道具としての見方、技術と社会の仕組み、障害当事者の参加に注目する問いを比較。各理論全体、脱植民地モデルと一般の分析は未評価。,coverage-sep-professional-ethics.md,14,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:CS Core:7,SEP,SEP-Professional-Ethics,トピック,CS Core,7,法律や倫理綱領に反する可能性のある設計・行動の認識と報告,部分,依頼360で架空の欠陥の確認と報告。違反の認定や一般の報告方法は未対応,coverage-sep-professional-ethics.md,15,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:KA Core:8,SEP,SEP-Professional-Ethics,トピック,KA Core,8,公共政策における専門家・専門団体の役割,未照合,対応例を要照合。,coverage-sep-professional-ethics.md,16,原典照合結果は監査記録参照
 SEP-Professional-Ethics:トピック:KA Core:9,SEP,SEP-Professional-Ethics,トピック,KA Core,9,結果を意識し続けること,部分,依頼367で３例の検査の限界に触れる固定例。長期的な影響は未対応,coverage-sep-professional-ethics.md,17,原典照合結果は監査記録参照
