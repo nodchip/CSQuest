@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1288で２主体の共有値更新を有限状態として探索し、鍵なしの更新喪失と同じ鍵による終端を比較。[Spin](https://spinroot.com/spin/Man/Manual.html)と[Lamport の状態検査](https://lamport.azurewebsites.net/tla/book-02-08-08.pdf)を参照。６順序の独立列挙・反例・保存を検査し、全3250テストとビルドが成功。ブラウザで段階探索・再開・両方式・達成、320・390・1280px幅とキーボード操作を確認。固定模型であり、実プログラムやメモリモデル、飢餓は未評価。
+
 - 2026-11-04: 依頼1287で同じ８・32仕事について Web Worker の毎回作成と再利用を実測比較。[MDN の Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)を参照。係の数、各返事、中断・保存を検査し、1286でも中断後の保留イベントを無視するよう修正。全3247テストとビルドが成功。ブラウザで実 Worker の４条件・再開・中断・達成と従来の測定、320・390・1280px幅を確認。逐次の固定仕事で、同時並列・メモリや一般性能は未評価。
 
 - 2026-11-04: 依頼1286で実際の Web Worker へ64・256枚を１枚または16枚ずつ逐次往復させ、応答・全体時間と処理量を測る。[MDN の Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)を参照。応答の和・順序・件数、中断、復元を検査し、全3242テストとビルドが成功。ブラウザで実 Worker の４条件・保存再開・中断・達成、320・390・1280px幅を確認。実測値は端末依存で、ネットワークや一般性能は未評価。
