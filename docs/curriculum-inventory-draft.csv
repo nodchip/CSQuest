@@ -8,7 +8,7 @@ AI-Agents:トピック:未記載:4a,AI,AI-Agents,トピック,未記載,4a,協�
 AI-Agents:トピック:未記載:4b,AI,AI-Agents,トピック,未記載,4b,情報収集主体,部分,1330で各見張りが異なる道の固定情報を収集。実情報源へのアクセスは未評価。,coverage-ai-agents.md,15,原典照合結果は監査記録参照・区分を要確認
 AI-Agents:トピック:未記載:4c,AI,AI-Agents,トピック,未記載,4c,感情を模した主体,未照合,対応する体験は未確認。,coverage-ai-agents.md,16,原典照合結果は監査記録参照・区分を要確認
 AI-Agents:トピック:未記載:5,AI,AI-Agents,トピック,未記載,5,学習主体,部分,379で人が行動を選ぶ Q 学習の固定例。一般の学習主体は未評価。,coverage-ai-agents.md,17,原典照合結果は監査記録参照・区分を要確認
-AI-Agents:トピック:未記載:6a,AI,AI-Agents,トピック,未記載,6a,認知アーキテクチャ,未照合,確立した認知構造の体験は未確認。,coverage-ai-agents.md,18,原典照合結果は監査記録参照・区分を要確認
+AI-Agents:トピック:未記載:6a,AI,AI-Agents,トピック,未記載,6a,認知アーキテクチャ,部分,1331で BDI の信念・目的・意図を固定例で操作。形式理論や一般的な実装は未評価。,coverage-ai-agents.md,18,原典照合結果は監査記録参照・区分を要確認
 AI-Agents:トピック:未記載:6b,AI,AI-Agents,トピック,未記載,6b,知覚・決定・予測・知識管理,部分,109・504で観測・記憶・隠れた状態の更新を扱う。認知システム全体は未評価。,coverage-ai-agents.md,19,原典照合結果は監査記録参照・区分を要確認
 AI-Agents:トピック:未記載:6c,AI,AI-Agents,トピック,未記載,6c,知識の表現・取得・改善,未照合,認知システムにおける一連の体験は未確認。,coverage-ai-agents.md,20,原典照合結果は監査記録参照・区分を要確認
 AI-Agents:トピック:未記載:6d,AI,AI-Agents,トピック,未記載,6d,認知システムの応用・評価,未照合,対応する体験は未確認。,coverage-ai-agents.md,21,原典照合結果は監査記録参照・区分を要確認
@@ -26,7 +26,7 @@ AI-Agents:学習成果:未記載:1,AI,AI-Agents,学習成果,未記載,1,標準�
 AI-Agents:学習成果:未記載:2,AI,AI-Agents,学習成果,未記載,2,応用と倫理的影響を説明,部分,689で人と人形の主導・確認を比較。実応用や自由な倫理分析は未評価。,coverage-ai-agents.md,38,原典照合結果は監査記録参照・区分を要確認
 AI-Agents:学習成果:未記載:3,AI,AI-Agents,学習成果,未記載,3,学習主体の主要な方法を説明,部分,379で Q 学習の固定例。他の方法と自由な説明は未評価。,coverage-ai-agents.md,39,原典照合結果は監査記録参照・区分を要確認
 AI-Agents:学習成果:未記載:4,AI,AI-Agents,学習成果,未記載,4,複数主体間の相互作用を実例で示す,部分,548で２人の移動・待避、849で三羽の局所規則、1078で２体の競売を操作。一般の相互作用は未評価。,coverage-ai-agents.md,40,原典照合結果は監査記録参照・区分を要確認
-AI-Agents:学習成果:未記載:5,AI,AI-Agents,学習成果,未記載,5,確立した認知構造で主体を構築,未照合,実アーキテクチャの構築・代替体験は未確認。,coverage-ai-agents.md,41,原典照合結果は監査記録参照・区分を要確認
+AI-Agents:学習成果:未記載:5,AI,AI-Agents,学習成果,未記載,5,確立した認知構造で主体を構築,部分,1331で BDI の簡略模型の状態と計画を操作。実アーキテクチャの設計・構築は未評価。,coverage-ai-agents.md,41,原典照合結果は監査記録参照・区分を要確認
 AI-Introduction:トピック:CS Core:1,AI,AI-Introduction,トピック,CS Core,1,AI の問題と近年の成功した応用例,部分,依頼17・28・375は分類、移動、探索等のゲーム例。実在の近年の応用の体系的な紹介は未照合,coverage-ai-introduction.md,9,原典照合結果は監査記録参照
 AI-Introduction:トピック:CS Core:2,AI,AI-Introduction,トピック,CS Core,2,エージェントの定義と例,部分,依頼109・688で観測、記憶、反応と計画の固定例。一般的な分類・定義は未完成,coverage-ai-introduction.md,10,原典照合結果は監査記録参照
 AI-Introduction:トピック:CS Core:3a,AI,AI-Introduction,トピック,CS Core,3a,模倣ゲームと限界,部分,依頼686の架空の対話と振り返り。実際の試験や自由な議論は未評価,coverage-ai-introduction.md,11,原典照合結果は監査記録参照

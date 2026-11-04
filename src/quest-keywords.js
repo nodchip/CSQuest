@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-agent-bdi-courier':['AI','BDI','エージェント','信念','目的','意図','認知アーキテクチャ'],
  'guild-agent-scout-relay':['AI','エージェント','複数主体','協調','情報収集','部分観測'],
  'guild-mobile-web-access':['モバイル','Web','インストール','オフライン','キャッシュ','PWA'],
  'guild-mobile-state-holder':['モバイル','ViewModel','状態','画面','ライフサイクル','復元'],
