@@ -5,7 +5,17 @@ export function boundaryExpected(n){if(!boundaryInputs.includes(n))throw new Ran
 export function boundaryObserved(variant,n){const expected=boundaryExpected(n);if(!Object.hasOwn(boundaryVariants,variant))throw new RangeError('仕掛けが不正です。');if(variant==='edge'&&n===3)return 'closed';if(variant==='low'&&n===-1)return 'closed';if(variant==='high'&&n===6)return 'open';return expected;}
 export function boundaryPartition(n){boundaryExpected(n);return n<0?'low':n<3?'closed':n<=5?'open':'high';}
 export function boundaryRun(selected){if(!Array.isArray(selected)||new Set(selected).size!==selected.length||selected.some(n=>!boundaryInputs.includes(n)))throw new RangeError('試験札が不正です。');const rows=selected.map(n=>({n,expected:boundaryExpected(n),results:Object.fromEntries(Object.keys(boundaryVariants).map(v=>[v,boundaryObserved(v,n)]))}));const partitions=new Set(selected.map(boundaryPartition));const caught=Object.keys(boundaryVariants).filter(v=>rows.some(r=>r.expected!==r.results[v]));return {rows,partitions:[...partitions],caught};}
-export function boundaryCreate(){return {selected:[],ran:false,reflection:null,checked:false};}
+export function boundaryMinimum(){
+ let solutions=[];
+ for(let mask=0;mask<2**boundaryInputs.length;mask++){
+  const selected=boundaryInputs.filter((_,i)=>mask&(1<<i)),result=boundaryRun(selected);
+  if(result.partitions.length!==4||result.caught.length!==3)continue;
+  if(!solutions.length||selected.length<solutions[0].length)solutions=[selected];
+  else if(selected.length===solutions[0].length)solutions.push(selected);
+ }
+ return solutions;
+}
+export function boundaryCreate(){return {selected:[],ran:false,reflection:null,checked:false,minimumGuess:null,minimumChecked:false};}
 export function boundaryToggle(q,n){if(!boundaryInputs.includes(n))throw new RangeError('札が不正です。');q.selected=q.selected.includes(n)?q.selected.filter(x=>x!==n):[...q.selected,n];q.ran=false;}
 export function boundaryDone(q){const r=boundaryRun(q.selected);return q.ran&&r.partitions.length===4&&r.caught.length===3&&q.reflection==='limits'&&q.checked;}
-export function boundaryRestore(q){if(!q||typeof q.ran!=='boolean'||q.ran&&q.selected?.length===0||![null,'limits','proof','one'].includes(q.reflection)||typeof q.checked!=='boolean'||q.checked&&q.reflection!=='limits')throw new RangeError('途中記録が不正です。');boundaryRun(q.selected);return {...q,selected:[...q.selected]};}
+export function boundaryRestore(q){if(!q||typeof q.ran!=='boolean'||q.ran&&q.selected?.length===0||![null,'limits','proof','one'].includes(q.reflection)||typeof q.checked!=='boolean'||q.checked&&q.reflection!=='limits'||![undefined,null,3,4,5,8].includes(q.minimumGuess)||![undefined,true,false].includes(q.minimumChecked)||q.minimumChecked&&q.minimumGuess==null)throw new RangeError('途中記録が不正です。');boundaryRun(q.selected);return {...q,minimumGuess:q.minimumGuess??null,minimumChecked:q.minimumChecked??false,selected:[...q.selected]};}
