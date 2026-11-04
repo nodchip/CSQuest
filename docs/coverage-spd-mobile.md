@@ -14,7 +14,7 @@
 | 3b | KA Core | モバイル向け API 設計上の注意 | 部分 | 354で同一識別子による再送と重複の固定例。一般の設計は未評価。 |
 | 3c | KA Core | ネットワークと Web インターフェース | 部分 | 354で接続回復・応答喪失を仮定。実通信・設計は未評価。 |
 | 4a | Non-core | ネイティブとクロスプラットフォーム | 部分 | 1325で別々の実装と処理の共有を条件付きで比較。実開発・網羅的評価は未実施。 |
-| 4b | Non-core | モバイルの設計パターン | 未照合 | 実設計を要照合。 |
+| 4b | Non-core | モバイルの設計パターン | 部分 | 1328で画面と状態保持の分離、再生成と復元を模型で比較。実設計や他のパターンは未評価。 |
 | 5a | Non-core | レスポンシブ UI | 部分 | 1326で固定２列と幅による１・２列の切替を２条件で比較。実端末・利用者の評価は未実施。 |
 | 5b | Non-core | 端末の多様性と移動 | 部分 | 354で圏外と通信回復。多様な実端末は未評価。 |
 | 5c | Non-core | モバイルと Web の利用体験の違い | 未照合 | 比較を要照合。 |
@@ -54,3 +54,5 @@
 依頼1326は [MDN のレスポンシブデザイン](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design) と [グリッドのアクセシビリティ](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Accessibility) を参考に、２幅と２配置ではみ出しを予測し、文字拡大や操作順も考える。札幅280・間隔16・２列に必要な幅576は教材固有の条件で、実端末や利用者全般の評価ではない。`tests/responsive-notice.test.js` で４組合せと途中記録を検査する。
 
 依頼1327は [Signal の送信・配達・既読表示](https://support.signal.org/hc/en-us/articles/360007320751-How-do-I-know-if-my-message-was-delivered-or-read) と [Firebase の受付と配達](https://firebase.google.com/docs/cloud-messaging/customize-messages/setting-message-lifespan) を参考に、架空の伝言の保留・受付・配達・既読通知の有無を操作する。通知の設定と表示は模型の仮定であり、実通信・電話・通知の遅延や暗号化は扱わない。`tests/mobile-message-journey.test.js` は段階の順序、通知の有無、途中記録を検査する。
+
+依頼1328は [Android の UI 状態の保存](https://developer.android.com/topic/libraries/architecture/saving-states) と [UI 層](https://developer.android.com/topic/architecture/ui-layer) を参考に、画面内、画面外のメモリー、復元用の保存という３つの模型で画面の再生成とプロセス終了を比較する。表示内状態を自動保存しない案や、保存が利用可能な復元は模型の仮定であり、実端末・実アプリの実装や永続保存を評価しない。`tests/mobile-state-holder.test.js` で６条件と保存状態を検査する。

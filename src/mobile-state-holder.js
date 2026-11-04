@@ -1,0 +1,9 @@
+export const mobileStateLevel={id:'guild-mobile-state-holder',number:'1328',kind:'mobile-state-holder',name:'回る水晶と旅の荷物',tag:'モバイル・画面状態・設計',title:'画面が作り直されても荷物を覚えよう',story:'水晶を回すと荷物の表示が作り直されます。表示だけに数を置く案と、別の場所で管理する案を試しましょう。'};
+export const mobileStateModes={view:'表示の中だけ',memory:'画面外のメモリー',saved:'画面外のメモリーと復元用の保存'};
+const stateSeen=['view:rotate','memory:rotate','memory:process','saved:process'];
+export function mobileStateCreate(){return {mode:'view',count:0,saved:0,seen:[],reflection:null,checked:false};}
+export function mobileStateSetMode(q,mode){if(!Object.hasOwn(mobileStateModes,mode))throw new RangeError('案が不正です。');q.mode=mode;q.count=0;q.saved=0;}
+export function mobileStateAdd(q){if(q.count>=3)throw new RangeError('この模型では３個までです。');q.count++;if(q.mode==='saved')q.saved=q.count;}
+export function mobileStateRecreate(q,event){if(!['rotate','process'].includes(event))throw new RangeError('出来事が不正です。');if(q.count===0)throw new RangeError('先に荷物を追加しましょう。');const before=q.count;if(event==='process')q.count=q.mode==='saved'?q.saved:0;else if(q.mode==='view')q.count=0;const key=q.mode+':'+event;if(stateSeen.includes(key)&&!q.seen.includes(key))q.seen.push(key);return {before,after:q.count};}
+export function mobileStateDone(q){return stateSeen.every(k=>q.seen.includes(k))&&q.reflection==='lifetime'&&q.checked;}
+export function mobileStateRestore(q){if(!q||!Object.hasOwn(mobileStateModes,q.mode)||!Number.isInteger(q.count)||q.count<0||q.count>3||!Number.isInteger(q.saved)||q.saved<0||q.saved>3||(q.mode==='saved'?q.saved!==q.count:q.saved!==0)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!stateSeen.includes(k))||![null,'lifetime','always','never'].includes(q.reflection)||typeof q.checked!=='boolean'||q.checked&&q.reflection!=='lifetime')throw new RangeError('途中記録が不正です。');return {...q,seen:[...q.seen]};}

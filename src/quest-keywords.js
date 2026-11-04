@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-mobile-state-holder':['モバイル','ViewModel','状態','画面','ライフサイクル','復元'],
  'guild-mobile-message-journey':['モバイル','メッセージ','伝言','配達','既読','通知'],
  'guild-responsive-notice':['レスポンシブ','モバイル','画面幅','レイアウト','アクセシビリティ'],
  'guild-mobile-platform-choice':['モバイル','ネイティブ','クロスプラットフォーム','共通コード','試験'],

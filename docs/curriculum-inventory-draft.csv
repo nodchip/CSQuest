@@ -3494,7 +3494,7 @@ SPD-Mobile:トピック:KA Core:3a,SPD,SPD-Mobile,トピック,KA Core,3a,API �
 SPD-Mobile:トピック:KA Core:3b,SPD,SPD-Mobile,トピック,KA Core,3b,モバイル向け API 設計上の注意,部分,354で同一識別子による再送と重複の固定例。一般の設計は未評価。,coverage-spd-mobile.md,14,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3c,SPD,SPD-Mobile,トピック,KA Core,3c,ネットワークと Web インターフェース,部分,354で接続回復・応答喪失を仮定。実通信・設計は未評価。,coverage-spd-mobile.md,15,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:4a,SPD,SPD-Mobile,トピック,Non-core,4a,ネイティブとクロスプラットフォーム,部分,1325で別々の実装と処理の共有を条件付きで比較。実開発・網羅的評価は未実施。,coverage-spd-mobile.md,16,原典照合結果は監査記録参照
-SPD-Mobile:トピック:Non-core:4b,SPD,SPD-Mobile,トピック,Non-core,4b,モバイルの設計パターン,未照合,実設計を要照合。,coverage-spd-mobile.md,17,原典照合結果は監査記録参照
+SPD-Mobile:トピック:Non-core:4b,SPD,SPD-Mobile,トピック,Non-core,4b,モバイルの設計パターン,部分,1328で画面と状態保持の分離、再生成と復元を模型で比較。実設計や他のパターンは未評価。,coverage-spd-mobile.md,17,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:5a,SPD,SPD-Mobile,トピック,Non-core,5a,レスポンシブ UI,部分,1326で固定２列と幅による１・２列の切替を２条件で比較。実端末・利用者の評価は未実施。,coverage-spd-mobile.md,18,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:5b,SPD,SPD-Mobile,トピック,Non-core,5b,端末の多様性と移動,部分,354で圏外と通信回復。多様な実端末は未評価。,coverage-spd-mobile.md,19,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:5c,SPD,SPD-Mobile,トピック,Non-core,5c,モバイルと Web の利用体験の違い,未照合,比較を要照合。,coverage-spd-mobile.md,20,原典照合結果は監査記録参照
