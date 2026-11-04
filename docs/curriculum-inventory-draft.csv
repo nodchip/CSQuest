@@ -3510,7 +3510,7 @@ SPD-Mobile:トピック:Non-core:8c,SPD,SPD-Mobile,トピック,Non-core,8c,非�
 SPD-Mobile:トピック:Non-core:8d,SPD,SPD-Mobile,トピック,Non-core,8d,非同期コードの試験,部分,1321で成功順２通り・失敗と遅延を固定模型で比較し、1322で制御した Promise の結果を待つ試験を実行。実端末・実アプリの試験は未評価。,coverage-spd-mobile.md,30,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:1,SPD,SPD-Mobile,学習成果,KA Core,1,モバイルと汎用プログラミングの比較,未照合,一般的な比較を要照合。,coverage-spd-mobile.md,36,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:2,SPD,SPD-Mobile,学習成果,KA Core,2,位置と API を使うアプリ,部分,393で位置取得の選択。API 統合・実アプリ開発は未評価。,coverage-spd-mobile.md,37,原典照合結果は監査記録参照
-SPD-Mobile:学習成果:KA Core:3,SPD,SPD-Mobile,学習成果,KA Core,3,センサーデータの遠隔記録,未照合,センサーからサーバーまでの実接続を要照合。,coverage-spd-mobile.md,38,原典照合結果は監査記録参照
+SPD-Mobile:学習成果:KA Core:3,SPD,SPD-Mobile,学習成果,KA Core,3,センサーデータの遠隔記録,部分,1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。,coverage-spd-mobile.md,38,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:4,SPD,SPD-Mobile,学習成果,KA Core,4,電話・メッセージアプリ,未照合,実装と代替を要照合。,coverage-spd-mobile.md,39,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:5,SPD,SPD-Mobile,学習成果,KA Core,5,ネイティブと共通開発の長短,未照合,体系的な比較を要照合。,coverage-spd-mobile.md,40,原典照合結果は監査記録参照
 SPD-Robot:トピック:未記載:1,SPD,SPD-Robot,トピック,未記載,1,ロボットのプラットフォームと機器の種類,部分,依頼691で架空の車輪型・飛行型と観測器を比較。実際の機器全般は未確認。,coverage-spd-robot.md,11,原典照合結果は監査記録参照・区分を要確認

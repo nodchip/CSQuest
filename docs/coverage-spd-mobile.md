@@ -35,7 +35,7 @@
 |---|---|---|---|---|
 | 1 | KA Core | モバイルと汎用プログラミングの比較 | 未照合 | 一般的な比較を要照合。 |
 | 2 | KA Core | 位置と API を使うアプリ | 部分 | 393で位置取得の選択。API 統合・実アプリ開発は未評価。 |
-| 3 | KA Core | センサーデータの遠隔記録 | 未照合 | センサーからサーバーまでの実接続を要照合。 |
+| 3 | KA Core | センサーデータの遠隔記録 | 部分 | 1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。 |
 | 4 | KA Core | 電話・メッセージアプリ | 未照合 | 実装と代替を要照合。 |
 | 5 | KA Core | ネイティブと共通開発の長短 | 未照合 | 体系的な比較を要照合。 |
 
@@ -46,3 +46,5 @@
 依頼1322は [Node.js のテストランナー](https://nodejs.org/api/test.html) と [MDN の Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) を参考に、1321と同じ６条件で手動完了する練習用 Promise の成功・失敗を制御し、処理の完了を待って期待表示と比較する。`tests/mobile-async-harness.test.js` は実際の Promise による６結果を独立期待値・1321の模型と照合し、期待表示と保存を検査する。実端末や実通信、任意の例外・競合のテストは評価しない。
 
 依頼1323は [Android の位置権限](https://developer.android.com/develop/sensors-and-location/location/permissions) と [拒否時の対応](https://developer.android.com/training/permissions/requesting) を参考に、架空の許可・固定位置・手動代替を操作する。取得中に許可が変わっても結果が届くという模型で、使う前の再確認を示す。実 OS の全挙動を再現せず、詳しい位置からおおよその位置に変更時のプロセス再起動等も画面に明記。`tests/mobile-permission-journey.test.js` は開始時と返事時の６組合せ、拒否・代替と保存を検査。実位置・端末・個人情報の削除は評価しない。
+
+依頼1324は [Android のオフライン時の書込み](https://developer.android.com/topic/architecture/data-layer/offline-first) と [センサーの概要](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview) を参考に、２つの架空の温度・時刻・番号を保存し、圏外・通信回復・初回の返事喪失・同一番号の再送を模型で操作する。`tests/mobile-sensor-queue.test.js` は送信順２通り、重複抑止と保存を検査。実センサー・ネットワーク・サーバー、全失敗や耐障害性は評価しない。
