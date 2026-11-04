@@ -230,6 +230,6 @@ AI-ML 34g は依頼1188の実装と `tests/deep-q-workshop.test.js` を照合し
 
 依頼1266は [Corbett と Anderson の Knowledge Tracing](https://escholarship.org/uc/item/0873k1nz)を参考に、架空の２種類の初期確率と正誤から、一技能・固定パラメーターの事後確率と練習後の状態遷移を別に計算する。`tests/knowledge-tracing.test.js` は手計算した事後確率、遷移と記録・復元を検査する。学習者を二値に分類する保証ではなく、実際の人の評価・教育効果・モデルの妥当性は扱わない。
 
-依頼1267は [Creative Commons の AI 学習と利用条件](https://creativecommons.org/using-cc-licensed-works-for-ai-training-2/)および[米国著作権局の AI と著作権](https://www.copyright.gov/ai/)を参考に、４つの架空の資料について出所・明示された条件・生成物の確認を分けて操作する。`tests/training-rights.test.js` は記録の確認と準備の選択、復元を検査する。実際の著作権、例外、契約、法域ごとの解釈や生成物の適法性は判定しない。
+依頼1267は [Creative Commons の AI 学習と利用条件](https://creativecommons.org/using-cc-licensed-works-for-ai-training-2/)および[米国著作権局の AI と著作権](https://www.copyright.gov/ai/)を参考に、４つの架空の資料について出所・明示された条件・生成物の確認を分けて操作し、確認した資料の準備と次の行動を並べて比較する。`tests/training-rights.test.js` は記録の確認、準備の選択、比較と復元を検査する。実際の著作権、例外、契約、法域ごとの解釈や生成物の適法性は判定しない。
 
 依頼1268は [Carnegie Mellon の有限仮説の学習理論](https://www.cs.cmu.edu/~ninamf/ML10/lect0126.pdf)を参考に、誤りが４種類中１種類にある固定鑑定法について、独立な抽出と同一標本の繰り返しを２・３個で比較する。`tests/sample-dependence.test.js` は全順序列を列挙し、見落とし確率・途中記録を検査する。有限の一様模型であり、複数候補の選択や一般の汎化境界の証明、実データは扱わない。
