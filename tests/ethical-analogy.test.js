@@ -1,0 +1,4 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {analogyCases,analogyCreate,analogyCheck,analogyDone,analogyRestore} from '../src/ethical-analogy.js';
+test('both comparisons require a relevant similarity, a difference and a limited inference',()=>{let q=analogyCreate();for(const id of Object.keys(analogyCases)){q.selected=id;const t=q.trials[id];for(const key of ['similar','difference','conclusion']){assert.equal(analogyCheck(q),false);t[key]=true;}assert(analogyCheck(q));q=analogyRestore(q);}assert.equal(analogyDone(q),false);q.reflection='limits';assert(analogyDone(analogyRestore(q)));const bad=structuredClone(q);bad.trials.access.difference=false;assert.throws(()=>analogyRestore(bad),RangeError);const copy=analogyRestore(q);copy.trials.access.checked=false;assert(q.trials.access.checked);});

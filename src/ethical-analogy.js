@@ -1,0 +1,10 @@
+export const analogyLevel={id:'guild-ethical-analogy',number:'1294',kind:'ethical-analogy',name:'二つの記録と似た話',tag:'倫理的な例と類推',title:'似た例を手がかりに考えよう',story:'ギルドの掲示板の計画を、以前の出来事と比べます。共通点と違いを調べ、どこまで言えるか考えましょう。'};
+export const analogyCases={
+ privacy:{name:'旅人の記録',prior:'以前：紙の名簿が受付の机に置かれ、来訪者の名前を誰でも読めた。旅人は名前を公開したくないと言った。',current:'今回：同じ名前を、町の外からも見られる掲示板に載せる提案がある。旅人の希望はまだ聞いていない。',similar:'どちらも本人の名前が他人に見える',difference:'今回は町の外からも閲覧でき、本人の希望が未確認',conclusion:'公開範囲と本人の希望を確認してから考える',explanation:'以前の例は、名前を見られる影響に気づく手がかりです。今回の閲覧範囲や本人の希望は別に確かめます。'},
+ access:{name:'受付の案内',prior:'以前：文字だけの紙の案内を読めない旅人が、受付係に読み上げを頼めた。',current:'今回：文字だけの電子掲示板を使う案がある。音声案内の有無と、受付係がいつもいるかはまだ不明。',similar:'どちらも文字だけでは読めない人がいる',difference:'今回は読み上げや受付係の利用可能性が未確認',conclusion:'当事者に聞き、音声や人の支援を試してから考える',explanation:'以前の例は、文字だけでは使えない人の存在を考える手がかりです。今回も同じ支援を利用できるとは限りません。'}
+};
+export const analogyDecoys={similar:'どちらも必ず同じ結果になる',difference:'違いはないので追加の確認は不要',conclusion:'似ているだけで結論が確定する'};
+export function analogyCreate(){return {selected:'privacy',trials:Object.fromEntries(Object.keys(analogyCases).map(id=>[id,{similar:null,difference:null,conclusion:null,checked:false}])),reflection:null};}
+export function analogyCheck(q){const t=q.trials[q.selected];t.checked=t.similar===true&&t.difference===true&&t.conclusion===true;return t.checked;}
+export function analogyDone(q){return Object.values(q.trials).every(t=>t.checked&&t.similar&&t.difference&&t.conclusion)&&q.reflection==='limits';}
+export function analogyRestore(q){if(!q||!Object.hasOwn(analogyCases,q.selected)||!q.trials||![null,'limits','certain'].includes(q.reflection))throw new RangeError('途中記録が不正です。');const out=analogyCreate();out.selected=q.selected;out.reflection=q.reflection;for(const id of Object.keys(analogyCases)){const t=q.trials[id];if(!t||['similar','difference','conclusion'].some(k=>![null,true,false].includes(t[k]))||typeof t.checked!=='boolean'||t.checked&&!(t.similar&&t.difference&&t.conclusion))throw new RangeError('途中記録が不正です。');out.trials[id]={similar:t.similar,difference:t.difference,conclusion:t.conclusion,checked:t.checked};}return out;}
