@@ -13,6 +13,16 @@ test('fixed recovery scenarios distinguish attempts, arrival and delivery order'
  assert.deepEqual(transportRecovery('datagram',true,true),{attempted:true,received:true,delivered:[1,3,2],buffered:[]});
  assert.deepEqual(transportRecovery('datagram',true,false),{attempted:true,received:false,delivered:[1,3],buffered:[]});
  assert.throws(()=>transportRecovery('datagram','yes',true));const old=createTransportNeeds();delete old.recovery;
- assert.deepEqual(restoreTransportNeeds(old).recovery,{mode:'stream',appRetry:false,success:true});
+ assert.deepEqual(restoreTransportNeeds(old).recovery,{mode:'stream',appRetry:false,success:true,appOrder:false});
  assert.throws(()=>restoreTransportNeeds({...old,recovery:{mode:'bad',appRetry:true,success:true}}));
+});
+test('datagram receiver ordering can hold later data until the missing message arrives',()=>{
+ assert.deepEqual(transportRecovery('datagram',true,true,true),{attempted:true,received:true,delivered:[1,2,3],buffered:[]});
+ assert.deepEqual(transportRecovery('datagram',true,false,true),{attempted:true,received:false,delivered:[1],buffered:[3]});
+ assert.deepEqual(transportRecovery('datagram',false,true,true),{attempted:false,received:false,delivered:[1],buffered:[3]});
+ assert.throws(()=>transportRecovery('datagram',true,true,'yes'));
+ const old=createTransportNeeds();delete old.recovery.appOrder;
+ assert.equal(restoreTransportNeeds(old).recovery.appOrder,false);
+ assert.equal(restoreTransportNeeds({...old,recovery:{...old.recovery,appOrder:true}}).recovery.appOrder,true);
+ assert.throws(()=>restoreTransportNeeds({...old,recovery:{...old.recovery,appOrder:'yes'}}));
 });
