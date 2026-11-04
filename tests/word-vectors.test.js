@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {wordDocuments,createWordIndex,restoreWordIndex} from '../src/word-index.js';
-import {frequencyVector,vectorSimilarity,createWordVectorExercise,restoreWordVectorExercise} from '../src/word-vectors.js';
+import {frequencyVector,vectorSimilarity,wordVectorLeaders,createWordVectorExercise,restoreWordVectorExercise} from '../src/word-vectors.js';
 
 test('word counts yield the expected exact distances and cosine edge case',()=>{
  assert.deepEqual(Object.values(wordDocuments).map(frequencyVector),[[1,1],[2,0],[0,0],[0,0]]);
@@ -11,9 +11,15 @@ test('word counts yield the expected exact distances and cosine edge case',()=>{
  assert.equal(c.cosine,null);assert.ok(Math.abs(c.distance-Math.SQRT2)<1e-12);
  assert.equal(vectorSimilarity([1,1],[0,0]).cosine,null);
  assert.throws(()=>vectorSimilarity([1],[1,1]));
+ assert.deepEqual(wordVectorLeaders(wordDocuments,'balanced','distance'),['a']);
+ assert.deepEqual(wordVectorLeaders(wordDocuments,'balanced','cosine'),['a']);
+ assert.deepEqual(wordVectorLeaders(wordDocuments,'moon','distance'),['a','b','c','d']);
+ assert.deepEqual(wordVectorLeaders(wordDocuments,'moon','cosine'),['b']);
+ assert.throws(()=>wordVectorLeaders(wordDocuments,'other','distance'));
 });
 test('old drafts restore unanswered and new choices are copied',()=>{
  const old=createWordIndex();delete old.vectors;assert.deepEqual(restoreWordIndex(old).vectors,createWordVectorExercise());
- old.vectors={nearest:'a',zero:'undefined',checked:true};const restored=restoreWordIndex(old);assert.deepEqual(restored.vectors,old.vectors);restored.vectors.checked=false;assert.equal(old.vectors.checked,true);
+ old.vectors={nearest:'a',zero:'undefined',checked:true};const restored=restoreWordIndex(old);assert.deepEqual(restored.vectors,{...old.vectors,query:'balanced',metric:'distance'});restored.vectors.checked=false;assert.equal(old.vectors.checked,true);
+ restored.vectors.query='moon';restored.vectors.metric='cosine';assert.deepEqual(restoreWordVectorExercise(restored.vectors),restored.vectors);
  assert.throws(()=>restoreWordVectorExercise({nearest:null,zero:'undefined',checked:true}));
 });

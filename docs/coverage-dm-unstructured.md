@@ -27,6 +27,8 @@
 
 依頼120の別の例では月草と解毒の出現回数から４冊の２次元ベクトルを作り、検索ベクトル (1,1) とのユークリッド距離とコサイン類似度を比較する。ゼロベクトルのコサインは定義しない。`tests/word-vectors.test.js` は各値・ゼロの扱いと旧記録を検査する。[pgvector](https://github.com/pgvector/pgvector) は実際の保存と距離検索の参考例であり、模型は実 DB、埋込みや検索品質を評価しない。
 
+検索組を (1,0) に切り替えると、距離は４冊とも１で同順位となる一方、コサイン類似度では B が最上位となり、長さ０の C・D は順位に含めない。２検索組と２基準の４条件、同点と旧記録の復元を検査する。固定された単語頻度の例であり、一般の検索精度を示さない。
+
 依頼189の配達札は入れ子の束数を持つ４記録から始め、１記録の更新・追加・削除と全記録の合計を操作する。控えは手動で作り直すまで古くなり得るという固定方針で、即時維持が不可能という意味ではない。`tests/document-workload.test.js` は３変更の全６順序、控えと再集計、旧記録と履歴を検査する。[AWS の処理用途の説明](https://docs.aws.amazon.com/redshift/latest/dg/c_redshift-and-postgres-sql.html)を参照。実 DB、一般の索引や処理費用、同時実行・障害・性能は未評価。
 
 同じ依頼では [PostgreSQL の JSON 演算子](https://www.postgresql.org/docs/current/functions-json.html)の `#>>` を参考に、３つの固定経路について文字列または経路不在の SQL NULL を予測する。`tests/json-path-case.test.js` は３経路と旧記録を検査する。実 PostgreSQL に接続せず、JSON null や一般の式・製品比較は評価しない。
