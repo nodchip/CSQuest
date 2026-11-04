@@ -28,4 +28,4 @@
 
 `tests/fairness.test.js`、`tests/aggregate-inference.test.js`、`tests/energy-comparison.test.js`、`tests/iris-explanation.test.js` は各固定例を検査する。実際の乱数や公開の安全性、実環境の影響は保証しない。
 
-依頼1303は依頼09と同じ正の重みを持つ山道で、幅優先探索が発見する２本・７刻の経路と、ダイクストラ法の３本・４刻の経路を比較する。４刻以内の道を実際に進み、時間を考慮する理由を選ぶ。`tests/route-method-journey.test.js` は両方の経路・時間、進行と復元を検査する。辺数最短の経路が複数ある場合、探索順で選ぶ一例であり、一般に一意とは限らない。固定地図・非負の時間を前提とし、実際の道路や自由な発表は評価しない。参考：[Cornell：最短経路](https://courses.cs.cornell.edu/courses/cs2110/2026sp/lectures/lec23/)。
+依頼1303は依頼09と同じ正の重みを持つ山道で、幅優先探索が発見する２本・７刻の経路と、ダイクストラ法の３本・４刻の経路を並べて比較する。４刻以内の道を実際に進み、時間を考慮する理由を選ぶ。`tests/route-method-journey.test.js` は全単純経路を独立に列挙し、経路・時間、進行と復元を検査する。この地図には２本の経路が２通りあり、幅優先探索の結果は探索順で選ぶ一例である。固定地図・非負の時間を前提とし、実際の道路や自由な発表は評価しない。参考：[Cornell：最短経路](https://courses.cs.cornell.edu/courses/cs2110/2026sp/lectures/lec23/)。
