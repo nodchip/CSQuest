@@ -7,7 +7,7 @@
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
 | 1 | KA Core | 全称・存在量化 | 部分 | 539で全員と存在の順序、682で全称・存在の固定例。一般の論理は未評価。 |
-| 2 | KA Core | 一階述語論理と高階論理 | 未照合 | 違いを比較する教材は未確認。 |
+| 2 | KA Core | 一階述語論理と高階論理 | 部分 | 1235で２個体と４つの単項性質から個体・性質の量化を比較。一般の高階論理・意味論や自由な証明は未評価。 |
 | 3 | KA Core | 単純な関係と論理結合子による複合関係 | 部分 | 147・149で道の二つの前提を組合せ。一般の論理結合子は未評価。 |
 | 4 | KA Core | Horn 節・事実・目標と副目標 | 部分 | 147・149で道の事実と規則。節の一般的定義や自由な構築は未評価。 |
 | 5 | KA Core | 単一化と表明・式評価との違い | 部分 | 146で有限項の単一化、776で規則との単一化と評価。一般の比較は未評価。 |
@@ -35,3 +35,5 @@
 `tests/unification.test.js`、`tests/horn-routes.test.js`、`tests/horn-search.test.js`、`tests/recursive-path.test.js`、`tests/horn-cut.test.js`、`tests/narrowing.test.js`、`tests/fib-tabling.test.js` は固定模型・操作を検査し、原典の全範囲や学習効果を保証しない。
 
 依頼1171は [Cornell の事実・規則・問い合わせ](https://www.cs.cornell.edu/courses/cs4110/2025fa/lectures/slides34.pdf)を参考に、依頼147の道の事実を再利用し、全称含意の具体例と確定 Horn 節、逆向きの主張を比較。`tests/horn-meaning.test.js` は８真偽と道の２導出、保存・達成を検査する。一般の一階論理の変換や実言語は未評価。
+
+依頼1235は [Carnegie Mellon の量化の講義](https://www.cs.cmu.edu/~iliano/courses/14S-CMU-CS317/dl/quantifiers.pdf)を参考に、２人の個体とその４つの部分集合を単項性質の候補とする有限模型。固定された青い灯りについて個体を量化する２問と、性質も量化する４問を比べる。`tests/predicate-quantifiers.test.js` は４候補の真偽、観察・回答・保存復元を検査。配信用画面で観察不足、誤答の理由・再開・達成、320・390・1280px幅とキーボードを確認。他の意味論、任意の構造や論理言語の実装・自由な証明は未評価。
