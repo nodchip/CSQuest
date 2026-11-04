@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {copyrightFoundationsDocs,copyrightFoundationsCreate,copyrightFoundationsCheck,copyrightFoundationsDone,copyrightFoundationsRestore} from '../src/copyright-foundations.js';
+test('each source must be read and matched; jurisdiction and limits reflection is required',()=>{const q=copyrightFoundationsCreate();assert.throws(()=>copyrightFoundationsCheck(q));for(const [id,d] of Object.entries(copyrightFoundationsDocs)){q.selected=id;const t=q.trials[id];t.opened=true;t.choice='wrong';assert.equal(copyrightFoundationsCheck(q),false);t.choice=d.answer;assert.equal(copyrightFoundationsCheck(q),true);}q.reflection='universal';assert.equal(copyrightFoundationsDone(q),false);q.reflection='context';assert.equal(copyrightFoundationsDone(q),true);});
+test('restoration rejects inconsistent completed readings and copies drafts',()=>{const q=copyrightFoundationsCreate();q.trials.scope={opened:true,choice:'scope',checked:true};const r=copyrightFoundationsRestore(q);r.trials.scope.choice='power';assert.equal(q.trials.scope.choice,'scope');assert.throws(()=>copyrightFoundationsRestore(r));});
