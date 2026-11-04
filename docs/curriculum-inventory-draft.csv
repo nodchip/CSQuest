@@ -904,14 +904,15 @@ DM-Internals:トピック:KA Core:2d,DM,DM-Internals,トピック,KA Core,2d,分
 DM-Internals:トピック:KA Core:3a,DM,DM-Internals,トピック,KA Core,3a,二相ロック,部分,39で１取引の鍵の取得と解放後の取得拒否を操作。複数取引の待機・デッドロック・一般の保証は未評価。,coverage-dm-internals.md,14,原典照合結果は監査記録参照
 DM-Internals:トピック:KA Core:3b,DM,DM-Internals,トピック,KA Core,3b,デッドロック対策,部分,30で待ちの循環の固定例。DB の一般的な検出・予防は未評価。,coverage-dm-internals.md,15,原典照合結果は監査記録参照
 DM-Internals:トピック:KA Core:3c,DM,DM-Internals,トピック,KA Core,3c,クォーラムによる整合性,部分,193で３複製に対する２書込み・２読取りの重なりを操作。同時更新・障害や一般の保証は未評価。,coverage-dm-internals.md,16,原典照合結果は監査記録参照
-DM-Internals:トピック:KA Core:4a,DM,DM-Internals,トピック,KA Core,4a,復旧とバッファ管理の関係,部分,136で先行ログと一部書出し後の復旧を扱う。一般のバッファ管理と復旧の関係は未評価。,coverage-dm-internals.md,17,原典照合結果は監査記録参照
-DM-Internals:トピック:Non-core:5a,DM,DM-Internals,トピック,Non-core,5a,楽観的並行性制御,部分,451で版確認と競合時の拒否を比較。一般の DBMS の検証・確定手順は未評価。,coverage-dm-internals.md,18,原典照合結果は監査記録参照
-DM-Internals:トピック:Non-core:5b,DM,DM-Internals,トピック,Non-core,5b,タイムスタンプによる制御,部分,1034で１項目の基本的な読取り・書込みの時刻順序判定を操作。複数項目、確定・復旧、実 DBMS は未評価。,coverage-dm-internals.md,19,原典照合結果は監査記録参照
-DM-Internals:トピック:Non-core:6a,DM,DM-Internals,トピック,Non-core,6a,先行ログ,部分,136で完全なログと単一取引の前後値による復旧を操作。実 DBMS や並行取引は未評価。,coverage-dm-internals.md,20,原典照合結果は監査記録参照
-DM-Internals:トピック:Non-core:6b,DM,DM-Internals,トピック,Non-core,6b,ARIES,部分,1167で２取引・２頁の分析、REDO、UNDO、補償ログと復旧中の再障害を操作。一般のチェックポイント・並行更新や実 DBMS は未評価。,coverage-dm-internals.md,21,原典照合結果は監査記録参照
-DM-Internals:学習成果:KA Core:1,DM,DM-Internals,学習成果,KA Core,1,DBMS のバッファプール管理を説明,部分,89で役割、固定・書戻し・入替えの固定例を操作。一般の管理と自由な説明は未評価。,coverage-dm-internals.md,27,原典照合結果は監査記録参照
-DM-Internals:学習成果:KA Core:2,DM,DM-Internals,学習成果,KA Core,2,トランザクションの４性質を説明,部分,1225で各性質を固定例の挙動と対応づける。自由な説明や一般の DBMS の保証は未評価。,coverage-dm-internals.md,28,原典照合結果は監査記録参照
-DM-Internals:学習成果:KA Core:3,DM,DM-Internals,学習成果,KA Core,3,直列化可能性の原理を概説,部分,39で２作業の競合順を比較。一般の判定と自由な説明は未評価。,coverage-dm-internals.md,29,原典照合結果は監査記録参照
+DM-Internals:トピック:KA Core:4-本体,DM,DM-Internals,トピック,KA Core,4-本体,復旧管理の概要,部分,136で障害後に記録を使った復旧を操作。復旧管理全般や実 DBMS は未評価。,coverage-dm-internals.md,17,原典照合結果は監査記録参照・番号を要確認
+DM-Internals:トピック:KA Core:4a,DM,DM-Internals,トピック,KA Core,4a,復旧とバッファ管理の関係,部分,136で先行ログと一部書出し後の復旧を扱う。一般のバッファ管理と復旧の関係は未評価。,coverage-dm-internals.md,18,原典照合結果は監査記録参照
+DM-Internals:トピック:Non-core:5a,DM,DM-Internals,トピック,Non-core,5a,楽観的並行性制御,部分,451で版確認と競合時の拒否を比較。一般の DBMS の検証・確定手順は未評価。,coverage-dm-internals.md,19,原典照合結果は監査記録参照
+DM-Internals:トピック:Non-core:5b,DM,DM-Internals,トピック,Non-core,5b,タイムスタンプによる制御,部分,1034で１項目の基本的な読取り・書込みの時刻順序判定を操作。複数項目、確定・復旧、実 DBMS は未評価。,coverage-dm-internals.md,20,原典照合結果は監査記録参照
+DM-Internals:トピック:Non-core:6a,DM,DM-Internals,トピック,Non-core,6a,先行ログ,部分,136で完全なログと単一取引の前後値による復旧を操作。実 DBMS や並行取引は未評価。,coverage-dm-internals.md,21,原典照合結果は監査記録参照
+DM-Internals:トピック:Non-core:6b,DM,DM-Internals,トピック,Non-core,6b,ARIES,部分,1167で２取引・２頁の分析、REDO、UNDO、補償ログと復旧中の再障害を操作。一般のチェックポイント・並行更新や実 DBMS は未評価。,coverage-dm-internals.md,22,原典照合結果は監査記録参照
+DM-Internals:学習成果:KA Core:1,DM,DM-Internals,学習成果,KA Core,1,DBMS のバッファプール管理を説明,部分,89で役割、固定・書戻し・入替えの固定例を操作。一般の管理と自由な説明は未評価。,coverage-dm-internals.md,28,原典照合結果は監査記録参照
+DM-Internals:学習成果:KA Core:2,DM,DM-Internals,学習成果,KA Core,2,トランザクションの４性質を説明,部分,1225で各性質を固定例の挙動と対応づける。自由な説明や一般の DBMS の保証は未評価。,coverage-dm-internals.md,29,原典照合結果は監査記録参照
+DM-Internals:学習成果:KA Core:3,DM,DM-Internals,学習成果,KA Core,3,直列化可能性の原理を概説,部分,39で２作業の競合順を比較。一般の判定と自由な説明は未評価。,coverage-dm-internals.md,30,原典照合結果は監査記録参照
 DM-Modeling:トピック:CS Core:1,DM,DM-Modeling,トピック,CS Core,1,データモデリング,部分,依頼101・102で与えられた参加・所属関係の保存方法を比較。一般の要件分析や自由な設計は未評価。,coverage-dm-modeling.md,9,原典照合結果は監査記録参照
 DM-Modeling:トピック:CS Core:2,DM,DM-Modeling,トピック,CS Core,2,関係データモデル,部分,依頼13・67・101で行・結合・分解・キー・参照の固定例。要素の体系的理解や一般の設計は未評価。,coverage-dm-modeling.md,10,原典照合結果は監査記録参照
 DM-Modeling:トピック:KA Core:3,DM,DM-Modeling,トピック,KA Core,3,ER・UML などの概念モデル,部分,依頼101で実体・関係・関係の属性と参加の上限・任意性を選択。ER・UML の図記法と一般の構築は未評価。,coverage-dm-modeling.md,11,原典照合結果は監査記録参照

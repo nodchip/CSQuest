@@ -80,6 +80,46 @@
       "topics": 20,
       "outcomes": 9,
       "scope_sha256": "5f70ac36175b396cd2ba186e791c003d2036e4437933b5b41d2643b044932aaa"
+    },
+    "DM-Internals": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-internals.md",
+      "topics": 14,
+      "outcomes": 3,
+      "scope_sha256": "42f377f2f0f9c67176d8f293088c45914b3f85b5d8b64844d0bdc018f2659b73"
+    },
+    "DM-NoSQL": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-nosql.md",
+      "topics": 8,
+      "outcomes": 2,
+      "scope_sha256": "26842ec33601eba68daaa61b82c80159e02ebd2f6664c21d7f54ffd603bee3fa"
+    },
+    "DM-Security": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-security.md",
+      "topics": 10,
+      "outcomes": 5,
+      "scope_sha256": "82dc586867090772b3e41f879ee940974be51cde23947087548cd0e2c99fdf01"
+    },
+    "DM-Analytics": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-analytics.md",
+      "topics": 8,
+      "outcomes": 6,
+      "scope_sha256": "1ec594b144e36fa02bc341ec7d9e6f66aadd8bdffdd2bcf009bb653bab068738"
+    },
+    "DM-SEP": {
+      "date": "2026-11-04",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-dm-sep.md",
+      "topics": 9,
+      "outcomes": 6,
+      "scope_sha256": "54d9b09282fa6b79d6d73b433a59d492272fbb89141d4b4d3f8ead624b399a3f"
     }
   }
 }

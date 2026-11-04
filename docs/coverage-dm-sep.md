@@ -1,6 +1,6 @@
 # DM-SEP：項目別の対応状況
 
-原典：[CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 p.123。[追跡方法](coverage-status.md)に従う。未照合は未実装の証拠ではない。原典の 2 と子項目 2a は内容を区別して記し、集計時に親子を重複して数えない。
+原典：[CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 p.123。[追跡方法](coverage-status.md)に従う。未照合は未実装の証拠ではない。原典の２はプライバシー全般、２aはそのうち設計段階での法令順守を個別に追跡する。集計時には２を２a以外の範囲として扱い、同じ範囲を重複して数えない。
 
 ## トピック
 
