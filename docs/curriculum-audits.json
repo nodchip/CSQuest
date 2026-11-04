@@ -184,6 +184,22 @@
       "topics": 6,
       "outcomes": 4,
       "scope_sha256": "535e687019b5424298b35b817adee73a42bfff99e1bd9d2a444ea72752572966"
+    },
+    "NC-Routing": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-routing.md",
+      "topics": 3,
+      "outcomes": 3,
+      "scope_sha256": "b73deb2064032641a8740cabb509c21ce18fa140349703d3ba6d2528d7d4e953"
+    },
+    "NC-SingleHop": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-single-hop.md",
+      "topics": 6,
+      "outcomes": 6,
+      "scope_sha256": "75e53081a860cd0fbf1c6cbd829501384f1132d6517ee25bb8a4a71d3cc7e896"
     }
   }
 }
