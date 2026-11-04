@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-agent-belief-worlds':['AI','エージェント','信念','可能世界','様相論理','BDI'],
  'guild-agent-affect-simulation':['AI','エージェント','感情','表現','模倣','状態'],
  'guild-agent-supply-chain':['AI','エージェント','供給網','在庫','補充','協調'],
  'guild-agent-communication':['AI','人とロボット','言語','非言語','身ぶり','確認','アクセシビリティ'],
