@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {growthCases,growthDistribution,growthDistributionSizes,searchTrace,worstComparisons,growthCorrect,createGrowth,restoreGrowth,growthComplete} from '../src/search-growth.js';
+import {growthCases,growthDistribution,growthDistributionWinner,growthDistributionSizes,searchTrace,worstComparisons,growthCorrect,createGrowth,restoreGrowth,growthComplete} from '../src/search-growth.js';
 
 test('both algorithms agree on membership for all modeled sizes and targets',()=>{
   for(let size=1;size<=64;size++)for(let target=0;target<=2*size+1;target++)for(const mode of ['linear','binary']){
@@ -37,4 +37,14 @@ test('changing the query distribution changes means and keeps gaps equally weigh
  assert.equal(restoreGrowth(old).distributionScenario,'present');
  assert.equal(restoreGrowth({...old,distributionScenario:'missing'}).distributionScenario,'missing');
  assert.throws(()=>restoreGrowth({...old,distributionScenario:'unknown'}));
+});
+test('average predictions respect the query distribution and restore old drafts',()=>{
+ assert.equal(growthDistributionWinner(8,'present'),'binary');
+ assert.equal(growthDistributionWinner(8,'first'),'linear');
+ assert.equal(growthDistributionWinner(8,'missing'),'binary');
+ const old=createGrowth();delete old.distributionGuess;delete old.distributionChecked;
+ assert.equal(restoreGrowth(old).distributionChecked,false);
+ assert.equal(restoreGrowth({...old,distributionGuess:'linear',distributionChecked:true}).distributionGuess,'linear');
+ assert.throws(()=>restoreGrowth({...old,distributionChecked:true}));
+ assert.throws(()=>restoreGrowth({...old,distributionGuess:'invalid'}));
 });

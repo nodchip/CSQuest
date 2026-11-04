@@ -18,10 +18,14 @@ export function growthDistribution(size,method,scenario='present'){
  const histogram=Object.entries(counts.reduce((h,count)=>(h[count]=(h[count]||0)+1,h),{})).map(([count,frequency])=>({count:Number(count),frequency}));
  return {minimum:Math.min(...counts),maximum:Math.max(...counts),total:counts.reduce((a,b)=>a+b,0),count:targets.length,histogram};
 }
+export function growthDistributionWinner(size,scenario){
+ const a=growthDistribution(size,'linear',scenario),b=growthDistribution(size,'binary',scenario);
+ return a.total<b.total?'linear':a.total>b.total?'binary':'same';
+}
 export function growthCorrect(id,choice){if(!Object.hasOwn(growthCases,id))throw new RangeError('未知の試練です。');const c=growthCases[id];return ['linear','binary'].every(method=>choice[method]===searchTrace(c.size,c.target,method).visited.length);}
-export function createGrowth(){return {selected:'small',choices:Object.fromEntries(Object.keys(growthCases).map(id=>[id,{linear:null,binary:null,checked:false}])),distributionSize:8,distributionScenario:'present'};}
+export function createGrowth(){return {selected:'small',choices:Object.fromEntries(Object.keys(growthCases).map(id=>[id,{linear:null,binary:null,checked:false}])),distributionSize:8,distributionScenario:'present',distributionGuess:null,distributionChecked:false};}
 export function restoreGrowth(saved){
-  if(!saved||!Object.hasOwn(growthCases,saved.selected)||!saved.choices||saved.distributionSize!==undefined&&!growthDistributionSizes.includes(saved.distributionSize)||saved.distributionScenario!==undefined&&!Object.hasOwn(growthDistributionScenarios,saved.distributionScenario))throw new RangeError('途中記録が不正です。');const result=createGrowth();result.selected=saved.selected;result.distributionSize=saved.distributionSize??8;result.distributionScenario=saved.distributionScenario??'present';
+  if(!saved||!Object.hasOwn(growthCases,saved.selected)||!saved.choices||saved.distributionSize!==undefined&&!growthDistributionSizes.includes(saved.distributionSize)||saved.distributionScenario!==undefined&&!Object.hasOwn(growthDistributionScenarios,saved.distributionScenario)||![undefined,null,'linear','binary','same'].includes(saved.distributionGuess)||![undefined,true,false].includes(saved.distributionChecked)||saved.distributionChecked&&!saved.distributionGuess)throw new RangeError('途中記録が不正です。');const result=createGrowth();result.selected=saved.selected;result.distributionSize=saved.distributionSize??8;result.distributionScenario=saved.distributionScenario??'present';result.distributionGuess=saved.distributionGuess??null;result.distributionChecked=saved.distributionChecked??false;
   for(const id of Object.keys(growthCases)){const c=saved.choices[id];if(!c||![null,...growthOptions].includes(c.linear)||![null,...growthOptions].includes(c.binary)||typeof c.checked!=='boolean')throw new RangeError('途中記録が不正です。');result.choices[id]={linear:c.linear,binary:c.binary,checked:c.checked};}return result;
 }
 export function growthComplete(state){return Object.keys(growthCases).every(id=>state.choices[id].checked&&growthCorrect(id,state.choices[id]));}
