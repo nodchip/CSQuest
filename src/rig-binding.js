@@ -1,0 +1,9 @@
+export const rigBindingLevel={id:'ruins-rig-binding',number:'1251',kind:'rig-binding',name:'人形に骨を通す',tag:'リギングと重み付け',title:'骨と形をつなごう',story:'人形師が腕の形に動きを付けたいそうです。骨組みを作り、ひじの近くの点に重みを割り当てて試しましょう。'};
+export const rigAngles=[0,45,90];
+export function rigGeometry(angle,weight){if(!rigAngles.includes(angle)||![0,1,2].includes(weight))throw new RangeError('姿勢か重みが不正です。');const r=angle*Math.PI/180,dx=-16*Math.sin(r),dy=16*(1-Math.cos(r));return {wristX:85+45*Math.cos(r),wristY:100-45*Math.sin(r),x:85+weight*dx/2,y:84+weight*dy/2};}
+export function rigOutcome(angle,weight){rigGeometry(angle,weight);if(angle===0)return 'same';return ['base','middle','bone'][weight];}
+export function rigCreate(){return {stage:0,angle:0,weight:0,guess:null,seen:[],last:null,reflection:null};}
+export function rigSetup(q,action){const expected=['root','child','bind'];if(expected[q.stage]!==action||q.stage>=3)return false;q.stage++;return true;}
+export function rigCheck(q){if(q.stage!==3||!['same','base','middle','bone'].includes(q.guess))return null;const result=rigOutcome(q.angle,q.weight),ok=q.guess===result,key=`${q.angle}:${q.weight}`;q.last=key;if(ok&&!q.seen.includes(key))q.seen.push(key);return {ok,result};}
+export function rigDone(q){return q.stage===3&&rigAngles.every(a=>[0,1,2].every(w=>q.seen.includes(`${a}:${w}`)))&&q.reflection==='weights';}
+export function rigRestore(q){const keys=rigAngles.flatMap(a=>[0,1,2].map(w=>`${a}:${w}`));if(!q||![0,1,2,3].includes(q.stage)||!rigAngles.includes(q.angle)||![0,1,2].includes(q.weight)||![null,'same','base','middle','bone'].includes(q.guess)||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(k=>!keys.includes(k))||(q.seen.length&&q.stage!==3)||!(q.last===null||q.last===`${q.angle}:${q.weight}`&&q.stage===3)||![null,'weights','rigid'].includes(q.reflection))throw new RangeError('記録が不正です。');return {...q,seen:[...q.seen]};}
