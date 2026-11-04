@@ -2188,7 +2188,7 @@ NC-Mobility:トピック:KA Core:3,NC,NC-Mobility,トピック,KA Core,3,端末�
 NC-Mobility:トピック:KA Core:4,NC,NC-Mobility,トピック,KA Core,4,複数区間無線、アドホック、機会的・遅延耐性通信,部分,316 は切断中の保持と接触時の中継。一般の経路選択と実プロトコルは未評価。,coverage-nc-mobility.md,12,原典照合結果は監査記録参照
 NC-Mobility:学習成果:KA Core:1,NC,NC-Mobility,学習成果,KA Core,1,セルラー通信の登録等を説明,部分,318 の初期登録と移動後の更新。実プロトコルと自由な説明は未評価。,coverage-nc-mobility.md,18,原典照合結果は監査記録参照
 NC-Mobility:学習成果:KA Core:2,NC,NC-Mobility,学習成果,KA Core,2,802.11 の移動利用者支援を説明,部分,317 の２接続先と再接続。実プロトコルと自由な説明は未評価。,coverage-nc-mobility.md,19,原典照合結果は監査記録参照
-NC-Mobility:学習成果:KA Core:3,NC,NC-Mobility,学習成果,KA Core,3,端末間・複数区間通信の実用例を説明,部分,316 は不連続接続の架空例。実際の事例と一般的説明は未評価。,coverage-nc-mobility.md,20,原典照合結果は監査記録参照
+NC-Mobility:学習成果:KA Core:3,NC,NC-Mobility,学習成果,KA Core,3,端末間・複数区間通信の実用例を説明,部分,316 は不連続接続の架空例と NASA の ISS 実験装置から地上へのデータ転送事例を比較。一般的説明と実通信は未評価。,coverage-nc-mobility.md,20,原典照合結果は監査記録参照
 NC-Mobility:学習成果:KA Core:4,NC,NC-Mobility,学習成果,KA Core,4,アドホック等の移動ネットワークを説明,部分,316 は接触が途切れる３者の模型。一般的な方式と自由な説明は未評価。,coverage-nc-mobility.md,21,原典照合結果は監査記録参照
 NC-Reliability:トピック:KA Core:1,NC,NC-Reliability,トピック,KA Core,1,信頼性を保証しない配送,部分,668で UDP に相当する模型の消失と受信を比較。UDP の全機能や実通信は未評価。,coverage-nc-reliability.md,9,原典照合結果は監査記録参照
 NC-Reliability:トピック:KA Core:2,NC,NC-Reliability,トピック,KA Core,2,消失・重複・順序の乱れを避ける信頼性,部分,10・62で消失と重複、422で順序外の手紙と累積確認を操作。一般の順序の乱れや破損は未評価。,coverage-nc-reliability.md,10,原典照合結果は監査記録参照

@@ -11,3 +11,9 @@ test('all feasible schedules require storing the message until the next contact'
 test('both delivered routes are needed and histories are validated on restore',()=>{
  const s=createDtn();for(const [id,actions] of Object.entries({quick:['b','c'],gap:['b','wait','c']})){let t=s.trials[id];for(const action of actions)t=dtnStep(id,t,action);s.trials[id]=t;}assert.equal(dtnComplete(s),true);assert.deepEqual(restoreDtn(s),s);const copy=restoreDtn(s);copy.trials.gap.history[1]='c';assert.throws(()=>restoreDtn(copy));assert.equal(s.trials.gap.history[1],'wait');
 });
+
+test('real example choice restores and legacy drafts remain valid',()=>{
+ const old=createDtn();delete old.example;assert.equal(restoreDtn(old).example,null);
+ for(const example of ['store','instant','guarantee']){const draft=createDtn();draft.example=example;assert.equal(restoreDtn(draft).example,example);}
+ const invalid=createDtn();invalid.example='other';assert.throws(()=>restoreDtn(invalid));
+});
