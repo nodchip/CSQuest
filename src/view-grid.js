@@ -1,7 +1,7 @@
-export const viewGridLevel={id:'ruin-view-grid',number:'800',kind:'view-grid',name:'見張り台の区画',tag:'空間分割と描画範囲',title:'見える宝箱を探し出そう',story:'遺跡の見張り台から地図を調べます。画面が重なる区画を探し、そこにある宝箱の候補を絞りましょう。'};
+export const viewGridLevel={id:'ruin-view-grid',number:'800',kind:'view-grid',name:'見張り台の区画',tag:'空間分割と候補の絞込み',title:'宝箱の候補を探し出そう',story:'遺跡を区画に分け、画面内の宝箱と探索者に重なる宝箱を探しましょう。'};
 export const gridTiles=Array.from({length:6},(_,i)=>({id:`t${i%3}${Math.floor(i/3)}`,name:`${Math.floor(i/3)===0?'上':'下'}・${['左','中央','右'][i%3]}`,box:[(i%3)*4,Math.floor(i/3)*4,(i%3+1)*4,(Math.floor(i/3)+1)*4]}));
 export const gridObjects={A:[0,0,2,2],B:[3,1,5,3],C:[6,1,7,3],D:[8,0,10,2],E:[4,4,7,7],F:[7,5,9,7],G:[1,4,3,7]};
-export const gridViews={top:{name:'上の通路',box:[3,1,7,3]},lower:{name:'下の通路',box:[4,3,8,6]}};
+export const gridViews={top:{name:'上の通路',box:[3,1,7,3]},lower:{name:'探索者の位置',box:[4,3,8,6]}};
 export function gridOverlap(a,b){return a[0]<b[2]&&b[0]<a[2]&&a[1]<b[3]&&b[1]<a[3];}
 export function gridViewTiles(box){return gridTiles.filter(t=>gridOverlap(t.box,box)).map(t=>t.id);}
 export function gridCandidates(ids){const tiles=gridTiles.filter(t=>ids.includes(t.id));return Object.keys(gridObjects).filter(id=>tiles.some(t=>gridOverlap(t.box,gridObjects[id])));}
