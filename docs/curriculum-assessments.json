@@ -49,7 +49,7 @@
       "files": {
         "src/transport-needs.js": "57c737c60cf6797942d7a97a75d641c14361360788a64ba187f8d1d1a63daff4",
         "src/link-choice.js": "f8af061dafa25b524ede06fce2792f3c07acf10a58472a00f871773a1eb246af",
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
         "tests/transport-needs.test.js": "38c352ce5c2b7bf87e9d7b14260ecb420abe827c82f254e586547f810c216810",
         "tests/link-choice.test.js": "025005acfeee888b4747c9070a877274038f34c51a7c41ace71fa544d7d92794"
       }
@@ -62,7 +62,7 @@
       "files": {
         "src/transport-needs.js": "57c737c60cf6797942d7a97a75d641c14361360788a64ba187f8d1d1a63daff4",
         "src/link-choice.js": "f8af061dafa25b524ede06fce2792f3c07acf10a58472a00f871773a1eb246af",
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
         "tests/transport-needs.test.js": "38c352ce5c2b7bf87e9d7b14260ecb420abe827c82f254e586547f810c216810",
         "tests/link-choice.test.js": "025005acfeee888b4747c9070a877274038f34c51a7c41ace71fa544d7d92794"
       }
@@ -75,7 +75,7 @@
       "files": {
         "src/validation-boundary.js": "9b9512c326c97dc41492eb127b0f6d1ccd11e8d586bd0f7a5d38edcd1d144c69",
         "src/acid-workshop.js": "c2d6303289d45629abe482994d645a5bacbe8b734dec1cb97676dffb425fd235",
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
         "tests/validation-boundary.test.js": "162da09a99682d0bdb936fc111eff69a1613ef40b5130950eef16e63342d72cb",
         "tests/acid-workshop.test.js": "c622c03e23d4417430d1817d800534a534483c294a7faadf1ac549d8756d2890"
       }
@@ -86,7 +86,7 @@
       "document": "docs/curriculum-assessment-dm-unstructured-overview.md",
       "row_sha256": "ed3fd4ec53c3d3a658b398277f7eaa92234f27b423e14e515dc475fb58c247e6",
       "files": {
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
         "src/nosql-models.js": "47617c746b8faa207613bbbdc583c1f80a3565a0152aae551a9e51dcfc21f2f9",
         "src/data-formats.js": "2262a31be5849eaac86fc3e05097913e5cd96d67bdb876e5db2d68b0ed200650",
         "src/document-schema.js": "309277d61a120def08e8e018f5995472f1797e301decd1fa137ce47554eaf7a3",
@@ -101,9 +101,9 @@
       "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
       "row_sha256": "4e48b8e1f20f773b0f946d00b844361599b74352e0f41cb2845dc502fabd9773",
       "files": {
-        "src/delay-tolerant.js": "32effa289deec47f6e7cde5c437d95616eecc33b083cdbe5c5f48113d9cdb9a9",
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
-        "tests/delay-tolerant.test.js": "e16d857a9940daf7c40ff72ddce22f688c7c6cf547ffa53678e1bc83e73b7b54"
+        "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
+        "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
     "NC-Mobility:トピック:KA Core:4": {
@@ -112,9 +112,9 @@
       "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
       "row_sha256": "23677bdfed8b75f8c78cda62f3947cc33169c3914a092e809b485fa138527647",
       "files": {
-        "src/delay-tolerant.js": "32effa289deec47f6e7cde5c437d95616eecc33b083cdbe5c5f48113d9cdb9a9",
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
-        "tests/delay-tolerant.test.js": "e16d857a9940daf7c40ff72ddce22f688c7c6cf547ffa53678e1bc83e73b7b54"
+        "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
+        "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
     "NC-Mobility:学習成果:KA Core:3": {
@@ -123,9 +123,9 @@
       "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
       "row_sha256": "7eefff6ff335d3da0d733d0e9765067e88877ed499d7289f6b502be30da37747",
       "files": {
-        "src/delay-tolerant.js": "32effa289deec47f6e7cde5c437d95616eecc33b083cdbe5c5f48113d9cdb9a9",
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
-        "tests/delay-tolerant.test.js": "e16d857a9940daf7c40ff72ddce22f688c7c6cf547ffa53678e1bc83e73b7b54"
+        "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
+        "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
     "NC-Mobility:学習成果:KA Core:4": {
@@ -134,9 +134,9 @@
       "document": "docs/curriculum-assessment-nc-mobility-dtn.md",
       "row_sha256": "b24d4ac726391a570df9d0cf04d3ed9fab23d45d10f30e983ee4f05bb1388dd4",
       "files": {
-        "src/delay-tolerant.js": "32effa289deec47f6e7cde5c437d95616eecc33b083cdbe5c5f48113d9cdb9a9",
-        "src/app.js": "2f6ccc586c5a266fee6349d455325ac985f692a3dec9de5ee45967aba894ea57",
-        "tests/delay-tolerant.test.js": "e16d857a9940daf7c40ff72ddce22f688c7c6cf547ffa53678e1bc83e73b7b54"
+        "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
+        "src/app.js": "bd64ef35960f29b0c7d932805e974cadf69e953be8dddbf56e52b2a66fe23cf1",
+        "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     }
   }
