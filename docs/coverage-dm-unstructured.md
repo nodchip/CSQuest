@@ -15,7 +15,7 @@
 | 2b-iii | 空間充填曲線による索引 | 部分 | 1169で位置と目印を持つ16札を Z 順に並べ、矩形の１区間・複数区間の候補を比較。実際の半構造 DB、連続座標や性能は未評価。 |
 | 2c-本体 | OLTP・OLAP 用途での問い合わせ処理 | 部分 | 189で入れ子の配達札の個別更新・追加・削除と全件集計、控えの更新を操作。実 DB と一般の処理は未評価。 |
 | 2c-i | 挿入・選択・更新・削除のトレードオフ | 部分 | 189で更新等に追随しない集計の控えと再集計を比較。一般の選択・更新費用や実性能は未評価。 |
-| 2c-ii | 半構造データを扱う製品事例 | 未照合 | Postgres/JSON、MongoDB、Snowflake/JSON の事例は未確認。 |
+| 2c-ii | 半構造データを扱う製品事例 | 部分 | 189で PostgreSQL の JSON 経路取得を３固定例で予測。実 PostgreSQL の実行、MongoDB・Snowflake や一般の製品比較は未評価。 |
 
 依頼120の頻度・IDF の前提は [DM-Unstructured](dm-unstructured.md)、189の文書模型は [DM-NoSQL](dm-nosql.md) を参照。`tests/word-index.test.js` は固定した転置索引と得点を検査し、実データ・製品の機能を保証しない。
 
@@ -26,6 +26,8 @@
 依頼120では月草と解毒の４冊に対するビット列の AND・OR を比較し、結果の連続する同値を値と個数の組で表す。`tests/bitmap-postings.test.js` は４冊の２集合の全256組で AND・OR と集合の一致、連続区間の展開を検査する。[Berkeley Lab の索引圧縮研究](https://escholarship.org/uc/item/0ks802t8)を参考にした単純模型で、WAH 実装、半構造 DB、実際の大きさや性能は評価しない。
 
 依頼189の配達札は入れ子の束数を持つ４記録から始め、１記録の更新・追加・削除と全記録の合計を操作する。控えは手動で作り直すまで古くなり得るという固定方針で、即時維持が不可能という意味ではない。`tests/document-workload.test.js` は３変更の全６順序、控えと再集計、旧記録と履歴を検査する。[AWS の処理用途の説明](https://docs.aws.amazon.com/redshift/latest/dg/c_redshift-and-postgres-sql.html)を参照。実 DB、一般の索引や処理費用、同時実行・障害・性能は未評価。
+
+同じ依頼では [PostgreSQL の JSON 演算子](https://www.postgresql.org/docs/current/functions-json.html)の `#>>` を参考に、３つの固定経路について文字列または経路不在の SQL NULL を予測する。`tests/json-path-case.test.js` は３経路と旧記録を検査する。実 PostgreSQL に接続せず、JSON null や一般の式・製品比較は評価しない。
 
 集計範囲は全村または北・南・西から選び、選択した村の札だけを足す。更新・追加・削除の後も範囲を保ち、全村の控えとの一致は全村の集計時だけ比較する。一般の問い合わせ言語や実行計画は扱わない。
 
