@@ -18,10 +18,10 @@
 | 6b | KA Core | Mach–Zehnder 干渉計での Deutsch–Jozsa | 未照合 | 対応教材を要照合。 |
 | 6c | KA Core | Shor の因数分解 | 部分 | 610 は固定の測定結果と古典的後処理。量子回路と一般の因数分解は未評価。 |
 | 6d | KA Core | Grover の探索 | 部分 | 820 で４候補の符号反転と拡散、861で４・８・16候補の反復回数と確率を比較。一般の候補数・正解数、オラクルの構築費用、実機や計算量の証明は未評価。 |
-| 7a | KA Core | 量子ビットの物理的実装 | 未照合 | 対応教材を要照合。 |
+| 7a | KA Core | 量子ビットの物理的実装 | 部分 | 1216 で超伝導回路・捕捉イオン・光子の構成例を比較。半導体・中性原子など他方式、実機の構築や性能は未評価。 |
 | 7b | KA Core | QPU の古典制御 | 未照合 | 対応教材を要照合。 |
 | 7c | KA Core | 誤りの緩和・制御、NISQ とその先 | 未照合 | 対応教材を要照合。 |
-| 7d | KA Core | 測定手法 | 部分 | 74・676 は理想的な測定確率。物理的手法は未評価。 |
+| 7d | KA Core | 測定手法 | 部分 | 74・676 は理想的な測定確率。1216 は共振器、蛍光、偏光を分けた光子検出の代表例を対応づける。詳細な測定理論と誤りは未評価。 |
 | 8a | KA Core | 耐量子暗号 | 部分 | 依頼839で LWE の小模型の復元と改変を操作し、関連する ML-KEM と模型の違いを確認。実用方式の実装、安全性や量子攻撃への証明は未評価。 |
 | 8b | KA Core | 量子インターネット | 未照合 | 対応教材を要照合。 |
 | 8c | KA Core | 断熱量子計算と量子アニーリング | 未照合 | 対応教材を要照合。 |
@@ -36,7 +36,7 @@
 | 4 | KA Core | 量子並列性と建設的・破壊的干渉の役割を説明 | 部分 | 74 の干渉、820 の探索で振幅を増減する固定例。アルゴリズム全般と自由な説明は未評価。 |
 | 5 | KA Core | Shor の QFT の役割をコードから分析 | 未照合 | 610 は古典的後処理のみ。コード分析に相当する教材を要照合。 |
 | 6 | KA Core | シミュレーターで Shor のプログラムを作り古典部分を示す | 部分 | 610 は後処理の固定例。プログラム作成能力は直接評価しない。 |
-| 7 | KA Core | 各種量子ビットの物理方式の特徴を列挙 | 未照合 | 対応教材を要照合。 |
+| 7 | KA Core | 各種量子ビットの物理方式の特徴を列挙 | 部分 | 1216 で３方式の媒体・準備・操作・読取りの構成例を選ぶ。他方式、一般的な性能比較や自由記述は未評価。 |
 | 8 | KA Core | 断熱方式とゲート方式及び適する問題を比較 | 未照合 | 対応教材を要照合。 |
 
 依頼839の公開札３枚と秘密・誤差の関係、小さい合同算術での復元、改変による読取りの変化を [NIST FIPS 203](https://csrc.nist.gov/pubs/fips/203/final) と [Regev の LWE 解説](https://www.cs.columbia.edu/~tal/4261/Regev_lwesurvey.pdf)に照らして確認。模型は ML-KEM ではなく、実用上の安全性を示さない。`tests/lwe-courier.test.js` は全28条件の復元と、誤差を −1・0・1 に限る公開札からの17²候補の全探索を検査する。３候補が残り、少数の札から秘密が一意に定まるとも主張しない。
@@ -46,3 +46,5 @@
 依頼1214の二重スリットと経路情報は [MIT の講義資料](https://ocw.mit.edu/courses/sts-042-einstein-oppenheimer-feynman-physics-in-the-20th-century-fall-2020/mitsts_042j_f20_lecnote_doubleslit.pdf) を参照。４区画に限った振幅の和と経路を区別する場合の確率の和、位相反転を `tests/double-slit.test.js` で検査する。実際の空間分布を再現するものではない。
 
 依頼1215の位置と運動量の不確定性とガウス波束は [MIT 量子力学の講義資料](https://ocw.mit.edu/courses/8-321-quantum-theory-i-fall-2017/2ecc07c095d8ae56600f7145c6fb4a6a_MIT8_321F17_lec5.pdf) を参照。位置・運動量の正規密度を数値積分して規格化と分散を `tests/wave-packet.test.js` で照合。最小不確定性を持つ固定例であり、一般の量子状態や時間発展は未評価。
+
+依頼1216は [NIST の方式比較](https://www.nist.gov/quantum-information-science/quantum-computing-explained)、[IBM の共振器読取り](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)、[NIST のイオン蛍光読取り](https://www.nist.gov/publications/state-readout-trapped-ion-qubit-using-trap-integrated-superconducting-photon-detector)を参照。`tests/qubit-devices.test.js` は各工房の27組合せと保存・達成条件を検査する。指定された例以外の組合せを不可能と主張しない。

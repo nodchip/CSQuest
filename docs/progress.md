@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+2026-11-04：依頼1216で超伝導回路・捕捉イオン・光子の各構成例について、準備・操作・読取りを比較。[NIST の方式比較](https://www.nist.gov/quantum-information-science/quantum-computing-explained)、[IBM の共振器読取り](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)、[NIST のイオン蛍光読取り](https://www.nist.gov/publications/state-readout-trapped-ion-qubit-using-trap-integrated-superconducting-photon-detector)を参照。全3097テストとビルドが成功。ローカル画面390px幅で誤答・再開・３構成・振り返り・達成を確認。他方式、実機の実装や性能は未評価。
+
 2026-11-04：依頼1215で位置と運動量の広がりを持つ３つの１次元ガウス波束を比較。[MIT の量子力学の資料](https://ocw.mit.edu/courses/8-321-quantum-theory-i-fall-2017/2ecc07c095d8ae56600f7145c6fb4a6a_MIT8_321F17_lec5.pdf)を参照。分布の数値積分・分散を含む全3095テストとビルドが成功。ローカル画面の390px幅で誤答、２グラフ、途中再開、３条件、振り返りと達成を確認。一般の量子状態、時間発展、実験装置は未評価。
 
 2026-11-04：依頼1214で二つの経路を持つ４区画の理想模型を追加。位相反転と経路を完全に区別する印による確率の違いを予想・比較し、検出を振り返る。[MIT 講義資料](https://ocw.mit.edu/courses/sts-042-einstein-oppenheimer-feynman-physics-in-the-20th-century-fall-2020/mitsts_042j_f20_lecnote_doubleslit.pdf)を参照。全3093テストとビルドが成功。ローカル画面の390px幅で未選択・誤答・保存再開・３条件・達成を確認。連続分布、実験装置や位置と運動量の不確定性は未評価。
