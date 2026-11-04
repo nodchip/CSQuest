@@ -12,7 +12,7 @@
 | 2a | ピンホールカメラ・相似三角形・投影 | 部分 | 64で奥行きの異なる２点の透視投影を比較。一般の３次元点は未評価。 |
 | 2b | カメラモデル | 部分 | 64・636で投影や横移動を比較。一般の姿勢やカメラモデルは未評価。 |
 | 2c | 射影幾何 | 部分 | 64で相似を使った固定点の投影。一般の射影幾何は未評価。 |
-| 3a | 放射測定 | 部分 | 1258で放射輝度・立体角と余弦を使う固定例。放射束や一般の測定は未評価。 |
+| 3a | 放射測定 | 部分 | 1258で方向ごとの反射、1259で一様な近似による放射輝度・放射照度・放射束を比較。一般の測定や積分は未評価。 |
 | 3b | レンダリング方程式 | 部分 | 1258で２方向領域の反射と放出を近似し、半球の積分に結び付ける。一般の積分・間接光は未評価。 |
 | 3c | 自然界での放出・散乱等 | 部分 | 186・507で拡散光と遮蔽の固定模型。一般の散乱・放射輸送は未評価。 |
 | 4a | 三角形のラスタ化 | 部分 | 83で中心・４標本の固定例。一般の三角形と実装は未評価。 |
@@ -45,3 +45,5 @@
 関連検査には `tests/raster.test.js`、`tests/scene-hierarchy.test.js`、`tests/texture-filter.test.js`、`tests/render-pipeline.test.js`、`tests/transform-space.test.js`、`tests/visibility-paths.test.js` がある。各固定模型の範囲を検査し、一般的な描画や実装能力の証明ではない。
 
 依頼1258は [Physically Based Rendering の光輸送方程式](https://pbr-book.org/4ed/Introduction/Photorealistic_Rendering_and_the_Ray-Tracing_Algorithm)と[放射測定の積分](https://pbr-book.org/4ed/Radiometry%2C_Spectra%2C_and_Color/Working_with_Radiometric_Integrals)を参考に、各１ sr の２領域の代表値と一定 BRDF を用いた粗い数値近似を扱う。`tests/rendering-equation.test.js` は５条件の寄与と合計、誤答・復元を検査する。残りの方向は入射光０と仮定し、一般の積分、複雑な材質、スペクトル、間接光の計算と実装は扱わない。
+
+依頼1259は [Physically Based Rendering の放射測定](https://pbr-book.org/4ed/Radiometry%2C_Spectra%2C_and_Color/Radiometry)を参考に、一様な代表値と一定の余弦による近似で、面積・方向の広がり・角度・放射輝度を変えて放射照度と放射束を比較する。`tests/radiometry-lantern.test.js` は全16組合せ、５比較、誤答と復元を検査する。一般の分布の積分、実測、距離による立体角の変化、スペクトルや測光は扱わない。
