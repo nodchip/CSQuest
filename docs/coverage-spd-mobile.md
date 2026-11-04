@@ -15,7 +15,7 @@
 | 3c | KA Core | ネットワークと Web インターフェース | 部分 | 354で接続回復・応答喪失を仮定。実通信・設計は未評価。 |
 | 4a | Non-core | ネイティブとクロスプラットフォーム | 部分 | 1325で別々の実装と処理の共有を条件付きで比較。実開発・網羅的評価は未実施。 |
 | 4b | Non-core | モバイルの設計パターン | 未照合 | 実設計を要照合。 |
-| 5a | Non-core | レスポンシブ UI | 未照合 | 異なる画面の設計・評価を要照合。 |
+| 5a | Non-core | レスポンシブ UI | 部分 | 1326で固定２列と幅による１・２列の切替を２条件で比較。実端末・利用者の評価は未実施。 |
 | 5b | Non-core | 端末の多様性と移動 | 部分 | 354で圏外と通信回復。多様な実端末は未評価。 |
 | 5c | Non-core | モバイルと Web の利用体験の違い | 未照合 | 比較を要照合。 |
 | 5d | Non-core | 電力と性能のトレードオフ | 部分 | 356で架空の資源と遅れを比較。実端末の電力・性能は未評価。 |
@@ -50,3 +50,5 @@
 依頼1324は [Android のオフライン時の書込み](https://developer.android.com/topic/architecture/data-layer/offline-first) と [センサーの概要](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview) を参考に、２つの架空の温度・時刻・番号を保存し、圏外・通信回復・初回の返事喪失・同一番号の再送を模型で操作する。`tests/mobile-sensor-queue.test.js` は送信順２通り、重複抑止と保存を検査。実センサー・ネットワーク・サーバー、全失敗や耐障害性は評価しない。
 
 依頼1325は [Android の Kotlin Multiplatform 事例](https://developer.android.com/codelabs/kmp-get-started) と [環境の準備](https://developer.android.com/kotlin/multiplatform/setup) を参考に、共通の計算と端末ごとの画面を組み合わせる方式、および端末ごとに別々に作る方式を三つの固定条件で比較する。共通化の可否や費用は前提次第であり、実機・実開発・性能・費用の評価ではない。`tests/mobile-platform-choice.test.js` は各条件の正誤と保存状態を検査する。
+
+依頼1326は [MDN のレスポンシブデザイン](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design) と [グリッドのアクセシビリティ](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Accessibility) を参考に、２幅と２配置ではみ出しを予測し、文字拡大や操作順も考える。札幅280・間隔16・２列に必要な幅576は教材固有の条件で、実端末や利用者全般の評価ではない。`tests/responsive-notice.test.js` で４組合せと途中記録を検査する。
