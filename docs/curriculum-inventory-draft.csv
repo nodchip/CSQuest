@@ -2575,7 +2575,7 @@ PDC-Programs:学習成果:KA Core:5,PDC,PDC-Programs,学習成果,KA Core,5,要�
 SDF-Data-Structures:トピック:CS Core:1,SDF,SDF-Data-Structures,トピック,CS Core,1,リスト、スタック、待ち行列、集合、辞書等の抽象データ型と操作,部分,79の追加・取出し、46の集合、174の辞書、911の双方向循環リストの参照変更。各型の全操作や実言語は未評価。,coverage-sdf-core.md,13,原典照合結果は監査記録参照
 SDF-Data-Structures:トピック:CS Core:2,SDF,SDF-Data-Structures,トピック,CS Core,2,適切なデータ構造の選択と利用,部分,依頼79の順序要件、527の操作と仕事の組合せ。一般の要件・実装は未評価。,coverage-sdf-core.md,14,原典照合結果は監査記録参照
 SDF-Data-Structures:トピック:CS Core:3,SDF,SDF-Data-Structures,トピック,CS Core,3,構造選択の性能への影響,部分,依頼527で固定条件の操作点数を比較。実時間、記憶量と一般の解析は未評価。,coverage-sdf-core.md,15,原典照合結果は監査記録参照
-SDF-Data-Structures:トピック:CS Core:4,SDF,SDF-Data-Structures,トピック,CS Core,4,文字列と文字列処理,部分,依頼522で符号位置単位の固定文字列と重ならない置換。一般の文字列処理は未評価。,coverage-sdf-core.md,16,原典照合結果は監査記録参照
+SDF-Data-Structures:トピック:CS Core:4,SDF,SDF-Data-Structures,トピック,CS Core,4,文字列と文字列処理,部分,522で置換、1345で正規化・ロケール別小文字化と完全一致を固定例で比較。一般の文字列処理は未評価。,coverage-sdf-core.md,16,原典照合結果は監査記録参照
 SDF-Data-Structures:学習成果:CS Core:1,SDF,SDF-Data-Structures,学習成果,CS Core,1,主要な抽象データ型を使うプログラムを書く,部分,依頼79・174等で固定操作を体験。実言語で各型を使うプログラム作成は直接評価しない。,coverage-sdf-core.md,17,原典照合結果は監査記録参照
 SDF-Data-Structures:学習成果:CS Core:2,SDF,SDF-Data-Structures,学習成果,CS Core,2,問題に適した構造を選ぶ,部分,依頼79・527で固定の順序要件・仕事を比較。一般の問題は未評価。,coverage-sdf-core.md,18,原典照合結果は監査記録参照
 SDF-Data-Structures:学習成果:CS Core:3,SDF,SDF-Data-Structures,学習成果,CS Core,3,構造や操作による性能の変化を説明,部分,依頼527で明示した費用模型の操作数・点数を比較。実測と自由記述は未評価。,coverage-sdf-core.md,19,原典照合結果は監査記録参照

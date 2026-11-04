@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'archive-unicode-title-search':['Unicode','文字列','検索','正規化','ロケール','小文字'],
  'archive-grapheme-workshop':['Unicode','文字列','書記素','符号位置','UTF-16','正規化'],
  'archive-hash-resize-lab':['ハッシュ表','線形探索','再ハッシュ','拡張','衝突','反例'],
  'archive-hash-resize-workshop':['ハッシュ表','線形探索','再ハッシュ','拡張','衝突'],
