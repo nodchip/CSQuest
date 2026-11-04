@@ -21,7 +21,7 @@
 | 5d | Non-core | 電力と性能のトレードオフ | 部分 | 356で架空の資源と遅れを比較。実端末の電力・性能は未評価。 |
 | 6a | Non-core | 位置情報を使うアプリ | 部分 | 393で位置の精度・時間・手動代替を選ぶ模型。実位置やアプリは未評価。 |
 | 6b | Non-core | センサーを使う計算 | 部分 | 219〜222で測定・量子化等の固定模型。モバイル実センサーは未評価。 |
-| 6c | Non-core | 電話と即時メッセージ | 未照合 | 実機能と代替を要照合。 |
+| 6c | Non-core | 電話と即時メッセージ | 部分 | 1327で保留・受付・配達・既読通知を操作。電話・実通信は未評価。 |
 | 6d | Non-core | 拡張現実 | 部分 | 217・218で重ね合わせの固定模型。実モバイル端末は未評価。 |
 | 7 | Non-core | 仕様と試験 | 部分 | 354で二つの再送方針を比較。実アプリの試験は未評価。 |
 | 8a | Non-core | 同期処理との違い | 部分 | 1321で画面の処理が待つ場合と操作を受ける場合を比較。実端末・一般の並行処理は未評価。 |
@@ -36,7 +36,7 @@
 | 1 | KA Core | モバイルと汎用プログラミングの比較 | 未照合 | 一般的な比較を要照合。 |
 | 2 | KA Core | 位置と API を使うアプリ | 部分 | 393で位置取得の選択。API 統合・実アプリ開発は未評価。 |
 | 3 | KA Core | センサーデータの遠隔記録 | 部分 | 1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。 |
-| 4 | KA Core | 電話・メッセージアプリ | 未照合 | 実装と代替を要照合。 |
+| 4 | KA Core | 電話・メッセージアプリ | 部分 | 1327で伝言アプリの一連の状態を模型で操作。電話や実アプリの設計・実装は未評価。 |
 | 5 | KA Core | ネイティブと共通開発の長短 | 部分 | 1325でコード共有、端末固有機能、対応状況と試験を固定条件で比較。一般的・実測に基づく評価は未実施。 |
 
 354の再送は固定された受付の重複抑止を仮定し、実 API や認証は扱わない。393・394は実位置・実端末・利用者の評価ではない。根拠と前提は[既存調査](spd-mobile.md)、[社会・倫理の調査](spd-sep.md)、`tests/mobile-retry.test.js`、`tests/mobile-location.test.js`、`tests/touch-targets.test.js` を参照。
@@ -52,3 +52,5 @@
 依頼1325は [Android の Kotlin Multiplatform 事例](https://developer.android.com/codelabs/kmp-get-started) と [環境の準備](https://developer.android.com/kotlin/multiplatform/setup) を参考に、共通の計算と端末ごとの画面を組み合わせる方式、および端末ごとに別々に作る方式を三つの固定条件で比較する。共通化の可否や費用は前提次第であり、実機・実開発・性能・費用の評価ではない。`tests/mobile-platform-choice.test.js` は各条件の正誤と保存状態を検査する。
 
 依頼1326は [MDN のレスポンシブデザイン](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design) と [グリッドのアクセシビリティ](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Accessibility) を参考に、２幅と２配置ではみ出しを予測し、文字拡大や操作順も考える。札幅280・間隔16・２列に必要な幅576は教材固有の条件で、実端末や利用者全般の評価ではない。`tests/responsive-notice.test.js` で４組合せと途中記録を検査する。
+
+依頼1327は [Signal の送信・配達・既読表示](https://support.signal.org/hc/en-us/articles/360007320751-How-do-I-know-if-my-message-was-delivered-or-read) と [Firebase の受付と配達](https://firebase.google.com/docs/cloud-messaging/customize-messages/setting-message-lifespan) を参考に、架空の伝言の保留・受付・配達・既読通知の有無を操作する。通知の設定と表示は模型の仮定であり、実通信・電話・通知の遅延や暗号化は扱わない。`tests/mobile-message-journey.test.js` は段階の順序、通知の有無、途中記録を検査する。

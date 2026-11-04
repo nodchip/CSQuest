@@ -3501,7 +3501,7 @@ SPD-Mobile:トピック:Non-core:5c,SPD,SPD-Mobile,トピック,Non-core,5c,モ�
 SPD-Mobile:トピック:Non-core:5d,SPD,SPD-Mobile,トピック,Non-core,5d,電力と性能のトレードオフ,部分,356で架空の資源と遅れを比較。実端末の電力・性能は未評価。,coverage-spd-mobile.md,21,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:6a,SPD,SPD-Mobile,トピック,Non-core,6a,位置情報を使うアプリ,部分,393で位置の精度・時間・手動代替を選ぶ模型。実位置やアプリは未評価。,coverage-spd-mobile.md,22,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:6b,SPD,SPD-Mobile,トピック,Non-core,6b,センサーを使う計算,部分,219〜222で測定・量子化等の固定模型。モバイル実センサーは未評価。,coverage-spd-mobile.md,23,原典照合結果は監査記録参照
-SPD-Mobile:トピック:Non-core:6c,SPD,SPD-Mobile,トピック,Non-core,6c,電話と即時メッセージ,未照合,実機能と代替を要照合。,coverage-spd-mobile.md,24,原典照合結果は監査記録参照
+SPD-Mobile:トピック:Non-core:6c,SPD,SPD-Mobile,トピック,Non-core,6c,電話と即時メッセージ,部分,1327で保留・受付・配達・既読通知を操作。電話・実通信は未評価。,coverage-spd-mobile.md,24,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:6d,SPD,SPD-Mobile,トピック,Non-core,6d,拡張現実,部分,217・218で重ね合わせの固定模型。実モバイル端末は未評価。,coverage-spd-mobile.md,25,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:7,SPD,SPD-Mobile,トピック,Non-core,7,仕様と試験,部分,354で二つの再送方針を比較。実アプリの試験は未評価。,coverage-spd-mobile.md,26,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:8a,SPD,SPD-Mobile,トピック,Non-core,8a,同期処理との違い,部分,1321で画面の処理が待つ場合と操作を受ける場合を比較。実端末・一般の並行処理は未評価。,coverage-spd-mobile.md,27,原典照合結果は監査記録参照
@@ -3511,7 +3511,7 @@ SPD-Mobile:トピック:Non-core:8d,SPD,SPD-Mobile,トピック,Non-core,8d,非�
 SPD-Mobile:学習成果:KA Core:1,SPD,SPD-Mobile,学習成果,KA Core,1,モバイルと汎用プログラミングの比較,未照合,一般的な比較を要照合。,coverage-spd-mobile.md,36,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:2,SPD,SPD-Mobile,学習成果,KA Core,2,位置と API を使うアプリ,部分,393で位置取得の選択。API 統合・実アプリ開発は未評価。,coverage-spd-mobile.md,37,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:3,SPD,SPD-Mobile,学習成果,KA Core,3,センサーデータの遠隔記録,部分,1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。,coverage-spd-mobile.md,38,原典照合結果は監査記録参照
-SPD-Mobile:学習成果:KA Core:4,SPD,SPD-Mobile,学習成果,KA Core,4,電話・メッセージアプリ,未照合,実装と代替を要照合。,coverage-spd-mobile.md,39,原典照合結果は監査記録参照
+SPD-Mobile:学習成果:KA Core:4,SPD,SPD-Mobile,学習成果,KA Core,4,電話・メッセージアプリ,部分,1327で伝言アプリの一連の状態を模型で操作。電話や実アプリの設計・実装は未評価。,coverage-spd-mobile.md,39,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:5,SPD,SPD-Mobile,学習成果,KA Core,5,ネイティブと共通開発の長短,部分,1325でコード共有、端末固有機能、対応状況と試験を固定条件で比較。一般的・実測に基づく評価は未実施。,coverage-spd-mobile.md,40,原典照合結果は監査記録参照
 SPD-Robot:トピック:未記載:1,SPD,SPD-Robot,トピック,未記載,1,ロボットのプラットフォームと機器の種類,部分,依頼691で架空の車輪型・飛行型と観測器を比較。実際の機器全般は未確認。,coverage-spd-robot.md,11,原典照合結果は監査記録参照・区分を要確認
 SPD-Robot:トピック:未記載:2,SPD,SPD-Robot,トピック,未記載,2,センサー、組込み計算、動作器,部分,依頼28・690・691で観測と移動の固定模型を操作。実機の計算・信号処理は扱わない。,coverage-spd-robot.md,12,原典照合結果は監査記録参照・区分を要確認
