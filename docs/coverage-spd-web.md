@@ -6,7 +6,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 対応例と限界 |
 |---|---|---|---|---|
-| 1 | KA Core | Web の言語 | 未照合 | HTML・CSS・JavaScript 等の役割の比較を要照合。 |
+| 1 | KA Core | Web の言語 | 部分 | 1289で HTML の見出し、CSS の装飾、JavaScript の操作への反応を固定例で比較。PHP や実際の言語記述・他の使い方は未評価。 |
 | 2-本体 | KA Core | Web プラットフォーム・フレームワーク | 未照合 | フレームワークやメタフレームワークの役割を要照合。 |
 | 2a | KA Core | プラットフォームとクラウド | 未照合 | 実サービス・フレームワークとの対応を要照合。 |
 | 2b | KA Core | API と Web Components | 部分 | 62で受付と再送、803で画面・受付・台帳の役割を操作。実 API と Web Components は未評価。 |
@@ -38,3 +38,5 @@
 | 6 | KA Core | Web アプリを標準に照らし評価 | 未照合 | 実アプリへの評価・適合は未確認。 |
 
 803・804・805は画面と受付、状態、認証の模型で、実ネットワーク・サーバー・本人認証を再現しない。対象の前提と検査は[既存調査](spd-web.md)および `tests/web-three-tier.test.js`、`tests/web-session.test.js`、`tests/session-fixation.test.js` を参照。
+
+依頼1289では見出し追加、色と枠、ボタンによる灯りの切替えに対応する札を選び、実際に見本を操作する。言語ごとにできることは重なるため、HTML の操作要素・CSS の状態による表現・JavaScript による内容変更もあると明示する。`tests/web-layers.test.js` は各札の選択・試行・操作・判定と保存の検証を行う。見本は固定されており、実際のコードの読み書き、PHP や他の技術を評価しない。参考：[MDN HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content)、[CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content)、[JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity)。

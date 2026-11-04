@@ -1,0 +1,10 @@
+export const webLayersLevel={id:'workshop-web-layers',number:'1289',kind:'web-layers',name:'三枚の掲示板の札',tag:'HTML・CSS・JavaScript',title:'ギルドの掲示板を仕立てよう',story:'掲示板に見出しを加え、色を整え、灯りの合図を動かします。三枚の札の働きを試しましょう。'};
+export const webLayerCards={html:'HTML：内容と構造',css:'CSS：見た目',js:'JavaScript：操作への反応'};
+export const webLayerTasks={heading:{name:'見出しを加える',correct:'html'},color:{name:'掲示板を青く飾る',correct:'css'},light:{name:'灯りボタンで表示を切り替える',correct:'js'}};
+export function webLayersCreate(){return {selected:'heading',trials:Object.fromEntries(Object.keys(webLayerTasks).map(k=>[k,{choice:null,applied:null,on:false,checked:false}]))};}
+export function webLayersChoose(q,card){if(!Object.hasOwn(webLayerCards,card))throw new RangeError('札が不正です。');const t=q.trials[q.selected];t.choice=card;t.applied=null;t.on=false;t.checked=false;}
+export function webLayersApply(q){const t=q.trials[q.selected];if(t.choice===null)throw new RangeError('先に札を選びましょう。');t.applied=t.choice;t.on=false;t.checked=false;}
+export function webLayersToggle(q){const t=q.trials[q.selected];if(t.applied!=='js')throw new RangeError('動作の札を試しましょう。');t.on=!t.on;t.checked=false;}
+export function webLayersCheck(q){const t=q.trials[q.selected],c=webLayerTasks[q.selected];t.checked=t.applied===c.correct&&(q.selected!=='light'||t.on);return t.checked;}
+export function webLayersDone(q){return Object.entries(webLayerTasks).every(([k,c])=>{const t=q.trials[k];return t.checked&&t.applied===c.correct&&(k!=='light'||t.on);});}
+export function webLayersRestore(q){if(!q||!Object.hasOwn(webLayerTasks,q.selected)||!q.trials)throw new RangeError('記録が不正です。');const n=webLayersCreate();n.selected=q.selected;for(const [k,c] of Object.entries(webLayerTasks)){const t=q.trials[k];if(!t||![null,...Object.keys(webLayerCards)].includes(t.choice)||![null,t.choice].includes(t.applied)||typeof t.on!=='boolean'||typeof t.checked!=='boolean'||t.on&&t.applied!=='js'||t.checked&&(t.applied!==c.correct||k==='light'&&!t.on))throw new RangeError('記録が不正です。');n.trials[k]={choice:t.choice,applied:t.applied,on:t.on,checked:t.checked};}return n;}

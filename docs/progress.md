@@ -1,5 +1,7 @@
 # CS Quest 開発記録
 
+- 2026-11-04: 依頼1289で HTML の見出し、CSS の装飾、JavaScript の押下への反応を札で選び、掲示板の見本で比較する。役割は重なることと固定例の限界も明示。[MDN の HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content)、[CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content)、[JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity)を参照。全3253テストとビルドが成功。ブラウザで誤答、途中再開、３仕事・達成、320・390・1280px幅と再挑戦のキーボード操作を確認。実際の言語の記述、PHP や他のプラットフォームの言語は未評価。台帳の未照合436行・部分3182行・完了2行は重複を含み、完成率ではない。
+
 - 2026-11-04: 依頼800の区画による候補選別を、描画範囲と探索者の衝突範囲の双方に結び付け、全７個との比較と候補３・４個の正確な重なり確認を表示。登録・検索・重複排除の費用や実時間の短縮は評価しないと明示。[MDN の２次元衝突判定](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)を参照。既存の全整数長方形による候補網羅テスト、全3251テスト、台帳検査３テストとビルドが成功。ブラウザで誤答・再開・両場面・達成、320・390・1280px幅と再挑戦のキーボード操作を確認。固定された長方形の模型で、移動中の衝突や実プログラムの最適化は未評価。
 
 - 2026-11-04: 既存の依頼229を並列・分散の学びの道に追加し、信頼性・可用性の成果を部分対応として照合。ブラウザで装置故障と誤更新の誤った復旧・正しい復旧、途中再開、390px幅を確認。全3251テストとビルドが成功。固定場面であり、実サービスの障害診断や一般的な修正は未評価。AI-Robotics概要の古い未対応表記を一部更新。
