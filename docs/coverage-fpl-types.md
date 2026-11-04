@@ -36,7 +36,7 @@
 | 10 | Non-core | 型検査 | 部分 | 24で固定された操作の接続。一般の型検査器は未評価。 |
 | 11 | Non-core | サブタイプ | 部分 | 511で読取専用記録の受入れ。一般のサブタイプは未評価。 |
 | 11a | Non-core | サブタイプ多相と暗黙のアップキャスト | 部分 | 511で必要な項目を持つ記録を受入れ。実言語の暗黙変換は未評価。 |
-| 11b | Non-core | 振る舞いの置換 | 未照合 | 振る舞いの置換を検証する教材は未確認。 |
+| 11b | Non-core | 振る舞いの置換 | 部分 | 1240で空の袋への１回の操作について、元の入力条件・結果の約束を４種類の袋で比較。複数操作の履歴、例外、不変条件や一般の証明は未評価。 |
 | 11c | Non-core | サブタイプと継承の関係 | 部分 | 511で派生宣言と構造に基づく受入れを比較。実言語の継承と一般の関係は未評価。 |
 | 12 | Non-core | 保存と進行による型安全性 | 部分 | 766で固定例と故障を比較し、767で小さな言語の進行・保存の証明の道筋を選ぶ。ほかの言語は未評価。 |
 | 13 | Non-core | 型推論 | 部分 | 764・765で単一化と単一の適用。一般の制約生成と推論は未評価。 |
@@ -67,7 +67,7 @@
 | 17 | Non-core | 単一化に基づく型推論を実装 | 部分 | 764・765で等式整理と適用の代替体験。推論器を実装する能力は評価しない。 |
 | 18 | Non-core | 静的オーバーロードの解決と実行時の振る舞いを説明 | 部分 | 581で固定候補と動的ディスパッチ。一般の解決法と自由な説明は未評価。 |
 
-関連する `tests/type-checking.test.js`、`tests/generic-pouch.test.js`、`tests/record-compatibility.test.js`、`tests/overload-dispatch.test.js`、`tests/type-unification.test.js`、`tests/type-application.test.js`、`tests/type-safety.test.js`、`tests/type-safety-proof.test.js`、`tests/curry-howard.test.js`、`tests/dependent-vectors.test.js`、`tests/type-rescue.test.js` は各模型を検査するもので、原典の範囲全体や学習効果の検証を意味しない。
+関連する `tests/behavioral-bags.test.js`、`tests/type-checking.test.js`、`tests/generic-pouch.test.js`、`tests/record-compatibility.test.js`、`tests/overload-dispatch.test.js`、`tests/type-unification.test.js`、`tests/type-application.test.js`、`tests/type-safety.test.js`、`tests/type-safety-proof.test.js`、`tests/curry-howard.test.js`、`tests/dependent-vectors.test.js`、`tests/type-rescue.test.js` は各模型を検査するもので、原典の範囲全体や学習効果の検証を意味しない。
 
 依頼945は [Cornell の多相性の講義](https://www.cs.cornell.edu/courses/cs4110/2021fa/lectures/lecture24.pdf)を参考に、型変数による共通手順、宣言型による固定の多重定義、動物のサブタイプと実行時の手順を比較する模型。実言語の候補解決・変換・例外や自由な説明は未評価。
 
