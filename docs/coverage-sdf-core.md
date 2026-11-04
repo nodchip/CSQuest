@@ -53,6 +53,6 @@
 
 依頼1340は [ISTQB の同値分割と境界値](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) を参考に、入力札を選んで４区分を試し、３つの人工的な境界欠陥を検出する。代表値だけで境界欠陥を見逃す固定例を扱い、実テスト記述や一般の欠陥不存在を評価しない。`tests/boundary-test-workshop.test.js` は仕様と３つの差分、区分と保存を検査する。
 
-依頼1341は [ISTQB の状態遷移テスト](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) を参考に、２状態・２操作の門について試験列を組み、各段階の状態と通過数を２つの人工的な欠陥と比較する。４組の状態と操作を試しても、長い列や他の欠陥の不存在は証明しない。`tests/transition-test-workshop.test.js` は仕様の軌跡・欠陥・途中保存を検査する。
+依頼1341は [ISTQB の状態遷移テスト](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf) を参考に、２状態・２操作の門について試験列を組み、各段階の状態と通過数を３つの人工的な欠陥と比較する。追加の仕掛けＣは、施錠中に２回連続で押すと２回目に通過を許す。４組の状態と操作を通過しＡ・Ｂの欠陥を検出する列でもＣを見逃す場合がある。別々の試験はそれぞれ施錠から始まる。長い列や他の欠陥の不存在は証明しない。`tests/transition-test-workshop.test.js` は仕様の軌跡・欠陥・試験の区切り・途中保存を検査する。
 
 依頼1345は [MDN の正規化](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize) と [ロケールによる小文字化](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase) を参考に、３冊の固定名に対する完全一致を、無変換・NFC・フランス語小文字化と NFC の３方式で比較する。`tests/unicode-title-search.test.js` は６条件の一致結果と途中保存を検査する。一般の言語の大小無視照合、識別子の安全性や実プログラムの作成は評価しない。

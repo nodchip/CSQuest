@@ -1,7 +1,11 @@
 export const transitionTestLevel={id:'guild-transition-test-workshop',number:'1341',kind:'transition-test-workshop',name:'順番を試す門',tag:'テスト・状態遷移・試験列',title:'門の状態ごとに操作を試そう',story:'印を入れると門の鍵が外れ、押すと一人が通って再び鍵がかかります。操作の列を選び、仕掛けを試しましょう。'};
 export const transitionActions={token:'印を入れる',push:'門を押す'};
-const machines=['expected','ghost','unlocked'];
-export function transitionTrace(actions,machine='expected'){if(!machines.includes(machine)||!Array.isArray(actions)||actions.length>6||actions.some(a=>!Object.hasOwn(transitionActions,a)))throw new RangeError('試験列が不正です。');let state='locked',passed=0;const rows=[];for(const action of actions){const before=state;if(action==='token')state='unlocked';else if(state==='unlocked'){passed++;state=machine==='unlocked'?'unlocked':'locked';}else if(machine==='ghost')passed++;rows.push({before,action,state,passed});}return rows;}
+const machines=['expected','ghost','unlocked','repeat'];
+export function transitionTrace(actions,machine='expected'){if(!machines.includes(machine)||!Array.isArray(actions)||actions.length>6||actions.some(a=>!Object.hasOwn(transitionActions,a)))throw new RangeError('試験列が不正です。');let state='locked',passed=0;const rows=[];for(const action of actions){const before=state,previous=rows.at(-1);if(action==='token')state='unlocked';else if(state==='unlocked'){passed++;state=machine==='unlocked'?'unlocked':'locked';}else if(machine==='ghost'||machine==='repeat'&&previous?.action==='push'&&previous.before==='locked')passed++;rows.push({before,action,state,passed});}return rows;}
+export function transitionRepeatCaught(runs){
+ transitionSummary(runs);
+ return runs.some(actions=>{const expected=transitionTrace(actions),actual=transitionTrace(actions,'repeat');return expected.some((row,i)=>row.state!==actual[i].state||row.passed!==actual[i].passed);});
+}
 export function transitionSummary(runs){if(!Array.isArray(runs)||runs.length>6||runs.some(a=>!Array.isArray(a)||a.length===0))throw new RangeError('試験記録が不正です。');const covered=new Set(),caught=new Set();for(const actions of runs){const expected=transitionTrace(actions),others=['ghost','unlocked'].map(m=>transitionTrace(actions,m));expected.forEach((row,i)=>{covered.add(row.before+':'+row.action);for(let j=0;j<others.length;j++)if(row.state!==others[j][i].state||row.passed!==others[j][i].passed)caught.add(['ghost','unlocked'][j]);});}return {covered:[...covered],caught:[...caught]};}
 export function transitionTestCreate(){return {sequence:[],runs:[],reflection:null,checked:false};}
 export function transitionTestAdd(q,action){if(!Object.hasOwn(transitionActions,action)||q.sequence.length>=6)throw new RangeError('札は６枚までです。');q.sequence.push(action);}

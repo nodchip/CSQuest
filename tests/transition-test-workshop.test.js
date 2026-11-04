@@ -1,5 +1,15 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {transitionTrace,transitionSummary,transitionTestCreate,transitionTestAdd,transitionTestRun,transitionTestDone,transitionTestRestore} from '../src/transition-test-workshop.js';
+import {transitionTrace,transitionSummary,transitionRepeatCaught,transitionTestCreate,transitionTestAdd,transitionTestRun,transitionTestDone,transitionTestRestore} from '../src/transition-test-workshop.js';
 test('the same push behaves differently in each state and returns to locked after passing',()=>{assert.deepEqual(transitionTrace(['push','token','token','push']),[{before:'locked',action:'push',state:'locked',passed:0},{before:'locked',action:'token',state:'unlocked',passed:0},{before:'unlocked',action:'token',state:'unlocked',passed:0},{before:'unlocked',action:'push',state:'locked',passed:1}]);});
 test('covering both states alone misses defects; a longer test catches both and covers the four state-event pairs',()=>{const onlyStates=transitionSummary([['token']]);assert.deepEqual(onlyStates.caught,[]);assert.equal(onlyStates.covered.length,1);const q=transitionTestCreate();for(const a of ['push','token','token','push'])transitionTestAdd(q,a);transitionTestRun(q);assert.equal(transitionSummary(q.runs).covered.length,4);assert.deepEqual(new Set(transitionSummary(q.runs).caught),new Set(['ghost','unlocked']));assert.equal(transitionTestDone(q),false);q.reflection='limits';q.checked=true;assert.equal(transitionTestDone(q),true);const copy=transitionTestRestore(q);copy.runs[0].pop();assert.equal(q.runs[0].length,4);assert.throws(()=>transitionTestRestore({...q,runs:[[]]}));});
+test('covering all state-event pairs can miss a history-dependent fault',()=>{
+ const fullCoverage=[['push','token','token','push']];
+ assert.equal(transitionSummary(fullCoverage).covered.length,4);
+ assert.equal(transitionRepeatCaught(fullCoverage),false);
+ assert.equal(transitionRepeatCaught([['push'],['push']]),false);
+ assert.equal(transitionRepeatCaught([['push','push']]),true);
+ assert.deepEqual(transitionTrace(['push','push'],'repeat').map(r=>r.passed),[0,1]);
+ assert.deepEqual(transitionTrace(['push','push']).map(r=>r.passed),[0,0]);
+ assert.equal(transitionRepeatCaught([['push','token','push','push']]),false);
+});
