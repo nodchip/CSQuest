@@ -3,7 +3,7 @@ import {serviceDesignModes,serviceDesignFaults,serviceDesignOutcome} from './ser
 export const serviceJourneyLevel={id:'village-communications-expedition',number:'1292',kind:'communications-expedition',name:'途切れた伝令と二つの受付',tag:'サービス設計の遠征',title:'村の記録と受付を守ろう',story:'通信が途切れる南村と、受付を止められないギルドを巡ります。二つの方式を試し、依頼人に合う仕組みを届けましょう。'};
 export const journeyPlaces={village:'南村の記録所',office:'ギルドの受付',guild:'冒険者ギルド'};
 export function serviceJourneyReplay(history){
- if(!Array.isArray(history)||history.length>100)throw new RangeError('遠征の記録が不正です。');
+ if(!Array.isArray(history))throw new RangeError('遠征の記録が不正です。');
  const s={place:'village',mode:'service',networks:[],villageDone:false,design:'monolith',faults:[],officeDone:false,reflection:null,won:false,last:''};
  for(const action of history){
   if(typeof action!=='string'||s.won)throw new RangeError('遠征の操作が不正です。');
@@ -34,5 +34,17 @@ export function serviceJourneyReplay(history){
  return s;
 }
 export function serviceJourneyCreate(){return {history:[]};}
-export function serviceJourneyAct(q,action){const next=[...q.history,action],state=serviceJourneyReplay(next);q.history=next;return state;}
+function compactJourney(history){
+ // Keep the final action so its feedback is preserved. A loop returning to the
+ // same game state can be removed without changing any later action.
+ const seen=new Map();
+ for(let i=0;i<history.length;i++){
+  const {last,...state}=serviceJourneyReplay(history.slice(0,i));
+  const key=JSON.stringify(state);
+  if(seen.has(key))return [...history.slice(0,seen.get(key)),...history.slice(i)];
+  seen.set(key,i);
+ }
+ return history;
+}
+export function serviceJourneyAct(q,action){let next=[...q.history,action];const state=serviceJourneyReplay(next);if(next.length>=100)next=compactJourney(next);q.history=next;return state;}
 export function serviceJourneyRestore(q){if(!q)throw new RangeError('遠征記録が不正です。');serviceJourneyReplay(q.history);return {history:[...q.history]};}
