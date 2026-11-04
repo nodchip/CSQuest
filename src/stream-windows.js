@@ -1,0 +1,8 @@
+export const streamWindowLevel={id:'village-stream-windows',number:'1226',kind:'stream-windows',name:'遅れて届く森の知らせ',tag:'ストリームと時間窓',title:'知らせの時間窓を調べよう',story:'森から届く薬草の報告を、発生時刻と受信時刻のどちらで数えるか選びます。'};
+export const streamModes={event:'発生時刻',processing:'処理時刻'};
+export const streamRecords=[{name:'赤',event:1,processing:1},{name:'青',event:6,processing:6},{name:'緑',event:3,processing:7},{name:'金',event:9,processing:11}];
+export function streamCounts(mode,count){if(!Object.hasOwn(streamModes,mode)||!Number.isInteger(count)||count<0||count>streamRecords.length)throw new RangeError('条件が不正です。');const bins=[0,0,0];for(const r of streamRecords.slice(0,count))bins[Math.floor(r[mode]/5)]++;return bins;}
+export function streamCreate(){return {mode:'event',count:0,prediction:null,seen:[],reflection:null};}
+export function streamCheck(q){if(q.count<2)throw new RangeError('２件以上受け取ってください。');const actual=streamCounts(q.mode,q.count).join(','),correct=q.prediction===actual,key=`${q.mode}:${q.count}`;if(correct&&!q.seen.includes(key))q.seen.push(key);return {actual,correct};}
+export function streamDone(q){return Object.keys(streamModes).every(m=>[2,3,4].every(n=>q.seen.includes(`${m}:${n}`)))&&q.reflection==='late';}
+export function streamRestore(q){const valid=Object.keys(streamModes).flatMap(m=>[2,3,4].map(n=>`${m}:${n}`));if(!q||!Object.hasOwn(streamModes,q.mode)||!Number.isInteger(q.count)||q.count<0||q.count>4||!(q.prediction===null||['1,1,0','2,1,0','1,2,0','2,2,0','1,2,1'].includes(q.prediction))||!Array.isArray(q.seen)||new Set(q.seen).size!==q.seen.length||q.seen.some(x=>!valid.includes(x))||![null,'late','never'].includes(q.reflection))throw new RangeError('記録が不正です。');return {...q,seen:[...q.seen]};}

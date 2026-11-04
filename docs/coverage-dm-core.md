@@ -19,7 +19,7 @@
 | 9 | CS Core | 分散データベースとクラウド | 部分 | 依頼190・193・293・294で複製、集合の重なり、取引と結合の固定模型。実際の分散 DB・クラウドは未評価。 |
 | 10 | CS Core | 構造化・半構造化・非構造化データ | 部分 | 依頼189で同じ配達を表・項目名付きの札・自由な文章で表し、分類と束数の読み方を比較。一般のデータ形式や処理方式の網羅は未評価。 |
 | 11 | CS Core | 宣言的問い合わせ言語の利用 | 部分 | 依頼12・13・124で条件選択と結合の固定例を操作。実際の SQL 記述は直接評価しない。 |
-| 12 | KA Core | 構造化データやストリームを支えるシステム | 未照合 | 関連例との対応と一般のストリーム処理は未確認。 |
+| 12 | KA Core | 構造化データやストリームを支えるシステム | 部分 | 依頼1226で発生時刻と処理時刻による時間窓を比較。一般のストリーム処理システム、保持・障害や構造化データを支える仕組みは未評価。 |
 
 ## 例示学習成果
 
@@ -42,3 +42,5 @@
 依頼520の CRUD は、１個の記録の作成、取得、３個への更新、削除、削除後の取得を固定順序で操作する模型。記録がないことと０個の記録を区別する。[MongoDB の CRUD 操作](https://www.mongodb.com/docs/manual/crud/)を参照。API の GET・PUT 試験とは別の模型で、一般の HTTP 方式の対応や実データベースの操作を評価するものではない。
 
 依頼1225は [IBM の ACID](https://www.ibm.com/docs/en/cics-tx/11.1.0?topic=processing-acid-properties-transactions) と [PostgreSQL の分離水準](https://www.postgresql.org/docs/current/transaction-iso.html)を参照。固定した４場面で性質と結果を選び、対策なし・ありを比較する。`tests/acid-workshop.test.js` は８条件の結果、誤答、保存・達成を検査。`python scripts/check-acid-workshop.py` は SQLite のロールバック、制約、古い読取り後の書込み拒否・再試行と再接続後の値を照合する。再接続は電源断の耐久性を証明しない。配信用ビルドをブラウザーで操作し、誤答・再開・８条件・達成を390px幅、横幅と最初のキーボード操作を320・1280px幅で確認。学習成果の完了は４性質の選択による識別の代替体験に限り、自由な列挙や実 DB の保証を示さない。
+
+依頼1226は [Apache Flink の時刻](https://nightlies.apache.org/flink/flink-docs-release-2.1/docs/concepts/time/)と[時間窓](https://nightlies.apache.org/flink/flink-docs-release-2.1/docs/dev/datastream/operators/windows/)を参考に、４報告の発生・処理時刻と半開区間の窓を比較する。受信済み全件を数え直す固定模型であり、ウォーターマーク、保持期限、障害・重複処理や Flink の動作全体は再現しない。６条件・誤答・再開・振り返りを検査し、配信用ビルドで達成と320・390・1280pxの表示、キーボード操作を確認した。
