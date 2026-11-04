@@ -3196,7 +3196,7 @@ SEP-IP:学習成果:KA Core:17,SEP,SEP-IP,学習成果,KA Core,17,回避禁止�
 SEP-Privacy:トピック:CS Core:1,SEP,SEP-Privacy,トピック,CS Core,1,広範なデータ収集の影響,部分,27・194で受取に不要な収集を比較し、988で門の記録と私的伝言を比較。監視・クラウド・AI の大規模な影響は未評価。,coverage-sep-privacy.md,9,原典照合結果は監査記録参照
 SEP-Privacy:トピック:CS Core:2,SEP,SEP-Privacy,トピック,CS Core,2,匿名性・仮名性・身元,部分,27で実名・番号と対応表・仮定した合計を比較し、332・333で名前を除いた記録と推測を扱う。一般の識別可能性評価は未評価。,coverage-sep-privacy.md,10,原典照合結果は監査記録参照
 SEP-Privacy:トピック:CS Core:3,SEP,SEP-Privacy,トピック,CS Core,3,技術による保護,部分,194で通信保護の仮定を切替、196で二値回答の局所差分プライバシーを比較。E2E 暗号化や実際の公開は未評価。,coverage-sep-privacy.md,11,原典照合結果は監査記録参照
-SEP-Privacy:トピック:CS Core:4,SEP,SEP-Privacy,トピック,CS Core,4,市民的自由・権利・文化差,未照合,関連体験の対応は未確認。,coverage-sep-privacy.md,12,原典照合結果は監査記録参照
+SEP-Privacy:トピック:CS Core:4,SEP,SEP-Privacy,トピック,CS Core,4,市民的自由・権利・文化差,部分,1307で架空の村の語り手と保存会の希望を比較し、プライバシーと表現・結社に触れる。実際の文化差や権利の全範囲は未評価。,coverage-sep-privacy.md,12,原典照合結果は監査記録参照
 SEP-Privacy:トピック:KA Core:5,SEP,SEP-Privacy,トピック,KA Core,5,プライバシーの哲学的・法的概念,未照合,関連体験の対応は未確認。,coverage-sep-privacy.md,13,原典照合結果は監査記録参照
 SEP-Privacy:トピック:KA Core:6,SEP,SEP-Privacy,トピック,KA Core,6,地域の法的基盤,未照合,法域ごとの教材と検証は未確認。,coverage-sep-privacy.md,14,原典照合結果は監査記録参照
 SEP-Privacy:トピック:KA Core:7,SEP,SEP-Privacy,トピック,KA Core,7,実務分野の法制,未照合,法域や業務の条件に応じた教材は未確認。,coverage-sep-privacy.md,15,原典照合結果は監査記録参照
@@ -3207,7 +3207,7 @@ SEP-Privacy:学習成果:CS Core:1,SEP,SEP-Privacy,学習成果,CS Core,1,取引
 SEP-Privacy:学習成果:CS Core:2,SEP,SEP-Privacy,学習成果,CS Core,2,広範な監視における収集の役割を説明,部分,988で記録項目と保存期間を変更し、架空のログ調査と不要な私的情報の収集を比較。大規模な監視システムと自由な説明は未評価。,coverage-sep-privacy.md,25,原典照合結果は監査記録参照
 SEP-Privacy:学習成果:CS Core:3,SEP,SEP-Privacy,学習成果,CS Core,3,匿名性と仮名性の概念・目的を区別,部分,27で実名・番号と対応表・個人に結び付かないと仮定した合計を比較。332で名前を除いた記録からの推測を扱う。一般の評価と自由な説明は未評価。,coverage-sep-privacy.md,26,原典照合結果は監査記録参照
 SEP-Privacy:学習成果:CS Core:4,SEP,SEP-Privacy,学習成果,CS Core,4,差分プライバシーや E2E 暗号化の影響を説明,部分,196で二値回答の１回・２回の確率比と限界を比較。E2E 方式や自由な説明は未評価。,coverage-sep-privacy.md,27,原典照合結果は監査記録参照
-SEP-Privacy:学習成果:CS Core:5,SEP,SEP-Privacy,学習成果,CS Core,5,文化によるプライバシー等の違いを特定,未照合,対応する文化比較は未確認。,coverage-sep-privacy.md,28,原典照合結果は監査記録参照
+SEP-Privacy:学習成果:CS Core:5,SEP,SEP-Privacy,学習成果,CS Core,5,文化によるプライバシー等の違いを特定,部分,1307で二つの架空の村と村内の希望を比較。実在する文化の比較や個々の文化を代表する結論は未評価。,coverage-sep-privacy.md,28,原典照合結果は監査記録参照
 SEP-Privacy:学習成果:KA Core:6,SEP,SEP-Privacy,学習成果,KA Core,6,法的保護の哲学的基礎を議論,未照合,関連体験の対応は未確認。,coverage-sep-privacy.md,29,原典照合結果は監査記録参照
 SEP-Privacy:学習成果:KA Core:7,SEP,SEP-Privacy,学習成果,KA Core,7,法令や法を超える原則を批評,未照合,法域を指定した比較と自由な批評は未確認。,coverage-sep-privacy.md,30,原典照合結果は監査記録参照
 SEP-Privacy:学習成果:KA Core:8,SEP,SEP-Privacy,学習成果,KA Core,8,適切な表現の自由を可能にする戦略,未照合,関連体験の対応は未確認。,coverage-sep-privacy.md,31,原典照合結果は監査記録参照
