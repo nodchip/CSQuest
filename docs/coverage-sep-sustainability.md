@@ -30,4 +30,4 @@
 
 依頼1208は [IEA の在宅勤務とエネルギーの解説](https://www.iea.org/commentaries/working-from-home-can-save-energy-and-reduce-emissions-but-how-much)を参考に、４人・１日について移動、建物、家庭、通信の架空の負荷点を比較する。８通りの前提を `tests/remote-impact.test.js` で検査。数値は実排出量ではなく、電源、非通勤移動、製造・廃棄、社会面や実際の環境影響は評価しない。
 
-依頼1301は91の架空の修理・新調モデルを使い、３工房の利用期間・予算・停止時間の制約を満たす案から負荷点の小さい案を選ぶ。`tests/sustainability-project.test.js` は合計、制約、達成条件と復元を検査する。修理・新調の費用と停止時間も仮定であり、故障や廃棄、利用者・作業者への影響や実測は評価しない。参考：[米国 EPA：電子機器の環境面を考える](https://www.epa.gov/greenerproducts/identifying-greener-electronics)。
+依頼1301は91の架空の修理・新調モデルを使い、３工房の利用期間・予算・停止時間の制約を満たす案から負荷点の小さい案を選ぶ。調べた案を表で比較し、条件超過と負荷の差を区別して理由を示す。`tests/sustainability-project.test.js` は合計、制約、理由、達成条件と復元を検査する。修理・新調の費用と停止時間も仮定であり、故障や廃棄、利用者・作業者への影響や実測は評価しない。参考：[米国 EPA：電子機器の環境面を考える](https://www.epa.gov/greenerproducts/identifying-greener-electronics)。
