@@ -23,7 +23,7 @@
 | 7c | KA Core | 誤りの緩和・制御、NISQ とその先 | 部分 | 1217 で読取り誤差を較正・補正し、1218 で３量子ビット反復符号の１個の X と限界を比較。一般の誤り訂正・NISQ 全般や実機は未評価。 |
 | 7d | KA Core | 測定手法 | 部分 | 74・676 は理想的な測定確率。1216 は３方式の読取り例、1217 は１ビットの読取り誤差の固定模型。詳細な測定理論と実機は未評価。 |
 | 8a | KA Core | 耐量子暗号 | 部分 | 依頼839で LWE の小模型の復元と改変を操作し、関連する ML-KEM と模型の違いを確認。実用方式の実装、安全性や量子攻撃への証明は未評価。 |
-| 8b | KA Core | 量子インターネット | 未照合 | 対応教材を要照合。 |
+| 8b | KA Core | 量子インターネット | 部分 | 1220 で三地点のもつれ交換と測定結果の古典通信を操作。損失・メモリー・接続、一般のネットワークや実機は未評価。 |
 | 8c | KA Core | 断熱量子計算と量子アニーリング | 部分 | 1219 で１量子ビットの基底状態とエネルギー差の変化を比較。時間発展、一般の最適化問題、雑音や実機は未評価。 |
 
 ## 例示学習成果
@@ -54,3 +54,5 @@
 依頼1218は [IBM の反復符号](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/repetition-codes)と[古典フィードフォワード](https://quantum.cloud.ibm.com/docs/en/guides/execute-dynamic-circuits)を参照。`tests/syndrome-control.test.js` は８種類の X 反転マスクの合図、２つの反転と位相反転の限界、保存・達成を検査。測定と制御に誤りのない固定模型で、実機・一般の誤り訂正を評価しない。
 
 依頼1219は [Farhi らの断熱量子計算](https://arxiv.org/abs/quant-ph/0001106)と [D-Wave の解説](https://docs.dwavequantum.com/en/latest/quantum_research/quantum_annealing_intro.html)を参照。模型は H(s)=−(1−s)X∓sZ の基底状態で、`tests/adiabatic-lantern.test.js` が固有値、確率、エネルギー差と保存・達成を検査する。実時間発展や一般問題の効率を評価しない。
+
+依頼1220は [NIST の量子中継と通信](https://www.nist.gov/programs-projects/quantum-communications-and-networks)を参照。`tests/entanglement-swap.test.js` で４量子ビットの４測定結果の確率・２種類の相関・補正と、結果を無視したときの両端の混合状態を検査。理想的な単一の中継であり、実機の損失や安全性は未評価。
