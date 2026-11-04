@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'workshop-device-security-plan':['医療機器','セキュリティ','SBOM','脆弱性','FDA','更新','開示'],
  'guild-education-access-plan':['教育','参加','包摂','予算','支援','障壁','DEIA'],
  'guild-education-representation':['参加率','構成比','教育','DEIA','母数','申込み','格差'],
  'castle-access-purpose-gate':['最小権限','認証','認可','アクセス制御','利用目的','倫理'],

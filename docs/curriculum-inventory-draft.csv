@@ -3061,7 +3061,7 @@ SEC-SEP:トピック:KA Core:6,SEC,SEC-SEP,トピック,KA Core,6,設計段階�
 SEC-SEP:トピック:KA Core:7,SEC,SEC-SEP,トピック,KA Core,7,悪意ある AI・機械学習と安全・プライバシー,部分,1196で架空の声と画像について来歴・別経路・文脈を比較。実際の合成検出やプライバシー影響の網羅は未評価。,coverage-sec-sep.md,15,原典照合結果は監査記録参照
 SEC-SEP:トピック:KA Core:8,SEC,SEC-SEP,トピック,KA Core,8,IoT 等の新技術が社会の安全・プライバシーに与える影響,部分,352で室内情報収集の固定例。実社会と技術全般は未評価。,coverage-sec-sep.md,16,原典照合結果は監査記録参照
 SEC-SEP:学習成果:CS Core:1,SEC,SEC-SEP,学習成果,CS Core,1,システムの安全性破綻による影響を計算,部分,362で停止した２窓口の申請予定20件を集計。原因や被害人数は未確定。,coverage-sec-sep.md,22,原典照合結果は監査記録参照
-SEC-SEP:学習成果:CS Core:2,SEC,SEC-SEP,学習成果,CS Core,2,安全に関する法に適合するシステムを構築,未照合,対応教材を要照合。実システム・法令適合は評価しない。,coverage-sec-sep.md,23,原典照合結果は監査記録参照
+SEC-SEP:学習成果:CS Core:2,SEC,SEC-SEP,学習成果,CS Core,2,安全に関する法に適合するシステムを構築,部分,1319で FDA の対象医療機器に関する一部要件を参考に、架空の部品一覧・更新・監視・連絡を操作。実システム構築・法令適合や全要件は未評価。,coverage-sec-sep.md,23,原典照合結果は監査記録参照
 SEC-SEP:学習成果:CS Core:3,SEC,SEC-SEP,学習成果,CS Core,3,プライバシー規制を適用して設計,部分,1113で GDPR 適用を仮定し、２目的に必要な受付項目を選択。実システムの設計・実装や法令全体への適合は未評価。,coverage-sec-sep.md,24,原典照合結果は監査記録参照
 SEC-SEP:学習成果:KA Core:4,SEC,SEC-SEP,学習成果,KA Core,4,法令に適合しないシステムの法的影響を評価,未照合,対応教材を要照合。,coverage-sec-sep.md,25,原典照合結果は監査記録参照
 SEC-SEP:学習成果:KA Core:5,SEC,SEC-SEP,学習成果,KA Core,5,利用者のプライバシーへの害を避けるシステムを構築,部分,194・352の固定の選択。実システムの構築は評価しない。,coverage-sec-sep.md,26,原典照合結果は監査記録参照
