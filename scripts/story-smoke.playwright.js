@@ -40,7 +40,20 @@ async page => {
   if(!await p.locator('.story-dialogue').innerText().then(t=>t.includes('再び輝く道しるべ')))throw new Error('Ending missing.');
   await p.reload();await p.waitForSelector('#quest-search');
   if(!await p.locator('.story-dialogue').innerText().then(t=>t.includes('再び輝く道しるべ')))throw new Error('Ending did not persist.');
+  // A damaged finale draft must remain recoverable even after solving it.
+  await p.evaluate(()=>localStorage.setItem('csquest-draft-v1:story-beacon','{broken'));
+  await p.reload();await p.waitForSelector('#story-finale');await p.locator('#story-finale').click();
+  if(!await p.locator('#discard-protected-draft').isVisible())throw new Error('Damaged finale draft was not protected.');
+  for(let i=0;i<7;i++)for(let n=0;n<3;n++)await p.locator(`[data-beacon-tile="${i}"]`).click();
+  await p.locator('#beacon-check').click();
+  if(!await p.locator('#discard-protected-draft').isVisible())throw new Error('Recovery disappeared after solving.');
+  await p.locator('#discard-protected-draft').click();
+  for(let i=0;i<7;i++)for(let n=0;n<3;n++)await p.locator(`[data-beacon-tile="${i}"]`).click();
+  await p.locator('#beacon-check').click();await p.locator('#return').click();await p.reload();await p.waitForSelector('#story-finale');
+  if(!await p.locator('.story-dialogue').innerText().then(t=>t.includes('再び輝く道しるべ')))throw new Error('Recovered ending did not persist.');
+  await p.locator('#story-finale').click();
+  if(!await p.locator('#reset-draft').isVisible())throw new Error('Completed finale cannot be replayed.');
   if(errors.length)throw new Error(JSON.stringify(errors));
-  return {actualQuests:[1,22,6,8,11,12,14,1201],seededOtherRegions:0,checkedFourRegionStory:true,finaleRetryAndResume:true,endingPersisted:true,errors};
+  return {actualQuests:[1,22,6,8,11,12,14,1201],seededOtherRegions:0,checkedFourRegionStory:true,finaleRetryAndResume:true,endingPersisted:true,damagedDraftRecovered:true,finaleReplay:true,errors};
  } finally {await context.close();}
 }
