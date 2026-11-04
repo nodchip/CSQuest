@@ -10,7 +10,9 @@ export const frameIssueCases={
  complete:{name:'正常に一通を受け取る',chunks:[[0,2],[1,2]]},
  header:{name:'見出しの途中で切断',chunks:[[0]]},
  body:{name:'本文の途中で切断',chunks:[[0,4,1,2]]},
- length:{name:'上限を超える長さ',chunks:[[0,9]]}
+ length:{name:'上限を超える長さ',chunks:[[0,9]]},
+ after:{name:'正常な伝言の次に長さ超過',chunks:[[0,2,1,2,0,9]]},
+ invalid:{name:'本文に不正な印',chunks:[[0,2,1,9]]}
 };
 export const frameInputs={
  raw:{name:'札Ａ',frame:[0,4,1,2,1,2]},
@@ -49,13 +51,17 @@ export function frameIssueTrace(id){
  let buffer=[],messages=[],status='open',steps=[];
  for(const chunk of frameIssueCases[id].chunks){
   buffer.push(...chunk);
-  if(buffer.length>=2&&(buffer[0]>1||buffer[1]>(buffer[0]===0?8:16))){status='invalid-header';steps.push({event:'chunk',chunk:[...chunk],buffer:[...buffer],messages:messages.map(m=>[...m]),status});break;}
-  while(buffer.length>=2&&buffer.length>=2+buffer[1]){
-   const frame=buffer.splice(0,2+buffer[1]),decoded=frameDecode(frame);
-   if(!decoded.ok)throw new RangeError('固定例の本文が不正です。');
+  while(buffer.length>=2){
+   const [mode,length]=buffer;
+   if(mode>1||length>(mode===0?8:16)){status='invalid-header';break;}
+   if(buffer.length<2+length)break;
+   const decoded=frameDecode(buffer.slice(0,2+length));
+   if(!decoded.ok){status='invalid-body';break;}
+   buffer.splice(0,2+length);
    messages.push(decoded.symbols);
   }
   steps.push({event:'chunk',chunk:[...chunk],buffer:[...buffer],messages:messages.map(m=>[...m]),status});
+  if(status!=='open')break;
  }
  if(status==='open'){
   status=buffer.length===0?'complete':buffer.length<2?'truncated-header':'truncated-body';

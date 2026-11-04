@@ -36,3 +36,9 @@ test('EOF distinguishes a clean boundary and truncated frames; oversized length 
  assert.equal(messageFrameRestore(old).issueStep,0);assert.equal(messageFrameRestore({...old,issueCase:'body',issueStep:2}).issueStep,2);
  assert.throws(()=>messageFrameRestore({...old,issueCase:'length',issueStep:2}));
 });
+test('validation continues after a valid frame and rejects malformed bodies',()=>{
+ const after=frameIssueTrace('after');assert.equal(after.length,1);assert.equal(after[0].status,'invalid-header');
+ assert.deepEqual(after[0].messages,[[1,2]]);assert.deepEqual(after[0].buffer,[0,9]);
+ const bad=frameIssueTrace('invalid');assert.equal(bad.length,1);assert.equal(bad[0].status,'invalid-body');
+ assert.deepEqual(bad[0].messages,[]);assert.deepEqual(bad[0].buffer,[0,2,1,9]);
+});
