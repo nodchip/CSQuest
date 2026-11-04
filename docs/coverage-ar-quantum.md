@@ -24,7 +24,7 @@
 | 7d | KA Core | 測定手法 | 部分 | 74・676 は理想的な測定確率。1216 は３方式の読取り例、1217 は１ビットの読取り誤差の固定模型。詳細な測定理論と実機は未評価。 |
 | 8a | KA Core | 耐量子暗号 | 部分 | 依頼839で LWE の小模型の復元と改変を操作し、関連する ML-KEM と模型の違いを確認。実用方式の実装、安全性や量子攻撃への証明は未評価。 |
 | 8b | KA Core | 量子インターネット | 未照合 | 対応教材を要照合。 |
-| 8c | KA Core | 断熱量子計算と量子アニーリング | 未照合 | 対応教材を要照合。 |
+| 8c | KA Core | 断熱量子計算と量子アニーリング | 部分 | 1219 で１量子ビットの基底状態とエネルギー差の変化を比較。時間発展、一般の最適化問題、雑音や実機は未評価。 |
 
 ## 例示学習成果
 
@@ -37,7 +37,7 @@
 | 5 | KA Core | Shor の QFT の役割をコードから分析 | 未照合 | 610 は古典的後処理のみ。コード分析に相当する教材を要照合。 |
 | 6 | KA Core | シミュレーターで Shor のプログラムを作り古典部分を示す | 部分 | 610 は後処理の固定例。プログラム作成能力は直接評価しない。 |
 | 7 | KA Core | 各種量子ビットの物理方式の特徴を列挙 | 部分 | 1216 で３方式の媒体・準備・操作・読取りの構成例を選ぶ。他方式、一般的な性能比較や自由記述は未評価。 |
-| 8 | KA Core | 断熱方式とゲート方式及び適する問題を比較 | 未照合 | 対応教材を要照合。 |
+| 8 | KA Core | 断熱方式とゲート方式及び適する問題を比較 | 部分 | 1219 で２方式の操作と２候補のエネルギー最小化を比較。問題全般の適性、実装、自由な説明は未評価。 |
 
 依頼839の公開札３枚と秘密・誤差の関係、小さい合同算術での復元、改変による読取りの変化を [NIST FIPS 203](https://csrc.nist.gov/pubs/fips/203/final) と [Regev の LWE 解説](https://www.cs.columbia.edu/~tal/4261/Regev_lwesurvey.pdf)に照らして確認。模型は ML-KEM ではなく、実用上の安全性を示さない。`tests/lwe-courier.test.js` は全28条件の復元と、誤差を −1・0・1 に限る公開札からの17²候補の全探索を検査する。３候補が残り、少数の札から秘密が一意に定まるとも主張しない。
 
@@ -52,3 +52,5 @@
 依頼1217の読取り誤差の較正・分布の補正・負の推定値は [IBM の解説](https://quantum.cloud.ibm.com/docs/en/tutorials/readout-error-mitigation-sampler)を参照。`tests/readout-mitigation.test.js` は非対称な読み違い率、順方向・逆方向と範囲外、保存・達成条件を検査。誤り率の変動、有限回の統計モデル、他の誤りや実機は扱わない。
 
 依頼1218は [IBM の反復符号](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/repetition-codes)と[古典フィードフォワード](https://quantum.cloud.ibm.com/docs/en/guides/execute-dynamic-circuits)を参照。`tests/syndrome-control.test.js` は８種類の X 反転マスクの合図、２つの反転と位相反転の限界、保存・達成を検査。測定と制御に誤りのない固定模型で、実機・一般の誤り訂正を評価しない。
+
+依頼1219は [Farhi らの断熱量子計算](https://arxiv.org/abs/quant-ph/0001106)と [D-Wave の解説](https://docs.dwavequantum.com/en/latest/quantum_research/quantum_annealing_intro.html)を参照。模型は H(s)=−(1−s)X∓sZ の基底状態で、`tests/adiabatic-lantern.test.js` が固有値、確率、エネルギー差と保存・達成を検査する。実時間発展や一般問題の効率を評価しない。
