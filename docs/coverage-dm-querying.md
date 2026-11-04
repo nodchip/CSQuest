@@ -11,8 +11,8 @@
 | 2 | KA Core | 関係代数 | 部分 | 依頼12・13・125・126・664で選択・射影・結合・集合操作などの例。一般の式の構築と意味論は未評価。 |
 | 3a | KA Core | 制約を含む SQL データ定義 | 部分 | 依頼464・465・472で参照、NULL、範囲等の制約を操作。SQL による定義と一般の制約・トリガは未評価。 |
 | 3b | KA Core | SQL の更新操作 | 部分 | 依頼520の API 更新に加え、1073で条件付き更新、NULL、制約違反と取消しを操作。SQL の記述や任意条件での更新は未評価。 |
-| 4 | Non-core | 関係論理 | 未照合 | 関連する論理の教材と問い合わせへの対応は未確認。 |
-| 5 | Non-core | QBE と第４世代環境 | 未照合 | 関連教材と実環境の機能は未確認。 |
+| 4 | Non-core | 関係論理 | 部分 | 1295で条件を満たす配達が少なくとも１件存在する村を操作。一般の論理式、安全性、全称や自由な問い合わせは未評価。 |
+| 5 | Non-core | QBE と第４世代環境 | 部分 | 1295で村・束数・返す項目を札で選ぶ代替体験。実際の QBE と第４世代環境の機能は未評価。 |
 | 6 | Non-core | 一般言語からの非手続き問い合わせの呼出し | 部分 | 依頼463で固定結果を反復する模型。呼出し方法の比較と実言語での実行は未評価。 |
 | 7 | Non-core | XPath・SPARQL などの問い合わせ言語 | 部分 | 1055で SPARQL の基本グラフパターンを参考に固定三つ組の結合を操作。SPARQL・XPath の記述や実際の実行は未評価。 |
 | 8 | Non-core | ストアドプロシージャ | 部分 | 依頼1293で保存された手続きに２種類の数量を渡し、呼出し権限と在庫条件を比較。実 DB の定義・権限設定や同時実行は未評価。 |
@@ -32,3 +32,5 @@
 依頼1073は [SQLite の NULL を含む式](https://www.sqlite.org/lang_expr.html)と [既定の ABORT による制約違反](https://www.sqlite.org/conflict.html)を参考に、４行の固定模型で条件・更新・取消しを操作する。条件式の不明は対象とせず、NULL の加算は NULL、０以上の CHECK に対する NULL は許される。制約違反時はその文の更新を戻すが、別の競合解決方式や過去の文の扱いは模型化しない。`node scripts/check-ledger-update.mjs` は Python の SQLite と15条件の結果・成功時の対象件数を照合し、取消しも SQLite で確認する。2026-11-03、SQLite 3.50.4 で一致。実 SQL の記述、接続、同時更新は評価しない。
 
 依頼1293は [PostgreSQL の手続き定義](https://www.postgresql.org/docs/current/sql-createprocedure.html)と[呼出し](https://www.postgresql.org/docs/current/sql-call.html)を参考に、保存された手続きへの引数と呼出し権限を扱う。５束から始まる独立した４試行で、許可されていなければ手続きを実行せず、許可された場合は数量を在庫と比較する。`tests/stored-procedure.test.js` は４条件・誤答・復元を検査。架空の条件付き更新であり、実 DB での手続き作成、権限やトランザクションの設定は評価しない。
+
+依頼1295は [IBM の QBE の説明](https://public.dhe.ibm.com/software/data/qmf/xhtml/QMFusing/dsqk2mst11.htm)と[Cornell の存在条件の例](https://www.cs.cornell.edu/~ross/publications/proofgen/proofgen_tate_popl10_tr.pdf)を参考に、４行の配達台帳について条件・返す項目を選ぶ。条件に合う配達がある村を重複なく求め、全配達が条件に合うことと区別する。`tests/example-query.test.js` は18条件の結果、固定の境界・誤答・復元・達成を検査。一般の関係論理、実際の QBE・第４世代環境や問い合わせ言語の記述は評価しない。

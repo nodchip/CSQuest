@@ -974,8 +974,8 @@ DM-Querying:トピック:CS Core:1b,DM,DM-Querying,トピック,CS Core,1b,プ�
 DM-Querying:トピック:KA Core:2,DM,DM-Querying,トピック,KA Core,2,関係代数,部分,依頼12・13・125・126・664で選択・射影・結合・集合操作などの例。一般の式の構築と意味論は未評価。,coverage-dm-querying.md,11,原典照合結果は監査記録参照
 DM-Querying:トピック:KA Core:3a,DM,DM-Querying,トピック,KA Core,3a,制約を含む SQL データ定義,部分,依頼464・465・472で参照、NULL、範囲等の制約を操作。SQL による定義と一般の制約・トリガは未評価。,coverage-dm-querying.md,12,原典照合結果は監査記録参照
 DM-Querying:トピック:KA Core:3b,DM,DM-Querying,トピック,KA Core,3b,SQL の更新操作,部分,依頼520の API 更新に加え、1073で条件付き更新、NULL、制約違反と取消しを操作。SQL の記述や任意条件での更新は未評価。,coverage-dm-querying.md,13,原典照合結果は監査記録参照
-DM-Querying:トピック:Non-core:4,DM,DM-Querying,トピック,Non-core,4,関係論理,未照合,関連する論理の教材と問い合わせへの対応は未確認。,coverage-dm-querying.md,14,原典照合結果は監査記録参照
-DM-Querying:トピック:Non-core:5,DM,DM-Querying,トピック,Non-core,5,QBE と第４世代環境,未照合,関連教材と実環境の機能は未確認。,coverage-dm-querying.md,15,原典照合結果は監査記録参照
+DM-Querying:トピック:Non-core:4,DM,DM-Querying,トピック,Non-core,4,関係論理,部分,1295で条件を満たす配達が少なくとも１件存在する村を操作。一般の論理式、安全性、全称や自由な問い合わせは未評価。,coverage-dm-querying.md,14,原典照合結果は監査記録参照
+DM-Querying:トピック:Non-core:5,DM,DM-Querying,トピック,Non-core,5,QBE と第４世代環境,部分,1295で村・束数・返す項目を札で選ぶ代替体験。実際の QBE と第４世代環境の機能は未評価。,coverage-dm-querying.md,15,原典照合結果は監査記録参照
 DM-Querying:トピック:Non-core:6,DM,DM-Querying,トピック,Non-core,6,一般言語からの非手続き問い合わせの呼出し,部分,依頼463で固定結果を反復する模型。呼出し方法の比較と実言語での実行は未評価。,coverage-dm-querying.md,16,原典照合結果は監査記録参照
 DM-Querying:トピック:Non-core:7,DM,DM-Querying,トピック,Non-core,7,XPath・SPARQL などの問い合わせ言語,部分,1055で SPARQL の基本グラフパターンを参考に固定三つ組の結合を操作。SPARQL・XPath の記述や実際の実行は未評価。,coverage-dm-querying.md,17,原典照合結果は監査記録参照
 DM-Querying:トピック:Non-core:8,DM,DM-Querying,トピック,Non-core,8,ストアドプロシージャ,部分,依頼1293で保存された手続きに２種類の数量を渡し、呼出し権限と在庫条件を比較。実 DB の定義・権限設定や同時実行は未評価。,coverage-dm-querying.md,18,原典照合結果は監査記録参照
