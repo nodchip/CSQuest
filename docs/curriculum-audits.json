@@ -160,6 +160,30 @@
       "topics": 4,
       "outcomes": 4,
       "scope_sha256": "3fe7ae1d98ad29e84211858d36c0adb503b20532e4bef3401f4b30a858ce1bf7"
+    },
+    "NC-Fundamentals": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-fundamentals.md",
+      "topics": 7,
+      "outcomes": 4,
+      "scope_sha256": "d5c658a78d0de67233497091fed37037d7e252240b43393a7ec955e4ce04b3f2"
+    },
+    "NC-Applications": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-applications.md",
+      "topics": 5,
+      "outcomes": 4,
+      "scope_sha256": "5bac3610f559199f318363508573184c03e22493d75feb93dd622e5bf3c48282"
+    },
+    "NC-Reliability": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-nc-reliability.md",
+      "topics": 6,
+      "outcomes": 4,
+      "scope_sha256": "535e687019b5424298b35b817adee73a42bfff99e1bd9d2a444ea72752572966"
     }
   }
 }

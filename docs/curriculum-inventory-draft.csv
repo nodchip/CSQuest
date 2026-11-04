@@ -2155,15 +2155,15 @@ MSF-Statistics:学習成果:KA Core:6b,MSF,MSF-Statistics,学習成果,KA Core,6
 MSF-Statistics:学習成果:KA Core:6c,MSF,MSF-Statistics,学習成果,KA Core,6c,線形回帰を曲線への当てはめに適用,部分,115で直線候補、1071で二乗特徴と切片の２係数を推定。一般の曲線・多項式や自由な実装は未評価。,coverage-msf-statistics.md,41,原典照合結果は監査記録参照
 MSF-Statistics:学習成果:KA Core:6d,MSF,MSF-Statistics,学習成果,KA Core,6d,過学習の説明,部分,18・377で既知と未使用の結果を比較。一般の説明と自由記述は未評価。,coverage-msf-statistics.md,42,原典照合結果は監査記録参照
 MSF-Statistics:学習成果:KA Core:6e,MSF,MSF-Statistics,学習成果,KA Core,6e,過学習・モデル選択で交差検証を適用,部分,551で実測 Iris の４分割と４手法を比較。公開済み同一標本の再利用で、一般的な分割・将来性能は未評価。,coverage-msf-statistics.md,43,原典照合結果は監査記録参照
-NC-Applications:トピック:未記載:1,NC,NC-Applications,トピック,未記載,1,DNS・URI などの名前と住所,部分,421で DNS の名前解決・期限と権威側の更新、669で相対参照・検索条件・フラグメントを操作。一般の名前付けや実通信は未評価。,coverage-nc-applications.md,9,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:トピック:未記載:2,NC,NC-Applications,トピック,未記載,2,クライアント・サーバー、P2P、クラウド、エッジ等,部分,62で端末と受付、667で中央書庫と既知の仲間からの受信・複製を比較。クラウド、エッジ等の一般の構成は未評価。,coverage-nc-applications.md,10,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:トピック:未記載:3,NC,NC-Applications,トピック,未記載,3,遅延・帯域・損失耐性など用途ごとの要求,部分,668で完全性・期限と、荷物の大きさ・伝送速度・伝播時間を固定例で比較。一般の要求分析と実通信は未評価。,coverage-nc-applications.md,11,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:トピック:未記載:4,NC,NC-Applications,トピック,未記載,4,HTTP などアプリケーション層プロトコル,部分,62で POST の再送、670で条件付き GET の固定例を操作。HTTP 全体や実通信は未評価。,coverage-nc-applications.md,12,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:トピック:未記載:5,NC,NC-Applications,トピック,未記載,5,TCP・UDP・ソケット API との相互作用,部分,424で接続開始、668で順序付きバイト列とデータグラムの損失時、999で順序付きバイト列から伝言を区切る固定例を操作。実ソケット API や実通信は未評価。,coverage-nc-applications.md,13,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:学習成果:未記載:1,NC,NC-Applications,学習成果,未記載,1,名前・住所・資源の位置の原則を定義,部分,421・669で DNS と URI の固定例を操作。一般の定義と自由な説明は未評価。,coverage-nc-applications.md,19,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:学習成果:未記載:2,NC,NC-Applications,学習成果,未記載,2,ネットワークアプリの要求を分析,部分,668で損失・期限と、荷物の大きさによる到着時間を比較。一般の分析や実測は未評価。,coverage-nc-applications.md,20,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:学習成果:未記載:3,NC,NC-Applications,学習成果,未記載,3,アプリケーション層プロトコルの詳細を説明,部分,62・670で POST 再送と条件付き GET を操作。HTTP 全体や自由な説明は未評価。,coverage-nc-applications.md,21,原典照合結果は監査記録参照・区分を要確認
-NC-Applications:学習成果:未記載:4,NC,NC-Applications,学習成果,未記載,4,クライアント・サーバーのソケットアプリを実装,部分,62で端末・受付間の再送を操作する代替体験。実ソケットアプリの設計・記述・実行は直接評価しない。,coverage-nc-applications.md,22,原典照合結果は監査記録参照・区分を要確認
+NC-Applications:トピック:CS Core:1,NC,NC-Applications,トピック,CS Core,1,DNS・URI などの名前と住所,部分,421で DNS の名前解決・期限と権威側の更新、669で相対参照・検索条件・フラグメントを操作。一般の名前付けや実通信は未評価。,coverage-nc-applications.md,9,原典照合結果は監査記録参照
+NC-Applications:トピック:CS Core:2,NC,NC-Applications,トピック,CS Core,2,クライアント・サーバー、P2P、クラウド、エッジ等,部分,62で端末と受付、667で中央書庫と既知の仲間からの受信・複製を比較。クラウド、エッジ等の一般の構成は未評価。,coverage-nc-applications.md,10,原典照合結果は監査記録参照
+NC-Applications:トピック:CS Core:3,NC,NC-Applications,トピック,CS Core,3,遅延・帯域・損失耐性など用途ごとの要求,部分,668で完全性・期限と、荷物の大きさ・伝送速度・伝播時間を固定例で比較。一般の要求分析と実通信は未評価。,coverage-nc-applications.md,11,原典照合結果は監査記録参照
+NC-Applications:トピック:CS Core:4,NC,NC-Applications,トピック,CS Core,4,HTTP などアプリケーション層プロトコル,部分,62で POST の再送、670で条件付き GET の固定例を操作。HTTP 全体や実通信は未評価。,coverage-nc-applications.md,12,原典照合結果は監査記録参照
+NC-Applications:トピック:CS Core:5,NC,NC-Applications,トピック,CS Core,5,TCP・UDP・ソケット API との相互作用,部分,424で接続開始、668で順序付きバイト列とデータグラムの損失時、999で順序付きバイト列から伝言を区切る固定例を操作。実ソケット API や実通信は未評価。,coverage-nc-applications.md,13,原典照合結果は監査記録参照
+NC-Applications:学習成果:CS Core:1,NC,NC-Applications,学習成果,CS Core,1,名前・住所・資源の位置の原則を定義,部分,421・669で DNS と URI の固定例を操作。一般の定義と自由な説明は未評価。,coverage-nc-applications.md,19,原典照合結果は監査記録参照
+NC-Applications:学習成果:CS Core:2,NC,NC-Applications,学習成果,CS Core,2,ネットワークアプリの要求を分析,部分,668で損失・期限と、荷物の大きさによる到着時間を比較。一般の分析や実測は未評価。,coverage-nc-applications.md,20,原典照合結果は監査記録参照
+NC-Applications:学習成果:CS Core:3,NC,NC-Applications,学習成果,CS Core,3,アプリケーション層プロトコルの詳細を説明,部分,62・670で POST 再送と条件付き GET を操作。HTTP 全体や自由な説明は未評価。,coverage-nc-applications.md,21,原典照合結果は監査記録参照
+NC-Applications:学習成果:CS Core:4,NC,NC-Applications,学習成果,CS Core,4,クライアント・サーバーのソケットアプリを実装,部分,62で端末・受付間の再送を操作する代替体験。実ソケットアプリの設計・記述・実行は直接評価しない。,coverage-nc-applications.md,22,原典照合結果は監査記録参照
 NC-Emerging:トピック:KA Core:1,NC,NC-Emerging,トピック,KA Core,1,ミドルボックス,部分,279・280・320〜322 はフィルタ、検知、NAT、負荷分散、CDN の固定模型。AI や一般の配置・運用は未評価。,coverage-nc-emerging.md,9,原典照合結果は監査記録参照
 NC-Emerging:トピック:KA Core:2,NC,NC-Emerging,トピック,KA Core,2,ネットワーク仮想化、SDN、データセンターネットワーク,部分,319 は制御側の規則設定と転送。仮想化や実運用は未評価。,coverage-nc-emerging.md,10,原典照合結果は監査記録参照
 NC-Emerging:トピック:KA Core:3,NC,NC-Emerging,トピック,KA Core,3,量子ネットワーク,部分,678 の量子テレポーテーション、1220 の三地点のもつれ交換と古典通信の固定例。損失、安全性、一般のネットワークや実機は未評価。,coverage-nc-emerging.md,11,原典照合結果は監査記録参照
@@ -2190,16 +2190,16 @@ NC-Mobility:学習成果:KA Core:1,NC,NC-Mobility,学習成果,KA Core,1,セル�
 NC-Mobility:学習成果:KA Core:2,NC,NC-Mobility,学習成果,KA Core,2,802.11 の移動利用者支援を説明,部分,317 の２接続先と再接続。実プロトコルと自由な説明は未評価。,coverage-nc-mobility.md,19,原典照合結果は監査記録参照
 NC-Mobility:学習成果:KA Core:3,NC,NC-Mobility,学習成果,KA Core,3,端末間・複数区間通信の実用例を説明,部分,316 は不連続接続の架空例。実際の事例と一般的説明は未評価。,coverage-nc-mobility.md,20,原典照合結果は監査記録参照
 NC-Mobility:学習成果:KA Core:4,NC,NC-Mobility,学習成果,KA Core,4,アドホック等の移動ネットワークを説明,部分,316 は接触が途切れる３者の模型。一般的な方式と自由な説明は未評価。,coverage-nc-mobility.md,21,原典照合結果は監査記録参照
-NC-Reliability:トピック:未記載:1,NC,NC-Reliability,トピック,未記載,1,信頼性を保証しない配送,部分,668で UDP に相当する模型の消失と受信を比較。UDP の全機能や実通信は未評価。,coverage-nc-reliability.md,9,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:トピック:未記載:2,NC,NC-Reliability,トピック,未記載,2,消失・重複・順序の乱れを避ける信頼性,部分,10・62で消失と重複、422で順序外の手紙と累積確認を操作。一般の順序の乱れや破損は未評価。,coverage-nc-reliability.md,10,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:トピック:未記載:3,NC,NC-Reliability,トピック,未記載,3,再送・誤り訂正,部分,10・422で時間切れと再送を操作。通信における一般的な誤り訂正は未評価。,coverage-nc-reliability.md,11,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:トピック:未記載:4,NC,NC-Reliability,トピック,未記載,4,stop-and-wait・ウィンドウによるフロー制御,部分,10の１件ずつ、422の最大３件の Go-Back-N を操作。798で受信箱の空きの変化を操作。実 TCP の動的な窓や一般のフロー制御は未評価。,coverage-nc-reliability.md,12,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:トピック:未記載:5,NC,NC-Reliability,トピック,未記載,5,輻輳制御,部分,423で２人と固定容量の橋を使う加法増加・乗法減少を操作。実ネットワークや他の方式は未評価。,coverage-nc-reliability.md,13,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:トピック:未記載:6,NC,NC-Reliability,トピック,未記載,6,TCP と性能、輻輳制御の方式,部分,424で接続開始、423で AIMD の固定模型を操作。TCP の実測・損失回復と各方式の違いは未評価。,coverage-nc-reliability.md,14,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:学習成果:未記載:1,NC,NC-Reliability,学習成果,未記載,1,信頼性ある配送プロトコルの動作を説明,部分,10・422で消失・再送・重複・順序を操作。一般の動作や自由な説明は未評価。,coverage-nc-reliability.md,20,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:学習成果:未記載:2,NC,NC-Reliability,学習成果,未記載,2,信頼性ある配送の性能に影響する要因を挙げる,部分,423で共有容量と送信量、668で固定通信路の伝送・伝播時間を比較。信頼性方式の一般的性能や実測は未評価。,coverage-nc-reliability.md,21,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:学習成果:未記載:3,NC,NC-Reliability,学習成果,未記載,3,TCP の信頼性に関する設計課題を説明,部分,424で接続開始、668で順序待ちの固定例を操作。損失回復全般や自由な説明は未評価。,coverage-nc-reliability.md,22,原典照合結果は監査記録参照・区分を要確認
-NC-Reliability:学習成果:未記載:4,NC,NC-Reliability,学習成果,未記載,4,単純な信頼性プロトコルを設計・実装,部分,10・422で既定の手順を操作する代替体験。実際の設計・プログラム記述は直接評価しない。,coverage-nc-reliability.md,23,原典照合結果は監査記録参照・区分を要確認
+NC-Reliability:トピック:KA Core:1,NC,NC-Reliability,トピック,KA Core,1,信頼性を保証しない配送,部分,668で UDP に相当する模型の消失と受信を比較。UDP の全機能や実通信は未評価。,coverage-nc-reliability.md,9,原典照合結果は監査記録参照
+NC-Reliability:トピック:KA Core:2,NC,NC-Reliability,トピック,KA Core,2,消失・重複・順序の乱れを避ける信頼性,部分,10・62で消失と重複、422で順序外の手紙と累積確認を操作。一般の順序の乱れや破損は未評価。,coverage-nc-reliability.md,10,原典照合結果は監査記録参照
+NC-Reliability:トピック:KA Core:3,NC,NC-Reliability,トピック,KA Core,3,再送・誤り訂正,部分,10・422で時間切れと再送を操作。通信における一般的な誤り訂正は未評価。,coverage-nc-reliability.md,11,原典照合結果は監査記録参照
+NC-Reliability:トピック:KA Core:4,NC,NC-Reliability,トピック,KA Core,4,stop-and-wait・ウィンドウによるフロー制御,部分,10の１件ずつ、422の最大３件の Go-Back-N を操作。798で受信箱の空きの変化を操作。実 TCP の動的な窓や一般のフロー制御は未評価。,coverage-nc-reliability.md,12,原典照合結果は監査記録参照
+NC-Reliability:トピック:KA Core:5,NC,NC-Reliability,トピック,KA Core,5,輻輳制御,部分,423で２人と固定容量の橋を使う加法増加・乗法減少を操作。実ネットワークや他の方式は未評価。,coverage-nc-reliability.md,13,原典照合結果は監査記録参照
+NC-Reliability:トピック:KA Core:6,NC,NC-Reliability,トピック,KA Core,6,TCP と性能、輻輳制御の方式,部分,424で接続開始、423で AIMD の固定模型を操作。TCP の実測・損失回復と各方式の違いは未評価。,coverage-nc-reliability.md,14,原典照合結果は監査記録参照
+NC-Reliability:学習成果:KA Core:1,NC,NC-Reliability,学習成果,KA Core,1,信頼性ある配送プロトコルの動作を説明,部分,10・422で消失・再送・重複・順序を操作。一般の動作や自由な説明は未評価。,coverage-nc-reliability.md,20,原典照合結果は監査記録参照
+NC-Reliability:学習成果:KA Core:2,NC,NC-Reliability,学習成果,KA Core,2,信頼性ある配送の性能に影響する要因を挙げる,部分,423で共有容量と送信量、668で固定通信路の伝送・伝播時間を比較。信頼性方式の一般的性能や実測は未評価。,coverage-nc-reliability.md,21,原典照合結果は監査記録参照
+NC-Reliability:学習成果:KA Core:3,NC,NC-Reliability,学習成果,KA Core,3,TCP の信頼性に関する設計課題を説明,部分,424で接続開始、668で順序待ちの固定例を操作。損失回復全般や自由な説明は未評価。,coverage-nc-reliability.md,22,原典照合結果は監査記録参照
+NC-Reliability:学習成果:KA Core:4,NC,NC-Reliability,学習成果,KA Core,4,単純な信頼性プロトコルを設計・実装,部分,10・422で既定の手順を操作する代替体験。実際の設計・プログラム記述は直接評価しない。,coverage-nc-reliability.md,23,原典照合結果は監査記録参照
 NC-Routing:トピック:KA Core:1,NC,NC-Routing,トピック,KA Core,1,経路制御の方式と階層,部分,48で固定経路、481で同期距離ベクトル、482でリンクステート、483で AS 経路を操作。集中・分散の一般比較、送信元経路、仮想回線や QoS は未評価。,coverage-nc-routing.md,9,原典照合結果は監査記録参照
 NC-Routing:トピック:KA Core:2,NC,NC-Routing,トピック,KA Core,2,転送表と照合方法,部分,48で次の塔、61で８ビットの架空宛先と最長接頭辞を操作。実 IP 転送表は未評価。,coverage-nc-routing.md,10,原典照合結果は監査記録参照
 NC-Routing:トピック:KA Core:3,NC,NC-Routing,トピック,KA Core,3,IP と規模拡張、NAT・CIDR・BGP・IP の版,部分,320で変換、480で集約、483で AS 経路、484で IPv4・IPv6 の長さと省略表記の固定例。実網や一般の規模拡張は未評価。,coverage-nc-routing.md,11,原典照合結果は監査記録参照
