@@ -1,6 +1,7 @@
 // Reviewed aliases for concepts actually covered by each quest. This is a
 // discovery aid, not a claim of complete CS2023 coverage.
 export const questKeywords={
+ 'guild-access-purpose-records':['アクセス権限','情報の悪用','CFAA','Van Buren','コンピュータ犯罪','倫理'],
  'workshop-ewaste-cooperation':['電子廃棄物','E-waste','持続可能性','回収','修理','政策','専門家'],
  'guild-technology-perspectives':['技術哲学','道具主義','中立性','障害の正義','技術と社会','参加'],
  'forest-floyd-gates':['フロイド','全点対最短路','負の閉路','中継','経路表'],

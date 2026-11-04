@@ -3251,9 +3251,9 @@ SEP-Security:トピック:KA Core:8,SEP,SEP-Security,トピック,KA Core,8,方�
 SEP-Security:トピック:KA Core:9,SEP,SEP-Security,トピック,KA Core,9,ライフサイクル全体の安全への責任,部分,依頼360で不具合を報告・検査する固定例。ライフサイクル全体は未対応,coverage-sep-security.md,17,原典照合結果は監査記録参照
 SEP-Security:トピック:KA Core:10,SEP,SEP-Security,トピック,KA Core,10,国際法・地域法と交差,未照合,対応例を要照合。,coverage-sep-security.md,18,原典照合結果は監査記録参照
 SEP-Security:学習成果:CS Core:1,SEP,SEP-Security,学習成果,CS Core,1,社会的影響のあるコンピュータ犯罪や社会工学の実例,部分,986で2017年の WannaCry に関する公的報告を読む。独立した実例調査や自由な説明は未評価。,coverage-sep-security.md,24,原典照合結果は監査記録参照
-SEP-Security:学習成果:CS Core:2,SEP,SEP-Security,学習成果,CS Core,2,コンピュータ犯罪に適用される法律の課題,未照合,対応例を要照合。,coverage-sep-security.md,25,原典照合結果は監査記録参照
+SEP-Security:学習成果:CS Core:2,SEP,SEP-Security,学習成果,CS Core,2,コンピュータ犯罪に適用される法律の課題,部分,1315で米国 CFAA の一文言について Van Buren 判決と架空の権限・利用目的を比較。複数法域・法の全要件・実事件の判断は未評価。,coverage-sep-security.md,25,原典照合結果は監査記録参照
 SEP-Security:学習成果:CS Core:3,SEP,SEP-Security,学習成果,CS Core,3,各種攻撃の動機と影響,部分,1195で要求・声明と影響を区別する４例。依頼362の停止は原因不明であり、攻撃の動機や影響の例としては扱えない。実際の動機や一般的分析は未評価。,coverage-sep-security.md,26,原典照合結果は監査記録参照
-SEP-Security:学習成果:CS Core:4,SEP,SEP-Security,学習成果,CS Core,4,アクセスの悪用や侵害の倫理・法律,未照合,対応例を要照合。,coverage-sep-security.md,27,原典照合結果は監査記録参照
+SEP-Security:学習成果:CS Core:4,SEP,SEP-Security,学習成果,CS Core,4,アクセスの悪用や侵害の倫理・法律,部分,1315で架空の閲覧権限・私的利用・未知の事実を区別し、一つの米国判決の範囲を確認。一般の倫理判断や適法性は未評価。,coverage-sep-security.md,27,原典照合結果は監査記録参照
 SEP-Security:学習成果:CS Core:5,SEP,SEP-Security,学習成果,CS Core,5,安全における専門職の役割・トレードオフ,部分,依頼360で報告と検査を扱う固定例。一般の議論は未対応,coverage-sep-security.md,28,原典照合結果は監査記録参照
 SEP-Security:学習成果:KA Core:6,SEP,SEP-Security,学習成果,KA Core,6,個人・組織・政府による防止や軽減策の調査,部分,依頼365で既知の窓口に別経路で確認。組織・政府の対策や体系的な調査は未対応,coverage-sep-security.md,29,原典照合結果は監査記録参照
 SEP-Security:学習成果:KA Core:7,SEP,SEP-Security,学習成果,KA Core,7,パスワード・従業員監視を含む組織方針の設計,部分,987で合言葉と監視の方針を選び、988で固定した目的に必要なログ項目と保存期間を構成する。自由な方針設計、法域ごとの適法性、実組織での実施は未評価。,coverage-sep-security.md,30,原典照合結果は監査記録参照
