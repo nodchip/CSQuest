@@ -35,4 +35,4 @@
 | 7 | KA Core | 設計の意図に対する結果を批判的に検討 | 部分 | 289 の事前設定と結果を比較。実際の結果と自由な議論は未評価。 |
 | 8 | KA Core | 設計上の判断の影響を理解 | 部分 | 289 の初期値・配置、824 の入力方法の固定例。一般化は未評価。 |
 
-依頼1300は受付の設計、運営組織による承認、運用中の報告・見直しを架空の役割分担で選ぶ。GDPR が適用される場合の管理者の説明責任・設計時の保護を例示するが、ゲーム内の役職を法的な管理者・処理者と自動的に同一視しない。適用法令の判断、実際の責任分担や法令適合は評価しない。参考：[欧州委員会：GDPR の原則](https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/principles-gdpr_en)、[ACM 倫理規範](https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-booklet.pdf)。`tests/design-accountability.test.js` は固定場面の確認と復元を検査する。
+依頼1300は受付の設計、運営組織による承認、運用中の報告・見直しを架空の役割分担で選び、配達目的・必要項目・見直しの記録を組み立てる。GDPR が適用される場合の管理者の説明責任・設計時の保護を例示するが、ゲーム内の役職を法的な管理者・処理者と自動的に同一視しない。固定例の記録は法令が求める記録の全体ではなく、適用法令の判断、実際の責任分担や法令適合は評価しない。参考：[欧州委員会：GDPR の原則](https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/principles-gdpr_en)、[ACM 倫理規範](https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-booklet.pdf)。`tests/design-accountability.test.js` は固定場面と記録の確認、復元を検査する。
