@@ -33,3 +33,5 @@
 依頼498は [NASA のジョンソンの経歴](https://www.nasa.gov/people-of-nasa/katherine-g-johnson/)、[NASA のハミルトンのアポロ・ソフトウェア](https://science.nasa.gov/people/margaret-hamilton/)、[英国政府のチューリングの恩赦に関する記録](https://www.gov.uk/government/news/royal-pardon-for-ww2-code-breaker-dr-alan-turing)を要約し、業績と当時の状況を選ぶ。要約が制度上の障壁を記載しない場合は「この要約にない」とし、障壁の不在を断定しない。全選択肢と保存復元を検証した。３資料は各人の人生・歴史全体を網羅せず、実際の自由な分析を評価しない。
 
 依頼1317は架空の地域と学び舎について、対象者・申込み・参加の構成を異なる分母で比較し、原因を断定せず追加調査を考える。実際の所属機関や地域社会の構成・格差の調査ではない。詳細・出典は [項目別対応表](coverage-sep-deia.md) を参照。
+
+依頼1318は1317に続く架空の計画で、六人の条件を満たす施策の組合せと予算を比べる。利用可能な人数を実際の参加や実施効果と同一視しない。詳細は [項目別対応表](coverage-sep-deia.md) を参照。
