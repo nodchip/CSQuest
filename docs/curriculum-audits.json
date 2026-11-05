@@ -1,6 +1,14 @@
 {
   "version": 1,
   "units": {
+    "GIT-Simulation": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-simulation.md",
+      "topics": 20,
+      "outcomes": 3,
+      "scope_sha256": "518fb5fa15dc7861a27c720fa7c53bd2e2fc5df208ef11f1d4a5cee4ed98225b"
+    },
     "GIT-Animation": {
       "date": "2026-11-06",
       "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
