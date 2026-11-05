@@ -224,6 +224,30 @@
       "topics": 4,
       "outcomes": 3,
       "scope_sha256": "23f9b35c43b12b0921357f56bde0a4bffb4907c821090b245ca00ad0a7949d28"
+    },
+    "OS-Purpose": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-purpose.md",
+      "topics": 13,
+      "outcomes": 4,
+      "scope_sha256": "1016e1599f78a8ca85e52350a1fcbff4715c41960a6c4eee07fbfe456ffead88"
+    },
+    "OS-Principles": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-principles.md",
+      "topics": 13,
+      "outcomes": 8,
+      "scope_sha256": "4e8fe6a73263593f5f8743e047dc57cd915607cb769cf1a663fbdb8236ee09c7"
+    },
+    "OS-SEP": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-sep.md",
+      "topics": 7,
+      "outcomes": 4,
+      "scope_sha256": "1fc8444d99eb3313a75071e2cd6e0c424daa8253372ed5d6a4d7e4282ef06bc4"
     }
   }
 }
