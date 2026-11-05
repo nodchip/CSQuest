@@ -3599,7 +3599,7 @@ SPD-Mobile:トピック:KA Core:1a,SPD,SPD-Mobile,トピック,KA Core,1a,モバ
 SPD-Mobile:トピック:KA Core:1b,SPD,SPD-Mobile,トピック,KA Core,1b,開発環境,部分,1325で Android Studio・Xcode とビルド、仮想端末・実機の確認計画を比較。実環境の操作は未評価。,coverage-spd-mobile.md,10,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:2a,SPD,SPD-Mobile,トピック,KA Core,2a,UI の制約,部分,394で対象の大きさと間隔の固定比較。実端末・利用者は未評価。,coverage-spd-mobile.md,11,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:2b,SPD,SPD-Mobile,トピック,KA Core,2b,セキュリティの制約,部分,1323で架空の位置権限の拒否・精度・変更と手動代替を試す。実端末・OS・他のセキュリティ制約は未評価。,coverage-spd-mobile.md,12,原典照合結果は監査記録参照
-SPD-Mobile:トピック:KA Core:3a,SPD,SPD-Mobile,トピック,KA Core,3a,API によるデータへのアクセス,部分,354でオフライン保留・再送の模型。実 API への接続は未評価。,coverage-spd-mobile.md,13,原典照合結果は監査記録参照
+SPD-Mobile:トピック:KA Core:3a,SPD,SPD-Mobile,トピック,KA Core,3a,API によるデータへのアクセス,部分,354でオフライン保留・再送、393で位置と地区窓口への要求の固定模型。実 API への接続は未評価。,coverage-spd-mobile.md,13,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3b,SPD,SPD-Mobile,トピック,KA Core,3b,モバイル向け API 設計上の注意,部分,354で同一識別子による再送と重複の固定例。一般の設計は未評価。,coverage-spd-mobile.md,14,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:3c,SPD,SPD-Mobile,トピック,KA Core,3c,ネットワークと Web インターフェース,部分,354で接続回復・応答喪失を仮定。実通信・設計は未評価。,coverage-spd-mobile.md,15,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:4a,SPD,SPD-Mobile,トピック,Non-core,4a,ネイティブとクロスプラットフォーム,部分,1325で別々の実装と処理の共有を条件付きで比較。実開発・網羅的評価は未実施。,coverage-spd-mobile.md,16,原典照合結果は監査記録参照
@@ -3618,7 +3618,7 @@ SPD-Mobile:トピック:Non-core:8b,SPD,SPD-Mobile,トピック,Non-core,8b,コ�
 SPD-Mobile:トピック:Non-core:8c,SPD,SPD-Mobile,トピック,Non-core,8c,非同期エラー,部分,1321で最新の失敗と古い失敗が遅れて届く場合を比較し、1322で Promise の拒否を試す。一般の非同期エラーは未評価。,coverage-spd-mobile.md,29,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:8d,SPD,SPD-Mobile,トピック,Non-core,8d,非同期コードの試験,部分,1321で成功順２通りと最新・古い依頼の失敗を固定模型で比較し、1322で制御した Promise の結果を待つ試験を実行。実端末・実アプリの試験は未評価。,coverage-spd-mobile.md,30,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:1,SPD,SPD-Mobile,学習成果,KA Core,1,モバイルと汎用プログラミングの比較,部分,1325で共通の計算と、画面の中断・位置の拒否への対応を固定例で比較。一般的な比較や自由な説明は未評価。,coverage-spd-mobile.md,36,原典照合結果は監査記録参照
-SPD-Mobile:学習成果:KA Core:2,SPD,SPD-Mobile,学習成果,KA Core,2,位置と API を使うアプリ,部分,393で位置取得の選択。API 統合・実アプリ開発は未評価。,coverage-spd-mobile.md,37,原典照合結果は監査記録参照
+SPD-Mobile:学習成果:KA Core:2,SPD,SPD-Mobile,学習成果,KA Core,2,位置と API を使うアプリ,部分,393で位置の許可・手動地区・模擬窓口の応答を組み合わせる。実 API 統合・実アプリ開発は未評価。,coverage-spd-mobile.md,37,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:3,SPD,SPD-Mobile,学習成果,KA Core,3,センサーデータの遠隔記録,部分,1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。,coverage-spd-mobile.md,38,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:4,SPD,SPD-Mobile,学習成果,KA Core,4,電話・メッセージアプリ,部分,1327で伝言アプリの一連の状態を模型で操作。電話や実アプリの設計・実装は未評価。,coverage-spd-mobile.md,39,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:5,SPD,SPD-Mobile,学習成果,KA Core,5,ネイティブと共通開発の長短,部分,1325でコード共有、端末固有機能、対応状況と試験を固定条件で比較。一般的・実測に基づく評価は未実施。,coverage-spd-mobile.md,40,原典照合結果は監査記録参照
