@@ -392,6 +392,22 @@
       "topics": 3,
       "outcomes": 4,
       "scope_sha256": "edc48594e6c93512dc422037ad0e118ab842f2964a6d9a2f9483dfb1dd25477f"
+    },
+    "SF-Reliability": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sf-reliability.md",
+      "topics": 7,
+      "outcomes": 5,
+      "scope_sha256": "9115ad6b128c8eb35769bb3c6a0d8a225e4752892d2f5bd6fc4bd03ceb9c2b4a"
+    },
+    "SF-Security": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sf-security.md",
+      "topics": 7,
+      "outcomes": 3,
+      "scope_sha256": "ab62a68a5a32c680f8401ab6ad46936f61ce7a26ce4f7abf529380b00e356511"
     }
   }
 }

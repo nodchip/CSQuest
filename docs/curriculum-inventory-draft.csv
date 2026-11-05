@@ -3347,15 +3347,16 @@ SF-Performance:学習成果:KA Core:5,SF,SF-Performance,学習成果,KA Core,5,�
 SF-Performance:学習成果:KA Core:6,SF,SF-Performance,学習成果,KA Core,6,別 VM の２アプリの性能分離を評価,部分,依頼135で４条件の１刻の処理数と未使用容量を比較。固定した優先順・上限の模型で、実 VM の実測や一般的な性能分離は未評価。,coverage-sf-performance.md,28,原典照合結果は監査記録参照
 SF-Reliability:トピック:CS Core:1,SF,SF-Reliability,トピック,CS Core,1,バグ・故障・障害の区別,部分,依頼23で門の書き間違い、記憶破損、内部結果と約束違反を比較。一般の分類と障害連鎖は未評価。,coverage-sf-reliability.md,9,原典照合結果は監査記録参照
 SF-Reliability:トピック:CS Core:2,SF,SF-Reliability,トピック,CS Core,2,信頼性と可用性,部分,依頼108で同じ稼働割合の２記録と４刻連続の航海を比較。一般の確率モデルや将来の推定は未対応。,coverage-sf-reliability.md,10,原典照合結果は監査記録参照
-SF-Reliability:トピック:CS Core:3a,SF,SF-Reliability,トピック,CS Core,3a,確認と再試行,部分,依頼10・62で消失後の再送と重複の固定例。一般の障害対処は未評価。,coverage-sf-reliability.md,11,原典照合結果は監査記録参照
-SF-Reliability:トピック:CS Core:3b,SF,SF-Reliability,トピック,CS Core,3b,冗長符号化,部分,依頼106・107でハミング符号、全体パリティ、CRC、229で３装置の XOR と複数組の分散パリティによる復元を操作。一般の FEC と RAID の実装は未対応。,coverage-sf-reliability.md,12,原典照合結果は監査記録参照
-SF-Reliability:トピック:CS Core:3c,SF,SF-Reliability,トピック,CS Core,3c,複製・ミラー,部分,依頼229で装置故障と誤更新を比較。非同期複製・分断時の復旧全般は未評価。,coverage-sf-reliability.md,13,原典照合結果は監査記録参照
-SF-Reliability:トピック:KA Core:4,SF,SF-Reliability,トピック,KA Core,4,冗長化以外の方法、ジャーナリングなど,部分,依頼136で単一送金、736でファイル管理情報の確定記録を再適用。実ファイルシステムや一般の復旧手法は未評価。,coverage-sf-reliability.md,14,原典照合結果は監査記録参照
-SF-Reliability:学習成果:CS Core:1,SF,SF-Reliability,学習成果,CS Core,1,プログラム・システムの誤り、ハードウェア故障と例外を区別,部分,依頼23で書き間違い、記憶破損、０除算の固定例を比較。一般的な説明や自由記述は評価しない。,coverage-sf-reliability.md,20,原典照合結果は監査記録参照
-SF-Reliability:学習成果:CS Core:2,SF,SF-Reliability,学習成果,CS Core,2,検出・処理・復旧の違いと実現方法を説明,部分,依頼23の検出・代替、依頼229・136の復旧は固定模型。方法の一般的な分類と自由な説明は未評価。,coverage-sf-reliability.md,21,原典照合結果は監査記録参照
-SF-Reliability:学習成果:CS Core:3,SF,SF-Reliability,学習成果,CS Core,3,メモリ・記憶装置・ネットワークにおける誤り検査と訂正符号の役割を説明,部分,依頼106・107で伝達時の符号と訂正・検出、229で記憶装置の故障時の復元模型を操作。各媒体の実際の使用例や自由な説明は未評価。,coverage-sf-reliability.md,22,原典照合結果は監査記録参照
-SF-Reliability:学習成果:CS Core:4,SF,SF-Reliability,学習成果,CS Core,4,冗長情報を使う簡単な訂正手順を適用,部分,依頼106の７ビット符号で固定の単一誤りを訂正。任意の符号や一般的な手順の構築は評価しない。,coverage-sf-reliability.md,23,原典照合結果は監査記録参照
-SF-Reliability:学習成果:KA Core:5,SF,SF-Reliability,学習成果,KA Core,5,検出・訂正方式のデータ量、実装の複雑さ、符号化・検出・訂正に要する相対時間を比較,部分,依頼107で４ビットのデータから７ビットの CRC と８ビットの訂正符号を扱い、検出と訂正を区別。符号化・検出・訂正の時間や実装の複雑さの比較は未対応。,coverage-sf-reliability.md,24,原典照合結果は監査記録参照
+SF-Reliability:トピック:CS Core:3,SF,SF-Reliability,トピック,CS Core,3,冗長性による信頼性,部分,再送・符号・複製の固定例は子項目に記載。一般の信頼性設計は未評価。,coverage-sf-reliability.md,11,原典照合結果は監査記録参照・親子重複候補
+SF-Reliability:トピック:CS Core:3a,SF,SF-Reliability,トピック,CS Core,3a,確認と再試行,部分,依頼10・62で消失後の再送と重複の固定例。一般の障害対処は未評価。,coverage-sf-reliability.md,12,原典照合結果は監査記録参照
+SF-Reliability:トピック:CS Core:3b,SF,SF-Reliability,トピック,CS Core,3b,冗長符号化,部分,依頼106・107でハミング符号、全体パリティ、CRC、229で３装置の XOR と複数組の分散パリティによる復元を操作。一般の FEC と RAID の実装は未対応。,coverage-sf-reliability.md,13,原典照合結果は監査記録参照
+SF-Reliability:トピック:CS Core:3c,SF,SF-Reliability,トピック,CS Core,3c,複製・ミラー,部分,依頼229で装置故障と誤更新を比較。非同期複製・分断時の復旧全般は未評価。,coverage-sf-reliability.md,14,原典照合結果は監査記録参照
+SF-Reliability:トピック:KA Core:4,SF,SF-Reliability,トピック,KA Core,4,冗長化以外の方法、ジャーナリングなど,部分,依頼136で単一送金、736でファイル管理情報の確定記録を再適用。実ファイルシステムや一般の復旧手法は未評価。,coverage-sf-reliability.md,15,原典照合結果は監査記録参照
+SF-Reliability:学習成果:CS Core:1,SF,SF-Reliability,学習成果,CS Core,1,プログラム・システムの誤り、ハードウェア故障と例外を区別,部分,依頼23で書き間違い、記憶破損、０除算の固定例を比較。一般的な説明や自由記述は評価しない。,coverage-sf-reliability.md,21,原典照合結果は監査記録参照
+SF-Reliability:学習成果:CS Core:2,SF,SF-Reliability,学習成果,CS Core,2,検出・処理・復旧の違いと実現方法を説明,部分,依頼23の検出・代替、依頼229・136の復旧は固定模型。方法の一般的な分類と自由な説明は未評価。,coverage-sf-reliability.md,22,原典照合結果は監査記録参照
+SF-Reliability:学習成果:CS Core:3,SF,SF-Reliability,学習成果,CS Core,3,メモリ・記憶装置・ネットワークにおける誤り検査と訂正符号の役割を説明,部分,依頼106・107で伝達時の符号と訂正・検出、229で記憶装置の故障時の復元模型を操作。各媒体の実際の使用例や自由な説明は未評価。,coverage-sf-reliability.md,23,原典照合結果は監査記録参照
+SF-Reliability:学習成果:CS Core:4,SF,SF-Reliability,学習成果,CS Core,4,冗長情報を使う簡単な訂正手順を適用,部分,依頼106の７ビット符号で固定の単一誤りを訂正。任意の符号や一般的な手順の構築は評価しない。,coverage-sf-reliability.md,24,原典照合結果は監査記録参照
+SF-Reliability:学習成果:KA Core:5,SF,SF-Reliability,学習成果,KA Core,5,検出・訂正方式のデータ量、実装の複雑さ、符号化・検出・訂正に要する相対時間を比較,部分,依頼107で４ビットのデータから７ビットの CRC と８ビットの訂正符号を扱い、検出と訂正を区別。符号化・検出・訂正の時間や実装の複雑さの比較は未対応。,coverage-sf-reliability.md,25,原典照合結果は監査記録参照
 SF-Resource:トピック:CS Core:1,SF,SF-Resource,トピック,CS Core,1,CPU、メモリ、記憶装置、帯域などの有限資源,部分,依頼14で炉を仕事に割り当て、40で頁の行き先を確認。資源の種類全体や一般の管理は未評価。,coverage-sf-resource.md,9,原典照合結果は監査記録参照
 SF-Resource:トピック:CS Core:2,SF,SF-Resource,トピック,CS Core,2,先着・優先度・公平・中断などの割当方式,部分,依頼14で先着とラウンドロビン、176で中断、177で優先度と待ち時間を操作。一般の方式や公平性は未評価。,coverage-sf-resource.md,10,原典照合結果は監査記録参照
 SF-Resource:トピック:KA Core:3,SF,SF-Resource,トピック,KA Core,3,一般的な方式の長所・短所,部分,依頼176で応答と切替費用、177で優先度と飢餓を比較。広い負荷・方式の比較は未評価。,coverage-sf-resource.md,11,原典照合結果は監査記録参照
@@ -3364,13 +3365,15 @@ SF-Resource:学習成果:CS Core:2,SF,SF-Resource,学習成果,CS Core,2,一般�
 SF-Resource:学習成果:CS Core:3,SF,SF-Resource,学習成果,CS Core,3,方式を開発し性能を評価,部分,依頼14で２方式の実行順を操作し完了時刻を比較。実コードの開発、実測や任意の負荷の評価は対象外。,coverage-sf-resource.md,19,原典照合結果は監査記録参照
 SF-Resource:学習成果:KA Core:4,SF,SF-Resource,学習成果,KA Core,4,各方式の利点・欠点を説明,部分,依頼176の応答と切替費用、177の待ち続ける仕事と優先度の固定例。一般の説明は評価しない。,coverage-sf-resource.md,20,原典照合結果は監査記録参照
 SF-Security:トピック:CS Core:1,SF,SF-Security,トピック,CS Core,1,システムの安全上の問題と例,部分,依頼180は媒体・起動・受付への３経路、492は送信元と回数制限の固定例。ウイルス・盗聴などを含む全般的な分類は未評価。,coverage-sf-security.md,9,原典照合結果は監査記録参照
-SF-Security:トピック:CS Core:2a,SF,SF-Security,トピック,CS Core,2a,暗号による対策,部分,依頼180の媒体保護、58の XOR と鍵再利用、128の署名の模型。正しい鍵管理や実用的な暗号方式の実装は評価しない。,coverage-sf-security.md,10,原典照合結果は監査記録参照
-SF-Security:トピック:CS Core:2b,SF,SF-Security,トピック,CS Core,2b,セキュリティアーキテクチャ,部分,依頼180で３経路と対応する保護を比較。対策の正しい動作は仮定し、実システムの設計や安全性は評価しない。,coverage-sf-security.md,11,原典照合結果は監査記録参照
-SF-Security:トピック:KA Core:3a,SF,SF-Security,トピック,KA Core,3a,侵入検知とファイアウォール,部分,依頼279で応答の履歴を用いる通信制御、280でしきい値と誤判定を比較。実際の設定や運用は未評価。,coverage-sf-security.md,12,原典照合結果は監査記録参照
-SF-Security:トピック:KA Core:3b,SF,SF-Security,トピック,KA Core,3b,ウイルス対策システム,部分,依頼280で特徴表の照合・更新と隔離、見逃し・誤警報を固定例で比較。実際の製品、検体分析、隔離からの復旧や運用全般は未評価。,coverage-sf-security.md,13,原典照合結果は監査記録参照
-SF-Security:学習成果:CS Core:1,SF,SF-Security,学習成果,CS Core,1,一般的な安全上の問題と例を説明,部分,依頼180・492で架空の経路や負荷を試す。実例の広い調査や自由な説明は評価しない。,coverage-sf-security.md,19,原典照合結果は監査記録参照
-SF-Security:学習成果:CS Core:2,SF,SF-Security,学習成果,CS Core,2,対策を説明,部分,依頼180で保護の選択と３経路の成否を比較。一般的な対策の説明や実運用を評価しない。,coverage-sf-security.md,20,原典照合結果は監査記録参照
-SF-Security:学習成果:KA Core:3,SF,SF-Security,学習成果,KA Core,3,代表的な対策システムを説明,部分,依頼279・280は通信制御、侵入検知と特徴照合・隔離の模型。各システムの一般的な説明や実際の運用は未評価。,coverage-sf-security.md,21,原典照合結果は監査記録参照
+SF-Security:トピック:CS Core:2,SF,SF-Security,トピック,CS Core,2,安全上の問題への対策,部分,暗号と防御構成の固定例は子項目に記載。対策全般と運用は未評価。,coverage-sf-security.md,10,原典照合結果は監査記録参照・親子重複候補
+SF-Security:トピック:CS Core:2a,SF,SF-Security,トピック,CS Core,2a,暗号による対策,部分,依頼180の媒体保護、58の XOR と鍵再利用、128の署名の模型。正しい鍵管理や実用的な暗号方式の実装は評価しない。,coverage-sf-security.md,11,原典照合結果は監査記録参照
+SF-Security:トピック:CS Core:2b,SF,SF-Security,トピック,CS Core,2b,セキュリティアーキテクチャ,部分,依頼180で３経路と対応する保護を比較。対策の正しい動作は仮定し、実システムの設計や安全性は評価しない。,coverage-sf-security.md,12,原典照合結果は監査記録参照
+SF-Security:トピック:KA Core:3,SF,SF-Security,トピック,KA Core,3,代表的な対策システム,部分,侵入検知・通信制御・特徴照合の固定例は子項目に記載。対策システム全般と運用は未評価。,coverage-sf-security.md,13,原典照合結果は監査記録参照・親子重複候補
+SF-Security:トピック:KA Core:3a,SF,SF-Security,トピック,KA Core,3a,侵入検知とファイアウォール,部分,依頼279で応答の履歴を用いる通信制御、280でしきい値と誤判定を比較。実際の設定や運用は未評価。,coverage-sf-security.md,14,原典照合結果は監査記録参照
+SF-Security:トピック:KA Core:3b,SF,SF-Security,トピック,KA Core,3b,ウイルス対策システム,部分,依頼280で特徴表の照合・更新と隔離、見逃し・誤警報を固定例で比較。実際の製品、検体分析、隔離からの復旧や運用全般は未評価。,coverage-sf-security.md,15,原典照合結果は監査記録参照
+SF-Security:学習成果:CS Core:1,SF,SF-Security,学習成果,CS Core,1,一般的な安全上の問題と例を説明,部分,依頼180・492で架空の経路や負荷を試す。実例の広い調査や自由な説明は評価しない。,coverage-sf-security.md,21,原典照合結果は監査記録参照
+SF-Security:学習成果:CS Core:2,SF,SF-Security,学習成果,CS Core,2,対策を説明,部分,依頼180で保護の選択と３経路の成否を比較。一般的な対策の説明や実運用を評価しない。,coverage-sf-security.md,22,原典照合結果は監査記録参照
+SF-Security:学習成果:KA Core:3,SF,SF-Security,学習成果,KA Core,3,代表的な対策システムを説明,部分,依頼279・280は通信制御、侵入検知と特徴照合・隔離の模型。各システムの一般的な説明や実際の運用は未評価。,coverage-sf-security.md,23,原典照合結果は監査記録参照
 SF-SEP:トピック:KA Core:1,SF,SF-SEP,トピック,KA Core,1,システムの知的財産権,未照合,ライセンスの固定例はあるが、著作権・特許等の権利そのものの体系的な教材と検証は未確認。,coverage-sf-sep.md,9,原典照合結果は監査記録参照
 SF-SEP:トピック:KA Core:2,SF,SF-SEP,トピック,KA Core,2,代表的なソフトウェアライセンス,部分,依頼269は単一ファイルの改変ソース配布で MIT と GPL-3.0 の３条件を比較。他の条項やライセンスは未評価。,coverage-sf-sep.md,10,原典照合結果は監査記録参照
 SF-SEP:トピック:KA Core:3,SF,SF-SEP,トピック,KA Core,3,コンピュータ犯罪,未照合,依頼365は架空のなりすましと別経路確認を扱うが、犯罪の構成や列挙を直接評価しない。,coverage-sf-sep.md,11,原典照合結果は監査記録参照
