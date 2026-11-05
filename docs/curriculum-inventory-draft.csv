@@ -1881,7 +1881,7 @@ GIT-Visualization:トピック:KA Core:5b,GIT,GIT-Visualization,トピック,KA 
 GIT-Visualization:トピック:KA Core:6,GIT,GIT-Visualization,トピック,KA Core,6,視覚的抽象化の知覚・認知の基礎,部分,光学系・色・群化は子を参照。認知と知覚全般は未評価。,coverage-git-visualization.md,25,原典照合結果は監査記録参照・親子重複候補
 GIT-Visualization:トピック:KA Core:6a,GIT,GIT-Visualization,トピック,KA Core,6a,人間の光学系,部分,64で固定点の透視投影を比較。眼の構造や視覚生理は未評価。,coverage-git-visualization.md,26,原典照合結果は監査記録参照
 GIT-Visualization:トピック:KA Core:6b,GIT,GIT-Visualization,トピック,KA Core,6b,色理論,部分,515で理想的な RGB・CMY を操作。知覚的な色の尺度や一般の理論は未評価。,coverage-git-visualization.md,27,原典照合結果は監査記録参照
-GIT-Visualization:トピック:KA Core:6c,GIT,GIT-Visualization,トピック,KA Core,6c,ゲシュタルト理論,未照合,視覚的群化の原則を扱う教材は未確認。,coverage-git-visualization.md,28,原典照合結果は監査記録参照
+GIT-Visualization:トピック:KA Core:6c,GIT,GIT-Visualization,トピック,KA Core,6c,ゲシュタルト理論,部分,111で近さと形の類似による群化の手がかりを比較。その他の原則や実利用者の知覚は未評価。,coverage-git-visualization.md,28,原典照合結果は監査記録参照
 GIT-Visualization:トピック:KA Core:7,GIT,GIT-Visualization,トピック,KA Core,7,可視化の設計と評価,部分,目的・アクセシビリティ・符号化・誤解の固定例は子を参照。一般の設計と実利用者による評価は未評価。,coverage-git-visualization.md,29,原典照合結果は監査記録参照・親子重複候補
 GIT-Visualization:トピック:KA Core:7a,GIT,GIT-Visualization,トピック,KA Core,7a,可視化の目的,部分,111で差を示す尺度を比較。分析・伝達・美的目的を含む一般的な設計は未評価。,coverage-git-visualization.md,30,原典照合結果は監査記録参照
 GIT-Visualization:トピック:KA Core:7b,GIT,GIT-Visualization,トピック,KA Core,7b,アクセシビリティ,部分,22で色以外の手がかりを選択。多様な利用者による図の評価は未対応。,coverage-git-visualization.md,31,原典照合結果は監査記録参照

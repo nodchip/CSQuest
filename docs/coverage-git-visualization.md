@@ -25,7 +25,7 @@
 | 6 | KA Core | 視覚的抽象化の知覚・認知の基礎 | 部分 | 光学系・色・群化は子を参照。認知と知覚全般は未評価。 |
 | 6a | KA Core | 人間の光学系 | 部分 | 64で固定点の透視投影を比較。眼の構造や視覚生理は未評価。 |
 | 6b | KA Core | 色理論 | 部分 | 515で理想的な RGB・CMY を操作。知覚的な色の尺度や一般の理論は未評価。 |
-| 6c | KA Core | ゲシュタルト理論 | 未照合 | 視覚的群化の原則を扱う教材は未確認。 |
+| 6c | KA Core | ゲシュタルト理論 | 部分 | 111で近さと形の類似による群化の手がかりを比較。その他の原則や実利用者の知覚は未評価。 |
 | 7 | KA Core | 可視化の設計と評価 | 部分 | 目的・アクセシビリティ・符号化・誤解の固定例は子を参照。一般の設計と実利用者による評価は未評価。 |
 | 7a | KA Core | 可視化の目的 | 部分 | 111で差を示す尺度を比較。分析・伝達・美的目的を含む一般的な設計は未評価。 |
 | 7b | KA Core | アクセシビリティ | 部分 | 22で色以外の手がかりを選択。多様な利用者による図の評価は未対応。 |
@@ -55,3 +55,5 @@
 依頼1172は [Stanford の単語頻度と文章長](https://nlp.stanford.edu/IR-book/html/htmledition/maximum-tf-normalization-1.html)を参考に、依頼120の札から２つの固定単語列を作り、回数と総単語数に対する割合を棒・表で比較する。割合は総数で割る本教材の尺度で、リンク先の最大頻度正規化とは異なる。`tests/text-frequency-visual.test.js` は元データ、頻度・割合・順位、保存と達成を検査。実文章の分割・意味解析は未評価。
 
 依頼1173は [Levoy の前からの合成式](https://graphics.stanford.edu/papers/volume-dissertation/levoy-dissertation-may89.pdf)を参考に、３つの固定サンプルを２通りの転送関数と２方向で合成する。`tests/volume-ray.test.js` は各条件の手計算値、途中の保存・達成を検査。実３次元データや間隔補正は扱わない。
+
+依頼111の追加例は [Purdue University の近さと類似](https://www.psych.purdue.edu/~gfrancis/Experiments/VisLab/Gestalt/gestalt1.html)を参考に、４印の距離と形による２種類の群化を比較する。`tests/perceptual-grouping.test.js` は４配置の幾何と形、旧記録の復元を検査する。競合時の知覚を一意に断定せず、一般の群化・認知や実利用者による評価は扱わない。

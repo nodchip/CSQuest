@@ -1,0 +1,5 @@
+export const groupDirections={rows:'横の２組',columns:'縦の２組'};
+export const groupCoordinates={rows:[[70,45],[110,45],[70,145],[110,145]],columns:[[40,65],[140,65],[40,105],[140,105]]};
+export function groupDiagram(near,shape){if(!Object.hasOwn(groupDirections,near)||!Object.hasOwn(groupDirections,shape))throw new RangeError('配置が不正です');return groupCoordinates[near].map(([x,y],i)=>({x,y,shape:(shape==='rows'?i<2:i%2===0)?'circle':'square'}));}
+export function groupCreate(){return {near:'rows',shape:'rows',distanceGuess:'',shapeGuess:'',checked:false,seen:[]};}
+export function groupRestore(s){const keys=Object.keys(groupDirections).flatMap(a=>Object.keys(groupDirections).map(b=>`${a}:${b}`));if(!s||!Object.hasOwn(groupDirections,s.near)||!Object.hasOwn(groupDirections,s.shape)||!['',...Object.keys(groupDirections)].includes(s.distanceGuess)||!['',...Object.keys(groupDirections)].includes(s.shapeGuess)||typeof s.checked!=='boolean'||s.checked&&(!s.distanceGuess||!s.shapeGuess)||!Array.isArray(s.seen)||new Set(s.seen).size!==s.seen.length||!s.seen.every(k=>keys.includes(k)))throw new RangeError('群化の記録が不正です');return {...s,seen:[...s.seen]};}
