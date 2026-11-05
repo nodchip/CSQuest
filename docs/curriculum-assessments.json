@@ -560,6 +560,20 @@
         "tests/mobile-toolchain.test.js": "14f7ae63939af6f0a579ee9e78b536cadbae6e0516d4f9deaf15b5ca6b84c8b5",
         "tests/mobile-virtual-sensor.test.js": "74efc1309f687434c204eca1f3774c8cf9d626a4ef4a8fdfc9ad6bac9d29f0b1"
       }
+    },
+    "SPD-Mobile:学習成果:KA Core:1": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-mobile-comparison.md",
+      "row_sha256": "fc3f68e5094967673a642df52d267d5daafcc90913d7e0d857fd2ad787de2bb1",
+      "files": {
+        "src/app.js": "7f7223bce609b22cf72b7da7f98a3aeed100f3688e3102d2f3afe0e577a9d509",
+        "src/mobile-platform-choice.js": "ded0f2ae2f69afeecad2ef4ec08d17562c9623eee661a993cec49884f9fda354",
+        "src/mobile-general-compare.js": "fad9f882a40fc30d928f95f4e7ec38ab5107b09b435a7815b874aa20c8155ed2",
+        "src/mobile-session-recovery.js": "bc02b43bb02a0d07dc793cc94ecf373c406fb28d3ea53ab4f5e20c802da1d2dd",
+        "tests/mobile-general-compare.test.js": "ea087aa68a2b74edd9a8a7ff813409fea2667a7ff51496749c76cee55b293dc6",
+        "tests/mobile-session-recovery.test.js": "4417d8e63d278383fe43405eea7cd2c1cb9aa9fdd2817b9ad4488e8c9e2c15ed"
+      }
     }
   }
 }
