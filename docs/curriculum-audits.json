@@ -864,6 +864,14 @@
       "topics": 8,
       "outcomes": 5,
       "scope_sha256": "1d354413c63b6810f055e794e299bbe8e48c86e101f4f245a0d3fd9a5e9cc90e"
+    },
+    "HCI-User": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-hci-user.md",
+      "topics": 36,
+      "outcomes": 10,
+      "scope_sha256": "bc1923574eec71aba8365a95131e20db4136e752444daeee83bf1bd813b8cc55"
     }
   }
 }

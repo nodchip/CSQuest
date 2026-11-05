@@ -2070,47 +2070,52 @@ HCI-SEP:学習成果:CS Core:2,HCI,HCI-SEP,学習成果,CS Core,2,設計の社�
 HCI-SEP:学習成果:KA Core:2,HCI,HCI-SEP,学習成果,KA Core,2,最近の非包摂的設計の実例・社会的影響・改善を論じる,部分,1107 で FTC の2023年の申立てに基づき誤警告の影響と見直しを選ぶ。自由な調査・議論は未評価。,coverage-hci-sep.md,24,原典照合結果は監査記録参照
 HCI-SEP:学習成果:KA Core:3,HCI,HCI-SEP,学習成果,KA Core,3,設計の影響と波及効果を特定,部分,359・536 の固定された反応と観点。一般の影響評価は未評価。,coverage-hci-sep.md,25,原典照合結果は監査記録参照
 HCI-SEP:学習成果:Non-core:4,HCI,HCI-SEP,学習成果,Non-core,4,VR・AR・MR のプライバシー影響を評価,部分,352・824 は架空の記録範囲と位置合わせを比較。実機、実環境、VR・MR 全般は未評価。,coverage-hci-sep.md,26,原典照合結果は監査記録参照
-HCI-User:トピック:CS Core:1a,HCI,HCI-User,トピック,CS Core,1a,設計者自身と利用者の違い,部分,188で旅人と維持担当の事情を確認。実際の当事者調査は未評価。,coverage-hci-user.md,9,原典照合結果は監査記録参照
-HCI-User:トピック:CS Core:1b,HCI,HCI-User,トピック,CS Core,1b,利用者のニーズ発見,部分,188で架空の３人の声を聞く。実際の調査は未評価。,coverage-hci-user.md,10,原典照合結果は監査記録参照
-HCI-User:トピック:CS Core:1c,HCI,HCI-User,トピック,CS Core,1c,形成的な調査,部分,188で設計前の声と場面確認を操作。実調査の設計・実施は未評価。,coverage-hci-user.md,11,原典照合結果は監査記録参照
-HCI-User:トピック:CS Core:1d,HCI,HCI-User,トピック,CS Core,1d,面接,部分,188で経験を詳しく知る方法として選択。実面接は行わない。,coverage-hci-user.md,12,原典照合結果は監査記録参照
-HCI-User:トピック:CS Core:1e,HCI,HCI-User,トピック,CS Core,1e,質問紙調査,部分,960で質問文の誘導・二重質問・選択肢と、２種類の招待・無回答を比較。実際の調査設計・実施と一般化は未評価。,coverage-hci-user.md,13,原典照合結果は監査記録参照
-HCI-User:トピック:CS Core:1f,HCI,HCI-User,トピック,CS Core,1f,ユーザビリティ試験,部分,188で時刻探しの試作品の試用を選択。実際の参加者による試験は未評価。,coverage-hci-user.md,14,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2a,HCI,HCI-User,トピック,KA Core,2a,ペルソナとその広がり,部分,961で架空の発言から仮の人物像を組み立て、推測と代表性の限界を確認。実際の調査に基づく複数の人物像は未評価。,coverage-hci-user.md,15,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2b,HCI,HCI-User,トピック,KA Core,2b,利用者物語と収集方法,部分,87で２つの固定事情から立場・望み・理由を組み立てる。実際の収集・自由な作成は未評価。,coverage-hci-user.md,16,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2c,HCI,HCI-User,トピック,KA Core,2c,共感マップ,部分,961で架空の発言、行動、本人が語った気持ちと要確認の推測を整理。実際の調査・自由な作成は未評価。,coverage-hci-user.md,17,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2d,HCI,HCI-User,トピック,KA Core,2d,ニーズの把握と要求収集,部分,87・188で架空の声と要求、３方法を扱う。実際の調査と分析は未評価。,coverage-hci-user.md,18,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2e,HCI,HCI-User,トピック,KA Core,2e,ジャーニーマップ,部分,961で架空の移動・通信断・紙の確認を順に並べ、改善案を選択。実際の調査・複数経路・自由な作成は未評価。,coverage-hci-user.md,19,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2f,HCI,HCI-User,トピック,KA Core,2f,設計の評価,部分,60・188で架空の評価記録と場面確認を操作。実際の利用者評価は未評価。,coverage-hci-user.md,20,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2g,HCI,HCI-User,トピック,KA Core,2g,チームで関係者と関わる,部分,650で架空の技師・伝令・通行者の事情と担当を整理。実際のチームや関係者との対話は未評価。,coverage-hci-user.md,21,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:2h,HCI,HCI-User,トピック,KA Core,2h,対面・分散・混合・仮想チームのリスク,未照合,対応する依頼は未確認。,coverage-hci-user.md,22,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:3a,HCI,HCI-User,トピック,KA Core,3a,身体的能力と設計,部分,22・188で色以外の手がかりや座って使う場面を扱う。人の身体能力全般は未評価。,coverage-hci-user.md,23,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:3b,HCI,HCI-User,トピック,KA Core,3b,注意・知覚・記憶等の認知モデル,部分,966で準備時間を含む簡略 KLM、967で中断後の進捗表示と作業物を手がかりにした再開を比較。注意・知覚・記憶全体や実際の認知能力は未評価。,coverage-hci-user.md,24,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:3c,HCI,HCI-User,トピック,KA Core,3c,社会・行動心理と認知バイアス,未照合,対応する依頼は未確認。,coverage-hci-user.md,25,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4a,HCI,HCI-User,トピック,KA Core,4a,利用者の違いと経験・ニーズ,部分,22・188で異なる利用条件を扱う。人々の違い全般は未評価。,coverage-hci-user.md,26,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4b,HCI,HCI-User,トピック,KA Core,4b,国際化,部分,962で同じ瞬間の３表示方法・３時間帯と日付の曖昧さを比較。963で2024年のニューヨークの夏時間境界と東京の通常日を比較。翻訳、他の暦・言語・文化や他の時間帯・年の規則は未評価。,coverage-hci-user.md,27,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4c,HCI,HCI-User,トピック,KA Core,4c,他文化の利用者向け設計,未照合,対応する依頼は未確認。,coverage-hci-user.md,28,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4d,HCI,HCI-User,トピック,KA Core,4d,異文化間の設計,未照合,対応する依頼は未確認。,coverage-hci-user.md,29,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4e,HCI,HCI-User,トピック,KA Core,4e,標本・一般化・障害経験など評価の課題,部分,188で架空の調査は代表性を示さないと説明。実際の標本設計や一般化は未評価。,coverage-hci-user.md,30,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4f,HCI,HCI-User,トピック,KA Core,4f,ユニバーサルデザイン,部分,22で異なる利用条件への工夫を操作。原則全体と参加型設計は未評価。,coverage-hci-user.md,31,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5a,HCI,HCI-User,トピック,KA Core,5a,複数利用者の状況,部分,188で旅人と維持担当の事情を比較。実際の複数利用者システムは未評価。,coverage-hci-user.md,32,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5b,HCI,HCI-User,トピック,KA Core,5b,同期的な集団通信,部分,964で２時刻の生放送と受信者を比較。実際の会議や相互作用は未評価。,coverage-hci-user.md,33,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5c,HCI,HCI-User,トピック,KA Core,5c,非同期の集団通信,部分,964で掲示板の記録と後からの確認を比較。実際の掲示板や配信保証は未評価。,coverage-hci-user.md,34,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5d,HCI,HCI-User,トピック,KA Core,5d,社会的計算・ソーシャルネットワーク分析,部分,965で架空の無向連絡網の到達範囲と関節点を比較。実際の社会関係・影響力や一般の社会的計算は未評価。,coverage-hci-user.md,35,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5e,HCI,HCI-User,トピック,KA Core,5e,オンライン協働,部分,288で別画面の競合と確認、655で接続断後の変更統合を操作。実際の共同作業や他の協働形態は未評価。,coverage-hci-user.md,36,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5f,HCI,HCI-User,トピック,KA Core,5f,社会的調整とオンライン共同体,未照合,対応する依頼は未確認。,coverage-hci-user.md,37,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5g,HCI,HCI-User,トピック,KA Core,5g,アバター・キャラクター・仮想世界,未照合,利用者間の体験として扱う教材との対応は未確認。,coverage-hci-user.md,38,原典照合結果は監査記録参照
-HCI-User:トピック:Non-core:6,HCI,HCI-User,トピック,Non-core,6,複数利用者システム,部分,288で２画面と共有台帳の版・競合を扱う固定例。一般のシステム設計や実利用は未評価。,coverage-hci-user.md,39,原典照合結果は監査記録参照
-HCI-User:学習成果:CS Core:1,HCI,HCI-User,学習成果,CS Core,1,プロジェクトに統合した利用者中心設計,部分,188で架空の声・設計・場面確認を操作。実際のプロセスは未評価。,coverage-hci-user.md,45,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:2,HCI,HCI-User,学習成果,KA Core,2,利用者と設計者のニーズを比較,部分,188で旅人と維持担当を比較。実際の設計者との比較は未評価。,coverage-hci-user.md,46,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:3,HCI,HCI-User,学習成果,KA Core,3,代表的な利用者と他の影響を受ける人を特定,部分,188で旅人と維持担当を扱う。代表性・他の関係者の調査は未評価。,coverage-hci-user.md,47,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:4,HCI,HCI-User,学習成果,KA Core,4,共感と評価の役割を説明,部分,188で声を聞いて場面を確認。自由な説明は未評価。,coverage-hci-user.md,48,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:5,HCI,HCI-User,学習成果,KA Core,5,利用者とニーズの分析・記録,部分,188で架空の声と要求を選択。実際の分析・記録は未評価。,coverage-hci-user.md,49,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:6,HCI,HCI-User,学習成果,KA Core,6,ニーズ分析から利用者物語を作成,部分,87で２つの固定事情に合う立場・望み・理由を選択。実際の分析・自由な作成は未評価。,coverage-hci-user.md,50,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:7,HCI,HCI-User,学習成果,KA Core,7,異なる利用者集団向けに既存案を再設計,部分,22で３条件に合わせて案内板を改善。実際の集団への再設計は未評価。,coverage-hci-user.md,51,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:8,HCI,HCI-User,学習成果,KA Core,8,ニーズ発見の方法を比較,部分,188で面接・現場観察・試用、960で質問票の文面と招待方法を比較。実際の調査と一般の方法選択は未評価。,coverage-hci-user.md,52,原典照合結果は監査記録参照
-HCI-User:学習成果:KA Core:9,HCI,HCI-User,学習成果,KA Core,9,低技術・非技術の要素の有用性を考察,部分,188で紙と手作業の更新を扱う。実運用や他の選択肢は未評価。,coverage-hci-user.md,53,原典照合結果は監査記録参照
-HCI-User:学習成果:Non-core:10,HCI,HCI-User,学習成果,Non-core,10,複数利用者の状況で設計する影響,部分,188で旅人と維持担当の事情を確認。実際の複数利用者システムは未評価。,coverage-hci-user.md,54,原典照合結果は監査記録参照
+HCI-User:トピック:CS Core:1,HCI,HCI-User,トピック,CS Core,1,利用者中心の設計・評価方法,部分,ニーズ発見・形成的調査・面接・質問紙・試験の固定例は子を参照。実調査は未評価。,coverage-hci-user.md,9,原典照合結果は監査記録参照・親子重複候補
+HCI-User:トピック:CS Core:1a,HCI,HCI-User,トピック,CS Core,1a,設計者自身と利用者の違い,部分,188で旅人と維持担当の事情を確認。実際の当事者調査は未評価。,coverage-hci-user.md,10,原典照合結果は監査記録参照
+HCI-User:トピック:CS Core:1b,HCI,HCI-User,トピック,CS Core,1b,利用者のニーズ発見,部分,188で架空の３人の声を聞く。実際の調査は未評価。,coverage-hci-user.md,11,原典照合結果は監査記録参照
+HCI-User:トピック:CS Core:1c,HCI,HCI-User,トピック,CS Core,1c,形成的な調査,部分,188で設計前の声と場面確認を操作。実調査の設計・実施は未評価。,coverage-hci-user.md,12,原典照合結果は監査記録参照
+HCI-User:トピック:CS Core:1d,HCI,HCI-User,トピック,CS Core,1d,面接,部分,188で経験を詳しく知る方法として選択。実面接は行わない。,coverage-hci-user.md,13,原典照合結果は監査記録参照
+HCI-User:トピック:CS Core:1e,HCI,HCI-User,トピック,CS Core,1e,質問紙調査,部分,960で質問文の誘導・二重質問・選択肢と、２種類の招待・無回答を比較。実際の調査設計・実施と一般化は未評価。,coverage-hci-user.md,14,原典照合結果は監査記録参照
+HCI-User:トピック:CS Core:1f,HCI,HCI-User,トピック,CS Core,1f,ユーザビリティ試験,部分,188で時刻探しの試作品の試用を選択。実際の参加者による試験は未評価。,coverage-hci-user.md,15,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2,HCI,HCI-User,トピック,KA Core,2,利用者中心の設計手法,部分,人物像・利用者物語・関係者との協働などは子を参照。チームの形態に伴うリスクは未照合。,coverage-hci-user.md,16,原典照合結果は監査記録参照・親子重複候補
+HCI-User:トピック:KA Core:2a,HCI,HCI-User,トピック,KA Core,2a,ペルソナとその広がり,部分,961で架空の発言から仮の人物像を組み立て、推測と代表性の限界を確認。実際の調査に基づく複数の人物像は未評価。,coverage-hci-user.md,17,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2b,HCI,HCI-User,トピック,KA Core,2b,利用者物語と収集方法,部分,87で２つの固定事情から立場・望み・理由を組み立てる。実際の収集・自由な作成は未評価。,coverage-hci-user.md,18,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2c,HCI,HCI-User,トピック,KA Core,2c,共感マップ,部分,961で架空の発言、行動、本人が語った気持ちと要確認の推測を整理。実際の調査・自由な作成は未評価。,coverage-hci-user.md,19,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2d,HCI,HCI-User,トピック,KA Core,2d,ニーズの把握と要求収集,部分,87・188で架空の声と要求、３方法を扱う。実際の調査と分析は未評価。,coverage-hci-user.md,20,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2e,HCI,HCI-User,トピック,KA Core,2e,ジャーニーマップ,部分,961で架空の移動・通信断・紙の確認を順に並べ、改善案を選択。実際の調査・複数経路・自由な作成は未評価。,coverage-hci-user.md,21,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2f,HCI,HCI-User,トピック,KA Core,2f,設計の評価,部分,60・188で架空の評価記録と場面確認を操作。実際の利用者評価は未評価。,coverage-hci-user.md,22,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2g,HCI,HCI-User,トピック,KA Core,2g,チームで関係者と関わる,部分,650で架空の技師・伝令・通行者の事情と担当を整理。実際のチームや関係者との対話は未評価。,coverage-hci-user.md,23,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:2h,HCI,HCI-User,トピック,KA Core,2h,対面・分散・混合・仮想チームのリスク,未照合,対応する依頼は未確認。,coverage-hci-user.md,24,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:3,HCI,HCI-User,トピック,KA Core,3,利用者の身体的・認知的特性,部分,身体・認知と初期値の固定例は子を参照。人間の特性や心理全般は未評価。,coverage-hci-user.md,25,原典照合結果は監査記録参照・親子重複候補
+HCI-User:トピック:KA Core:3a,HCI,HCI-User,トピック,KA Core,3a,身体的能力と設計,部分,22・188で色以外の手がかりや座って使う場面を扱う。人の身体能力全般は未評価。,coverage-hci-user.md,26,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:3b,HCI,HCI-User,トピック,KA Core,3b,注意・知覚・記憶等の認知モデル,部分,966で準備時間を含む簡略 KLM、967で中断後の進捗表示と作業物を手がかりにした再開を比較。注意・知覚・記憶全体や実際の認知能力は未評価。,coverage-hci-user.md,27,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:3c,HCI,HCI-User,トピック,KA Core,3c,社会・行動心理と認知バイアス,部分,289 で初期値による選択割合の架空例を比較。実際の効果や心理学全般は未評価。,coverage-hci-user.md,28,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:4,HCI,HCI-User,トピック,KA Core,4,多様な利用者集団向け設計,部分,利用条件・国際化・評価・ユニバーサルデザインは子を参照。他文化・異文化設計は未照合。,coverage-hci-user.md,29,原典照合結果は監査記録参照・親子重複候補
+HCI-User:トピック:KA Core:4a,HCI,HCI-User,トピック,KA Core,4a,利用者の違いと経験・ニーズ,部分,22・188で異なる利用条件を扱う。人々の違い全般は未評価。,coverage-hci-user.md,30,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:4b,HCI,HCI-User,トピック,KA Core,4b,国際化,部分,962で同じ瞬間の３表示方法・３時間帯と日付の曖昧さを比較。963で2024年のニューヨークの夏時間境界と東京の通常日を比較。翻訳、他の暦・言語・文化や他の時間帯・年の規則は未評価。,coverage-hci-user.md,31,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:4c,HCI,HCI-User,トピック,KA Core,4c,他文化の利用者向け設計,未照合,対応する依頼は未確認。,coverage-hci-user.md,32,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:4d,HCI,HCI-User,トピック,KA Core,4d,異文化間の設計,未照合,対応する依頼は未確認。,coverage-hci-user.md,33,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:4e,HCI,HCI-User,トピック,KA Core,4e,標本・一般化・障害経験など評価の課題,部分,188で架空の調査は代表性を示さないと説明。実際の標本設計や一般化は未評価。,coverage-hci-user.md,34,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:4f,HCI,HCI-User,トピック,KA Core,4f,ユニバーサルデザイン,部分,22で異なる利用条件への工夫を操作。原則全体と参加型設計は未評価。,coverage-hci-user.md,35,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5,HCI,HCI-User,トピック,KA Core,5,協働とコミュニケーション,部分,同期・非同期通信、連絡網、協働の固定例は子を参照。社会的調整・仮想世界は未照合。,coverage-hci-user.md,36,原典照合結果は監査記録参照・親子重複候補
+HCI-User:トピック:KA Core:5a,HCI,HCI-User,トピック,KA Core,5a,複数利用者の状況,部分,188で旅人と維持担当の事情を比較。実際の複数利用者システムは未評価。,coverage-hci-user.md,37,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5b,HCI,HCI-User,トピック,KA Core,5b,同期的な集団通信,部分,964で２時刻の生放送と受信者を比較。実際の会議や相互作用は未評価。,coverage-hci-user.md,38,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5c,HCI,HCI-User,トピック,KA Core,5c,非同期の集団通信,部分,964で掲示板の記録と後からの確認を比較。実際の掲示板や配信保証は未評価。,coverage-hci-user.md,39,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5d,HCI,HCI-User,トピック,KA Core,5d,社会的計算・ソーシャルネットワーク分析,部分,965で架空の無向連絡網の到達範囲と関節点を比較。実際の社会関係・影響力や一般の社会的計算は未評価。,coverage-hci-user.md,40,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5e,HCI,HCI-User,トピック,KA Core,5e,オンライン協働,部分,288で別画面の競合と確認、655で接続断後の変更統合を操作。実際の共同作業や他の協働形態は未評価。,coverage-hci-user.md,41,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5f,HCI,HCI-User,トピック,KA Core,5f,社会的調整とオンライン共同体,未照合,対応する依頼は未確認。,coverage-hci-user.md,42,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5g,HCI,HCI-User,トピック,KA Core,5g,アバター・キャラクター・仮想世界,未照合,利用者間の体験として扱う教材との対応は未確認。,coverage-hci-user.md,43,原典照合結果は監査記録参照
+HCI-User:トピック:Non-core:6,HCI,HCI-User,トピック,Non-core,6,複数利用者システム,部分,288で２画面と共有台帳の版・競合を扱う固定例。一般のシステム設計や実利用は未評価。,coverage-hci-user.md,44,原典照合結果は監査記録参照
+HCI-User:学習成果:CS Core:1,HCI,HCI-User,学習成果,CS Core,1,プロジェクトに統合した利用者中心設計,部分,188で架空の声・設計・場面確認を操作。実際のプロセスは未評価。,coverage-hci-user.md,50,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:2,HCI,HCI-User,学習成果,KA Core,2,利用者と設計者のニーズを比較,部分,188で旅人と維持担当を比較。実際の設計者との比較は未評価。,coverage-hci-user.md,51,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:3,HCI,HCI-User,学習成果,KA Core,3,代表的な利用者と他の影響を受ける人を特定,部分,188で旅人と維持担当を扱う。代表性・他の関係者の調査は未評価。,coverage-hci-user.md,52,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:4,HCI,HCI-User,学習成果,KA Core,4,共感と評価の役割を説明,部分,188で声を聞いて場面を確認。自由な説明は未評価。,coverage-hci-user.md,53,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:5,HCI,HCI-User,学習成果,KA Core,5,利用者とニーズの分析・記録,部分,188で架空の声と要求を選択。実際の分析・記録は未評価。,coverage-hci-user.md,54,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:6,HCI,HCI-User,学習成果,KA Core,6,ニーズ分析から利用者物語を作成,部分,87で２つの固定事情に合う立場・望み・理由を選択。実際の分析・自由な作成は未評価。,coverage-hci-user.md,55,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:7,HCI,HCI-User,学習成果,KA Core,7,異なる利用者集団向けに既存案を再設計,部分,22で３条件に合わせて案内板を改善。実際の集団への再設計は未評価。,coverage-hci-user.md,56,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:8,HCI,HCI-User,学習成果,KA Core,8,ニーズ発見の方法を比較,部分,188で面接・現場観察・試用、960で質問票の文面と招待方法を比較。実際の調査と一般の方法選択は未評価。,coverage-hci-user.md,57,原典照合結果は監査記録参照
+HCI-User:学習成果:KA Core:9,HCI,HCI-User,学習成果,KA Core,9,低技術・非技術の要素の有用性を考察,部分,188で紙と手作業の更新を扱う。実運用や他の選択肢は未評価。,coverage-hci-user.md,58,原典照合結果は監査記録参照
+HCI-User:学習成果:Non-core:10,HCI,HCI-User,学習成果,Non-core,10,複数利用者の状況で設計する影響,部分,188で旅人と維持担当の事情を確認。実際の複数利用者システムは未評価。,coverage-hci-user.md,59,原典照合結果は監査記録参照
 MSF-Calculus:トピック:未記載:1,MSF,MSF-Calculus,トピック,未記載,1,数列・級数・極限,部分,116で４歩の近づきと往復。一般の極限や級数は未評価。,coverage-msf-calculus.md,9,原典照合結果は監査記録参照・区分を要確認
 MSF-Calculus:トピック:未記載:2,MSF,MSF-Calculus,トピック,未記載,2,一変数の導関数、計算規則と応用,部分,473で二次関数の差商を操作。一般の微分規則は未評価。,coverage-msf-calculus.md,10,原典照合結果は監査記録参照・区分を要確認
 MSF-Calculus:トピック:未記載:3,MSF,MSF-Calculus,トピック,未記載,3,一変数の積分,部分,474で速度の長方形近似と基本定理の固定例。一般の積分規則は未評価。,coverage-msf-calculus.md,11,原典照合結果は監査記録参照・区分を要確認
