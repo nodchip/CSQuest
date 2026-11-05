@@ -1860,7 +1860,7 @@ GIT-Simulation:トピック:KA Core:1c,GIT,GIT-Simulation,トピック,KA Core,1
 GIT-Simulation:トピック:KA Core:1d,GIT,GIT-Simulation,トピック,KA Core,1d,辺同士,部分,848で２次元の格子上の線分の交差・端点接触・同一直線上の重なり・離れを判定。３次元や動き・応答は未評価。,coverage-git-simulation.md,14,原典照合結果は監査記録参照
 GIT-Simulation:トピック:KA Core:2,GIT,GIT-Simulation,トピック,KA Core,2,ノイズによる手続き型アニメーション,部分,854で固定した基準値の保持・直線・滑らかな補間を時間に沿って再生。乱数生成、勾配ノイズや多次元の動きは未評価。,coverage-git-simulation.md,15,原典照合結果は監査記録参照
 GIT-Simulation:トピック:KA Core:3,GIT,GIT-Simulation,トピック,KA Core,3,粒子系,部分,子項目３a〜３eの固定例を参照。粒子系全般の構築や一般的な精度・安定性は未評価。,coverage-git-simulation.md,16,原典照合結果は監査記録参照・親子重複候補
-GIT-Simulation:トピック:KA Core:3a,GIT,GIT-Simulation,トピック,KA Core,3a,粒子の積分法,部分,209で一定加速度と２つの更新順。一般の安定性は未評価。,coverage-git-simulation.md,17,原典照合結果は監査記録参照
+GIT-Simulation:トピック:KA Core:3a,GIT,GIT-Simulation,トピック,KA Core,3a,粒子の積分法,部分,209で一定加速度の前進・半陰的オイラー法と中点法を比較。リープフロッグ法や一般の安定性は未評価。,coverage-git-simulation.md,17,原典照合結果は監査記録参照
 GIT-Simulation:トピック:KA Core:3b,GIT,GIT-Simulation,トピック,KA Core,3b,質点・ばねのネットワーク,部分,214で１質点とばね。複数質点の網は未評価。,coverage-git-simulation.md,18,原典照合結果は監査記録参照
 GIT-Simulation:トピック:KA Core:3c,GIT,GIT-Simulation,トピック,KA Core,3c,位置ベースの力学,部分,851で固定された１次元３粒の距離制約を順に修正。速度、外力、衝突、一般の収束は未評価。,coverage-git-simulation.md,19,原典照合結果は監査記録参照
 GIT-Simulation:トピック:KA Core:3d,GIT,GIT-Simulation,トピック,KA Core,3d,群れ等の規則,部分,849で速度合わせ・集合・分離の８組合せを３羽・一次元・１刻みで比較。視野、障害物や長期の群れは未評価。,coverage-git-simulation.md,20,原典照合結果は監査記録参照
