@@ -1489,7 +1489,7 @@ FPL-Syntax:学習成果:Non-core:1,FPL,FPL-Syntax,学習成果,Non-core,1,形式
 FPL-Syntax:学習成果:Non-core:2,FPL,FPL-Syntax,学習成果,Non-core,2,先読み表の役割を例示,部分,314で１文字先読みと表を使用。一般の表の生成は未評価。,coverage-fpl-syntax.md,27,原典照合結果は監査記録参照
 FPL-Syntax:学習成果:Non-core:3,FPL,FPL-Syntax,学習成果,Non-core,3,宣言的ツールで解析器を生成,未照合,実ツールの利用・生成は未確認。,coverage-fpl-syntax.md,28,原典照合結果は監査記録参照
 FPL-Syntax:学習成果:Non-core:4,FPL,FPL-Syntax,学習成果,Non-core,4,曖昧性・結合・優先順位,部分,75・310で式の優先順位と結合を比較。一般的な分析は未評価。,coverage-fpl-syntax.md,29,原典照合結果は監査記録参照
-FPL-Systems:トピック:CS Core:1,FPL,FPL-Systems,トピック,CS Core,1,実行・翻訳等のスタック、ヒープ、別名、添字付き列、文字列,部分,171でリスト、173で配列配置、203・782で別名、388・560・774でスタックやヒープ。文字列とコード移動の実行時表現は未評価。,coverage-fpl-systems.md,9,原典照合結果は監査記録参照
+FPL-Systems:トピック:CS Core:1,FPL,FPL-Systems,トピック,CS Core,1,翻訳・実行・コード移動等のスタック、ヒープ、別名、添字付き列、文字列,部分,171でリスト、173で配列配置、203・782で別名、388・560・774でスタックやヒープ。文字列とコード移動の実行時表現は未評価。,coverage-fpl-systems.md,9,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:2,FPL,FPL-Systems,トピック,CS Core,2,メモリ位置への直接・間接・添字アクセス,部分,782で固定された棚の３通りの読取りと別名による書換え。任意のアドレスや実際の命令規則は未評価。,coverage-fpl-systems.md,10,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:3,FPL,FPL-Systems,トピック,CS Core,3,変数、配列、ベクトル、レコード、参照構造やオブジェクトの実行時表現,部分,171・173でリストと配列、582で個体とクラスの変数。一般の配置やレコード・木・オブジェクト全体の低水準表現は未評価。,coverage-fpl-systems.md,11,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:4,FPL,FPL-Systems,トピック,CS Core,4,命令・スタック・ヒープを持つ低水準抽象機械,部分,73で命令実行、560で呼出しスタック、774で環境と回収を別々に操作。一体の低水準機械と翻訳は未評価。,coverage-fpl-systems.md,12,原典照合結果は監査記録参照
@@ -1502,7 +1502,7 @@ FPL-Systems:トピック:CS Core:6a,FPL,FPL-Systems,トピック,CS Core,6a,基�
 FPL-Systems:トピック:CS Core:6b,FPL,FPL-Systems,トピック,CS Core,6b,復帰時の局所データの自動解放,部分,388で局所の寿命、774で呼出し枠が戻る例。言語処理系一般の配置は未評価。,coverage-fpl-systems.md,19,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:6c,FPL,FPL-Systems,トピック,CS Core,6c,ヒープの手動確保・解放・再利用,部分,388で箱の確保と解放、203で解放後の別名、786で同じ棚の再利用と古いキーを比較。一般のアロケータや実ポインタは未評価。,coverage-fpl-systems.md,20,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:6d,FPL,FPL-Systems,トピック,CS Core,6d,到達可能性に基づく自動回収,部分,201・774で根から到達する箱、202で参照カウントの循環。実際の GC 戦略全般は未評価。,coverage-fpl-systems.md,21,原典照合結果は監査記録参照
-FPL-Systems:トピック:CS Core:7,FPL,FPL-Systems,トピック,CS Core,7,グリーンコンピューティング,部分,91・161でエネルギーの固定模型。言語処理系と実測の関係は未評価。,coverage-fpl-systems.md,22,原典照合結果は監査記録参照
+FPL-Systems:トピック:CS Core:7,FPL,FPL-Systems,トピック,CS Core,7,グリーンコンピューティング,部分,91・161でエネルギーの固定模型、1223で実行時間と平均電力を仮定して比較。実処理系の測定や環境負荷全体は未評価。,coverage-fpl-systems.md,22,原典照合結果は監査記録参照
 FPL-Systems:学習成果:CS Core:1,FPL,FPL-Systems,学習成果,CS Core,1,データ・制御の基本構成の実行を説明,部分,173・204・560・782で配置・分岐・呼出し・読取りを操作。一般的な説明は未評価。,coverage-fpl-systems.md,28,原典照合結果は監査記録参照
 FPL-Systems:学習成果:CS Core:2,FPL,FPL-Systems,学習成果,CS Core,2,大域・コード・ヒープ・スタックと再帰・メモリ管理,部分,388・560・774で寿命・呼出し・環境、785で命令・大域・枠・ヒープの固定実行。一般の説明は未評価。,coverage-fpl-systems.md,29,原典照合結果は監査記録参照
 FPL-Systems:学習成果:CS Core:3,FPL,FPL-Systems,学習成果,CS Core,3,リークとダングリング参照の原因・対策,部分,171・201・202・203で参照喪失、回収、循環と解放後の別名、786で世代付きキーを操作。一般の対策や自由な説明は未評価。,coverage-fpl-systems.md,30,原典照合結果は監査記録参照

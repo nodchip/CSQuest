@@ -701,6 +701,17 @@
         "src/app.js": "689430b61423ae486a03f8e20e268a3ce1b2ab580708a1fbfbf0fdad51ac5a95",
         "tests/language-orthogonality.test.js": "b33c64cfbf94a479189edd5ae4c41c20df6ecacdb54683deab8acb2c5c87275e"
       }
+    },
+    "FPL-Systems:トピック:CS Core:6c": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-systems-reuse.md",
+      "row_sha256": "50a14c688185f3545a6048f38c01389d1988eb89dc1a7c3beb0af9f53dd20132",
+      "files": {
+        "src/arena-reuse.js": "a457dccbc81a8317e390c1cf1071151642a95c8871490101c97ac8c5b4cadd15",
+        "src/app.js": "689430b61423ae486a03f8e20e268a3ce1b2ab580708a1fbfbf0fdad51ac5a95",
+        "tests/arena-reuse.test.js": "78aedc9126381cdd92531645854b541dd30540e914e3423b2c48fb89cfb63823"
+      }
     }
   }
 }
