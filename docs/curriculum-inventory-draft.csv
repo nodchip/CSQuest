@@ -1446,7 +1446,7 @@ FPL-Scripting:トピック:未記載:5,FPL,FPL-Scripting,トピック,未記載,
 FPL-Scripting:トピック:未記載:6,FPL,FPL-Scripting,トピック,未記載,6,配列・リストなどのデータ構造,部分,151で配列の位置を順にたどり、赤い札を重複を保って抽出。シェルの構文や一般のデータ構造の操作は未評価。,coverage-fpl-scripting.md,14,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:トピック:未記載:7,FPL,FPL-Scripting,トピック,未記載,7,正規表現,部分,154で開始・終了、文字条件と繰返しの固定例。方言や一般のパターンは未評価。,coverage-fpl-scripting.md,15,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:トピック:未記載:8,FPL,FPL-Scripting,トピック,未記載,8,プログラムとプロセス,部分,153で子の起動時の環境を比較。一般のプロセス生成・管理は未評価。,coverage-fpl-scripting.md,16,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:9,FPL,FPL-Scripting,トピック,未記載,9,ワークフロー,部分,151で複数の処理を組合せる。実際の自動化や多様なワークフローは未評価。,coverage-fpl-scripting.md,17,原典照合結果は監査記録参照・区分を要確認
+FPL-Scripting:トピック:未記載:9,FPL,FPL-Scripting,トピック,未記載,9,ワークフロー,部分,151で複数の処理を組合せ、３入力に繰り返して失敗の報告を比較。実際の自動化や多様なワークフローは未評価。,coverage-fpl-scripting.md,17,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:学習成果:未記載:1,FPL,FPL-Scripting,学習成果,未記載,1,システムの仕事を自動化するスクリプトを作成・実行,部分,151で処理の順序を組み立てる代替体験。実システムの操作、スクリプトの記述と実行は直接評価しない。,coverage-fpl-scripting.md,23,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:学習成果:未記載:2,FPL,FPL-Scripting,学習成果,未記載,2,スクリプトを用いて様々なテキスト処理を解く,部分,151で固定の選択・整列・件数、154で文字パターンを操作。実言語による多様な処理は評価しない。,coverage-fpl-scripting.md,24,原典照合結果は監査記録参照・区分を要確認
 FPL-Semantics:トピック:Non-core:1,FPL,FPL-Semantics,トピック,Non-core,1,抽象構文木と具体構文,部分,75で固定の算術式の木を組む。具体構文との一般的な比較は未評価。,coverage-fpl-semantics.md,9,原典照合結果は監査記録参照
@@ -3498,7 +3498,7 @@ SPD-Common:トピック:未記載:3,SPD,SPD-Common,トピック,未記載,3,プ�
 SPD-Common:トピック:未記載:4,SPD,SPD-Common,トピック,未記載,4,プラットフォームの制約・要件下でのプログラミング,部分,356 で固定の通信・待ち時間制約を比較。実際のプログラムと安全性は未評価。,coverage-spd-common.md,19,原典照合結果は監査記録参照・区分を要確認
 SPD-Common:トピック:未記載:5,SPD,SPD-Common,トピック,未記載,5,固有言語の学習・習熟方法,未照合,学習方法と実際の習熟の照合が必要。,coverage-spd-common.md,20,原典照合結果は監査記録参照・区分を要確認
 SPD-Common:学習成果:未記載:1,SPD,SPD-Common,学習成果,未記載,1,モバイルプログラミングの制約を列挙,部分,354・356 で通信断と遅れを操作。他の制約や自由な列挙は未評価。,coverage-spd-common.md,26,原典照合結果は監査記録参照・区分を要確認
-SPD-Common:学習成果:未記載:2,SPD,SPD-Common,学習成果,未記載,2,スクリプト言語の特徴を列挙,未照合,言語の特徴と比較を確認する必要がある。,coverage-spd-common.md,27,原典照合結果は監査記録参照・区分を要確認
+SPD-Common:学習成果:未記載:2,SPD,SPD-Common,学習成果,未記載,2,スクリプト言語の特徴を列挙,部分,151で道具の連結と複数入力への繰返し、失敗を区別する固定例を操作。一般の言語の特徴や自由な列挙は未評価。,coverage-spd-common.md,27,原典照合結果は監査記録参照・区分を要確認
 SPD-Common:学習成果:未記載:3,SPD,SPD-Common,学習成果,未記載,3,Web の３層モデルを説明,部分,803 で画面・処理・データの役割と固定の申込みを操作。一般の構成や自由な説明は未評価。,coverage-spd-common.md,28,原典照合結果は監査記録参照・区分を要確認
 SPD-Common:学習成果:未記載:4,SPD,SPD-Common,学習成果,未記載,4,Web の状態維持を説明,部分,354 の端末内の送信待ち、804 の Cookie とサーバー側の記録による状態維持の模型。実装や他の方法は未評価。,coverage-spd-common.md,29,原典照合結果は監査記録参照・区分を要確認
 SPD-Embedded:トピック:KA Core:1a,SPD,SPD-Embedded,トピック,KA Core,1a,リアルタイム、ソフトリアルタイム、非リアルタイム,部分,依頼133で２仕事の期限を扱い、期限超過を許せるかの違いに触れる。用途別の体系的な比較は未対応,coverage-spd-embedded.md,9,原典照合結果は監査記録参照

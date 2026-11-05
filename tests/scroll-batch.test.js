@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {scrollBatchTrace,scrollBatchCreate,scrollBatchDone,scrollBatchRestore,createScroll,restoreScroll} from '../src/scroll-pipeline.js';
+test('the same workflow processes three inputs while the error policy changes only the failed input',()=>{assert.deepEqual(scrollBatchTrace('zero',3).map(r=>[r.kind,r.value]),[['number',3],['number',0],['number',0]]);assert.deepEqual(scrollBatchTrace('report',3).map(r=>[r.kind,r.value]),[['number',3],['number',0],['read-error',null]]);assert.throws(()=>scrollBatchTrace('report',4));});
+test('both policies and a reflection are required, and old records restore independently',()=>{const q=scrollBatchCreate();q.steps={zero:3,report:3};assert(!scrollBatchDone(q));q.answer='distinguish';assert(scrollBatchDone(q));const r=scrollBatchRestore(q);r.steps.zero=0;assert.equal(q.steps.zero,3);assert.throws(()=>scrollBatchRestore({...q,steps:{zero:-1,report:3}}));const {batch,...old}=createScroll();assert.deepEqual(restoreScroll(old),createScroll());});
