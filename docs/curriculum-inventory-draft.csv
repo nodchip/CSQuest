@@ -1660,8 +1660,8 @@ GIT-Image:トピック:KA Core:1a,GIT,GIT-Image,トピック,KA Core,1a,連結�
 GIT-Image:トピック:KA Core:1b,GIT,GIT-Image,トピック,KA Core,1b,膨張,部分,139・140・728で十字近傍の固定例。一般の構造要素は未評価。,coverage-git-image.md,11,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:1c,GIT,GIT-Image,トピック,KA Core,1c,収縮,部分,139・140・728で十字近傍の固定例。一般の構造要素は未評価。,coverage-git-image.md,12,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:1d,GIT,GIT-Image,トピック,KA Core,1d,面積・周長・重心など,部分,232で画素数・外接矩形、画素の辺を数える周囲と重心を比較。一般の領域や実際の輪郭推定は未評価。,coverage-git-image.md,13,原典照合結果は監査記録参照
-GIT-Image:トピック:KA Core:2,GIT,GIT-Image,トピック,KA Core,2,色ヒストグラム,部分,724で灰色値の画素数と伸張を操作。カラーの複数チャンネルや一般の画像は未評価。,coverage-git-image.md,14,原典照合結果は監査記録参照・親子重複候補
-GIT-Image:トピック:KA Core:2a,GIT,GIT-Image,トピック,KA Core,2a,色ヒストグラムの表現,部分,724で灰色値ごとの画素数を表示。カラーの複数チャンネルや一般の区間は未評価。,coverage-git-image.md,15,原典照合結果は監査記録参照
+GIT-Image:トピック:KA Core:2,GIT,GIT-Image,トピック,KA Core,2,色ヒストグラム,部分,724で灰色値の画素数と伸張、４画素の RGB 各成分の画素数を操作。一般の画像は未評価。,coverage-git-image.md,14,原典照合結果は監査記録参照・親子重複候補
+GIT-Image:トピック:KA Core:2a,GIT,GIT-Image,トピック,KA Core,2a,色ヒストグラムの表現,部分,724で灰色値と、３値の RGB 各成分の画素数を表示。一般の区間、色成分の同時分布や実画像は未評価。,coverage-git-image.md,15,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:2b,GIT,GIT-Image,トピック,KA Core,2b,正規化によるコントラスト強調,部分,724で最小・最大を使う線形な伸張とノイズ・一色の例。カラー、外れ値、実画像は未評価。,coverage-git-image.md,16,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:3,GIT,GIT-Image,トピック,KA Core,3,画像の強調,部分,141・725・808・809等の空間・周波数の固定例。一般の画像やフィルタは未評価。,coverage-git-image.md,17,原典照合結果は監査記録参照・親子重複候補
 GIT-Image:トピック:KA Core:3a,GIT,GIT-Image,トピック,KA Core,3a,畳み込み,部分,141・661で１次元、725で対称な３×３窓の局所積和を操作。非対称な核を使った畳み込みと相互相関の比較、一般の画像や核は未評価。,coverage-git-image.md,18,原典照合結果は監査記録参照
