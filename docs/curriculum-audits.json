@@ -816,6 +816,14 @@
       "topics": 34,
       "outcomes": 14,
       "scope_sha256": "6bcd7a997f4d2f8dacaade739a205761d2fe341aa140665a38019ecd3704d03f"
+    },
+    "GIT-Visualization": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-visualization.md",
+      "topics": 25,
+      "outcomes": 7,
+      "scope_sha256": "56d97d029809b4da8e5e330523448b85ae5b017077a5a01f6c9e642f8101ea77"
     }
   }
 }
