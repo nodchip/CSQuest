@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {treeCases,treeExperiment,transformTree,evaluateTree,createTreeMeta,restoreTreeMeta} from '../src/meta-tree.js';
+import {createMetaLab,restoreMetaLab} from '../src/meta-expression.js';
+test('rewriting the root and recursively visiting children produce the expected trees without mutation',()=>{const before=JSON.stringify(treeCases),expected={simple:[1,1],nested:[3,1],zero:[3,1],keep:[3,3]};for(const [id,counts] of Object.entries(expected))for(const [i,mode] of ['root','recursive'].entries()){const r=treeExperiment(id,mode);assert.equal(r.nodes,counts[i]);assert.equal(r.before,r.after);for(let x=-5;x<=5;x++)assert.equal(evaluateTree(transformTree(treeCases[id].tree,mode),x),evaluateTree(treeCases[id].tree,x));}assert.equal(JSON.stringify(treeCases),before);});
+test('older syntax labs acquire independent tree progress',()=>{const m=createMetaLab();delete m.tree;assert.deepEqual(restoreMetaLab(m).tree,createTreeMeta());const t=createTreeMeta();t.seen=['zero:root'];const copy=restoreTreeMeta(t);copy.seen.push('zero:recursive');assert.equal(t.seen.length,1);assert.throws(()=>restoreTreeMeta({...t,seen:['bad']}));});

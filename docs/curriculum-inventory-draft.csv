@@ -1279,7 +1279,7 @@ FPL-Functional:トピック:CS Core:3,FPL,FPL-Functional,トピック,CS Core,3,
 FPL-Functional:トピック:CS Core:3a,FPL,FPL-Functional,トピック,CS Core,3a,部分への関数適用から複合データを処理,部分,773で左右の結果と節を組合せ、合計と節の数を計算。任意の木や関数は未評価。,coverage-fpl-functional.md,18,原典照合結果は監査記録参照
 FPL-Functional:トピック:CS Core:3b,FPL,FPL-Functional,トピック,CS Core,3b,永続データ構造,部分,590で一方向の鎖の版と末尾共有。一般の構造・計算量は未評価。,coverage-fpl-functional.md,19,原典照合結果は監査記録参照
 FPL-Functional:トピック:CS Core:4,FPL,FPL-Functional,トピック,CS Core,4,関数を受取り・返し・保持する高階関数,部分,52・592で生成と合成、773で固定の集約方法を選択。自由な関数定義は評価しない。,coverage-fpl-functional.md,20,原典照合結果は監査記録参照
-FPL-Functional:トピック:KA Core:5,FPL,FPL-Functional,トピック,KA Core,5,メタプログラミングとリフレクション,部分,779で式の形を調べ別の式の札を作る固定模型。実言語のマクロ・束縛や一般的な反射機構は未評価。,coverage-fpl-functional.md,21,原典照合結果は監査記録参照
+FPL-Functional:トピック:KA Core:5,FPL,FPL-Functional,トピック,KA Core,5,メタプログラミングとリフレクション,部分,779で式の形を調べ別の式を作り、根だけと再帰的な木の変換を比較。実言語のマクロ・束縛や一般的な反射機構は未評価。,coverage-fpl-functional.md,21,原典照合結果は監査記録参照
 FPL-Functional:トピック:KA Core:6,FPL,FPL-Functional,トピック,KA Core,6,クロージャ,部分,52・591・594で束縛とコールバック。一般の実行機構は未評価。,coverage-fpl-functional.md,22,原典照合結果は監査記録参照・親子重複候補
 FPL-Functional:トピック:KA Core:6a,FPL,FPL-Functional,トピック,KA Core,6a,実行時の環境捕捉とクロージャの意味,部分,52・591で生成ごとの束縛、774で環境への参照と寿命を操作。一般の環境表現は未評価。,coverage-fpl-functional.md,23,原典照合結果は監査記録参照
 FPL-Functional:トピック:KA Core:6b,FPL,FPL-Functional,トピック,KA Core,6b,コールバック・反復子・関数引数の再利用,部分,594で固定のコールバック、592で関数合成、51で列処理。実言語の定義は評価しない。,coverage-fpl-functional.md,24,原典照合結果は監査記録参照
