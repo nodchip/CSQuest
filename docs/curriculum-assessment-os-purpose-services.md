@@ -1,0 +1,11 @@
+# 項目別評価：OS の仲介と機能
+
+2026-11-05 に [CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 pp.206–207、依頼54・382・674の実装と試験、依頼382の公開版を照合した。対象はトピック１と例示学習成果１。
+
+## 評価 — いずれも部分対応
+
+原典は OS による汎用ハードウェアと用途別ソフトウェアの仲介、および現代の OS の目的と機能を扱う。依頼54は保護された装置への直接操作と OS を通した許可・拒否、674は２装置の異なる操作と共通窓口・担当・権限、382は記録の仲介・同期と読出し権限を固定模型で比較する。一般の装置や API、プロセス・資源管理を含む OS 機能の全体像、自由な説明は評価しないため両行とも部分とする。
+
+[OSTEP の OS 入門](https://pages.cs.wisc.edu/~remzi/OSTEP/intro.pdf)、[Linux の装置モデル](https://docs.kernel.org/driver-api/driver-model/overview.html)、[Linux fsync の説明](https://man7.org/linux/man-pages/man2/fsync.2.html)を参照。依頼382の同期失敗後に旧記録が残るのはその場面の仮定であり、実際のエラー後の内容や名前の永続性を保証しない。依頼674の装置担当と認可も模型の前提で、実ドライバーの検出や安全性を示さない。
+
+`tests/os-service.test.js`、`tests/syscall.test.js`、`tests/device-bridge.test.js` の８件が成功。390px幅の公開版で依頼382の３場面と振り返りを達成し、エラー後の限界表示と横あふれがないことを確認。誤操作と途中再開は同期失敗の追加時に確認した。実装・運用能力や実機の耐久性は評価しない。

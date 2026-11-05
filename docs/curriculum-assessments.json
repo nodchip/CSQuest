@@ -223,6 +223,36 @@
         "tests/forwarding.test.js": "563ce5e477703fa6d36f8a8ccd0befca972c2dc28ddecf391164915084bbc7d4",
         "tests/prefix.test.js": "374978f214d17dd8c7188ae76397f1ccb379bcf4c5c010ec3c2b27669d4b3e70"
       }
+    },
+    "OS-Purpose:トピック:CS Core:1": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-os-purpose-services.md",
+      "row_sha256": "9dd05d0ac4c3755d948032f18305f477f5d4116f83259fc5399757c49640f683",
+      "files": {
+        "src/os-service.js": "ee0c11e821a8874beaa83d33816ad9e7c23a55fe720e8f67e85e63c8dd717fd4",
+        "src/syscall.js": "6abcafa19874e56f71fc664f77b097b9483dec394e7d8e1c087e07199346979c",
+        "src/device-bridge.js": "6329bb8f47d2f8f53353eab20f1745673529d1c9f7a3b11d1094352a8c7bbce9",
+        "src/app.js": "39f3ad670304087f622de34b4ed621377d7f6cb522f3c434320c2cd524bd00e5",
+        "tests/os-service.test.js": "3d1f2ffcd159fa2fcd8b2b9a97b3774db4d772c8ac482d1972a019275bfe2ed3",
+        "tests/syscall.test.js": "ae5a802f12cdf121dc19e9f49b3f22ed67c1a2c9be28e364ae95748b6833ba47",
+        "tests/device-bridge.test.js": "6526df0024f4f690647d45dee6aaed73bee2feeeb7902732a21a8a039ea4bb7c"
+      }
+    },
+    "OS-Purpose:学習成果:CS Core:1": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-os-purpose-services.md",
+      "row_sha256": "2a521d997c81262c33fabd27c927c8b554f4ab7fb2a06c83c2ea4b9c29045bb4",
+      "files": {
+        "src/os-service.js": "ee0c11e821a8874beaa83d33816ad9e7c23a55fe720e8f67e85e63c8dd717fd4",
+        "src/syscall.js": "6abcafa19874e56f71fc664f77b097b9483dec394e7d8e1c087e07199346979c",
+        "src/device-bridge.js": "6329bb8f47d2f8f53353eab20f1745673529d1c9f7a3b11d1094352a8c7bbce9",
+        "src/app.js": "39f3ad670304087f622de34b4ed621377d7f6cb522f3c434320c2cd524bd00e5",
+        "tests/os-service.test.js": "3d1f2ffcd159fa2fcd8b2b9a97b3774db4d772c8ac482d1972a019275bfe2ed3",
+        "tests/syscall.test.js": "ae5a802f12cdf121dc19e9f49b3f22ed67c1a2c9be28e364ae95748b6833ba47",
+        "tests/device-bridge.test.js": "6526df0024f4f690647d45dee6aaed73bee2feeeb7902732a21a8a039ea4bb7c"
+      }
     }
   }
 }
