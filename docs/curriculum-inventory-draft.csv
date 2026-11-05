@@ -1749,7 +1749,7 @@ GIT-Interaction:学習成果:Non-core:6,GIT,GIT-Interaction,学習成果,Non-cor
 GIT-Modeling:トピック:KA Core:1,GIT,GIT-Modeling,トピック,KA Core,1,二次元図形の交差・近接判定,部分,94で一次元の衝突、720で水平な視線と長方形の交差を操作。一般の２次元形状・近接は未評価。,coverage-git-modeling.md,9,原典照合結果は監査記録参照
 GIT-Modeling:トピック:KA Core:2,GIT,GIT-Modeling,トピック,KA Core,2,曲面の表現とモデル,部分,142・145・722・1174の限られた２次元例と空間分割。一般の曲面モデルは未評価。,coverage-git-modeling.md,10,原典照合結果は監査記録参照・親子重複候補
 GIT-Modeling:トピック:KA Core:2a,GIT,GIT-Modeling,トピック,KA Core,2a,曲面の分割,部分,145で平面五角形の耳切り。一般の３次元曲面は未評価。,coverage-git-modeling.md,11,原典照合結果は監査記録参照
-GIT-Modeling:トピック:KA Core:2b,GIT,GIT-Modeling,トピック,KA Core,2b,メッシュ表現・平滑化・生成,部分,145で２次元多角形の三角形分割。曲面メッシュ、Delaunay・marching cubes・marching tetrahedrons 等は未評価。,coverage-git-modeling.md,12,原典照合結果は監査記録参照
+GIT-Modeling:トピック:KA Core:2b,GIT,GIT-Modeling,トピック,KA Core,2b,メッシュ表現・平滑化・生成,部分,145で２次元多角形の三角形分割、723で１マスの等値線の辺との交点を選ぶ。曲面メッシュ、Delaunay・marching cubes・marching tetrahedrons 等は未評価。,coverage-git-modeling.md,12,原典照合結果は監査記録参照
 GIT-Modeling:トピック:KA Core:2c,GIT,GIT-Modeling,トピック,KA Core,2c,パラメトリックな多項式曲線・曲面,部分,142で２次ベジェ曲線の固定制御点と複数パラメータを操作。一般の曲線・曲面は未評価。,coverage-git-modeling.md,13,原典照合結果は監査記録参照
 GIT-Modeling:トピック:KA Core:2d,GIT,GIT-Modeling,トピック,KA Core,2d,曲線・曲面の陰的表現,部分,722で半径２の円の陰的な条件と媒介変数による点を比較。723で同じ円の符号付き距離と陰的な式を比較。一般の曲線・曲面や他形状の距離場は未評価。,coverage-git-modeling.md,14,原典照合結果は監査記録参照
 GIT-Modeling:トピック:KA Core:2e,GIT,GIT-Modeling,トピック,KA Core,2e,空間分割,部分,1174で４×４×４空間を八分し、各領域をさらに分割。一般の分割・性能は未評価。,coverage-git-modeling.md,15,原典照合結果は監査記録参照

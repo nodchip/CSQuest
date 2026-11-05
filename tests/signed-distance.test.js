@@ -13,3 +13,10 @@ test('all grid points belong to exactly one case, and each case needs the exact 
 test('completion requires all classifications and correct checked comparison; drafts are validated and copied',()=>{
  const s=distanceCreate();for(const id of Object.keys(distanceCases))s.trials[id]={points:distanceExpected(id),checked:true};assert.equal(distanceComplete(s),false);s.answer='different';s.answerChecked=true;assert.equal(distanceComplete(s),true);const copy=distanceRestore(s);copy.trials.inside.points.pop();assert.equal(distanceComplete(copy),false);assert.equal(distanceComplete(s),true);s.trials.inside.points=[1,1];assert.throws(()=>distanceRestore(s));assert.throws(()=>distanceRestore({...distanceCreate(),answer:'bad'}));
 });
+
+test('older drafts receive an independent contour exercise',()=>{
+ const old=distanceCreate();delete old.contour;old.trials.inside.points=[6];
+ const restored=distanceRestore(old);
+ assert.deepEqual(restored.contour,{mask:1,selected:[],checked:[],feedback:false});
+ assert.deepEqual(restored.trials.inside.points,[6]);
+});
