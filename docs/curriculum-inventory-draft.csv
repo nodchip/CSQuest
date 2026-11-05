@@ -1689,9 +1689,9 @@ GIT-Immersion:トピック:KA Core:5,GIT,GIT-Immersion,トピック,KA Core,5,�
 GIT-Immersion:トピック:KA Core:5-本体,GIT,GIT-Immersion,トピック,KA Core,5-本体,利用者の位置・姿勢の追跡,部分,217 で古い視点と新しい視点による位置ずれを比較。実追跡は未評価。,coverage-git-immersion.md,16,原典照合結果は監査記録参照・番号を要確認
 GIT-Immersion:トピック:KA Core:5a,GIT,GIT-Immersion,トピック,KA Core,5a,インサイドアウト・アウトサイドインの追跡方式,部分,1176で装着側と外部側の目印の見通しを比較し、1179の冒険で再利用。実際の装置・複数センサーや姿勢推定は未評価。,coverage-git-immersion.md,17,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:5b,GIT,GIT-Immersion,トピック,KA Core,5b,頭・体・手の追跡,未照合,各対象の追跡と制約は未確認。,coverage-git-immersion.md,18,原典照合結果は監査記録参照
-GIT-Immersion:トピック:KA Core:6,GIT,GIT-Immersion,トピック,KA Core,6,動作から表示までの遅延を考慮した描画,部分,217・1177・889で視点のずれや画像の固定例を扱う。遅延の実測、詳細度切替と分岐映像は未評価。,coverage-git-immersion.md,19,原典照合結果は監査記録参照・親子重複候補
+GIT-Immersion:トピック:KA Core:6,GIT,GIT-Immersion,トピック,KA Core,6,動作から表示までの遅延を考慮した描画,部分,217・1177・889で視点のずれや画像、1179で詳細度と三角形数の固定例を扱う。遅延の実測や分岐映像は未評価。,coverage-git-immersion.md,19,原典照合結果は監査記録参照・親子重複候補
 GIT-Immersion:トピック:KA Core:6-本体,GIT,GIT-Immersion,トピック,KA Core,6-本体,動作から表示までの遅延と時間制約,部分,217 で古い視点に基づくずれを扱う。遅延の実測、時間制約と最適化は未評価。,coverage-git-immersion.md,20,原典照合結果は監査記録参照・番号を要確認
-GIT-Immersion:トピック:KA Core:6a,GIT,GIT-Immersion,トピック,KA Core,6a,複数の詳細度,未照合,没入環境での詳細度切替は未確認。,coverage-git-immersion.md,21,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:6a,GIT,GIT-Immersion,トピック,KA Core,6a,複数の詳細度,部分,1179で手前・奥の２つの像の詳細度と三角形数を選ぶ固定例。実レンダリング、処理時間や知覚への影響は未評価。,coverage-git-immersion.md,21,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:6b,GIT,GIT-Immersion,トピック,KA Core,6b,画像ベース VR,部分,1177で固定視点パノラマ、889で複数画像と奥行きによる中間視点を扱う。実映像・一般の方法は未評価。,coverage-git-immersion.md,22,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:6c,GIT,GIT-Immersion,トピック,KA Core,6c,分岐映像,未照合,分岐映像の設計・再生は未確認。,coverage-git-immersion.md,23,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:7,GIT,GIT-Immersion,トピック,KA Core,7,通信を介する分散 VR と共同作業,部分,1178で２人が共有物を動かし、眼鏡ごとの状態配達と古い表示を比較。1179で３つの模型を組み合わせる。実通信と実機での協働は未評価。,coverage-git-immersion.md,24,原典照合結果は監査記録参照
