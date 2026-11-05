@@ -360,6 +360,22 @@
       "topics": 3,
       "outcomes": 3,
       "scope_sha256": "55720eee3bb55ef69f6f8623b1695640c3b84d5a1bd7ec8b0c48ac9b307ab0d0"
+    },
+    "SF-Overview": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sf-overview.md",
+      "topics": 6,
+      "outcomes": 8,
+      "scope_sha256": "49d42e0afbdf0b3d7ec25fd8abba182296396829950ee7af131a20ec97e95f9e"
+    },
+    "SF-Design": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sf-design.md",
+      "topics": 2,
+      "outcomes": 3,
+      "scope_sha256": "d78cd5498cefcd1f3c4272f45c7ef17e5aec9a27b51eb293b40e4aa0fbaf7d8b"
     }
   }
 }

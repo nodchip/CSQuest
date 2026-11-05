@@ -3316,20 +3316,20 @@ SF-Foundations:学習成果:未記載:7,SF,SF-Foundations,学習成果,未記載
 SF-Foundations:学習成果:未記載:8,SF,SF-Foundations,学習成果,未記載,8,同一問題の逐次・並列プログラムを書く,部分,依頼130で固定の分担と集約を操作。実コードの記述能力は評価しない。,coverage-sf-foundations.md,31,原典照合結果は監査記録参照・区分を要確認
 SF-Foundations:学習成果:未記載:9,SF,SF-Foundations,学習成果,未記載,9,異なる規模で逐次・並列版の性能を評価,部分,依頼437で人数と仕事量を変える固定模型。実プログラムの評価は対象外。,coverage-sf-foundations.md,32,原典照合結果は監査記録参照・区分を要確認
 SF-Foundations:学習成果:未記載:10,SF,SF-Foundations,学習成果,未記載,10,時系列の同時性と経過時間短縮を説明,部分,依頼254の受付で完了時刻を比較。一般の時系列と自由な説明は未評価。,coverage-sf-foundations.md,33,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:トピック:未記載:1,SF,SF-Overview,トピック,未記載,1,ゲート、記憶、接続、データ経路、制御など,部分,依頼06・37の回路、73の命令処理、265の記憶。部品全体の統合は未評価。,coverage-sf-overview.md,9,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:トピック:未記載:2,SF,SF-Overview,トピック,未記載,2,論理部品、論理式の簡単化、積和形,部分,依頼06で指定回路を構築。一般の簡単化と積和形は未評価。,coverage-sf-overview.md,10,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:トピック:未記載:3,SF,SF-Overview,トピック,未記載,3,プログラミング抽象化、インターフェース、ライブラリ,未照合,ライブラリ利用と抽象化を通して扱う体験と検証は未確認。,coverage-sf-overview.md,11,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:トピック:未記載:4,SF,SF-Overview,トピック,未記載,4,アプリと OS サービスの連携、遠隔手続き呼出し,部分,依頼54の装置への要求は固定例。遠隔手続き呼出しや一般の連携は未評価。,coverage-sf-overview.md,12,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:トピック:未記載:5,SF,SF-Overview,トピック,未記載,5,パイプラインと段階の重なり,部分,依頼158の３段階と依存の模型。一般の解析と実機は未評価。,coverage-sf-overview.md,13,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:トピック:未記載:6,SF,SF-Overview,トピック,未記載,6,規模と性能のスケーリング,部分,依頼437で固定量と一人あたり固定の規模を比較。一般の性能や実測は未評価。,coverage-sf-overview.md,14,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:1,SF,SF-Overview,学習成果,未記載,1,計算機の基本部品と歴史を説明,部分,回路と記憶の固定例がある。歴史全体と自由な説明は未評価。,coverage-sf-overview.md,20,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:2,SF,SF-Overview,学習成果,未記載,2,基本部品から単純な論理回路を設計,部分,依頼06・37で指定回路と加算器を構築。任意の設計は未評価。,coverage-sf-overview.md,21,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:3,SF,SF-Overview,学習成果,未記載,3,層の境界と詳細の隠蔽を説明,部分,依頼54でアプリと装置への要求を扱う。一般の階層や自由な説明は未評価。,coverage-sf-overview.md,22,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:4,SF,SF-Overview,学習成果,未記載,4,ハードウェア・OS・VM・アプリの階層を説明,部分,依頼54・135は異なる一部の境界を扱う。全階層の連携は未評価。,coverage-sf-overview.md,23,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:5,SF,SF-Overview,学習成果,未記載,5,階層間の誤りの検出・通知・処理を説明,部分,依頼200で失敗の固定例を扱う。一般の層間伝播は未評価。,coverage-sf-overview.md,24,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:6,SF,SF-Overview,学習成果,未記載,6,階層化と誤り処理を使うプログラムを構築,未照合,対応する代替体験の十分性は未確認。実コードの記述は対象外。,coverage-sf-overview.md,25,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:7,SF,SF-Overview,学習成果,未記載,7,トレース等で階層化プログラムの不具合を特定,部分,依頼247は固定記録の照合。実際のデバッグツールは評価しない。,coverage-sf-overview.md,26,原典照合結果は監査記録参照・区分を要確認
-SF-Overview:学習成果:未記載:8,SF,SF-Overview,学習成果,未記載,8,強・弱スケーリングの違いを理解,部分,依頼437で４人数・２仕事量の模型を比較。実測や一般の分析は未評価。,coverage-sf-overview.md,27,原典照合結果は監査記録参照・区分を要確認
+SF-Overview:トピック:CS Core:1,SF,SF-Overview,トピック,CS Core,1,ゲート、記憶、接続、データ経路、制御など,部分,依頼06・37の回路、73の命令処理、265の記憶。部品全体の統合は未評価。,coverage-sf-overview.md,9,原典照合結果は監査記録参照
+SF-Overview:トピック:CS Core:2,SF,SF-Overview,トピック,CS Core,2,論理部品、論理式の簡単化、積和形,部分,依頼06で指定回路を構築。一般の簡単化と積和形は未評価。,coverage-sf-overview.md,10,原典照合結果は監査記録参照
+SF-Overview:トピック:CS Core:3,SF,SF-Overview,トピック,CS Core,3,プログラミング抽象化、インターフェース、ライブラリ,未照合,ライブラリ利用と抽象化を通して扱う体験と検証は未確認。,coverage-sf-overview.md,11,原典照合結果は監査記録参照
+SF-Overview:トピック:CS Core:4,SF,SF-Overview,トピック,CS Core,4,アプリと OS サービスの連携、遠隔手続き呼出し,部分,依頼54の装置への要求は固定例。遠隔手続き呼出しや一般の連携は未評価。,coverage-sf-overview.md,12,原典照合結果は監査記録参照
+SF-Overview:トピック:CS Core:5,SF,SF-Overview,トピック,CS Core,5,パイプラインと段階の重なり,部分,依頼158の３段階と依存の模型。一般の解析と実機は未評価。,coverage-sf-overview.md,13,原典照合結果は監査記録参照
+SF-Overview:トピック:CS Core:6,SF,SF-Overview,トピック,CS Core,6,規模と性能のスケーリング,部分,依頼437で固定量と一人あたり固定の規模を比較。一般の性能や実測は未評価。,coverage-sf-overview.md,14,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:1,SF,SF-Overview,学習成果,CS Core,1,計算機の基本部品と歴史を説明,部分,回路と記憶の固定例がある。歴史全体と自由な説明は未評価。,coverage-sf-overview.md,20,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:2,SF,SF-Overview,学習成果,CS Core,2,基本部品から単純な論理回路を設計,部分,依頼06・37で指定回路と加算器を構築。任意の設計は未評価。,coverage-sf-overview.md,21,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:3,SF,SF-Overview,学習成果,CS Core,3,層の境界と詳細の隠蔽を説明,部分,依頼54でアプリと装置への要求を扱う。一般の階層や自由な説明は未評価。,coverage-sf-overview.md,22,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:4,SF,SF-Overview,学習成果,CS Core,4,ハードウェア・OS・VM・アプリの階層を説明,部分,依頼54・135は異なる一部の境界を扱う。全階層の連携は未評価。,coverage-sf-overview.md,23,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:5,SF,SF-Overview,学習成果,CS Core,5,階層間の誤りの検出・通知・処理を説明,部分,依頼200で失敗の固定例を扱う。一般の層間伝播は未評価。,coverage-sf-overview.md,24,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:6,SF,SF-Overview,学習成果,CS Core,6,階層化と誤り処理を使うプログラムを構築,未照合,対応する代替体験の十分性は未確認。実コードの記述は対象外。,coverage-sf-overview.md,25,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:7,SF,SF-Overview,学習成果,CS Core,7,トレース等で階層化プログラムの不具合を特定,部分,依頼247は固定記録の照合。実際のデバッグツールは評価しない。,coverage-sf-overview.md,26,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:8,SF,SF-Overview,学習成果,CS Core,8,強・弱スケーリングの違いを理解,部分,依頼437で４人数・２仕事量の模型を比較。実測や一般の分析は未評価。,coverage-sf-overview.md,27,原典照合結果は監査記録参照
 SF-Performance:トピック:CS Core:1a,SF,SF-Performance,トピック,CS Core,1a,光速と計算機の時間,部分,依頼25で真空中の光の片道３距離と 1 GHz の周期、0.3 m での 2 GHz との比較を操作。配線・材料や実機の応答時間は未評価。,coverage-sf-performance.md,9,原典照合結果は監査記録参照
 SF-Performance:トピック:CS Core:1b,SF,SF-Performance,トピック,CS Core,1b,メモリ・ディスク・ネットワークの遅延,部分,依頼25で手元の記憶・記録装置と、行き・読取り・帰りを足す遠隔記憶の固定例を比較。実機や一般の遅延は未評価。,coverage-sf-performance.md,10,原典照合結果は監査記録参照
 SF-Performance:トピック:CS Core:2,SF,SF-Performance,トピック,CS Core,2,キャッシュと時間的・空間的局所性,部分,依頼25・103で固定された参照列と棚を比較。実機や一般のアクセス列は未評価。,coverage-sf-performance.md,11,原典照合結果は監査記録参照
