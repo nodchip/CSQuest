@@ -3285,7 +3285,7 @@ SF-Evaluation:トピック:CS Core:4,SF,SF-Evaluation,トピック,CS Core,4,ア
 SF-Evaluation:トピック:CS Core:5,SF,SF-Evaluation,トピック,CS Core,5,オーダーの分析,部分,依頼88で８・64冊の線形・二分探索の比較回数を比較。一般の漸近的証明は未評価。,coverage-sf-evaluation.md,13,原典照合結果は監査記録参照
 SF-Evaluation:トピック:CS Core:6,SF,SF-Evaluation,トピック,CS Core,6,遅い経路と速い経路の分析,部分,依頼573でキャッシュ命中とミスの固定費用を比較。実機は未評価。,coverage-sf-evaluation.md,14,原典照合結果は監査記録参照
 SF-Evaluation:トピック:CS Core:7,SF,SF-Evaluation,トピック,CS Core,7,ストールやミスの性能への影響,部分,依頼573の競合と取寄せ待ち。実機のストールや並列性は未評価。,coverage-sf-evaluation.md,15,原典照合結果は監査記録参照
-SF-Evaluation:トピック:KA Core:7,SF,SF-Evaluation,トピック,KA Core,7,定量評価を導く分析ツール,未照合,実ツールを使った分析と検証は未確認。,coverage-sf-evaluation.md,16,原典照合結果は監査記録参照
+SF-Evaluation:トピック:KA Core:7,SF,SF-Evaluation,トピック,KA Core,7,定量評価を導く分析ツール,部分,依頼1097でブラウザーの時計と表示を使って固定探索の時間を記録・比較。汎用プロファイラーや実サービスの分析は未評価。,coverage-sf-evaluation.md,16,原典照合結果は監査記録参照
 SF-Evaluation:トピック:KA Core:8,SF,SF-Evaluation,トピック,KA Core,8,階層・負荷・プラットフォームと評価の難しさ,部分,依頼572で２種類の仕事の組成と機械を比較。実際の階層や評価設計は未評価。,coverage-sf-evaluation.md,17,原典照合結果は監査記録参照
 SF-Evaluation:トピック:KA Core:9,SF,SF-Evaluation,トピック,KA Core,9,マイクロベンチマークの落とし穴,部分,依頼572で未使用の計算の省略、測定の固定費と反復回数を固定模型で比較。実際の処理系・他の最適化や測定手法は未評価。,coverage-sf-evaluation.md,18,原典照合結果は監査記録参照
 SF-Evaluation:学習成果:CS Core:1,SF,SF-Evaluation,学習成果,CS Core,1,システムの構成要素と性能改善を説明,部分,依頼572で命令構成・CPI・クロックの固定例。一般の説明は未評価。,coverage-sf-evaluation.md,24,原典照合結果は監査記録参照

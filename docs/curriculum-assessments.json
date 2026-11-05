@@ -325,6 +325,28 @@
         "tests/crc-lab.test.js": "2d68dbd187b7b4aca1053eddf4fe0fcca55b483a3439af5e88159f713661a50a",
         "tests/secded.test.js": "fd27e9c6e54fffed5932352f9e1adcc00f115bebe0ff3ed54beb7638900b2b45"
       }
+    },
+    "SF-Evaluation:トピック:KA Core:7": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-sf-evaluation-timing.md",
+      "row_sha256": "8e42431c3ddb594f5fa3104f700e2c3466e271b97fb77a82a9ae48faf69be17d",
+      "files": {
+        "src/actual-benchmark.js": "971b671bc2b6fa168fda5134d1c360d09c4687812b52c9831e4177a290cd4575",
+        "src/app.js": "de709088504a9fd87d7e6a124786195868a6176ccb683b0b9ab8cc1bd0defb11",
+        "tests/actual-benchmark.test.js": "8859647d7700cf96f70a0d587e1892afaa7f785499792b6b83c88efa9a93168d"
+      }
+    },
+    "SF-Evaluation:学習成果:CS Core:6": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-sf-evaluation-timing.md",
+      "row_sha256": "fa596109ddf95cbb1762a43e813cd06862dbb307de176649e0c57784e95e53ff",
+      "files": {
+        "src/actual-benchmark.js": "971b671bc2b6fa168fda5134d1c360d09c4687812b52c9831e4177a290cd4575",
+        "src/app.js": "de709088504a9fd87d7e6a124786195868a6176ccb683b0b9ab8cc1bd0defb11",
+        "tests/actual-benchmark.test.js": "8859647d7700cf96f70a0d587e1892afaa7f785499792b6b83c88efa9a93168d"
+      }
     }
   }
 }

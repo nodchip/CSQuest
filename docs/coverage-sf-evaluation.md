@@ -13,7 +13,7 @@
 | 5 | CS Core | オーダーの分析 | 部分 | 依頼88で８・64冊の線形・二分探索の比較回数を比較。一般の漸近的証明は未評価。 |
 | 6 | CS Core | 遅い経路と速い経路の分析 | 部分 | 依頼573でキャッシュ命中とミスの固定費用を比較。実機は未評価。 |
 | 7 | CS Core | ストールやミスの性能への影響 | 部分 | 依頼573の競合と取寄せ待ち。実機のストールや並列性は未評価。 |
-| 7 | KA Core | 定量評価を導く分析ツール | 未照合 | 実ツールを使った分析と検証は未確認。 |
+| 7 | KA Core | 定量評価を導く分析ツール | 部分 | 依頼1097でブラウザーの時計と表示を使って固定探索の時間を記録・比較。汎用プロファイラーや実サービスの分析は未評価。 |
 | 8 | KA Core | 階層・負荷・プラットフォームと評価の難しさ | 部分 | 依頼572で２種類の仕事の組成と機械を比較。実際の階層や評価設計は未評価。 |
 | 9 | KA Core | マイクロベンチマークの落とし穴 | 部分 | 依頼572で未使用の計算の省略、測定の固定費と反復回数を固定模型で比較。実際の処理系・他の最適化や測定手法は未評価。 |
 
@@ -30,4 +30,6 @@
 | 7 | KA Core | 代表的なシステムの性能実験を設計・実施 | 未照合 | 実システムの実験は未確認。 |
 | 8 | KA Core | 階層化システムのパラメータと性能の実験を設計 | 部分 | 依頼573は固定キャッシュ模型の配置と時間を比較。一般の実験設計や実測は未評価。 |
 
-依頼254・572・573の計算、前提と根拠は [既存の記録](sf-evaluation.md) に記載。関連検証は `tests/latency-throughput.test.js`、`tests/workload-cpi.test.js`、`tests/benchmark-elision.test.js`、`tests/cache-conflict.test.js`、`tests/search-growth.test.js` を参照。ゲーム内操作は実機測定や自由記述を直接評価しない。
+依頼254・572・573の計算、前提と根拠は [既存の記録](sf-evaluation.md) に記載。関連検証は `tests/latency-throughput.test.js`、`tests/workload-cpi.test.js`、`tests/benchmark-elision.test.js`、`tests/cache-conflict.test.js`、`tests/search-growth.test.js` を参照。固定模型の操作は実サービスの測定や自由記述を直接評価しない。
+
+依頼1097はブラウザーの `performance.now()` により固定探索の経過時間を実際に計測する例である。[MDN の時計の解説](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)を参照。入力・実装・実行順・端末の条件に依存し、測定した探索以外の性能や一般のプロファイラーの利用能力を証明しない。`tests/actual-benchmark.test.js` は結果、時刻の注入、順序、復元とグラフ尺度を検査する。
