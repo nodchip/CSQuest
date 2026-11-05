@@ -1664,7 +1664,7 @@ GIT-Image:トピック:KA Core:2,GIT,GIT-Image,トピック,KA Core,2,色ヒス�
 GIT-Image:トピック:KA Core:2a,GIT,GIT-Image,トピック,KA Core,2a,色ヒストグラムの表現,部分,724で灰色値と、３値の RGB 各成分の画素数を表示。一般の区間、色成分の同時分布や実画像は未評価。,coverage-git-image.md,15,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:2b,GIT,GIT-Image,トピック,KA Core,2b,正規化によるコントラスト強調,部分,724で最小・最大を使う線形な伸張とノイズ・一色の例。カラー、外れ値、実画像は未評価。,coverage-git-image.md,16,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:3,GIT,GIT-Image,トピック,KA Core,3,画像の強調,部分,141・725・808・809等の空間・周波数の固定例。一般の画像やフィルタは未評価。,coverage-git-image.md,17,原典照合結果は監査記録参照・親子重複候補
-GIT-Image:トピック:KA Core:3a,GIT,GIT-Image,トピック,KA Core,3a,畳み込み,部分,141・661で１次元、725で対称な３×３窓の局所積和を操作。非対称な核を使った畳み込みと相互相関の比較、一般の画像や核は未評価。,coverage-git-image.md,18,原典照合結果は監査記録参照
+GIT-Image:トピック:KA Core:3a,GIT,GIT-Image,トピック,KA Core,3a,畳み込み,部分,141・661で１次元、725で３×３窓と非対称・対称な核の畳み込みと相互相関を比較。一般の画像や核は未評価。,coverage-git-image.md,18,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:3b,GIT,GIT-Image,トピック,KA Core,3b,ガウス等によるぼかし,部分,725で３×３の平均とガウス型重みを比較。一般の尺度、実画像と他の境界条件は未評価。,coverage-git-image.md,19,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:3c,GIT,GIT-Image,トピック,KA Core,3c,ラプラシアン等による鮮鋭化,部分,141は１方向の二階差分、725は元画像から離散ラプラシアンを引く固定例。一般の強度と実画像は未評価。,coverage-git-image.md,20,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:3d,GIT,GIT-Image,トピック,KA Core,3d,周波数フィルタ,部分,141で空間の高域差分、175で４点変換、808で２×２、809で複素共役を含む４×４画像の成分を選択。一般の画像や連続的なフィルタは未評価。,coverage-git-image.md,21,原典照合結果は監査記録参照
