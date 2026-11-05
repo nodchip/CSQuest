@@ -2097,13 +2097,13 @@ HCI-User:トピック:KA Core:4c,HCI,HCI-User,トピック,KA Core,4c,他文化�
 HCI-User:トピック:KA Core:4d,HCI,HCI-User,トピック,KA Core,4d,異文化間の設計,未照合,対応する依頼は未確認。,coverage-hci-user.md,33,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:4e,HCI,HCI-User,トピック,KA Core,4e,標本・一般化・障害経験など評価の課題,部分,188で架空の調査は代表性を示さないと説明。実際の標本設計や一般化は未評価。,coverage-hci-user.md,34,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:4f,HCI,HCI-User,トピック,KA Core,4f,ユニバーサルデザイン,部分,22で異なる利用条件への工夫を操作。原則全体と参加型設計は未評価。,coverage-hci-user.md,35,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5,HCI,HCI-User,トピック,KA Core,5,協働とコミュニケーション,部分,同期・非同期通信、連絡網、協働の固定例は子を参照。社会的調整・仮想世界は未照合。,coverage-hci-user.md,36,原典照合結果は監査記録参照・親子重複候補
+HCI-User:トピック:KA Core:5,HCI,HCI-User,トピック,KA Core,5,協働とコミュニケーション,部分,同期・非同期通信、連絡網、協働の固定例は子を参照。社会的調整は固定例、仮想世界は未照合。,coverage-hci-user.md,36,原典照合結果は監査記録参照・親子重複候補
 HCI-User:トピック:KA Core:5a,HCI,HCI-User,トピック,KA Core,5a,複数利用者の状況,部分,188で旅人と維持担当の事情を比較。実際の複数利用者システムは未評価。,coverage-hci-user.md,37,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:5b,HCI,HCI-User,トピック,KA Core,5b,同期的な集団通信,部分,964で２時刻の生放送と受信者を比較。実際の会議や相互作用は未評価。,coverage-hci-user.md,38,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:5c,HCI,HCI-User,トピック,KA Core,5c,非同期の集団通信,部分,964で掲示板の記録と後からの確認を比較。実際の掲示板や配信保証は未評価。,coverage-hci-user.md,39,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:5d,HCI,HCI-User,トピック,KA Core,5d,社会的計算・ソーシャルネットワーク分析,部分,965で架空の無向連絡網の到達範囲と関節点を比較。実際の社会関係・影響力や一般の社会的計算は未評価。,coverage-hci-user.md,40,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:5e,HCI,HCI-User,トピック,KA Core,5e,オンライン協働,部分,288で別画面の競合と確認、655で接続断後の変更統合を操作。実際の共同作業や他の協働形態は未評価。,coverage-hci-user.md,41,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:5f,HCI,HCI-User,トピック,KA Core,5f,社会的調整とオンライン共同体,未照合,対応する依頼は未確認。,coverage-hci-user.md,42,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:5f,HCI,HCI-User,トピック,KA Core,5f,社会的調整とオンライン共同体,部分,1209 で架空の掲示板への相談、限定共有、確認と再確認をたどる。実際の運営や対応の妥当性は未評価。,coverage-hci-user.md,42,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:5g,HCI,HCI-User,トピック,KA Core,5g,アバター・キャラクター・仮想世界,未照合,利用者間の体験として扱う教材との対応は未確認。,coverage-hci-user.md,43,原典照合結果は監査記録参照
 HCI-User:トピック:Non-core:6,HCI,HCI-User,トピック,Non-core,6,複数利用者システム,部分,288で２画面と共有台帳の版・競合を扱う固定例。一般のシステム設計や実利用は未評価。,coverage-hci-user.md,44,原典照合結果は監査記録参照
 HCI-User:学習成果:CS Core:1,HCI,HCI-User,学習成果,CS Core,1,プロジェクトに統合した利用者中心設計,部分,188で架空の声・設計・場面確認を操作。実際のプロセスは未評価。,coverage-hci-user.md,50,原典照合結果は監査記録参照

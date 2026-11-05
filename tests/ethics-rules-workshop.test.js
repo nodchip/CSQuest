@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {ethicsRulesCases,ethicsRulesLaws,ethicsRulesActions,ethicsRulesCreate,ethicsRulesTrialDone,ethicsRulesDone,ethicsRulesRestore} from '../src/ethics-rules-workshop.js';
+import {ethicsRulesCases,ethicsRulesLaws,ethicsRulesActions,ethicsRulesCreate,ethicsRulesTrialDone,ethicsRulesDone,ethicsRulesRestore,communityAct,communityReplay} from '../src/ethics-rules-workshop.js';
 
 test('each scenario requires its evidence, stated rule and next action',()=>{
  const expected={allowed:['allowed','reduce'],forbidden:['forbidden','stop'],unknown:['unknown','verify']};
@@ -16,3 +16,5 @@ test('completion and restoration require all cases and copy evidence',()=>{
  const copy=ethicsRulesRestore(q);copy.trials.allowed.seen.pop();assert.equal(q.trials.allowed.seen.length,3);
  q.trials.unknown.seen.push('rule');assert.throws(()=>ethicsRulesRestore(q));
 });
+
+test('private report, contextual review and review channel replay and migrate',()=>{const q=ethicsRulesCreate();assert.throws(()=>communityAct(q,'context'));assert.deepEqual(q.community,[]);for(const step of ['report','private','context','decision'])communityAct(q,step);assert.equal(communityReplay(q.community).done,true);const r=ethicsRulesRestore(q);r.community.pop();assert.equal(q.community.length,4);const old={...q};delete old.community;assert.deepEqual(ethicsRulesRestore(old).community,[]);assert.throws(()=>ethicsRulesRestore({...q,community:['private']}));});
