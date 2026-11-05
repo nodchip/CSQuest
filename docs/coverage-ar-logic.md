@@ -24,7 +24,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 対応例と限界 |
 |---|---|---|---|---|
-| 1 | KA Core | 真空管から VLSI、大型計算機から大規模構成への発展 | 未照合 | 歴史の教材との対応は未確認。自由な論述は直接評価しない。 |
+| 1 | KA Core | 真空管から VLSI、大型計算機から大規模構成への発展 | 部分 | 363で真空管・メインフレーム・集積回路・倉庫規模の４例を年代順に比較。発展の全体像と自由な論述は未評価。 |
 | 2 | KA Core | 異種構成要素の内外での並列性と依存関係 | 部分 | 158で２命令の依存、162で SIMD・MIMD を比較。異種構成全体と自由な説明は未評価。 |
 | 3 | KA Core | 並列性と電力消費の関係 | 部分 | 161で１・２・４人の分担と仮定した一定電力・時間・エネルギーを比較。実機、一般の消費と自由な説明は未評価。 |
 | 4 | KA Core | ALU・レジスタ・CPU・メモリの基本要素を設計 | 部分 | 37で加算器を組み、266で固定のレジスタを操作。一般の ALU・CPU・メモリ設計は未評価。 |
@@ -44,3 +44,5 @@
 依頼928の Verilog 断片は [AMD の組合せ記述](https://docs.amd.com/r/en-US/ug901-vivado-synthesis/KEEP-Verilog-Example)と[レジスタの記述例](https://docs.amd.com/r/2024.1-English/ug901-vivado-synthesis/Flip-Flops-and-Registers-Coding-Examples)を参考にした。２値・固定操作・記憶の初期値０の模型であり、HDL シミュレーター・未知値・実機は未評価。
 
 依頼929は [OpenLane の回路設計フロー](https://openlane2.readthedocs.io/en/dev/getting_started/newcomers/index.html)を参考に、固定の論理試験・合成・配置・配線と架空の面積・遅延を比較する。実ツール、SoC 全体、物理検証や製造可能性を検証しない。
+
+依頼363の追加記録は [Computer History Museum の ENIAC](https://www.computerhistory.org/tdih/may/17/)、[IBM System/360](https://www.ibm.com/history/system-360)、[Intel 386](https://timeline.intel.com/1985/raising-the-bar-with-the-386)、[Barroso・Hölzle の倉庫規模計算機](https://research.google/pubs/the-datacenter-as-a-computer-an-introduction-to-the-design-of-warehouse-scale-machines/)を参照。真空管、互換性を持つ大型機群、高集積プロセッサー、多数の計算機の協調を４例で区別する。唯一の発展経路や歴史全体ではなく、自由な論述は評価しない。`tests/computing-history.test.js` は順序・誤答・旧記録を検査する。

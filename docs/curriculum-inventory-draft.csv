@@ -792,7 +792,7 @@ AR-Logic:トピック:KA Core:5a,AR,AR-Logic,トピック,KA Core,5a,ゲート�
 AR-Logic:トピック:KA Core:5b,AR,AR-Logic,トピック,KA Core,5b,ファンイン・ファンアウト,部分,926で入力数と出力の接続先を区別し、固定の負荷上限と中継器による分担を比較。実部品の電流・容量・電圧・遅延は未評価。,coverage-ar-logic.md,19,原典照合結果は監査記録参照
 AR-Logic:トピック:KA Core:5c,AR,AR-Logic,トピック,KA Core,5c,エネルギー・電力,部分,161で時間・電力・エネルギーの固定値を比較。回路の物理的な消費は未評価。,coverage-ar-logic.md,20,原典照合結果は監査記録参照
 AR-Logic:トピック:KA Core:5d,AR,AR-Logic,トピック,KA Core,5d,光速,部分,927で真空中の光速の近似と６割の仮定を使い、距離・片道・往復の伝搬時間と期限を比較。実配線の特性や実測は未評価。,coverage-ar-logic.md,21,原典照合結果は監査記録参照
-AR-Logic:学習成果:KA Core:1,AR,AR-Logic,学習成果,KA Core,1,真空管から VLSI、大型計算機から大規模構成への発展,未照合,歴史の教材との対応は未確認。自由な論述は直接評価しない。,coverage-ar-logic.md,27,原典照合結果は監査記録参照
+AR-Logic:学習成果:KA Core:1,AR,AR-Logic,学習成果,KA Core,1,真空管から VLSI、大型計算機から大規模構成への発展,部分,363で真空管・メインフレーム・集積回路・倉庫規模の４例を年代順に比較。発展の全体像と自由な論述は未評価。,coverage-ar-logic.md,27,原典照合結果は監査記録参照
 AR-Logic:学習成果:KA Core:2,AR,AR-Logic,学習成果,KA Core,2,異種構成要素の内外での並列性と依存関係,部分,158で２命令の依存、162で SIMD・MIMD を比較。異種構成全体と自由な説明は未評価。,coverage-ar-logic.md,28,原典照合結果は監査記録参照
 AR-Logic:学習成果:KA Core:3,AR,AR-Logic,学習成果,KA Core,3,並列性と電力消費の関係,部分,161で１・２・４人の分担と仮定した一定電力・時間・エネルギーを比較。実機、一般の消費と自由な説明は未評価。,coverage-ar-logic.md,29,原典照合結果は監査記録参照
 AR-Logic:学習成果:KA Core:4,AR,AR-Logic,学習成果,KA Core,4,ALU・レジスタ・CPU・メモリの基本要素を設計,部分,37で加算器を組み、266で固定のレジスタを操作。一般の ALU・CPU・メモリ設計は未評価。,coverage-ar-logic.md,30,原典照合結果は監査記録参照
@@ -873,7 +873,7 @@ AR-Quantum:学習成果:KA Core:5,AR,AR-Quantum,学習成果,KA Core,5,Shor の 
 AR-Quantum:学習成果:KA Core:6,AR,AR-Quantum,学習成果,KA Core,6,シミュレーターで Shor のプログラムを作り古典部分を示す,部分,610 は後処理の固定例。プログラム作成能力は直接評価しない。,coverage-ar-quantum.md,38,原典照合結果は監査記録参照
 AR-Quantum:学習成果:KA Core:7,AR,AR-Quantum,学習成果,KA Core,7,各種量子ビットの物理方式の特徴を列挙,部分,1216 で３方式の媒体・準備・操作・読取りの構成例を選ぶ。他方式、一般的な性能比較や自由記述は未評価。,coverage-ar-quantum.md,39,原典照合結果は監査記録参照
 AR-Quantum:学習成果:KA Core:8,AR,AR-Quantum,学習成果,KA Core,8,断熱方式とゲート方式及び適する問題を比較,部分,1219 で２方式の操作と２候補のエネルギー最小化を比較。問題全般の適性、実装、自由な説明は未評価。,coverage-ar-quantum.md,40,原典照合結果は監査記録参照
-AR-Representation:トピック:CS Core:1,AR,AR-Representation,トピック,CS Core,1,コンピュータアーキテクチャの概要と歴史,部分,363で計算史の複数の出来事。アーキテクチャ全体の発展や一般的な概要は未評価。,coverage-ar-representation.md,9,原典照合結果は監査記録参照
+AR-Representation:トピック:CS Core:1,AR,AR-Representation,トピック,CS Core,1,コンピュータアーキテクチャの概要と歴史,部分,363で真空管・大型機・集積回路・倉庫規模の４例を比較。アーキテクチャ全体の発展や一般的な概要は未評価。,coverage-ar-representation.md,9,原典照合結果は監査記録参照
 AR-Representation:トピック:CS Core:2,AR,AR-Representation,トピック,CS Core,2,ビット・バイト・ワード,部分,36の４ビット、460の２バイトと16ビットのワードを操作。実機の多様なワード長は未評価。,coverage-ar-representation.md,10,原典照合結果は監査記録参照
 AR-Representation:トピック:CS Core:3,AR,AR-Representation,トピック,CS Core,3,符号なし・符号付き・２の補数,部分,36・461で４ビットの各表現を比較。一般のビット幅や演算は未評価。,coverage-ar-representation.md,11,原典照合結果は監査記録参照
 AR-Representation:トピック:CS Core:4,AR,AR-Representation,トピック,CS Core,4,数値表現と基数,部分,36で二進整数、68・712で浮動小数点、710で固定小数点。その他の基数や一般の形式は未評価。,coverage-ar-representation.md,12,原典照合結果は監査記録参照・親子重複候補
