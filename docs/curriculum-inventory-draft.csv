@@ -1784,7 +1784,7 @@ GIT-Physical:トピック:KA Core:3b,GIT,GIT-Physical,トピック,KA Core,3b,�
 GIT-Physical:学習成果:KA Core:1,GIT,GIT-Physical,学習成果,KA Core,1,スイッチ・ボタンから LED を点灯,部分,1298で押しボタン・制御部・灯りを選び、押す・離すと点灯・消灯を試す固定模型。実回路、電源や抵抗の設計は未評価。,coverage-git-physical.md,28,原典照合結果は監査記録参照
 GIT-Physical:学習成果:KA Core:2,GIT,GIT-Physical,学習成果,KA Core,2,センサーに応じてサーボを動かすシステムを作る,部分,219 の固定模型で読取り・目標・動作を操作。実機の構築は未評価。,coverage-git-physical.md,29,原典照合結果は監査記録参照
 GIT-Physical:学習成果:KA Core:3,GIT,GIT-Physical,学習成果,KA Core,3,光センサーに反応する回路とマイコンのコード,部分,219 の３値と角度の模型。回路とコードは作らない。,coverage-git-physical.md,30,原典照合結果は監査記録参照
-GIT-Physical:学習成果:KA Core:4,GIT,GIT-Physical,学習成果,KA Core,4,可変抵抗を読む回路とプログラム,未照合,対応する模型・実装は未確認。,coverage-git-physical.md,31,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:4,GIT,GIT-Physical,学習成果,KA Core,4,可変抵抗を読む回路とプログラム,部分,219でつまみ３位置の電圧・読み取り値・目標角度を比較する固定模型。実回路と実プログラムは未評価。,coverage-git-physical.md,31,原典照合結果は監査記録参照
 GIT-Physical:学習成果:KA Core:5,GIT,GIT-Physical,学習成果,KA Core,5,CAD で３次元の形を作成,未照合,実 CAD における３次元形状の作成は未評価。,coverage-git-physical.md,32,原典照合結果は監査記録参照・親子重複候補
 GIT-Physical:学習成果:KA Core:5a,GIT,GIT-Physical,学習成果,KA Core,5a,CAD で３Ｄ形状とアフィン変換を示す,部分,26 は２次元の固定変換。３Ｄ CAD の作成は未評価。,coverage-git-physical.md,33,原典照合結果は監査記録参照
 GIT-Physical:学習成果:KA Core:5b,GIT,GIT-Physical,学習成果,KA Core,5b,物体のインスタンスを示す,未照合,CAD 内のインスタンス操作は未確認。,coverage-git-physical.md,34,原典照合結果は監査記録参照
