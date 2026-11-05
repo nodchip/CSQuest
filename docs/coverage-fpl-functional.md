@@ -33,7 +33,7 @@
 
 | 番号 | 区分 | 要約 | 状態 | 体験と残る範囲 |
 |---|---|---|---|---|
-| 1 | CS Core | 変更可能な状態への代入や参照同一性を考慮しないアルゴリズムを開発 | 部分 | 51・773で元の列や木を変えず集約。参照同一性への依存の検討と実言語での開発は未評価。 |
+| 1 | CS Core | 変更可能な状態への代入や参照同一性を考慮しないアルゴリズムを開発 | 部分 | 51・773で元の列や木を変えず集約、590で同一性と内容による数え方を比較。一般のアルゴリズム開発や実言語での実装は未評価。 |
 | 2 | CS Core | 関数を受取り返す関数を開発 | 部分 | 52・592で固定の道具を生成・合成。自由な関数定義は評価しない。 |
 | 3 | CS Core | 手続き型・関数型・オブジェクト指向の解法を比較 | 部分 | 593で容量管理の３設計。一般の比較・自由記述は未評価。 |
 | 4 | CS Core | 各パラダイムのデータ定義・保護方法を比較 | 部分 | 593で共有・非公開・不変の固定模型。一般の安全性は未評価。 |
@@ -48,3 +48,5 @@
 | 13 | Non-core | 並行・逐次のバッファなどを用いた並行構文の例示 | 部分 | 178で一つの箱の送り手と受け手を交互に操作。実言語の構文や逐次との比較は未評価。 |
 
 `tests/tree-fold.test.js`、`tests/closure-boxes.test.js`、`tests/closure-machine.test.js`、`tests/evaluation-sharing.test.js`、`tests/graph-reduction.test.js`、`tests/narrowing.test.js`、`tests/evaluation-rescue.test.js`、`tests/lazy-stream.test.js`、`tests/semaphore-buffer.test.js` は各固定模型・操作を検査し、原典の範囲全体や学習効果を保証しない。
+
+依頼590では [Cornell の同一性と構造の比較](https://courses.cs.cornell.edu/cs3110/2021sp/textbook/mut/physical_equality.html)を参考に、同じ鎖への２つの入口、同内容の別の鎖、異なる内容の鎖を比較する。４入口から同一性で数える場合と内容で数える場合を対象２種で比べる。`tests/identity-values.test.js` は３比較・２対象と旧記録の復元を検査する。固定の有限な数列に限り、循環、関数値、実言語の比較演算子や自由な実装は未評価。

@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {identityCompare,identityCount,createIdentityLab,restoreIdentityLab} from '../src/identity-values.js';
+import {createPersistentList,restorePersistentList} from '../src/persistent-list.js';
+test('same reference, equal copied values, and different values are distinguished',()=>{assert.deepEqual(identityCompare('alias'),{same:true,equal:true});assert.deepEqual(identityCompare('copy'),{same:false,equal:true});assert.deepEqual(identityCompare('different'),{same:false,equal:false});assert.deepEqual(identityCount('A'),{same:2,equal:3});assert.deepEqual(identityCount('B'),{same:1,equal:3});assert.throws(()=>identityCompare('other'));});
+test('old saved lists acquire independent, validated comparison records',()=>{const q=createPersistentList();delete q.identity;assert.deepEqual(restorePersistentList(q).identity,createIdentityLab());const lab=createIdentityLab();lab.pairs.push('copy');lab.targets.push('A');const copy=restoreIdentityLab(lab);copy.pairs.pop();copy.targets.pop();assert.deepEqual(lab.pairs,['copy']);assert.deepEqual(lab.targets,['A']);assert.throws(()=>restoreIdentityLab({...lab,targets:['A','A']}));});
