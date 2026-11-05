@@ -708,7 +708,7 @@ AL-Strategies:トピック:CS Core:1e-ii,AL,AL-Strategies,トピック,CS Core,1
 AL-Strategies:トピック:CS Core:1e-iii,AL,AL-Strategies,トピック,CS Core,1e-iii,問題の帰着,部分,411・413で頂点被覆と独立集合、部分和と等分割の固定変換を扱う。一般の帰着の構築は未評価。,coverage-al-strategies.md,20,原典照合結果は監査記録参照
 AL-Strategies:トピック:CS Core:1e-iv,AL,AL-Strategies,トピック,CS Core,1e-iv,動的計画法,部分,337・338で部分和、913で全点対の更新、1198で 0/1 ナップサックの価値表と貪欲法を比較。一般の設計・証明は未評価。,coverage-al-strategies.md,21,原典照合結果は監査記録参照
 AL-Strategies:トピック:CS Core:1f,AL,AL-Strategies,トピック,CS Core,1f,時間と領域のトレードオフ,部分,341で表の保持と再計算を比較。一般の設計・実測は未評価。,coverage-al-strategies.md,22,原典照合結果は監査記録参照
-AL-Strategies:トピック:CS Core:2,AL,AL-Strategies,トピック,CS Core,2,指数的増大への対処,部分,42・49・97で探索と枝刈りの固定例。一般の分析や全手法の比較は未評価。,coverage-al-strategies.md,23,原典照合結果は監査記録参照
+AL-Strategies:トピック:CS Core:2,AL,AL-Strategies,トピック,CS Core,2,指数的増大への対処,部分,42・49・97で探索と枝刈り、1198で３物資の分枝限定を操作。一般の分析や全手法の比較は未評価。,coverage-al-strategies.md,23,原典照合結果は監査記録参照
 AL-Strategies:トピック:CS Core:3,AL,AL-Strategies,トピック,CS Core,3,反復と再帰,部分,566で同じ和の２手法と呼出しを比較。一般の実装と性能は未評価。,coverage-al-strategies.md,24,原典照合結果は監査記録参照
 AL-Strategies:トピック:KA Core:4,AL,AL-Strategies,トピック,KA Core,4,追加のアルゴリズム手法,部分,415・692・693で近似・反復改善・確率的手法の固定例を操作。一般の設計と保証は未評価。,coverage-al-strategies.md,25,原典照合結果は監査記録参照・親子重複候補
 AL-Strategies:トピック:KA Core:4a,AL,AL-Strategies,トピック,KA Core,4a,近似アルゴリズム,部分,415で４塔の頂点被覆と２倍以内の根拠を扱う。任意の規模と他の手法は未評価。,coverage-al-strategies.md,26,原典照合結果は監査記録参照
@@ -723,7 +723,7 @@ AL-Strategies:学習成果:CS Core:3,AL,AL-Strategies,学習成果,CS Core,3,与
 AL-Strategies:学習成果:CS Core:4,AL,AL-Strategies,学習成果,CS Core,4,実問題に対して手法とトレードオフを評価,部分,980で検索の固定問題について３方法の準備・検索点と領域・期限を比較。実問題の測定や一般の評価は未評価。,coverage-al-strategies.md,40,原典照合結果は監査記録参照
 AL-Strategies:学習成果:CS Core:5,AL,AL-Strategies,学習成果,CS Core,5,同一問題の反復と再帰の長短を説明,部分,566で和と呼出しを比較。実測・自由な説明と他の問題は未評価。,coverage-al-strategies.md,41,原典照合結果は監査記録参照
 AL-Strategies:学習成果:CS Core:6,AL,AL-Strategies,学習成果,CS Core,6,貪欲法の最適性を評価,部分,76で固定した硬貨の貪欲法と最少枚数を比較。一般の証明は未評価。,coverage-al-strategies.md,42,原典照合結果は監査記録参照
-AL-Strategies:学習成果:CS Core:7,AL,AL-Strategies,学習成果,CS Core,7,指数的な問題への複数の対処を説明,部分,42・49・97で探索や枝刈りの固定例。一般的な比較と自由な説明は未評価。,coverage-al-strategies.md,43,原典照合結果は監査記録参照
+AL-Strategies:学習成果:CS Core:7,AL,AL-Strategies,学習成果,CS Core,7,指数的な問題への複数の対処を説明,部分,42・49・97で探索や枝刈り、1198で全組合せ・動的計画と分枝限定の固定例を比較。一般的な比較と自由な説明は未評価。,coverage-al-strategies.md,43,原典照合結果は監査記録参照
 AR-Assembly:トピック:CS Core:1,AR,AR-Assembly,トピック,CS Core,1,フォン・ノイマン型構成,部分,73で命令と数を同じ記憶に置く固定例。実機の構成は未評価。,coverage-ar-assembly.md,9,原典照合結果は監査記録参照
 AR-Assembly:トピック:CS Core:2,AR,AR-Assembly,トピック,CS Core,2,命令の取出し・解読・実行,部分,73・643で架空の命令を実行。一般の制御回路や実機は未評価。,coverage-ar-assembly.md,10,原典照合結果は監査記録参照
 AR-Assembly:トピック:CS Core:3,AR,AR-Assembly,トピック,CS Core,3,SIMD・MIMD と分類,部分,162で共有命令と別々の命令を比較。実機の分類と制約は未評価。,coverage-ar-assembly.md,11,原典照合結果は監査記録参照
