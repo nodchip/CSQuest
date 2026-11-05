@@ -369,6 +369,42 @@
         "src/digit-lab.js": "dcb9f2607130597d05b467acde8974fcf9eac3a8942055403e76636d3248a0e7",
         "tests/digit-lab.test.js": "712234a49f63193a61c72603e941719ba3387ca1881c071f74d6b57a27f450ee"
       }
+    },
+    "AI-Search:トピック:CS Core:4": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-ai-search-basics.md",
+      "row_sha256": "f96eeade1c04f4de04dd1fe1b6d6c2b286ab97a1a2aab38793f7ac7e4cb1f190",
+      "files": {
+        "src/app.js": "13cb3cd75fddcdb605dfb860ea61a04c480db5a5137717d8f8f5b066c056604f",
+        "src/search.js": "8317f9990804f60909ec39c6dfa3c775b4101ff2c543a9e2039e5f616dc4fce5",
+        "src/iterative-deepening.js": "809640b276941ee4805a36aea4b4bfc8826256a7ecd84c87f8ebe30ad9eafdc8",
+        "src/search-budget.js": "3d1ce4a2504d720f44a233c1bbec2156d617e108b07b1f6b48173050c669bd68",
+        "src/ida-star.js": "d8fd05d12e73a3e72a98a87d53c138dc87b5360480d30bd1142d0ffcdb5b845c",
+        "src/astar.js": "b599c56ddf332de7b7c6986afcd7f9292df56448e03fb534555da6eb962d5bcf",
+        "tests/search.test.js": "6d1f554505377c5907b1eb4a79eae02004107b72a6c90e8141b363b360135aa1",
+        "tests/iterative-deepening.test.js": "eef4fb298ff1c348676c19ee86ccb64998d14f4c4d747944b2a1f17ff0238820",
+        "tests/search-budget.test.js": "7881918dbb7ac3a825128c7072a6b4c28696ec8ffaffec70a6ed8e2a21a3fe2e",
+        "tests/ida-star.test.js": "5af0482906fa58f61a198ec9232f799406211bf508a9334ec8c4abb30c61241e"
+      }
+    },
+    "AI-Search:学習成果:明示なし:2": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-ai-search-basics.md",
+      "row_sha256": "68e5f9ac485b31922f6a5be71b3ecbeae6f77c780275a1b1bc42cf6599e260ba",
+      "files": {
+        "src/app.js": "13cb3cd75fddcdb605dfb860ea61a04c480db5a5137717d8f8f5b066c056604f",
+        "src/search.js": "8317f9990804f60909ec39c6dfa3c775b4101ff2c543a9e2039e5f616dc4fce5",
+        "src/iterative-deepening.js": "809640b276941ee4805a36aea4b4bfc8826256a7ecd84c87f8ebe30ad9eafdc8",
+        "src/search-budget.js": "3d1ce4a2504d720f44a233c1bbec2156d617e108b07b1f6b48173050c669bd68",
+        "src/ida-star.js": "d8fd05d12e73a3e72a98a87d53c138dc87b5360480d30bd1142d0ffcdb5b845c",
+        "src/astar.js": "b599c56ddf332de7b7c6986afcd7f9292df56448e03fb534555da6eb962d5bcf",
+        "tests/search.test.js": "6d1f554505377c5907b1eb4a79eae02004107b72a6c90e8141b363b360135aa1",
+        "tests/iterative-deepening.test.js": "eef4fb298ff1c348676c19ee86ccb64998d14f4c4d747944b2a1f17ff0238820",
+        "tests/search-budget.test.js": "7881918dbb7ac3a825128c7072a6b4c28696ec8ffaffec70a6ed8e2a21a3fe2e",
+        "tests/ida-star.test.js": "5af0482906fa58f61a198ec9232f799406211bf508a9334ec8c4abb30c61241e"
+      }
     }
   }
 }
