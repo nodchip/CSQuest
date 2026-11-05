@@ -848,6 +848,14 @@
       "topics": 20,
       "outcomes": 8,
       "scope_sha256": "2a5156fdd0d2871e884e239df616a8bac1c1b242c245bd6ad90557d328e9cb87"
+    },
+    "HCI-Design": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-hci-design.md",
+      "topics": 41,
+      "outcomes": 12,
+      "scope_sha256": "3f3099a1fa93d28439edce6af83fe56972fc8ce1c1d173bbfef546965f181585"
     }
   }
 }

@@ -1962,50 +1962,59 @@ HCI-Accountability:学習成果:KA Core:5,HCI,HCI-Accountability,学習成果,KA
 HCI-Accountability:学習成果:KA Core:6,HCI,HCI-Accountability,学習成果,KA Core,6,説得的内容と利用者の利益に対する意図を評価,部分,289 の見せ方の固定例。実際の意図・利益は未評価。,coverage-hci-accountability.md,39,原典照合結果は監査記録参照
 HCI-Accountability:学習成果:KA Core:7,HCI,HCI-Accountability,学習成果,KA Core,7,設計の意図に対する結果を批判的に検討,部分,289 の事前設定と結果を比較。実際の結果と自由な議論は未評価。,coverage-hci-accountability.md,40,原典照合結果は監査記録参照
 HCI-Accountability:学習成果:KA Core:8,HCI,HCI-Accountability,学習成果,KA Core,8,設計上の判断の影響を理解,部分,289 の初期値・配置、824 の入力方法の固定例。一般化は未評価。,coverage-hci-accountability.md,41,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:1a,HCI,HCI-Design,トピック,CS Core,1a,低忠実度の試作,部分,287 で架空の紙の試作品を操作。実際の試作は未評価。,coverage-hci-design.md,9,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:1b,HCI,HCI-Design,トピック,CS Core,1b,迅速な試作,部分,826 で架空の準備時間と目的を比べる。実際の作成時間や試作過程は未評価。,coverage-hci-design.md,10,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:1c,HCI,HCI-Design,トピック,CS Core,1c,使い捨ての試作,部分,826 で試作を作り直す場合も知見を引き継ぐことを振り返る。実際の試作・破棄は未評価。,coverage-hci-design.md,11,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:1d,HCI,HCI-Design,トピック,CS Core,1d,試作の粒度,部分,826 で紙、動く模型、精密な静止画を比較。一般の試作手法や実利用者は未評価。,coverage-hci-design.md,12,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:2a,HCI,HCI-Design,トピック,CS Core,2a,反復設計,部分,287 の観察・改善・再評価。実利用者を含む過程は未評価。,coverage-hci-design.md,13,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:2b,HCI,HCI-Design,トピック,CS Core,2b,ユニバーサルデザイン,部分,22・427 は複数の手がかりと入出力方法。一般の設計過程は未評価。,coverage-hci-design.md,14,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:2c,HCI,HCI-Design,トピック,CS Core,2c,インタラクション設計,部分,287 は固定の表示と取消し。設計全般は未評価。,coverage-hci-design.md,15,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:3a,HCI,HCI-Design,トピック,CS Core,3a,プラットフォームの制約,部分,1030で Web の事前保存と通信・初訪問の固定条件を比較。ブラウザーや実端末全般は未評価。,coverage-hci-design.md,16,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:3b,HCI,HCI-Design,トピック,CS Core,3b,端末の制約,部分,427 は架空の入出力方法を比較。実端末は未評価。,coverage-hci-design.md,17,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:3c,HCI,HCI-Design,トピック,CS Core,3c,資源の制約,部分,427 は仮定した予算を比較。実費用は未評価。,coverage-hci-design.md,18,原典照合結果は監査記録参照
-HCI-Design:トピック:CS Core:3d,HCI,HCI-Design,トピック,CS Core,3d,使いやすさ・安全性・プライバシーの均衡,部分,536 は公開範囲と利用条件を比較。一般の設計判断は未評価。,coverage-hci-design.md,19,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:4a,HCI,HCI-Design,トピック,KA Core,4a,ソフトウェアアーキテクチャのパターン,未照合,対応教材を要照合。,coverage-hci-design.md,20,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:4b,HCI,HCI-Design,トピック,KA Core,4b,複数プラットフォーム向け設計,未照合,対応教材を要照合。,coverage-hci-design.md,21,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:4c,HCI,HCI-Design,トピック,KA Core,4c,同期に関する設計,部分,288 は競合と遅れた通知。一般の分散同期は未評価。,coverage-hci-design.md,22,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:5a,HCI,HCI-Design,トピック,KA Core,5a,参加型設計,部分,359 で架空の声を基に試作を比較。実際の参加型設計は未評価。,coverage-hci-design.md,23,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:5b,HCI,HCI-Design,トピック,KA Core,5b,共同設計,部分,359 は固定された声と選択肢。実際の共同設計は未評価。,coverage-hci-design.md,24,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:5c,HCI,HCI-Design,トピック,KA Core,5c,ダブルダイヤモンド,部分,823 で３人の声を聞き、課題を選び、４案を試して選択。架空の反応であり実際の共同設計や一般の過程は未評価。,coverage-hci-design.md,25,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:5d,HCI,HCI-Design,トピック,KA Core,5d,発散と収束,部分,823 で視点と案を広げ、課題と解決案を絞り、見直しを振り返る。自由な発想や実利用者の研究は未評価。,coverage-hci-design.md,26,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:6a,HCI,HCI-Design,トピック,KA Core,6a,入出力の方法,部分,427 は架空の利用条件で入出力を選ぶ。全方式や実利用者は未評価。,coverage-hci-design.md,27,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:6b,HCI,HCI-Design,トピック,KA Core,6b,GUI,部分,287 は表示と取消しの固定例。一般の GUI 設計は未評価。,coverage-hci-design.md,28,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:6c,HCI,HCI-Design,トピック,KA Core,6c,コントローラ,未照合,対応教材を要照合。,coverage-hci-design.md,29,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:6d,HCI,HCI-Design,トピック,KA Core,6d,触覚,未照合,対応教材を要照合。,coverage-hci-design.md,30,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:6e,HCI,HCI-Design,トピック,KA Core,6e,ハードウェア設計,未照合,対応教材を要照合。,coverage-hci-design.md,31,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:6f,HCI,HCI-Design,トピック,KA Core,6f,エラー処理,部分,287 は取消しと状態表示の固定例。一般のエラー設計は未評価。,coverage-hci-design.md,32,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:7a,HCI,HCI-Design,トピック,KA Core,7a,色,部分,22 は色以外の手がかりを追加。色の設計全般は未評価。,coverage-hci-design.md,33,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:7b,HCI,HCI-Design,トピック,KA Core,7b,配置,部分,825 で札と箱の距離を変更し対応を比較。一般のレイアウトや実利用者は未評価。,coverage-hci-design.md,34,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:7c,HCI,HCI-Design,トピック,KA Core,7c,ゲシュタルト原則,部分,825 の札と箱の近接によるまとまりの固定例。他の原則や知覚の個人差は未評価。,coverage-hci-design.md,35,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:8a,HCI,HCI-Design,トピック,Non-core,8a,XR,部分,別の依頼で AR の位置合わせ・遮蔽、824 で AR の入力情報とプライバシーを扱う。没入環境全般と実機は未評価。,coverage-hci-design.md,36,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:8b,HCI,HCI-Design,トピック,Non-core,8b,空間音響,未照合,対応教材を要照合。,coverage-hci-design.md,37,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:9,HCI,HCI-Design,トピック,Non-core,9,３D 印刷と製作,部分,807 は材料を積む・削る・成形する固定模型。実際の３D 印刷機や製作過程は未評価。,coverage-hci-design.md,38,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:10,HCI,HCI-Design,トピック,Non-core,10,非同期インタラクション,部分,288 は遅れた通知と競合。モデル全般は未評価。,coverage-hci-design.md,39,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:11,HCI,HCI-Design,トピック,Non-core,11,創造性を支援する道具,未照合,対応教材を要照合。,coverage-hci-design.md,40,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:12,HCI,HCI-Design,トピック,Non-core,12,音声 UI,部分,427 は架空の音声入出力を候補として比較。音声 UI の設計全般は未評価。,coverage-hci-design.md,41,原典照合結果は監査記録参照
-HCI-Design:学習成果:CS Core:1,HCI,HCI-Design,学習成果,CS Core,1,指定された対話方法に合わせてシステム設計を提案,部分,287・427 の固定選択。自由な提案は未評価。,coverage-hci-design.md,47,原典照合結果は監査記録参照
-HCI-Design:学習成果:CS Core:2a,HCI,HCI-Design,学習成果,CS Core,2a,反復過程：利用者を理解,部分,188 の架空の困りごと。実利用者の調査は未評価。,coverage-hci-design.md,48,原典照合結果は監査記録参照
-HCI-Design:学習成果:CS Core:2b,HCI,HCI-Design,学習成果,CS Core,2b,反復過程：増分を開発,部分,287 で固定の改善を選択。実際の開発は未評価。,coverage-hci-design.md,49,原典照合結果は監査記録参照
-HCI-Design:学習成果:CS Core:2c,HCI,HCI-Design,学習成果,CS Core,2c,反復過程：増分を評価,部分,287 の固定反応で再試行。実利用者評価は未評価。,coverage-hci-design.md,50,原典照合結果は監査記録参照
-HCI-Design:学習成果:CS Core:2d,HCI,HCI-Design,学習成果,CS Core,2d,反復過程：結果を次の反復に反映,部分,287 の観察と固定の改善。一般の設計過程は未評価。,coverage-hci-design.md,51,原典照合結果は監査記録参照
-HCI-Design:学習成果:CS Core:3,HCI,HCI-Design,学習成果,CS Core,3,制約変更とトレードオフの影響を説明,部分,427 で架空の予算を変えて比較。自由な説明と実費用は未評価。,coverage-hci-design.md,52,原典照合結果は監査記録参照
-HCI-Design:学習成果:KA Core:4,HCI,HCI-Design,学習成果,KA Core,4,目的に照らしてアーキテクチャ設計を評価,未照合,対応教材を要照合。,coverage-hci-design.md,53,原典照合結果は監査記録参照
-HCI-Design:学習成果:KA Core:5,HCI,HCI-Design,学習成果,KA Core,5,分散環境の同期と利用体験の課題を特定,部分,288 で競合、下書き、古い通知を操作。一般の分散環境は未評価。,coverage-hci-design.md,54,原典照合結果は監査記録参照
-HCI-Design:学習成果:KA Core:6,HCI,HCI-Design,学習成果,KA Core,6,入力方法のプライバシー影響を比較,部分,824 の広場と個室で声・ボタン・撮影等を固定条件で比較。実利用者の意向や実装全般は未評価。,coverage-hci-design.md,55,原典照合結果は監査記録参照
-HCI-Design:学習成果:KA Core:7,HCI,HCI-Design,学習成果,KA Core,7,視覚設計原則に基づく根拠を説明,部分,825 で近接とプログラム上の関係を選択して比較。一般の設計根拠や自由な説明は未評価。,coverage-hci-design.md,56,原典照合結果は監査記録参照
-HCI-Design:学習成果:Non-core:8,HCI,HCI-Design,学習成果,Non-core,8,VR・AR・MR のプライバシー影響を評価,部分,824 は AR の位置合わせで映像の端末内処理・外部保存・停止を固定条件で比較。実機、周囲の人の意向、VR・MR 全般は未評価。,coverage-hci-design.md,57,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:1,HCI,HCI-Design,トピック,CS Core,1,試作の技法と道具,部分,低忠実度・迅速・使い捨て・粒度は子を参照。実際の試作は未評価。,coverage-hci-design.md,9,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:CS Core:1a,HCI,HCI-Design,トピック,CS Core,1a,低忠実度の試作,部分,287 で架空の紙の試作品を操作。実際の試作は未評価。,coverage-hci-design.md,10,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:1b,HCI,HCI-Design,トピック,CS Core,1b,迅速な試作,部分,826 で架空の準備時間と目的を比べる。実際の作成時間や試作過程は未評価。,coverage-hci-design.md,11,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:1c,HCI,HCI-Design,トピック,CS Core,1c,使い捨ての試作,部分,826 で試作を作り直す場合も知見を引き継ぐことを振り返る。実際の試作・破棄は未評価。,coverage-hci-design.md,12,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:1d,HCI,HCI-Design,トピック,CS Core,1d,試作の粒度,部分,826 で紙、動く模型、精密な静止画を比較。一般の試作手法や実利用者は未評価。,coverage-hci-design.md,13,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:2,HCI,HCI-Design,トピック,CS Core,2,設計パターン,部分,反復・ユニバーサル・インタラクション設計は子を参照。実践全般は未評価。,coverage-hci-design.md,14,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:CS Core:2a,HCI,HCI-Design,トピック,CS Core,2a,反復設計,部分,287 の観察・改善・再評価。実利用者を含む過程は未評価。,coverage-hci-design.md,15,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:2b,HCI,HCI-Design,トピック,CS Core,2b,ユニバーサルデザイン,部分,22・427 は複数の手がかりと入出力方法。一般の設計過程は未評価。,coverage-hci-design.md,16,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:2c,HCI,HCI-Design,トピック,CS Core,2c,インタラクション設計,部分,287 は固定の表示と取消し。設計全般は未評価。,coverage-hci-design.md,17,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:3,HCI,HCI-Design,トピック,CS Core,3,設計上の制約,部分,プラットフォーム・端末・資源とトレードオフは子を参照。一般の設計判断は未評価。,coverage-hci-design.md,18,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:CS Core:3a,HCI,HCI-Design,トピック,CS Core,3a,プラットフォームの制約,部分,1030で Web の事前保存と通信・初訪問の固定条件を比較。ブラウザーや実端末全般は未評価。,coverage-hci-design.md,19,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:3b,HCI,HCI-Design,トピック,CS Core,3b,端末の制約,部分,427 は架空の入出力方法を比較。実端末は未評価。,coverage-hci-design.md,20,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:3c,HCI,HCI-Design,トピック,CS Core,3c,資源の制約,部分,427 は仮定した予算を比較。実費用は未評価。,coverage-hci-design.md,21,原典照合結果は監査記録参照
+HCI-Design:トピック:CS Core:3d,HCI,HCI-Design,トピック,CS Core,3d,使いやすさ・安全性・プライバシーの均衡,部分,536 は公開範囲と利用条件を比較。一般の設計判断は未評価。,coverage-hci-design.md,22,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:4,HCI,HCI-Design,トピック,KA Core,4,設計パターンと指針,部分,アーキテクチャ・複数プラットフォーム・同期は子を参照。一部未照合。,coverage-hci-design.md,23,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:KA Core:4a,HCI,HCI-Design,トピック,KA Core,4a,ソフトウェアアーキテクチャのパターン,部分,92 で MVC の入力・記録・表示を操作。一般の設計パターンや目的に照らした評価は未評価。,coverage-hci-design.md,24,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:4b,HCI,HCI-Design,トピック,KA Core,4b,複数プラットフォーム向け設計,未照合,対応教材を要照合。,coverage-hci-design.md,25,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:4c,HCI,HCI-Design,トピック,KA Core,4c,同期に関する設計,部分,288 は競合と遅れた通知。一般の分散同期は未評価。,coverage-hci-design.md,26,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:5,HCI,HCI-Design,トピック,KA Core,5,設計過程,部分,参加型・共同設計・ダブルダイヤモンドと発散収束は子を参照。実際の共同設計は未評価。,coverage-hci-design.md,27,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:KA Core:5a,HCI,HCI-Design,トピック,KA Core,5a,参加型設計,部分,359 で架空の声を基に試作を比較。実際の参加型設計は未評価。,coverage-hci-design.md,28,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:5b,HCI,HCI-Design,トピック,KA Core,5b,共同設計,部分,359 は固定された声と選択肢。実際の共同設計は未評価。,coverage-hci-design.md,29,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:5c,HCI,HCI-Design,トピック,KA Core,5c,ダブルダイヤモンド,部分,823 で３人の声を聞き、課題を選び、４案を試して選択。架空の反応であり実際の共同設計や一般の過程は未評価。,coverage-hci-design.md,30,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:5d,HCI,HCI-Design,トピック,KA Core,5d,発散と収束,部分,823 で視点と案を広げ、課題と解決案を絞り、見直しを振り返る。自由な発想や実利用者の研究は未評価。,coverage-hci-design.md,31,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:6,HCI,HCI-Design,トピック,KA Core,6,インタラクション技法,部分,入出力・GUI・コントローラ・触覚・ハードウェア・エラー処理は子を参照。一部未照合。,coverage-hci-design.md,32,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:KA Core:6a,HCI,HCI-Design,トピック,KA Core,6a,入出力の方法,部分,427 は架空の利用条件で入出力を選ぶ。全方式や実利用者は未評価。,coverage-hci-design.md,33,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:6b,HCI,HCI-Design,トピック,KA Core,6b,GUI,部分,287 は表示と取消しの固定例。一般の GUI 設計は未評価。,coverage-hci-design.md,34,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:6c,HCI,HCI-Design,トピック,KA Core,6c,コントローラ,未照合,対応教材を要照合。,coverage-hci-design.md,35,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:6d,HCI,HCI-Design,トピック,KA Core,6d,触覚,未照合,対応教材を要照合。,coverage-hci-design.md,36,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:6e,HCI,HCI-Design,トピック,KA Core,6e,ハードウェア設計,未照合,対応教材を要照合。,coverage-hci-design.md,37,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:6f,HCI,HCI-Design,トピック,KA Core,6f,エラー処理,部分,287 は取消しと状態表示の固定例。一般のエラー設計は未評価。,coverage-hci-design.md,38,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:7,HCI,HCI-Design,トピック,KA Core,7,視覚 UI 設計,部分,色・配置・ゲシュタルト原則は子を参照。一般の視覚設計は未評価。,coverage-hci-design.md,39,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:KA Core:7a,HCI,HCI-Design,トピック,KA Core,7a,色,部分,22 は色以外の手がかりを追加。色の設計全般は未評価。,coverage-hci-design.md,40,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:7b,HCI,HCI-Design,トピック,KA Core,7b,配置,部分,825 で札と箱の距離を変更し対応を比較。一般のレイアウトや実利用者は未評価。,coverage-hci-design.md,41,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:7c,HCI,HCI-Design,トピック,KA Core,7c,ゲシュタルト原則,部分,825 の札と箱の近接によるまとまりの固定例。他の原則や知覚の個人差は未評価。,coverage-hci-design.md,42,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:8,HCI,HCI-Design,トピック,Non-core,8,没入環境,部分,XR と空間音響は子を参照。空間音響は未照合。,coverage-hci-design.md,43,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:Non-core:8a,HCI,HCI-Design,トピック,Non-core,8a,XR,部分,別の依頼で AR の位置合わせ・遮蔽、824 で AR の入力情報とプライバシーを扱う。没入環境全般と実機は未評価。,coverage-hci-design.md,44,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:8b,HCI,HCI-Design,トピック,Non-core,8b,空間音響,未照合,対応教材を要照合。,coverage-hci-design.md,45,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:9,HCI,HCI-Design,トピック,Non-core,9,３D 印刷と製作,部分,807 は材料を積む・削る・成形する固定模型。実際の３D 印刷機や製作過程は未評価。,coverage-hci-design.md,46,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:10,HCI,HCI-Design,トピック,Non-core,10,非同期インタラクション,部分,288 は遅れた通知と競合。モデル全般は未評価。,coverage-hci-design.md,47,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:11,HCI,HCI-Design,トピック,Non-core,11,創造性を支援する道具,未照合,対応教材を要照合。,coverage-hci-design.md,48,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:12,HCI,HCI-Design,トピック,Non-core,12,音声 UI,部分,427 は架空の音声入出力を候補として比較。音声 UI の設計全般は未評価。,coverage-hci-design.md,49,原典照合結果は監査記録参照
+HCI-Design:学習成果:CS Core:1,HCI,HCI-Design,学習成果,CS Core,1,指定された対話方法に合わせてシステム設計を提案,部分,287・427 の固定選択。自由な提案は未評価。,coverage-hci-design.md,55,原典照合結果は監査記録参照
+HCI-Design:学習成果:CS Core:2,HCI,HCI-Design,学習成果,CS Core,2,利用者理解・開発・評価・反映を含む反復過程,部分,188・287 の架空の声と固定試作は子を参照。実利用者を含む開発過程は未評価。,coverage-hci-design.md,56,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:学習成果:CS Core:2a,HCI,HCI-Design,学習成果,CS Core,2a,反復過程：利用者を理解,部分,188 の架空の困りごと。実利用者の調査は未評価。,coverage-hci-design.md,57,原典照合結果は監査記録参照
+HCI-Design:学習成果:CS Core:2b,HCI,HCI-Design,学習成果,CS Core,2b,反復過程：増分を開発,部分,287 で固定の改善を選択。実際の開発は未評価。,coverage-hci-design.md,58,原典照合結果は監査記録参照
+HCI-Design:学習成果:CS Core:2c,HCI,HCI-Design,学習成果,CS Core,2c,反復過程：増分を評価,部分,287 の固定反応で再試行。実利用者評価は未評価。,coverage-hci-design.md,59,原典照合結果は監査記録参照
+HCI-Design:学習成果:CS Core:2d,HCI,HCI-Design,学習成果,CS Core,2d,反復過程：結果を次の反復に反映,部分,287 の観察と固定の改善。一般の設計過程は未評価。,coverage-hci-design.md,60,原典照合結果は監査記録参照
+HCI-Design:学習成果:CS Core:3,HCI,HCI-Design,学習成果,CS Core,3,制約変更とトレードオフの影響を説明,部分,427 で架空の予算を変えて比較。自由な説明と実費用は未評価。,coverage-hci-design.md,61,原典照合結果は監査記録参照
+HCI-Design:学習成果:KA Core:4,HCI,HCI-Design,学習成果,KA Core,4,目的に照らしてアーキテクチャ設計を評価,未照合,対応教材を要照合。,coverage-hci-design.md,62,原典照合結果は監査記録参照
+HCI-Design:学習成果:KA Core:5,HCI,HCI-Design,学習成果,KA Core,5,分散環境の同期と利用体験の課題を特定,部分,288 で競合、下書き、古い通知を操作。一般の分散環境は未評価。,coverage-hci-design.md,63,原典照合結果は監査記録参照
+HCI-Design:学習成果:KA Core:6,HCI,HCI-Design,学習成果,KA Core,6,入力方法のプライバシー影響を比較,部分,824 の広場と個室で声・ボタン・撮影等を固定条件で比較。実利用者の意向や実装全般は未評価。,coverage-hci-design.md,64,原典照合結果は監査記録参照
+HCI-Design:学習成果:KA Core:7,HCI,HCI-Design,学習成果,KA Core,7,視覚設計原則に基づく根拠を説明,部分,825 で近接とプログラム上の関係を選択して比較。一般の設計根拠や自由な説明は未評価。,coverage-hci-design.md,65,原典照合結果は監査記録参照
+HCI-Design:学習成果:Non-core:8,HCI,HCI-Design,学習成果,Non-core,8,VR・AR・MR のプライバシー影響を評価,部分,824 は AR の位置合わせで映像の端末内処理・外部保存・停止を固定条件で比較。実機、周囲の人の意向、VR・MR 全般は未評価。,coverage-hci-design.md,66,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:CS Core:1,HCI,HCI-Evaluation,トピック,CS Core,1,利用者と行う評価の方法,部分,評価の目的・対象・倫理承認は子を参照。一般の評価計画と実施は未評価。,coverage-hci-evaluation.md,9,原典照合結果は監査記録参照・親子重複候補
 HCI-Evaluation:トピック:CS Core:1a,HCI,HCI-Evaluation,トピック,CS Core,1a,形成的・総括的評価,部分,60 で改善のための観察と評価の違いを提示。実利用者や総括的評価は未評価。,coverage-hci-evaluation.md,10,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:CS Core:1b,HCI,HCI-Evaluation,トピック,CS Core,1b,有用性、効率、学習しやすさ、満足度、感情等,部分,60・535 で架空の所要時間と発言を比較。各評価対象の全体像と実測は未評価。,coverage-hci-evaluation.md,11,原典照合結果は監査記録参照
