@@ -2576,39 +2576,43 @@ PDC-Communication:学習成果:KA Core:10,PDC,PDC-Communication,学習成果,KA 
 PDC-Communication:学習成果:KA Core:11,PDC,PDC-Communication,学習成果,KA Core,11,楽観的更新が完了しない例,部分,依頼451で他方が割り込み２回拒否される固定順序。同じ干渉が続く場合の可能性を説明し、有限の観察から無限を断定しない。一般の進行保証は未評価。,coverage-pdc-communication.md,53,原典照合結果は監査記録参照
 PDC-Communication:学習成果:KA Core:12,PDC,PDC-Communication,学習成果,KA Core,12,より拡張性・信頼性・可用性の高いストアへ変更,未照合,実システムの変更と評価は未確認。,coverage-pdc-communication.md,54,原典照合結果は監査記録参照
 PDC-Communication:学習成果:KA Core:13,PDC,PDC-Communication,学習成果,KA Core,13,複製ストア上で障害時も map を維持するプログラム,部分,依頼190・193の複製の固定模型は関連例。実プラットフォーム上の耐障害プログラムは未評価。,coverage-pdc-communication.md,55,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:1a,PDC,PDC-Coordination,トピック,CS Core,1a,依存により競合回避・終了を保証,部分,16で排他、90で到着後の集計を操作。一般の保証は未評価。,coverage-pdc-coordination.md,11,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:1b,PDC,PDC-Coordination,トピック,CS Core,1b,依存循環の回避・単調条件・不要な依存の除去,部分,30・631で鍵の循環と共通順序を比較。単調条件や一般の進行保証は未評価。,coverage-pdc-coordination.md,12,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:2a,PDC,PDC-Coordination,トピック,CS Core,2a,完了に基づくバリア・join・終了制御,部分,90でバリア、628で終了待ちを操作。一般の終了制御は未評価。,coverage-pdc-coordination.md,13,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:2b,PDC,PDC-Coordination,トピック,CS Core,2b,キュー・生産者消費者,部分,178で容量１とセマフォを操作。一般のキューや実装は未評価。,coverage-pdc-coordination.md,14,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:2c,PDC,PDC-Coordination,トピック,CS Core,2c,条件に基づく再試行・待機・通知等,部分,567で再試行、629で通知後の条件再確認を操作。一般のバックオフ等は未評価。,coverage-pdc-coordination.md,15,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:2d,PDC,PDC-Coordination,トピック,CS Core,2d,反応型の継続処理,部分,92で出来事の待機と処理を操作。一般の継続処理は未評価。,coverage-pdc-coordination.md,16,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:3a,PDC,PDC-Coordination,トピック,CS Core,3a,原子的命令と局所順序,部分,567で原子的な検査・設定を操作。実機命令とメモリ順序は未評価。,coverage-pdc-coordination.md,17,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:3b,PDC,PDC-Coordination,トピック,CS Core,3b,ロック・排他・粒度,部分,16で排他、630で鍵の粒度を比較。実装・一般性能は未評価。,coverage-pdc-coordination.md,18,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:3c,PDC,PDC-Coordination,トピック,CS Core,3c,実言語のロックと競合のない進行,部分,16で鍵による固定模型。実言語の使用や一般の進行保証は未評価。,coverage-pdc-coordination.md,19,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:3d,PDC,PDC-Coordination,トピック,CS Core,3d,デッドロックの回避,部分,631で取得順と一括取得を比較。他の方式や一般の保証は未評価。,coverage-pdc-coordination.md,20,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:3e,PDC,PDC-Coordination,トピック,CS Core,3e,ロック忘れ等の誤り,部分,15・16で排他なしの更新喪失を比較。解放忘れや未知の操作は未評価。,coverage-pdc-coordination.md,21,原典照合結果は監査記録参照
-PDC-Coordination:トピック:CS Core:3f,PDC,PDC-Coordination,トピック,CS Core,3f,複製・読取専用・所有権・非ブロッキング,部分,814で原子的比較交換、1003で所有権の一体取得と回収を固定模型で操作。1003の一体取得は内部で鍵を使わない保証がない。複製・読取専用や実装の進行保証は未評価。,coverage-pdc-coordination.md,22,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4a,PDC,PDC-Coordination,トピック,KA Core,4a,進行特性・公平性・優先度,部分,177で優先度と飢餓を比較。ロックフリー等の一般保証は未評価。,coverage-pdc-coordination.md,23,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4b,PDC,PDC-Coordination,トピック,KA Core,4b,競合・粒度・スケーリングの性能,部分,630で共通鍵と棚別の鍵を比較。実測や一般性能は未評価。,coverage-pdc-coordination.md,24,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4c,PDC,PDC-Coordination,トピック,KA Core,4c,非ブロッキング構造・アルゴリズム,部分,814で比較交換による２更新、815でスタックの ABA と更新番号、816・1296で回収延期を操作。一般の構造、実装と進行保証は未評価。,coverage-pdc-coordination.md,25,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4d,PDC,PDC-Coordination,トピック,KA Core,4d,所有権と資源制御,部分,816・1296で読み手の公表と回収延期、1003で参照の取得順と所有数・回収を比較。一般的な所有権管理、実装と資源制御は未評価。,coverage-pdc-coordination.md,26,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4e,PDC,PDC-Coordination,トピック,KA Core,4e,ロックの変種・再入・スピンと待機,部分,567・568でスピンと再入の固定例。一般のロックや実装は未評価。,coverage-pdc-coordination.md,27,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4f,PDC,PDC-Coordination,トピック,KA Core,4f,楽観的・保守的な取引制御,部分,39で競合順序、818で版の不一致と読み直しの固定例を操作。悲観的制御との一般比較や実装は未評価。,coverage-pdc-coordination.md,28,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4g,PDC,PDC-Coordination,トピック,KA Core,4g,分散ロックと信頼性,部分,817で期限切れの古い要求と保存先での番号検査を、２つの到着順で比較。実サービス、障害・認証や一般の保証は未評価。,coverage-pdc-coordination.md,29,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4h,PDC,PDC-Coordination,トピック,KA Core,4h,時計・カウンター・future 等によるバリアの代替,部分,503で時計推定、130で小計の集約を操作。一般のバリア代替・実装は未評価。,coverage-pdc-coordination.md,30,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4i,PDC,PDC-Coordination,トピック,KA Core,4i,投機・選択・取消しと観測・安全性,部分,502で探索の中止依頼と後片付けを比較。一般の取消し・安全性は未評価。,coverage-pdc-coordination.md,31,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4j,PDC,PDC-Coordination,トピック,KA Core,4j,セマフォと条件変数による資源制御,部分,178・629で容量１と条件再確認を操作。実実装は未評価。,coverage-pdc-coordination.md,32,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4k,PDC,PDC-Coordination,トピック,KA Core,4k,予定・並列ループ・パイプライン・入れ子並列,部分,418で４計算を２人に割当。一般の制御構造は未評価。,coverage-pdc-coordination.md,33,原典照合結果は監査記録参照
-PDC-Coordination:トピック:KA Core:4l,PDC,PDC-Coordination,トピック,KA Core,4l,例外・故障・検出・耐障害性,部分,502でゼロ除算後の中止を操作。一般の例外伝播や障害耐性は未評価。,coverage-pdc-coordination.md,34,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:CS Core:1,PDC,PDC-Coordination,学習成果,CS Core,1,与えられたプログラムの競合を回避・修復,部分,15・16で更新喪失と鍵を比較。実プログラムの修復は未評価。,coverage-pdc-coordination.md,40,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:CS Core:2,PDC,PDC-Coordination,学習成果,CS Core,2,並行作業の完了後に正しく終了,部分,90で２人の準備後に集計。実プログラムの終了制御は未評価。,coverage-pdc-coordination.md,41,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:KA Core:3,PDC,PDC-Coordination,学習成果,KA Core,3,イベントを効率的に数える関数を書く,部分,1121で共有更新と２塔の小計・集約を比較。実コード、同時更新や実性能は評価しない。詳細は [PDC-Programs](coverage-pdc-programs.md)。,coverage-pdc-coordination.md,42,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:KA Core:4,PDC,PDC-Coordination,学習成果,KA Core,4,複数方式で filter/map/reduce を書く,部分,419で選択・分担・集約を操作。実コードと一般の方式は未評価。,coverage-pdc-coordination.md,43,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:KA Core:5,PDC,PDC-Coordination,学習成果,KA Core,5,並列動作の完了後に次を実行,部分,90・130で完了後の集計を操作。実プログラムは未評価。,coverage-pdc-coordination.md,44,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:KA Core:6,PDC,PDC-Coordination,学習成果,KA Core,6,複数探索で解を得たら他を止める,部分,502で中止依頼・確認地点・後片付けを操作。実プログラムは未評価。,coverage-pdc-coordination.md,45,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:KA Core:7,PDC,PDC-Coordination,学習成果,KA Core,7,数値例外で他の作業を終了,部分,502でゼロ除算後の中止を操作。実例外伝播とプログラムは未評価。,coverage-pdc-coordination.md,46,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:KA Core:8,PDC,PDC-Coordination,学習成果,KA Core,8,複数主体の時刻合意と限界,部分,503で往復測定と非対称性を比較。複数ノードの合意・実装は未評価。,coverage-pdc-coordination.md,47,原典照合結果は監査記録参照
-PDC-Coordination:学習成果:KA Core:9,PDC,PDC-Coordination,学習成果,KA Core,9,要求ごとにスレッド等を作るサービス,部分,452で知らせごとの活動を操作。実サービスの実装は未評価。,coverage-pdc-coordination.md,48,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:1,PDC,PDC-Coordination,トピック,CS Core,1,作業間の依存関係,部分,16・30・90で排他、循環、作業完了を比較。一般の依存関係は未評価。,coverage-pdc-coordination.md,11,原典照合結果は監査記録参照・親子重複候補
+PDC-Coordination:トピック:CS Core:1a,PDC,PDC-Coordination,トピック,CS Core,1a,依存により競合回避・終了を保証,部分,16で排他、90で到着後の集計を操作。一般の保証は未評価。,coverage-pdc-coordination.md,12,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:1b,PDC,PDC-Coordination,トピック,CS Core,1b,依存循環の回避・単調条件・不要な依存の除去,部分,30・631で鍵の循環と共通順序を比較。単調条件や一般の進行保証は未評価。,coverage-pdc-coordination.md,13,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:2,PDC,PDC-Coordination,トピック,CS Core,2,制御構造と設計パターン,部分,90・178・629で完了待ち、キュー、条件確認を操作。一般の制御や実装は未評価。,coverage-pdc-coordination.md,14,原典照合結果は監査記録参照・親子重複候補
+PDC-Coordination:トピック:CS Core:2a,PDC,PDC-Coordination,トピック,CS Core,2a,完了に基づくバリア・join・終了制御,部分,90でバリア、628で終了待ちを操作。一般の終了制御は未評価。,coverage-pdc-coordination.md,15,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:2b,PDC,PDC-Coordination,トピック,CS Core,2b,キュー・生産者消費者,部分,178で容量１とセマフォを操作。一般のキューや実装は未評価。,coverage-pdc-coordination.md,16,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:2c,PDC,PDC-Coordination,トピック,CS Core,2c,条件に基づく再試行・待機・通知等,部分,567で再試行、629で通知後の条件再確認を操作。一般のバックオフ等は未評価。,coverage-pdc-coordination.md,17,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:2d,PDC,PDC-Coordination,トピック,CS Core,2d,反応型の継続処理,部分,92で出来事の待機と処理を操作。一般の継続処理は未評価。,coverage-pdc-coordination.md,18,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:3,PDC,PDC-Coordination,トピック,CS Core,3,原子性,部分,16・567・631で排他や鍵の取得を操作。実装や一般の進行保証は未評価。,coverage-pdc-coordination.md,19,原典照合結果は監査記録参照・親子重複候補
+PDC-Coordination:トピック:CS Core:3a,PDC,PDC-Coordination,トピック,CS Core,3a,原子的命令と局所順序,部分,567で原子的な検査・設定を操作。実機命令とメモリ順序は未評価。,coverage-pdc-coordination.md,20,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:3b,PDC,PDC-Coordination,トピック,CS Core,3b,ロック・排他・粒度,部分,16で排他、630で鍵の粒度を比較。実装・一般性能は未評価。,coverage-pdc-coordination.md,21,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:3c,PDC,PDC-Coordination,トピック,CS Core,3c,実言語のロックと競合のない進行,部分,16で鍵による固定模型。実言語の使用や一般の進行保証は未評価。,coverage-pdc-coordination.md,22,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:3d,PDC,PDC-Coordination,トピック,CS Core,3d,デッドロックの回避,部分,631で取得順と一括取得、244で決められた再試行と行動順を比較。ランダム化や一般の保証は未評価。,coverage-pdc-coordination.md,23,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:3e,PDC,PDC-Coordination,トピック,CS Core,3e,ロック忘れ等の誤り,部分,15・16で排他なしの更新喪失を比較。解放忘れや未知の操作は未評価。,coverage-pdc-coordination.md,24,原典照合結果は監査記録参照
+PDC-Coordination:トピック:CS Core:3f,PDC,PDC-Coordination,トピック,CS Core,3f,複製・読取専用・所有権・非ブロッキング,部分,814で原子的比較交換、1003で所有権の一体取得と回収を固定模型で操作。1003の一体取得は内部で鍵を使わない保証がない。複製・読取専用や実装の進行保証は未評価。,coverage-pdc-coordination.md,25,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4,PDC,PDC-Coordination,トピック,KA Core,4,同期の性質と拡張から１つ以上を選ぶ,部分,177・630・814などで固定例を比較。全手法の一般的な実装や進行保証は未評価。,coverage-pdc-coordination.md,26,原典照合結果は監査記録参照・親子重複候補
+PDC-Coordination:トピック:KA Core:4a,PDC,PDC-Coordination,トピック,KA Core,4a,進行特性・公平性・優先度,部分,177で優先度と飢餓を比較。ロックフリー等の一般保証は未評価。,coverage-pdc-coordination.md,27,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4b,PDC,PDC-Coordination,トピック,KA Core,4b,競合・粒度・スケーリングの性能,部分,630で共通鍵と棚別の鍵を比較。実測や一般性能は未評価。,coverage-pdc-coordination.md,28,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4c,PDC,PDC-Coordination,トピック,KA Core,4c,非ブロッキング構造・アルゴリズム,部分,814で比較交換による２更新、815でスタックの ABA と更新番号、816・1296で回収延期を操作。一般の構造、実装と進行保証は未評価。,coverage-pdc-coordination.md,29,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4d,PDC,PDC-Coordination,トピック,KA Core,4d,所有権と資源制御,部分,816・1296で読み手の公表と回収延期、1003で参照の取得順と所有数・回収を比較。一般的な所有権管理、実装と資源制御は未評価。,coverage-pdc-coordination.md,30,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4e,PDC,PDC-Coordination,トピック,KA Core,4e,ロックの変種・再入・スピンと待機,部分,567・568でスピンと再入の固定例。一般のロックや実装は未評価。,coverage-pdc-coordination.md,31,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4f,PDC,PDC-Coordination,トピック,KA Core,4f,楽観的・保守的な取引制御,部分,39で競合順序、818で版の不一致と読み直しの固定例を操作。悲観的制御との一般比較や実装は未評価。,coverage-pdc-coordination.md,32,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4g,PDC,PDC-Coordination,トピック,KA Core,4g,分散ロックと信頼性,部分,817で期限切れの古い要求と保存先での番号検査を、２つの到着順で比較。実サービス、障害・認証や一般の保証は未評価。,coverage-pdc-coordination.md,33,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4h,PDC,PDC-Coordination,トピック,KA Core,4h,時計・カウンター・future 等によるバリアの代替,部分,503で時計推定、130で小計の集約を操作。一般のバリア代替・実装は未評価。,coverage-pdc-coordination.md,34,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4i,PDC,PDC-Coordination,トピック,KA Core,4i,投機・選択・取消しと観測・安全性,部分,502で探索の中止依頼と後片付けを比較。一般の取消し・安全性は未評価。,coverage-pdc-coordination.md,35,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4j,PDC,PDC-Coordination,トピック,KA Core,4j,セマフォと条件変数による資源制御,部分,178・629で容量１と条件再確認を操作。実実装は未評価。,coverage-pdc-coordination.md,36,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4k,PDC,PDC-Coordination,トピック,KA Core,4k,予定・並列ループ・パイプライン・入れ子並列,部分,418で４計算を２人に割当。一般の制御構造は未評価。,coverage-pdc-coordination.md,37,原典照合結果は監査記録参照
+PDC-Coordination:トピック:KA Core:4l,PDC,PDC-Coordination,トピック,KA Core,4l,例外・故障・検出・耐障害性,部分,502でゼロ除算後の中止を操作。一般の例外伝播や障害耐性は未評価。,coverage-pdc-coordination.md,38,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:CS Core:1,PDC,PDC-Coordination,学習成果,CS Core,1,与えられたプログラムの競合を回避・修復,部分,15・16で更新喪失と鍵を比較。実プログラムの修復は未評価。,coverage-pdc-coordination.md,44,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:CS Core:2,PDC,PDC-Coordination,学習成果,CS Core,2,並行作業の完了後に正しく終了,部分,90で２人の準備後に集計。実プログラムの終了制御は未評価。,coverage-pdc-coordination.md,45,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:KA Core:3,PDC,PDC-Coordination,学習成果,KA Core,3,イベントを効率的に数える関数を書く,部分,1121で共有更新と２塔の小計・集約を比較。実コード、同時更新や実性能は評価しない。詳細は [PDC-Programs](coverage-pdc-programs.md)。,coverage-pdc-coordination.md,46,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:KA Core:4,PDC,PDC-Coordination,学習成果,KA Core,4,複数方式で filter/map/reduce を書く,部分,419で選択・分担・集約を操作。実コードと一般の方式は未評価。,coverage-pdc-coordination.md,47,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:KA Core:5,PDC,PDC-Coordination,学習成果,KA Core,5,並列動作の完了後に次を実行,部分,90・130で完了後の集計を操作。実プログラムは未評価。,coverage-pdc-coordination.md,48,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:KA Core:6,PDC,PDC-Coordination,学習成果,KA Core,6,複数探索で解を得たら他を止める,部分,502で中止依頼・確認地点・後片付けを操作。実プログラムは未評価。,coverage-pdc-coordination.md,49,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:KA Core:7,PDC,PDC-Coordination,学習成果,KA Core,7,数値例外で他の作業を終了,部分,502でゼロ除算後の中止を操作。実例外伝播とプログラムは未評価。,coverage-pdc-coordination.md,50,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:KA Core:8,PDC,PDC-Coordination,学習成果,KA Core,8,複数主体の時刻合意と限界,部分,503で往復測定と非対称性を比較。複数ノードの合意・実装は未評価。,coverage-pdc-coordination.md,51,原典照合結果は監査記録参照
+PDC-Coordination:学習成果:KA Core:9,PDC,PDC-Coordination,学習成果,KA Core,9,要求ごとにスレッド等を作るサービス,部分,452で知らせごとの活動を操作。実サービスの実装は未評価。,coverage-pdc-coordination.md,52,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:1,PDC,PDC-Evaluation,トピック,CS Core,1,時相論理による安全性・活性の要件,部分,438で排他と飢餓、439で２式と循環記録を比較。一般の式の作成と全実行の検証は未評価。,coverage-pdc-evaluation.md,9,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:2,PDC,PDC-Evaluation,トピック,CS Core,2,順序・原子性・終了に関する違反の発見、試験、修正,部分,15・16・30で更新喪失、排他、循環待ち、244で固定された再挑戦の繰返しを操作。チェック後の実行や一般の試験・修正は未評価。,coverage-pdc-evaluation.md,10,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:3,PDC,PDC-Evaluation,トピック,CS Core,3,性能指標とサービス水準,部分,66・437で時間や仕事量、161で仮定の電力を比較。応答性、遅延、可用性、資源、通信、待ち、制限、公平性、合意されたサービス水準の体系的な評価・実測は未評価。,coverage-pdc-evaluation.md,11,原典照合結果は監査記録参照

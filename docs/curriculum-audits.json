@@ -640,6 +640,14 @@
       "topics": 9,
       "outcomes": 5,
       "scope_sha256": "914969dc2a2ac34a5c67b9178290a7523a229bdc29d79aa3a13eb0f3e73624e1"
+    },
+    "PDC-Coordination": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-pdc-coordination.md",
+      "topics": 28,
+      "outcomes": 9,
+      "scope_sha256": "243f17b1d81805ec7091173bd7aef0dc51312bc622386f966daf50af03cbf88c"
     }
   }
 }

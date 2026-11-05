@@ -34,3 +34,15 @@ test('players can create a repeated state and then choose a schedule that comple
  const saved=restoreDeadlockCheck({...old,manualHistory:done});assert.deepEqual(manualRetryReplay(saved.manualHistory),end);
  assert.throws(()=>manualRetryReplay(['a','a','b']));assert.throws(()=>manualRetryReplay(['c']));assert.throws(()=>manualRetryReplay(Array(81).fill('a')));
 });
+test('all reachable retry states preserve exclusive keys and unfinished states have an enabled action',()=>{
+ const queue=[manualRetryReplay([])],seen=new Set();
+ while(queue.length){
+  const state=queue.shift(),key=`${state.a},${state.b}`;if(seen.has(key))continue;seen.add(key);
+  const a=deadlockHeld('opposite',state,'a'),b=deadlockHeld('opposite',state,'b');
+  assert.equal(a.some(k=>b.includes(k)),false,key);
+  const next=['a','b'].map(who=>manualRetryNext(state,who)).filter(Boolean);
+  if(state.a!==3||state.b!==3)assert.ok(next.length>0,key);
+  queue.push(...next);
+ }
+ assert.ok(seen.has('1,1'));assert.ok(seen.has('3,3'));
+});
