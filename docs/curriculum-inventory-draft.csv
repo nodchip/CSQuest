@@ -2021,7 +2021,7 @@ HCI-Evaluation:トピック:Non-core:5,HCI,HCI-Evaluation,トピック,Non-core,
 HCI-Evaluation:トピック:Non-core:5a,HCI,HCI-Evaluation,トピック,Non-core,5a,統計パッケージ,未照合,実ツールに相当する教材を要照合。,coverage-hci-evaluation.md,36,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:Non-core:5b,HCI,HCI-Evaluation,トピック,Non-core,5b,可視化ツール,未照合,調査分析用ツールの対応を要照合。,coverage-hci-evaluation.md,37,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:Non-core:5c,HCI,HCI-Evaluation,トピック,Non-core,5c,各種統計検定,部分,529 は４組の置換検定と対応のある t 検定。その他の検定と一般の選択は未評価。,coverage-hci-evaluation.md,38,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:Non-core:5d,HCI,HCI-Evaluation,トピック,Non-core,5d,データ探索、視覚分析、効果量,部分,529 は対応する平均差。標準化効果量と一般の視覚分析は未評価。,coverage-hci-evaluation.md,39,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:Non-core:5d,HCI,HCI-Evaluation,トピック,Non-core,5d,データ探索、視覚分析、効果量,部分,529 は対応する平均差と差の標準偏差で割る標準化平均差。一般の効果量と視覚分析は未評価。,coverage-hci-evaluation.md,39,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:Non-core:6,HCI,HCI-Evaluation,トピック,Non-core,6,データ管理,部分,保存・共有・機微性・識別可能性は子を参照。実データの管理は未評価。,coverage-hci-evaluation.md,40,原典照合結果は監査記録参照・親子重複候補
 HCI-Evaluation:トピック:Non-core:6a,HCI,HCI-Evaluation,トピック,Non-core,6a,データの保存・共有,部分,532 は架空の同意範囲と保存期限。実データの管理は未評価。,coverage-hci-evaluation.md,41,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:Non-core:6b,HCI,HCI-Evaluation,トピック,Non-core,6b,機微性と識別可能性,部分,532 は元記録と集計候補を比較。再識別や匿名性の保証は未評価。,coverage-hci-evaluation.md,42,原典照合結果は監査記録参照
