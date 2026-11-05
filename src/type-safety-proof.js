@@ -1,3 +1,4 @@
+import {ruleCreate,ruleRestore} from './compositional-types.js';
 export const safetyProofLevel={id:'workshop-type-safety-proof',number:'767',kind:'type-safety-proof',name:'変身の証明の塔',tag:'進行と保存の証明',title:'すべての変身を守る証明',story:'工房の守り手は、いくつかの例だけでなく、どんな大きさの品でも安全か知りたがっています。証明の石を積み、変身の約束をつなぎましょう。'};
 
 // Each obligation is a case of the typing derivation or its possible step.
@@ -29,7 +30,7 @@ const wrongReasons=[
  ['道は数型だけでなく灯り型でもよく、二つの道の型が同じであることが必要です。','どちらが選ばれても型を保つため、両方の道に同じ型が必要です。'],
  ['有限個の例を試すことは、任意の手数についての証明にはなりません。','進行と保存は型が付く式を前提とし、型が付かない式の進行は保証しません。']
 ];
-export function proofCreate(){return {stage:0,choice:null,message:''};}
+export function proofCreate(){return {stage:0,choice:null,message:'',rulesLab:ruleCreate()};}
 export function proofTry(s){const stage=proofStages[s.stage];if(!stage)return {...s,message:'証明の塔は完成しています。'};if(s.choice===null)return {...s,message:'石を一つ選びましょう。'};if(s.choice!==stage.correct){const original=(s.choice+s.stage%3)%3;return {...s,message:wrongReasons[s.stage][original-1]};}return {...s,stage:s.stage+1,choice:null,message:stage.why};}
 export function proofComplete(s){return s.stage===proofStages.length;}
-export function proofRestore(s){if(!s||!Number.isInteger(s.stage)||s.stage<0||s.stage>proofStages.length||![null,0,1,2].includes(s.choice)||s.stage===proofStages.length&&s.choice!==null)throw new RangeError('途中記録が不正です。');return {stage:s.stage,choice:s.choice,message:''};}
+export function proofRestore(s){if(!s||!Number.isInteger(s.stage)||s.stage<0||s.stage>proofStages.length||![null,0,1,2].includes(s.choice)||s.stage===proofStages.length&&s.choice!==null)throw new RangeError('途中記録が不正です。');return {stage:s.stage,choice:s.choice,message:'',rulesLab:s.rulesLab===undefined?ruleCreate():ruleRestore(s.rulesLab)};}

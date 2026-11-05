@@ -1572,7 +1572,7 @@ FPL-Types:学習成果:KA Core:9,FPL,FPL-Types,学習成果,KA Core,9,決定不�
 FPL-Types:学習成果:KA Core:10,FPL,FPL-Types,学習成果,KA Core,10,ジェネリック型を使う部品を定義・利用,部分,509で用意された袋を利用。実言語での定義・利用は評価しない。,coverage-fpl-types.md,60,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:11,FPL,FPL-Types,学習成果,KA Core,11,ジェネリクス、サブタイプ、オーバーロードを比較,部分,945で同じ品に３方式を適用して受入れと手順を比較。実言語全般と自由な説明は未評価。,coverage-fpl-types.md,61,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:12,FPL,FPL-Types,学習成果,KA Core,12,静的型付けの利点と限界を説明,部分,24・510・772で検査時点と正しさの限界。保守や自由な説明は未評価。,coverage-fpl-types.md,62,原典照合結果は監査記録参照
-FPL-Types:学習成果:Non-core:13,FPL,FPL-Types,学習成果,Non-core,13,型システムを厳密かつ合成的に定義,未照合,対応する教材を未確認。,coverage-fpl-types.md,63,原典照合結果は監査記録参照
+FPL-Types:学習成果:Non-core:13,FPL,FPL-Types,学習成果,Non-core,13,型システムを厳密かつ合成的に定義,部分,767で閉じた小言語の４種類の型規則を選び、入れ子の式に適用。自由な定義や任意の言語は未評価。,coverage-fpl-types.md,63,原典照合結果は監査記録参照
 FPL-Types:学習成果:Non-core:14,FPL,FPL-Types,学習成果,Non-core,14,型構成子の値と不変条件を特定,部分,595・596で有限の積・和・全関数。一般の構成子と不変条件は未評価。,coverage-fpl-types.md,64,原典照合結果は監査記録参照
 FPL-Types:学習成果:Non-core:15,FPL,FPL-Types,学習成果,Non-core,15,健全な型システムの不変条件を厳密に記述,部分,766で進行と１手の型の保存を選択肢で振り返る。厳密な自由記述は評価しない。,coverage-fpl-types.md,65,原典照合結果は監査記録参照
 FPL-Types:学習成果:Non-core:16,FPL,FPL-Types,学習成果,Non-core,16,保存と進行で小言語の型安全性を証明,部分,767で閉じた数・灯り・加算・分岐の言語の帰納法による証明の各場合を選ぶ。独力での証明構築や自由記述は評価しない。,coverage-fpl-types.md,66,原典照合結果は監査記録参照
