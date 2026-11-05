@@ -33,3 +33,5 @@
 依頼1299は E→E+a｜a と E→aR、R→+aR｜空 の２文法で同じ３文字列を作り、導出の途中と構文木を比較する。どちらも a に +a を０回以上続ける言語だが導出・構文木の形が異なり、意味や結合の保存は別に考える必要がある。`tests/left-recursion.test.js` は４文字列の導出、木の葉、操作制限、達成条件と復元を検査する。一般的な変換・解析器の実装は未評価。参考：[Stanford: Removing Left Recursion](https://web.stanford.edu/class/archive/cs/cs143/cs143.1156/handouts/parsing.pdf)。
 
 依頼1299には、別の引き算の例で左結合と右結合の結果３・７を比較する操作を追加した。同じ文字列を受理することと意味を保つことを区別する。固定された式で、任意の文法や意味保存の証明は扱わない。参考：[Crafting Interpreters](https://craftinginterpreters.com/parsing-expressions.html)。
+
+依頼1299は、左再帰を常に先に選ぶ単純な解析と、変換後に入力を読む解析も比較する。６手の固定例で、他の解析方式や一般の解析器の実装は未評価。

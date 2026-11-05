@@ -24,6 +24,16 @@ async page => {
    if(!(await p.locator('body').innerText()).includes('両方を計算し、結果を見比べましょう'))throw Error('誤答が受理されました');
    await p.locator('[data-lr-assoc-answer="different"]').click();await p.locator('#lr-assoc-check').click();
    if(!(await p.locator('body').innerText()).includes('左は３、右は７'))throw Error('比較結果が不正です');
+   for(let i=0;i<6;i++)await p.locator('#lr-parser-step').click();
+   if(!(await p.locator('body').innerText()).includes('残り入力：a+a'))throw Error('左再帰の入力が不正です');
+   await p.locator('[data-lr-parser="right"]').click();
+   for(let i=0;i<3;i++)await p.locator('#lr-parser-step').click();
+   await p.goto(url);await open('1299');
+   if(!(await p.locator('body').innerText()).includes('手順 3 / 6'))throw Error('解析途中が復元されません');
+   for(let i=0;i<3;i++)await p.locator('#lr-parser-step').click();
+   if(!(await p.locator('body').innerText()).includes('残り入力：なし ／ 受理'))throw Error('変換後に受理できません');
+   await p.locator('[data-lr-parser-answer="repeat"]').click();await p.locator('#lr-parser-check').click();
+   if(!(await p.locator('body').innerText()).includes('入力を読まないまま E が先頭に戻り'))throw Error('解析の振り返りが不正です');
    if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('画面が横にはみ出します');
    await p.locator('#back').click();await open('1265');
    await p.locator('[data-lr-guess="go"]').click();await p.locator('#lr-train').click();
