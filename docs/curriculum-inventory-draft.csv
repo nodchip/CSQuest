@@ -1934,29 +1934,34 @@ HCI-Accessibility:学習成果:Non-core:9,HCI,HCI-Accessibility,学習成果,Non
 HCI-Accessibility:学習成果:Non-core:9a,HCI,HCI-Accessibility,学習成果,Non-core,9a,技術設計への偏りの実例,未照合,障害・人種・性別を含む歴史的事例の検討が必要。,coverage-hci-accessibility.md,51,原典照合結果は監査記録参照
 HCI-Accessibility:学習成果:Non-core:9b,HCI,HCI-Accessibility,学習成果,Non-core,9b,その経験から設計への教訓,未照合,個別事例からの考察が必要。,coverage-hci-accessibility.md,52,原典照合結果は監査記録参照
 HCI-Accessibility:学習成果:Non-core:10,HCI,HCI-Accessibility,学習成果,Non-core,10,ニーズ調査の構想,部分,793 は参加の時期と方法を選ぶ。調査計画の作成や実施は評価しない。,coverage-hci-accessibility.md,53,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:1a,HCI,HCI-Accountability,トピック,CS Core,1a,設計の持続可能性への影響,部分,91 で修理・製造と使用期間の架空模型。実際の環境影響は未評価。,coverage-hci-accountability.md,9,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:1b,HCI,HCI-Accountability,トピック,CS Core,1b,設計の包摂性への影響,部分,22・359・823 で架空の利用条件と改善。実利用者や一般の包摂性は未評価。,coverage-hci-accountability.md,10,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:1c,HCI,HCI-Accountability,トピック,CS Core,1c,設計の安全・セキュリティ・プライバシー,部分,289・824 で設定や入力情報の露出を比較。実装の安全性や実際の同意は未評価。,coverage-hci-accountability.md,11,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:1d,HCI,HCI-Accountability,トピック,CS Core,1d,被害と不均等な影響,部分,118 は集団別分類指標の架空例。実際の被害や広範な影響は未評価。,coverage-hci-accountability.md,12,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:2a,HCI,HCI-Accountability,トピック,CS Core,2a,設計手法・解決策における AI の役割,部分,118 の分類結果と集団別指標。一般の設計倫理や実運用は未評価。,coverage-hci-accountability.md,13,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:2b,HCI,HCI-Accountability,トピック,CS Core,2b,関係者の影響と人間要因を考慮する責任,部分,63・188・289 の架空の声と選択画面。責任の実践全般は未評価。,coverage-hci-accountability.md,14,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:2c,HCI,HCI-Accountability,トピック,CS Core,2c,利用者の必要を満たす設計の役割,部分,188・823 の固定された声と設計選択。実利用者の調査は未評価。,coverage-hci-accountability.md,15,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:3a,HCI,HCI-Accountability,トピック,CS Core,3a,設計の所有責任,部分,1300で架空の担当分担と運営組織の継続的な確認を考える。実際の責任分担や実践は未評価。,coverage-hci-accountability.md,16,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:3b,HCI,HCI-Accountability,トピック,CS Core,3b,法的枠組みと遵守要件,部分,1300で GDPR の説明責任と設計段階の保護の例を学ぶ。適用判断や法令適合は評価しない。,coverage-hci-accountability.md,17,原典照合結果は監査記録参照
-HCI-Accountability:トピック:CS Core:3c,HCI,HCI-Accountability,トピック,CS Core,3c,直接の必要を超える問題分析とデジタルウェルビーイング,部分,398 で休息に関する固定例。反復的な問題分析や実際の効果は未評価。,coverage-hci-accountability.md,18,原典照合結果は監査記録参照
-HCI-Accountability:トピック:KA Core:4a,HCI,HCI-Accountability,トピック,KA Core,4a,直接・間接の関係者の特定,部分,63・188 は固定の関係者の声。間接の関係者全般は未評価。,coverage-hci-accountability.md,19,原典照合結果は監査記録参照
-HCI-Accountability:トピック:KA Core:4b,HCI,HCI-Accountability,トピック,KA Core,4b,多様な関係者の価値を特定して含める,部分,359・823 は架空の利用条件を比較。価値体系の体系的分析は未評価。,coverage-hci-accountability.md,20,原典照合結果は監査記録参照
-HCI-Accountability:トピック:KA Core:5a,HCI,HCI-Accountability,トピック,KA Core,5a,設計の説得的な内容を評価,部分,289 は初期設定と選択肢の見せ方の固定例。実際の意図・効果は未評価。,coverage-hci-accountability.md,21,原典照合結果は監査記録参照
-HCI-Accountability:トピック:KA Core:5b,HCI,HCI-Accountability,トピック,KA Core,5b,説得を設計の目標として用いる,未照合,説得を目標として設計する教材を要照合。,coverage-hci-accountability.md,22,原典照合結果は監査記録参照
-HCI-Accountability:トピック:KA Core:5c,HCI,HCI-Accountability,トピック,KA Core,5c,説得的・操作的な画面を区別,部分,289 で設定と結果を比較。一般の意図や実行動は未評価。,coverage-hci-accountability.md,23,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:CS Core:1,HCI,HCI-Accountability,学習成果,CS Core,1,設計の社会・共同体への影響を特定し批判的に検討,部分,63・289・824 の固定例。実社会の広範な分析は未評価。,coverage-hci-accountability.md,29,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:KA Core:2,HCI,HCI-Accountability,学習成果,KA Core,2,設計に関わる人間要因を特定,部分,289 の初期設定と見せ方。一般の人間要因分析は未評価。,coverage-hci-accountability.md,30,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:KA Core:3,HCI,HCI-Accountability,学習成果,KA Core,3,直接・間接の関係者を特定し理解,部分,63・188 の固定された声。間接の関係者全般は未評価。,coverage-hci-accountability.md,31,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:KA Core:4,HCI,HCI-Accountability,学習成果,KA Core,4,利用期間全体と直接・間接の関係者を考慮したシナリオを作る,部分,1200で架空の記録・閲覧・別用途に関する関係者の希望を比較。全期間や自由なシナリオ作成は未評価。,coverage-hci-accountability.md,32,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:KA Core:5,HCI,HCI-Accountability,学習成果,KA Core,5,関係者と社会に影響する要因を特定し批判的に検討,部分,289 の任意記録の設定。透明性、持続可能性、信頼、AI 等の広範な分析は未評価。,coverage-hci-accountability.md,33,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:KA Core:6,HCI,HCI-Accountability,学習成果,KA Core,6,説得的内容と利用者の利益に対する意図を評価,部分,289 の見せ方の固定例。実際の意図・利益は未評価。,coverage-hci-accountability.md,34,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:KA Core:7,HCI,HCI-Accountability,学習成果,KA Core,7,設計の意図に対する結果を批判的に検討,部分,289 の事前設定と結果を比較。実際の結果と自由な議論は未評価。,coverage-hci-accountability.md,35,原典照合結果は監査記録参照
-HCI-Accountability:学習成果:KA Core:8,HCI,HCI-Accountability,学習成果,KA Core,8,設計上の判断の影響を理解,部分,289 の初期値・配置、824 の入力方法の固定例。一般化は未評価。,coverage-hci-accountability.md,36,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:1,HCI,HCI-Accountability,トピック,CS Core,1,設計の影響,部分,持続可能性・包摂・安全・プライバシー・不均等な被害は子を参照。実社会の広い影響は未評価。,coverage-hci-accountability.md,9,原典照合結果は監査記録参照・親子重複候補
+HCI-Accountability:トピック:CS Core:1a,HCI,HCI-Accountability,トピック,CS Core,1a,設計の持続可能性への影響,部分,91 で修理・製造と使用期間の架空模型。実際の環境影響は未評価。,coverage-hci-accountability.md,10,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:1b,HCI,HCI-Accountability,トピック,CS Core,1b,設計の包摂性への影響,部分,22・359・823 で架空の利用条件と改善。実利用者や一般の包摂性は未評価。,coverage-hci-accountability.md,11,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:1c,HCI,HCI-Accountability,トピック,CS Core,1c,設計の安全・セキュリティ・プライバシー,部分,289・824 で設定や入力情報の露出を比較。実装の安全性や実際の同意は未評価。,coverage-hci-accountability.md,12,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:1d,HCI,HCI-Accountability,トピック,CS Core,1d,被害と不均等な影響,部分,118 は集団別分類指標の架空例。実際の被害や広範な影響は未評価。,coverage-hci-accountability.md,13,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:2,HCI,HCI-Accountability,トピック,CS Core,2,設計手法と解決策の倫理,部分,AI・関係者・利用者の必要に関する固定例は子を参照。倫理の実践全般は未評価。,coverage-hci-accountability.md,14,原典照合結果は監査記録参照・親子重複候補
+HCI-Accountability:トピック:CS Core:2a,HCI,HCI-Accountability,トピック,CS Core,2a,設計手法・解決策における AI の役割,部分,118 の分類結果と集団別指標。一般の設計倫理や実運用は未評価。,coverage-hci-accountability.md,15,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:2b,HCI,HCI-Accountability,トピック,CS Core,2b,関係者の影響と人間要因を考慮する責任,部分,63・188・289 の架空の声と選択画面。責任の実践全般は未評価。,coverage-hci-accountability.md,16,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:2c,HCI,HCI-Accountability,トピック,CS Core,2c,利用者の必要を満たす設計の役割,部分,188・823 の固定された声と設計選択。実利用者の調査は未評価。,coverage-hci-accountability.md,17,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:3,HCI,HCI-Accountability,トピック,CS Core,3,設計における要件,部分,責任、法的枠組み、直接の必要を超える分析は子を参照。一般の適用は未評価。,coverage-hci-accountability.md,18,原典照合結果は監査記録参照・親子重複候補
+HCI-Accountability:トピック:CS Core:3a,HCI,HCI-Accountability,トピック,CS Core,3a,設計の所有責任,部分,1300で架空の担当分担と運営組織の継続的な確認を考える。実際の責任分担や実践は未評価。,coverage-hci-accountability.md,19,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:3b,HCI,HCI-Accountability,トピック,CS Core,3b,法的枠組みと遵守要件,部分,1300で GDPR の説明責任と設計段階の保護の例を学ぶ。適用判断や法令適合は評価しない。,coverage-hci-accountability.md,20,原典照合結果は監査記録参照
+HCI-Accountability:トピック:CS Core:3c,HCI,HCI-Accountability,トピック,CS Core,3c,直接の必要を超える問題分析とデジタルウェルビーイング,部分,398 で休息に関する固定例。反復的な問題分析や実際の効果は未評価。,coverage-hci-accountability.md,21,原典照合結果は監査記録参照
+HCI-Accountability:トピック:KA Core:4,HCI,HCI-Accountability,トピック,KA Core,4,価値を考慮した設計,部分,関係者と多様な価値の固定例は子を参照。実際の関係者との検討は未評価。,coverage-hci-accountability.md,22,原典照合結果は監査記録参照・親子重複候補
+HCI-Accountability:トピック:KA Core:4a,HCI,HCI-Accountability,トピック,KA Core,4a,直接・間接の関係者の特定,部分,63・188 は固定の関係者の声。間接の関係者全般は未評価。,coverage-hci-accountability.md,23,原典照合結果は監査記録参照
+HCI-Accountability:トピック:KA Core:4b,HCI,HCI-Accountability,トピック,KA Core,4b,多様な関係者の価値を特定して含める,部分,359・823 は架空の利用条件を比較。価値体系の体系的分析は未評価。,coverage-hci-accountability.md,24,原典照合結果は監査記録参照
+HCI-Accountability:トピック:KA Core:5,HCI,HCI-Accountability,トピック,KA Core,5,設計による説得,部分,説得の内容・目標・操作的画面の区別は子を参照。一般の設計や実際の行動は未評価。,coverage-hci-accountability.md,25,原典照合結果は監査記録参照・親子重複候補
+HCI-Accountability:トピック:KA Core:5a,HCI,HCI-Accountability,トピック,KA Core,5a,設計の説得的な内容を評価,部分,289 は初期設定と選択肢の見せ方の固定例。実際の意図・効果は未評価。,coverage-hci-accountability.md,26,原典照合結果は監査記録参照
+HCI-Accountability:トピック:KA Core:5b,HCI,HCI-Accountability,トピック,KA Core,5b,説得を設計の目標として用いる,未照合,説得を目標として設計する教材を要照合。,coverage-hci-accountability.md,27,原典照合結果は監査記録参照
+HCI-Accountability:トピック:KA Core:5c,HCI,HCI-Accountability,トピック,KA Core,5c,説得的・操作的な画面を区別,部分,289 で設定と結果を比較。一般の意図や実行動は未評価。,coverage-hci-accountability.md,28,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:CS Core:1,HCI,HCI-Accountability,学習成果,CS Core,1,設計の社会・共同体への影響を特定し批判的に検討,部分,63・289・824 の固定例。実社会の広範な分析は未評価。,coverage-hci-accountability.md,34,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:KA Core:2,HCI,HCI-Accountability,学習成果,KA Core,2,設計に関わる人間要因を特定,部分,289 の初期設定と見せ方。一般の人間要因分析は未評価。,coverage-hci-accountability.md,35,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:KA Core:3,HCI,HCI-Accountability,学習成果,KA Core,3,直接・間接の関係者を特定し理解,部分,63・188 の固定された声。間接の関係者全般は未評価。,coverage-hci-accountability.md,36,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:KA Core:4,HCI,HCI-Accountability,学習成果,KA Core,4,利用期間全体と直接・間接の関係者を考慮したシナリオを作る,部分,1200で架空の記録・閲覧・別用途に関する関係者の希望を比較。全期間や自由なシナリオ作成は未評価。,coverage-hci-accountability.md,37,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:KA Core:5,HCI,HCI-Accountability,学習成果,KA Core,5,関係者と社会に影響する要因を特定し批判的に検討,部分,289 の任意記録の設定。透明性、持続可能性、信頼、AI 等の広範な分析は未評価。,coverage-hci-accountability.md,38,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:KA Core:6,HCI,HCI-Accountability,学習成果,KA Core,6,説得的内容と利用者の利益に対する意図を評価,部分,289 の見せ方の固定例。実際の意図・利益は未評価。,coverage-hci-accountability.md,39,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:KA Core:7,HCI,HCI-Accountability,学習成果,KA Core,7,設計の意図に対する結果を批判的に検討,部分,289 の事前設定と結果を比較。実際の結果と自由な議論は未評価。,coverage-hci-accountability.md,40,原典照合結果は監査記録参照
+HCI-Accountability:学習成果:KA Core:8,HCI,HCI-Accountability,学習成果,KA Core,8,設計上の判断の影響を理解,部分,289 の初期値・配置、824 の入力方法の固定例。一般化は未評価。,coverage-hci-accountability.md,41,原典照合結果は監査記録参照
 HCI-Design:トピック:CS Core:1a,HCI,HCI-Design,トピック,CS Core,1a,低忠実度の試作,部分,287 で架空の紙の試作品を操作。実際の試作は未評価。,coverage-hci-design.md,9,原典照合結果は監査記録参照
 HCI-Design:トピック:CS Core:1b,HCI,HCI-Design,トピック,CS Core,1b,迅速な試作,部分,826 で架空の準備時間と目的を比べる。実際の作成時間や試作過程は未評価。,coverage-hci-design.md,10,原典照合結果は監査記録参照
 HCI-Design:トピック:CS Core:1c,HCI,HCI-Design,トピック,CS Core,1c,使い捨ての試作,部分,826 で試作を作り直す場合も知見を引き継ぐことを振り返る。実際の試作・破棄は未評価。,coverage-hci-design.md,11,原典照合結果は監査記録参照
