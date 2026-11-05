@@ -1996,9 +1996,9 @@ HCI-Design:トピック:KA Core:7,HCI,HCI-Design,トピック,KA Core,7,視覚 U
 HCI-Design:トピック:KA Core:7a,HCI,HCI-Design,トピック,KA Core,7a,色,部分,22 は色以外の手がかりを追加。色の設計全般は未評価。,coverage-hci-design.md,40,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:7b,HCI,HCI-Design,トピック,KA Core,7b,配置,部分,825 で札と箱の距離を変更し対応を比較。一般のレイアウトや実利用者は未評価。,coverage-hci-design.md,41,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:7c,HCI,HCI-Design,トピック,KA Core,7c,ゲシュタルト原則,部分,825 の札と箱の近接によるまとまりの固定例。他の原則や知覚の個人差は未評価。,coverage-hci-design.md,42,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:8,HCI,HCI-Design,トピック,Non-core,8,没入環境,部分,XR と空間音響は子を参照。空間音響は未照合。,coverage-hci-design.md,43,原典照合結果は監査記録参照・親子重複候補
+HCI-Design:トピック:Non-core:8,HCI,HCI-Design,トピック,Non-core,8,没入環境,部分,XR と空間音響は子を参照。実際の没入環境は未評価。,coverage-hci-design.md,43,原典照合結果は監査記録参照・親子重複候補
 HCI-Design:トピック:Non-core:8a,HCI,HCI-Design,トピック,Non-core,8a,XR,部分,別の依頼で AR の位置合わせ・遮蔽、824 で AR の入力情報とプライバシーを扱う。没入環境全般と実機は未評価。,coverage-hci-design.md,44,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:8b,HCI,HCI-Design,トピック,Non-core,8b,空間音響,未照合,対応教材を要照合。,coverage-hci-design.md,45,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:8b,HCI,HCI-Design,トピック,Non-core,8b,空間音響,部分,933 で音源と見張りの向きから単純な左右のステレオ出力を比較。距離・反射・前後上下や実際の知覚は未評価。,coverage-hci-design.md,45,原典照合結果は監査記録参照
 HCI-Design:トピック:Non-core:9,HCI,HCI-Design,トピック,Non-core,9,３D 印刷と製作,部分,807 は材料を積む・削る・成形する固定模型。実際の３D 印刷機や製作過程は未評価。,coverage-hci-design.md,46,原典照合結果は監査記録参照
 HCI-Design:トピック:Non-core:10,HCI,HCI-Design,トピック,Non-core,10,非同期インタラクション,部分,288 は遅れた通知と競合。モデル全般は未評価。,coverage-hci-design.md,47,原典照合結果は監査記録参照
 HCI-Design:トピック:Non-core:11,HCI,HCI-Design,トピック,Non-core,11,創造性を支援する道具,未照合,対応教材を要照合。,coverage-hci-design.md,48,原典照合結果は監査記録参照
