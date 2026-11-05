@@ -296,6 +296,30 @@
       "topics": 9,
       "outcomes": 5,
       "scope_sha256": "c37cfa495a725e433ec205cd8d4113664d59361e5165b14756e2aa9c5c31cb76"
+    },
+    "OS-Devices": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-devices.md",
+      "topics": 6,
+      "outcomes": 6,
+      "scope_sha256": "b765b4e45ec8eca5e291d57e0d4b1fe684b3d6c6307e741bbab6fcfe284961d9"
+    },
+    "OS-Files": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-files.md",
+      "topics": 9,
+      "outcomes": 3,
+      "scope_sha256": "bb41bcdc54a2930c625791ef7e8e17edbd2d632038dbef57aa654303f8209098"
+    },
+    "OS-Advanced-Files": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-advanced-files.md",
+      "topics": 10,
+      "outcomes": 8,
+      "scope_sha256": "a6181a0debbd5a025bb48e86861196fb4dc0940fd5f34e4d4456b842da6b474f"
     }
   }
 }
