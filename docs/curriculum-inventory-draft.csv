@@ -2349,9 +2349,9 @@ OS-Protection:トピック:CS Core:2,OS,OS-Protection,トピック,CS Core,2,攻
 OS-Protection:トピック:CS Core:3,OS,OS-Protection,トピック,CS Core,3,実 OS の主な脆弱性を検討,部分,491で Dirty COW の概要と架空の競合模型。ほかの脆弱性や実際の手順は未評価。,coverage-os-protection.md,11,原典照合結果は監査記録参照
 OS-Protection:トピック:CS Core:4,OS,OS-Protection,トピック,CS Core,4,バックアップ等の軽減策,部分,181で更新前後・破損後の写しからの復元を比較。実運用と一般の軽減策は未評価。,coverage-os-protection.md,12,原典照合結果は監査記録参照
 OS-Protection:トピック:KA Core:5,OS,OS-Protection,トピック,KA Core,5,方針と機構の分離,部分,490で二つの方針を名簿と通行証の機構で設定。一般の方針・実機構は未評価。,coverage-os-protection.md,13,原典照合結果は監査記録参照
-OS-Protection:トピック:KA Core:6,OS,OS-Protection,トピック,KA Core,6,安全性の手法と装置,部分,54で利用者とカーネルの固定模型、754で仮想機械の設定変更を仲介。実アーキテクチャは未評価。,coverage-os-protection.md,14,原典照合結果は監査記録参照・親子重複候補
-OS-Protection:トピック:KA Core:6a,OS,OS-Protection,トピック,KA Core,6a,保護リングの歴史、Multics から仮想化 x86,部分,54で二つの権限水準。歴史と実アーキテクチャのリングは未評価。,coverage-os-protection.md,15,原典照合結果は監査記録参照
-OS-Protection:トピック:KA Core:6b,OS,OS-Protection,トピック,KA Core,6b,x86_64 のリング −1・−2 の例,部分,754でハイパーバイザー相当の門番。実 x86 の拡張、ME・PSP と権限水準の説明は未評価。,coverage-os-protection.md,16,原典照合結果は監査記録参照
+OS-Protection:トピック:KA Core:6,OS,OS-Protection,トピック,KA Core,6,安全性の手法と装置,部分,54で利用者とカーネルの固定模型、754で仮想機械の設定変更を仲介。実アーキテクチャは未評価。,coverage-os-protection.md,14,原典照合結果は監査記録参照
+OS-Protection:トピック:KA Core・例:6a,OS,OS-Protection,トピック,KA Core・例,6a,保護リングの歴史、Multics から仮想化 x86,部分,54で二つの権限水準。歴史と実アーキテクチャのリングは未評価。,coverage-os-protection.md,15,原典照合結果は監査記録参照
+OS-Protection:トピック:KA Core・例:6b,OS,OS-Protection,トピック,KA Core・例,6b,x86_64 のリング −1・−2 の例,部分,754でハイパーバイザー相当の門番。実 x86 の拡張、ME・PSP と権限水準の説明は未評価。,coverage-os-protection.md,16,原典照合結果は監査記録参照
 OS-Protection:トピック:KA Core:7,OS,OS-Protection,トピック,KA Core,7,保護、アクセス制御、認証,部分,11で認証結果と役割別権限、180で対象ごとの確認。実 OS の認証と制御は未評価。,coverage-os-protection.md,17,原典照合結果は監査記録参照
 OS-Protection:学習成果:CS Core:1,OS,OS-Protection,学習成果,CS Core,1,OS の保護と安全性の機構が必要な理由を理解,部分,54・180で保護対象と経路を扱う。実 OS の脅威全体は未評価。,coverage-os-protection.md,23,原典照合結果は監査記録参照
 OS-Protection:学習成果:CS Core:2,OS,OS-Protection,学習成果,CS Core,2,OS の脆弱性を利用する攻撃経路を列挙・説明,部分,180で３経路、491で脆弱性の概要と架空模型を比較。一般の列挙や自由記述は未評価。,coverage-os-protection.md,24,原典照合結果は監査記録参照

@@ -320,6 +320,22 @@
       "topics": 10,
       "outcomes": 8,
       "scope_sha256": "a6181a0debbd5a025bb48e86861196fb4dc0940fd5f34e4d4456b842da6b474f"
+    },
+    "OS-Concurrency": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-concurrency.md",
+      "topics": 11,
+      "outcomes": 6,
+      "scope_sha256": "95a3c66c13db84ec3858c35ffd61e3efbcd860f12c6335dad1b881c588d13725"
+    },
+    "OS-Protection": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-protection.md",
+      "topics": 9,
+      "outcomes": 4,
+      "scope_sha256": "d0082cca449b1f5ea5ea1428310015c6c9d1d365ec52317eb1de1a3886b660c9"
     }
   }
 }
