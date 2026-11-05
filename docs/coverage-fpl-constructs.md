@@ -35,4 +35,4 @@
 
 依頼513の継続の追加模型は [Racket Guide の継続](https://docs.racket-lang.org/guide/conts.html)を手がかりに、値を受け取った後の固定された２処理を保存し、異なる値で再開する。副作用のない限定例であり、実言語の継続の取得・制限・環境や例外からの自動復帰は再現しない。`tests/continuation-lab.test.js` は２処理順と２値の結果、旧記録の復元を検査する。
 
-依頼513の Maybe の模型は [Typeclassopedia の Maybe と Monad](https://www.haskell.org/wikiupload/e/e9/Typeclassopedia.pdf) を手がかりに、値ありの場合は残数から１を引く処理を続け、値なしの場合は次の処理を呼ばない例を扱う。値ありの０と値なしを区別する。実在庫の変更、例外の送出、一般のモナド則や実言語の実装は扱わない。`tests/maybe-lab.test.js` は３残数、失敗の伝播、旧記録の復元を検査する。
+依頼513の Maybe の模型は [Typeclassopedia の Maybe と Monad](https://www.haskell.org/wikiupload/e/e9/Typeclassopedia.pdf) を手がかりに、値ありの場合は残数から１を引く処理を続け、値なしの場合は次の処理を呼ばない例を扱う。値ありの０と値なしを区別する。さらに [Haskell の Either](https://downloads.haskell.org/ghc/8.8.1/docs/html/libraries/base-4.13.0.0/Data-Either.html) を手がかりに、在庫不足と傷みの失敗理由を保持する例と比較する。実在庫の変更、例外の送出、一般のモナド則や実言語の実装は扱わない。`tests/maybe-lab.test.js` は３残数、４条件、失敗の伝播と理由、旧記録の復元を検査する。
