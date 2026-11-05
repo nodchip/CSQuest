@@ -3716,8 +3716,8 @@ SPD-Web:トピック:KA Core:4,SPD,SPD-Web,トピック,KA Core,4,DOM・アク�
 SPD-Web:トピック:KA Core:5,SPD,SPD-Web,トピック,KA Core,5,セキュリティとプライバシー,部分,805でセッション固定・番号交換・失効の模型。実装やプライバシー全般は未評価。,coverage-spd-web.md,15,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:6,SPD,SPD-Web,トピック,Non-core,6,Web アプリの要件分析,未照合,Web 固有の要件分析との対応を要照合。,coverage-spd-web.md,16,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:7a,SPD,SPD-Web,トピック,Non-core,7a,クラウドホスティング,未照合,実サービスの運用を含め要照合。,coverage-spd-web.md,17,原典照合結果は監査記録参照
-SPD-Web:トピック:Non-core:7b,SPD,SPD-Web,トピック,Non-core,7b,拡張性と自動スケーリング,未照合,Web の負荷と拡張の比較を要照合。,coverage-spd-web.md,18,原典照合結果は監査記録参照
-SPD-Web:トピック:Non-core:7c,SPD,SPD-Web,トピック,Non-core,7c,サービス費用の見積り,未照合,料金モデルと見積りを要照合。,coverage-spd-web.md,19,原典照合結果は監査記録参照
+SPD-Web:トピック:Non-core:7b,SPD,SPD-Web,トピック,Non-core,7b,拡張性と自動スケーリング,部分,1292で固定人数と前の刻の需要による自動調整を比較。待ち行列や実サービスは未評価。,coverage-spd-web.md,18,原典照合結果は監査記録参照
+SPD-Web:トピック:Non-core:7c,SPD,SPD-Web,トピック,Non-core,7c,サービス費用の見積り,部分,1292で人数と時間から架空の費用を比較。実料金や複数の料金項目は未評価。,coverage-spd-web.md,19,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8a,SPD,SPD-Web,トピック,Non-core,8a,データ所在・アクセス経路,未照合,保存地とアクセス経路の検討を要照合。,coverage-spd-web.md,20,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8b,SPD,SPD-Web,トピック,Non-core,8b,データのアクセスと必要時の削除,未照合,原典の記載を追跡。完全性と可用性・削除の概念は一般には区別し、実運用を要照合。,coverage-spd-web.md,21,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:9a,SPD,SPD-Web,トピック,Non-core,9a,モノリスとマイクロサービス,部分,1291で一体型と２作業場の停止・共通の門の固定例を比較し、1292で受付の要件に適用。実サービスの設計・性能と他の依存は未評価。,coverage-spd-web.md,22,原典照合結果は監査記録参照
@@ -3727,7 +3727,7 @@ SPD-Web:トピック:Non-core:9d,SPD,SPD-Web,トピック,Non-core,9d,サーバ�
 SPD-Web:トピック:Non-core:10a,SPD,SPD-Web,トピック,Non-core,10a,関係データベース,部分,13で結合の固定例。Web アプリへの実接続は未評価。,coverage-spd-web.md,26,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:10b,SPD,SPD-Web,トピック,Non-core,10b,NoSQL,部分,189で鍵と文書の固定例。Web アプリへの実接続は未評価。,coverage-spd-web.md,27,原典照合結果は監査記録参照
 SPD-Web:学習成果:KA Core:1,SPD,SPD-Web,学習成果,KA Core,1,マイクロサービスの Web アプリ設計・実装,部分,1291で分割した作業場と共通の入口の障害を比較。設計・実装の能力や実 Web アプリは直接評価しない。,coverage-spd-web.md,33,原典照合結果は監査記録参照
-SPD-Web:学習成果:KA Core:2,SPD,SPD-Web,学習成果,KA Core,2,ホスティング・サービス・拡張の制約,未照合,体系的な比較を要照合。,coverage-spd-web.md,34,原典照合結果は監査記録参照
+SPD-Web:学習成果:KA Core:2,SPD,SPD-Web,学習成果,KA Core,2,ホスティング・サービス・拡張の制約,部分,1292で負荷への反応遅れ・処理漏れ・費用の固定例を比較。実際のホスティングや体系的な比較は未評価。,coverage-spd-web.md,34,原典照合結果は監査記録参照
 SPD-Web:学習成果:KA Core:3,SPD,SPD-Web,学習成果,KA Core,3,Web と汎用プログラミングの比較,未照合,比較を要照合。,coverage-spd-web.md,35,原典照合結果は監査記録参照
 SPD-Web:学習成果:KA Core:4,SPD,SPD-Web,学習成果,KA Core,4,SaaS と従来製品の比較,部分,1290で記録の場所・通信断・更新担当を固定例で比較。実際の製品、費用や自由な説明は未評価。,coverage-spd-web.md,36,原典照合結果は監査記録参照
 SPD-Web:学習成果:KA Core:5,SPD,SPD-Web,学習成果,KA Core,5,Web 標準が開発に与える影響,部分,806で３つの利用条件と改善策の固定例。Web 標準全般の議論は未評価。,coverage-spd-web.md,37,原典照合結果は監査記録参照

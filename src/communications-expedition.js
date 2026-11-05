@@ -1,5 +1,6 @@
 import {saasModes,saasNetworks,saasOutcome} from './software-service.js';
 import {serviceDesignModes,serviceDesignFaults,serviceDesignOutcome} from './service-boundaries.js';
+import {capacityCreate,capacityRestore} from './service-capacity.js';
 export const serviceJourneyLevel={id:'village-communications-expedition',number:'1292',kind:'communications-expedition',name:'途切れた伝令と二つの受付',tag:'サービス設計の遠征',title:'村の記録と受付を守ろう',story:'通信が途切れる南村と、受付を止められないギルドを巡ります。二つの方式を試し、依頼人に合う仕組みを届けましょう。'};
 export const journeyPlaces={village:'南村の記録所',office:'ギルドの受付',guild:'冒険者ギルド'};
 export function serviceJourneyReplay(history){
@@ -33,7 +34,7 @@ export function serviceJourneyReplay(history){
  }
  return s;
 }
-export function serviceJourneyCreate(){return {history:[]};}
+export function serviceJourneyCreate(){return {history:[],capacity:capacityCreate()};}
 function compactJourney(history){
  // Keep the final action so its feedback is preserved. A loop returning to the
  // same game state can be removed without changing any later action.
@@ -47,4 +48,4 @@ function compactJourney(history){
  return history;
 }
 export function serviceJourneyAct(q,action){let next=[...q.history,action];const state=serviceJourneyReplay(next);if(next.length>=100)next=compactJourney(next);q.history=next;return state;}
-export function serviceJourneyRestore(q){if(!q)throw new RangeError('遠征記録が不正です。');serviceJourneyReplay(q.history);return {history:[...q.history]};}
+export function serviceJourneyRestore(q){if(!q)throw new RangeError('遠征記録が不正です。');serviceJourneyReplay(q.history);return {history:[...q.history],capacity:Object.hasOwn(q,'capacity')?capacityRestore(q.capacity):capacityCreate()};}

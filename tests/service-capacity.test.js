@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {capacityTrace,capacityCreate,capacityComplete,capacityRestore} from '../src/service-capacity.js';
+test('fixed and delayed reactive scaling expose different losses and costs',()=>{const expected={small:[[1,1,1,1],8,4],large:[[3,3,3,3],0,12],auto:[[1,1,3,3],4,8]};for(const [mode,[workers,lost,cost]] of Object.entries(expected)){const rows=capacityTrace(mode,4);assert.deepEqual(rows.map(r=>r.workers),workers);assert.equal(rows.reduce((a,r)=>a+r.lost,0),lost);assert.equal(rows.reduce((a,r)=>a+r.cost,0),cost);assert(rows.every(r=>r.served+r.lost===r.demand));}assert.throws(()=>capacityTrace('auto',5));});
+test('all complete trials and the delay reflection survive validated restoration',()=>{const q=capacityCreate();q.ticks={small:4,large:4,auto:3};q.answer='delay';assert(!capacityComplete(q));q.ticks.auto=4;assert(capacityComplete(capacityRestore(q)));assert.throws(()=>capacityRestore({...q,ticks:{...q.ticks,auto:-1}}));const copy=capacityRestore(q);copy.ticks.auto=0;assert.equal(q.ticks.auto,4);});
