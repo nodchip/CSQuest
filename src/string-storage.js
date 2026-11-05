@@ -1,0 +1,7 @@
+export const stringCases={empty:{name:'空の伝言',bytes:['00','41','42','00'],length:0},plain:{name:'二文字の伝言',bytes:['41','42','00','7F'],length:2},zero:{name:'途中にゼロを含む伝言',bytes:['41','00','42','00'],length:3}};
+export const stringModes={length:'長さを使う',zero:'ゼロで終える'};
+export const stringChoices={empty:'空',a:'41',ab:'41 42',azb:'41 00 42'};
+export function stringRead(id,mode){if(!Object.hasOwn(stringCases,id)||!Object.hasOwn(stringModes,mode))throw new RangeError('条件が不正です');const c=stringCases[id],end=mode==='length'?c.length:c.bytes.indexOf('00');return c.bytes.slice(0,end);}
+export function stringChoice(id,mode){const s=stringRead(id,mode).join(' ');return Object.keys(stringChoices).find(k=>stringChoices[k]===s||k==='empty'&&s==='');}
+export function createStringStorage(){return {scenario:'plain',mode:'length',answer:null,checked:false,seen:[],reflection:null};}
+export function restoreStringStorage(s){const keys=Object.keys(stringCases).flatMap(c=>Object.keys(stringModes).map(m=>`${c}:${m}`));if(!s||!Object.hasOwn(stringCases,s.scenario)||!Object.hasOwn(stringModes,s.mode)||![null,...Object.keys(stringChoices)].includes(s.answer)||typeof s.checked!=='boolean'||s.checked&&s.answer===null||!Array.isArray(s.seen)||new Set(s.seen).size!==s.seen.length||!s.seen.every(x=>keys.includes(x))||![null,'length','same','zero'].includes(s.reflection))throw new RangeError('記録が不正です');return {...s,seen:[...s.seen]};}
