@@ -409,6 +409,17 @@
         "src/graph-cycle-search.js": "c07bb8f895e42c6d6cc82aa1d6ac3a423e3e147cfb05eeec72b88990d0eb7276",
         "tests/graph-cycle-search.test.js": "27b014d5d6bc362d770b2f32acc8488d3687d0e7e853edd880ff406574ebe250"
       }
+    },
+    "FPL-Syntax:トピック:Non-core:6c": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-syntax-transformation.md",
+      "row_sha256": "cccd7abc7c60c6b0c296b888c8216fcd15bec336aa2f84f876e627cd155f64c0",
+      "files": {
+        "src/left-recursion.js": "5fbcf0aae5be1f8b0c83e6301b883eaacf0d9e04caa496f52742abc2ef131330",
+        "src/app.js": "db3e5ac4a2ecda318ba90d6aeeee4c99a5d16cabc8ff982d37dd41830868b26c",
+        "tests/left-recursion.test.js": "b2f354abf3c1a1643ff106a29a8eefc479ee10b13d34deaa0338f2201b33c17b"
+      }
     }
   }
 }
