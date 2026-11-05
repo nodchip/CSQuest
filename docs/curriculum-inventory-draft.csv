@@ -2806,7 +2806,7 @@ SE-Formal:トピック:Non-core:1a,SE,SE-Formal,トピック,Non-core,1a,事前�
 SE-Formal:トピック:Non-core:1b,SE,SE-Formal,トピック,Non-core,1b,仕様の形式言語,未照合,実際の形式言語の記述と解析を要照合。,coverage-se-formal.md,13,原典照合結果は監査記録参照
 SE-Formal:トピック:Non-core:2,SE,SE-Formal,トピック,Non-core,2,形式手法が有用な問題領域,部分,242・244で並行動作を有限模型として探索。一般の適用は未評価。,coverage-se-formal.md,14,原典照合結果は監査記録参照・親子重複候補
 SE-Formal:トピック:Non-core:2a,SE,SE-Formal,トピック,Non-core,2a,ロックフリーとデータ競合,部分,15で固定の並行更新。ロックフリー一般は未評価。,coverage-se-formal.md,15,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:2b,SE,SE-Formal,トピック,Non-core,2b,非同期・分散・デッドロック,部分,242・244で有限の安全性とデッドロック。ライブロック等は未評価。,coverage-se-formal.md,16,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:2b,SE,SE-Formal,トピック,Non-core,2b,非同期・分散・デッドロック,部分,242で入口の封鎖と入室可能性、244で有限のデッドロックを比較。ライブロック等は未評価。,coverage-se-formal.md,16,原典照合結果は監査記録参照
 SE-Formal:トピック:Non-core:3,SE,SE-Formal,トピック,Non-core,3,他の欠陥検出技法との比較,部分,243で有限範囲と一例、349で手動変異と模型を比較。一般の比較は未評価。,coverage-se-formal.md,17,原典照合結果は監査記録参照・親子重複候補
 SE-Formal:トピック:Non-core:3a,SE,SE-Formal,トピック,Non-core,3a,試験との比較,部分,243で１例と有限の網羅を比較。実プログラムは未評価。,coverage-se-formal.md,18,原典照合結果は監査記録参照
 SE-Formal:トピック:Non-core:3b,SE,SE-Formal,トピック,Non-core,3b,ファジングとの比較,部分,349で手動変異による観察と故障の道を省いた有限模型の検査を比較。実ファザー・実検査器や一般の比較は未評価。,coverage-se-formal.md,19,原典照合結果は監査記録参照

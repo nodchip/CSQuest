@@ -632,6 +632,14 @@
       "topics": 12,
       "outcomes": 3,
       "scope_sha256": "6d88d56416cd7e6b1c62c0b9f6f5385d8a23b99dc0e3aee2873245a6783f6990"
+    },
+    "FPL-Methodologies": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-methodologies.md",
+      "topics": 9,
+      "outcomes": 5,
+      "scope_sha256": "914969dc2a2ac34a5c67b9178290a7523a229bdc29d79aa3a13eb0f3e73624e1"
     }
   }
 }
