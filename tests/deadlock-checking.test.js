@@ -35,17 +35,24 @@ test('players can create a repeated state and then choose a schedule that comple
  assert.equal(manualRetryNext(end,'a'),null);
  const old=createDeadlockCheck();delete old.manualHistory;assert.deepEqual(restoreDeadlockCheck(old).manualHistory,[]);
  const saved=restoreDeadlockCheck({...old,manualHistory:done});assert.deepEqual(manualRetryReplay(saved.manualHistory),end);
+ const question=restoreDeadlockCheck({...old,manualHistory:[...conflict,...cycle],cycleAnswer:'repeat',cycleChecked:true});assert.equal(question.cycleChecked,true);
+ assert.throws(()=>restoreDeadlockCheck({...old,manualHistory:conflict,cycleAnswer:'repeat',cycleChecked:true}));
+ assert.throws(()=>restoreDeadlockCheck({...old,manualHistory:[...conflict,...cycle],cycleAnswer:null,cycleChecked:true}));
  assert.throws(()=>manualRetryReplay(['a','a','b']));assert.throws(()=>manualRetryReplay(['c']));assert.throws(()=>manualRetryReplay(Array(81).fill('a')));
 });
 test('all reachable retry states preserve exclusive keys and unfinished states have an enabled action',()=>{
- const queue=[manualRetryReplay([])],seen=new Set();
+ const queue=[manualRetryReplay([])],seen=new Set(),edges=new Map();
  while(queue.length){
   const state=queue.shift(),key=`${state.a},${state.b}`;if(seen.has(key))continue;seen.add(key);
   const a=deadlockHeld('opposite',state,'a'),b=deadlockHeld('opposite',state,'b');
   assert.equal(a.some(k=>b.includes(k)),false,key);
   const next=['a','b'].map(who=>manualRetryNext(state,who)).filter(Boolean);
+  edges.set(key,next.map(s=>`${s.a},${s.b}`));
   if(state.a!==3||state.b!==3)assert.ok(next.length>0,key);
   queue.push(...next);
  }
  assert.ok(seen.has('1,1'));assert.ok(seen.has('3,3'));
+ const canFinish=new Set(['3,3']);let changed=true;
+ while(changed){changed=false;for(const [state,next] of edges)if(!canFinish.has(state)&&next.some(key=>canFinish.has(key))){canFinish.add(state);changed=true;}}
+ assert.deepEqual([...seen].filter(key=>!canFinish.has(key)),[]);
 });
