@@ -1679,32 +1679,36 @@ GIT-Image:学習成果:KA Core:2,GIT,GIT-Image,学習成果,KA Core,2,画像の�
 GIT-Image:学習成果:KA Core:3,GIT,GIT-Image,学習成果,KA Core,3,画像への高域フィルタのプログラム,部分,141で１方向３画素、725で二次元の鮮鋭化を操作。一般の画像・実プログラム・周波数領域は未評価。,coverage-git-image.md,35,原典照合結果は監査記録参照
 GIT-Image:学習成果:KA Core:4,GIT,GIT-Image,学習成果,KA Core,4,インペインティングで欠損画像を復元するプログラム,部分,727で欠損範囲の指定と反復補完を操作。一般のアルゴリズム、実画像とプログラムを書く能力は未評価。,coverage-git-image.md,36,原典照合結果は監査記録参照
 GIT-Image:学習成果:KA Core:5,GIT,GIT-Image,学習成果,KA Core,5,周波数領域の選択的フィルタの結果を評価,部分,808で２×２、809で４×４画像の成分を選び、実数と複素数の逆変換結果を比較。一般の画像・連続的なフィルタと実測は未評価。,coverage-git-image.md,37,原典照合結果は監査記録参照
-GIT-Immersion:トピック:未記載:1,GIT,GIT-Immersion,トピック,未記載,1,VR・AR・MR と没入の段階,部分,218 で現実の柱と仮想の印の重ね合わせ・遮蔽を比較。各方式の範囲や違い全体は未評価。,coverage-git-immersion.md,9,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:2,GIT,GIT-Immersion,トピック,未記載,2,没入とプレゼンスの定義・違い,未照合,定義と比較の教材は未確認。,coverage-git-immersion.md,10,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:3,GIT,GIT-Immersion,トピック,未記載,3,360度映像,部分,1177で固定視点の全方位記録と横移動による視差を比較。実際の撮影・表示・回転は未評価。,coverage-git-immersion.md,11,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:4a,GIT,GIT-Immersion,トピック,未記載,4a,頭部装着型の立体表示,部分,216 は２視点の点の投影と視差の模型。装置を用いる立体表示は未評価。,coverage-git-immersion.md,12,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:4b,GIT,GIT-Immersion,トピック,未記載,4b,立体視眼鏡,部分,216 は左右の投影を比較。眼鏡・画面による提示は未評価。,coverage-git-immersion.md,13,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:5-本体,GIT,GIT-Immersion,トピック,未記載,5-本体,利用者の位置・姿勢の追跡,部分,217 で古い視点と新しい視点による位置ずれを比較。実追跡は未評価。,coverage-git-immersion.md,14,原典照合結果は監査記録参照・番号を要確認・区分を要確認
-GIT-Immersion:トピック:未記載:5a,GIT,GIT-Immersion,トピック,未記載,5a,インサイドアウト・アウトサイドインの追跡方式,部分,1176で装着側と外部側の目印の見通しを比較し、1179の冒険で再利用。実際の装置・複数センサーや姿勢推定は未評価。,coverage-git-immersion.md,15,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:5b,GIT,GIT-Immersion,トピック,未記載,5b,頭・体・手の追跡,未照合,各対象の追跡と制約は未確認。,coverage-git-immersion.md,16,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:6-本体,GIT,GIT-Immersion,トピック,未記載,6-本体,動作から表示までの遅延と時間制約,部分,217 で古い視点に基づくずれを扱う。遅延の実測、時間制約と最適化は未評価。,coverage-git-immersion.md,17,原典照合結果は監査記録参照・番号を要確認・区分を要確認
-GIT-Immersion:トピック:未記載:6a,GIT,GIT-Immersion,トピック,未記載,6a,複数の詳細度,未照合,没入環境での詳細度切替は未確認。,coverage-git-immersion.md,18,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:6b,GIT,GIT-Immersion,トピック,未記載,6b,画像ベース VR,部分,1177で固定視点パノラマ、889で複数画像と奥行きによる中間視点を扱う。実映像・一般の方法は未評価。,coverage-git-immersion.md,19,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:6c,GIT,GIT-Immersion,トピック,未記載,6c,分岐映像,未照合,分岐映像の設計・再生は未確認。,coverage-git-immersion.md,20,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:7,GIT,GIT-Immersion,トピック,未記載,7,通信を介する分散 VR と共同作業,部分,1178で２人が共有物を動かし、眼鏡ごとの状態配達と古い表示を比較。1179で３つの模型を組み合わせる。実通信と実機での協働は未評価。,coverage-git-immersion.md,21,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:8,GIT,GIT-Immersion,トピック,未記載,8,プレゼンスと没入に影響する要因,未照合,利用者体験と要因の評価は未確認。,coverage-git-immersion.md,22,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:9,GIT,GIT-Immersion,トピック,未記載,9,３次元の操作,部分,1180で３軸の移動と方向の回転、二つの断面を操作。実機・連続的な操作・完全な姿勢は未評価。,coverage-git-immersion.md,23,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:10,GIT,GIT-Immersion,トピック,未記載,10,医療・訓練・可視化等への応用,未照合,各応用の具体的な要件は未確認。,coverage-git-immersion.md,24,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:11a,GIT,GIT-Immersion,トピック,未記載,11a,没入時の酔い,未照合,症状と設計上の要因の対応は未確認。,coverage-git-immersion.md,25,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:トピック:未記載:11b,GIT,GIT-Immersion,トピック,未記載,11b,実世界を見失うことによる転倒等,未照合,実環境の安全対策は未確認。,coverage-git-immersion.md,26,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:1,GIT,GIT-Immersion,学習成果,未記載,1,立体画像を作成,部分,216 で点の左右投影を選ぶ。実画像の作成・表示は未評価。,coverage-git-immersion.md,32,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:2,GIT,GIT-Immersion,学習成果,未記載,2,AR・VR アプリを設計・作成,未照合,218 の固定模型は実アプリの設計・作成を評価しない。,coverage-git-immersion.md,33,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:3,GIT,GIT-Immersion,学習成果,未記載,3,利用者追跡の各方式の長短,部分,1176で遮蔽物による可視性の違いを比較。一般の方式・精度や実機の長短は未評価。,coverage-git-immersion.md,34,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:4,GIT,GIT-Immersion,学習成果,未記載,4,幾何ベースと画像ベースの VR を比較,部分,1177で幾何模型と固定視点画像の横移動の視差を比較し、1179で再利用。一般の方式や実機の評価は未実施。,coverage-git-immersion.md,35,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:5,GIT,GIT-Immersion,学習成果,未記載,5,ネットワーク環境の同期・データ一貫性の設計課題を分析,部分,1178で順不同の状態配達と番号による巻戻り防止を比較。欠落、一般の競合処理や実通信は未評価。,coverage-git-immersion.md,36,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:6,GIT,GIT-Immersion,学習成果,未記載,6,手術室向け AR の仕様を作成,未照合,実用途に関する要件・仕様の作成は未評価。,coverage-git-immersion.md,37,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:7,GIT,GIT-Immersion,学習成果,未記載,7,没入型アプリのアクセシビリティを評価,未照合,実環境と多様な利用者による評価は未確認。,coverage-git-immersion.md,38,原典照合結果は監査記録参照・区分を要確認
-GIT-Immersion:学習成果:未記載:8,GIT,GIT-Immersion,学習成果,未記載,8,酔いの回避で制御すべき技術特性と理由,未照合,条件と根拠の比較は未確認。,coverage-git-immersion.md,39,原典照合結果は監査記録参照・区分を要確認
+GIT-Immersion:トピック:KA Core:1,GIT,GIT-Immersion,トピック,KA Core,1,VR・AR・MR と没入の段階,部分,218 で現実の柱と仮想の印の重ね合わせ・遮蔽を比較。各方式の範囲や違い全体は未評価。,coverage-git-immersion.md,9,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:2,GIT,GIT-Immersion,トピック,KA Core,2,没入とプレゼンスの定義・違い,未照合,定義と比較の教材は未確認。,coverage-git-immersion.md,10,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:3,GIT,GIT-Immersion,トピック,KA Core,3,360度映像,部分,1177で固定視点の全方位記録と横移動による視差を比較。実際の撮影・表示・回転は未評価。,coverage-git-immersion.md,11,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:4,GIT,GIT-Immersion,トピック,KA Core,4,立体表示,部分,216で左右の投影を比較。実際の装置や両眼視は未評価。,coverage-git-immersion.md,12,原典照合結果は監査記録参照・親子重複候補
+GIT-Immersion:トピック:KA Core:4a,GIT,GIT-Immersion,トピック,KA Core,4a,頭部装着型の立体表示,部分,216 は２視点の点の投影と視差の模型。装置を用いる立体表示は未評価。,coverage-git-immersion.md,13,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:4b,GIT,GIT-Immersion,トピック,KA Core,4b,立体視眼鏡,部分,216 は左右の投影を比較。眼鏡・画面による提示は未評価。,coverage-git-immersion.md,14,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:5,GIT,GIT-Immersion,トピック,KA Core,5,利用者の追跡,部分,217・1176で視点のずれと目印の見通しを比較。頭・体・手の実追跡や一般の方式は未評価。,coverage-git-immersion.md,15,原典照合結果は監査記録参照・親子重複候補
+GIT-Immersion:トピック:KA Core:5-本体,GIT,GIT-Immersion,トピック,KA Core,5-本体,利用者の位置・姿勢の追跡,部分,217 で古い視点と新しい視点による位置ずれを比較。実追跡は未評価。,coverage-git-immersion.md,16,原典照合結果は監査記録参照・番号を要確認
+GIT-Immersion:トピック:KA Core:5a,GIT,GIT-Immersion,トピック,KA Core,5a,インサイドアウト・アウトサイドインの追跡方式,部分,1176で装着側と外部側の目印の見通しを比較し、1179の冒険で再利用。実際の装置・複数センサーや姿勢推定は未評価。,coverage-git-immersion.md,17,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:5b,GIT,GIT-Immersion,トピック,KA Core,5b,頭・体・手の追跡,未照合,各対象の追跡と制約は未確認。,coverage-git-immersion.md,18,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:6,GIT,GIT-Immersion,トピック,KA Core,6,動作から表示までの遅延を考慮した描画,部分,217・1177・889で視点のずれや画像の固定例を扱う。遅延の実測、詳細度切替と分岐映像は未評価。,coverage-git-immersion.md,19,原典照合結果は監査記録参照・親子重複候補
+GIT-Immersion:トピック:KA Core:6-本体,GIT,GIT-Immersion,トピック,KA Core,6-本体,動作から表示までの遅延と時間制約,部分,217 で古い視点に基づくずれを扱う。遅延の実測、時間制約と最適化は未評価。,coverage-git-immersion.md,20,原典照合結果は監査記録参照・番号を要確認
+GIT-Immersion:トピック:KA Core:6a,GIT,GIT-Immersion,トピック,KA Core,6a,複数の詳細度,未照合,没入環境での詳細度切替は未確認。,coverage-git-immersion.md,21,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:6b,GIT,GIT-Immersion,トピック,KA Core,6b,画像ベース VR,部分,1177で固定視点パノラマ、889で複数画像と奥行きによる中間視点を扱う。実映像・一般の方法は未評価。,coverage-git-immersion.md,22,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:6c,GIT,GIT-Immersion,トピック,KA Core,6c,分岐映像,未照合,分岐映像の設計・再生は未確認。,coverage-git-immersion.md,23,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:7,GIT,GIT-Immersion,トピック,KA Core,7,通信を介する分散 VR と共同作業,部分,1178で２人が共有物を動かし、眼鏡ごとの状態配達と古い表示を比較。1179で３つの模型を組み合わせる。実通信と実機での協働は未評価。,coverage-git-immersion.md,24,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:8,GIT,GIT-Immersion,トピック,KA Core,8,プレゼンスと没入に影響する要因,未照合,利用者体験と要因の評価は未確認。,coverage-git-immersion.md,25,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:9,GIT,GIT-Immersion,トピック,KA Core,9,３次元の操作,部分,1180で３軸の移動と方向の回転、二つの断面を操作。実機・連続的な操作・完全な姿勢は未評価。,coverage-git-immersion.md,26,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:10,GIT,GIT-Immersion,トピック,KA Core,10,医療・訓練・可視化等への応用,未照合,各応用の具体的な要件は未確認。,coverage-git-immersion.md,27,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:11,GIT,GIT-Immersion,トピック,KA Core,11,没入型アプリケーションの安全性,未照合,酔いや実空間での事故への対策は未確認。,coverage-git-immersion.md,28,原典照合結果は監査記録参照・親子重複候補
+GIT-Immersion:トピック:KA Core:11a,GIT,GIT-Immersion,トピック,KA Core,11a,没入時の酔い,未照合,症状と設計上の要因の対応は未確認。,coverage-git-immersion.md,29,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:11b,GIT,GIT-Immersion,トピック,KA Core,11b,実世界を見失うことによる転倒等,未照合,実環境の安全対策は未確認。,coverage-git-immersion.md,30,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:1,GIT,GIT-Immersion,学習成果,KA Core,1,立体画像を作成,部分,216 で点の左右投影を選ぶ。実画像の作成・表示は未評価。,coverage-git-immersion.md,36,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:2,GIT,GIT-Immersion,学習成果,KA Core,2,AR・VR アプリを設計・作成,未照合,218 の固定模型は実アプリの設計・作成を評価しない。,coverage-git-immersion.md,37,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:3,GIT,GIT-Immersion,学習成果,KA Core,3,利用者追跡の各方式の長短,部分,1176で遮蔽物による可視性の違いを比較。一般の方式・精度や実機の長短は未評価。,coverage-git-immersion.md,38,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:4,GIT,GIT-Immersion,学習成果,KA Core,4,幾何ベースと画像ベースの VR を比較,部分,1177で幾何模型と固定視点画像の横移動の視差を比較し、1179で再利用。一般の方式や実機の評価は未実施。,coverage-git-immersion.md,39,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:5,GIT,GIT-Immersion,学習成果,KA Core,5,ネットワーク環境の同期・データ一貫性の設計課題を分析,部分,1178で順不同の状態配達と番号による巻戻り防止を比較。欠落、一般の競合処理や実通信は未評価。,coverage-git-immersion.md,40,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:6,GIT,GIT-Immersion,学習成果,KA Core,6,手術室向け AR の仕様を作成,未照合,実用途に関する要件・仕様の作成は未評価。,coverage-git-immersion.md,41,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:7,GIT,GIT-Immersion,学習成果,KA Core,7,没入型アプリのアクセシビリティを評価,未照合,実環境と多様な利用者による評価は未確認。,coverage-git-immersion.md,42,原典照合結果は監査記録参照
+GIT-Immersion:学習成果:KA Core:8,GIT,GIT-Immersion,学習成果,KA Core,8,酔いの回避で制御すべき技術特性と理由,未照合,条件と根拠の比較は未確認。,coverage-git-immersion.md,43,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:1,GIT,GIT-Interaction,トピック,KA Core,1,イベント駆動プログラミング,部分,マウス・キーボード・音声・センサー・メッセージ・ネットワークは子を参照。音声入力は未照合。,coverage-git-interaction.md,9,原典照合結果は監査記録参照・親子重複候補
 GIT-Interaction:トピック:KA Core:1a,GIT,GIT-Interaction,トピック,KA Core,1a,マウス・タッチのイベント,部分,351 で方向ボタンの click を操作。タッチ固有の低水準イベントと実機は未評価。,coverage-git-interaction.md,10,原典照合結果は監査記録参照
 GIT-Interaction:トピック:KA Core:1b,GIT,GIT-Interaction,トピック,KA Core,1b,キーボードのイベント,部分,351 で矢印キーの keydown により移動。一般の入力処理や実装は未評価。,coverage-git-interaction.md,11,原典照合結果は監査記録参照

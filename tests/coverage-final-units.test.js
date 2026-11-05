@@ -4,6 +4,7 @@ import {existsSync,readFileSync} from 'node:fs';
 const cases={
  'ar-sep':{topic:['1','1a','1b','1c','1d'],outcome:['1'],category:'Non-core'},
  'git-simulation':{topic:['1','1-応答','1a','1b','1c','1d','2','3','3a','3b','3c','3d','3e','4','4a','4b','5','5a','5b','6'],outcome:['1','2','3'],category:'KA Core'},
+ 'git-immersion':{topic:['1','2','3','4','4a','4b','5','5-本体','5a','5b','6','6-本体','6a','6b','6c','7','8','9','10','11','11a','11b'],outcome:['1','2','3','4','5','6','7','8'],category:'KA Core'},
  'git-sep':{topic:['1a','1b','2a','2b','2c','2d','2e-i','2e-ii','2f','2g-i','2g-ii','3a','3b','4'],outcome:['1','2','3'],category:'KA Core'},
  'os-sep':{topic:['1','1-例a','1-例b','1-例c','1-例d','2','例示-プライバシー'],outcome:['1','2','3','4'],category:'KA Core'},
  'sdf-sep':{topic:['1','2','3','4'],outcome:['1','2','3','4'],category:'CS Core'}

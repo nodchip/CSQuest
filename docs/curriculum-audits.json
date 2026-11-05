@@ -1,6 +1,14 @@
 {
   "version": 1,
   "units": {
+    "GIT-Immersion": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-immersion.md",
+      "topics": 22,
+      "outcomes": 8,
+      "scope_sha256": "a758f8b74bc3ce1c6cb26fcad22a7724f80194ce69cc8f5ea69d0022ab8c20f1"
+    },
     "GIT-Simulation": {
       "date": "2026-11-06",
       "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
