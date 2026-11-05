@@ -31,3 +31,5 @@
 依頼792は [GNU Bison のエラー回復](https://www.gnu.org/software/bison/manual/html_node/Error-Recovery.html)を参考に、固定の「名前・等号・数・区切り」文でエラー後に区切りまで札を捨てる。数の欠落では後の文を確定でき、区切りの欠落では次の文の札も捨て得る。`tests/parser-recovery.test.js` は２場面の各段階・不正操作・確定文・破棄札・途中復元を検査する。実際の Bison の状態・構文木・複数エラーや入れ子の回復全般は評価しない。
 
 依頼1299は E→E+a｜a と E→aR、R→+aR｜空 の２文法で同じ３文字列を作り、導出の途中と構文木を比較する。どちらも a に +a を０回以上続ける言語だが導出・構文木の形が異なり、意味や結合の保存は別に考える必要がある。`tests/left-recursion.test.js` は４文字列の導出、木の葉、操作制限、達成条件と復元を検査する。一般的な変換・解析器の実装は未評価。参考：[Stanford: Removing Left Recursion](https://web.stanford.edu/class/archive/cs/cs143/cs143.1156/handouts/parsing.pdf)。
+
+依頼1299には、別の引き算の例で左結合と右結合の結果３・７を比較する操作を追加した。同じ文字列を受理することと意味を保つことを区別する。固定された式で、任意の文法や意味保存の証明は扱わない。参考：[Crafting Interpreters](https://craftinginterpreters.com/parsing-expressions.html)。
