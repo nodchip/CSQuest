@@ -18,7 +18,7 @@
 | 3a | CS Core | 部分への関数適用から複合データを処理 | 部分 | 773で左右の結果と節を組合せ、合計と節の数を計算。任意の木や関数は未評価。 |
 | 3b | CS Core | 永続データ構造 | 部分 | 590で一方向の鎖の版と末尾共有。一般の構造・計算量は未評価。 |
 | 4 | CS Core | 関数を受取り・返し・保持する高階関数 | 部分 | 52・592で生成と合成、773で固定の集約方法を選択。自由な関数定義は評価しない。 |
-| 5 | KA Core | メタプログラミングとリフレクション | 未照合 | 対応する関数型の教材を未確認。 |
+| 5 | KA Core | メタプログラミングとリフレクション | 部分 | 779で式の形を調べ別の式の札を作る固定模型。実言語のマクロ・束縛や一般的な反射機構は未評価。 |
 | 6 | KA Core | クロージャ | 部分 | 52・591・594で束縛とコールバック。一般の実行機構は未評価。 |
 | 6a | KA Core | 実行時の環境捕捉とクロージャの意味 | 部分 | 52・591で生成ごとの束縛、774で環境への参照と寿命を操作。一般の環境表現は未評価。 |
 | 6b | KA Core | コールバック・反復子・関数引数の再利用 | 部分 | 594で固定のコールバック、592で関数合成、51で列処理。実言語の定義は評価しない。 |
@@ -50,3 +50,5 @@
 `tests/tree-fold.test.js`、`tests/closure-boxes.test.js`、`tests/closure-machine.test.js`、`tests/evaluation-sharing.test.js`、`tests/graph-reduction.test.js`、`tests/narrowing.test.js`、`tests/evaluation-rescue.test.js`、`tests/lazy-stream.test.js`、`tests/semaphore-buffer.test.js` は各固定模型・操作を検査し、原典の範囲全体や学習効果を保証しない。
 
 依頼590では [Cornell の同一性と構造の比較](https://courses.cs.cornell.edu/cs3110/2021sp/textbook/mut/physical_equality.html)を参考に、同じ鎖への２つの入口、同内容の別の鎖、異なる内容の鎖を比較する。４入口から同一性で数える場合と内容で数える場合を対象２種で比べる。`tests/identity-values.test.js` は３比較・２対象と旧記録の復元を検査する。固定の有限な数列に限り、循環、関数値、実言語の比較演算子や自由な実装は未評価。
+
+依頼779の式の札は [Racket の構文変換マクロ](https://docs.racket-lang.org/guide/pattern-macros.html)を参考に、式の形を調べ新しい式を返す２つの道具を固定例で比較する。`tests/meta-expression.test.js` は３式・２道具・２入力の結果と旧記録の復元を検査する。実際のマクロ展開、束縛・型・オーバーフロー、任意の式の意味保存は評価しない。

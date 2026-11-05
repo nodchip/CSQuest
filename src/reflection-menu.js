@@ -1,3 +1,4 @@
+import {createMetaLab,restoreMetaLab} from './meta-expression.js';
 export const reflectionLevel={id:'workshop-reflection-menu',number:'779',kind:'reflection-menu',name:'姿を映す案内鏡',tag:'リフレクションと操作の生成',title:'精霊に合う操作を鏡で組み立てよう',story:'祭りの工房では、種類の違う精霊が交代します。精霊の情報から操作を並べ、二つの仕事を果たしましょう。'};
 export const reflectionTypes={lamp:{name:'灯の精霊',methods:['glow','rest']},rain:{name:'雨の精霊',methods:['sprinkle','rest']}};
 export const reflectionMethods={glow:'灯りをともす',sprinkle:'水をまく',rest:'力を回復する'};
@@ -13,7 +14,7 @@ export function reflectionPerform(s,action){
  s.stage++;return s;
 }
 export function reflectionReplay(history){if(!Array.isArray(history)||history.length>expected.length)throw new RangeError('記録が不正です');const s=reflectionInitial();for(const action of history)reflectionPerform(s,action);return s;}
-export function reflectionCreate(){return {history:[],answer:null};}
+export function reflectionCreate(){return {history:[],answer:null,meta:createMetaLab()};}
 export function reflectionTry(q,action){reflectionPerform(reflectionReplay(q.history),action);q.history.push(action);}
 export function reflectionComplete(q){const s=reflectionReplay(q.history);return s.lit&&s.watered&&s.stage===expected.length&&q.answer==='inspect';}
-export function reflectionRestore(q){if(!q||![null,'inspect','same','unsafe'].includes(q.answer))throw new RangeError('記録が不正です');reflectionReplay(q.history);return {history:[...q.history],answer:q.answer};}
+export function reflectionRestore(q){if(!q||![null,'inspect','same','unsafe'].includes(q.answer))throw new RangeError('記録が不正です');reflectionReplay(q.history);return {history:[...q.history],answer:q.answer,meta:q.meta===undefined?createMetaLab():restoreMetaLab(q.meta)};}
