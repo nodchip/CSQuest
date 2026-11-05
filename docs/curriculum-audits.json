@@ -592,6 +592,22 @@
       "topics": 12,
       "outcomes": 7,
       "scope_sha256": "c8789251217f03c943506d9b2d9d38f0ee2134f2b36a81a9725698eede6b6686"
+    },
+    "AR-Heterogeneity": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-heterogeneity.md",
+      "topics": 15,
+      "outcomes": 6,
+      "scope_sha256": "595561426b59287f157a847c3ecabece8febf41b1903a2299b9d87f687218190"
+    },
+    "AR-Security": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-security.md",
+      "topics": 16,
+      "outcomes": 5,
+      "scope_sha256": "3109974bd415c99aa3b576d56987e7319b4a232ed69565ca3d775d77d9f9f737"
     }
   }
 }

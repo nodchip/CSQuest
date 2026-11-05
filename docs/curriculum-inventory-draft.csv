@@ -748,23 +748,26 @@ AR-Assembly:学習成果:KA Core:7,AR,AR-Assembly,学習成果,KA Core,7,サブ�
 AR-Assembly:学習成果:KA Core:8,AR,AR-Assembly,学習成果,KA Core,8,割込みと I/O を説明,部分,105で通知を待つ例を操作。一般的な処理と自由な説明は未評価。,coverage-ar-assembly.md,35,原典照合結果は監査記録参照
 AR-Assembly:学習成果:KA Core:9,AR,AR-Assembly,学習成果,KA Core,9,文字列・配列を扱うアセンブリプログラムを書く,部分,1086で架空の命令札を並べ、番地を進めて２配列の合計を実行。文字列、実 ISA やプログラム記述能力は直接評価しない。,coverage-ar-assembly.md,36,原典照合結果は監査記録参照
 AR-Heterogeneity:トピック:KA Core:1,AR,AR-Heterogeneity,トピック,KA Core,1,SIMD・MIMD と GPU・TPU・NPU 等,部分,162 で同一・独立命令、872で SIMT の分岐を模型化。各実機の構成は未評価。,coverage-ar-heterogeneity.md,9,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:2a,AR,AR-Heterogeneity,トピック,KA Core,2a,異種メモリ：共有と分散,部分,873で CPU・GPU の別々の記録と論理的に共有する記録、コピーと移動を比較。一般の分散メモリ構成は未評価。,coverage-ar-heterogeneity.md,10,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:2b,AR,AR-Heterogeneity,トピック,KA Core,2b,異種メモリ：揮発性と不揮発性,部分,455 で保存と電源断の模型。異種メモリ構成は未評価。,coverage-ar-heterogeneity.md,11,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:2c,AR,AR-Heterogeneity,トピック,KA Core,2c,異種メモリ：一貫性プロトコル,部分,104 で写しの無効化。実プロトコルと異種構成は未評価。,coverage-ar-heterogeneity.md,12,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:3a,AR,AR-Heterogeneity,トピック,KA Core,3a,機械学習アクセラレータ,部分,875で２×２の積和器に数を流し、２行と１行の行列積を比較。実 TPU の精度・命令・性能や他のアクセラレータは未評価。,coverage-ar-heterogeneity.md,13,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:3b,AR,AR-Heterogeneity,トピック,KA Core,3b,ネットワーク内計算,部分,876で中継塔による４報告の集約と個別転送を比較。実スイッチの構成、損失・再送や性能は未評価。,coverage-ar-heterogeneity.md,14,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:3c,AR,AR-Heterogeneity,トピック,KA Core,3c,新しい応用向け組込みシステム,部分,219の観測と駆動、877の川辺での判断と遠隔制御の固定模型。実機や多様な応用は未評価。,coverage-ar-heterogeneity.md,15,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:3d,AR,AR-Heterogeneity,トピック,KA Core,3d,ニューロモーフィック計算,部分,878で離散時間の積分・減衰・閾値・発火後のリセットと入力時刻を操作。実回路、複数素子、学習や実機の性能は未評価。,coverage-ar-heterogeneity.md,16,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:3e,AR,AR-Heterogeneity,トピック,KA Core,3e,エッジ計算装置,部分,877で観測点近くと遠方の判断を、通信の有無と仮定した期限で比較。実ネットワーク、装置負荷や安全性は未評価。,coverage-ar-heterogeneity.md,17,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:4,AR,AR-Heterogeneity,トピック,KA Core,4,3D 集積やチップレットの実装・統合,部分,879で一体・横並び・積層の組立てと架空の良品費用を比較し、検査・熱・接続を扱う。実装技術や実製品の費用・性能は未評価。,coverage-ar-heterogeneity.md,18,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:5a,AR,AR-Heterogeneity,トピック,KA Core,5a,構成設計のための AI による負荷分析,部分,880で計算量と転送量の比から分類器を訓練し、未学習の負荷で誤りを検査。実負荷の計測・分析は未評価。,coverage-ar-heterogeneity.md,19,原典照合結果は監査記録参照
-AR-Heterogeneity:トピック:KA Core:5b,AR,AR-Heterogeneity,トピック,KA Core,5b,性能と電力効率のための構成最適化,部分,880で時間・消費量ごとに学習し２構成を予測。架空の２構成・有限候補であり、一般の設計空間探索や実機の効率は未評価。,coverage-ar-heterogeneity.md,20,原典照合結果は監査記録参照
-AR-Heterogeneity:学習成果:KA Core:1,AR,AR-Heterogeneity,学習成果,KA Core,1,図を分析し SIMD と MIMD の違いを見つける,部分,162 の同じ・異なる命令の固定例。一般の構成図は未評価。,coverage-ar-heterogeneity.md,26,原典照合結果は監査記録参照
-AR-Heterogeneity:学習成果:KA Core:2,AR,AR-Heterogeneity,学習成果,KA Core,2,マルチプロセッサ固有のメモリ管理と解決策を論じる,部分,104 の一貫性の例。一般の問題と自由な説明は未評価。,coverage-ar-heterogeneity.md,27,原典照合結果は監査記録参照
-AR-Heterogeneity:学習成果:KA Core:3,AR,AR-Heterogeneity,学習成果,KA Core,3,メモリ接続の違いと遅延・性能への影響を示す,部分,873で移動回数と仕事の順序を比較。各移動の遅延・接続帯域・実測や遠隔アクセスは未評価。,coverage-ar-heterogeneity.md,28,原典照合結果は監査記録参照
-AR-Heterogeneity:学習成果:KA Core:4,AR,AR-Heterogeneity,学習成果,KA Core,4,専用アクセラレータと汎用 CPU の使い分け,部分,163 の架空の費用・仕事量を比較。実測、転送の重なりや準備再利用は未評価。,coverage-ar-heterogeneity.md,29,原典照合結果は監査記録参照
-AR-Heterogeneity:学習成果:KA Core:5,AR,AR-Heterogeneity,学習成果,KA Core,5,ベクトルとスカラの設計原理の違いを列挙,部分,162 は複数データへの操作。実際の設計原理の全体像は未評価。,coverage-ar-heterogeneity.md,30,原典照合結果は監査記録参照
-AR-Heterogeneity:学習成果:KA Core:6,AR,AR-Heterogeneity,学習成果,KA Core,6,メモリ内処理の利点と欠点を列挙,部分,874で記憶の近傍での集計と外部転送量を比較し、費用・整合性・方式の違いを説明。一般の PIM 構成、実測や自由な説明は未評価。,coverage-ar-heterogeneity.md,31,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:2,AR,AR-Heterogeneity,トピック,KA Core,2,異種メモリシステム,部分,104・455・873で共有、揮発性、一貫性の固定例を比較。実際の異種構成は未評価。,coverage-ar-heterogeneity.md,10,原典照合結果は監査記録参照・親子重複候補
+AR-Heterogeneity:トピック:KA Core:2a,AR,AR-Heterogeneity,トピック,KA Core,2a,異種メモリ：共有と分散,部分,873で CPU・GPU の別々の記録と論理的に共有する記録、コピーと移動を比較。一般の分散メモリ構成は未評価。,coverage-ar-heterogeneity.md,11,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:2b,AR,AR-Heterogeneity,トピック,KA Core,2b,異種メモリ：揮発性と不揮発性,部分,455 で保存と電源断の模型。異種メモリ構成は未評価。,coverage-ar-heterogeneity.md,12,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:2c,AR,AR-Heterogeneity,トピック,KA Core,2c,異種メモリ：一貫性プロトコル,部分,104 で写しの無効化。実プロトコルと異種構成は未評価。,coverage-ar-heterogeneity.md,13,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:3,AR,AR-Heterogeneity,トピック,KA Core,3,領域特化アーキテクチャ,部分,875〜878で複数の固定模型を操作。実機と一般の設計は未評価。,coverage-ar-heterogeneity.md,14,原典照合結果は監査記録参照・親子重複候補
+AR-Heterogeneity:トピック:KA Core:3a,AR,AR-Heterogeneity,トピック,KA Core,3a,機械学習アクセラレータ,部分,875で２×２の積和器に数を流し、２行と１行の行列積を比較。実 TPU の精度・命令・性能や他のアクセラレータは未評価。,coverage-ar-heterogeneity.md,15,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:3b,AR,AR-Heterogeneity,トピック,KA Core,3b,ネットワーク内計算,部分,876で中継塔による４報告の集約と個別転送を比較。実スイッチの構成、損失・再送や性能は未評価。,coverage-ar-heterogeneity.md,16,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:3c,AR,AR-Heterogeneity,トピック,KA Core,3c,新しい応用向け組込みシステム,部分,219の観測と駆動、877の川辺での判断と遠隔制御の固定模型。実機や多様な応用は未評価。,coverage-ar-heterogeneity.md,17,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:3d,AR,AR-Heterogeneity,トピック,KA Core,3d,ニューロモーフィック計算,部分,878で離散時間の積分・減衰・閾値・発火後のリセットと入力時刻を操作。実回路、複数素子、学習や実機の性能は未評価。,coverage-ar-heterogeneity.md,18,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:3e,AR,AR-Heterogeneity,トピック,KA Core,3e,エッジ計算装置,部分,877で観測点近くと遠方の判断を、通信の有無と仮定した期限で比較。実ネットワーク、装置負荷や安全性は未評価。,coverage-ar-heterogeneity.md,19,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:4,AR,AR-Heterogeneity,トピック,KA Core,4,3D 集積やチップレットの実装・統合,部分,879で一体・横並び・積層の組立てと架空の良品費用を比較し、検査・熱・接続を扱う。実装技術や実製品の費用・性能は未評価。,coverage-ar-heterogeneity.md,20,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:5,AR,AR-Heterogeneity,トピック,KA Core,5,計算機構成の設計への機械学習,部分,880で架空の負荷と２構成を比較。実際の設計空間と実測は未評価。,coverage-ar-heterogeneity.md,21,原典照合結果は監査記録参照・親子重複候補
+AR-Heterogeneity:トピック:KA Core:5a,AR,AR-Heterogeneity,トピック,KA Core,5a,構成設計のための AI による負荷分析,部分,880で計算量と転送量の比から分類器を訓練し、未学習の負荷で誤りを検査。実負荷の計測・分析は未評価。,coverage-ar-heterogeneity.md,22,原典照合結果は監査記録参照
+AR-Heterogeneity:トピック:KA Core:5b,AR,AR-Heterogeneity,トピック,KA Core,5b,性能と電力効率のための構成最適化,部分,880で時間・消費量ごとに学習し２構成を予測。架空の２構成・有限候補であり、一般の設計空間探索や実機の効率は未評価。,coverage-ar-heterogeneity.md,23,原典照合結果は監査記録参照
+AR-Heterogeneity:学習成果:KA Core:1,AR,AR-Heterogeneity,学習成果,KA Core,1,図を分析し SIMD と MIMD の違いを見つける,部分,162 の同じ・異なる命令の固定例。一般の構成図は未評価。,coverage-ar-heterogeneity.md,29,原典照合結果は監査記録参照
+AR-Heterogeneity:学習成果:KA Core:2,AR,AR-Heterogeneity,学習成果,KA Core,2,マルチプロセッサ固有のメモリ管理と解決策を論じる,部分,104 の一貫性の例。一般の問題と自由な説明は未評価。,coverage-ar-heterogeneity.md,30,原典照合結果は監査記録参照
+AR-Heterogeneity:学習成果:KA Core:3,AR,AR-Heterogeneity,学習成果,KA Core,3,メモリ接続の違いと遅延・性能への影響を示す,部分,873で移動回数と仕事の順序を比較。各移動の遅延・接続帯域・実測や遠隔アクセスは未評価。,coverage-ar-heterogeneity.md,31,原典照合結果は監査記録参照
+AR-Heterogeneity:学習成果:KA Core:4,AR,AR-Heterogeneity,学習成果,KA Core,4,専用アクセラレータと汎用 CPU の使い分け,部分,163 の架空の費用・仕事量を比較。実測、転送の重なりや準備再利用は未評価。,coverage-ar-heterogeneity.md,32,原典照合結果は監査記録参照
+AR-Heterogeneity:学習成果:KA Core:5,AR,AR-Heterogeneity,学習成果,KA Core,5,ベクトルとスカラの設計原理の違いを列挙,部分,162 は複数データへの操作。実際の設計原理の全体像は未評価。,coverage-ar-heterogeneity.md,33,原典照合結果は監査記録参照
+AR-Heterogeneity:学習成果:KA Core:6,AR,AR-Heterogeneity,学習成果,KA Core,6,メモリ内処理の利点と欠点を列挙,部分,874で記憶の近傍での集計と外部転送量を比較し、費用・整合性・方式の違いを説明。一般の PIM 構成、実測や自由な説明は未評価。,coverage-ar-heterogeneity.md,34,原典照合結果は監査記録参照
 AR-IO:トピック:CS Core:1,AR,AR-IO,トピック,CS Core,1,入出力の基礎,部分,454・105で受渡し、ポーリング、割込みの固定例。入出力全般や実装は未評価。,coverage-ar-io.md,9,原典照合結果は監査記録参照・親子重複候補
 AR-IO:トピック:CS Core:1a,AR,AR-IO,トピック,CS Core,1a,ハンドシェイクとバッファ,部分,454 は１枠の有効・受取可能、OS の別の依頼は二重バッファの模型。一般の回路や容量は未評価。,coverage-ar-io.md,10,原典照合結果は監査記録参照
 AR-IO:トピック:CS Core:1b,AR,AR-IO,トピック,CS Core,1b,プログラムによる入出力,部分,105 の固定時間のポーリング。実装全般は未評価。,coverage-ar-io.md,11,原典照合結果は監査記録参照
@@ -891,24 +894,27 @@ AR-Representation:学習成果:CS Core:4,AR,AR-Representation,学習成果,CS Co
 AR-Representation:学習成果:CS Core:5,AR,AR-Representation,学習成果,CS Core,5,文字・文字列・レコード・配列等のビット表現,部分,93で文字のバイト列、173で配列要素の配置。一般のビット表現やレコードは未評価。,coverage-ar-representation.md,26,原典照合結果は監査記録参照
 AR-Representation:学習成果:CS Core:6,AR,AR-Representation,学習成果,CS Core,6,数値を異なる形式へ変換,部分,36・461で４ビット整数、710で固定小数点の丸めと符号付き・符号なしの読みを比較。一般の変換は未評価。,coverage-ar-representation.md,27,原典照合結果は監査記録参照
 AR-Representation:学習成果:CS Core:7,AR,AR-Representation,学習成果,CS Core,7,一つの加算器が符号なしと２の補数を扱う仕組み,部分,37で同じ４ビット加算の結果と２つの解釈を比較。一般の幅や自由な説明は未評価。,coverage-ar-representation.md,28,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:1a,AR,AR-Security,トピック,KA Core,1a,ハードウェアのリスク分析、資産保護、脅威モデル,部分,180 は固定の脅威と対策の比較。ハードウェア固有の分析は未評価。,coverage-ar-security.md,9,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:1b,AR,AR-Security,トピック,KA Core,1b,暗号処理のハードウェア加速,部分,1088で専用命令と外付け装置の仮の準備・処理時間を比較。実装・実機の性能や安全性は未評価。,coverage-ar-security.md,10,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:1c,AR,AR-Security,トピック,KA Core,1c,仮想化支援と OS 隔離,部分,135 は仮想マシンとコンテナのカーネル共有を比較。ハードウェア支援と隔離の安全性は未評価。,coverage-ar-security.md,11,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:2,AR,AR-Security,トピック,KA Core,2,信頼の起点と PUF,部分,257 で個体差と揺らぎ、383 で信頼された検証器を仮定した起動検証。実装と構築は未評価。,coverage-ar-security.md,12,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:3,AR,AR-Security,トピック,KA Core,3,ハードウェア乱数生成器,部分,256 は決定的な数列と外部雑音の比較。実際の雑音源や健全性検査は未評価。,coverage-ar-security.md,13,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:4a,AR,AR-Security,トピック,KA Core,4a,実行時のポインタ範囲検査,部分,255 は範囲付きの鍵で固定アクセスを比較。実機の例外とバッファ操作は未評価。,coverage-ar-security.md,14,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:4b,AR,AR-Security,トピック,KA Core,4b,マイクロアーキテクチャ水準の保護,部分,494 は投機取消し後のキャッシュの模型。実機や一般の保護は未評価。,coverage-ar-security.md,15,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:4c,AR,AR-Security,トピック,KA Core,4c,ISA 水準の保護,部分,255 は範囲と許可の模型。タグ、導出、命令と実装は未評価。,coverage-ar-security.md,16,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:5a,AR,AR-Security,トピック,KA Core,5a,TEE の信頼基盤の保護,部分,258 は証明検証器と署名への信頼を仮定。信頼基盤の構成・保護は未評価。,coverage-ar-security.md,17,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:5b,AR,AR-Security,トピック,KA Core,5b,TEE による仮想マシンの保護,部分,258 は構成証明と鍵の受渡しの模型。実際の隔離と実機は未評価。,coverage-ar-security.md,18,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:5c,AR,AR-Security,トピック,KA Core,5c,TEE によるコンテナの保護,部分,1090で署名と容器の識別値等を確認し秘密の受渡しを選ぶ。実際の隔離・検証・鍵管理は未評価。,coverage-ar-security.md,19,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:5d,AR,AR-Security,トピック,KA Core,5d,信頼されたソフトウェアモジュール,部分,1091で理想化した封印室の入口の再読取と内部の写し、出口の情報を比較。実 TEE・実装や一般の攻撃は未評価。,coverage-ar-security.md,20,原典照合結果は監査記録参照
-AR-Security:トピック:KA Core:6,AR,AR-Security,トピック,KA Core,6,プライバシーを保つ処理と準同型暗号,部分,259 は教科書的 RSA の乗算の模型。安全な方式、加算や実用費用は未評価。,coverage-ar-security.md,21,原典照合結果は監査記録参照
-AR-Security:学習成果:KA Core:1,AR,AR-Security,学習成果,KA Core,1,安全なハードウェアの原則とリスク分析・資産保護を論じる,部分,180 は固定の攻撃経路と対策。ハードウェア固有の分析と自由な議論は未評価。,coverage-ar-security.md,27,原典照合結果は監査記録参照
-AR-Security:学習成果:KA Core:2,AR,AR-Security,学習成果,KA Core,2,PUF による装置固有識別を要約,部分,257 は登録・再測定と誤判定の固定例。実装、攻撃耐性、自由な要約は未評価。,coverage-ar-security.md,28,原典照合結果は監査記録参照
-AR-Security:学習成果:KA Core:3,AR,AR-Security,学習成果,KA Core,3,専用ハードウェアのある乱数生成器とないものを区別,部分,256 は物理的雑音源と決定的規則を比較。実生成器の構成と検証は未評価。,coverage-ar-security.md,29,原典照合結果は監査記録参照
-AR-Security:学習成果:KA Core:4,AR,AR-Security,学習成果,KA Core,4,ISA 水準のメモリ保護の利点・欠点を列挙,部分,255 は範囲外検出とその限界。一般の比較と自由な列挙は未評価。,coverage-ar-security.md,30,原典照合結果は監査記録参照
-AR-Security:学習成果:KA Core:5,AR,AR-Security,学習成果,KA Core,5,仮想マシン向け TEE の設計課題を説明,部分,258 は構成証明の固定例。実装全体と自由な説明は未評価。,coverage-ar-security.md,31,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:1,AR,AR-Security,トピック,KA Core,1,安全なハードウェアの原則,部分,180・1088などで脅威と加速の固定例を比較。実機の安全性は未評価。,coverage-ar-security.md,9,原典照合結果は監査記録参照・親子重複候補
+AR-Security:トピック:KA Core:1a,AR,AR-Security,トピック,KA Core,1a,ハードウェアのリスク分析、資産保護、脅威モデル,部分,180 は固定の脅威と対策の比較。ハードウェア固有の分析は未評価。,coverage-ar-security.md,10,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:1b,AR,AR-Security,トピック,KA Core,1b,暗号処理のハードウェア加速,部分,1088で専用命令と外付け装置の仮の準備・処理時間を比較。実装・実機の性能や安全性は未評価。,coverage-ar-security.md,11,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:1c,AR,AR-Security,トピック,KA Core,1c,仮想化支援と OS 隔離,部分,135 は仮想マシンとコンテナのカーネル共有を比較。ハードウェア支援と隔離の安全性は未評価。,coverage-ar-security.md,12,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:2,AR,AR-Security,トピック,KA Core,2,信頼の起点と PUF,部分,257 で個体差と揺らぎ、383 で信頼された検証器を仮定した起動検証。実装と構築は未評価。,coverage-ar-security.md,13,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:3,AR,AR-Security,トピック,KA Core,3,ハードウェア乱数生成器,部分,256 は決定的な数列と外部雑音の比較。実際の雑音源や健全性検査は未評価。,coverage-ar-security.md,14,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:4,AR,AR-Security,トピック,KA Core,4,メモリ保護の拡張,部分,255・494で範囲検査と投機の限定模型。実 ISA と一般の保護は未評価。,coverage-ar-security.md,15,原典照合結果は監査記録参照・親子重複候補
+AR-Security:トピック:KA Core:4a,AR,AR-Security,トピック,KA Core,4a,実行時のポインタ範囲検査,部分,255 は範囲付きの鍵で固定アクセスを比較。実機の例外とバッファ操作は未評価。,coverage-ar-security.md,16,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:4b,AR,AR-Security,トピック,KA Core,4b,マイクロアーキテクチャ水準の保護,部分,494 は投機取消し後のキャッシュの模型。実機や一般の保護は未評価。,coverage-ar-security.md,17,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:4c,AR,AR-Security,トピック,KA Core,4c,ISA 水準の保護,部分,255 は範囲と許可の模型。タグ、導出、命令と実装は未評価。,coverage-ar-security.md,18,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:5,AR,AR-Security,トピック,KA Core,5,信頼された実行環境,部分,258・1090・1091で証明や境界の限定模型。実 TEE の隔離は未評価。,coverage-ar-security.md,19,原典照合結果は監査記録参照・親子重複候補
+AR-Security:トピック:KA Core:5a,AR,AR-Security,トピック,KA Core,5a,TEE の信頼基盤の保護,部分,258 は証明検証器と署名への信頼を仮定。信頼基盤の構成・保護は未評価。,coverage-ar-security.md,20,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:5b,AR,AR-Security,トピック,KA Core,5b,TEE による仮想マシンの保護,部分,258 は構成証明と鍵の受渡しの模型。実際の隔離と実機は未評価。,coverage-ar-security.md,21,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:5c,AR,AR-Security,トピック,KA Core,5c,TEE によるコンテナの保護,部分,1090で署名と容器の識別値等を確認し秘密の受渡しを選ぶ。実際の隔離・検証・鍵管理は未評価。,coverage-ar-security.md,22,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:5d,AR,AR-Security,トピック,KA Core,5d,信頼されたソフトウェアモジュール,部分,1091で理想化した封印室の入口の再読取と内部の写し、出口の情報を比較。実 TEE・実装や一般の攻撃は未評価。,coverage-ar-security.md,23,原典照合結果は監査記録参照
+AR-Security:トピック:KA Core:6,AR,AR-Security,トピック,KA Core,6,プライバシーを保つ処理と準同型暗号,部分,259 は教科書的 RSA の乗算の模型。安全な方式、加算や実用費用は未評価。,coverage-ar-security.md,24,原典照合結果は監査記録参照
+AR-Security:学習成果:KA Core:1,AR,AR-Security,学習成果,KA Core,1,安全なハードウェアの原則とリスク分析・資産保護を論じる,部分,180 は固定の攻撃経路と対策。ハードウェア固有の分析と自由な議論は未評価。,coverage-ar-security.md,30,原典照合結果は監査記録参照
+AR-Security:学習成果:KA Core:2,AR,AR-Security,学習成果,KA Core,2,PUF による装置固有識別を要約,部分,257 は登録・再測定と誤判定の固定例。実装、攻撃耐性、自由な要約は未評価。,coverage-ar-security.md,31,原典照合結果は監査記録参照
+AR-Security:学習成果:KA Core:3,AR,AR-Security,学習成果,KA Core,3,専用ハードウェアのある乱数生成器とないものを区別,部分,256 は物理的雑音源と決定的規則を比較。実生成器の構成と検証は未評価。,coverage-ar-security.md,32,原典照合結果は監査記録参照
+AR-Security:学習成果:KA Core:4,AR,AR-Security,学習成果,KA Core,4,ISA 水準のメモリ保護の利点・欠点を列挙,部分,255 は範囲外検出とその限界。一般の比較と自由な列挙は未評価。,coverage-ar-security.md,33,原典照合結果は監査記録参照
+AR-Security:学習成果:KA Core:5,AR,AR-Security,学習成果,KA Core,5,仮想マシン向け TEE の設計課題を説明,部分,258 は構成証明の固定例。実装全体と自由な説明は未評価。,coverage-ar-security.md,34,原典照合結果は監査記録参照
 AR-SEP:トピック:Non-core:1,AR,AR-SEP,トピック,Non-core,1,実装上の判断が及ぼす環境影響,部分,91・844・858・860で個別の架空比較や推計を扱う。一般の実装判断の環境影響は未評価。,coverage-ar-sep.md,9,原典照合結果は監査記録参照・親子重複候補
 AR-SEP:トピック:Non-core:1a,AR,AR-SEP,トピック,Non-core,1a,持続可能性目標・資源・経済性,部分,91で修理と製造・使用の架空負荷を比較。費用や経済的実現可能性は未評価。,coverage-ar-sep.md,10,原典照合結果は監査記録参照
 AR-SEP:トピック:Non-core:1b,AR,AR-SEP,トピック,Non-core,1b,炭素排出・電子廃棄物,部分,91で集計範囲の違い、860で世界の電子廃棄物の推計を比較。機器別の廃棄や炭素排出の実測は未評価。,coverage-ar-sep.md,11,原典照合結果は監査記録参照
