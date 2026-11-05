@@ -1862,7 +1862,7 @@ GIT-Simulation:トピック:KA Core:6,GIT,GIT-Simulation,トピック,KA Core,6,
 GIT-Simulation:学習成果:KA Core:1,GIT,GIT-Simulation,学習成果,KA Core,1,ニュートン力学に基づく粒子の実装,部分,209で更新順と刻みを比較。実コードを書く能力は未評価。,coverage-git-simulation.md,30,原典照合結果は監査記録参照
 GIT-Simulation:学習成果:KA Core:2,GIT,GIT-Simulation,学習成果,KA Core,2,水しぶき等の軌道に関する流体シミュレーション法を比較,部分,855で独立粒子と PIC・FLIP の速度伝達・１刻みの軌跡を比較。固定重みの模型で、実際の水しぶきや一般の手法比較は未評価。,coverage-git-simulation.md,31,原典照合結果は監査記録参照
 GIT-Simulation:学習成果:KA Core:3,GIT,GIT-Simulation,学習成果,KA Core,3,操作可能な煙のソルバーを実装,部分,856で煙の追加・風の選択と、２×２区画の投影・濃度移流を操作。速度移流、浮力等や実コードの作成は未評価。,coverage-git-simulation.md,32,原典照合結果は監査記録参照
-GIT-Visualization:トピック:KA Core:1,GIT,GIT-Visualization,トピック,KA Core,1,科学データの可視化と情報可視化,部分,111で２数値の情報表示を比較。科学データの可視化との体系的な比較は未評価。,coverage-git-visualization.md,9,原典照合結果は監査記録参照
+GIT-Visualization:トピック:KA Core:1,GIT,GIT-Visualization,トピック,KA Core,1,科学データの可視化と情報可視化,部分,111で２数値の情報表示、1162で位置に結び付く風向きと村別集計を比較。一般的な境界や設計は未評価。,coverage-git-visualization.md,9,原典照合結果は監査記録参照
 GIT-Visualization:トピック:KA Core:2,GIT,GIT-Visualization,トピック,KA Core,2,可視化技法,部分,統計・文字・空間・場・体積の固定例は子を参照。一般の技法は未評価。,coverage-git-visualization.md,10,原典照合結果は監査記録参照・親子重複候補
 GIT-Visualization:トピック:KA Core:2a,GIT,GIT-Visualization,トピック,KA Core,2a,統計的可視化,部分,111で棒・点、113で３区間のヒストグラムを操作。散布図・折れ線など一般の種類は未評価。,coverage-git-visualization.md,11,原典照合結果は監査記録参照
 GIT-Visualization:トピック:KA Core:2b,GIT,GIT-Visualization,トピック,KA Core,2b,テキスト可視化,部分,1172で120の単語札を使い２文書の出現回数と文章長で割った割合を棒と表で比較。実文章・語順・一般の可視化は未評価。,coverage-git-visualization.md,12,原典照合結果は監査記録参照
@@ -1887,7 +1887,7 @@ GIT-Visualization:トピック:KA Core:7a,GIT,GIT-Visualization,トピック,KA 
 GIT-Visualization:トピック:KA Core:7b,GIT,GIT-Visualization,トピック,KA Core,7b,アクセシビリティ,部分,22で色以外の手がかりを選択。多様な利用者による図の評価は未対応。,coverage-git-visualization.md,31,原典照合結果は監査記録参照
 GIT-Visualization:トピック:KA Core:7c,GIT,GIT-Visualization,トピック,KA Core,7c,視覚的符号化の適切さ,部分,111で棒と点、軸範囲の固定例を比較。データ・課題全般への適用は未評価。,coverage-git-visualization.md,32,原典照合結果は監査記録参照
 GIT-Visualization:トピック:KA Core:7d,GIT,GIT-Visualization,トピック,KA Core,7d,誤解を招く可視化,部分,111で棒の下端、112で集計範囲を比較。すべての誤解や因果関係の判断は扱わない。,coverage-git-visualization.md,33,原典照合結果は監査記録参照
-GIT-Visualization:学習成果:KA Core:1,GIT,GIT-Visualization,学習成果,KA Core,1,データ可視化と情報可視化を比較,未照合,両者の体系的比較は未確認。,coverage-git-visualization.md,39,原典照合結果は監査記録参照
+GIT-Visualization:学習成果:KA Core:1,GIT,GIT-Visualization,学習成果,KA Core,1,データ可視化と情報可視化を比較,部分,1162で空間上の風と村別集計の位置・値の対応を比較。一般的な分類や自由な説明は未評価。,coverage-git-visualization.md,39,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:2,GIT,GIT-Visualization,学習成果,KA Core,2,基本的な可視化アルゴリズムを利用,部分,113でヒストグラムの区間を操作。一般のライブラリや実プログラムの利用は未評価。,coverage-git-visualization.md,40,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:3,GIT,GIT-Visualization,学習成果,KA Core,3,可視化アルゴリズムの精度・性能のトレードオフを比較,部分,111で時系列の全点と１点おきの表示点数・最大値の保持を比較。実行速度や一般の精度は未評価。,coverage-git-visualization.md,41,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:4,GIT,GIT-Visualization,学習成果,KA Core,4,データ・課題・対象者に合う可視化を設計,部分,111で棒・点と尺度を選ぶ。一般の設計や対象者の評価は未対応。,coverage-git-visualization.md,42,原典照合結果は監査記録参照

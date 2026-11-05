@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {visComparison,visCompareCreate,visCompareRestore} from '../src/visualization-contexts.js';
+import {vfCreate,vfRestore} from '../src/vector-field-map.js';
+test('swapping wind arrows changes the position mapping while moving labeled records preserves it',()=>{const original=visComparison('wind','original'),moved=visComparison('wind','reordered');assert.equal(original.answer,'same');assert.equal(moved.answer,'changed');assert.deepEqual(moved.items.map(x=>[x.name,x.value]),[['西の位置','東向き'],['東の位置','西向き']]);for(const order of ['original','reordered']){const r=visComparison('villages',order);assert.equal(r.answer,'same');assert.deepEqual(Object.fromEntries(r.items.map(x=>[x.name,x.value])),{'東村':'80点','西村':'90点'});}assert.throws(()=>visComparison('bad','original'));});
+test('older wind maps migrate and comparison drafts are copied and validated',()=>{const q=vfCreate();delete q.comparison;assert.deepEqual(vfRestore(q).comparison,visCompareCreate());const s=visCompareCreate();s.seen.push('wind:reordered');const copy=visCompareRestore(s);copy.seen.pop();assert.equal(s.seen.length,1);assert.throws(()=>visCompareRestore({...s,seen:['bad']}));});
