@@ -1676,7 +1676,7 @@ GIT-Image:トピック:KA Core:5,GIT,GIT-Image,トピック,KA Core,5,画像の�
 GIT-Image:トピック:KA Core:5a,GIT,GIT-Image,トピック,KA Core,5a,冗長性,部分,811で一様な画素から模様の係数が０となる固定例を比較。一般の冗長性や符号化は未評価。,coverage-git-image.md,27,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:5b,GIT,GIT-Image,トピック,KA Core,5b,圧縮,部分,110で一般のハフマン符号、811で２×２の DCT と量子化、812で差分と連長の固定例。画像ファイルの符号化・実際の圧縮率は未評価。,coverage-git-image.md,28,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:5c,GIT,GIT-Image,トピック,KA Core,5c,DCT・ウェーブレット・フーリエ変換,部分,175・808で離散フーリエ変換、811で２×２画像の DCT と４画素列の２段階 Haar 変換。一般の画像や他のウェーブレットは未評価。,coverage-git-image.md,29,原典照合結果は監査記録参照
-GIT-Image:トピック:KA Core:5d,GIT,GIT-Image,トピック,KA Core,5d,ナイキストの定理,部分,221で標本間隔と信号の固定例。一般の標本化定理と画像への適用は未評価。,coverage-git-image.md,30,原典照合結果は監査記録参照
+GIT-Image:トピック:KA Core:5d,GIT,GIT-Image,トピック,KA Core,5d,ナイキストの定理,部分,221で標本化の固定例、724で１行の縞の間引きと平均を比較。一般の標本化定理や２次元画像全体は未評価。,coverage-git-image.md,30,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:5e,GIT,GIT-Image,トピック,KA Core,5e,透かし,部分,813で最下位ビットの印、１画素の変更、量子化、別画像への同じ印を比較。一般の方式・耐性・実画像は未評価。,coverage-git-image.md,31,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:6,GIT,GIT-Image,トピック,KA Core,6,深層学習との関連,部分,661で一次元の窓とプーリング、458で復元模型。実画像・２次元 CNN の学習は未評価。,coverage-git-image.md,32,原典照合結果は監査記録参照
 GIT-Image:学習成果:KA Core:1,GIT,GIT-Image,学習成果,KA Core,1,膨張と収縮で二値画像の縁を平滑化するプログラム,部分,139・140で固定画像を操作。一般の縁の平滑化と実際のプログラムは評価しない。,coverage-git-image.md,38,原典照合結果は監査記録参照
