@@ -1210,7 +1210,7 @@ FPL-Constructs:トピック:Non-core:1,FPL,FPL-Constructs,トピック,Non-core,
 FPL-Constructs:トピック:Non-core:2,FPL,FPL-Constructs,トピック,Non-core,2,遅延評価と無限列,部分,325で無限列の先頭部分と事前生成を比較。実処理系は未評価。,coverage-fpl-constructs.md,10,原典照合結果は監査記録参照
 FPL-Constructs:トピック:Non-core:3,FPL,FPL-Constructs,トピック,Non-core,3,遅延と先行の比較,部分,326・327で評価回数、副作用と発散の固定例。実言語全般は未評価。,coverage-fpl-constructs.md,11,原典照合結果は監査記録参照
 FPL-Constructs:トピック:Non-core:4,FPL,FPL-Constructs,トピック,Non-core,4,単一化・表明・式評価,部分,146の単一化、281の式評価。３者の比較は未評価。,coverage-fpl-constructs.md,12,原典照合結果は監査記録参照
-FPL-Constructs:トピック:Non-core:5,FPL,FPL-Constructs,トピック,Non-core,5,例外・継続・モナド,部分,250・513の例外と後始末、513で保存した残りの処理に値を渡す固定模型。実言語の継続とモナドは未評価。,coverage-fpl-constructs.md,13,原典照合結果は監査記録参照
+FPL-Constructs:トピック:Non-core:5,FPL,FPL-Constructs,トピック,Non-core,5,例外・継続・モナド,部分,250・513の例外と後始末、513で継続と Maybe の固定模型。実言語の継続、一般のモナドや法則は未評価。,coverage-fpl-constructs.md,13,原典照合結果は監査記録参照
 FPL-Constructs:トピック:Non-core:6,FPL,FPL-Constructs,トピック,Non-core,6,多重継承・ミックスイン・トレイト・多重メソッド,部分,778の C3 順序、780のミックスイン。トレイト、多重メソッドと一般の実装は未評価。,coverage-fpl-constructs.md,14,原典照合結果は監査記録参照
 FPL-Constructs:トピック:Non-core:7,FPL,FPL-Constructs,トピック,Non-core,7,マクロ・生成・モデルに基づく開発,部分,779は公開操作情報から操作札を生成する模型。マクロやモデル駆動開発は要照合。,coverage-fpl-constructs.md,15,原典照合結果は監査記録参照
 FPL-Constructs:トピック:Non-core:8,FPL,FPL-Constructs,トピック,Non-core,8,正規表現による文字列処理,部分,154で固定のパターンの一致。一般の文字列処理は未評価。,coverage-fpl-constructs.md,16,原典照合結果は監査記録参照
