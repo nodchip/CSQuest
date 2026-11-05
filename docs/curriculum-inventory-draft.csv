@@ -1237,7 +1237,7 @@ FPL-Design:学習成果:Non-core:1,FPL,FPL-Design,学習成果,Non-core,1,良い
 FPL-Event-Driven:トピック:CS Core:1,FPL,FPL-Event-Driven,トピック,CS Core,1,手続き型と反応型の比較,部分,92でイベントへの反応を操作。両方式の体系的比較は未評価。,coverage-fpl-event-driven.md,9,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:CS Core:2,FPL,FPL-Event-Driven,トピック,CS Core,2,発生源・信号・リスナー・ディスパッチ・イベント・アダプタ・処理,部分,92で２種類の信号・待ち行列・処理、594で登録した処理の参照を比較。一般のイベントオブジェクトやアダプタは未評価。,coverage-fpl-event-driven.md,10,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:CS Core:3,FPL,FPL-Event-Driven,トピック,CS Core,3,無状態と状態遷移のモデル,部分,92で灯りの値の状態遷移を操作。無状態方式との一般的比較は未評価。,coverage-fpl-event-driven.md,11,原典照合結果は監査記録参照
-FPL-Event-Driven:トピック:CS Core:4,FPL,FPL-Event-Driven,トピック,CS Core,4,GUI・端末・ロボット・サーバ等の利用,部分,1102で案内板・人形・受付の固定イベントを比較。端末、実装・実環境の詳細は未評価。,coverage-fpl-event-driven.md,12,原典照合結果は監査記録参照
+FPL-Event-Driven:トピック:CS Core:4,FPL,FPL-Event-Driven,トピック,CS Core,4,GUI・モバイル端末・ロボット・サーバ等の利用,部分,1102で案内板・人形・受付の固定イベントを比較。モバイル端末、実装・実環境の詳細は未評価。,coverage-fpl-event-driven.md,12,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:KA Core:5a,FPL,FPL-Event-Driven,トピック,KA Core,5a,フレームワークでの処理・リスナー定義,部分,92で固定の処理を選択・登録。実フレームワークでの定義は未評価。,coverage-fpl-event-driven.md,13,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:KA Core:5b,FPL,FPL-Event-Driven,トピック,KA Core,5b,送信元とイベント引数のパラメータ化,部分,1092で送信元・対象・増分を含む固定イベントを処理。実言語での定義・一般の引数は未評価。,coverage-fpl-event-driven.md,14,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:KA Core:5c,FPL,FPL-Event-Driven,トピック,KA Core,5c,外部・プログラム生成のイベント,部分,1092で板の印と処理中に予約した知らせを比較。実際の API・複数タスク源の順序は未評価。,coverage-fpl-event-driven.md,15,原典照合結果は監査記録参照

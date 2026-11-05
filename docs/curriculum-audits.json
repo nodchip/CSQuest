@@ -728,6 +728,14 @@
       "topics": 30,
       "outcomes": 10,
       "scope_sha256": "ec54546ae8ecf693e8eb788eae68457acb81cba0b933bdfe0b4ce7165d17fd3e"
+    },
+    "FPL-Event-Driven": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-event-driven.md",
+      "topics": 9,
+      "outcomes": 4,
+      "scope_sha256": "1771d11b47084df3de7eae887a234f9639fc1297538c6bbb562ad40bb13cfc95"
     }
   }
 }

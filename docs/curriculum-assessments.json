@@ -613,6 +613,17 @@
         "tests/mobile-location.test.js": "8a84afb2698a8e7d90a9e050d2b36e96a32000dbeb333f9b8d4954ead0540816",
         "tests/mobile-location-api.test.js": "8dea1c7ffaa092706bc349c914debce85ed68c679f6f081ae0aaf84f8f1a53ef"
       }
+    },
+    "FPL-Event-Driven:トピック:CS Core:4": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-event-worlds.md",
+      "row_sha256": "6e6e21653ae2d0d804d61657e55ac6c1e7437994d1dc4529ae0d361c9dea005f",
+      "files": {
+        "src/event-worlds.js": "6edaa8a2bbdbb6fa23181000674dc15f5009a072bad509cd6907d773b3dd8d0c",
+        "src/app.js": "254579a3e9885938fbd1f3e4f802c4fa50d193f18a57d9de5f8191806ba74c53",
+        "tests/event-worlds.test.js": "0e6ed19f937d53df2ea5f041b0e1bddc38aef33dedf1d8b59609963893096400"
+      }
     }
   }
 }
