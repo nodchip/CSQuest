@@ -720,6 +720,14 @@
       "topics": 22,
       "outcomes": 5,
       "scope_sha256": "2a7718b500154ed6d208b8e0938895049230fe2a9fd1479a3d8b0888520a8e79"
+    },
+    "SPD-Embedded": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-embedded.md",
+      "topics": 30,
+      "outcomes": 10,
+      "scope_sha256": "ec54546ae8ecf693e8eb788eae68457acb81cba0b933bdfe0b4ce7165d17fd3e"
     }
   }
 }

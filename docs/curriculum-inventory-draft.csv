@@ -3501,44 +3501,46 @@ SPD-Common:学習成果:未記載:1,SPD,SPD-Common,学習成果,未記載,1,モ�
 SPD-Common:学習成果:未記載:2,SPD,SPD-Common,学習成果,未記載,2,スクリプト言語の特徴を列挙,部分,151で道具の連結と複数入力への繰返し、失敗を区別する固定例を操作。一般の言語の特徴や自由な列挙は未評価。,coverage-spd-common.md,27,原典照合結果は監査記録参照・区分を要確認
 SPD-Common:学習成果:未記載:3,SPD,SPD-Common,学習成果,未記載,3,Web の３層モデルを説明,部分,803 で画面・処理・データの役割と固定の申込みを操作。一般の構成や自由な説明は未評価。,coverage-spd-common.md,28,原典照合結果は監査記録参照・区分を要確認
 SPD-Common:学習成果:未記載:4,SPD,SPD-Common,学習成果,未記載,4,Web の状態維持を説明,部分,354 の端末内の送信待ち、804 の Cookie とサーバー側の記録による状態維持の模型。実装や他の方法は未評価。,coverage-spd-common.md,29,原典照合結果は監査記録参照・区分を要確認
-SPD-Embedded:トピック:KA Core:1a,SPD,SPD-Embedded,トピック,KA Core,1a,リアルタイム、ソフトリアルタイム、非リアルタイム,部分,依頼133で２仕事の期限を扱い、期限超過を許せるかの違いに触れる。用途別の体系的な比較は未対応,coverage-spd-embedded.md,9,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:1b,SPD,SPD-Embedded,トピック,KA Core,1b,メモリや期限などの資源制約,部分,依頼133で期限、387で空き領域の割当を別々に操作。組込み機器全体の資源設計は未対応,coverage-spd-embedded.md,10,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:2a,SPD,SPD-Embedded,トピック,KA Core,2a,GPU 技術のための API,部分,依頼871で WebGL による固定立方体を実際に描画。組込み GPU や自由な API 利用は未評価,coverage-spd-embedded.md,11,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:2b,SPD,SPD-Embedded,トピック,KA Core,2b,FPGA のための API,未照合,依頼923で設定可能な LUT の固定模型を操作。FPGA の開発環境や API は未対応,coverage-spd-embedded.md,12,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:2c,SPD,SPD-Embedded,トピック,KA Core,2c,異なるプラットフォームをまたぐシステム,部分,877で観測点近くと遠方の判断・通信を比較。実プラットフォーム間の連携・実装は未評価。,coverage-spd-embedded.md,13,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3a,SPD,SPD-Embedded,トピック,KA Core,3a,マイクロコントローラー,部分,依頼919で CPU、フラッシュ、RAM、タイマーと入出力を持つ固定模型を操作。実機の構成や開発は未対応,coverage-spd-embedded.md,14,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3b,SPD,SPD-Embedded,トピック,KA Core,3b,割込みとフィードバック,部分,依頼105・919で割込み、921で温度の再測定を使う閉ループと固定加熱を比較。実機の割込み・制御や一般的な安定性は未評価,coverage-spd-embedded.md,15,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3c,SPD,SPD-Embedded,トピック,KA Core,3c,高水準言語の割込みハンドラー,部分,依頼105で通知後の処理と復帰を操作。実言語での実装は未対応,coverage-spd-embedded.md,16,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3d,SPD,SPD-Embedded,トピック,KA Core,3d,ハード・ソフト割込みとトラップからの復帰,部分,依頼105で単一通知からの復帰のみ。種類と実装の区別は未対応,coverage-spd-embedded.md,17,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3e,SPD,SPD-Embedded,トピック,KA Core,3e,ハードウェア、アクチュエーター、センサーとのやりとり,部分,依頼219で読み取り・目標送信・角度の変化、919でタイマー通知に応じた読み取りと灯りの出力を操作。実機・電気信号は未対応,coverage-spd-embedded.md,18,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3f,SPD,SPD-Embedded,トピック,KA Core,3f,エネルギー効率,部分,依頼161で固定の時間・電力からエネルギーを比較。組込み実機の測定や設計は未対応,coverage-spd-embedded.md,19,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3g,SPD,SPD-Embedded,トピック,KA Core,3g,緩い時間制約のコードと同期,未照合,対応例を要照合。,coverage-spd-embedded.md,20,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:3h,SPD,SPD-Embedded,トピック,KA Core,3h,ソフトウェアアダプター,部分,依頼920で２機器の数値を共通の摂氏と報告なしに変換。固定例であり、実ドライバーの実装や機器の詳細は未評価,coverage-spd-embedded.md,21,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:4,SPD,SPD-Embedded,トピック,KA Core,4,組込みプログラミング,未照合,実際のプログラムの作成・デバッグは未対応,coverage-spd-embedded.md,22,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:5a,SPD,SPD-Embedded,トピック,KA Core,5a,ハード・ソフトリアルタイムと適時性,部分,依頼133で期限を超える順序と間に合う順序を比較。一般の保証は未対応,coverage-spd-embedded.md,23,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:5b,SPD,SPD-Embedded,トピック,KA Core,5b,時刻の同期とスケジューリング,部分,依頼133で２仕事の順序、420で相対待機と基準時刻に基づく周期・超過時の固定例を操作。時計の同期や一般のスケジューリングは未対応,coverage-spd-embedded.md,24,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:5c,SPD,SPD-Embedded,トピック,KA Core,5c,優先順位,部分,依頼134で固定した優先度逆転と優先度継承を操作。一般の優先度設計は未対応,coverage-spd-embedded.md,25,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:5d,SPD,SPD-Embedded,トピック,KA Core,5d,遅延,部分,依頼395で検知から停止までの距離を比較。処理遅延の内訳や実測は未対応,coverage-spd-embedded.md,26,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:5e,SPD,SPD-Embedded,トピック,KA Core,5e,実行時間の揺らぎ,部分,依頼420で仕事時間の違いが開始間隔に与える影響と周期を超過した場合を操作。割込み、実測や一般的な解析は未対応,coverage-spd-embedded.md,27,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:6,SPD,SPD-Embedded,トピック,KA Core,6,リアルタイム資源管理,部分,依頼133・134の固定されたスケジュールのみ。一般の資源管理は未対応,coverage-spd-embedded.md,28,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:7a,SPD,SPD-Embedded,トピック,KA Core,7a,変数とメモリ位置の対応,部分,依頼197で値を箱に写す模型のみ。実際のアドレスへの配置は未対応,coverage-spd-embedded.md,29,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:7b,SPD,SPD-Embedded,トピック,KA Core,7b,共有メモリ,部分,依頼179で同一・別プロセスの共有状態を比較。組込み特有の共有と実装は未対応,coverage-spd-embedded.md,30,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:7c,SPD,SPD-Embedded,トピック,KA Core,7c,手動のメモリ管理,部分,依頼203で寿命の切れた参照を操作。実際の確保・解放と資源制約下の設計は未対応,coverage-spd-embedded.md,31,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:7d,SPD,SPD-Embedded,トピック,KA Core,7d,ガーベジコレクション,部分,依頼201で到達可能性に基づく回収の固定例。リアルタイム性への影響や実装は未対応,coverage-spd-embedded.md,32,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:8,SPD,SPD-Embedded,トピック,KA Core,8,安全への配慮と安全性分析,部分,395で検知と停止距離、917で開門命令と観測、918で複数の観測と同時の誤りを比較。実機の危険分析や安全性保証は未対応。,coverage-spd-embedded.md,33,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:9,SPD,SPD-Embedded,トピック,KA Core,9,センサーとアクチュエーター,部分,依頼219〜222で読み取り、角度、揺れ、量子化と標本化の固定模型。実装・実機は未対応,coverage-spd-embedded.md,34,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:10,SPD,SPD-Embedded,トピック,KA Core,10,分析と検証,部分,依頼133・395は与えられた条件での固定例。組込み装置の一般的な検証は未対応,coverage-spd-embedded.md,35,原典照合結果は監査記録参照
-SPD-Embedded:トピック:KA Core:11,SPD,SPD-Embedded,トピック,KA Core,11,アプリケーション設計,部分,依頼219の読み取りと駆動の模型のみ。実機のアプリケーション設計は未対応,coverage-spd-embedded.md,36,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:1,SPD,SPD-Embedded,学習成果,KA Core,1,指定プラットフォーム向けの小さな組込みシステムの設計・実装,部分,依頼219で読み取りから駆動までの模型を操作。実機の設計・実装は直接練習・評価しない,coverage-spd-embedded.md,42,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:2,SPD,SPD-Embedded,学習成果,KA Core,2,組込みシステム固有の特徴の説明,部分,依頼133・219で期限と物理世界とのやりとりの一部を体験。特徴の体系的比較や自由な説明は未対応,coverage-spd-embedded.md,43,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:3,SPD,SPD-Embedded,学習成果,KA Core,3,センサー・アクチュエーターとの接続,部分,依頼219〜222で固定模型を操作。実機の接続は直接練習・評価しない,coverage-spd-embedded.md,44,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:4,SPD,SPD-Embedded,学習成果,KA Core,4,既存の組込みプラットフォームの問題のデバッグ,部分,依頼922で架空の割込み禁止と温度変換の不具合を記録から切り分け、修復後に３条件を再試験。実機やデバッガーは未評価,coverage-spd-embedded.md,45,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:5,SPD,SPD-Embedded,学習成果,KA Core,5,組込みアーキテクチャの種類の識別,部分,依頼162・163で SIMD・MIMD と専用機械の模型を比較。組込みアーキテクチャ全般の識別は未対応,coverage-spd-embedded.md,46,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:6,SPD,SPD-Embedded,学習成果,KA Core,6,要件に合うアーキテクチャの評価,部分,依頼163で固定費用と処理量を比べる模型。組込みの要件全般や実機評価は未対応,coverage-spd-embedded.md,47,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:7,SPD,SPD-Embedded,学習成果,KA Core,7,ハードウェアとやりとりし制御するソフトウェアの設計・開発,部分,依頼219の固定された読み取り・駆動操作のみ。実際のソフトウェアの設計・開発は直接練習・評価しない,coverage-spd-embedded.md,48,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:8,SPD,SPD-Embedded,学習成果,KA Core,8,リアルタイムシステムの設計手法,部分,依頼133・134で期限と優先度継承、420で２種類の周期待機の固定例。一般の設計手法は未対応,coverage-spd-embedded.md,49,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:9,SPD,SPD-Embedded,学習成果,KA Core,9,リアルタイムスケジューリングとスケジュール可能性の評価,部分,依頼133で２仕事の３刻、757で周期４・６の仕事を12刻にわたり比較。一般の到着や実行時間での解析は未評価,coverage-spd-embedded.md,50,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:10,SPD,SPD-Embedded,学習成果,KA Core,10,時間制約・性質の形式仕様と検証の評価,未照合,対応例を要照合。,coverage-spd-embedded.md,51,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:1-本体,SPD,SPD-Embedded,トピック,KA Core,1-本体,組込みシステム固有の特徴の導入,部分,1325で小さな温度監視装置の容量と期限を他のプラットフォームの例と比較。特徴の全体像や実機は未評価。,coverage-spd-embedded.md,9,原典照合結果は監査記録参照・番号を要確認
+SPD-Embedded:トピック:KA Core:1a,SPD,SPD-Embedded,トピック,KA Core,1a,リアルタイム、ソフトリアルタイム、非リアルタイム,部分,依頼133で２仕事の期限を扱い、期限超過を許せるかの違いに触れる。用途別の体系的な比較は未対応,coverage-spd-embedded.md,10,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:1b,SPD,SPD-Embedded,トピック,KA Core,1b,メモリや期限などの資源制約,部分,依頼133で期限、387で空き領域の割当を別々に操作。組込み機器全体の資源設計は未対応,coverage-spd-embedded.md,11,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:2a,SPD,SPD-Embedded,トピック,KA Core,2a,GPU 技術のための API,部分,依頼871で WebGL による固定立方体を実際に描画。組込み GPU や自由な API 利用は未評価,coverage-spd-embedded.md,12,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:2b,SPD,SPD-Embedded,トピック,KA Core,2b,FPGA のための API,未照合,依頼923で設定可能な LUT の固定模型を操作。FPGA の開発環境や API は未対応,coverage-spd-embedded.md,13,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:2c,SPD,SPD-Embedded,トピック,KA Core,2c,異なるプラットフォームをまたぐシステム,部分,877で観測点近くと遠方の判断・通信を比較。実プラットフォーム間の連携・実装は未評価。,coverage-spd-embedded.md,14,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3a,SPD,SPD-Embedded,トピック,KA Core,3a,マイクロコントローラー,部分,依頼919で CPU、フラッシュ、RAM、タイマーと入出力を持つ固定模型を操作。実機の構成や開発は未対応,coverage-spd-embedded.md,15,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3b,SPD,SPD-Embedded,トピック,KA Core,3b,割込みとフィードバック,部分,依頼105・919で割込み、921で温度の再測定を使う閉ループと固定加熱を比較。実機の割込み・制御や一般的な安定性は未評価,coverage-spd-embedded.md,16,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3c,SPD,SPD-Embedded,トピック,KA Core,3c,高水準言語の割込みハンドラー,部分,依頼105で通知後の処理と復帰を操作。実言語での実装は未対応,coverage-spd-embedded.md,17,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3d,SPD,SPD-Embedded,トピック,KA Core,3d,ハード・ソフト割込みとトラップからの復帰,部分,依頼105で単一通知からの復帰のみ。種類と実装の区別は未対応,coverage-spd-embedded.md,18,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3e,SPD,SPD-Embedded,トピック,KA Core,3e,ハードウェア、アクチュエーター、センサーとのやりとり,部分,依頼219で読み取り・目標送信・角度の変化、919でタイマー通知に応じた読み取りと灯りの出力を操作。実機・電気信号は未対応,coverage-spd-embedded.md,19,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3f,SPD,SPD-Embedded,トピック,KA Core,3f,エネルギー効率,部分,依頼161で固定の時間・電力からエネルギーを比較。組込み実機の測定や設計は未対応,coverage-spd-embedded.md,20,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3g,SPD,SPD-Embedded,トピック,KA Core,3g,緩い時間制約のコードと同期,未照合,対応例を要照合。,coverage-spd-embedded.md,21,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:3h,SPD,SPD-Embedded,トピック,KA Core,3h,ソフトウェアアダプター,部分,依頼920で２機器の数値を共通の摂氏と報告なしに変換。固定例であり、実ドライバーの実装や機器の詳細は未評価,coverage-spd-embedded.md,22,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:4,SPD,SPD-Embedded,トピック,KA Core,4,組込みプログラミング,未照合,実際のプログラムの作成・デバッグは未対応,coverage-spd-embedded.md,23,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:5-本体,SPD,SPD-Embedded,トピック,KA Core,5-本体,ハードとソフトのリアルタイムシステムの比較,部分,760で期限を必ず守る要件、遅れで品質が下がる要件、期限を要求しない例を分類。一般の要件や実機の保証は未評価。,coverage-spd-embedded.md,24,原典照合結果は監査記録参照・番号を要確認
+SPD-Embedded:トピック:KA Core:5a,SPD,SPD-Embedded,トピック,KA Core,5a,適時性,部分,依頼133で期限を超える順序と間に合う順序を比較。一般の保証は未対応,coverage-spd-embedded.md,25,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:5b,SPD,SPD-Embedded,トピック,KA Core,5b,時刻の同期とスケジューリング,部分,依頼133で２仕事の順序、420で相対待機と基準時刻に基づく周期・超過時の固定例を操作。時計の同期や一般のスケジューリングは未対応,coverage-spd-embedded.md,26,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:5c,SPD,SPD-Embedded,トピック,KA Core,5c,優先順位,部分,依頼134で固定した優先度逆転と優先度継承を操作。一般の優先度設計は未対応,coverage-spd-embedded.md,27,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:5d,SPD,SPD-Embedded,トピック,KA Core,5d,遅延,部分,依頼395で検知から停止までの距離を比較。処理遅延の内訳や実測は未対応,coverage-spd-embedded.md,28,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:5e,SPD,SPD-Embedded,トピック,KA Core,5e,実行時間の揺らぎ,部分,依頼420で仕事時間の違いが開始間隔に与える影響と周期を超過した場合を操作。割込み、実測や一般的な解析は未対応,coverage-spd-embedded.md,29,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:6,SPD,SPD-Embedded,トピック,KA Core,6,リアルタイム資源管理,部分,依頼133・134の固定されたスケジュールのみ。一般の資源管理は未対応,coverage-spd-embedded.md,30,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:7a,SPD,SPD-Embedded,トピック,KA Core,7a,変数とメモリ位置の対応,部分,依頼197で値を箱に写す模型のみ。実際のアドレスへの配置は未対応,coverage-spd-embedded.md,31,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:7b,SPD,SPD-Embedded,トピック,KA Core,7b,共有メモリ,部分,依頼179で同一・別プロセスの共有状態を比較。組込み特有の共有と実装は未対応,coverage-spd-embedded.md,32,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:7c,SPD,SPD-Embedded,トピック,KA Core,7c,手動のメモリ管理,部分,依頼203で寿命の切れた参照を操作。実際の確保・解放と資源制約下の設計は未対応,coverage-spd-embedded.md,33,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:7d,SPD,SPD-Embedded,トピック,KA Core,7d,ガーベジコレクション,部分,依頼201で到達可能性に基づく回収の固定例。リアルタイム性への影響や実装は未対応,coverage-spd-embedded.md,34,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:8,SPD,SPD-Embedded,トピック,KA Core,8,安全への配慮と安全性分析,部分,395で検知と停止距離、917で開門命令と観測、918で複数の観測と同時の誤りを比較。実機の危険分析や安全性保証は未対応。,coverage-spd-embedded.md,35,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:9,SPD,SPD-Embedded,トピック,KA Core,9,センサーとアクチュエーター,部分,依頼219〜222で読み取り、角度、揺れ、量子化と標本化の固定模型。実装・実機は未対応,coverage-spd-embedded.md,36,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:10,SPD,SPD-Embedded,トピック,KA Core,10,分析と検証,部分,依頼133・395は与えられた条件での固定例。組込み装置の一般的な検証は未対応,coverage-spd-embedded.md,37,原典照合結果は監査記録参照
+SPD-Embedded:トピック:KA Core:11,SPD,SPD-Embedded,トピック,KA Core,11,アプリケーション設計,部分,依頼219の読み取りと駆動の模型のみ。実機のアプリケーション設計は未対応,coverage-spd-embedded.md,38,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:1,SPD,SPD-Embedded,学習成果,KA Core,1,指定プラットフォーム向けの小さな組込みシステムの設計・実装,部分,依頼219で読み取りから駆動までの模型を操作。実機の設計・実装は直接練習・評価しない,coverage-spd-embedded.md,44,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:2,SPD,SPD-Embedded,学習成果,KA Core,2,組込みシステム固有の特徴の説明,部分,依頼133・219で期限と物理世界とのやりとりの一部を体験。特徴の体系的比較や自由な説明は未対応,coverage-spd-embedded.md,45,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:3,SPD,SPD-Embedded,学習成果,KA Core,3,センサー・アクチュエーターとの接続,部分,依頼219〜222で固定模型を操作。実機の接続は直接練習・評価しない,coverage-spd-embedded.md,46,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:4,SPD,SPD-Embedded,学習成果,KA Core,4,既存の組込みプラットフォームの問題のデバッグ,部分,依頼922で架空の割込み禁止と温度変換の不具合を記録から切り分け、修復後に３条件を再試験。実機やデバッガーは未評価,coverage-spd-embedded.md,47,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:5,SPD,SPD-Embedded,学習成果,KA Core,5,組込みアーキテクチャの種類の識別,部分,依頼162・163で SIMD・MIMD と専用機械の模型を比較。組込みアーキテクチャ全般の識別は未対応,coverage-spd-embedded.md,48,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:6,SPD,SPD-Embedded,学習成果,KA Core,6,要件に合うアーキテクチャの評価,部分,依頼163で固定費用と処理量を比べる模型。組込みの要件全般や実機評価は未対応,coverage-spd-embedded.md,49,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:7,SPD,SPD-Embedded,学習成果,KA Core,7,ハードウェアとやりとりし制御するソフトウェアの設計・開発,部分,依頼219の固定された読み取り・駆動操作のみ。実際のソフトウェアの設計・開発は直接練習・評価しない,coverage-spd-embedded.md,50,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:8,SPD,SPD-Embedded,学習成果,KA Core,8,リアルタイムシステムの設計手法,部分,依頼133・134で期限と優先度継承、420で２種類の周期待機の固定例。一般の設計手法は未対応,coverage-spd-embedded.md,51,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:9,SPD,SPD-Embedded,学習成果,KA Core,9,リアルタイムスケジューリングとスケジュール可能性の評価,部分,依頼133で２仕事の３刻、757で周期４・６の仕事を12刻にわたり比較。一般の到着や実行時間での解析は未評価,coverage-spd-embedded.md,52,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:10,SPD,SPD-Embedded,学習成果,KA Core,10,時間制約・性質の形式仕様と検証の評価,未照合,対応例を要照合。,coverage-spd-embedded.md,53,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:1a,SPD,SPD-Game,トピック,KA Core,1a,ゲームプラットフォームの発展,未照合,個別の歴史と発展の教材を確認する必要がある。,coverage-spd-game.md,9,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:1b,SPD,SPD-Game,トピック,KA Core,1b,代表的なゲームプラットフォーム,部分,117で携帯・据置・ブラウザー向けの架空の提供方法を比較。実製品や配信方式全般は未評価。,coverage-spd-game.md,10,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:1c,SPD,SPD-Game,トピック,KA Core,1c,プラットフォームの特性・制約,部分,117で通信・導入・操作の固定条件を比較。実機の性能、資源や一般の制約は未評価。,coverage-spd-game.md,11,原典照合結果は監査記録参照
