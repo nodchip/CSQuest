@@ -3568,7 +3568,7 @@ SPD-Game:学習成果:未記載:10,SPD,SPD-Game,学習成果,未記載,10,業界
 SPD-Game:学習成果:未記載:11,SPD,SPD-Game,学習成果,未記載,11,プラットフォームの操作方式と HCI を比較,未照合,実機間の比較は未評価。,coverage-spd-game.md,44,原典照合結果は監査記録参照・区分を要確認
 SPD-Game:学習成果:未記載:12,SPD,SPD-Game,学習成果,未記載,12,ジャンル・機器に合う開発道具を推薦,未照合,工具選定の照合が必要。,coverage-spd-game.md,45,原典照合結果は監査記録参照・区分を要確認
 SPD-Game:学習成果:未記載:13,SPD,SPD-Game,学習成果,未記載,13,クロスプラットフォームの課題,未照合,ゲーム固有の課題の照合が必要。,coverage-spd-game.md,46,原典照合結果は監査記録参照・区分を要確認
-SPD-Game:学習成果:未記載:14,SPD,SPD-Game,学習成果,未記載,14,ゲーム画面のアクセシビリティ改善,部分,117 は音の内容を字幕化する固定模型。ゲームの適合全体や自由な説明は未評価。,coverage-spd-game.md,47,原典照合結果は監査記録参照・区分を要確認
+SPD-Game:学習成果:未記載:14,SPD,SPD-Game,学習成果,未記載,14,ゲーム画面のアクセシビリティ改善,部分,117で音の字幕と、同時押し・順に押す代替操作を固定模型で比較。実機や当事者による評価、ゲーム全体の適合や自由な説明は未評価。,coverage-spd-game.md,47,原典照合結果は監査記録参照・区分を要確認
 SPD-Game:学習成果:未記載:15,SPD,SPD-Game,学習成果,未記載,15,新しいプラットフォームを用いた遊びの創作,未照合,実機での創作は未評価。,coverage-spd-game.md,48,原典照合結果は監査記録参照・区分を要確認
 SPD-Interactive:トピック:未記載:1a,SPD,SPD-Interactive,トピック,未記載,1a,データ分析プラットフォームとノートブック,部分,357 の３頁と保持状態の固定模型。実ツールやデータ取込みは未評価。,coverage-spd-interactive.md,9,原典照合結果は監査記録参照・区分を要確認
 SPD-Interactive:トピック:未記載:1b-本体,SPD,SPD-Interactive,トピック,未記載,1b-本体,クラウド SQL・データ分析基盤,未照合,クラウド基盤自体の操作・設計は未確認。子項目とは別の固有内容として記録。,coverage-spd-interactive.md,10,原典照合結果は監査記録参照・番号を要確認・区分を要確認
@@ -3639,7 +3639,7 @@ SPD-Robot:学習成果:未記載:6,SPD,SPD-Robot,学習成果,未記載,6,プラ
 SPD-SEP/Game:トピック:Non-core:1a,SPD,SPD-SEP/Game,トピック,Non-core,1a,創作の知的財産権の所有、生成 AI など,未照合,対応例を要照合。,coverage-spd-sep-game.md,9,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:1b,SPD,SPD-SEP/Game,トピック,Non-core,1b,利用許諾、例外、ライセンスと権利の執行,部分,依頼399で販売用の架空素材に CC BY・BY-NC の条件を比較。例外や執行は未対応,coverage-spd-sep-game.md,10,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:2a,SPD,SPD-SEP/Game,トピック,Non-core,2a,ゲーム UI の要件、使いやすさと評価,未照合,対応例を要照合。,coverage-spd-sep-game.md,11,原典照合結果は監査記録参照
-SPD-SEP/Game:トピック:Non-core:2b,SPD,SPD-SEP/Game,トピック,Non-core,2b,障害の種類、ゲーム UI のアクセシビリティと評価,部分,依頼117の字幕、806の色以外の形・読み上げ名・キーボード操作の固定模型。障害全般や実利用者との評価は未対応,coverage-spd-sep-game.md,12,原典照合結果は監査記録参照
+SPD-SEP/Game:トピック:Non-core:2b,SPD,SPD-SEP/Game,トピック,Non-core,2b,障害の種類、ゲーム UI のアクセシビリティと評価,部分,依頼117の字幕と操作の代替、806の色以外の形・読み上げ名・キーボード操作の固定模型。障害全般や実利用者との評価は未対応,coverage-spd-sep-game.md,12,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:3a,SPD,SPD-SEP/Game,トピック,Non-core,3a,プレイ時の上半身のけがと緩和,未照合,対応例を要照合。,coverage-spd-sep-game.md,13,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:3b,SPD,SPD-SEP/Game,トピック,Non-core,3b,イベント・製造における火災、電気などのリスク評価,未照合,対応例を要照合。,coverage-spd-sep-game.md,14,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:3c,SPD,SPD-SEP/Game,トピック,Non-core,3c,遊ぶ動機、ゲーム心理と精神的健康,部分,依頼398で休憩時の進捗と通知の選択を比較。実際の心理や健康は評価しない,coverage-spd-sep-game.md,15,原典照合結果は監査記録参照
