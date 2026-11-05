@@ -2812,7 +2812,7 @@ SE-Formal:トピック:Non-core:3a,SE,SE-Formal,トピック,Non-core,3a,試験�
 SE-Formal:トピック:Non-core:3b,SE,SE-Formal,トピック,Non-core,3b,ファジングとの比較,部分,349で手動変異による観察と故障の道を省いた有限模型の検査を比較。実ファザー・実検査器や一般の比較は未評価。,coverage-se-formal.md,19,原典照合結果は監査記録参照
 SE-Formal:トピック:Non-core:4,SE,SE-Formal,トピック,Non-core,4,形式的なモデル化と解析,部分,242・244で有限模型を探索。一般のモデル化や実ツールは未評価。,coverage-se-formal.md,20,原典照合結果は監査記録参照・親子重複候補
 SE-Formal:トピック:Non-core:4a,SE,SE-Formal,トピック,Non-core,4a,モデル検査器,部分,242・244で有限状態を探索。実検査器は未評価。,coverage-se-formal.md,21,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:4b,SE,SE-Formal,トピック,Non-core,4b,モデル探索器,未照合,実ツールの利用・比較を要照合。,coverage-se-formal.md,22,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:4b,SE,SE-Formal,トピック,Non-core,4b,モデル探索器,部分,242で遷移規則と同時入室を満たす手順を手数上限付きで列挙。実際のモデル探索器や一般の論理式は未評価。,coverage-se-formal.md,22,原典照合結果は監査記録参照
 SE-Formal:学習成果:原典に明記なし:1,SE,SE-Formal,学習成果,原典に明記なし,1,形式仕様・解析の役割と試験との比較,部分,242・243で有限模型と試験の限界を操作。一般の比較は未評価。,coverage-se-formal.md,28,原典照合結果は監査記録参照
 SE-Formal:学習成果:原典に明記なし:2,SE,SE-Formal,学習成果,原典に明記なし,2,小規模な設計・プログラムに形式手法を適用,部分,242で与えられた有限模型を探索。仕様作成や実コード解析は未評価。,coverage-se-formal.md,29,原典照合結果は監査記録参照
 SE-Formal:学習成果:原典に明記なし:3,SE,SE-Formal,学習成果,原典に明記なし,3,形式仕様言語の利点と欠点,未照合,一般の比較と自由な説明を要照合。,coverage-se-formal.md,30,原典照合結果は監査記録参照

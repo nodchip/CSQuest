@@ -2,10 +2,21 @@ export const modelLevel={id:'forge-model-checking',number:'242',kind:'model-chec
 export const modelModes={split:'確認と入室を別々にする',atomic:'入室時の確認と入室を一つにする'};
 export const modelStages=['外','確認後','部屋の中','退出済み'];
 const key=s=>`${s.a},${s.b}`;
+function modelNext(mode,current,who){const other=who==='a'?'b':'a',stage=current[who];if(stage===3||(stage===0&&current[other]===2)||(stage===1&&mode==='atomic'&&current[other]===2))return null;const next={a:current.a,b:current.b,path:[...current.path,`${who.toUpperCase()}：${modelStages[stage]} → ${modelStages[stage+1]}`]};next[who]++;return next;}
+// Enumerate legal action sequences, including shorter ones, and return a bounded witness.
+export function boundedModelWitness(mode,limit){
+ if(!Object.hasOwn(modelModes,mode)||!Number.isInteger(limit)||limit<0||limit>4)throw new RangeError('探索条件が不正です。');
+ let frontier=[{a:0,b:0,path:[]}];
+ for(let depth=0;depth<=limit;depth++){
+  const witness=frontier.find(s=>s.a===2&&s.b===2);if(witness)return witness;
+  if(depth<limit)frontier=frontier.flatMap(s=>['a','b'].map(who=>modelNext(mode,s,who)).filter(Boolean));
+ }
+ return null;
+}
 export function createModelTrial(mode){if(!Object.hasOwn(modelModes,mode))throw new RangeError('仕組みが不正です。');const initial={a:0,b:0,path:[]};return {mode,queue:[initial],seen:[key(initial)],current:null,status:'searching',counterexample:null,steps:0};}
 export function expandModel(s){if(s.status!=='searching'||!s.queue.length)throw new RangeError('探索は終了しています。');const [current,...rest]=s.queue,queue=[...rest],seen=[...s.seen];let counterexample=null;
- for(const who of ['a','b']){const other=who==='a'?'b':'a',stage=current[who];if(stage===3||(stage===0&&current[other]===2)||(stage===1&&s.mode==='atomic'&&current[other]===2))continue;const next={a:current.a,b:current.b,path:[...current.path,`${who.toUpperCase()}：${modelStages[stage]} → ${modelStages[stage+1]}`]};next[who]++;const k=key(next);if(seen.includes(k))continue;seen.push(k);if(next.a===2&&next.b===2){counterexample=next;break;}queue.push(next);}
+ for(const who of ['a','b']){const next=modelNext(s.mode,current,who);if(!next)continue;const k=key(next);if(seen.includes(k))continue;seen.push(k);if(next.a===2&&next.b===2){counterexample=next;break;}queue.push(next);}
  return {...s,current,queue,seen,counterexample,status:counterexample?'violation':queue.length?'searching':'safe',steps:s.steps+1};}
-export function createModelCheck(){return {selected:'split',trials:Object.fromEntries(Object.keys(modelModes).map(mode=>[mode,createModelTrial(mode)]))};}
+export function createModelCheck(){return {selected:'split',trials:Object.fromEntries(Object.keys(modelModes).map(mode=>[mode,createModelTrial(mode)])),bound:3,boundedChecked:false};}
 export function modelCheckComplete(s){return s.trials.split.status==='violation'&&s.trials.atomic.status==='safe';}
-export function restoreModelCheck(saved){if(!saved||!Object.hasOwn(modelModes,saved.selected)||!saved.trials)throw new RangeError('途中記録が不正です。');const n=createModelCheck();n.selected=saved.selected;for(const mode of Object.keys(modelModes)){const steps=saved.trials[mode]?.steps;if(!Number.isInteger(steps)||steps<0||steps>30)throw new RangeError('途中記録が不正です。');for(let i=0;i<steps;i++)n.trials[mode]=expandModel(n.trials[mode]);}return n;}
+export function restoreModelCheck(saved){if(!saved||!Object.hasOwn(modelModes,saved.selected)||!saved.trials||![0,1,2,3,4].includes(saved.bound??3)||typeof (saved.boundedChecked??false)!=='boolean')throw new RangeError('途中記録が不正です。');const n=createModelCheck();n.selected=saved.selected;n.bound=saved.bound??3;n.boundedChecked=saved.boundedChecked??false;for(const mode of Object.keys(modelModes)){const steps=saved.trials[mode]?.steps;if(!Number.isInteger(steps)||steps<0||steps>30)throw new RangeError('途中記録が不正です。');for(let i=0;i<steps;i++)n.trials[mode]=expandModel(n.trials[mode]);}return n;}
