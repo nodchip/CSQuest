@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {sceneWorkshopCreate,sceneWorkshopResult,sceneWorkshopStep,sceneWorkshopDone,sceneWorkshopRestore} from '../src/game-scene-workshop.js';
+import {loopTimeCreate,loopTimeRestore} from '../src/game-loop-time.js';
+test('movement, collision and shared appearance have independent effects',()=>{for(const asset of ['gold','blue'])for(const speed of [1,2])for(const wall of [false,true])for(const frame of [0,1,2]){const q={asset,speed,wall,frame},r=sceneWorkshopResult(q);assert.equal(r.hero,wall?Math.min(2,speed*frame):speed*frame);assert.equal(r.statue,0);assert.equal(r.heroColor,asset);assert.equal(r.statueColor,asset);assert.equal(r.contact,wall&&speed*frame>=2);}});
+test('three observations and reflection persist and old records restore',()=>{const q=sceneWorkshopCreate();q.speed=2;sceneWorkshopStep(q);sceneWorkshopStep(q);q.wall=false;q.frame=0;sceneWorkshopStep(q);sceneWorkshopStep(q);q.asset='blue';q.frame=0;sceneWorkshopStep(q);sceneWorkshopStep(q);assert(!sceneWorkshopDone(q));q.answer='shared';assert(sceneWorkshopDone(q));const copy=sceneWorkshopRestore(q);copy.observed.pop();assert.equal(q.observed.length,3);assert.throws(()=>sceneWorkshopStep(q));const {scene,...old}=loopTimeCreate();assert.deepEqual(loopTimeRestore(old),loopTimeCreate());});
