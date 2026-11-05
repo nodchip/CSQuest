@@ -779,24 +779,25 @@ AR-IO:トピック:CS Core:5c,AR,AR-IO,トピック,CS Core,5c,DMA,部分,132 �
 AR-IO:学習成果:CS Core:1,AR,AR-IO,学習成果,CS Core,1,割込み制御図を分析し制御・データ転送への利用を説明,部分,105 の単一通知を操作。一般の制御図、転送機構と自由な説明は未評価。,coverage-ar-io.md,25,原典照合結果は監査記録参照
 AR-IO:学習成果:CS Core:2,AR,AR-IO,学習成果,CS Core,2,コンピュータ内の各種バスを列挙,部分,1021でアドレス・データ・制御の役割、1022で I²C・USB・PCIe の固定接続例を区別。各規格の一般的な構成や自由な列挙は未評価。,coverage-ar-io.md,26,原典照合結果は監査記録参照
 AR-IO:学習成果:CS Core:3,AR,AR-IO,学習成果,CS Core,3,磁気ディスクと SSD の利点を比較,部分,749 は位置決め費用の固定例。容量、価格、耐久性や実測は未評価。,coverage-ar-io.md,27,原典照合結果は監査記録参照
-AR-Logic:トピック:未記載:1（比較・FPGA）,AR,AR-Logic,トピック,未記載,1（比較・FPGA）,組合せ論理・順序論理と FPGA,部分,06・37で組合せ回路、265〜267で記憶とカウンター、923で設定可能な LUT の固定模型を操作。実 FPGA と一般の回路比較は未評価。,coverage-ar-logic.md,9,原典照合結果は監査記録参照・番号を要確認・区分を要確認
-AR-Logic:トピック:未記載:1a,AR,AR-Logic,トピック,未記載,1a,基本的な組合せ回路,部分,06で論理回路、37で加算器を操作。一般の回路設計は未評価。,coverage-ar-logic.md,10,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:1b,AR,AR-Logic,トピック,未記載,1b,順序論理の基本要素,部分,265〜267でフリップフロップ、シフトと同期カウンターを操作。実回路や一般の設計は未評価。,coverage-ar-logic.md,11,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:2,AR,AR-Logic,トピック,未記載,2,設計支援ツール,部分,929で論理試験・合成・配置配線・検査の固定された流れを操作。実際の設計ツールは実行しない。,coverage-ar-logic.md,12,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:3（高位合成）,AR,AR-Logic,トピック,未記載,3（高位合成）,高位合成,部分,925で２乗算と加算の依存関係を、乗算器１台・２台の固定模型で割り当てる。実ツールや一般の合成は未評価。,coverage-ar-logic.md,13,原典照合結果は監査記録参照・番号を要確認・区分を要確認
-AR-Logic:トピック:未記載:3a,AR,AR-Logic,トピック,未記載,3a,レジスタ転送表記,部分,924で A ← B と B ← A を同じ刻で行う模型と順次の上書きを比較。一般の RTL 表記、実記述やタイミング解析は未評価。,coverage-ar-logic.md,14,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:3b,AR,AR-Logic,トピック,未記載,3b,ハードウェア記述言語,部分,928で選んだ Verilog 断片と組合せ出力・クロック付き記憶の固定模型を比較。実言語の記述、シミュレーターや合成は直接評価しない。,coverage-ar-logic.md,15,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:4,AR,AR-Logic,トピック,未記載,4,SoC 設計フロー,部分,929で固定回路の論理確認、合成、配置、配線と面積・遅延の検査・やり直しを体験。実際の SoC 全体、物理検証や製造は未評価。,coverage-ar-logic.md,16,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:5a,AR,AR-Logic,トピック,未記載,5a,ゲート遅延,部分,268で３段の遅延を操作。実回路のばらつきは未評価。,coverage-ar-logic.md,17,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:5b,AR,AR-Logic,トピック,未記載,5b,ファンイン・ファンアウト,部分,926で入力数と出力の接続先を区別し、固定の負荷上限と中継器による分担を比較。実部品の電流・容量・電圧・遅延は未評価。,coverage-ar-logic.md,18,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:5c,AR,AR-Logic,トピック,未記載,5c,エネルギー・電力,部分,161で時間・電力・エネルギーの固定値を比較。回路の物理的な消費は未評価。,coverage-ar-logic.md,19,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:トピック:未記載:5d,AR,AR-Logic,トピック,未記載,5d,光速,部分,927で真空中の光速の近似と６割の仮定を使い、距離・片道・往復の伝搬時間と期限を比較。実配線の特性や実測は未評価。,coverage-ar-logic.md,20,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:学習成果:未記載:1,AR,AR-Logic,学習成果,未記載,1,真空管から VLSI、大型計算機から大規模構成への発展,未照合,歴史の教材との対応は未確認。自由な論述は直接評価しない。,coverage-ar-logic.md,26,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:学習成果:未記載:2,AR,AR-Logic,学習成果,未記載,2,異種構成要素の内外での並列性と依存関係,部分,158で２命令の依存、162で SIMD・MIMD を比較。異種構成全体と自由な説明は未評価。,coverage-ar-logic.md,27,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:学習成果:未記載:3,AR,AR-Logic,学習成果,未記載,3,並列性と電力消費の関係,部分,161で１・２・４人の分担と仮定した一定電力・時間・エネルギーを比較。実機、一般の消費と自由な説明は未評価。,coverage-ar-logic.md,28,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:学習成果:未記載:4,AR,AR-Logic,学習成果,未記載,4,ALU・レジスタ・CPU・メモリの基本要素を設計,部分,37で加算器を組み、266で固定のレジスタを操作。一般の ALU・CPU・メモリ設計は未評価。,coverage-ar-logic.md,29,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:学習成果:未記載:5,AR,AR-Logic,学習成果,未記載,5,簡単なコンピューターの構成要素を評価,部分,266でシフト動作、73で架空の命令実行を操作。構成要素全体の評価は未対応。,coverage-ar-logic.md,30,原典照合結果は監査記録参照・区分を要確認
-AR-Logic:学習成果:未記載:6,AR,AR-Logic,学習成果,未記載,6,パイプラインのタイミングとデータ依存を分析,部分,158で２命令の依存・待機・転送を比較。一般のハザードと実機は未評価。,coverage-ar-logic.md,31,原典照合結果は監査記録参照・区分を要確認
+AR-Logic:トピック:KA Core:1,AR,AR-Logic,トピック,KA Core,1,組合せ論理・順序論理と FPGA,部分,06・37で組合せ回路、265〜267で記憶とカウンター、923で設定可能な LUT の固定模型を操作。実 FPGA と一般の回路比較は未評価。,coverage-ar-logic.md,9,原典照合結果は監査記録参照・親子重複候補
+AR-Logic:トピック:KA Core:1a,AR,AR-Logic,トピック,KA Core,1a,基本的な組合せ回路,部分,06で論理回路、37で加算器を操作。一般の回路設計は未評価。,coverage-ar-logic.md,10,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:1b,AR,AR-Logic,トピック,KA Core,1b,順序論理の基本要素,部分,265〜267でフリップフロップ、シフトと同期カウンターを操作。実回路や一般の設計は未評価。,coverage-ar-logic.md,11,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:2,AR,AR-Logic,トピック,KA Core,2,設計支援ツール,部分,929で論理試験・合成・配置配線・検査の固定された流れを操作。実際の設計ツールは実行しない。,coverage-ar-logic.md,12,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:3,AR,AR-Logic,トピック,KA Core,3,高位合成,部分,925で２乗算と加算の依存関係を、乗算器１台・２台の固定模型で割り当てる。実ツールや一般の合成は未評価。,coverage-ar-logic.md,13,原典照合結果は監査記録参照・親子重複候補
+AR-Logic:トピック:KA Core:3a,AR,AR-Logic,トピック,KA Core,3a,レジスタ転送表記,部分,924で A ← B と B ← A を同じ刻で行う模型と順次の上書きを比較。一般の RTL 表記、実記述やタイミング解析は未評価。,coverage-ar-logic.md,14,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:3b,AR,AR-Logic,トピック,KA Core,3b,ハードウェア記述言語,部分,928で選んだ Verilog 断片と組合せ出力・クロック付き記憶の固定模型を比較。実言語の記述、シミュレーターや合成は直接評価しない。,coverage-ar-logic.md,15,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:4,AR,AR-Logic,トピック,KA Core,4,SoC 設計フロー,部分,929で固定回路の論理確認、合成、配置、配線と面積・遅延の検査・やり直しを体験。実際の SoC 全体、物理検証や製造は未評価。,coverage-ar-logic.md,16,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:5,AR,AR-Logic,トピック,KA Core,5,物理的制約,部分,161・268・926・927で遅延、負荷、電力、伝搬の固定例を比較。実回路や一般の物理的設計は未評価。,coverage-ar-logic.md,17,原典照合結果は監査記録参照・親子重複候補
+AR-Logic:トピック:KA Core:5a,AR,AR-Logic,トピック,KA Core,5a,ゲート遅延,部分,268で３段の遅延を操作。実回路のばらつきは未評価。,coverage-ar-logic.md,18,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:5b,AR,AR-Logic,トピック,KA Core,5b,ファンイン・ファンアウト,部分,926で入力数と出力の接続先を区別し、固定の負荷上限と中継器による分担を比較。実部品の電流・容量・電圧・遅延は未評価。,coverage-ar-logic.md,19,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:5c,AR,AR-Logic,トピック,KA Core,5c,エネルギー・電力,部分,161で時間・電力・エネルギーの固定値を比較。回路の物理的な消費は未評価。,coverage-ar-logic.md,20,原典照合結果は監査記録参照
+AR-Logic:トピック:KA Core:5d,AR,AR-Logic,トピック,KA Core,5d,光速,部分,927で真空中の光速の近似と６割の仮定を使い、距離・片道・往復の伝搬時間と期限を比較。実配線の特性や実測は未評価。,coverage-ar-logic.md,21,原典照合結果は監査記録参照
+AR-Logic:学習成果:KA Core:1,AR,AR-Logic,学習成果,KA Core,1,真空管から VLSI、大型計算機から大規模構成への発展,未照合,歴史の教材との対応は未確認。自由な論述は直接評価しない。,coverage-ar-logic.md,27,原典照合結果は監査記録参照
+AR-Logic:学習成果:KA Core:2,AR,AR-Logic,学習成果,KA Core,2,異種構成要素の内外での並列性と依存関係,部分,158で２命令の依存、162で SIMD・MIMD を比較。異種構成全体と自由な説明は未評価。,coverage-ar-logic.md,28,原典照合結果は監査記録参照
+AR-Logic:学習成果:KA Core:3,AR,AR-Logic,学習成果,KA Core,3,並列性と電力消費の関係,部分,161で１・２・４人の分担と仮定した一定電力・時間・エネルギーを比較。実機、一般の消費と自由な説明は未評価。,coverage-ar-logic.md,29,原典照合結果は監査記録参照
+AR-Logic:学習成果:KA Core:4,AR,AR-Logic,学習成果,KA Core,4,ALU・レジスタ・CPU・メモリの基本要素を設計,部分,37で加算器を組み、266で固定のレジスタを操作。一般の ALU・CPU・メモリ設計は未評価。,coverage-ar-logic.md,30,原典照合結果は監査記録参照
+AR-Logic:学習成果:KA Core:5,AR,AR-Logic,学習成果,KA Core,5,簡単なコンピューターの構成要素を評価,部分,266でシフト動作、73で架空の命令実行を操作。構成要素全体の評価は未対応。,coverage-ar-logic.md,31,原典照合結果は監査記録参照
+AR-Logic:学習成果:KA Core:6,AR,AR-Logic,学習成果,KA Core,6,パイプラインのタイミングとデータ依存を分析,部分,158で２命令の依存・待機・転送を比較。一般のハザードと実機は未評価。,coverage-ar-logic.md,32,原典照合結果は監査記録参照
 AR-Memory:トピック:CS Core:1,AR,AR-Memory,トピック,CS Core,1,階層と時間・空間局所性,部分,25・103・488 で固定の参照列と走査順。実機の階層や一般の性能は未評価。,coverage-ar-memory.md,9,原典照合結果は監査記録参照
 AR-Memory:トピック:CS Core:2,AR,AR-Memory,トピック,CS Core,2,主記憶の構成と操作,部分,455 の４番地の読書き。実装と構成一般は未評価。,coverage-ar-memory.md,10,原典照合結果は監査記録参照
 AR-Memory:トピック:CS Core:3,AR,AR-Memory,トピック,CS Core,3,永続記憶,部分,455 で保存・電源断を操作。実機のストレージ構造と障害は未評価。,coverage-ar-memory.md,11,原典照合結果は監査記録参照
@@ -872,21 +873,21 @@ AR-Quantum:学習成果:KA Core:5,AR,AR-Quantum,学習成果,KA Core,5,Shor の 
 AR-Quantum:学習成果:KA Core:6,AR,AR-Quantum,学習成果,KA Core,6,シミュレーターで Shor のプログラムを作り古典部分を示す,部分,610 は後処理の固定例。プログラム作成能力は直接評価しない。,coverage-ar-quantum.md,38,原典照合結果は監査記録参照
 AR-Quantum:学習成果:KA Core:7,AR,AR-Quantum,学習成果,KA Core,7,各種量子ビットの物理方式の特徴を列挙,部分,1216 で３方式の媒体・準備・操作・読取りの構成例を選ぶ。他方式、一般的な性能比較や自由記述は未評価。,coverage-ar-quantum.md,39,原典照合結果は監査記録参照
 AR-Quantum:学習成果:KA Core:8,AR,AR-Quantum,学習成果,KA Core,8,断熱方式とゲート方式及び適する問題を比較,部分,1219 で２方式の操作と２候補のエネルギー最小化を比較。問題全般の適性、実装、自由な説明は未評価。,coverage-ar-quantum.md,40,原典照合結果は監査記録参照
-AR-Representation:トピック:未記載:1,AR,AR-Representation,トピック,未記載,1,コンピュータアーキテクチャの概要と歴史,部分,363で計算史の複数の出来事。アーキテクチャ全体の発展や一般的な概要は未評価。,coverage-ar-representation.md,9,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:トピック:未記載:2,AR,AR-Representation,トピック,未記載,2,ビット・バイト・ワード,部分,36の４ビット、460の２バイトと16ビットのワードを操作。実機の多様なワード長は未評価。,coverage-ar-representation.md,10,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:トピック:未記載:3,AR,AR-Representation,トピック,未記載,3,符号なし・符号付き・２の補数,部分,36・461で４ビットの各表現を比較。一般のビット幅や演算は未評価。,coverage-ar-representation.md,11,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:トピック:未記載:4,AR,AR-Representation,トピック,未記載,4,数値表現と基数,部分,36で二進整数、68・712で浮動小数点、710で固定小数点。その他の基数や一般の形式は未評価。,coverage-ar-representation.md,12,原典照合結果は監査記録参照・区分を要確認・親子重複候補
-AR-Representation:トピック:未記載:4a,AR,AR-Representation,トピック,未記載,4a,固定小数点,部分,710で８ビット・小数４ビットの２の補数、711で乗算の途中幅・丸めと範囲を操作。一般の幅、除算、実機の処理は未評価。,coverage-ar-representation.md,13,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:トピック:未記載:4b,AR,AR-Representation,トピック,未記載,4b,浮動小数点,部分,68で小さな架空形式、712で IEEE binary32 の符号・指数・小数部と特殊値を操作。一般の演算・例外処理は未評価。,coverage-ar-representation.md,14,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:トピック:未記載:5,AR,AR-Representation,トピック,未記載,5,非数値データの表現,部分,93で文字の UTF-8 を操作。一般の画像・音などの符号化は未評価。,coverage-ar-representation.md,15,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:トピック:未記載:6,AR,AR-Representation,トピック,未記載,6,レコード・配列・UTF の表現,部分,93で UTF-8、173で３×３配列の要素の配置を操作。レコードや配列要素の一般的なビット表現、他の符号化は未評価。,coverage-ar-representation.md,16,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:学習成果:未記載:1,AR,AR-Representation,学習成果,未記載,1,命令を含むコンピュータ内のものがデータである理由,部分,73で命令と数を同じ記憶に置く固定模型。一般的な説明は未評価。,coverage-ar-representation.md,22,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:学習成果:未記載:2,AR,AR-Representation,学習成果,未記載,2,固定長表現が正確さ・精度に与える影響,部分,36の範囲超過、68の丸め、710の固定小数点の間隔・境界を比較。一般の分析は未評価。,coverage-ar-representation.md,23,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:学習成果:未記載:3,AR,AR-Representation,学習成果,未記載,3,負の整数の符号と絶対値・２の補数,部分,36・461で４ビットの固定例を比較。一般の幅や自由な説明は未評価。,coverage-ar-representation.md,24,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:学習成果:未記載:4,AR,AR-Representation,学習成果,未記載,4,数値を表す異なる形式,部分,36・461・710で符号の読み方と固定小数点を比較。一般の形式や自由な議論は未評価。,coverage-ar-representation.md,25,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:学習成果:未記載:5,AR,AR-Representation,学習成果,未記載,5,文字・文字列・レコード・配列等のビット表現,部分,93で文字のバイト列、173で配列要素の配置。一般のビット表現やレコードは未評価。,coverage-ar-representation.md,26,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:学習成果:未記載:6,AR,AR-Representation,学習成果,未記載,6,数値を異なる形式へ変換,部分,36・461で４ビット整数、710で固定小数点の丸めと符号付き・符号なしの読みを比較。一般の変換は未評価。,coverage-ar-representation.md,27,原典照合結果は監査記録参照・区分を要確認
-AR-Representation:学習成果:未記載:7,AR,AR-Representation,学習成果,未記載,7,一つの加算器が符号なしと２の補数を扱う仕組み,部分,37で同じ４ビット加算の結果と２つの解釈を比較。一般の幅や自由な説明は未評価。,coverage-ar-representation.md,28,原典照合結果は監査記録参照・区分を要確認
+AR-Representation:トピック:CS Core:1,AR,AR-Representation,トピック,CS Core,1,コンピュータアーキテクチャの概要と歴史,部分,363で計算史の複数の出来事。アーキテクチャ全体の発展や一般的な概要は未評価。,coverage-ar-representation.md,9,原典照合結果は監査記録参照
+AR-Representation:トピック:CS Core:2,AR,AR-Representation,トピック,CS Core,2,ビット・バイト・ワード,部分,36の４ビット、460の２バイトと16ビットのワードを操作。実機の多様なワード長は未評価。,coverage-ar-representation.md,10,原典照合結果は監査記録参照
+AR-Representation:トピック:CS Core:3,AR,AR-Representation,トピック,CS Core,3,符号なし・符号付き・２の補数,部分,36・461で４ビットの各表現を比較。一般のビット幅や演算は未評価。,coverage-ar-representation.md,11,原典照合結果は監査記録参照
+AR-Representation:トピック:CS Core:4,AR,AR-Representation,トピック,CS Core,4,数値表現と基数,部分,36で二進整数、68・712で浮動小数点、710で固定小数点。その他の基数や一般の形式は未評価。,coverage-ar-representation.md,12,原典照合結果は監査記録参照・親子重複候補
+AR-Representation:トピック:CS Core:4a,AR,AR-Representation,トピック,CS Core,4a,固定小数点,部分,710で８ビット・小数４ビットの２の補数、711で乗算の途中幅・丸めと範囲を操作。一般の幅、除算、実機の処理は未評価。,coverage-ar-representation.md,13,原典照合結果は監査記録参照
+AR-Representation:トピック:CS Core:4b,AR,AR-Representation,トピック,CS Core,4b,浮動小数点,部分,68で小さな架空形式、712で IEEE binary32 の符号・指数・小数部と特殊値を操作。一般の演算・例外処理は未評価。,coverage-ar-representation.md,14,原典照合結果は監査記録参照
+AR-Representation:トピック:CS Core:5,AR,AR-Representation,トピック,CS Core,5,非数値データの表現,部分,93で文字の UTF-8 を操作。一般の画像・音などの符号化は未評価。,coverage-ar-representation.md,15,原典照合結果は監査記録参照
+AR-Representation:トピック:CS Core:6,AR,AR-Representation,トピック,CS Core,6,レコード・配列・UTF の表現,部分,93で UTF-8、173で３×３配列の要素の配置を操作。レコードや配列要素の一般的なビット表現、他の符号化は未評価。,coverage-ar-representation.md,16,原典照合結果は監査記録参照
+AR-Representation:学習成果:CS Core:1,AR,AR-Representation,学習成果,CS Core,1,命令を含むコンピュータ内のものがデータである理由,部分,73で命令と数を同じ記憶に置く固定模型。一般的な説明は未評価。,coverage-ar-representation.md,22,原典照合結果は監査記録参照
+AR-Representation:学習成果:CS Core:2,AR,AR-Representation,学習成果,CS Core,2,固定長表現が正確さ・精度に与える影響,部分,36の範囲超過、68の丸め、710の固定小数点の間隔・境界を比較。一般の分析は未評価。,coverage-ar-representation.md,23,原典照合結果は監査記録参照
+AR-Representation:学習成果:CS Core:3,AR,AR-Representation,学習成果,CS Core,3,負の整数の符号と絶対値・２の補数,部分,36・461で４ビットの固定例を比較。一般の幅や自由な説明は未評価。,coverage-ar-representation.md,24,原典照合結果は監査記録参照
+AR-Representation:学習成果:CS Core:4,AR,AR-Representation,学習成果,CS Core,4,数値を表す異なる形式,部分,36・461・710で符号の読み方と固定小数点を比較。一般の形式や自由な議論は未評価。,coverage-ar-representation.md,25,原典照合結果は監査記録参照
+AR-Representation:学習成果:CS Core:5,AR,AR-Representation,学習成果,CS Core,5,文字・文字列・レコード・配列等のビット表現,部分,93で文字のバイト列、173で配列要素の配置。一般のビット表現やレコードは未評価。,coverage-ar-representation.md,26,原典照合結果は監査記録参照
+AR-Representation:学習成果:CS Core:6,AR,AR-Representation,学習成果,CS Core,6,数値を異なる形式へ変換,部分,36・461で４ビット整数、710で固定小数点の丸めと符号付き・符号なしの読みを比較。一般の変換は未評価。,coverage-ar-representation.md,27,原典照合結果は監査記録参照
+AR-Representation:学習成果:CS Core:7,AR,AR-Representation,学習成果,CS Core,7,一つの加算器が符号なしと２の補数を扱う仕組み,部分,37で同じ４ビット加算の結果と２つの解釈を比較。一般の幅や自由な説明は未評価。,coverage-ar-representation.md,28,原典照合結果は監査記録参照
 AR-Security:トピック:KA Core:1a,AR,AR-Security,トピック,KA Core,1a,ハードウェアのリスク分析、資産保護、脅威モデル,部分,180 は固定の脅威と対策の比較。ハードウェア固有の分析は未評価。,coverage-ar-security.md,9,原典照合結果は監査記録参照
 AR-Security:トピック:KA Core:1b,AR,AR-Security,トピック,KA Core,1b,暗号処理のハードウェア加速,部分,1088で専用命令と外付け装置の仮の準備・処理時間を比較。実装・実機の性能や安全性は未評価。,coverage-ar-security.md,10,原典照合結果は監査記録参照
 AR-Security:トピック:KA Core:1c,AR,AR-Security,トピック,KA Core,1c,仮想化支援と OS 隔離,部分,135 は仮想マシンとコンテナのカーネル共有を比較。ハードウェア支援と隔離の安全性は未評価。,coverage-ar-security.md,11,原典照合結果は監査記録参照
