@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {guidedRoads,guidedRoute} from '../src/astar.js';
-import {createHeuristic,stepHeuristic,heuristicValue,heuristicCorrect,restoreHeuristic,heuristicComplete} from '../src/heuristic.js';
+import {createHeuristic,stepHeuristic,heuristicValue,heuristicCorrect,checkConstructedEstimate,restoreHeuristic,heuristicComplete} from '../src/heuristic.js';
 function cheapest(id){return id==='G'?0:Math.min(...Object.entries(guidedRoads[id]).map(([next,cost])=>cost+cheapest(next)));}
 test('the new estimates exceed the independently enumerated true cost exactly at A and C',()=>{
   const excess=Object.keys(guidedRoads).filter(id=>heuristicValue('overestimate',id)>cheapest(id));
@@ -38,4 +38,13 @@ test('admissible but inconsistent heuristic requires reopening in this graph',()
  const actions={reliable:[],overestimate:[],closed:['S','B','C','A','G'],reopen:['S','B','C','A','C','G']};
  const state=restoreHeuristic({selected:'reopen',actions,guesses:[],checked:false});assert.equal(state.states.closed.distances.G,7);assert.equal(state.states.reopen.distances.G,6);assert.deepEqual(state.actions.reopen,actions.reopen);
  const partial=restoreHeuristic({selected:'reopen',actions:{...actions,reopen:['S','B','C','A']},guesses:[],checked:false});assert.equal(partial.states.reopen.distances.C,4);assert.equal(partial.states.reopen.settled.includes('C'),false);
+});
+
+test('constructed estimates distinguish overestimation from inconsistency and restore independently',()=>{
+ assert.deepEqual(checkConstructedEstimate({S:0,A:4,B:0,C:0,G:0}),{over:[],inconsistent:['A→C']});
+ assert.deepEqual(checkConstructedEstimate({S:6,A:4,B:6,C:2,G:0}),{over:[],inconsistent:[]});
+ assert.deepEqual(checkConstructedEstimate({S:0,A:10,B:0,C:10,G:0}),{over:['A','C'],inconsistent:['A→G','C→G']});
+ assert.deepEqual(checkConstructedEstimate({S:0,A:0,B:0,C:0,G:1}),{over:['G'],inconsistent:['G（遺跡の見積もりは０）']});
+ assert.throws(()=>checkConstructedEstimate({S:0,A:-1,B:0,C:0,G:0}),RangeError);
+ const q=createHeuristic(),draft={selected:q.selected,actions:q.actions,guesses:[],checked:false,constructed:{S:0,A:4,B:0,C:0,G:0},constructedChecked:true};const restored=restoreHeuristic(draft);assert.equal(restored.constructedChecked,true);restored.constructed.A=0;assert.equal(draft.constructed.A,4);assert.deepEqual(restoreHeuristic({...draft,constructed:undefined}).constructed,{S:0,A:0,B:0,C:0,G:0});assert.throws(()=>restoreHeuristic({...draft,constructed:{...draft.constructed,A:11}}),RangeError);
 });
