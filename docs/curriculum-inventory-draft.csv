@@ -1518,7 +1518,7 @@ FPL-Translation:トピック:KA Core:9,FPL,FPL-Translation,トピック,KA Core,
 FPL-Translation:トピック:KA Core:10,FPL,FPL-Translation,トピック,KA Core,10,安全なコンパイラ開発,部分,789で折り返し算術を持つ条件の最適化と意味の保存を検査。一般の安全なコンパイラ設計・実装や攻撃者モデルは未評価。,coverage-fpl-translation.md,18,原典照合結果は監査記録参照
 FPL-Translation:学習成果:CS Core:1,FPL,FPL-Translation,学習成果,CS Core,1,コンパイル・JIT・解釈の違いと利点・限界,部分,311・312で固定の翻訳タイミングと費用を比較。実装全般や自由な説明は未評価。,coverage-fpl-translation.md,24,原典照合結果は監査記録参照
 FPL-Translation:学習成果:CS Core:2,FPL,FPL-Translation,学習成果,CS Core,2,構文解析と意味・評価の区別,部分,315で構文・型の誤りを区別し、75で固定の構造と値を比較。一般的な区別は未評価。,coverage-fpl-translation.md,25,原典照合結果は監査記録参照
-FPL-Translation:学習成果:CS Core:3,FPL,FPL-Translation,学習成果,CS Core,3,実在言語の構文を BNF・拡張 BNF で指定,部分,309で既定規則の導出、788で架空の図と C の条件文の限定規則を選択。C 全体や自由な記述は未評価。,coverage-fpl-translation.md,26,原典照合結果は監査記録参照
+FPL-Translation:学習成果:CS Core:3,FPL,FPL-Translation,学習成果,CS Core,3,実在言語の構文を BNF・拡張 BNF で指定,部分,309で既定規則の導出、788で架空の図と C の条件文・繰り返し文の限定規則を選択。C 全体や自由な記述は未評価。,coverage-fpl-translation.md,26,原典照合結果は監査記録参照
 FPL-Translation:学習成果:CS Core:4,FPL,FPL-Translation,学習成果,CS Core,4,文・算術式の構文木を例示,部分,75・309で固定の木を構築。具体構文木と任意の文は未評価。,coverage-fpl-translation.md,27,原典照合結果は監査記録参照
 FPL-Translation:学習成果:CS Core:5,FPL,FPL-Translation,学習成果,CS Core,5,構文図から BNF・拡張 BNF への変換,部分,788で省略と繰り返しを含む１つの図から規則札を選択。一般の図や自由な変換は未評価。,coverage-fpl-translation.md,28,原典照合結果は監査記録参照
 FPL-Translation:学習成果:CS Core:6,FPL,FPL-Translation,学習成果,CS Core,6,曖昧な構文解析と優先順位による解消,部分,75・310で算術式、788で C の入れ子条件文と else の結び付きを比較。一般の曖昧性や自由な説明は未評価。,coverage-fpl-translation.md,29,原典照合結果は監査記録参照

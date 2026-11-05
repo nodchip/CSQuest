@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {loopExamples,loopMatch,createLoopGrammar,restoreLoopGrammar} from '../src/c-loop-grammar.js';
+import {railCreate,railRestore} from '../src/syntax-rail.js';
+test('the two restricted C loop rules distinguish both forms and four other fragments',()=>{const config={while:'correct',do:'correct'};assert.deepEqual(Object.values(loopExamples).map(s=>loopMatch(config,s)),['while','do','neither','neither','neither','neither']);for(const w of ['correct','noBody','noParens'])for(const d of ['correct','noBody','noEnd']){const q={while:w,do:d};assert.equal(loopMatch(q,loopExamples.whileValid),w==='correct'?'while':'neither');assert.equal(loopMatch(q,loopExamples.doValid),d==='correct'?'do':'neither');}assert.throws(()=>loopMatch({while:'bad',do:'correct'},''));});
+test('previous drafts gain independent validated loop comparison',()=>{const q=railCreate();delete q.loopGrammar;assert.deepEqual(railRestore(q).loopGrammar,createLoopGrammar());const x=createLoopGrammar();x.rules={while:'correct',do:'correct'};x.seen=['whileValid'];const copy=restoreLoopGrammar(x);copy.seen.push('doValid');assert.equal(x.seen.length,1);assert.throws(()=>restoreLoopGrammar({...x,rules:{while:'noBody',do:'correct'}}));});
