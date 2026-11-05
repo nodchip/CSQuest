@@ -182,6 +182,21 @@
         "src/app.js": "f6f670246e97c38596ebb39268a7d559a313625a1c51646abb07c663e9c3e5c2",
         "tests/wireless-roaming.test.js": "796ec674475adf4c1141a316c2f0a4ccba2e54dd3d812f3da8f11647b76db507"
       }
+    },
+    "NC-Security:トピック:KA Core:3c": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-security-monitoring.md",
+      "row_sha256": "acdc8490373b52c8a688a21e6574dd6605a714836ca94641ba2b9479fb317790",
+      "files": {
+        "src/firewall-state.js": "0e6ad1195e1ff58ae6716dcab2f2047ec86f2a0f2b220908ff43233dde628ed0",
+        "src/intrusion-threshold.js": "45efffdb2f613b34a06b1e847d18f8a5d28e70cf93639a9b889c54d3c5ee8cb9",
+        "src/signature-lab.js": "75b9c671697ba981a9f059b58123fed911d9fecf6b019c58d04c9e0f74c035fd",
+        "src/app.js": "f6f670246e97c38596ebb39268a7d559a313625a1c51646abb07c663e9c3e5c2",
+        "tests/firewall-state.test.js": "b77d388a2e0f162895d39f584a3ff898e0d156bb774dfe06f654c0425ae7085b",
+        "tests/intrusion-threshold.test.js": "7b5d25789d43db80cfcd93c7da7049e212c8d940a13c4d28a4e44b226dcdc803",
+        "tests/signature-lab.test.js": "ceb28b6a9d70177294963911813733d933ae53d2c1306135d3086f4ca8acc094"
+      }
     }
   }
 }

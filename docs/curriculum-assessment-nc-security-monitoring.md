@@ -1,0 +1,11 @@
+# 項目別評価：NC-Security の監視と通信制御
+
+2026-11-05 に [CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 p.200 のトピック３c、依頼279・280の実装と試験、公開版の操作を照合した。ほかのトピックや成果はこの評価に含めない。
+
+## トピック３c — 部分対応
+
+原典はネットワーク監視、侵入検知、ファイアウォールなどを挙げる。依頼279は固定された３方針で依頼前後の返事、別の相手、記録の期限切れを比較し、通過と内容の安全性も区別する。依頼280は正解が既知の訓練用８件でしきい値を変え、誤警報・見逃しを数える。さらに正常な記録を繰り返した場合の警報の内訳と、固定した特徴表の一致・不一致を調べる。
+
+[NIST SP 800-41 Rev.1](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf) の状態を利用する通信制御と [NIST SP 800-94](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-94.pdf) の誤警報・見逃しの説明を参考にした固定模型。実 IP・ポート、実時間、実際の警報分布や性能、DoS・なりすまし対策、実機の設定・運用は評価しない。内容を検査しない門番はすべての実製品の挙動を示さない。原典の例示範囲全体には届かないため部分対応とする。
+
+`tests/firewall-state.test.js`、`tests/intrusion-threshold.test.js`、`tests/signature-lab.test.js` の９件が成功。390px幅の公開版で両依頼を達成して解説を確認し、横あふれはなかった。期限切れ、返事の内容、警報中の比率と途中再開も各追加時に確認した。実際の防御効果や自由な説明は評価していない。
