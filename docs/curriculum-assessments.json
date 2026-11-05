@@ -480,6 +480,34 @@
         "tests/instruction-tiles-workshop.test.js": "3325fa9e815ba80e074350cf0303d48e02c9dcca9c9c49168c911340a96713b9",
         "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
       }
+    },
+    "SPD-Game:トピック:KA Core:4a": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-game-scene.md",
+      "row_sha256": "e8e12dd3180a323f0dac53bded57b685b23e53e05dbc3a3745992b849803d4e6",
+      "files": {
+        "src/app.js": "f8eb2fda725bb6a64ecc6b16970d85cac72c339f4a13810317324e459707ce1f",
+        "src/game-loop-time.js": "3f49165419ed495ba8d8de67595b1ebef9a0922ba212ff7fb682f3ad50e424bb",
+        "src/game-scene-workshop.js": "0e707099a5ad1f7acb7b92f6c87472052487f6d20e4c630e3e6bef098fee442f",
+        "src/game-scene-testing.js": "84190429e030b04515a057d82a89556b553f7ed357d417173669852cda8b407f",
+        "tests/game-scene-workshop.test.js": "75d30a4389d6e1ecdce82d6dcd5f27e6d579f6a4bdfeb17dff16a7483ec8bab6",
+        "tests/game-scene-testing.test.js": "a2d4d674c6730f2ea02454aaed09c0eecda0b50ad41247083e5b33f522f7e8d6"
+      }
+    },
+    "SPD-Game:トピック:KA Core:4b": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-game-scene.md",
+      "row_sha256": "ef75b82a9f263f2d99bee9d568873b0624c3bfaf08c3c265b7efd0cf07ea1c11",
+      "files": {
+        "src/app.js": "f8eb2fda725bb6a64ecc6b16970d85cac72c339f4a13810317324e459707ce1f",
+        "src/game-loop-time.js": "3f49165419ed495ba8d8de67595b1ebef9a0922ba212ff7fb682f3ad50e424bb",
+        "src/game-scene-workshop.js": "0e707099a5ad1f7acb7b92f6c87472052487f6d20e4c630e3e6bef098fee442f",
+        "src/game-scene-testing.js": "84190429e030b04515a057d82a89556b553f7ed357d417173669852cda8b407f",
+        "tests/game-scene-workshop.test.js": "75d30a4389d6e1ecdce82d6dcd5f27e6d579f6a4bdfeb17dff16a7483ec8bab6",
+        "tests/game-scene-testing.test.js": "a2d4d674c6730f2ea02454aaed09c0eecda0b50ad41247083e5b33f522f7e8d6"
+      }
     }
   }
 }
