@@ -1,7 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {explorationTrace,traces,createIterative,iterativeComplete,restoreIterative} from '../src/iterative-deepening.js';
+import {explorationTrace,traces,completeTreeSearch,createIterative,iterativeComplete,restoreIterative} from '../src/iterative-deepening.js';
 import {idaTrace} from '../src/ida-star.js';
 test('breadth and iterative deepening visit nodes in the expected order and find the same shallowest goal',()=>{const bfs=traces.breadth.at(-1),ids=traces.iterative.at(-1);assert.deepEqual(bfs.visited,['','L','R','LL','LR','RL','RR','LLL','LLR','LRL','LRR','RLL','RLR','RRL']);assert.equal(ids.visited.filter(x=>x==='').length,4);assert.equal(ids.visited.at(-1),'RRL');assert.equal(bfs.checks,14);assert.equal(ids.checks,25);assert.equal(bfs.peak,8);assert.equal(ids.peak,4);assert.throws(()=>explorationTrace('bad'));});
 test('all exploration and accurate comparisons are required and drafts are validated',()=>{const s=createIterative();s.positions.breadth=traces.breadth.length-1;s.positions.iterative=traces.iterative.length-1;s.answers={checks:'breadth',space:'iterative',depth:'same'};assert.equal(iterativeComplete(s),false);s.checked=true;assert.equal(iterativeComplete(s),false);s.idaPosition=idaTrace.length-1;s.idaAnswer='minimum';assert.equal(iterativeComplete(s),false);s.budget.answers={small:'iterative',large:'breadth',tight:'neither'};s.budget.checked={small:true,large:true,tight:true};assert.equal(iterativeComplete(s),true);assert.deepEqual(restoreIterative(s),s);assert.throws(()=>restoreIterative({...s,positions:{...s.positions,breadth:999}}));});
 test('old drafts preserve exploration and initialize IDA* independently',()=>{const s=createIterative();s.positions.breadth=3;const {idaPosition,idaAnswer,...old}=s;const r=restoreIterative(old);assert.equal(r.positions.breadth,3);assert.equal(r.idaPosition,0);assert.equal(r.idaAnswer,null);assert.throws(()=>restoreIterative({...s,idaPosition:999}));});
+
+test('searching the last leaf visits the entire full tree, despite its logarithmic depth',()=>{
+ for(let depth=2;depth<=6;depth++){const n=2**(depth+1)-1,b=completeTreeSearch(depth,'breadth'),d=completeTreeSearch(depth,'depth');assert.equal(b.checks,n);assert.equal(d.checks,n);assert.equal(b.peak,2**depth);assert.equal(d.peak,depth+1);}
+ assert.throws(()=>completeTreeSearch(7,'breadth'));const old=createIterative();delete old.growthDepth;delete old.growthGuess;delete old.growthChecked;assert.equal(restoreIterative(old).growthDepth,3);assert.throws(()=>restoreIterative({...old,growthDepth:7}));assert.throws(()=>restoreIterative({...old,growthChecked:true}));
+});
