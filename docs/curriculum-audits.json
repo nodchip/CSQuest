@@ -608,6 +608,14 @@
       "topics": 16,
       "outcomes": 5,
       "scope_sha256": "3109974bd415c99aa3b576d56987e7319b4a232ed69565ca3d775d77d9f9f737"
+    },
+    "AR-Quantum": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-quantum.md",
+      "topics": 23,
+      "outcomes": 8,
+      "scope_sha256": "0b59888b83852fff4c3f7cf77821b2f0dc5fc0f2bdcf5541490c21a26e226e83"
     }
   }
 }
