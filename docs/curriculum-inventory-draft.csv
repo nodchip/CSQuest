@@ -1521,7 +1521,7 @@ FPL-Translation:学習成果:CS Core:2,FPL,FPL-Translation,学習成果,CS Core,
 FPL-Translation:学習成果:CS Core:3,FPL,FPL-Translation,学習成果,CS Core,3,実在言語の構文を BNF・拡張 BNF で指定,部分,309で既定規則の導出、788で架空の図と C の条件文の限定規則を選択。C 全体や自由な記述は未評価。,coverage-fpl-translation.md,26,原典照合結果は監査記録参照
 FPL-Translation:学習成果:CS Core:4,FPL,FPL-Translation,学習成果,CS Core,4,文・算術式の構文木を例示,部分,75・309で固定の木を構築。具体構文木と任意の文は未評価。,coverage-fpl-translation.md,27,原典照合結果は監査記録参照
 FPL-Translation:学習成果:CS Core:5,FPL,FPL-Translation,学習成果,CS Core,5,構文図から BNF・拡張 BNF への変換,部分,788で省略と繰り返しを含む１つの図から規則札を選択。一般の図や自由な変換は未評価。,coverage-fpl-translation.md,28,原典照合結果は監査記録参照
-FPL-Translation:学習成果:CS Core:6,FPL,FPL-Translation,学習成果,CS Core,6,曖昧な構文解析と優先順位による解消,部分,75・310で算術式の優先順位と引算の結合を比較。一般の曖昧性や条件文は未評価。,coverage-fpl-translation.md,29,原典照合結果は監査記録参照
+FPL-Translation:学習成果:CS Core:6,FPL,FPL-Translation,学習成果,CS Core,6,曖昧な構文解析と優先順位による解消,部分,75・310で算術式、788で C の入れ子条件文と else の結び付きを比較。一般の曖昧性や自由な説明は未評価。,coverage-fpl-translation.md,29,原典照合結果は監査記録参照
 FPL-Translation:学習成果:KA Core:7,FPL,FPL-Translation,学習成果,KA Core,7,到達可能性を含む GC の利点と限界,部分,201・202・774で到達可能性と参照カウントの循環を操作。一般の費用・停止時間や自由な説明は未評価。,coverage-fpl-translation.md,30,原典照合結果は監査記録参照
 FPL-Types:トピック:CS Core:1,FPL,FPL-Types,トピック,CS Core,1,値と操作の集合としての型,部分,24で２型の操作を接続。一般の値集合と操作は未評価。,coverage-fpl-types.md,9,原典照合結果は監査記録参照・親子重複候補
 FPL-Types:トピック:CS Core:1a,FPL,FPL-Types,トピック,CS Core,1a,基本型,部分,24で数と灯り。その他の基本型は未評価。,coverage-fpl-types.md,10,原典照合結果は監査記録参照

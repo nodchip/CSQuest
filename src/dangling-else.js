@@ -1,0 +1,5 @@
+export const danglingModes={inner:'波括弧なし',outer:'外側に波括弧'};
+export const danglingAnswers={a:'光の合図 A',b:'星の合図 B',none:'どちらも出さない'};
+export function danglingResult(mode,x,y){if(!Object.hasOwn(danglingModes,mode)||typeof x!=='boolean'||typeof y!=='boolean')throw new RangeError('条件が不正です');if(mode==='inner')return x?(y?'a':'b'):'none';return x?(y?'a':'none'):'b';}
+export function createDangling(){return {mode:'inner',x:false,y:false,guess:null,checked:false,seen:[],reflection:null};}
+export function restoreDangling(s){const keys=Object.keys(danglingModes).flatMap(m=>[false,true].flatMap(x=>[false,true].map(y=>`${m}:${x}:${y}`)));if(!s||!Object.hasOwn(danglingModes,s.mode)||typeof s.x!=='boolean'||typeof s.y!=='boolean'||![null,...Object.keys(danglingAnswers)].includes(s.guess)||typeof s.checked!=='boolean'||s.checked&&s.guess===null||!Array.isArray(s.seen)||new Set(s.seen).size!==s.seen.length||!s.seen.every(k=>keys.includes(k))||![null,'nearest','indent','always'].includes(s.reflection))throw new RangeError('途中記録が不正です');return {...s,seen:[...s.seen]};}
