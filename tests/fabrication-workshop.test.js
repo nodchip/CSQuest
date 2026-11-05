@@ -18,6 +18,6 @@ test('all three trials and reflection required, drafts replay and invalid histor
 test('drafts from before the planning exercise remain usable', () => {
  const old=fabricationCreate();delete old.plan;old.trials.add=['column:0'];
  const restored=fabricationRestore(old);
- assert.deepEqual(restored.plan,{method:'add',quantity:1,checked:[]});
+ assert.deepEqual(restored.plan,{method:'add',quantity:1,checked:[],execution:{selected:'retry',checked:[]}});
  assert.deepEqual(restored.trials.add,['column:0']);
 });

@@ -16,7 +16,26 @@ export function fabricationEstimate(method, quantity) {
 }
 
 export function fabricationPlanCreate() {
-  return {method: 'add', quantity: 1, checked: []};
+  return {method: 'add', quantity: 1, checked: [], execution: {selected: 'retry', checked: []}};
+}
+
+// 実績は固定された仮想事例。増分の原因と計画との差を比較する。
+export const fabricationExecutions = {
+  retry: {name: '１個の積層：作り直し', method: 'add', quantity: 1, extraCost: 3, extraMinutes: 15, reason: '１個目が条件に合わず、材料と加工時間を１個分追加した'},
+  setup: {name: '10個の切削：段取りの延長', method: 'cut', quantity: 10, extraCost: 6, extraMinutes: 20, reason: '段取りに追加の費用６枚と時間20分がかかった'},
+};
+
+export function fabricationExecutionResult(id) {
+  if (!Object.hasOwn(fabricationExecutions, id)) throw new RangeError('事例が不正です。');
+  const c = fabricationExecutions[id], planned = fabricationEstimate(c.method, c.quantity);
+  return {planned, actual: {cost: planned.cost + c.extraCost, minutes: planned.minutes + c.extraMinutes}};
+}
+
+export function fabricationExecutionCheck(execution, costDifference, timeDifference) {
+  const {planned, actual} = fabricationExecutionResult(execution.selected);
+  if (costDifference !== actual.cost - planned.cost || timeDifference !== actual.minutes - planned.minutes) return false;
+  if (!execution.checked.includes(execution.selected)) execution.checked.push(execution.selected);
+  return true;
 }
 
 export function fabricationPlanCheck(plan, cost, minutes) {
@@ -34,5 +53,9 @@ export function fabricationPlanRestore(saved) {
   if (saved.checked.some(key => !valid.includes(key)) || new Set(saved.checked).size !== saved.checked.length) {
     throw new RangeError('計画の記録が不正です。');
   }
-  return {method: saved.method, quantity: saved.quantity, checked: [...saved.checked]};
+  const execution = saved.execution === undefined ? {selected: 'retry', checked: []} : saved.execution;
+  if (!execution || !Object.hasOwn(fabricationExecutions, execution.selected) || !Array.isArray(execution.checked) || execution.checked.some(id => !Object.hasOwn(fabricationExecutions, id)) || new Set(execution.checked).size !== execution.checked.length) {
+    throw new RangeError('製作結果の記録が不正です。');
+  }
+  return {method: saved.method, quantity: saved.quantity, checked: [...saved.checked], execution: {selected: execution.selected, checked: [...execution.checked]}};
 }
