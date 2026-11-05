@@ -784,6 +784,14 @@
       "topics": 14,
       "outcomes": 3,
       "scope_sha256": "a00dd13634e62cee60f3ef200b8de15bfc66e0921bc6c663456c2bd66a58b571"
+    },
+    "FPL-Translation": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-translation.md",
+      "topics": 10,
+      "outcomes": 7,
+      "scope_sha256": "458b3a5017b93105066d5139f6393c8db3a8c6f55a6b378d0c2059317fb91204"
     }
   }
 }

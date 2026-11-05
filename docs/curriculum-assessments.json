@@ -712,6 +712,19 @@
         "src/app.js": "43e729fb3df93393468e62c87b08b41d16bfaaf609f0c6c59d273fa84aea65a9",
         "tests/arena-reuse.test.js": "78aedc9126381cdd92531645854b541dd30540e914e3423b2c48fb89cfb63823"
       }
+    },
+    "FPL-Translation:トピック:KA Core:9": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-translation-runtime.md",
+      "row_sha256": "efe75efd1515d02ce341125ec17042b0a709b4d5c77f072ea64f3b47518f17a5",
+      "files": {
+        "src/closure-machine.js": "d5bbe8faf9444a21f36e16409f197ee84fe8b75870a9d868f65450df9bc38934",
+        "src/virtual-dispatch.js": "61dff920ab5359e943dc1bf480de518fed34a5c06359f006e220f942210297e4",
+        "src/app.js": "43e729fb3df93393468e62c87b08b41d16bfaaf609f0c6c59d273fa84aea65a9",
+        "tests/closure-machine.test.js": "93f310a0be8cd6545ead3f0fff3664fd3e3c947ac8b3e4988619bbb7f51ff7d2",
+        "tests/virtual-dispatch.test.js": "3a2a53a381a1e5cbedeb20241adb24c7d90afd388a20bda741140dcb90d93a88"
+      }
     }
   }
 }
