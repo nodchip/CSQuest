@@ -704,6 +704,14 @@
       "topics": 15,
       "outcomes": 7,
       "scope_sha256": "10b584e5ecf943ce70139f453810c83e7bea88dafac3487f8f9e456c3f794d44"
+    },
+    "SPD-Game": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-game.md",
+      "topics": 20,
+      "outcomes": 15,
+      "scope_sha256": "afe4f1fc20b7e0971bceac193dd1fb6265db86126fa4bc7f48a1305c122758a8"
     }
   }
 }

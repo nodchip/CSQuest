@@ -8,7 +8,7 @@
 
 ## 完成率に向けた分母の点検
 
-2026-11-05 現在、原典と分母候補を照合したのは88／166知識単位、項目別評価の記録は39行。これは教材全体の完成率ではない。最新の値は下記スクリプトで確認する。
+2026-11-05 現在、原典と分母候補を照合したのは89／166知識単位、項目別評価の記録は39行。これは教材全体の完成率ではない。最新の値は下記スクリプトで確認する。
 
 `scripts/coverage_inventory.py --csv docs/curriculum-inventory-draft.csv` は、台帳の各行を分野・知識単位・種別・区分・番号・根拠・台帳の行番号付きで書き出す。`--check docs/curriculum-inventory-draft.csv` は CSV と台帳が一致しない場合に失敗する。166単位の台帳の対応や表の形式も確認する。GitHub Actions はこの一致を検査する。
 
@@ -16,7 +16,7 @@
 
 出力は既存台帳から機械的に起こした**候補**であり、原典と照合した確定目録ではない。候補 ID は原典番号・種別・台帳の区分から作る仮の識別子であり、番号や区分が修正されると変わり得る。区分の記載がない行、通常の番号と異なる行、同一候補 ID、番号から見つかる親子の重複候補を明示する。親子を自動削除せず、検出できない重複や原典からの漏れもあるため、各候補を原典と照らして確定する必要がある。
 
-2026-11-04 時点の候補は3,624行（トピック2,322、学習成果1,302）、候補 ID 重複０行、親子重複候補78行。これは台帳の現状で、独立した対象数・完成率ではない。[SPD-Web](curriculum-audit-spd-web.md)、[SPD-Common](curriculum-audit-spd-common.md)、[DM-Distributed](curriculum-audit-dm-distributed.md)、[DM-Data](curriculum-audit-dm-data.md)、[DM-Core](curriculum-audit-dm-core.md)、[DM-Modeling](curriculum-audit-dm-modeling.md)、[DM-Relational](curriculum-audit-dm-relational.md)、[DM-Unstructured](curriculum-audit-dm-unstructured.md)、[DM-Querying](curriculum-audit-dm-querying.md)、[DM-Processing](curriculum-audit-dm-processing.md)、[DM-Internals](curriculum-audit-dm-internals.md)、[DM-NoSQL](curriculum-audit-dm-nosql.md)、[DM-Security](curriculum-audit-dm-security.md)、[DM-Analytics](curriculum-audit-dm-analytics.md)、[DM-SEP](curriculum-audit-dm-sep.md)、[SDF-Fundamentals](curriculum-audit-sdf-fundamentals.md)、[SDF-Data-Structures](curriculum-audit-sdf-data-structures.md)、[SDF-Algorithms](curriculum-audit-sdf-algorithms.md)、[SDF-Practices](curriculum-audit-sdf-practices.md)、[SDF-SEP](curriculum-audit-sdf-sep.md) の20単位は原典と分母候補を照合した。残り146単位も確認する。
+2026-11-04 時点の候補は3,624行（トピック2,322、学習成果1,302）、候補 ID 重複０行、親子重複候補78行。これは台帳の現状で、独立した対象数・完成率ではない。[SPD-Game](curriculum-audit-spd-game.md)、[SPD-Web](curriculum-audit-spd-web.md)、[SPD-Common](curriculum-audit-spd-common.md)、[DM-Distributed](curriculum-audit-dm-distributed.md)、[DM-Data](curriculum-audit-dm-data.md)、[DM-Core](curriculum-audit-dm-core.md)、[DM-Modeling](curriculum-audit-dm-modeling.md)、[DM-Relational](curriculum-audit-dm-relational.md)、[DM-Unstructured](curriculum-audit-dm-unstructured.md)、[DM-Querying](curriculum-audit-dm-querying.md)、[DM-Processing](curriculum-audit-dm-processing.md)、[DM-Internals](curriculum-audit-dm-internals.md)、[DM-NoSQL](curriculum-audit-dm-nosql.md)、[DM-Security](curriculum-audit-dm-security.md)、[DM-Analytics](curriculum-audit-dm-analytics.md)、[DM-SEP](curriculum-audit-dm-sep.md)、[SDF-Fundamentals](curriculum-audit-sdf-fundamentals.md)、[SDF-Data-Structures](curriculum-audit-sdf-data-structures.md)、[SDF-Algorithms](curriculum-audit-sdf-algorithms.md)、[SDF-Practices](curriculum-audit-sdf-practices.md)、[SDF-SEP](curriculum-audit-sdf-sep.md) の20単位は原典と分母候補を照合した。残り146単位も確認する。
 
 [項目別評価](curriculum-assessment-dm-data-core.md)では DM-Data・DM-Core の４項目について、原典、教材、内容検証、操作検証と限界を区別して記録した。[機械可読な評価記録](curriculum-assessments.json)と `--assessments docs/curriculum-assessments.json` は、評価済み項目の台帳・実装・テストが変わった場合に再評価を促す。検査は資料と記録の一致を確かめるもので、評価内容の妥当性を自動判定するものではない。４項目以外は今回の項目別評価の対象外である。
 
