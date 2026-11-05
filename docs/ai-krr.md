@@ -33,3 +33,5 @@
 依頼684では晴れから霧への確率 q、霧から晴れへの確率 r を各０・1/4・1/2・3/4・１から選ぶ。晴れの確率 p は次の日に p(1−q)+(1−p)r となり、q+r>0 の定常値は r/(q+r)。q=r=１では半々が定常でも晴れからの分布は振動し、q=r=０ではどの初期分布も定常となる。全25遷移の分数計算・定常性と３初期分布の８日間を検査した。２状態と選択された確率に限り、一般の多状態連鎖や実際の天候は扱わない。参考：[MIT、連鎖の長期挙動](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d6379f53d6a26a39503b820902a96333_h2w1tTTltrU.pdf)。
 
 項目別の再照合は [coverage-ai-krr.md](coverage-ai-krr.md) を参照。
+
+依頼683は [UCI Iris](https://doi.org/10.24432/C56C76) の versicolor・virginica 各50件の花弁の長さを４境界で分け、記録中の virginica の条件付き割合を比べる。5.0cm以上では46件中44件。２種同数を選んだ標本であり、自然界の事前確率や未知の花への性能は評価しない。`tests/base-rate.test.js` は条件の両側の個数と保存を検査する。

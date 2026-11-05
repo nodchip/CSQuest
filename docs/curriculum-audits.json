@@ -488,6 +488,22 @@
       "topics": 45,
       "outcomes": 12,
       "scope_sha256": "be9eec0b198ed4d17d44756a0dd29b9310fea2bf48dd71093753968320bbd323"
+    },
+    "AI-KRR": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-krr.md",
+      "topics": 17,
+      "outcomes": 5,
+      "scope_sha256": "a0590954f6c86658e6cdf8acb7168a15e0050397ea8ff13367b18867f80373c4"
+    },
+    "AI-Probability": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-probability.md",
+      "topics": 13,
+      "outcomes": 9,
+      "scope_sha256": "3d99aa23b2389d850082832553488ef5ddd4a496dea79ec7998ee3ab1027d756"
     }
   }
 }

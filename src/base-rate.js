@@ -1,3 +1,4 @@
+import {irisSamples} from './iris-samples.js';
 export const baseRateLevel={id:'beacon-base-rate',number:'683',kind:'base-rate',name:'警報と故障の見込み',tag:'ベイズ則・事前確率・条件付き確率',title:'警報の意味を村ごとに比べよう',story:'二つの村は同じ警報水晶を使いますが、故障の起こりやすさが異なります。記録から警報後の見込みを調べ、点検隊に伝えましょう。'};
 export const baseRateVillages={rare:{name:'めったに故障しない村',faults:10},common:{name:'故障の多い村',faults:500}};
 export const baseRateNumerators={tp:'故障して警報あり',fp:'正常で警報あり',fn:'故障して警報なし',tn:'正常で警報なし'};
@@ -7,11 +8,19 @@ export function baseRateTable(village){
  const faulty=baseRateVillages[village].faults,healthy=1000-faulty,tp=faulty*9/10,fn=faulty-tp,fp=healthy/10,tn=healthy-fp;
  return {tp,fn,fp,tn,alarm:tp+fp,silent:fn+tn,fault:faulty,healthy,total:1000};
 }
-export function createBaseRate(){return {village:'rare',signal:'alarm',numerator:null,denominator:null,report:null,solved:[],answer:null,checked:false,history:[]};}
+export function irisBayesCounts(threshold,above){
+ if(![40,45,50,55].includes(threshold)||typeof above!=='boolean')throw new RangeError('花の条件が不正です。');
+ const selected=irisSamples.filter(row=>(row[0]>=threshold)===above),virginica=irisSamples.filter(row=>row[2]===1),intersection=selected.filter(row=>row[2]===1);
+ return {total:irisSamples.length,virginica:virginica.length,selected:selected.length,intersection:intersection.length};
+}
+export function createBaseRate(){return {village:'rare',signal:'alarm',numerator:null,denominator:null,report:null,solved:[],answer:null,checked:false,irisThreshold:50,irisAbove:true,irisAnswer:null,history:[]};}
 export function baseRateAct(s,action){
  if(!s||!Array.isArray(s.history)||s.history.length>=150)return {ok:false,message:'操作記録がいっぱいです。最初からやり直してください。'};
  const n={...s,solved:[...s.solved],history:[...s.history],checked:false};let message='';
- if(action.startsWith('village:')&&Object.hasOwn(baseRateVillages,action.slice(8))){n.village=action.slice(8);n.numerator=null;n.denominator=null;n.report=null;message='村を選びました。';}
+ if(/^iris-threshold:(40|45|50|55)$/.test(action)){n.irisThreshold=Number(action.slice(15));n.irisAnswer=null;n.checked=s.checked;message='花弁の境界を選びました。';}
+ else if(action==='iris-above'||action==='iris-below'){n.irisAbove=action==='iris-above';n.irisAnswer=null;n.checked=s.checked;message='観測する条件を選びました。';}
+ else if(['iris-answer:posterior','iris-answer:joint','iris-answer:reverse'].includes(action)){n.irisAnswer=action.slice(12);n.checked=s.checked;message='花の割合を選びました。';}
+ else if(action.startsWith('village:')&&Object.hasOwn(baseRateVillages,action.slice(8))){n.village=action.slice(8);n.numerator=null;n.denominator=null;n.report=null;message='村を選びました。';}
  else if(action==='signal:alarm'||action==='signal:silent'){n.signal=action.slice(7);n.numerator=null;n.denominator=null;n.report=null;message='観測する警報を選びました。';}
  else if(action.startsWith('num:')&&Object.hasOwn(baseRateNumerators,action.slice(4))){n.numerator=action.slice(4);n.report=null;message='分子に数える集団を選びました。';}
  else if(action.startsWith('den:')&&Object.hasOwn(baseRateDenominators,action.slice(4))){n.denominator=action.slice(4);n.report=null;message='分母に数える集団を選びました。';}
