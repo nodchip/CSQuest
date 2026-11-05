@@ -1289,7 +1289,7 @@ FPL-Functional:トピック:Non-core:7,FPL,FPL-Functional,トピック,Non-core,
 FPL-Functional:トピック:Non-core:8,FPL,FPL-Functional,トピック,Non-core,8,遅延評価の実装,部分,325・326で遅延と結果の共有を操作。一般のサンク・実言語での実装は評価しない。,coverage-fpl-functional.md,28,原典照合結果は監査記録参照
 FPL-Functional:トピック:Non-core:9,FPL,FPL-Functional,トピック,Non-core,9,等式論理・狭義化・待機・意味的単一化による論理型との統合,部分,776で未知入力の待機、規則との単一化による枝分け、結果の等式条件を操作。一般の等式理論は未評価。,coverage-fpl-functional.md,29,原典照合結果は監査記録参照
 FPL-Functional:トピック:Non-core:10,FPL,FPL-Functional,トピック,Non-core,10,手続き型・オブジェクト指向などとの統合,部分,593で同一課題に対する３設計を比較。言語内の統合・実装は未評価。,coverage-fpl-functional.md,30,原典照合結果は監査記録参照
-FPL-Functional:学習成果:CS Core:1,FPL,FPL-Functional,学習成果,CS Core,1,変更可能な状態への代入を避けるアルゴリズムを開発,部分,51・773で元の列や木を変えず集約。実言語での開発は評価しない。,coverage-fpl-functional.md,36,原典照合結果は監査記録参照
+FPL-Functional:学習成果:CS Core:1,FPL,FPL-Functional,学習成果,CS Core,1,変更可能な状態への代入や参照同一性を考慮しないアルゴリズムを開発,部分,51・773で元の列や木を変えず集約。参照同一性への依存の検討と実言語での開発は未評価。,coverage-fpl-functional.md,36,原典照合結果は監査記録参照
 FPL-Functional:学習成果:CS Core:2,FPL,FPL-Functional,学習成果,CS Core,2,関数を受取り返す関数を開発,部分,52・592で固定の道具を生成・合成。自由な関数定義は評価しない。,coverage-fpl-functional.md,37,原典照合結果は監査記録参照
 FPL-Functional:学習成果:CS Core:3,FPL,FPL-Functional,学習成果,CS Core,3,手続き型・関数型・オブジェクト指向の解法を比較,部分,593で容量管理の３設計。一般の比較・自由記述は未評価。,coverage-fpl-functional.md,38,原典照合結果は監査記録参照
 FPL-Functional:学習成果:CS Core:4,FPL,FPL-Functional,学習成果,CS Core,4,各パラダイムのデータ定義・保護方法を比較,部分,593で共有・非公開・不変の固定模型。一般の安全性は未評価。,coverage-fpl-functional.md,39,原典照合結果は監査記録参照

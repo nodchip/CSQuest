@@ -725,6 +725,28 @@
         "tests/closure-machine.test.js": "93f310a0be8cd6545ead3f0fff3664fd3e3c947ac8b3e4988619bbb7f51ff7d2",
         "tests/virtual-dispatch.test.js": "3a2a53a381a1e5cbedeb20241adb24c7d90afd388a20bda741140dcb90d93a88"
       }
+    },
+    "FPL-Functional:トピック:CS Core:3": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-functional-tree.md",
+      "row_sha256": "2b979188ced29ac993c4258da811798795070b607495f6491ba72a5654820807",
+      "files": {
+        "src/tree-fold.js": "05b1a0f600355caf4643613d3da5f12e3be69fcbad6e279e62b2416b05d2920b",
+        "src/app.js": "17c6c23f703501b05a2783dbd7d1ad44c8b3e9769105974a9c064ba2ac46b628",
+        "tests/tree-fold.test.js": "37a4918e4c5d9991c3df743c896647688ad04b71c2d8537cbf039c94b9aaf630"
+      }
+    },
+    "FPL-Functional:トピック:CS Core:3a": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-functional-tree.md",
+      "row_sha256": "dbe6ba4b869fac8ac825c2e35f211befb61b3787035d28a55b3f47caf0b44257",
+      "files": {
+        "src/tree-fold.js": "05b1a0f600355caf4643613d3da5f12e3be69fcbad6e279e62b2416b05d2920b",
+        "src/app.js": "17c6c23f703501b05a2783dbd7d1ad44c8b3e9769105974a9c064ba2ac46b628",
+        "tests/tree-fold.test.js": "37a4918e4c5d9991c3df743c896647688ad04b71c2d8537cbf039c94b9aaf630"
+      }
     }
   }
 }
