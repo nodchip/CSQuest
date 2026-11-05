@@ -3716,7 +3716,7 @@ SPD-Web:トピック:KA Core:4,SPD,SPD-Web,トピック,KA Core,4,DOM・アク�
 SPD-Web:トピック:KA Core:5,SPD,SPD-Web,トピック,KA Core,5,セキュリティとプライバシー,部分,805でセッション固定・番号交換・失効の模型。実装やプライバシー全般は未評価。,coverage-spd-web.md,15,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:6,SPD,SPD-Web,トピック,Non-core,6,Web アプリの要件分析,未照合,Web 固有の要件分析との対応を要照合。,coverage-spd-web.md,16,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:7a,SPD,SPD-Web,トピック,Non-core,7a,クラウドホスティング,未照合,実サービスの運用を含め要照合。,coverage-spd-web.md,17,原典照合結果は監査記録参照
-SPD-Web:トピック:Non-core:7b,SPD,SPD-Web,トピック,Non-core,7b,拡張性と自動スケーリング,部分,1292で固定人数と前の刻の需要による自動調整を比較。待ち行列や実サービスは未評価。,coverage-spd-web.md,18,原典照合結果は監査記録参照
+SPD-Web:トピック:Non-core:7b,SPD,SPD-Web,トピック,Non-core,7b,拡張性と自動スケーリング,部分,1292で固定人数と自動調整、受付係と共通の門の上限を比較。待ち行列や実サービスは未評価。,coverage-spd-web.md,18,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:7c,SPD,SPD-Web,トピック,Non-core,7c,サービス費用の見積り,部分,1292で人数と時間から架空の費用を比較。実料金や複数の料金項目は未評価。,coverage-spd-web.md,19,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8a,SPD,SPD-Web,トピック,Non-core,8a,データ所在・アクセス経路,未照合,保存地とアクセス経路の検討を要照合。,coverage-spd-web.md,20,原典照合結果は監査記録参照
 SPD-Web:トピック:Non-core:8b,SPD,SPD-Web,トピック,Non-core,8b,データのアクセスと必要時の削除,未照合,原典の記載を追跡。完全性と可用性・削除の概念は一般には区別し、実運用を要照合。,coverage-spd-web.md,21,原典照合結果は監査記録参照
