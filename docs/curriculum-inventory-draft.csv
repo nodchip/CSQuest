@@ -1680,7 +1680,7 @@ GIT-Image:学習成果:KA Core:3,GIT,GIT-Image,学習成果,KA Core,3,画像へ�
 GIT-Image:学習成果:KA Core:4,GIT,GIT-Image,学習成果,KA Core,4,インペインティングで欠損画像を復元するプログラム,部分,727で欠損範囲の指定と反復補完を操作。一般のアルゴリズム、実画像とプログラムを書く能力は未評価。,coverage-git-image.md,36,原典照合結果は監査記録参照
 GIT-Image:学習成果:KA Core:5,GIT,GIT-Image,学習成果,KA Core,5,周波数領域の選択的フィルタの結果を評価,部分,808で２×２、809で４×４画像の成分を選び、実数と複素数の逆変換結果を比較。一般の画像・連続的なフィルタと実測は未評価。,coverage-git-image.md,37,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:1,GIT,GIT-Immersion,トピック,KA Core,1,VR・AR・MR と没入の段階,部分,218 で現実の柱と仮想の印の重ね合わせ・遮蔽を比較。各方式の範囲や違い全体は未評価。,coverage-git-immersion.md,9,原典照合結果は監査記録参照
-GIT-Immersion:トピック:KA Core:2,GIT,GIT-Immersion,トピック,KA Core,2,没入とプレゼンスの定義・違い,未照合,定義と比較の教材は未確認。,coverage-git-immersion.md,10,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:2,GIT,GIT-Immersion,トピック,KA Core,2,没入とプレゼンスの定義・違い,部分,1179で装置の表示能力と旅人の主観的な感覚を分類。一つの定義に基づく２例で、他の定義や実利用者の測定は未評価。,coverage-git-immersion.md,10,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:3,GIT,GIT-Immersion,トピック,KA Core,3,360度映像,部分,1177で固定視点の全方位記録と横移動による視差を比較。実際の撮影・表示・回転は未評価。,coverage-git-immersion.md,11,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:4,GIT,GIT-Immersion,トピック,KA Core,4,立体表示,部分,216で左右の投影を比較。実際の装置や両眼視は未評価。,coverage-git-immersion.md,12,原典照合結果は監査記録参照・親子重複候補
 GIT-Immersion:トピック:KA Core:4a,GIT,GIT-Immersion,トピック,KA Core,4a,頭部装着型の立体表示,部分,216 は２視点の点の投影と視差の模型。装置を用いる立体表示は未評価。,coverage-git-immersion.md,13,原典照合結果は監査記録参照
