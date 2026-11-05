@@ -1889,7 +1889,7 @@ GIT-Visualization:トピック:KA Core:7c,GIT,GIT-Visualization,トピック,KA 
 GIT-Visualization:トピック:KA Core:7d,GIT,GIT-Visualization,トピック,KA Core,7d,誤解を招く可視化,部分,111で棒の下端、112で集計範囲を比較。すべての誤解や因果関係の判断は扱わない。,coverage-git-visualization.md,33,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:1,GIT,GIT-Visualization,学習成果,KA Core,1,データ可視化と情報可視化を比較,未照合,両者の体系的比較は未確認。,coverage-git-visualization.md,39,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:2,GIT,GIT-Visualization,学習成果,KA Core,2,基本的な可視化アルゴリズムを利用,部分,113でヒストグラムの区間を操作。一般のライブラリや実プログラムの利用は未評価。,coverage-git-visualization.md,40,原典照合結果は監査記録参照
-GIT-Visualization:学習成果:KA Core:3,GIT,GIT-Visualization,学習成果,KA Core,3,可視化アルゴリズムの精度・性能のトレードオフを比較,未照合,実装の精度と性能の比較は未確認。,coverage-git-visualization.md,41,原典照合結果は監査記録参照
+GIT-Visualization:学習成果:KA Core:3,GIT,GIT-Visualization,学習成果,KA Core,3,可視化アルゴリズムの精度・性能のトレードオフを比較,部分,111で時系列の全点と１点おきの表示点数・最大値の保持を比較。実行速度や一般の精度は未評価。,coverage-git-visualization.md,41,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:4,GIT,GIT-Visualization,学習成果,KA Core,4,データ・課題・対象者に合う可視化を設計,部分,111で棒・点と尺度を選ぶ。一般の設計や対象者の評価は未対応。,coverage-git-visualization.md,42,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:5,GIT,GIT-Visualization,学習成果,KA Core,5,目的に対する可視化の有効性を分析,部分,111で棒の長さと軸範囲を比較。一般の課題や利用者による検証は未評価。,coverage-git-visualization.md,43,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:6,GIT,GIT-Visualization,学習成果,KA Core,6,可視化の有用性を評価する手順を設計,未照合,可視化専用の評価手順の設計は未確認。,coverage-git-visualization.md,44,原典照合結果は監査記録参照

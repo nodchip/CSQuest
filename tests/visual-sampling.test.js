@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {sampleView,sampleCreate,sampleRestore} from '../src/visual-sampling.js';
+import {createVisualization,restoreVisualization} from '../src/visualization.js';
+test('thinning cuts the number of displayed points and can miss a peak',()=>{assert.deepEqual([sampleView('steady','all').count,sampleView('steady','all').peak],[8,6]);assert.deepEqual([sampleView('steady','alternate').count,sampleView('steady','alternate').peak],[4,6]);assert.deepEqual([sampleView('spike','all').count,sampleView('spike','all').peak],[8,9]);assert.deepEqual([sampleView('spike','alternate').count,sampleView('spike','alternate').peak,sampleView('spike','alternate').actual],[4,2,9]);assert.deepEqual(sampleView('spike','alternate').indices,[0,2,4,6]);assert.throws(()=>sampleView('bad','all'));});
+test('older chart records gain an independent sampling lab and records are validated',()=>{const old=createVisualization();delete old.sampleLab;assert.deepEqual(restoreVisualization(old).sampleLab,sampleCreate());const s=sampleCreate();s.seen.push('spike:all');const copy=sampleRestore(s);copy.seen.pop();assert.equal(s.seen.length,1);assert.throws(()=>sampleRestore({...s,seen:['bad']}));});

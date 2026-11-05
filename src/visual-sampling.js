@@ -1,0 +1,7 @@
+export const sampleSeries={steady:{name:'なだらかな川',values:[2,4,6,4,6,4,2,4]},spike:{name:'一瞬だけ増える川',values:[2,2,2,9,2,2,2,2]}};
+export const sampleModes={all:'８点すべて',alternate:'１点おき（１・３・５・７番）'};
+export const samplePeaks=[2,6,9];
+export const sampleCounts=[4,8];
+export function sampleView(series,mode){if(!Object.hasOwn(sampleSeries,series)||!Object.hasOwn(sampleModes,mode))throw new RangeError('条件が不正です');const data=sampleSeries[series].values,indices=data.map((_,i)=>i).filter(i=>mode==='all'||i%2===0),values=indices.map(i=>data[i]);return {indices,peak:Math.max(...values),count:values.length,actual:Math.max(...data)};}
+export function sampleCreate(){return {series:'steady',mode:'all',peak:null,count:null,checked:false,seen:[],reflection:'',reflectionChecked:false};}
+export function sampleRestore(s){const keys=Object.keys(sampleSeries).flatMap(a=>Object.keys(sampleModes).map(b=>`${a}:${b}`));if(!s||!Object.hasOwn(sampleSeries,s.series)||!Object.hasOwn(sampleModes,s.mode)||![null,...samplePeaks].includes(s.peak)||![null,...sampleCounts].includes(s.count)||typeof s.checked!=='boolean'||s.checked&&(s.peak===null||s.count===null)||!Array.isArray(s.seen)||new Set(s.seen).size!==s.seen.length||!s.seen.every(k=>keys.includes(k))||!['','tradeoff','always','speed'].includes(s.reflection)||typeof s.reflectionChecked!=='boolean')throw new RangeError('標本の記録が不正です');return {...s,seen:[...s.seen]};}
