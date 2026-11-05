@@ -253,6 +253,32 @@
         "tests/syscall.test.js": "ae5a802f12cdf121dc19e9f49b3f22ed67c1a2c9be28e364ae95748b6833ba47",
         "tests/device-bridge.test.js": "6526df0024f4f690647d45dee6aaed73bee2feeeb7902732a21a8a039ea4bb7c"
       }
+    },
+    "OS-Memory:トピック:KA Core:1": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-os-memory-address.md",
+      "row_sha256": "afb1d84575c9030d7c274878f655bbf32e0da82240d738cadc67d2de190bf6e9",
+      "files": {
+        "src/address.js": "39f2b970a37dd6050581a2adde775d80c9b4550cbafab24d53cfb666712b6bcd",
+        "src/process-pages.js": "818e22f4e3f25b450edf26857f1c232f3adb7dd68bc51c34294d6a7afa6a0a37",
+        "src/app.js": "cadecc0b536da679c11c660e4bee287e3421dd4ed57acfd56060526e569c0673",
+        "tests/address.test.js": "f35e031db2df8ebe8b59033991d3d56135b2e6f9a1327fe072979a1d02d0efd3",
+        "tests/process-pages.test.js": "6fc23539dfcd6345659cacd634a26662ca240b57269eb2de6e38fdaf18fcf565"
+      }
+    },
+    "OS-Memory:トピック:KA Core:3": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-os-memory-address.md",
+      "row_sha256": "cc03cc3a0f80c48f34b304224b3609085a6c52f3491474963ea30c33b1e89605",
+      "files": {
+        "src/address.js": "39f2b970a37dd6050581a2adde775d80c9b4550cbafab24d53cfb666712b6bcd",
+        "src/process-pages.js": "818e22f4e3f25b450edf26857f1c232f3adb7dd68bc51c34294d6a7afa6a0a37",
+        "src/app.js": "cadecc0b536da679c11c660e4bee287e3421dd4ed57acfd56060526e569c0673",
+        "tests/address.test.js": "f35e031db2df8ebe8b59033991d3d56135b2e6f9a1327fe072979a1d02d0efd3",
+        "tests/process-pages.test.js": "6fc23539dfcd6345659cacd634a26662ca240b57269eb2de6e38fdaf18fcf565"
+      }
     }
   }
 }
