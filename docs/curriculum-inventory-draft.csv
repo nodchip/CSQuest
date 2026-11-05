@@ -2201,7 +2201,7 @@ NC-Reliability:学習成果:KA Core:2,NC,NC-Reliability,学習成果,KA Core,2,�
 NC-Reliability:学習成果:KA Core:3,NC,NC-Reliability,学習成果,KA Core,3,TCP の信頼性に関する設計課題を説明,部分,424で接続開始、668で順序待ちの固定例を操作。損失回復全般や自由な説明は未評価。,coverage-nc-reliability.md,22,原典照合結果は監査記録参照
 NC-Reliability:学習成果:KA Core:4,NC,NC-Reliability,学習成果,KA Core,4,単純な信頼性プロトコルを設計・実装,部分,10・422で既定の手順を操作する代替体験。実際の設計・プログラム記述は直接評価しない。,coverage-nc-reliability.md,23,原典照合結果は監査記録参照
 NC-Routing:トピック:KA Core:1,NC,NC-Routing,トピック,KA Core,1,経路制御の方式と階層,部分,48で固定経路、481で同期距離ベクトル、482でリンクステート、483で AS 経路を操作。集中・分散の一般比較、送信元経路、仮想回線や QoS は未評価。,coverage-nc-routing.md,9,原典照合結果は監査記録参照
-NC-Routing:トピック:KA Core:2,NC,NC-Routing,トピック,KA Core,2,転送表と照合方法,部分,48で次の塔、61で８ビットの架空宛先と最長接頭辞を操作。実 IP 転送表は未評価。,coverage-nc-routing.md,10,原典照合結果は監査記録参照
+NC-Routing:トピック:KA Core:2,NC,NC-Routing,トピック,KA Core,2,転送表と照合方法,部分,48で次の塔、61で８ビットの架空宛先と文書用 IPv4 の固定表の最長接頭辞を操作。実網の転送表は未評価。,coverage-nc-routing.md,10,原典照合結果は監査記録参照
 NC-Routing:トピック:KA Core:3,NC,NC-Routing,トピック,KA Core,3,IP と規模拡張、NAT・CIDR・BGP・IP の版,部分,320で変換、480で集約、483で AS 経路、484で IPv4・IPv6 の長さと省略表記の固定例。実網や一般の規模拡張は未評価。,coverage-nc-routing.md,11,原典照合結果は監査記録参照
 NC-Routing:学習成果:KA Core:1,NC,NC-Routing,学習成果,KA Core,1,経路制御の方式と階層を説明,部分,481・482で距離ベクトルとリンクステート、483で AS 経路を操作。多様な方式や自由な説明は未評価。,coverage-nc-routing.md,17,原典照合結果は監査記録参照
 NC-Routing:学習成果:KA Core:2,NC,NC-Routing,学習成果,KA Core,2,IP 網でのパケット転送を説明,部分,48の次の塔と回数制限、61の最長接頭辞を操作。IP ヘッダー、実網の転送と自由な説明は未評価。,coverage-nc-routing.md,18,原典照合結果は監査記録参照

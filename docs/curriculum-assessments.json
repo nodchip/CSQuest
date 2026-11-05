@@ -197,6 +197,32 @@
         "tests/intrusion-threshold.test.js": "217a9a3980cc96a64f70effc18b875026efbde075fab40d2688bc6215228f775",
         "tests/signature-lab.test.js": "ceb28b6a9d70177294963911813733d933ae53d2c1306135d3086f4ca8acc094"
       }
+    },
+    "NC-Routing:トピック:KA Core:2": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-routing-forwarding.md",
+      "row_sha256": "73a79746c92fd83aacea37918f261d9d8295fc1cfa2c0fe9dfb84c19545de2a3",
+      "files": {
+        "src/forwarding.js": "84811ee5e3c0a009149e9e081522f4e621547bba61ee2ec8146e822b203ed6d4",
+        "src/prefix.js": "9d3fd6182fd2824534d77aa2de008ab354eb0f52f8fc002276cf5d119484ee67",
+        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "tests/forwarding.test.js": "563ce5e477703fa6d36f8a8ccd0befca972c2dc28ddecf391164915084bbc7d4",
+        "tests/prefix.test.js": "785555eb2bc31d4b2a1ac46b6a5581a5f80dc0cbf1d31d41601817585b64629c"
+      }
+    },
+    "NC-Routing:学習成果:KA Core:2": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-routing-forwarding.md",
+      "row_sha256": "23dd48fe723638ff17f028a60dda5c5a81c5a2720d3de6a22794ec525ba8cc96",
+      "files": {
+        "src/forwarding.js": "84811ee5e3c0a009149e9e081522f4e621547bba61ee2ec8146e822b203ed6d4",
+        "src/prefix.js": "9d3fd6182fd2824534d77aa2de008ab354eb0f52f8fc002276cf5d119484ee67",
+        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "tests/forwarding.test.js": "563ce5e477703fa6d36f8a8ccd0befca972c2dc28ddecf391164915084bbc7d4",
+        "tests/prefix.test.js": "785555eb2bc31d4b2a1ac46b6a5581a5f80dc0cbf1d31d41601817585b64629c"
+      }
     }
   }
 }
