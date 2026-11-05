@@ -8,3 +8,12 @@ test('value, reference, and copy-restore differ while running and when aliases a
  assert.throws(()=>copyExperiment('bad','alias','ab'));
 });
 test('old records migrate and saved comparisons are validated and copied',()=>{const old=createParameter();delete old.copyLab;assert.deepEqual(restoreParameter(old).copyLab,copyCreate());const q=copyCreate();q.seen.push('restore:alias:ab');const restored=copyRestore(q);restored.seen.pop();assert.equal(q.seen.length,1);assert.throws(()=>copyRestore({...q,seen:['bad']}));});
+
+test('the timeline shows alias visibility and each copy-back in order',()=>{
+ const project=steps=>steps.map(({x,a,b})=>[x,a,b]);
+ assert.deepEqual(project(copyExperiment('value','alias','ab').steps),[[2,2,2],[2,3,2],[2,3,4]]);
+ assert.deepEqual(project(copyExperiment('reference','alias','ab').steps),[[2,2,2],[3,3,3],[6,6,6]]);
+ assert.deepEqual(project(copyExperiment('restore','alias','ab').steps),[[2,2,2],[2,3,2],[2,3,4],[3,3,4],[4,3,4]]);
+ assert.deepEqual(project(copyExperiment('restore','alias','ba').steps),[[2,2,2],[2,3,2],[2,3,4],[4,3,4],[3,3,4]]);
+ const distinct=copyExperiment('restore','separate','ba').steps;assert.deepEqual(distinct.map(({x,y})=>[x,y]),[[2,4],[2,4],[2,4],[2,8],[3,8]]);
+});

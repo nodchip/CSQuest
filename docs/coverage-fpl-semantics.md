@@ -36,4 +36,4 @@
 
 依頼779は４種類の固定された整数式の木について、根だけの変換と子から先にたどる変換を比較し、変換後の節数と値を調べる。`tests/meta-tree.test.js` は固定例の変換と保存を検査する。副作用、例外、束縛や実言語全般の変換は扱わない。参考：[Python の構文木変換](https://docs.python.org/3/library/ast.html#ast.NodeTransformer)。
 
-依頼306の追加例は [Rice University の値結果渡し](https://www.cs.rice.edu/~javaplt/411/11-fall/Lectures/16.pdf)を参考に、２引数を別々の箱か同じ箱に渡し、値・参照・値結果を比較する。書き戻し順は模型で指定し、例外や実言語ごとの規則は評価しない。`tests/value-result.test.js` は12条件と旧記録の復元を検査する。
+依頼306の追加例は [Rice University の値結果渡し](https://www.cs.rice.edu/~javaplt/411/11-fall/Lectures/16.pdf)を参考に、２引数を別々の箱か同じ箱に渡し、値・参照・値結果を比較する。書き戻し順は模型で指定し、例外や実言語ごとの規則は評価しない。`tests/value-result.test.js` は12条件、書き戻し前後の各段階と旧記録の復元を検査する。
