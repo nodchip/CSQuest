@@ -1978,7 +1978,7 @@ HCI-Design:トピック:CS Core:3c,HCI,HCI-Design,トピック,CS Core,3c,資源
 HCI-Design:トピック:CS Core:3d,HCI,HCI-Design,トピック,CS Core,3d,使いやすさ・安全性・プライバシーの均衡,部分,536 は公開範囲と利用条件を比較。一般の設計判断は未評価。,coverage-hci-design.md,22,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:4,HCI,HCI-Design,トピック,KA Core,4,設計パターンと指針,部分,アーキテクチャ・複数プラットフォーム・同期は子を参照。一部未照合。,coverage-hci-design.md,23,原典照合結果は監査記録参照・親子重複候補
 HCI-Design:トピック:KA Core:4a,HCI,HCI-Design,トピック,KA Core,4a,ソフトウェアアーキテクチャのパターン,部分,92 で MVC の入力・記録・表示を操作。一般の設計パターンや目的に照らした評価は未評価。,coverage-hci-design.md,24,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:4b,HCI,HCI-Design,トピック,KA Core,4b,複数プラットフォーム向け設計,未照合,対応教材を要照合。,coverage-hci-design.md,25,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:4b,HCI,HCI-Design,トピック,KA Core,4b,複数プラットフォーム向け設計,部分,1030 で機能の対応に応じた文字案内を比較し、1326 で２幅の配置を試す。実機や一般の移植は未評価。,coverage-hci-design.md,25,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:4c,HCI,HCI-Design,トピック,KA Core,4c,同期に関する設計,部分,288 は競合と遅れた通知。一般の分散同期は未評価。,coverage-hci-design.md,26,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:5,HCI,HCI-Design,トピック,KA Core,5,設計過程,部分,参加型・共同設計・ダブルダイヤモンドと発散収束は子を参照。実際の共同設計は未評価。,coverage-hci-design.md,27,原典照合結果は監査記録参照・親子重複候補
 HCI-Design:トピック:KA Core:5a,HCI,HCI-Design,トピック,KA Core,5a,参加型設計,部分,359 で架空の声を基に試作を比較。実際の参加型設計は未評価。,coverage-hci-design.md,28,原典照合結果は監査記録参照
