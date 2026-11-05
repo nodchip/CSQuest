@@ -1578,7 +1578,7 @@ FPL-Types:学習成果:Non-core:15,FPL,FPL-Types,学習成果,Non-core,15,健全
 FPL-Types:学習成果:Non-core:16,FPL,FPL-Types,学習成果,Non-core,16,保存と進行で小言語の型安全性を証明,部分,767で閉じた数・灯り・加算・分岐の言語の帰納法による証明の各場合を選ぶ。独力での証明構築や自由記述は評価しない。,coverage-fpl-types.md,66,原典照合結果は監査記録参照
 FPL-Types:学習成果:Non-core:17,FPL,FPL-Types,学習成果,Non-core,17,単一化に基づく型推論を実装,部分,764・765で等式整理と適用の代替体験。推論器を実装する能力は評価しない。,coverage-fpl-types.md,67,原典照合結果は監査記録参照
 FPL-Types:学習成果:Non-core:18,FPL,FPL-Types,学習成果,Non-core,18,静的オーバーロードの解決と実行時の振る舞いを説明,部分,581で固定候補と動的ディスパッチ。一般の解決法と自由な説明は未評価。,coverage-fpl-types.md,68,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:1,GIT,GIT-Animation,トピック,KA Core,1,アニメーションの原則,部分,182で一定速度と緩急を比較。他の原則、人物表現や自由な説明は未評価。,coverage-git-animation.md,9,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:1,GIT,GIT-Animation,トピック,KA Core,1,アニメーションの原則,部分,182で一定速度・緩急と、反対方向に身構える予備動作の固定例を比較。他の原則、人物表現や自由な説明は未評価。,coverage-git-animation.md,9,原典照合結果は監査記録参照
 GIT-Animation:トピック:KA Core:2,GIT,GIT-Animation,トピック,KA Core,2,アニメーションの種類,部分,子項目２a〜２eの固定例を参照。３次元制作や種類全体の比較は未評価。,coverage-git-animation.md,10,原典照合結果は監査記録参照・親子重複候補
 GIT-Animation:トピック:KA Core:2a,GIT,GIT-Animation,トピック,KA Core,2a,２次元・３次元,部分,182〜185で平面の動作を操作。３次元の制作と比較は未評価。,coverage-git-animation.md,11,原典照合結果は監査記録参照
 GIT-Animation:トピック:KA Core:2b,GIT,GIT-Animation,トピック,KA Core,2b,モーショングラフィックス,部分,1254で文字と紋章の位置を設定し、動く祭りの案内を作る。実制作や幅広い用途は未評価。,coverage-git-animation.md,12,原典照合結果は監査記録参照
@@ -1601,7 +1601,7 @@ GIT-Animation:トピック:KA Core:6c,GIT,GIT-Animation,トピック,KA Core,6c,
 GIT-Animation:トピック:KA Core:6d-i,GIT,GIT-Animation,トピック,KA Core,6d-i,一つの歩行を標準とみなさない,部分,1255で架空の３位置列と１・２見本の照合を比較し、不一致だけで良し悪しを決めないことを扱う。実際の多様な歩行データは未評価。,coverage-git-animation.md,29,原典照合結果は監査記録参照
 GIT-Animation:トピック:KA Core:6d-ii,GIT,GIT-Animation,トピック,KA Core,6d-ii,アクセシビリティ,部分,1256で架空の二人の希望を聞き収録計画を調整。実利用者との共同設計や評価は未実施。,coverage-git-animation.md,30,原典照合結果は監査記録参照
 GIT-Animation:トピック:KA Core:6d,GIT,GIT-Animation,トピック,KA Core,6d,倫理的配慮,部分,635で記録の別用途への利用条件を確認。実際の同意や法的判断は未評価。,coverage-git-animation.md,31,原典照合結果は監査記録参照・親子重複候補
-GIT-Animation:学習成果:KA Core:1,GIT,GIT-Animation,学習成果,KA Core,1,モデルとリグで各原則を視覚的に説明,部分,182で緩急を操作。モデル・リグと各原則の説明は未評価。,coverage-git-animation.md,37,原典照合結果は監査記録参照
+GIT-Animation:学習成果:KA Core:1,GIT,GIT-Animation,学習成果,KA Core,1,モデルとリグで各原則を視覚的に説明,部分,182で緩急と予備動作の固定例を操作。モデル・リグと各原則の説明は未評価。,coverage-git-animation.md,37,原典照合結果は監査記録参照
 GIT-Animation:学習成果:KA Core:2,GIT,GIT-Animation,学習成果,KA Core,2,順運動学で各部の位置・向き,部分,183で平面２関節を操作。任意の角度や３次元は未評価。,coverage-git-animation.md,38,原典照合結果は監査記録参照
 GIT-Animation:学習成果:KA Core:3,GIT,GIT-Animation,学習成果,KA Core,3,位置・向きから逆運動学で関節の向き,部分,184で選択肢から姿勢を探す。一般の解法と先端の向きは未評価。,coverage-git-animation.md,39,原典照合結果は監査記録参照
 GIT-Animation:学習成果:KA Core:4,GIT,GIT-Animation,学習成果,KA Core,4,回転表現のトレードオフ比較,部分,730でオイラー角の特異点とクォータニオン、731で正規化線形補間と球面線形補間を比較。一般の姿勢、精度・性能は未評価。,coverage-git-animation.md,40,原典照合結果は監査記録参照
