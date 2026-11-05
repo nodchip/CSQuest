@@ -34,3 +34,5 @@
 依頼674は装置ごとに異なる印を用いる２水晶を、利用者の直接操作、特権を持つ A 専用の直接操作、権限確認と装置担当を経る共通依頼で比較する。B の担当の有無と権限を変更でき、全24条件を検査。実装置、ドライバーの発見・故障、OS や API 全般の保護と移植性は扱わない。[Linux Kernel: Device Model](https://docs.kernel.org/driver-api/driver-model/overview.html)。
 
 依頼828は仮想工房 A に割り当てた装置の DMA を、IOMMU なし、広い対応表、A の記憶のみの対応表で比較する。CPU 用の地図に B の記憶がなくても、広い装置用の対応があれば装置が B を読める例。管理者と対応表を信頼し、装置の要求が必ず門を通ると仮定する。実際の IOMMU グループや装置経路、割込み、ファームウェア、ホストへの攻撃、実環境全体の安全性は扱わない。参考：[Linux Kernel、VFIO と IOMMU](https://docs.kernel.org/driver-api/vfio.html)。
+
+依頼382に同期がエラーとなり装置には届かなかったと仮定する３つ目の場面を追加した。失敗時に何が残るかは一般には分からず、実機での障害や同期状態を再現するものではない。[Linux の fsync の返り値](https://man7.org/linux/man-pages/man2/fsync.2.html)を参照し、`tests/os-service.test.js` で３場面と旧記録を検査する。
