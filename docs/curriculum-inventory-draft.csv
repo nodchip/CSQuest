@@ -411,7 +411,7 @@ AI-Search:トピック:CS Core:3c,AI,AI-Search,トピック,CS Core,3c,局所最
 AI-Search:トピック:CS Core:3c.i,AI,AI-Search,トピック,CS Core,3c.i,局所解と大域解,部分,依頼372で C と E を比較。一般の大域最適性は未評価。,coverage-ai-search.md,26,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:3d,AI,AI-Search,トピック,CS Core,3d,貪欲最良優先探索,部分,依頼43で同じ見積もりを使う A* と比較し、貪欲は費用10、A* は６の道を発見。一般のグラフや実装は未評価。,coverage-ai-search.md,27,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:3e,AI,AI-Search,トピック,CS Core,3e,A* 探索,部分,依頼42・43の正費用の固定グラフ。一般のグラフ・実装は未評価。,coverage-ai-search.md,28,原典照合結果は監査記録参照
-AI-Search:トピック:CS Core:4,AI,AI-Search,トピック,CS Core,4,グラフ探索の時間・空間計算量,部分,依頼369で固定木と深さ２〜６の完全二分木について、目標を左端・右端に変えて調査回数と待機数を比較。一般グラフの漸近計算量は未評価。,coverage-ai-search.md,29,原典照合結果は監査記録参照
+AI-Search:トピック:CS Core:4,AI,AI-Search,トピック,CS Core,4,グラフ探索の時間・空間計算量,部分,依頼369で完全二分木の目標位置と調査数、循環する有限グラフの重複探索を比較。定数時間の印と待機列を仮定した幅優先の計算量を説明。任意のグラフの解析・実測は未評価。,coverage-ai-search.md,29,原典照合結果は監査記録参照
 AI-Search:トピック:KA Core:5,AI,AI-Search,トピック,KA Core,5,双方向探索,部分,依頼371で有向・等費用の固定グラフを両端から探索。一般の重み付きグラフは未評価。,coverage-ai-search.md,30,原典照合結果は監査記録参照
 AI-Search:トピック:KA Core:6,AI,AI-Search,トピック,KA Core,6,ビーム探索,部分,依頼370で幅１・２と探索漏れを比較。同点・循環や一般の実装は未評価。,coverage-ai-search.md,31,原典照合結果は監査記録参照
 AI-Search:トピック:KA Core:7,AI,AI-Search,トピック,KA Core,7,２人対戦の探索,部分,依頼44・45・97の有限な固定例。一般の対戦木は未評価。,coverage-ai-search.md,32,原典照合結果は監査記録参照・親子重複候補
@@ -439,7 +439,7 @@ AI-Search:トピック:Non-core:17a,AI,AI-Search,トピック,Non-core,17a,焼�
 AI-Search:トピック:Non-core:17b,AI,AI-Search,トピック,Non-core,17b,遺伝的アルゴリズム,部分,依頼374で４ビットの交叉・変異・保存を操作。一般の設計は未評価。,coverage-ai-search.md,54,原典照合結果は監査記録参照
 AI-Search:トピック:Non-core:17c,AI,AI-Search,トピック,Non-core,17c,モンテカルロ木探索,部分,依頼45で石取りの UCT による選択、展開、模擬対戦、結果の集計を操作。固定ルール・乱数列の小規模例で一般の対戦や最適性は未評価。,coverage-ai-search.md,55,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:1,AI,AI-Search,学習成果,明示なし,1,パズルの状態空間を設計,部分,依頼85・100で決まった状態要素を操作。自由に設計する能力は未評価。,coverage-ai-search.md,63,原典照合結果は監査記録参照
-AI-Search:学習成果:明示なし:2,AI,AI-Search,学習成果,明示なし,2,非ヒューリスティック探索を選び実装、計算量を評価,部分,依頼08・369で固定例を操作し回数を比較。実装・一般の計算量は未評価。,coverage-ai-search.md,64,原典照合結果は監査記録参照
+AI-Search:学習成果:明示なし:2,AI,AI-Search,学習成果,明示なし,2,非ヒューリスティック探索を選び実装、計算量を評価,部分,依頼08・369で固定例の探索、回数と発見済みの印を比較。実装・一般の計算量の分析は未評価。,coverage-ai-search.md,64,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:3,AI,AI-Search,学習成果,明示なし,3,見積もりを設計し探索を選び実装,部分,依頼42で与えられた見積もりを使用。自由な設計と実装は未評価。,coverage-ai-search.md,65,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:4,AI,AI-Search,学習成果,明示なし,4,許容性と最適性を評価,部分,依頼43で固定地図の０〜10の見積もりを選び、過大な地点と整合しない辺、探索結果を確認。任意の地図や一般の最適性は未評価。,coverage-ai-search.md,66,原典照合結果は監査記録参照
 AI-Search:学習成果:KA Core:5,AI,AI-Search,学習成果,KA Core,5,評価関数と手数制限を用いてミニマックスを適用,部分,依頼44で１手先の仮評価と２手の終局値を比較、45で終局探索。任意の評価関数や対戦木は未評価。,coverage-ai-search.md,67,原典照合結果は監査記録参照
