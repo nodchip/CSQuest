@@ -1,0 +1,7 @@
+export const flexModes={typed:'実行前に数の袋を検査',open:'そのまま入れる',guarded:'入れる時に確認'};
+export const flexItems={number:'数３',text:'言葉「星」'};
+export const flexActions={inspect:'中身を見る',sum:'合計する'};
+export const flexAnswers={blocked:'実行前に止まる',rejected:'追加を断り、続く操作は成功',error:'合計中に止まる',success:'追加と操作が成功'};
+export function flexResult(mode,item,action){if(!Object.hasOwn(flexModes,mode)||!Object.hasOwn(flexItems,item)||!Object.hasOwn(flexActions,action))throw new RangeError('条件が不正です');if(mode==='typed'&&item==='text')return 'blocked';if(mode==='guarded'&&item==='text')return 'rejected';if(mode==='open'&&item==='text'&&action==='sum')return 'error';return 'success';}
+export function createFlexLab(){return {mode:'typed',item:'number',action:'inspect',guess:null,checked:false,seen:[],reflection:null};}
+export function restoreFlexLab(s){const keys=Object.keys(flexModes).flatMap(m=>Object.keys(flexItems).flatMap(i=>Object.keys(flexActions).map(a=>`${m}:${i}:${a}`)));if(!s||!Object.hasOwn(flexModes,s.mode)||!Object.hasOwn(flexItems,s.item)||!Object.hasOwn(flexActions,s.action)||![null,...Object.keys(flexAnswers)].includes(s.guess)||typeof s.checked!=='boolean'||s.checked&&s.guess===null||!Array.isArray(s.seen)||new Set(s.seen).size!==s.seen.length||!s.seen.every(k=>keys.includes(k))||![null,'rules','static','dynamic'].includes(s.reflection))throw new RangeError('記録が不正です');return {...s,seen:[...s.seen]};}

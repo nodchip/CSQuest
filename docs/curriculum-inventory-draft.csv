@@ -1543,7 +1543,7 @@ FPL-Types:トピック:CS Core:6i,FPL,FPL-Types,トピック,CS Core,6i,サブ�
 FPL-Types:トピック:KA Core:7,FPL,FPL-Types,トピック,KA Core,7,構造・名前による型同値,部分,511で４記録を比較。一般の型同値は未評価。,coverage-fpl-types.md,26,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8,FPL,FPL-Types,トピック,KA Core,8,静的・動的型付けの相補的な利点,部分,510で検査時点と両分岐を比較。一般の利点と制約は未評価。,coverage-fpl-types.md,27,原典照合結果は監査記録参照・親子重複候補
 FPL-Types:トピック:KA Core:8a,FPL,FPL-Types,トピック,KA Core,8a,早期・後期の誤り検出、回避,部分,510で未実行分岐にある不適合を比較。実言語全般は未評価。,coverage-fpl-types.md,28,原典照合結果は監査記録参照
-FPL-Types:トピック:KA Core:8b,FPL,FPL-Types,トピック,KA Core,8b,開発・保守の不変条件と柔軟な試作,未照合,不変条件や異種コレクションとの比較は未評価。,coverage-fpl-types.md,29,原典照合結果は監査記録参照
+FPL-Types:トピック:KA Core:8b,FPL,FPL-Types,トピック,KA Core,8b,開発・保守の不変条件と柔軟な試作,部分,510で数だけという袋の約束と異種の品を入れる方法、追加時の確認を比較。一般の保守・開発効率や任意の不変条件は未評価。,coverage-fpl-types.md,29,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8c,FPL,FPL-Types,トピック,KA Core,8c,関数・積・和の型規則,部分,595・596・765で固定の構成と適用。一般の規則の列挙は未評価。,coverage-fpl-types.md,30,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8d,FPL,FPL-Types,トピック,KA Core,8d,誤用防止と再利用,部分,509・510で固定の型指定・検査。体系的な比較は未評価。,coverage-fpl-types.md,31,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8e,FPL,FPL-Types,トピック,KA Core,8e,未完成プログラムの検出・実行,部分,510で未完成の札を開始前に拒否する門と使用時に失敗する門を比較。実言語の型検査が未完成を必ず検出するわけではない。,coverage-fpl-types.md,32,原典照合結果は監査記録参照
