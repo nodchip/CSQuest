@@ -444,6 +444,42 @@
         "tests/compiler-stages.test.js": "ee52d12e7d186fe1eb6f271085bfe21ad6973b398f11448be8dae2e1845edacf",
         "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
       }
+    },
+    "FPL-Code:トピック:Non-core:6": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-code-selection.md",
+      "row_sha256": "af28946f707966d0192e1771c9e750a76ea5fdae162516cee3a4e973b26a8646",
+      "files": {
+        "src/instruction-tiles-workshop.js": "1800b0a4e9db3c1128e72f15267f1d3badf4fc23bd58a836269db5b67846c71b",
+        "src/app.js": "cd68ee70e8f289a560d054d54bbe2f1c68da0ee4a9c8fce2b392a5ccf71595fe",
+        "tests/instruction-tiles-workshop.test.js": "3325fa9e815ba80e074350cf0303d48e02c9dcca9c9c49168c911340a96713b9",
+        "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
+      }
+    },
+    "FPL-Code:トピック:Non-core:7": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-code-selection.md",
+      "row_sha256": "87472f8f5c002650c384a8bb8b3e1f68827a5973f844fe3feb553e64d31d3470",
+      "files": {
+        "src/instruction-tiles-workshop.js": "1800b0a4e9db3c1128e72f15267f1d3badf4fc23bd58a836269db5b67846c71b",
+        "src/app.js": "cd68ee70e8f289a560d054d54bbe2f1c68da0ee4a9c8fce2b392a5ccf71595fe",
+        "tests/instruction-tiles-workshop.test.js": "3325fa9e815ba80e074350cf0303d48e02c9dcca9c9c49168c911340a96713b9",
+        "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
+      }
+    },
+    "FPL-Code:トピック:Non-core:10": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-code-selection.md",
+      "row_sha256": "b24cbf13e8d0098196205765a7822f0a1fefeb9fa567e516c761ccd1195b26d5",
+      "files": {
+        "src/instruction-tiles-workshop.js": "1800b0a4e9db3c1128e72f15267f1d3badf4fc23bd58a836269db5b67846c71b",
+        "src/app.js": "cd68ee70e8f289a560d054d54bbe2f1c68da0ee4a9c8fce2b392a5ccf71595fe",
+        "tests/instruction-tiles-workshop.test.js": "3325fa9e815ba80e074350cf0303d48e02c9dcca9c9c49168c911340a96713b9",
+        "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
+      }
     }
   }
 }

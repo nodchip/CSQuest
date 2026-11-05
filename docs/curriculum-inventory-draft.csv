@@ -1190,21 +1190,21 @@ FPL-Aspect:トピック:未記載:3c,FPL,FPL-Aspect,トピック,未記載,3c,�
 FPL-Aspect:トピック:未記載:4a,FPL,FPL-Aspect,トピック,未記載,4a,ポイントカット指定子,部分,323で書込みまたは全操作を選ぶ固定例。実際の指定子や構文は未評価。,coverage-fpl-aspect.md,12,原典照合結果は監査記録参照・区分を要確認
 FPL-Aspect:トピック:未記載:5,FPL,FPL-Aspect,トピック,未記載,5,静的・動的ウィービング,部分,1247で準備時・読込み時・実行中の織込みと、既存の処理の有効化を固定模型で比較。実処理系や一般的な実装は未評価。,coverage-fpl-aspect.md,13,原典照合結果は監査記録参照・区分を要確認
 FPL-Aspect:トピック:未記載:6,FPL,FPL-Aspect,トピック,未記載,6,注釈や IDE などの代替手段,部分,1248で手作業と注釈を読む生成ツールの固定模型を比較。実言語の注釈処理や IDE は未評価。,coverage-fpl-aspect.md,14,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:1,FPL,FPL-Code,トピック,未記載,1,命令セット,部分,73で架空命令の実行。実 ISA や一般の命令生成は未評価。,coverage-fpl-code.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:2,FPL,FPL-Code,トピック,未記載,2,制御フロー,部分,783で固定ループの条件分岐とジャンプを対応付ける。一般の生成は未評価。,coverage-fpl-code.md,10,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:3,FPL,FPL-Code,トピック,未記載,3,メモリ管理,部分,785で大域・枠・ヒープを操作。コンパイラによる管理コード生成は未評価。,coverage-fpl-code.md,11,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:4,FPL,FPL-Code,トピック,未記載,4,手続き呼出しとメソッドのディスパッチ,部分,560で入れ子の呼出しと復帰、581で固定の動的呼出し。実 ABI や一般の生成は未評価。,coverage-fpl-code.md,12,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:5,FPL,FPL-Code,トピック,未記載,5,分割コンパイルとリンク,部分,790で固定の名前解決と配置を操作。実形式、動的リンクや分割コンパイルは未評価。,coverage-fpl-code.md,13,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:6,FPL,FPL-Code,トピック,未記載,6,命令選択,部分,1185で２種類の架空命令セットから、同じ一次式を最少枚数で構成。実 ISA・一般の命令選択は未評価。,coverage-fpl-code.md,14,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:7,FPL,FPL-Code,トピック,未記載,7,命令スケジューリング,部分,158でパイプラインと依存を比較、1185で読取り２件と独立命令の発行順を操作。実 ISA や一般のスケジューラは未評価。,coverage-fpl-code.md,15,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:8,FPL,FPL-Code,トピック,未記載,8,レジスタ割当て,部分,833で直線と分岐・戻り道の生存値・重なる組を選び、２小箱への配置と退避を比較。実機の制約、命令生成や一般の割当ては未評価。,coverage-fpl-code.md,16,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:9,FPL,FPL-Code,トピック,未記載,9,プログラム解析による最適化,部分,207・208で書込み除去と効果保持、789で固定翻訳の意味保存、1181で別名の可能性と読取り省略を比較。一般の最適化は未評価。,coverage-fpl-code.md,17,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:トピック:未記載:10,FPL,FPL-Code,トピック,未記載,10,生成 AI によるプログラム生成,部分,1185で生成された提案を想定した固定候補を試験・比較。実際の生成 AI の利用や一般的な開発は未評価。,coverage-fpl-code.md,18,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:学習成果:未記載:1,FPL,FPL-Code,学習成果,未記載,1,自動翻訳の必須段階を特定,部分,315で字句・構文・型確認と実行用の印を操作。実コンパイラの全必須段階は未評価。,coverage-fpl-code.md,24,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:学習成果:未記載:2,FPL,FPL-Code,学習成果,未記載,2,呼出しに必要な低水準コードを説明,部分,560・790の固定の呼出し・復帰。実言語の規約や自由な説明は未評価。,coverage-fpl-code.md,25,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:学習成果:未記載:3,FPL,FPL-Code,学習成果,未記載,3,分割コンパイルに共通の呼出し規約が必要な理由,部分,1184で790の名前解決と、２種類の架空規約による引数・戻り値・保持を比較。実 ABI と自由な説明は未評価。,coverage-fpl-code.md,26,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:学習成果:未記載:4,FPL,FPL-Code,学習成果,未記載,4,未知の呼出し効果による最適化の制約,部分,1183で未知・Aを書かない・両箱を書かない約束と、読取り省略を比較。実コンパイラや一般の副作用は未評価。,coverage-fpl-code.md,27,原典照合結果は監査記録参照・区分を要確認
-FPL-Code:学習成果:未記載:5,FPL,FPL-Code,学習成果,未記載,5,単純な翻訳からの最適化機会と各手法,部分,207・208で固定の不要書込み、833で割当てと退避の固定例。1185で固定式の命令選択。一般の割当てと自由な議論は未評価。,coverage-fpl-code.md,28,原典照合結果は監査記録参照・区分を要確認
+FPL-Code:トピック:Non-core:1,FPL,FPL-Code,トピック,Non-core,1,命令セット,部分,73で架空命令の実行。実 ISA や一般の命令生成は未評価。,coverage-fpl-code.md,9,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:2,FPL,FPL-Code,トピック,Non-core,2,制御フロー,部分,783で固定ループの条件分岐とジャンプを対応付ける。一般の生成は未評価。,coverage-fpl-code.md,10,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:3,FPL,FPL-Code,トピック,Non-core,3,メモリ管理,部分,785で大域・枠・ヒープを操作。コンパイラによる管理コード生成は未評価。,coverage-fpl-code.md,11,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:4,FPL,FPL-Code,トピック,Non-core,4,手続き呼出しとメソッドのディスパッチ,部分,560で入れ子の呼出しと復帰、581で固定の動的呼出し。実 ABI や一般の生成は未評価。,coverage-fpl-code.md,12,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:5,FPL,FPL-Code,トピック,Non-core,5,分割コンパイルとリンク,部分,790で固定の名前解決と配置を操作。実形式、動的リンクや分割コンパイルは未評価。,coverage-fpl-code.md,13,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:6,FPL,FPL-Code,トピック,Non-core,6,命令選択,部分,1185で２種類の架空命令セットから、同じ一次式を最少枚数で構成。実 ISA・一般の命令選択は未評価。,coverage-fpl-code.md,14,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:7,FPL,FPL-Code,トピック,Non-core,7,命令スケジューリング,部分,158でパイプラインと依存を比較、1185で読取り２件と独立命令の発行順を操作。実 ISA や一般のスケジューラは未評価。,coverage-fpl-code.md,15,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:8,FPL,FPL-Code,トピック,Non-core,8,レジスタ割当て,部分,833で直線と分岐・戻り道の生存値・重なる組を選び、２小箱への配置と退避を比較。実機の制約、命令生成や一般の割当ては未評価。,coverage-fpl-code.md,16,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:9,FPL,FPL-Code,トピック,Non-core,9,プログラム解析による最適化,部分,207・208で書込み除去と効果保持、789で固定翻訳の意味保存、1181で別名の可能性と読取り省略を比較。一般の最適化は未評価。,coverage-fpl-code.md,17,原典照合結果は監査記録参照
+FPL-Code:トピック:Non-core:10,FPL,FPL-Code,トピック,Non-core,10,生成 AI によるプログラム生成,部分,1185で生成された提案を想定した固定候補を試験・比較。実際の生成 AI の利用や一般的な開発は未評価。,coverage-fpl-code.md,18,原典照合結果は監査記録参照
+FPL-Code:学習成果:Non-core:1,FPL,FPL-Code,学習成果,Non-core,1,自動翻訳の必須段階を特定,部分,315で字句・構文・型確認と実行用の印を操作。実コンパイラの全必須段階は未評価。,coverage-fpl-code.md,24,原典照合結果は監査記録参照
+FPL-Code:学習成果:Non-core:2,FPL,FPL-Code,学習成果,Non-core,2,呼出しに必要な低水準コードを説明,部分,560・790の固定の呼出し・復帰。実言語の規約や自由な説明は未評価。,coverage-fpl-code.md,25,原典照合結果は監査記録参照
+FPL-Code:学習成果:Non-core:3,FPL,FPL-Code,学習成果,Non-core,3,分割コンパイルに共通の呼出し規約が必要な理由,部分,1184で790の名前解決と、２種類の架空規約による引数・戻り値・保持を比較。実 ABI と自由な説明は未評価。,coverage-fpl-code.md,26,原典照合結果は監査記録参照
+FPL-Code:学習成果:Non-core:4,FPL,FPL-Code,学習成果,Non-core,4,未知の呼出し効果による最適化の制約,部分,1183で未知・Aを書かない・両箱を書かない約束と、読取り省略を比較。実コンパイラや一般の副作用は未評価。,coverage-fpl-code.md,27,原典照合結果は監査記録参照
+FPL-Code:学習成果:Non-core:5,FPL,FPL-Code,学習成果,Non-core,5,単純な翻訳からの最適化機会と各手法,部分,207・208で固定の不要書込み、833で割当てと退避の固定例。1185で固定式の命令選択。一般の割当てと自由な議論は未評価。,coverage-fpl-code.md,28,原典照合結果は監査記録参照
 FPL-Constructs:トピック:未記載:1,FPL,FPL-Constructs,トピック,未記載,1,カプセル化,部分,579で直接変更と公開操作の範囲検査を比較。一般の言語機構は未評価。,coverage-fpl-constructs.md,9,原典照合結果は監査記録参照・区分を要確認
 FPL-Constructs:トピック:未記載:2,FPL,FPL-Constructs,トピック,未記載,2,遅延評価と無限列,部分,325で無限列の先頭部分と事前生成を比較。実処理系は未評価。,coverage-fpl-constructs.md,10,原典照合結果は監査記録参照・区分を要確認
 FPL-Constructs:トピック:未記載:3,FPL,FPL-Constructs,トピック,未記載,3,遅延と先行の比較,部分,326・327で評価回数、副作用と発散の固定例。実言語全般は未評価。,coverage-fpl-constructs.md,11,原典照合結果は監査記録参照・区分を要確認
@@ -1416,28 +1416,28 @@ FPL-Pragmatics:学習成果:未記載:2,FPL,FPL-Pragmatics,学習成果,未記�
 FPL-Pragmatics:学習成果:未記載:3,FPL,FPL-Pragmatics,学習成果,未記載,3,順序・優先順位・結合性で結果が変わるプログラムを実装,部分,156・310の固定例を操作。実際のプログラム作成は直接評価しない。,coverage-fpl-pragmatics.md,25,原典照合結果は監査記録参照・区分を要確認
 FPL-Pragmatics:学習成果:未記載:4,FPL,FPL-Pragmatics,学習成果,未記載,4,遅延評価の利用例を示す,部分,325で無限列から有限個を得る模型。利用例全般は未評価。,coverage-fpl-pragmatics.md,26,原典照合結果は監査記録参照・区分を要確認
 FPL-Pragmatics:学習成果:未記載:5,FPL,FPL-Pragmatics,学習成果,未記載,5,外部呼出しとライブラリの必要性・実装上の影響を論じる,未照合,対応教材を要照合。自由な議論は評価しない。,coverage-fpl-pragmatics.md,27,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:1,FPL,FPL-Run-Time,トピック,未記載,1,呼出し枠・スタック・ヒープ・復帰位置・引数,部分,560で入れ子の呼出し、785で３枠とヒープ。フレームポインタや実 ABI は未評価。,coverage-fpl-run-time.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:2,FPL,FPL-Run-Time,トピック,未記載,2,ハッシュ表によるメソッド探索,部分,依頼1206で名前の衝突・一致・空きによる終了を４マスで操作。実処理系・継承・削除は未評価。,coverage-fpl-run-time.md,10,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:3,FPL,FPL-Run-Time,トピック,未記載,3,オブジェクトと活性化記録の配置,部分,785で固定の枠と宝石の配置。実際のオブジェクトの配置は未評価。,coverage-fpl-run-time.md,11,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:4,FPL,FPL-Run-Time,トピック,未記載,4,ヒープへのオブジェクト確保,部分,785で宝石をヒープに確保。一般のアロケータは未評価。,coverage-fpl-run-time.md,12,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:5,FPL,FPL-Run-Time,トピック,未記載,5,仮想的実体・仮想メソッド表,部分,依頼1204で２種類の実体の表・番号を選び、上書きと継承を比較。実 ABI・多重継承は未評価。,coverage-fpl-run-time.md,13,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:6,FPL,FPL-Run-Time,トピック,未記載,6,オブジェクト指向プログラムの実行時動作,部分,581で型別呼出し、785で枠とヒープの固定例。実行時実装は未評価。,coverage-fpl-run-time.md,14,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:7,FPL,FPL-Run-Time,トピック,未記載,7,引数と非局所変数・静的リンクのメモリ確保の比較,部分,依頼1211で内側の引数と外側の変数、静的リンクと呼出し元の鎖を比較。実配置・再帰・自由な説明は未評価。,coverage-fpl-run-time.md,15,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:8,FPL,FPL-Run-Time,トピック,未記載,8,手動・回収・参照計数・リージョン,部分,201・202で到達可能性と参照計数の循環、785・786で手動解放と再利用。コピー方式や実際の処理系は未評価。,coverage-fpl-run-time.md,16,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:9,FPL,FPL-Run-Time,トピック,未記載,9,JIT・動的再コンパイル,部分,312で固定回数後の翻訳と費用を比較。動的再コンパイルと実測は未評価。,coverage-fpl-run-time.md,17,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:10,FPL,FPL-Run-Time,トピック,未記載,10,初期化等の OS とのインターフェース,未照合,対応教材を要照合。,coverage-fpl-run-time.md,18,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:11,FPL,FPL-Run-Time,トピック,未記載,11,言語間相互運用・引数とデータ表現,部分,831で共通形式の数値交換。実言語の引数渡しや呼出し規約は未評価。,coverage-fpl-run-time.md,19,原典照合結果は監査記録参照・区分を要確認・親子重複候補
-FPL-Run-Time:トピック:未記載:11a,FPL,FPL-Run-Time,トピック,未記載,11a,バイト順,部分,460・831で２バイトの順序を比較。実機全般は未評価。,coverage-fpl-run-time.md,20,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:11b,FPL,FPL-Run-Time,トピック,未記載,11b,配列等の複合データ配置,部分,173で行優先・列優先の固定例。言語間交換は未評価。,coverage-fpl-run-time.md,21,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:12,FPL,FPL-Run-Time,トピック,未記載,12,クラスロード・スレッド・セキュリティ検査等の VM 機能,部分,787で仮想機械向け中間コードと対応する実行環境の固定模型。実 VM の各機能は未評価。,coverage-fpl-run-time.md,22,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:トピック:未記載:13,FPL,FPL-Run-Time,トピック,未記載,13,サンドボックス,部分,依頼1207で固定 iframe のオリジン設定と親文書へのアクセスを実際に比較。実行環境全般や完全な隔離は未評価。,coverage-fpl-run-time.md,23,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:学習成果:未記載:1,FPL,FPL-Run-Time,学習成果,未記載,1,自動メモリ管理の利点と限界,部分,201・202で到達不能な循環の回収方式を比較。一般的な議論は未評価。,coverage-fpl-run-time.md,29,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:学習成果:未記載:2,FPL,FPL-Run-Time,学習成果,未記載,2,オブジェクトと活性化記録のメタデータの用途,部分,560で戻り先、785で呼出し枠の固定例。実オブジェクトの型情報や自由な説明は未評価。,coverage-fpl-run-time.md,30,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:学習成果:未記載:3,FPL,FPL-Run-Time,学習成果,未記載,3,静的・スタック・ヒープ割当ての比較,部分,785で命令・大域・枠・ヒープを一体で操作。一般の割当て方針は未評価。,coverage-fpl-run-time.md,31,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:学習成果:未記載:4,FPL,FPL-Run-Time,学習成果,未記載,4,復帰時に解放できないデータと回収の必要性,部分,785で枠の復帰後もヒープの宝石が残る。自動回収が必要な理由の一般的な議論は未評価。,coverage-fpl-run-time.md,32,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:学習成果:未記載:5,FPL,FPL-Run-Time,学習成果,未記載,5,JIT・動的再コンパイルの利点・欠点,部分,312で固定費用と回数を比較。実際の最適化や自由な議論は未評価。,coverage-fpl-run-time.md,33,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:学習成果:未記載:6,FPL,FPL-Run-Time,学習成果,未記載,6,移動コードのサンドボックス,部分,依頼1207で固定コードの実行と親文書へのアクセス制限を比較。外部コードの取得・安全性の保証は未評価。,coverage-fpl-run-time.md,34,原典照合結果は監査記録参照・区分を要確認
-FPL-Run-Time:学習成果:未記載:7,FPL,FPL-Run-Time,学習成果,未記載,7,現代の言語実行時システムのサービス,部分,201・202・312・785の個別模型。サービスの全体像や一般的な特定は未評価。,coverage-fpl-run-time.md,35,原典照合結果は監査記録参照・区分を要確認
+FPL-Run-Time:トピック:Non-core:1,FPL,FPL-Run-Time,トピック,Non-core,1,呼出し枠・スタック・ヒープ・復帰位置・引数,部分,560で入れ子の呼出し、785で３枠とヒープ。フレームポインタや実 ABI は未評価。,coverage-fpl-run-time.md,9,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:2,FPL,FPL-Run-Time,トピック,Non-core,2,ハッシュ表によるメソッド探索,部分,依頼1206で名前の衝突・一致・空きによる終了を４マスで操作。実処理系・継承・削除は未評価。,coverage-fpl-run-time.md,10,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:3,FPL,FPL-Run-Time,トピック,Non-core,3,オブジェクトと活性化記録の配置,部分,785で固定の枠と宝石の配置。実際のオブジェクトの配置は未評価。,coverage-fpl-run-time.md,11,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:4,FPL,FPL-Run-Time,トピック,Non-core,4,ヒープへのオブジェクト確保,部分,785で宝石をヒープに確保。一般のアロケータは未評価。,coverage-fpl-run-time.md,12,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:5,FPL,FPL-Run-Time,トピック,Non-core,5,仮想的実体・仮想メソッド表,部分,依頼1204で２種類の実体の表・番号を選び、上書きと継承を比較。実 ABI・多重継承は未評価。,coverage-fpl-run-time.md,13,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:6,FPL,FPL-Run-Time,トピック,Non-core,6,オブジェクト指向プログラムの実行時動作,部分,581で型別呼出し、785で枠とヒープの固定例。実行時実装は未評価。,coverage-fpl-run-time.md,14,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:7,FPL,FPL-Run-Time,トピック,Non-core,7,引数と非局所変数・静的リンクのメモリ確保の比較,部分,依頼1211で内側の引数と外側の変数、静的リンクと呼出し元の鎖を比較。実配置・再帰・自由な説明は未評価。,coverage-fpl-run-time.md,15,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:8,FPL,FPL-Run-Time,トピック,Non-core,8,手動・回収・参照計数・リージョン,部分,201・202で到達可能性と参照計数の循環、785・786で手動解放と再利用。コピー方式や実際の処理系は未評価。,coverage-fpl-run-time.md,16,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:9,FPL,FPL-Run-Time,トピック,Non-core,9,JIT・動的再コンパイル,部分,312で固定回数後の翻訳と費用を比較。動的再コンパイルと実測は未評価。,coverage-fpl-run-time.md,17,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:10,FPL,FPL-Run-Time,トピック,Non-core,10,初期化等の OS とのインターフェース,未照合,対応教材を要照合。,coverage-fpl-run-time.md,18,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:11,FPL,FPL-Run-Time,トピック,Non-core,11,言語間相互運用・引数とデータ表現,部分,831で共通形式の数値交換。実言語の引数渡しや呼出し規約は未評価。,coverage-fpl-run-time.md,19,原典照合結果は監査記録参照・親子重複候補
+FPL-Run-Time:トピック:Non-core:11a,FPL,FPL-Run-Time,トピック,Non-core,11a,バイト順,部分,460・831で２バイトの順序を比較。実機全般は未評価。,coverage-fpl-run-time.md,20,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:11b,FPL,FPL-Run-Time,トピック,Non-core,11b,配列等の複合データ配置,部分,173で行優先・列優先の固定例。言語間交換は未評価。,coverage-fpl-run-time.md,21,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:12,FPL,FPL-Run-Time,トピック,Non-core,12,クラスロード・スレッド・セキュリティ検査等の VM 機能,部分,787で仮想機械向け中間コードと対応する実行環境の固定模型。実 VM の各機能は未評価。,coverage-fpl-run-time.md,22,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:13,FPL,FPL-Run-Time,トピック,Non-core,13,サンドボックス,部分,依頼1207で固定 iframe のオリジン設定と親文書へのアクセスを実際に比較。実行環境全般や完全な隔離は未評価。,coverage-fpl-run-time.md,23,原典照合結果は監査記録参照
+FPL-Run-Time:学習成果:Non-core:1,FPL,FPL-Run-Time,学習成果,Non-core,1,自動メモリ管理の利点と限界,部分,201・202で到達不能な循環の回収方式を比較。一般的な議論は未評価。,coverage-fpl-run-time.md,29,原典照合結果は監査記録参照
+FPL-Run-Time:学習成果:Non-core:2,FPL,FPL-Run-Time,学習成果,Non-core,2,オブジェクトと活性化記録のメタデータの用途,部分,560で戻り先、785で呼出し枠の固定例。実オブジェクトの型情報や自由な説明は未評価。,coverage-fpl-run-time.md,30,原典照合結果は監査記録参照
+FPL-Run-Time:学習成果:Non-core:3,FPL,FPL-Run-Time,学習成果,Non-core,3,静的・スタック・ヒープ割当ての比較,部分,785で命令・大域・枠・ヒープを一体で操作。一般の割当て方針は未評価。,coverage-fpl-run-time.md,31,原典照合結果は監査記録参照
+FPL-Run-Time:学習成果:Non-core:4,FPL,FPL-Run-Time,学習成果,Non-core,4,復帰時に解放できないデータと回収の必要性,部分,785で枠の復帰後もヒープの宝石が残る。自動回収が必要な理由の一般的な議論は未評価。,coverage-fpl-run-time.md,32,原典照合結果は監査記録参照
+FPL-Run-Time:学習成果:Non-core:5,FPL,FPL-Run-Time,学習成果,Non-core,5,JIT・動的再コンパイルの利点・欠点,部分,312で固定費用と回数を比較。実際の最適化や自由な議論は未評価。,coverage-fpl-run-time.md,33,原典照合結果は監査記録参照
+FPL-Run-Time:学習成果:Non-core:6,FPL,FPL-Run-Time,学習成果,Non-core,6,移動コードのサンドボックス,部分,依頼1207で固定コードの実行と親文書へのアクセス制限を比較。外部コードの取得・安全性の保証は未評価。,coverage-fpl-run-time.md,34,原典照合結果は監査記録参照
+FPL-Run-Time:学習成果:Non-core:7,FPL,FPL-Run-Time,学習成果,Non-core,7,現代の言語実行時システムのサービス,部分,201・202・312・785の個別模型。サービスの全体像や一般的な特定は未評価。,coverage-fpl-run-time.md,35,原典照合結果は監査記録参照
 FPL-Scripting:トピック:未記載:1,FPL,FPL-Scripting,トピック,未記載,1,エラー・例外処理,部分,依頼151で失敗と空入力、152で終了状態を比較。一般の例外処理は未評価。,coverage-fpl-scripting.md,9,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:トピック:未記載:2,FPL,FPL-Scripting,トピック,未記載,2,パイプ,部分,151で固定の処理を連結し、152で標準出力・標準エラーと終了状態、出口の変更順を比較。実際の並行実行やファイル書込みは未評価。,coverage-fpl-scripting.md,10,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:トピック:未記載:3・3a,FPL,FPL-Scripting,トピック,未記載,3・3a,システムコマンドと OS との接点,未照合,個別の関連依頼と実コマンドの対応は未確認。,coverage-fpl-scripting.md,11,原典照合結果は監査記録参照・番号を要確認・区分を要確認

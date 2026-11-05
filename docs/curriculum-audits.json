@@ -688,6 +688,22 @@
       "topics": 11,
       "outcomes": 5,
       "scope_sha256": "2811b971a11d68fbc6f1fc1ddd4a720d17b4dd6c6d3a88896b0ad820df124b4f"
+    },
+    "FPL-Code": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-code.md",
+      "topics": 10,
+      "outcomes": 5,
+      "scope_sha256": "c64220dd7dfcc6c6cad073fd052c4c46f3b28e7751710c3d9bb50f2fb50c91a1"
+    },
+    "FPL-Run-Time": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-run-time.md",
+      "topics": 15,
+      "outcomes": 7,
+      "scope_sha256": "10b584e5ecf943ce70139f453810c83e7bea88dafac3487f8f9e456c3f794d44"
     }
   }
 }
