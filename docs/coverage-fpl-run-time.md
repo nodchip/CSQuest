@@ -45,3 +45,5 @@
 依頼1211は [Princeton の静的リンクと呼出し枠](https://www.cs.princeton.edu/courses/archive/spring15/cos320/lectures/05-ActivationRecords-3x1.pdf)を参考に、直接と仲介経由の呼出しで、内側の引数と非局所変数の探索を比較する。呼出し元の鎖による名前探索は動的スコープの比較用模型。`tests/static-link-lab.test.js` は４経路、誤経路と復元を検査する。再帰・クロージャや実メモリ配置は未評価。
 
 依頼382の追加例では、OS がプログラムと引数・環境を用意し、実行時の初期化後にアプリが値を使い終了を返す。記録名２種と言語２種の４条件を扱う固定模型で、動的リンクや実装ごとの起動・終了処理の詳細は扱わない。参考：[GNU C Library の環境](https://sourceware.org/glibc/manual/latest/html_node/Environment-Variables.html)、[Linux execve](https://man7.org/linux/man-pages/man2/execve.2.html)。
+
+依頼382の追加比較では、Linux の execve を参考に同じプロセスのプログラム置換の成功と、対象ファイルが存在しない場合のエラー返却を区別する。fork やすべての障害・実システムの検査は扱わない。参考：[execve(2)](https://man7.org/linux/man-pages/man2/execve.2.html)。
