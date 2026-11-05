@@ -61,4 +61,4 @@
 
 依頼1325の工房では Android 向けに Kotlin・Android Studio、iOS 向けに Swift・Xcode を指定する２例について、ビルド、仮想端末と実機確認の計画を進める。これは指定に沿う模型で、他の言語や道具を排除しない。実コードの作成・実環境の起動・実機試験は行わず、元の依頼の達成条件には含めない。参考：[Android Studio](https://developer.android.com/studio/)、[Apple の iOS 開発](https://developer.apple.com/ios/get-started/)。
 
-依頼1325の仮想入力では、架空の値０・12と閾値10で「暗い」「明るい」を予想し、結果を比較する。実照度や実端末、エミュレーターを使わない。実際の仮想センサーは入力を模擬できるが、実センサーの精度や実環境はこの模型から評価できない。参考：[Android のセンサーと仮想入力](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview)。元の依頼の達成条件には含めない。
+依頼1325の仮想入力では、架空の値０・９・10・12と閾値10で「暗い」「明るい」を予想し、境界の直前と境界自体を比較する。実照度や実端末、エミュレーターを使わない。実際の仮想センサーは入力を模擬できるが、実センサーの精度や実環境はこの模型から評価できない。参考：[Android のセンサーと仮想入力](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview)。元の依頼の達成条件には含めない。
