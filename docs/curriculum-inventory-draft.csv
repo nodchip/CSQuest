@@ -709,18 +709,20 @@ AR-Heterogeneity:学習成果:KA Core:3,AR,AR-Heterogeneity,学習成果,KA Core
 AR-Heterogeneity:学習成果:KA Core:4,AR,AR-Heterogeneity,学習成果,KA Core,4,専用アクセラレータと汎用 CPU の使い分け,部分,163 の架空の費用・仕事量を比較。実測、転送の重なりや準備再利用は未評価。,coverage-ar-heterogeneity.md,29,原典照合結果は監査記録参照
 AR-Heterogeneity:学習成果:KA Core:5,AR,AR-Heterogeneity,学習成果,KA Core,5,ベクトルとスカラの設計原理の違いを列挙,部分,162 は複数データへの操作。実際の設計原理の全体像は未評価。,coverage-ar-heterogeneity.md,30,原典照合結果は監査記録参照
 AR-Heterogeneity:学習成果:KA Core:6,AR,AR-Heterogeneity,学習成果,KA Core,6,メモリ内処理の利点と欠点を列挙,部分,874で記憶の近傍での集計と外部転送量を比較し、費用・整合性・方式の違いを説明。一般の PIM 構成、実測や自由な説明は未評価。,coverage-ar-heterogeneity.md,31,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:1a,AR,AR-IO,トピック,CS Core,1a,ハンドシェイクとバッファ,部分,454 は１枠の有効・受取可能、OS の別の依頼は二重バッファの模型。一般の回路や容量は未評価。,coverage-ar-io.md,9,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:1b,AR,AR-IO,トピック,CS Core,1b,プログラムによる入出力,部分,105 の固定時間のポーリング。実装全般は未評価。,coverage-ar-io.md,10,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:1c,AR,AR-IO,トピック,CS Core,1c,割込み駆動の入出力,部分,105 は１装置の通知・処理・復帰。複数装置と実機は未評価。,coverage-ar-io.md,11,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:2,AR,AR-IO,トピック,CS Core,2,ベクタ、優先順位、割込み応答,部分,105で１通知、984で２通知の待機・優先順位・入口・入れ子と復帰を操作。実際のベクタ配置や応答時間は未評価。,coverage-ar-io.md,12,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:3,AR,AR-IO,トピック,CS Core,3,入出力装置,部分,1018でキーボード・マウス・画面・カメラ・温度センサー・モーターの固定機能を選ぶ。実装置・一般の機能は未評価。,coverage-ar-io.md,13,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:4,AR,AR-IO,トピック,CS Core,4,外部記憶の物理構成と装置,部分,749 の磁気ディスクと SSD、750 の頁・消去ブロックの模型。実機全般は未評価。,coverage-ar-io.md,14,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:5a,AR,AR-IO,トピック,CS Core,5a,バスのプロトコル,部分,454 の有効・受取可能の受渡し。具体的なバス規格や電気的タイミングは未評価。,coverage-ar-io.md,15,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:5b,AR,AR-IO,トピック,CS Core,5b,バス調停,部分,819 で固定優先と巡回優先の４刻を比較。実バスの転送中保持、受付制限、遅延や一般の公平性は未評価。,coverage-ar-io.md,16,原典照合結果は監査記録参照
-AR-IO:トピック:CS Core:5c,AR,AR-IO,トピック,CS Core,5c,DMA,部分,132 で転送と CPU の別作業の重なりを比較。バス競合と実装は未評価。,coverage-ar-io.md,17,原典照合結果は監査記録参照
-AR-IO:学習成果:CS Core:1,AR,AR-IO,学習成果,CS Core,1,割込み制御図を分析し制御・データ転送への利用を説明,部分,105 の単一通知を操作。一般の制御図、転送機構と自由な説明は未評価。,coverage-ar-io.md,23,原典照合結果は監査記録参照
-AR-IO:学習成果:CS Core:2,AR,AR-IO,学習成果,CS Core,2,コンピュータ内の各種バスを列挙,部分,1021でアドレス・データ・制御の役割、1022で I²C・USB・PCIe の固定接続例を区別。各規格の一般的な構成や自由な列挙は未評価。,coverage-ar-io.md,24,原典照合結果は監査記録参照
-AR-IO:学習成果:CS Core:3,AR,AR-IO,学習成果,CS Core,3,磁気ディスクと SSD の利点を比較,部分,749 は位置決め費用の固定例。容量、価格、耐久性や実測は未評価。,coverage-ar-io.md,25,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:1,AR,AR-IO,トピック,CS Core,1,入出力の基礎,部分,454・105で受渡し、ポーリング、割込みの固定例。入出力全般や実装は未評価。,coverage-ar-io.md,9,原典照合結果は監査記録参照・親子重複候補
+AR-IO:トピック:CS Core:1a,AR,AR-IO,トピック,CS Core,1a,ハンドシェイクとバッファ,部分,454 は１枠の有効・受取可能、OS の別の依頼は二重バッファの模型。一般の回路や容量は未評価。,coverage-ar-io.md,10,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:1b,AR,AR-IO,トピック,CS Core,1b,プログラムによる入出力,部分,105 の固定時間のポーリング。実装全般は未評価。,coverage-ar-io.md,11,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:1c,AR,AR-IO,トピック,CS Core,1c,割込み駆動の入出力,部分,105 は１装置の通知・処理・復帰。複数装置と実機は未評価。,coverage-ar-io.md,12,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:2,AR,AR-IO,トピック,CS Core,2,ベクタ、優先順位、割込み応答,部分,105で１通知、984で２通知の待機・優先順位・入口・入れ子と復帰を操作。実際のベクタ配置や応答時間は未評価。,coverage-ar-io.md,13,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:3,AR,AR-IO,トピック,CS Core,3,入出力装置,部分,1018でキーボード・マウス・画面・カメラ・温度センサー・モーターの固定機能を選ぶ。実装置・一般の機能は未評価。,coverage-ar-io.md,14,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:4,AR,AR-IO,トピック,CS Core,4,外部記憶の物理構成と装置,部分,749 の磁気ディスクと SSD、750 の頁・消去ブロックの模型。実機全般は未評価。,coverage-ar-io.md,15,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:5,AR,AR-IO,トピック,CS Core,5,バスの基礎,部分,454・819・132で受渡し、調停、DMAの固定例。一般のバス規格や実装は未評価。,coverage-ar-io.md,16,原典照合結果は監査記録参照・親子重複候補
+AR-IO:トピック:CS Core:5a,AR,AR-IO,トピック,CS Core,5a,バスのプロトコル,部分,454 の有効・受取可能の受渡し。具体的なバス規格や電気的タイミングは未評価。,coverage-ar-io.md,17,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:5b,AR,AR-IO,トピック,CS Core,5b,バス調停,部分,819 で固定優先と巡回優先の４刻を比較。実バスの転送中保持、受付制限、遅延や一般の公平性は未評価。,coverage-ar-io.md,18,原典照合結果は監査記録参照
+AR-IO:トピック:CS Core:5c,AR,AR-IO,トピック,CS Core,5c,DMA,部分,132 で転送と CPU の別作業の重なりを比較。バス競合と実装は未評価。,coverage-ar-io.md,19,原典照合結果は監査記録参照
+AR-IO:学習成果:CS Core:1,AR,AR-IO,学習成果,CS Core,1,割込み制御図を分析し制御・データ転送への利用を説明,部分,105 の単一通知を操作。一般の制御図、転送機構と自由な説明は未評価。,coverage-ar-io.md,25,原典照合結果は監査記録参照
+AR-IO:学習成果:CS Core:2,AR,AR-IO,学習成果,CS Core,2,コンピュータ内の各種バスを列挙,部分,1021でアドレス・データ・制御の役割、1022で I²C・USB・PCIe の固定接続例を区別。各規格の一般的な構成や自由な列挙は未評価。,coverage-ar-io.md,26,原典照合結果は監査記録参照
+AR-IO:学習成果:CS Core:3,AR,AR-IO,学習成果,CS Core,3,磁気ディスクと SSD の利点を比較,部分,749 は位置決め費用の固定例。容量、価格、耐久性や実測は未評価。,coverage-ar-io.md,27,原典照合結果は監査記録参照
 AR-Logic:トピック:未記載:1（比較・FPGA）,AR,AR-Logic,トピック,未記載,1（比較・FPGA）,組合せ論理・順序論理と FPGA,部分,06・37で組合せ回路、265〜267で記憶とカウンター、923で設定可能な LUT の固定模型を操作。実 FPGA と一般の回路比較は未評価。,coverage-ar-logic.md,9,原典照合結果は監査記録参照・番号を要確認・区分を要確認
 AR-Logic:トピック:未記載:1a,AR,AR-Logic,トピック,未記載,1a,基本的な組合せ回路,部分,06で論理回路、37で加算器を操作。一般の回路設計は未評価。,coverage-ar-logic.md,10,原典照合結果は監査記録参照・区分を要確認
 AR-Logic:トピック:未記載:1b,AR,AR-Logic,トピック,未記載,1b,順序論理の基本要素,部分,265〜267でフリップフロップ、シフトと同期カウンターを操作。実回路や一般の設計は未評価。,coverage-ar-logic.md,11,原典照合結果は監査記録参照・区分を要確認
@@ -759,15 +761,16 @@ AR-Memory:学習成果:CS Core:2,AR,AR-Memory,学習成果,CS Core,2,メモリ�
 AR-Memory:学習成果:CS Core:3,AR,AR-Memory,学習成果,CS Core,3,仮想記憶管理の機能を列挙,部分,40 の固定変換。管理機能の一般的な列挙は未評価。,coverage-ar-memory.md,31,原典照合結果は監査記録参照
 AR-Memory:学習成果:CS Core:4,AR,AR-Memory,学習成果,CS Core,4,複数構成・命令とデータの参照混合で平均アクセス時間を計算,部分,103 は単一キャッシュの４例。複数構成一般と混合参照は未評価。,coverage-ar-memory.md,32,原典照合結果は監査記録参照
 AR-Organization:トピック:KA Core:1,AR,AR-Organization,トピック,KA Core,1,単純なデータパスとパイプライン、ハザード検出・解決,部分,158 で１つの依存と待機・転送を比較。一般の設計や他のハザードは未評価。,coverage-ar-organization.md,9,原典照合結果は監査記録参照
-AR-Organization:トピック:KA Core:2a,AR,AR-Organization,トピック,KA Core,2a,固定回路による制御,部分,1033で命令と刻から制御信号を生成する固定規則の模型。実際の論理回路の設計は未評価。,coverage-ar-organization.md,10,原典照合結果は監査記録参照
-AR-Organization:トピック:KA Core:2b,AR,AR-Organization,トピック,KA Core,2b,マイクロプログラムによる制御,部分,1033で２刻の制御札を読み、同じ計算路を動かす模型。分岐や一般のマイクロ命令は未評価。,coverage-ar-organization.md,11,原典照合結果は監査記録参照
-AR-Organization:トピック:KA Core:3,AR,AR-Organization,トピック,KA Core,3,命令パイプライン,部分,158 は３段階の固定例。一般の段階構成や分岐は未評価。,coverage-ar-organization.md,12,原典照合結果は監査記録参照
-AR-Organization:トピック:KA Core:4,AR,AR-Organization,トピック,KA Core,4,命令レベル並列性の導入,部分,158で命令の段階を重ね、1233で依存を守り独立命令を先に開始。一般の並列性と制約は未評価。,coverage-ar-organization.md,13,原典照合結果は監査記録参照
-AR-Organization:学習成果:KA Core:1,AR,AR-Organization,学習成果,KA Core,1,データパスの代替実装を比較,部分,158 は待機と転送の固定例。実機の構成一般は未評価。,coverage-ar-organization.md,19,原典照合結果は監査記録参照
-AR-Organization:学習成果:KA Core:2,AR,AR-Organization,学習成果,KA Core,2,加算の制御信号を固定回路とマイクロプログラムで作る,部分,1033で両方式の規則に従い２刻の信号を選択。回路やマイクロプログラムの自由な設計は直接評価しない。,coverage-ar-organization.md,20,原典照合結果は監査記録参照
-AR-Organization:学習成果:KA Core:3,AR,AR-Organization,学習成果,KA Core,3,パイプラインとハザードにより命令レベル並列性を論じる,部分,158 は１つのデータ依存。一般のハザードと自由な説明は未評価。,coverage-ar-organization.md,21,原典照合結果は監査記録参照
-AR-Organization:学習成果:KA Core:4,AR,AR-Organization,学習成果,KA Core,4,データパスと制御を含むプロセッサを設計,部分,1229で４命令の制御、1230で命令別の制御表と命令列、1231で PC・分岐を別々の模型として操作。統合した回路、一般の構成や自由な設計は未評価。,coverage-ar-organization.md,22,原典照合結果は監査記録参照
-AR-Organization:学習成果:KA Core:5,AR,AR-Organization,学習成果,KA Core,5,所定のプロセッサ・メモリ系の平均 CPI を計算,部分,1232で３装置の10命令とキャッシュ待機を合計し平均を選択。一般の命令列、重なる待機や自由な計算は未評価。,coverage-ar-organization.md,23,原典照合結果は監査記録参照
+AR-Organization:トピック:KA Core:2,AR,AR-Organization,トピック,KA Core,2,制御装置,部分,1033で固定回路とマイクロプログラムの２刻の信号を比較。一般の制御装置設計は未評価。,coverage-ar-organization.md,10,原典照合結果は監査記録参照・親子重複候補
+AR-Organization:トピック:KA Core:2a,AR,AR-Organization,トピック,KA Core,2a,固定回路による制御,部分,1033で命令と刻から制御信号を生成する固定規則の模型。実際の論理回路の設計は未評価。,coverage-ar-organization.md,11,原典照合結果は監査記録参照
+AR-Organization:トピック:KA Core:2b,AR,AR-Organization,トピック,KA Core,2b,マイクロプログラムによる制御,部分,1033で２刻の制御札を読み、同じ計算路を動かす模型。分岐や一般のマイクロ命令は未評価。,coverage-ar-organization.md,12,原典照合結果は監査記録参照
+AR-Organization:トピック:KA Core:3,AR,AR-Organization,トピック,KA Core,3,命令パイプライン,部分,158 は３段階の固定例。一般の段階構成や分岐は未評価。,coverage-ar-organization.md,13,原典照合結果は監査記録参照
+AR-Organization:トピック:KA Core:4,AR,AR-Organization,トピック,KA Core,4,命令レベル並列性の導入,部分,158で命令の段階を重ね、1233で依存を守り独立命令を先に開始。一般の並列性と制約は未評価。,coverage-ar-organization.md,14,原典照合結果は監査記録参照
+AR-Organization:学習成果:KA Core:1,AR,AR-Organization,学習成果,KA Core,1,データパスの代替実装を比較,部分,158 は待機と転送の固定例。実機の構成一般は未評価。,coverage-ar-organization.md,20,原典照合結果は監査記録参照
+AR-Organization:学習成果:KA Core:2,AR,AR-Organization,学習成果,KA Core,2,加算の制御信号を固定回路とマイクロプログラムで作る,部分,1033で両方式の規則に従い２刻の信号を選択。回路やマイクロプログラムの自由な設計は直接評価しない。,coverage-ar-organization.md,21,原典照合結果は監査記録参照
+AR-Organization:学習成果:KA Core:3,AR,AR-Organization,学習成果,KA Core,3,パイプラインとハザードにより命令レベル並列性を論じる,部分,158 は１つのデータ依存。一般のハザードと自由な説明は未評価。,coverage-ar-organization.md,22,原典照合結果は監査記録参照
+AR-Organization:学習成果:KA Core:4,AR,AR-Organization,学習成果,KA Core,4,データパスと制御を含むプロセッサを設計,部分,1229で４命令の制御、1230で命令別の制御表と命令列、1231で PC・分岐を別々の模型として操作。統合した回路、一般の構成や自由な設計は未評価。,coverage-ar-organization.md,23,原典照合結果は監査記録参照
+AR-Organization:学習成果:KA Core:5,AR,AR-Organization,学習成果,KA Core,5,所定のプロセッサ・メモリ系の平均 CPI を計算,部分,1232で３装置の10命令とキャッシュ待機を合計し平均を選択。一般の命令列、重なる待機や自由な計算は未評価。,coverage-ar-organization.md,24,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:1,AR,AR-Performance-Energy,トピック,KA Core,1,性能、電力、記憶、通信の費用の評価,部分,161 は架空の所要時間・平均電力・エネルギー。記憶・通信や実測は未評価。,coverage-ar-performance-energy.md,9,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:2,AR,AR-Performance-Energy,トピック,KA Core,2,分岐予測、投機、順序外実行、Tomasulo 法,部分,159・160は予測と投機結果、1233は順序外開始、1234は結果の札と依存の固定例。Tomasulo 法全体や実機は未評価。,coverage-ar-performance-energy.md,10,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:3,AR,AR-Performance-Energy,トピック,KA Core,3,ベクトルプロセッサと GPU の改良,部分,1085で４読み取りと32バイト区画のまとまりを比較。実 GPU の実行・性能や他の改良は未評価。,coverage-ar-performance-energy.md,11,原典照合結果は監査記録参照

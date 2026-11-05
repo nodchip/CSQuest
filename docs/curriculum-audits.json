@@ -424,6 +424,22 @@
       "topics": 10,
       "outcomes": 8,
       "scope_sha256": "384477840bf5cd98cbd54445403ca80de32088a8e7ad1662e04ea2257a850ab5"
+    },
+    "AR-IO": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-io.md",
+      "topics": 11,
+      "outcomes": 3,
+      "scope_sha256": "87f8b9e31e34fea807447b7f36c11685a2fcce960ec9c99bbd7b280c6332e740"
+    },
+    "AR-Organization": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-organization.md",
+      "topics": 6,
+      "outcomes": 5,
+      "scope_sha256": "2e4bb7ac81a9a9895f20e5ffec0c455f2d314d7d713b1866bc5157dad8c9dabb"
     }
   }
 }
