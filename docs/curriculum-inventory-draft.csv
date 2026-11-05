@@ -1160,7 +1160,7 @@ FPL-Abstraction:トピック:Non-core:15,FPL,FPL-Abstraction,トピック,Non-co
 FPL-Abstraction:トピック:Non-core:16,FPL,FPL-Abstraction,トピック,Non-core,16,ラムダ計算、束縛と名前の変更,部分,283で固定の α・β 変換、591で捕捉環境。一般の変換は未評価。,coverage-fpl-abstraction.md,26,原典照合結果は監査記録参照
 FPL-Abstraction:トピック:Non-core:17,FPL,FPL-Abstraction,トピック,Non-core,17,意味論の種類、抽象・具体構文木,部分,771で操作的・表示的・公理的な見方、75で式の木。振る舞い意味論と具体構文木との一般の比較は未評価。,coverage-fpl-abstraction.md,27,原典照合結果は監査記録参照
 FPL-Abstraction:学習成果:KA Core:1,FPL,FPL-Abstraction,学習成果,KA Core,1,変数のスコープと可視性を例示,部分,308・791でスコープや名前の隠蔽。一般の説明は未評価。,coverage-fpl-abstraction.md,33,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:2,FPL,FPL-Abstraction,学習成果,KA Core,2,複数の引数渡しを例示,部分,306で値の写しと参照。一般の方式は未評価。,coverage-fpl-abstraction.md,34,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:2,FPL,FPL-Abstraction,学習成果,KA Core,2,複数の引数渡しを例示,部分,306で値・参照・値結果と同じ箱の扱い。一般の方式や実言語は未評価。,coverage-fpl-abstraction.md,34,原典照合結果は監査記録参照
 FPL-Abstraction:学習成果:KA Core:3,FPL,FPL-Abstraction,学習成果,KA Core,3,大域・非局所変数の副作用と修正,部分,307で共有箱と明示入力を比較。一般の修正・自由記述は未評価。,coverage-fpl-abstraction.md,35,原典照合結果は監査記録参照
 FPL-Abstraction:学習成果:KA Core:4,FPL,FPL-Abstraction,学習成果,KA Core,4,プログラムを処理するプログラムの入力,部分,311・315で巻物を入力とする翻訳と検査。一般の説明は未評価。,coverage-fpl-abstraction.md,36,原典照合結果は監査記録参照
 FPL-Abstraction:学習成果:KA Core:5,FPL,FPL-Abstraction,学習成果,KA Core,5,小言語の文法と抽象構文木,部分,75・309・788で固定の式・規則。任意の文法や木の説明は未評価。,coverage-fpl-abstraction.md,37,原典照合結果は監査記録参照
@@ -1460,7 +1460,7 @@ FPL-Semantics:トピック:Non-core:4b,FPL,FPL-Semantics,トピック,Non-core,4
 FPL-Semantics:トピック:Non-core:4c,FPL,FPL-Semantics,トピック,Non-core,4c,注釈と拡張静的検査の枠組み,部分,510で空を許す注釈と条件分岐による検査を比較。実際の検査器や一般の注釈は未評価。,coverage-fpl-semantics.md,15,原典照合結果は監査記録参照
 FPL-Semantics:トピック:Non-core:5,FPL,FPL-Semantics,トピック,Non-core,5,左辺値と右辺値,部分,306の値と箱への参照、791の名前・場所・値の固定例。左辺値と右辺値の一般的な区別は未評価。,coverage-fpl-semantics.md,16,原典照合結果は監査記録参照
 FPL-Semantics:トピック:Non-core:6,FPL,FPL-Semantics,トピック,Non-core,6,呼出しの意味,部分,199・306で値を写す呼出しと参照の固定例。言語ごとの意味は未評価。,coverage-fpl-semantics.md,17,原典照合結果は監査記録参照
-FPL-Semantics:トピック:Non-core:7,FPL,FPL-Semantics,トピック,Non-core,7,値・参照・値結果・名前・必要呼び等,部分,306で値と参照、326・327で値・名前・必要呼びを比較。値結果呼びと実言語の詳細は未評価。,coverage-fpl-semantics.md,18,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:7,FPL,FPL-Semantics,トピック,Non-core,7,値・参照・値結果・名前・必要呼び等,部分,306で値・参照・値結果渡し、326・327で値・名前・必要呼びを比較。正常終了の固定例で、実言語の詳細は未評価。,coverage-fpl-semantics.md,18,原典照合結果は監査記録参照
 FPL-Semantics:トピック:Non-core:8,FPL,FPL-Semantics,トピック,Non-core,8,属性文法等による宣言的な仕様,部分,315で型の合成属性と名前の環境の継承属性を操作。一般の属性文法は未評価。,coverage-fpl-semantics.md,19,原典照合結果は監査記録参照
 FPL-Semantics:学習成果:Non-core:1,FPL,FPL-Semantics,学習成果,Non-core,1,小さな言語の抽象構文木を描く,部分,75で固定された算術式の木を組む。任意の言語の木を描く能力は未評価。,coverage-fpl-semantics.md,25,原典照合結果は監査記録参照
 FPL-Semantics:学習成果:Non-core:2,FPL,FPL-Semantics,学習成果,Non-core,2,型検査や識別子の宣言位置への束縛解決などの文脈依存の静的解析を実装,部分,315で固定の式の型確認、308でスコープの模型を操作。解析器の実装は直接評価しない。,coverage-fpl-semantics.md,26,原典照合結果は監査記録参照
