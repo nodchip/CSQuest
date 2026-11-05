@@ -532,6 +532,34 @@
         "src/game-playtest.js": "6802af141df4ffdadf379bcbcea58dc021efc3189abccb7c90e27795ff9ec3a7",
         "tests/game-playtest.test.js": "3b34c9c976896cc18f26d5a059f45573ba439bef49b4b33fab4b1ef06100219b"
       }
+    },
+    "SPD-Mobile:トピック:KA Core:1a": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-mobile-toolchain.md",
+      "row_sha256": "94e3b75e2ff73e40fdcb83302e65870dbc3259c10430df25c9c2ef2d4fe195ec",
+      "files": {
+        "src/app.js": "044a1093f12c829c2b0190a21eb94616ded4341ea8f1b5cda70c825ef0d0c21f",
+        "src/mobile-platform-choice.js": "b49b7eb91cc4b852358102ba182c2f04d7369fa0ded2b06e1ddc99f5312b3c2d",
+        "src/mobile-toolchain.js": "fb8d9545f098d545f35b00d1d4ebc2441be8fe3dfc02ba49110f417136ad5e62",
+        "src/mobile-virtual-sensor.js": "b1cd756962460f1b8900d0e6f73f1144e27b044b31f7b6a6665f0cde28feb02f",
+        "tests/mobile-toolchain.test.js": "14f7ae63939af6f0a579ee9e78b536cadbae6e0516d4f9deaf15b5ca6b84c8b5",
+        "tests/mobile-virtual-sensor.test.js": "74efc1309f687434c204eca1f3774c8cf9d626a4ef4a8fdfc9ad6bac9d29f0b1"
+      }
+    },
+    "SPD-Mobile:トピック:KA Core:1b": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-mobile-toolchain.md",
+      "row_sha256": "f70b58d9718afa08924dbdb3aecd28c9df39621aa2e06e6cafdc1f080ecc046d",
+      "files": {
+        "src/app.js": "044a1093f12c829c2b0190a21eb94616ded4341ea8f1b5cda70c825ef0d0c21f",
+        "src/mobile-platform-choice.js": "b49b7eb91cc4b852358102ba182c2f04d7369fa0ded2b06e1ddc99f5312b3c2d",
+        "src/mobile-toolchain.js": "fb8d9545f098d545f35b00d1d4ebc2441be8fe3dfc02ba49110f417136ad5e62",
+        "src/mobile-virtual-sensor.js": "b1cd756962460f1b8900d0e6f73f1144e27b044b31f7b6a6665f0cde28feb02f",
+        "tests/mobile-toolchain.test.js": "14f7ae63939af6f0a579ee9e78b536cadbae6e0516d4f9deaf15b5ca6b84c8b5",
+        "tests/mobile-virtual-sensor.test.js": "74efc1309f687434c204eca1f3774c8cf9d626a4ef4a8fdfc9ad6bac9d29f0b1"
+      }
     }
   }
 }
