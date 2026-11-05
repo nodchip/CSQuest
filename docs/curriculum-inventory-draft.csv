@@ -1226,7 +1226,7 @@ FPL-Design:トピック:Non-core:1b,FPL,FPL-Design,トピック,Non-core,1b,セ�
 FPL-Design:トピック:Non-core:1c,FPL,FPL-Design,トピック,Non-core,1c,翻訳の速さ,部分,1223 で翻訳の一時費用と利用回数の架空の固定例を比較。実コンパイラの翻訳時間や言語全体は未評価。,coverage-fpl-design.md,11,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:1d,FPL,FPL-Design,トピック,Non-core,1d,生成コードの効率,部分,1223 で同じ結果を返す２候補の翻訳・実行費用を比較。実機の性能、一般の入力や最適化は未評価。,coverage-fpl-design.md,12,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:1e,FPL,FPL-Design,トピック,Non-core,1e,直交性,部分,355 で２種類の値と２場面の組合せを比較。一般の構成要素や意味の一貫性は未評価。,coverage-fpl-design.md,13,原典照合結果は監査記録参照
-FPL-Design:トピック:Non-core:1f,FPL,FPL-Design,トピック,Non-core,1f,可読性,未照合,言語設計の評価に相当する教材を要照合。,coverage-fpl-design.md,14,原典照合結果は監査記録参照
+FPL-Design:トピック:Non-core:1f,FPL,FPL-Design,トピック,Non-core,1f,可読性,部分,355 で日本語の名前と記号の意味を説明の有無で比較。利用者の実測や実言語全体の評価は未実施。,coverage-fpl-design.md,14,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:1g,FPL,FPL-Design,トピック,Non-core,1g,完全性,未照合,対応教材を要照合。,coverage-fpl-design.md,15,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:1h,FPL,FPL-Design,トピック,Non-core,1h,実装戦略,部分,355 は組合せ増加の複雑さに触れる。実装戦略の比較は未評価。,coverage-fpl-design.md,16,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:2,FPL,FPL-Design,トピック,Non-core,2,特定領域・問題に適合する言語設計,部分,1245で薬草と村を指定する配達用命令と細かい操作を比較。言語の独立した設計や一般の評価は未検証。,coverage-fpl-design.md,17,原典照合結果は監査記録参照
