@@ -440,6 +440,22 @@
       "topics": 6,
       "outcomes": 5,
       "scope_sha256": "2e4bb7ac81a9a9895f20e5ffec0c455f2d314d7d713b1866bc5157dad8c9dabb"
+    },
+    "AI-Agents": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-agents.md",
+      "topics": 29,
+      "outcomes": 5,
+      "scope_sha256": "0cc396ce1d749c133bc1ef839061e2905e19015a5c982abd76288a21442f0916"
+    },
+    "AI-NLP": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-nlp.md",
+      "topics": 26,
+      "outcomes": 6,
+      "scope_sha256": "739896be011e0869026a225d5d0e814f89fe65d5d52d8117b927a95dc1affd43"
     }
   }
 }
