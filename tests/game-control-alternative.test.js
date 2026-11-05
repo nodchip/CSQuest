@@ -5,7 +5,7 @@ import {createCaptions,restoreCaptions} from '../src/game-captions.js';
 
 test('one-at-a-time input blocks the chord but allows a sequential alternative',()=>{
  const chord=controlReplay('chord','one',['a','b','a','b']);
- assert.equal(chord.activated,false);assert.deepEqual(chord.down,['b']);
+ assert.equal(chord.activated,false);assert.equal(chord.blocked,true);assert.deepEqual(chord.down,['b']);
  assert.equal(controlReplay('chord','two',['a','b']).activated,true);
  assert.equal(controlReplay('sequence','one',['a','a','b']).activated,true);
  assert.equal(controlReplay('sequence','one',['b','b','a']).activated,false);
@@ -16,6 +16,10 @@ test('control history is copied and old caption drafts retain their previous ans
  const restored=restoreCaptions(old);assert.deepEqual(restored.control,createControlTrial());assert.equal(restored.choices.generic.bridge.checked,true);
  const saved={scheme:'sequence',limit:'one',history:['a','a']},copy=restoreControlTrial(saved);saved.history.push('b');assert.deepEqual(copy.history,['a','a']);
  assert.equal(restoreCaptions({...old,control:copy}).control.history.length,2);
+ const prior={scheme:'sequence',limit:'one',history:['a','a']};assert.deepEqual(restoreControlTrial(prior).observed,{chord:false,sequence:false});
+ const compared=restoreControlTrial({...prior,observed:{chord:true,sequence:true},answer:'sequence',checked:true});assert.equal(compared.checked,true);
+ assert.throws(()=>restoreControlTrial({...prior,observed:{chord:true,sequence:false},answer:'sequence',checked:true}));
+ assert.throws(()=>restoreControlTrial({...prior,observed:{chord:true,sequence:true},answer:null,checked:true}));
  assert.throws(()=>restoreControlTrial({scheme:'bad',limit:'one',history:[]}));
  assert.throws(()=>restoreControlTrial({scheme:'chord',limit:'one',history:['bad']}));
  assert.throws(()=>controlReplay('chord','one',Array(41).fill('a')));
