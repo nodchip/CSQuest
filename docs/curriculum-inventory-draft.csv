@@ -2090,11 +2090,11 @@ HCI-User:トピック:KA Core:3,HCI,HCI-User,トピック,KA Core,3,利用者の
 HCI-User:トピック:KA Core:3a,HCI,HCI-User,トピック,KA Core,3a,身体的能力と設計,部分,22・188で色以外の手がかりや座って使う場面を扱う。人の身体能力全般は未評価。,coverage-hci-user.md,26,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:3b,HCI,HCI-User,トピック,KA Core,3b,注意・知覚・記憶等の認知モデル,部分,966で準備時間を含む簡略 KLM、967で中断後の進捗表示と作業物を手がかりにした再開を比較。注意・知覚・記憶全体や実際の認知能力は未評価。,coverage-hci-user.md,27,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:3c,HCI,HCI-User,トピック,KA Core,3c,社会・行動心理と認知バイアス,部分,289 で初期値による選択割合の架空例を比較。実際の効果や心理学全般は未評価。,coverage-hci-user.md,28,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4,HCI,HCI-User,トピック,KA Core,4,多様な利用者集団向け設計,部分,利用条件・国際化・評価・ユニバーサルデザインは子を参照。他文化向けの固定例は子を参照。異文化設計は未照合。,coverage-hci-user.md,29,原典照合結果は監査記録参照・親子重複候補
+HCI-User:トピック:KA Core:4,HCI,HCI-User,トピック,KA Core,4,多様な利用者集団向け設計,部分,利用条件・国際化・評価・ユニバーサルデザインは子を参照。他文化・異文化向けの固定例は子を参照。,coverage-hci-user.md,29,原典照合結果は監査記録参照・親子重複候補
 HCI-User:トピック:KA Core:4a,HCI,HCI-User,トピック,KA Core,4a,利用者の違いと経験・ニーズ,部分,22・188で異なる利用条件を扱う。人々の違い全般は未評価。,coverage-hci-user.md,30,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:4b,HCI,HCI-User,トピック,KA Core,4b,国際化,部分,962で同じ瞬間の３表示方法・３時間帯と日付の曖昧さを比較。963で2024年のニューヨークの夏時間境界と東京の通常日を比較。翻訳、他の暦・言語・文化や他の時間帯・年の規則は未評価。,coverage-hci-user.md,31,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:4c,HCI,HCI-User,トピック,KA Core,4c,他文化の利用者向け設計,部分,1132 で３人に希望言語・時間帯を聞き、同じ場所でも言語の希望が異なる例を扱う。文化全般や実利用者は未評価。,coverage-hci-user.md,32,原典照合結果は監査記録参照
-HCI-User:トピック:KA Core:4d,HCI,HCI-User,トピック,KA Core,4d,異文化間の設計,未照合,対応する依頼は未確認。,coverage-hci-user.md,33,原典照合結果は監査記録参照
+HCI-User:トピック:KA Core:4d,HCI,HCI-User,トピック,KA Core,4d,異文化間の設計,部分,1132 で異なる受け取り方の架空の旅人２人と記号・説明を比較。実際の異文化調査や共同設計は未評価。,coverage-hci-user.md,33,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:4e,HCI,HCI-User,トピック,KA Core,4e,標本・一般化・障害経験など評価の課題,部分,188で架空の調査は代表性を示さないと説明。実際の標本設計や一般化は未評価。,coverage-hci-user.md,34,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:4f,HCI,HCI-User,トピック,KA Core,4f,ユニバーサルデザイン,部分,22で異なる利用条件への工夫を操作。原則全体と参加型設計は未評価。,coverage-hci-user.md,35,原典照合結果は監査記録参照
 HCI-User:トピック:KA Core:5,HCI,HCI-User,トピック,KA Core,5,協働とコミュニケーション,部分,同期・非同期通信、連絡網、協働の固定例は子を参照。社会的調整・仮想世界は固定例に限る。,coverage-hci-user.md,36,原典照合結果は監査記録参照・親子重複候補
