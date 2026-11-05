@@ -1894,36 +1894,46 @@ GIT-Visualization:学習成果:KA Core:4,GIT,GIT-Visualization,学習成果,KA C
 GIT-Visualization:学習成果:KA Core:5,GIT,GIT-Visualization,学習成果,KA Core,5,目的に対する可視化の有効性を分析,部分,111で棒の長さと軸範囲を比較。一般の課題や利用者による検証は未評価。,coverage-git-visualization.md,43,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:6,GIT,GIT-Visualization,学習成果,KA Core,6,可視化の有用性を評価する手順を設計,部分,60で収穫の図を比較する課題・参加者・記録・順序・同意・結果の扱いを選択。自由な計画や実利用者の評価は未評価。,coverage-git-visualization.md,44,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:7,GIT,GIT-Visualization,学習成果,KA Core,7,科学・医療・数学・流れ・空間分析の応用例を特定,部分,1162で５目的に合う表示を選択。実データ、幅広い応用や自由な説明は未評価。,coverage-git-visualization.md,45,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:CS Core:1a,HCI,HCI-Accessibility,トピック,CS Core,1a,社会的・法的支援と義務,部分,1114で日本の障害者差別解消法と事業者の合理的配慮、対話を紹介。法域全般や個別の法的判断は未評価。,coverage-hci-accessibility.md,9,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:CS Core:1b,HCI,HCI-Accessibility,トピック,CS Core,1b,アクセシブルな設計の広い利益,部分,575 で複数条件への効用を検討。一般的な利益は未評価。,coverage-hci-accessibility.md,10,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:CS Core:2a,HCI,HCI-Accessibility,トピック,CS Core,2a,アクセシビリティ標準,部分,394・575 は WCAG の一部を参照。適合判定全体ではない。,coverage-hci-accessibility.md,11,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:CS Core:3a,HCI,HCI-Accessibility,トピック,CS Core,3a,包括的開発を支える機能・製品,部分,22 で読み上げ・キーボード、117 で字幕を模型化。実機や開発支援製品は未評価。,coverage-hci-accessibility.md,12,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:CS Core:4a,HCI,HCI-Accessibility,トピック,CS Core,4a,違いの認識,部分,22・575・793 で異なる条件と参加を扱う。枠組み全般は未評価。,coverage-hci-accessibility.md,13,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:CS Core:5,HCI,HCI-Accessibility,トピック,CS Core,5,ユニバーサルデザイン,部分,575 で一つの改善の広がりを考える。原則全般は未評価。,coverage-hci-accessibility.md,14,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:6a,HCI,HCI-Accessibility,トピック,KA Core,6a,永続・一時・状況的な障害,部分,575 は一時的なけがと状況に触れる。多様な経験の全体は未評価。,coverage-hci-accessibility.md,15,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:6b,HCI,HCI-Accessibility,トピック,KA Core,6b,障害の国際的観点,未照合,国・文化別の検討が必要。,coverage-hci-accessibility.md,16,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:6c,HCI,HCI-Accessibility,トピック,KA Core,6c,障害者への態度,未照合,態度や偏見の検討が必要。,coverage-hci-accessibility.md,17,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:7a,HCI,HCI-Accessibility,トピック,KA Core,7a,UX 設計と調査,部分,793 は架空の利用者の障壁を観察し、試作品を修正して再評価。実際の調査は行わない。,coverage-hci-accessibility.md,18,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:7b,HCI,HCI-Accessibility,トピック,KA Core,7b,包括性を可能にする開発実践,部分,575 のフォーカス操作と 793 の試作品・評価。一般の開発実践は未評価。,coverage-hci-accessibility.md,19,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:8a,HCI,HCI-Accessibility,トピック,KA Core,8a,読み上げ等を可能にする技術,部分,22・575 は操作名の固定模型。実際の支援技術は未検証。,coverage-hci-accessibility.md,20,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:9a,HCI,HCI-Accessibility,トピック,KA Core,9a,参加型設計等のプロセス,部分,793 は早期参加、障壁の修正と再評価の架空例。実際の協働は未評価。,coverage-hci-accessibility.md,21,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:KA Core:9b,HCI,HCI-Accessibility,トピック,KA Core,9b,広い影響を考えた設計,部分,575 は複数条件への利益を検討。影響全般は未評価。,coverage-hci-accessibility.md,22,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:Non-core:10a,HCI,HCI-Accessibility,トピック,Non-core,10a,思い込みの問い直し,部分,793 は一人の経験の一般化を避ける固定例。体系的な検討は未評価。,coverage-hci-accessibility.md,23,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:Non-core:10b,HCI,HCI-Accessibility,トピック,Non-core,10b,障害学,未照合,理論と当事者の観点の照合が必要。,coverage-hci-accessibility.md,24,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:Non-core:11,HCI,HCI-Accessibility,トピック,Non-core,11,包摂の投資対効果,未照合,費用と利益の検討が必要。,coverage-hci-accessibility.md,25,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:Non-core:12,HCI,HCI-Accessibility,トピック,Non-core,12,利用者に配慮した包括的設計,未照合,枠組みとの照合が必要。,coverage-hci-accessibility.md,26,原典照合結果は監査記録参照
-HCI-Accessibility:トピック:Non-core:13,HCI,HCI-Accessibility,トピック,Non-core,13,HCI の批判的アプローチ,未照合,包摂などを含む批判的検討が必要。,coverage-hci-accessibility.md,27,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:CS Core:1,HCI,HCI-Accessibility,学習成果,CS Core,1,障壁と対応する支援技術の特定,部分,22 の３条件は固定例。障壁や技術全般は未評価。,coverage-hci-accessibility.md,33,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:CS Core:2,HCI,HCI-Accessibility,学習成果,CS Core,2,包括的設計の適切な方法を識別,部分,793 で参加と反復を選ぶ。能力に基づく設計等の比較は未評価。,coverage-hci-accessibility.md,34,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:CS Core:3,HCI,HCI-Accessibility,学習成果,CS Core,3,ソフトウェア指針の理解,部分,575 は操作名とフォーカスの指針に触れる。指針全体は未評価。,coverage-hci-accessibility.md,35,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:CS Core:4,HCI,HCI-Accessibility,学習成果,CS Core,4,関係法令・規制の認識,部分,1114で日本の改正障害者差別解消法を紹介。その他の法域・業種別指針や個別の適用は未評価。,coverage-hci-accessibility.md,36,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:KA Core:5,HCI,HCI-Accessibility,学習成果,KA Core,5,枠組みを用いた視覚・音声・タッチ UI 設計,部分,117 は字幕の固定例。各 UI の一般的設計は未評価。,coverage-hci-accessibility.md,37,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:KA Core:6,HCI,HCI-Accessibility,学習成果,KA Core,6,関係法令・規制の理解,未照合,法制度の内容と適用の検討が必要。,coverage-hci-accessibility.md,38,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:KA Core:7,HCI,HCI-Accessibility,学習成果,KA Core,7,多様な人と適切に交流する技能,未照合,実際の交流の評価が必要。,coverage-hci-accessibility.md,39,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:KA Core:8,HCI,HCI-Accessibility,学習成果,KA Core,8,現行標準によるウェブ・アプリ分析,部分,575 の限定模型に手がかり。実サイト・アプリの総合評価は未評価。,coverage-hci-accessibility.md,40,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:Non-core:9a,HCI,HCI-Accessibility,学習成果,Non-core,9a,技術設計への偏りの実例,未照合,障害・人種・性別を含む歴史的事例の検討が必要。,coverage-hci-accessibility.md,41,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:Non-core:9b,HCI,HCI-Accessibility,学習成果,Non-core,9b,その経験から設計への教訓,未照合,個別事例からの考察が必要。,coverage-hci-accessibility.md,42,原典照合結果は監査記録参照
-HCI-Accessibility:学習成果:Non-core:10,HCI,HCI-Accessibility,学習成果,Non-core,10,ニーズ調査の構想,部分,793 は参加の時期と方法を選ぶ。調査計画の作成や実施は評価しない。,coverage-hci-accessibility.md,43,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:CS Core:1,HCI,HCI-Accessibility,トピック,CS Core,1,アクセシビリティの背景,部分,社会的・法的支援と広い利益の固定例は子を参照。背景全般は未評価。,coverage-hci-accessibility.md,9,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:CS Core:1a,HCI,HCI-Accessibility,トピック,CS Core,1a,社会的・法的支援と義務,部分,1114で日本の障害者差別解消法と事業者の合理的配慮、対話を紹介。法域全般や個別の法的判断は未評価。,coverage-hci-accessibility.md,10,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:CS Core:1b,HCI,HCI-Accessibility,トピック,CS Core,1b,アクセシブルな設計の広い利益,部分,575 で複数条件への効用を検討。一般的な利益は未評価。,coverage-hci-accessibility.md,11,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:CS Core:2,HCI,HCI-Accessibility,トピック,CS Core,2,アクセシビリティの技法,部分,標準の固定例は子を参照。技法全般は未評価。,coverage-hci-accessibility.md,12,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:CS Core:2a,HCI,HCI-Accessibility,トピック,CS Core,2a,アクセシビリティ標準,部分,394・575 は WCAG の一部を参照。適合判定全体ではない。,coverage-hci-accessibility.md,13,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:CS Core:3,HCI,HCI-Accessibility,トピック,CS Core,3,アクセシビリティの技術,部分,機能や支援製品の固定例は子を参照。実機と技術全般は未評価。,coverage-hci-accessibility.md,14,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:CS Core:3a,HCI,HCI-Accessibility,トピック,CS Core,3a,包括的開発を支える機能・製品,部分,22 で読み上げ・キーボード、117 で字幕を模型化。実機や開発支援製品は未評価。,coverage-hci-accessibility.md,15,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:CS Core:4,HCI,HCI-Accessibility,トピック,CS Core,4,包括的設計の枠組み,部分,違いの認識の固定例は子を参照。枠組み全般は未評価。,coverage-hci-accessibility.md,16,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:CS Core:4a,HCI,HCI-Accessibility,トピック,CS Core,4a,違いの認識,部分,22・575・793 で異なる条件と参加を扱う。枠組み全般は未評価。,coverage-hci-accessibility.md,17,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:CS Core:5,HCI,HCI-Accessibility,トピック,CS Core,5,ユニバーサルデザイン,部分,575 で一つの改善の広がりを考える。原則全般は未評価。,coverage-hci-accessibility.md,18,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:6,HCI,HCI-Accessibility,トピック,KA Core,6,障害と社会の背景,部分,状況・国際的観点・態度は子を参照。背景全般は未評価。,coverage-hci-accessibility.md,19,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:KA Core:6a,HCI,HCI-Accessibility,トピック,KA Core,6a,永続・一時・状況的な障害,部分,575 は一時的なけがと状況に触れる。多様な経験の全体は未評価。,coverage-hci-accessibility.md,20,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:6b,HCI,HCI-Accessibility,トピック,KA Core,6b,障害の国際的観点,未照合,国・文化別の検討が必要。,coverage-hci-accessibility.md,21,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:6c,HCI,HCI-Accessibility,トピック,KA Core,6c,障害者への態度,未照合,態度や偏見の検討が必要。,coverage-hci-accessibility.md,22,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:7,HCI,HCI-Accessibility,トピック,KA Core,7,包括性を支える技法,部分,UX と開発実践の固定例は子を参照。実際の調査・開発は未評価。,coverage-hci-accessibility.md,23,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:KA Core:7a,HCI,HCI-Accessibility,トピック,KA Core,7a,UX 設計と調査,部分,793 は架空の利用者の障壁を観察し、試作品を修正して再評価。実際の調査は行わない。,coverage-hci-accessibility.md,24,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:7b,HCI,HCI-Accessibility,トピック,KA Core,7b,包括性を可能にする開発実践,部分,575 のフォーカス操作と 793 の試作品・評価。一般の開発実践は未評価。,coverage-hci-accessibility.md,25,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:8,HCI,HCI-Accessibility,トピック,KA Core,8,アクセシビリティを可能にする技術,部分,読み上げ等の固定例は子を参照。実際の支援技術は未評価。,coverage-hci-accessibility.md,26,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:KA Core:8a,HCI,HCI-Accessibility,トピック,KA Core,8a,読み上げ等を可能にする技術,部分,22・575 は操作名の固定模型。実際の支援技術は未検証。,coverage-hci-accessibility.md,27,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:9,HCI,HCI-Accessibility,トピック,KA Core,9,包括的設計の枠組み,部分,参加型プロセスと広い影響の固定例は子を参照。実際の協働は未評価。,coverage-hci-accessibility.md,28,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:KA Core:9a,HCI,HCI-Accessibility,トピック,KA Core,9a,参加型設計等のプロセス,部分,793 は早期参加、障壁の修正と再評価の架空例。実際の協働は未評価。,coverage-hci-accessibility.md,29,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:KA Core:9b,HCI,HCI-Accessibility,トピック,KA Core,9b,広い影響を考えた設計,部分,575 は複数条件への利益を検討。影響全般は未評価。,coverage-hci-accessibility.md,30,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:Non-core:10,HCI,HCI-Accessibility,トピック,Non-core,10,障害に関する背景,部分,思い込みの問い直しと障害学は子を参照。障害学は未照合。,coverage-hci-accessibility.md,31,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:トピック:Non-core:10a,HCI,HCI-Accessibility,トピック,Non-core,10a,思い込みの問い直し,部分,793 は一人の経験の一般化を避ける固定例。体系的な検討は未評価。,coverage-hci-accessibility.md,32,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:Non-core:10b,HCI,HCI-Accessibility,トピック,Non-core,10b,障害学,未照合,理論と当事者の観点の照合が必要。,coverage-hci-accessibility.md,33,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:Non-core:11,HCI,HCI-Accessibility,トピック,Non-core,11,包摂の投資対効果,未照合,費用と利益の検討が必要。,coverage-hci-accessibility.md,34,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:Non-core:12,HCI,HCI-Accessibility,トピック,Non-core,12,利用者に配慮した包括的設計,未照合,枠組みとの照合が必要。,coverage-hci-accessibility.md,35,原典照合結果は監査記録参照
+HCI-Accessibility:トピック:Non-core:13,HCI,HCI-Accessibility,トピック,Non-core,13,HCI の批判的アプローチ,未照合,包摂などを含む批判的検討が必要。,coverage-hci-accessibility.md,36,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:CS Core:1,HCI,HCI-Accessibility,学習成果,CS Core,1,障壁と対応する支援技術の特定,部分,22 の３条件は固定例。障壁や技術全般は未評価。,coverage-hci-accessibility.md,42,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:CS Core:2,HCI,HCI-Accessibility,学習成果,CS Core,2,包括的設計の適切な方法を識別,部分,793 で参加と反復を選ぶ。能力に基づく設計等の比較は未評価。,coverage-hci-accessibility.md,43,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:CS Core:3,HCI,HCI-Accessibility,学習成果,CS Core,3,ソフトウェア指針の理解,部分,575 は操作名とフォーカスの指針に触れる。指針全体は未評価。,coverage-hci-accessibility.md,44,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:CS Core:4,HCI,HCI-Accessibility,学習成果,CS Core,4,関係法令・規制の認識,部分,1114で日本の改正障害者差別解消法を紹介。その他の法域・業種別指針や個別の適用は未評価。,coverage-hci-accessibility.md,45,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:KA Core:5,HCI,HCI-Accessibility,学習成果,KA Core,5,枠組みを用いた視覚・音声・タッチ UI 設計,部分,117 は字幕の固定例。各 UI の一般的設計は未評価。,coverage-hci-accessibility.md,46,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:KA Core:6,HCI,HCI-Accessibility,学習成果,KA Core,6,関係法令・規制の理解,部分,1114 で日本の事業者の合理的配慮と対話を固定例で検討。他法域や個別の適用は未評価。,coverage-hci-accessibility.md,47,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:KA Core:7,HCI,HCI-Accessibility,学習成果,KA Core,7,多様な人と適切に交流する技能,部分,1114 で本人の希望を聞き、選んだ対応と反応を確認する固定例。実際の交流技能は未評価。,coverage-hci-accessibility.md,48,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:KA Core:8,HCI,HCI-Accessibility,学習成果,KA Core,8,現行標準によるウェブ・アプリ分析,部分,575 の限定模型に手がかり。実サイト・アプリの総合評価は未評価。,coverage-hci-accessibility.md,49,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:Non-core:9,HCI,HCI-Accessibility,学習成果,Non-core,9,障害・人種・性別に対する歴史的偏りと技術設計,未照合,具体例とそこからの教訓は子を参照。,coverage-hci-accessibility.md,50,原典照合結果は監査記録参照・親子重複候補
+HCI-Accessibility:学習成果:Non-core:9a,HCI,HCI-Accessibility,学習成果,Non-core,9a,技術設計への偏りの実例,未照合,障害・人種・性別を含む歴史的事例の検討が必要。,coverage-hci-accessibility.md,51,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:Non-core:9b,HCI,HCI-Accessibility,学習成果,Non-core,9b,その経験から設計への教訓,未照合,個別事例からの考察が必要。,coverage-hci-accessibility.md,52,原典照合結果は監査記録参照
+HCI-Accessibility:学習成果:Non-core:10,HCI,HCI-Accessibility,学習成果,Non-core,10,ニーズ調査の構想,部分,793 は参加の時期と方法を選ぶ。調査計画の作成や実施は評価しない。,coverage-hci-accessibility.md,53,原典照合結果は監査記録参照
 HCI-Accountability:トピック:CS Core:1a,HCI,HCI-Accountability,トピック,CS Core,1a,設計の持続可能性への影響,部分,91 で修理・製造と使用期間の架空模型。実際の環境影響は未評価。,coverage-hci-accountability.md,9,原典照合結果は監査記録参照
 HCI-Accountability:トピック:CS Core:1b,HCI,HCI-Accountability,トピック,CS Core,1b,設計の包摂性への影響,部分,22・359・823 で架空の利用条件と改善。実利用者や一般の包摂性は未評価。,coverage-hci-accountability.md,10,原典照合結果は監査記録参照
 HCI-Accountability:トピック:CS Core:1c,HCI,HCI-Accountability,トピック,CS Core,1c,設計の安全・セキュリティ・プライバシー,部分,289・824 で設定や入力情報の露出を比較。実装の安全性や実際の同意は未評価。,coverage-hci-accountability.md,11,原典照合結果は監査記録参照

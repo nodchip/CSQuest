@@ -769,6 +769,28 @@
         "src/app.js": "f386540c1983235e82941cd01576bb7446cecbbb48ed988ecfe111173199641f",
         "tests/language-type-check.test.js": "5091f2e2e22b54f415a48f9ffea91c57a2034def527ef504140de5a9b155f9b2"
       }
+    },
+    "HCI-Accessibility:学習成果:KA Core:6": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-hci-accessibility-dialogue.md",
+      "row_sha256": "da368d54f64b0b4cd7d21773dd72c3d673f5b2e12467e8b0701f1e82756be7ea",
+      "files": {
+        "src/accessibility-dialogue.js": "85e1a55981f8268fc19623958601f5dd456206c2cb3349de6c7f610fd489186e",
+        "src/app.js": "f386540c1983235e82941cd01576bb7446cecbbb48ed988ecfe111173199641f",
+        "tests/accessibility-dialogue.test.js": "a969d8bdec3e175596981f16dbadd6f295858921cfa1b6343cb98b9e1c246a3f"
+      }
+    },
+    "HCI-Accessibility:学習成果:KA Core:7": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-hci-accessibility-dialogue.md",
+      "row_sha256": "629af2c6f790e52642f3a38132874766e3a362517ad05bbe57bb6cd0cc9731d6",
+      "files": {
+        "src/accessibility-dialogue.js": "85e1a55981f8268fc19623958601f5dd456206c2cb3349de6c7f610fd489186e",
+        "src/app.js": "f386540c1983235e82941cd01576bb7446cecbbb48ed988ecfe111173199641f",
+        "tests/accessibility-dialogue.test.js": "a969d8bdec3e175596981f16dbadd6f295858921cfa1b6343cb98b9e1c246a3f"
+      }
     }
   }
 }

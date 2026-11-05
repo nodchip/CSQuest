@@ -832,6 +832,14 @@
       "topics": 34,
       "outcomes": 8,
       "scope_sha256": "26ab948a565abf27f4d41a268bc3aa47261c8b25647290a339b5108787b8027b"
+    },
+    "HCI-Accessibility": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-hci-accessibility.md",
+      "topics": 28,
+      "outcomes": 12,
+      "scope_sha256": "dd13eb15d93cd5575a7265903d7bb13cffc1f52abfeb43a8e6d0a10d85201756"
     }
   }
 }
