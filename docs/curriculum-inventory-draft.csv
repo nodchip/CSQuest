@@ -1185,7 +1185,7 @@ FPL-Analysis:学習成果:Non-core:5,FPL,FPL-Analysis,学習成果,Non-core,5,�
 FPL-Aspect:トピック:Non-core:1,FPL,FPL-Aspect,トピック,Non-core,1,アスペクト,部分,323で共通の記録をまとめる固定模型。実際の設計や織込みは未評価。,coverage-fpl-aspect.md,7,原典照合結果は監査記録参照
 FPL-Aspect:トピック:Non-core:2,FPL,FPL-Aspect,トピック,Non-core,2,ジョインポイント,部分,323で操作実行を節目とする。他の節目や実言語は未評価。,coverage-fpl-aspect.md,8,原典照合結果は監査記録参照
 FPL-Aspect:トピック:Non-core:3a,FPL,FPL-Aspect,トピック,Non-core,3a,実行前のアドバイス,部分,323で実行前の記録を選ぶ。一般のアドバイスは未評価。,coverage-fpl-aspect.md,9,原典照合結果は監査記録参照
-FPL-Aspect:トピック:Non-core:3b,FPL,FPL-Aspect,トピック,Non-core,3b,正常・例外・終了後のアドバイス,部分,323で正常後と失敗を含む終了後を比較。例外時のみの指定は未評価。,coverage-fpl-aspect.md,10,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:3b,FPL,FPL-Aspect,トピック,Non-core,3b,正常・例外・終了後のアドバイス,部分,323で正常後、例外後、どちらでも実行する終了後を比較。例外の型や実言語での指定は未評価。,coverage-fpl-aspect.md,10,原典照合結果は監査記録参照
 FPL-Aspect:トピック:Non-core:3c,FPL,FPL-Aspect,トピック,Non-core,3c,周囲のアドバイス,部分,324で固定の引出しを実行するか拒否。一般の置換や複数アドバイスは未評価。,coverage-fpl-aspect.md,11,原典照合結果は監査記録参照
 FPL-Aspect:トピック:Non-core:4-本体,FPL,FPL-Aspect,トピック,Non-core,4-本体,ポイントカット,部分,323で選んだ操作の節目に記録を適用。一般の節目の集合と実言語は未評価。,coverage-fpl-aspect.md,12,原典照合結果は監査記録参照・番号を要確認
 FPL-Aspect:トピック:Non-core:4a,FPL,FPL-Aspect,トピック,Non-core,4a,ポイントカット指定子,部分,323で書込みまたは全操作を選ぶ固定例。実際の指定子や構文は未評価。,coverage-fpl-aspect.md,13,原典照合結果は監査記録参照
