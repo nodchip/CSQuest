@@ -278,7 +278,7 @@ AI-NLP:トピック:Non-core:3,AI,AI-NLP,トピック,Non-core,3,意味の表現
 AI-NLP:トピック:Non-core:3a,AI,AI-NLP,トピック,Non-core,3a,論理に基づく意味表現,部分,682で４文を量化の札に対応させ、1150で二重の量化の順序を有限の関係で比較。一般の文の解析・自動変換は未評価。,coverage-ai-nlp.md,14,原典照合結果は監査記録参照
 AI-NLP:トピック:Non-core:3b,AI,AI-NLP,トピック,Non-core,3b,意味役割,部分,121で助ける側・助けられる側が逆転する２文を比較。一般の役割抽出は未評価。,coverage-ai-nlp.md,15,原典照合結果は監査記録参照
 AI-NLP:トピック:Non-core:3c,AI,AI-NLP,トピック,Non-core,3c,時間の表現,部分,1149で２出来事の前後と順序不明を固定文から表現。実文書、同時・継続・反復や一般の解析は未評価。,coverage-ai-nlp.md,16,原典照合結果は監査記録参照
-AI-NLP:トピック:Non-core:3d,AI,AI-NLP,トピック,Non-core,3d,信念・欲求・意図,未照合,自然言語の意味表現としての対応は未確認。,coverage-ai-nlp.md,17,原典照合結果は監査記録参照
+AI-NLP:トピック:Non-core:3d,AI,AI-NLP,トピック,Non-core,3d,信念・欲求・意図,部分,1331で３つの文の「思う・したい・つもり」を区別。一般の自然言語解析や曖昧さは未評価。,coverage-ai-nlp.md,17,原典照合結果は監査記録参照
 AI-NLP:トピック:Non-core:4,AI,AI-NLP,トピック,Non-core,4,コーパスに基づく方法,部分,1151で UD English EWT 2.18 の公開統計の見出し語と品詞一覧を比較。元の文章の処理や一般のコーパス分析は未評価。,coverage-ai-nlp.md,18,原典照合結果は監査記録参照
 AI-NLP:トピック:Non-core:5,AI,AI-NLP,トピック,Non-core,5,N グラムと HMM,部分,120・121で隣接２語、589で２状態 HMM を操作。一般の学習や実コーパスは未評価。,coverage-ai-nlp.md,19,原典照合結果は監査記録参照
 AI-NLP:トピック:Non-core:6,AI,AI-NLP,トピック,Non-core,6,平滑化・バックオフ,部分,121で３語の回数そのままと加算平滑化を比較。バックオフ、未知語や実コーパスは未評価。,coverage-ai-nlp.md,20,原典照合結果は監査記録参照
