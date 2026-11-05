@@ -1990,7 +1990,7 @@ HCI-Design:トピック:KA Core:6a,HCI,HCI-Design,トピック,KA Core,6a,入出
 HCI-Design:トピック:KA Core:6b,HCI,HCI-Design,トピック,KA Core,6b,GUI,部分,287 は表示と取消しの固定例。一般の GUI 設計は未評価。,coverage-hci-design.md,34,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:6c,HCI,HCI-Design,トピック,KA Core,6c,コントローラ,部分,1298 で操作器の右ボタンの方向割当を比較。実際の入力機器や設計全般は未評価。,coverage-hci-design.md,35,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:6d,HCI,HCI-Design,トピック,KA Core,6d,触覚,部分,1298 で振動機能の有無と文字の併用を模型で比較。実振動や感覚・使いやすさは未評価。,coverage-hci-design.md,36,原典照合結果は監査記録参照
-HCI-Design:トピック:KA Core:6e,HCI,HCI-Design,トピック,KA Core,6e,ハードウェア設計,未照合,対応教材を要照合。,coverage-hci-design.md,37,原典照合結果は監査記録参照
+HCI-Design:トピック:KA Core:6e,HCI,HCI-Design,トピック,KA Core,6e,ハードウェア設計,部分,1298 で入力・制御・出力を固定条件で組み合わせる。実回路・電源・安全性や設計全般は未評価。,coverage-hci-design.md,37,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:6f,HCI,HCI-Design,トピック,KA Core,6f,エラー処理,部分,287 は取消しと状態表示の固定例。一般のエラー設計は未評価。,coverage-hci-design.md,38,原典照合結果は監査記録参照
 HCI-Design:トピック:KA Core:7,HCI,HCI-Design,トピック,KA Core,7,視覚 UI 設計,部分,色・配置・ゲシュタルト原則は子を参照。一般の視覚設計は未評価。,coverage-hci-design.md,39,原典照合結果は監査記録参照・親子重複候補
 HCI-Design:トピック:KA Core:7a,HCI,HCI-Design,トピック,KA Core,7a,色,部分,22 は色以外の手がかりを追加。色の設計全般は未評価。,coverage-hci-design.md,40,原典照合結果は監査記録参照
