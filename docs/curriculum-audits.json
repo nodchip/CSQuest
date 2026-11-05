@@ -648,6 +648,14 @@
       "topics": 28,
       "outcomes": 9,
       "scope_sha256": "243f17b1d81805ec7091173bd7aef0dc51312bc622386f966daf50af03cbf88c"
+    },
+    "PDC-Evaluation": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-pdc-evaluation.md",
+      "topics": 15,
+      "outcomes": 13,
+      "scope_sha256": "0aea2f37e05a0ca05585cdd6786c33928348756b27f51a2e87b62bbf2b12027d"
     }
   }
 }

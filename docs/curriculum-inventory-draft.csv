@@ -2618,28 +2618,29 @@ PDC-Evaluation:トピック:CS Core:2,PDC,PDC-Evaluation,トピック,CS Core,2,
 PDC-Evaluation:トピック:CS Core:3,PDC,PDC-Evaluation,トピック,CS Core,3,性能指標とサービス水準,部分,66・437で時間や仕事量、161で仮定の電力を比較。応答性、遅延、可用性、資源、通信、待ち、制限、公平性、合意されたサービス水準の体系的な評価・実測は未評価。,coverage-pdc-evaluation.md,11,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:4,PDC,PDC-Evaluation,トピック,CS Core,4,粒度・オーバーヘッド・合意・エネルギーによる性能への影響,部分,418で袋の粒度と準備、437で人数に応じた仮定費用、161・1285で時間と電力を比較。1285は逐次の固定模型で、並列処理のエネルギーや合意費用・実測は未評価。,coverage-pdc-evaluation.md,12,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:5,PDC,PDC-Evaluation,トピック,CS Core,5,拡張性の限界の見積り,部分,66で逐次準備による限界、437・1052で固定・変動仕事量を比較。一般のモデルや万能スケーラビリティ法則は未評価。,coverage-pdc-evaluation.md,13,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6a,PDC,PDC-Evaluation,トピック,KA Core,6a,逐次仕様の拡張と線形化可能性,部分,440で３操作・12記録の逐次順序を比較。一般の履歴と実装全体は未評価。,coverage-pdc-evaluation.md,14,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6b,PDC,PDC-Evaluation,トピック,KA Core,6b,プロトコル・セッション・トランザクションの仕様,部分,39で競合順序、451で条件付き更新を比較。一般の仕様の作成・検証は未評価。,coverage-pdc-evaluation.md,15,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6c,PDC,PDC-Evaluation,トピック,KA Core,6c,UML・TLA・プログラム論理等の道具,部分,439で２つの時相論理式を有限表現の循環に適用。実際の TLA ツール、UML や一般の論理の使用は未評価。,coverage-pdc-evaluation.md,16,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6d,PDC,PDC-Evaluation,トピック,KA Core,6d,敵対者・誤動作下の安全性・活性と通信の性質,部分,492で到着集中と送信元別制限を比較。層をまたぐ漏洩、入力検査や一般的な攻撃下の性質は未評価。,coverage-pdc-evaluation.md,17,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6e,PDC,PDC-Evaluation,トピック,KA Core,6e,正しさ・性能・資源・エネルギーの静的解析,部分,1288で固定された２主体の有限模型を状態探索し、更新喪失と鍵の効果を調べる。実プログラムや性能・資源・エネルギーの静的解析は未評価。,coverage-pdc-evaluation.md,18,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6f,PDC,PDC-Evaluation,トピック,KA Core,6f,DAG による仕事量・スパン・クリティカルパスの分析,部分,418で仕事の依存・段階と分担を操作。一般の DAG の解析や実行時性能は未評価。,coverage-pdc-evaluation.md,19,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6g,PDC,PDC-Evaluation,トピック,KA Core,6g,テスト・デバッグと各種検査道具,部分,15で更新喪失の順序を比較、1243で固定された記録の鍵による競合候補と誤警告を調査。実レース検出器、ロック依存検査、負荷試験や生成器を使う能力は未評価。,coverage-pdc-evaluation.md,20,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6h,PDC,PDC-Evaluation,トピック,KA Core,6h,スループット・待ち・競合・通信等の測定と比較,部分,437・492で模型、1286でブラウザ内の Worker 往復と処理量を実測。実ネットワーク・局所性・資源の分析は未評価。,coverage-pdc-evaluation.md,21,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:KA Core:6i,PDC,PDC-Evaluation,トピック,KA Core,6i,応用分野固有の分析・評価,未照合,特定領域の実システムに対する固有の評価手法は未確認。,coverage-pdc-evaluation.md,22,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:CS Core:1,PDC,PDC-Evaluation,学習成果,CS Core,1,他の性質を守り並列・分散化できるよう仕様を修正,部分,1104で各記録の一度ずつ・元の順序を守る条件を選び、２通りの到着順と早すぎる公開を比較。一般の仕様設計、分散故障や自由な記述は未評価。,coverage-pdc-evaluation.md,28,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:CS Core:2,PDC,PDC-Evaluation,学習成果,CS Core,2,並行性における安全性・活性を説明,部分,438・439で記録を比較。逐次の場合との一般的な比較と自由な説明は未評価。,coverage-pdc-evaluation.md,29,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:CS Core:3,PDC,PDC-Evaluation,学習成果,CS Core,3,各並列段階の不変条件を指定,部分,441で分担と小計の条件を選び修正。一般的な不変条件の導出と自由な記述は未評価。,coverage-pdc-evaluation.md,30,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:CS Core:4,PDC,PDC-Evaluation,学習成果,CS Core,4,データ競合を検出する試験プログラム,部分,15で更新喪失を操作。プログラム作成は直接評価しない。,coverage-pdc-evaluation.md,31,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:CS Core:5,PDC,PDC-Evaluation,学習成果,CS Core,5,並列化の性能・エネルギーへの影響,部分,66・161で仮定の時間と電力を比較。実測と一般の説明は未評価。,coverage-pdc-evaluation.md,32,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:CS Core:6,PDC,PDC-Evaluation,学習成果,CS Core,6,固定規模・変動規模での拡張と効率,部分,66・437・1052で固定・変動仕事量の模型を比較。逐次依存の緩和を含む一般的な分析や実測は未評価。,coverage-pdc-evaluation.md,33,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:KA Core:7,PDC,PDC-Evaluation,学習成果,KA Core,7,多数の要求時の挙動の仕様・測定,部分,492で固定到着と回数制限を比較。実サービスの仕様策定と計測は未評価。,coverage-pdc-evaluation.md,34,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:KA Core:8,PDC,PDC-Evaluation,学習成果,KA Core,8,逐次ボトルネックの特定と修正,部分,66で準備の限界、715で準備の改善と増員を時間・予算で比較。実装や一般の特定と修正は未評価。,coverage-pdc-evaluation.md,35,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:KA Core:9,PDC,PDC-Evaluation,学習成果,KA Core,9,複数実装のスループットを実測比較,部分,1286で１枚ずつ・16枚ずつの Worker への送り方を２規模で実測。固定計算・逐次往復であり、一般の並列実装やネットワークは未評価。,coverage-pdc-evaluation.md,36,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:KA Core:10,PDC,PDC-Evaluation,学習成果,KA Core,10,通信・データ遅延の問題を特定・修正,部分,1286で送信単位を切り替え、往復回数・初回応答と全体時間を実測。一般の実装の原因特定や修正は未評価。,coverage-pdc-evaluation.md,37,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:KA Core:11,PDC,PDC-Evaluation,学習成果,KA Core,11,通信・データ遅延の問題を特定・修正,部分,原典の10と同文。1286で送信単位と実測を比較するが、一般の実装の原因特定や修正は未評価。,coverage-pdc-evaluation.md,38,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:KA Core:12,PDC,PDC-Evaluation,学習成果,KA Core,12,資源管理のオーバーヘッドの問題を特定・修正,部分,1287で Worker の毎回作成と再利用を実測比較。起動のみの分離測定、一般の実装の原因特定・修正は未評価。,coverage-pdc-evaluation.md,39,原典照合結果は監査記録参照
-PDC-Evaluation:学習成果:KA Core:13,PDC,PDC-Evaluation,学習成果,KA Core,13,信頼性・可用性の問題を特定・修正,部分,229で装置故障時の複製への切替えと誤更新時の控えからの復旧を操作。固定模型で実サービスの診断や修正は未評価。,coverage-pdc-evaluation.md,40,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6,PDC,PDC-Evaluation,トピック,KA Core,6,評価方法・道具から１つ以上を選ぶ,部分,439・440・1286・1288で時相論理、履歴、計測と状態探索の固定例。一般の実ツールやすべての方法は未評価。,coverage-pdc-evaluation.md,14,原典照合結果は監査記録参照・親子重複候補
+PDC-Evaluation:トピック:KA Core:6a,PDC,PDC-Evaluation,トピック,KA Core,6a,逐次仕様の拡張と線形化可能性,部分,440で３操作・12記録の逐次順序を比較。一般の履歴と実装全体は未評価。,coverage-pdc-evaluation.md,15,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6b,PDC,PDC-Evaluation,トピック,KA Core,6b,プロトコル・セッション・トランザクションの仕様,部分,39で競合順序、451で条件付き更新を比較。一般の仕様の作成・検証は未評価。,coverage-pdc-evaluation.md,16,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6c,PDC,PDC-Evaluation,トピック,KA Core,6c,UML・TLA・プログラム論理等の道具,部分,439で２つの時相論理式を有限表現の循環に適用。実際の TLA ツール、UML や一般の論理の使用は未評価。,coverage-pdc-evaluation.md,17,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6d,PDC,PDC-Evaluation,トピック,KA Core,6d,敵対者・誤動作下の安全性・活性と通信の性質,部分,492で到着集中と送信元別制限を比較。層をまたぐ漏洩、入力検査や一般的な攻撃下の性質は未評価。,coverage-pdc-evaluation.md,18,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6e,PDC,PDC-Evaluation,トピック,KA Core,6e,正しさ・性能・資源・エネルギーの静的解析,部分,1288で固定された２主体の有限模型を状態探索し、更新喪失と鍵の効果を調べる。実プログラムや性能・資源・エネルギーの静的解析は未評価。,coverage-pdc-evaluation.md,19,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6f,PDC,PDC-Evaluation,トピック,KA Core,6f,DAG による仕事量・スパン・クリティカルパスの分析,部分,418で仕事の依存・段階と分担を操作。一般の DAG の解析や実行時性能は未評価。,coverage-pdc-evaluation.md,20,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6g,PDC,PDC-Evaluation,トピック,KA Core,6g,テスト・デバッグと各種検査道具,部分,15で更新喪失の順序を比較、1243で固定された記録の鍵による競合候補と誤警告を調査。実レース検出器、ロック依存検査、負荷試験や生成器を使う能力は未評価。,coverage-pdc-evaluation.md,21,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6h,PDC,PDC-Evaluation,トピック,KA Core,6h,スループット・待ち・競合・通信等の測定と比較,部分,437・492で模型、1286でブラウザ内の Worker 往復と処理量を実測。実ネットワーク・局所性・資源の分析は未評価。,coverage-pdc-evaluation.md,22,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:KA Core:6i,PDC,PDC-Evaluation,トピック,KA Core,6i,応用分野固有の分析・評価,未照合,特定領域の実システムに対する固有の評価手法は未確認。,coverage-pdc-evaluation.md,23,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:CS Core:1,PDC,PDC-Evaluation,学習成果,CS Core,1,他の性質を守り並列・分散化できるよう仕様を修正,部分,1104で各記録の一度ずつ・元の順序を守る条件を選び、２通りの到着順と早すぎる公開を比較。一般の仕様設計、分散故障や自由な記述は未評価。,coverage-pdc-evaluation.md,29,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:CS Core:2,PDC,PDC-Evaluation,学習成果,CS Core,2,並行性における安全性・活性を説明,部分,438・439で記録を比較。逐次の場合との一般的な比較と自由な説明は未評価。,coverage-pdc-evaluation.md,30,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:CS Core:3,PDC,PDC-Evaluation,学習成果,CS Core,3,各並列段階の不変条件を指定,部分,441で分担と小計の条件を選び修正。一般的な不変条件の導出と自由な記述は未評価。,coverage-pdc-evaluation.md,31,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:CS Core:4,PDC,PDC-Evaluation,学習成果,CS Core,4,データ競合を検出する試験プログラム,部分,15で更新喪失を操作。プログラム作成は直接評価しない。,coverage-pdc-evaluation.md,32,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:CS Core:5,PDC,PDC-Evaluation,学習成果,CS Core,5,並列化の性能・エネルギーへの影響,部分,66・161で仮定の時間と電力を比較。実測と一般の説明は未評価。,coverage-pdc-evaluation.md,33,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:CS Core:6,PDC,PDC-Evaluation,学習成果,CS Core,6,固定規模・変動規模での拡張と効率,部分,66・437・1052で固定・変動仕事量の模型を比較。逐次依存の緩和を含む一般的な分析や実測は未評価。,coverage-pdc-evaluation.md,34,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:KA Core:7,PDC,PDC-Evaluation,学習成果,KA Core,7,多数の要求時の挙動の仕様・測定,部分,492で固定到着と回数制限を比較。実サービスの仕様策定と計測は未評価。,coverage-pdc-evaluation.md,35,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:KA Core:8,PDC,PDC-Evaluation,学習成果,KA Core,8,逐次ボトルネックの特定と修正,部分,66で準備の限界、715で準備の改善と増員を時間・予算で比較。実装や一般の特定と修正は未評価。,coverage-pdc-evaluation.md,36,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:KA Core:9,PDC,PDC-Evaluation,学習成果,KA Core,9,複数実装のスループットを実測比較,部分,1286で１枚ずつ・16枚ずつの Worker への送り方を２規模で実測。固定計算・逐次往復であり、一般の並列実装やネットワークは未評価。,coverage-pdc-evaluation.md,37,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:KA Core:10,PDC,PDC-Evaluation,学習成果,KA Core,10,通信・データ遅延の問題を特定・修正,部分,1286で送信単位を切り替え、往復回数・初回応答と全体時間を実測。一般の実装の原因特定や修正は未評価。,coverage-pdc-evaluation.md,38,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:KA Core:11,PDC,PDC-Evaluation,学習成果,KA Core,11,通信・データ遅延の問題を特定・修正,部分,原典の10と同文。1286で送信単位と実測を比較するが、一般の実装の原因特定や修正は未評価。,coverage-pdc-evaluation.md,39,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:KA Core:12,PDC,PDC-Evaluation,学習成果,KA Core,12,資源管理のオーバーヘッドの問題を特定・修正,部分,1287で Worker の毎回作成と再利用を実測比較。起動のみの分離測定、一般の実装の原因特定・修正は未評価。,coverage-pdc-evaluation.md,40,原典照合結果は監査記録参照
+PDC-Evaluation:学習成果:KA Core:13,PDC,PDC-Evaluation,学習成果,KA Core,13,信頼性・可用性の問題を特定・修正,部分,229で装置故障時の複製への切替えと誤更新時の控えからの復旧を操作。固定模型で実サービスの診断や修正は未評価。,coverage-pdc-evaluation.md,41,原典照合結果は監査記録参照
 PDC-Programs:トピック:CS Core:1a,PDC,PDC-Programs,トピック,CS Core,1a,並列可能な作用と不可な作用,部分,418で４計算の依存と分担を操作。一般の依存分析は未評価。,coverage-pdc-programs.md,11,原典照合結果は監査記録参照
 PDC-Programs:トピック:CS Core:1b,PDC,PDC-Programs,トピック,CS Core,1b,順序と有向非巡回グラフ,部分,418で直接依存をつなぐ。一般の式やグラフは未評価。,coverage-pdc-programs.md,12,原典照合結果は監査記録参照
 PDC-Programs:トピック:CS Core:1c,PDC,PDC-Programs,トピック,CS Core,1c,独立性・可換性・前提,部分,130で独立な小計と集約を操作。一般の可換性は未評価。,coverage-pdc-programs.md,13,原典照合結果は監査記録参照

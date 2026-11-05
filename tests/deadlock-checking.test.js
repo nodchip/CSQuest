@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {createDeadlockCheck,expandDeadlock,deadlockHeld,deadlockCheckComplete,restoreDeadlockCheck,retryState,manualRetryNext,manualRetryReplay} from '../src/deadlock-checking.js';
+import {createDeadlockCheck,expandDeadlock,deadlockHeld,deadlockCheckComplete,restoreDeadlockCheck,retryState,manualRetryNext,manualRetryReplay,manualRetryCycle} from '../src/deadlock-checking.js';
 test('opposite ordering reaches a deadlock; common ordering exhausts the finite state space',()=>{
  const s=createDeadlockCheck();for(const mode of ['opposite','same'])while(s.trials[mode].status==='searching'){const t=s.trials[mode];for(const state of t.queue){const a=deadlockHeld(mode,state,'a'),b=deadlockHeld(mode,state,'b');assert.equal(a.some(key=>b.includes(key)),false);}s.trials[mode]=expandDeadlock(t);}assert.deepEqual(s.trials.opposite.counterexample.path,['A：赤の鍵を取る','B：青の鍵を取る']);assert.equal(s.trials.same.status,'safe');assert.equal(deadlockCheckComplete(s),true);
 });
@@ -26,8 +26,11 @@ test('players can create a repeated state and then choose a schedule that comple
  const conflict=['a','b'],cycle=['a','a','b','b'];
  const original=manualRetryReplay(conflict),again=manualRetryReplay([...conflict,...cycle]);
  assert.deepEqual([original.a,original.b],[1,1]);assert.deepEqual([again.a,again.b],[1,1]);
+ assert.deepEqual(manualRetryCycle([...conflict,...cycle]),{start:2,end:6,actions:cycle});
+ assert.equal(manualRetryCycle(conflict),null);
  const done=[...conflict,...cycle,'a','b','b','a','a','a'];
  const end=manualRetryReplay(done);assert.deepEqual([end.a,end.b],[3,3]);
+ assert.equal(manualRetryCycle(done),null);
  for(let i=0;i<=done.length;i++){const state=manualRetryReplay(done.slice(0,i));const a=deadlockHeld('opposite',state,'a'),b=deadlockHeld('opposite',state,'b');assert.equal(a.some(key=>b.includes(key)),false);}
  assert.equal(manualRetryNext(end,'a'),null);
  const old=createDeadlockCheck();delete old.manualHistory;assert.deepEqual(restoreDeadlockCheck(old).manualHistory,[]);

@@ -35,6 +35,14 @@ export function manualRetryReplay(history){
  for(const who of history){const next=manualRetryNext(state,who);if(!next)throw new RangeError('その行動はできません。');state=next;}
  return state;
 }
+// Identify a repeated current state and the actual actions between the two visits.
+export function manualRetryCycle(history){
+ const current=manualRetryReplay(history),key=stateKey(current);
+ for(let i=0;i<history.length;i++){
+  if(stateKey(manualRetryReplay(history.slice(0,i)))===key)return {start:i,end:history.length,actions:history.slice(i)};
+ }
+ return null;
+}
 export function deadlockNext(mode,state){const result=[];for(const who of ['a','b']){const other=who==='a'?'b':'a',step=state[who];if(step===3)continue;const needed=step<2?order(mode,who)[step]:null;if(needed&&deadlockHeld(mode,state,other).includes(needed))continue;const next={a:state.a,b:state.b,path:[...state.path,step===2?`${who.toUpperCase()}：両方の鍵を返す`:`${who.toUpperCase()}：${needed}の鍵を取る`]};next[who]++;result.push(next);}return result;}
 export function createDeadlockTrial(mode){if(!Object.hasOwn(deadlockOrders,mode))throw new RangeError('順序が不正です。');const initial={a:0,b:0,path:[]};return {mode,queue:[initial],seen:[stateKey(initial)],current:null,status:'searching',counterexample:null,steps:0};}
 export function expandDeadlock(s){if(s.status!=='searching'||!s.queue.length)throw new RangeError('探索は終了しています。');const [current,...rest]=s.queue,queue=[...rest],seen=[...s.seen],next=deadlockNext(s.mode,current);if(next.length===0&&(current.a!==3||current.b!==3))return {...s,current,queue,seen,status:'deadlock',counterexample:current,steps:s.steps+1};for(const n of next){const key=stateKey(n);if(!seen.includes(key)){seen.push(key);queue.push(n);}}return {...s,current,queue,seen,status:queue.length?'searching':'safe',steps:s.steps+1};}
