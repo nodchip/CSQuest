@@ -405,7 +405,7 @@ AI-Search:トピック:CS Core:2b,AI,AI-Search,トピック,CS Core,2b,深さ優
 AI-Search:トピック:CS Core:2b.i,AI,AI-Search,トピック,CS Core,2b.i,反復深化,部分,依頼369で深さ上限を変えて探索。一般グラフや実装は未評価。,coverage-ai-search.md,20,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:2c,AI,AI-Search,トピック,CS Core,2c,一様費用探索,部分,依頼42で累積費用を基準に選択。一般の実装や負辺は未評価。,coverage-ai-search.md,21,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:3,AI,AI-Search,トピック,CS Core,3,ヒューリスティックを使う探索,部分,依頼42・43・372などの固定例。一般の手法選択は未評価。,coverage-ai-search.md,22,原典照合結果は監査記録参照・親子重複候補
-AI-Search:トピック:CS Core:3a,AI,AI-Search,トピック,CS Core,3a,見積もりの構築と許容性,部分,依頼43で固定地図の地点ごとに見積もりを作り、許容性と整合性を調べる。任意の地図や一般の構築は未評価。,coverage-ai-search.md,23,原典照合結果は監査記録参照
+AI-Search:トピック:CS Core:3a,AI,AI-Search,トピック,CS Core,3a,見積もりの構築と許容性,部分,依頼43で固定地図の地点ごとに見積もりを作り、許容性・整合性を調べて再展開ありの A* を操作。任意の地図や一般の構築は未評価。,coverage-ai-search.md,23,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:3b,AI,AI-Search,トピック,CS Core,3b,山登り法,部分,依頼372で高い隣へ移動。一般の地形や同点は未評価。,coverage-ai-search.md,24,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:3c,AI,AI-Search,トピック,CS Core,3c,局所最小と探索地形,部分,依頼372で見晴らし最大化の局所最大と谷を扱う。局所最小化の一般例や地形全般は未評価。,coverage-ai-search.md,25,原典照合結果は監査記録参照・親子重複候補
 AI-Search:トピック:CS Core:3c.i,AI,AI-Search,トピック,CS Core,3c.i,局所解と大域解,部分,依頼372で C と E を比較。一般の大域最適性は未評価。,coverage-ai-search.md,26,原典照合結果は監査記録参照
@@ -441,7 +441,7 @@ AI-Search:トピック:Non-core:17c,AI,AI-Search,トピック,Non-core,17c,モ�
 AI-Search:学習成果:明示なし:1,AI,AI-Search,学習成果,明示なし,1,パズルの状態空間を設計,部分,依頼85・100で決まった状態要素を操作。自由に設計する能力は未評価。,coverage-ai-search.md,63,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:2,AI,AI-Search,学習成果,明示なし,2,非ヒューリスティック探索を選び実装、計算量を評価,部分,依頼08・369で固定例を操作し回数を比較。実装・一般の計算量は未評価。,coverage-ai-search.md,64,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:3,AI,AI-Search,学習成果,明示なし,3,見積もりを設計し探索を選び実装,部分,依頼42で与えられた見積もりを使用。自由な設計と実装は未評価。,coverage-ai-search.md,65,原典照合結果は監査記録参照
-AI-Search:学習成果:明示なし:4,AI,AI-Search,学習成果,明示なし,4,許容性と最適性を評価,部分,依頼43で固定地図の０〜10の見積もりを選び、過大な地点と整合しない辺を確認。任意の地図や一般の最適性は未評価。,coverage-ai-search.md,66,原典照合結果は監査記録参照
+AI-Search:学習成果:明示なし:4,AI,AI-Search,学習成果,明示なし,4,許容性と最適性を評価,部分,依頼43で固定地図の０〜10の見積もりを選び、過大な地点と整合しない辺、探索結果を確認。任意の地図や一般の最適性は未評価。,coverage-ai-search.md,66,原典照合結果は監査記録参照
 AI-Search:学習成果:KA Core:5,AI,AI-Search,学習成果,KA Core,5,評価関数と手数制限を用いてミニマックスを適用,部分,依頼44で１手先の仮評価と２手の終局値を比較、45で終局探索。任意の評価関数や対戦木は未評価。,coverage-ai-search.md,67,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:6,AI,AI-Search,学習成果,明示なし,6,遺伝的アルゴリズムを設計・実装,部分,依頼374で固定例の交叉・変異を操作。一般の設計・実装は未評価。,coverage-ai-search.md,68,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:7,AI,AI-Search,学習成果,明示なし,7,焼きなましの温度を設計・実装,部分,依頼373で与えられた温度と抽選を比較。温度設計・実装は未評価。,coverage-ai-search.md,69,原典照合結果は監査記録参照

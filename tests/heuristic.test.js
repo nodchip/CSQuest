@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {guidedRoads,guidedRoute} from '../src/astar.js';
-import {createHeuristic,stepHeuristic,heuristicValue,heuristicCorrect,checkConstructedEstimate,restoreHeuristic,heuristicComplete} from '../src/heuristic.js';
+import {createHeuristic,stepHeuristic,heuristicValue,heuristicCorrect,checkConstructedEstimate,stepConstructed,restoreHeuristic,heuristicComplete} from '../src/heuristic.js';
 function cheapest(id){return id==='G'?0:Math.min(...Object.entries(guidedRoads[id]).map(([next,cost])=>cost+cheapest(next)));}
 test('the new estimates exceed the independently enumerated true cost exactly at A and C',()=>{
   const excess=Object.keys(guidedRoads).filter(id=>heuristicValue('overestimate',id)>cheapest(id));
@@ -47,4 +47,12 @@ test('constructed estimates distinguish overestimation from inconsistency and re
  assert.deepEqual(checkConstructedEstimate({S:0,A:0,B:0,C:0,G:1}),{over:['G'],inconsistent:['G（遺跡の見積もりは０）']});
  assert.throws(()=>checkConstructedEstimate({S:0,A:-1,B:0,C:0,G:0}),RangeError);
  const q=createHeuristic(),draft={selected:q.selected,actions:q.actions,guesses:[],checked:false,constructed:{S:0,A:4,B:0,C:0,G:0},constructedChecked:true};const restored=restoreHeuristic(draft);assert.equal(restored.constructedChecked,true);restored.constructed.A=0;assert.equal(draft.constructed.A,4);assert.deepEqual(restoreHeuristic({...draft,constructed:undefined}).constructed,{S:0,A:0,B:0,C:0,G:0});assert.throws(()=>restoreHeuristic({...draft,constructed:{...draft.constructed,A:11}}),RangeError);
+});
+
+test('constructed estimates drive A* with reopening and saved actions are replayed',()=>{
+ const draft=createHeuristic();draft.constructed={S:0,A:4,B:0,C:0,G:0};draft.constructedActions=['S','B','C','A','C','G'];
+ const restored=restoreHeuristic(draft);assert.equal(restored.constructedState.distances.G,6);assert.deepEqual(guidedRoute(restored.constructedState),['S','A','C','G']);
+ const over={...draft,constructed:{S:0,A:10,B:0,C:10,G:0},constructedActions:['S','B','G']};assert.equal(restoreHeuristic(over).constructedState.distances.G,10);
+ assert.throws(()=>restoreHeuristic({...over,constructedActions:['S','A']}),RangeError);
+ const initial=createHeuristic();assert.throws(()=>stepConstructed(initial.constructed,initial.constructedState,'A'),RangeError);
 });
