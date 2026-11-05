@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {systemOpenResult,createSystemOpen,restoreSystemOpen} from '../src/system-open-model.js';
+import {createLibraryFramework,restoreLibraryFramework} from '../src/library-framework.js';
+test('a successful open returns a descriptor; the two modeled failures return -1 with distinct reasons',()=>{assert.deepEqual(systemOpenResult('available'),{result:'opened',number:3,error:null});assert.deepEqual(systemOpenResult('missing'),{result:'missing',number:-1,error:'ENOENT'});assert.deepEqual(systemOpenResult('denied'),{result:'denied',number:-1,error:'EACCES'});assert.throws(()=>systemOpenResult('unknown'));});
+test('old drafts gain the new exercise, while saved observations are copied and validated',()=>{const q=createLibraryFramework();delete q.systemOpen;assert.deepEqual(restoreLibraryFramework(q).systemOpen,createSystemOpen());const s=createSystemOpen();s.guess='opened';s.called=true;s.seen=['available'];s.reflection='handle';const copy=restoreSystemOpen(s);copy.seen.push('missing');assert.deepEqual(s.seen,['available']);assert.throws(()=>restoreSystemOpen({...s,called:true,guess:null}));assert.throws(()=>restoreSystemOpen({...s,seen:['available','available']}));});
