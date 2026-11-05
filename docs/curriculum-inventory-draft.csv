@@ -35,32 +35,35 @@ AI-Agents:学習成果:未記載:4,AI,AI-Agents,学習成果,未記載,4,複数�
 AI-Agents:学習成果:未記載:5,AI,AI-Agents,学習成果,未記載,5,確立した認知構造で主体を構築,部分,1331で BDI の簡略模型の状態と計画を操作。実アーキテクチャの設計・構築は未評価。,coverage-ai-agents.md,47,原典照合結果は監査記録参照・区分を要確認
 AI-Introduction:トピック:CS Core:1,AI,AI-Introduction,トピック,CS Core,1,AI の問題と近年の成功した応用例,部分,依頼17・28・375は分類、移動、探索等のゲーム例。実在の近年の応用の体系的な紹介は未照合,coverage-ai-introduction.md,9,原典照合結果は監査記録参照
 AI-Introduction:トピック:CS Core:2,AI,AI-Introduction,トピック,CS Core,2,エージェントの定義と例,部分,依頼109・688で観測、記憶、反応と計画の固定例。一般的な分類・定義は未完成,coverage-ai-introduction.md,10,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:3a,AI,AI-Introduction,トピック,CS Core,3a,模倣ゲームと限界,部分,依頼686の架空の対話と振り返り。実際の試験や自由な議論は未評価,coverage-ai-introduction.md,11,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:3b,AI,AI-Introduction,トピック,CS Core,3b,複数の種類の入力・出力,部分,依頼686で瓶の絵・文字札の３入力と文字・絵記号の２出力を組み合わせ、不足情報を比較。固定規則の模型で、実際の画像認識・音声・異種情報の対応付けや学習は未対応,coverage-ai-introduction.md,12,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:3c,AI,AI-Introduction,トピック,CS Core,3c,知的な振る舞いの模倣,部分,依頼375・686に固定規則や架空の応答の例。一般の模倣とその限界の網羅は未確認,coverage-ai-introduction.md,13,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:3d,AI,AI-Introduction,トピック,CS Core,3d,合理的・非合理的な推論,部分,依頼368・688で与えられた費用と期待値、688で架空の多数派予測との目的の違いを比較。人の思考過程や一般の合理性は未評価,coverage-ai-introduction.md,14,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:4a,AI,AI-Introduction,トピック,CS Core,4a,完全観測と部分観測,部分,依頼109・687の固定環境。一般の観測モデルは未対応,coverage-ai-introduction.md,15,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:4b,AI,AI-Introduction,トピック,CS Core,4b,単一主体と複数主体,部分,依頼687の人形と番人。一般の主体間相互作用は未対応,coverage-ai-introduction.md,16,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:4c,AI,AI-Introduction,トピック,CS Core,4c,決定的と確率的,部分,依頼687で同一条件の分岐を比較。一般の確率モデルは未対応,coverage-ai-introduction.md,17,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:4d,AI,AI-Introduction,トピック,CS Core,4d,静的と動的,部分,依頼687で判断中の番人の移動を比較。一般の動的環境は未対応,coverage-ai-introduction.md,18,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:4e,AI,AI-Introduction,トピック,CS Core,4e,離散と連続,部分,依頼687で離散の２環境と、実数の時刻・位置を持つ川の模型を比較。川の表示は３時点の観測例であり、連続性は模型の定義による。一般の連続環境は未対応,coverage-ai-introduction.md,19,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:5a,AI,AI-Introduction,トピック,CS Core,5a,自律・半自律・混合主導,部分,依頼689で人・人形の提案と確認を比較。方式全般や実際の人との協働は未評価,coverage-ai-introduction.md,20,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:5b,AI,AI-Introduction,トピック,CS Core,5b,反射・目標・効用に基づく主体,部分,依頼688で３つの固定方針を比較。一般の主体構造は未対応,coverage-ai-introduction.md,21,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:5c,AI,AI-Introduction,トピック,CS Core,5c,不確実・不完全な情報の下での判断,部分,依頼98・685で条件付き見込みと費用を比較。一般の判断は未対応,coverage-ai-introduction.md,22,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:5d,AI,AI-Introduction,トピック,CS Core,5d,知覚と環境との相互作用,部分,依頼28・687・691の観測と動作。実機や一般の環境は未対応,coverage-ai-introduction.md,23,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:5e,AI,AI-Introduction,トピック,CS Core,5e,学習する主体,部分,依頼379の２状態での行動価値更新。一般の学習主体は未対応,coverage-ai-introduction.md,24,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:5f,AI,AI-Introduction,トピック,CS Core,5f,身体を持つ主体,部分,依頼28・691の人形の移動模型。実機や一般の身体性は未対応,coverage-ai-introduction.md,25,原典照合結果は監査記録参照・親子重複候補
-AI-Introduction:トピック:CS Core:5f.i,AI,AI-Introduction,トピック,CS Core,5f.i,センサー、動力学、動作器,部分,依頼691で観測器・移動方法・消費を選択。連続的な動力学や実機は未対応,coverage-ai-introduction.md,26,原典照合結果は監査記録参照
-AI-Introduction:トピック:CS Core:6,AI,AI-Introduction,トピック,CS Core,6,AI 応用の成長と経済・社会・倫理への影響,部分,依頼118で架空の公平性指標を比較。実在の応用、経済的影響や体系的概説は未照合,coverage-ai-introduction.md,27,原典照合結果は監査記録参照
-AI-Introduction:トピック:KA Core:7,AI,AI-Introduction,トピック,KA Core,7,例で問題の特性を判定,部分,依頼687で３環境の５特性を選択。一般の判定・自由な列挙は未評価,coverage-ai-introduction.md,28,原典照合結果は監査記録参照
-AI-Introduction:トピック:KA Core:8,AI,AI-Introduction,トピック,KA Core,8,主体の性質を例で深める,部分,依頼688・689で方針と提案の分担を比較。追加の深さ全体は未確認,coverage-ai-introduction.md,29,原典照合結果は監査記録参照
-AI-Introduction:トピック:KA Core:9,AI,AI-Introduction,トピック,KA Core,9,AI 応用と経済・社会・倫理・安全上の影響を深める,未照合,実例と分野横断の説明・検証を確認する,coverage-ai-introduction.md,30,原典照合結果は監査記録参照
-AI-Introduction:トピック:Non-core:10,AI,AI-Introduction,トピック,Non-core,10,哲学的な問題,部分,依頼686で中国語の部屋と異なる立場に触れる。他の哲学的問題や自由な議論は未評価,coverage-ai-introduction.md,31,原典照合結果は監査記録参照
-AI-Introduction:トピック:Non-core:11,AI,AI-Introduction,トピック,Non-core,11,AI の歴史,部分,依頼363で1955年の研究計画提案、1980年の R1、2012年の画像分類、2017年の Transformer を史料とともに並べる。多くの人物・研究系統・社会的背景や歴史全体は未対応,coverage-ai-introduction.md,32,原典照合結果は監査記録参照
-AI-Introduction:学習成果:未記載:1,AI,AI-Introduction,学習成果,未記載,1,チューリングテストと中国語の部屋を説明,部分,依頼686で固定の選択肢から観察と立場を区別。自由な文章による説明は直接評価しない,coverage-ai-introduction.md,38,原典照合結果は監査記録参照・区分を要確認
-AI-Introduction:学習成果:未記載:2,AI,AI-Introduction,学習成果,未記載,2,最適・合理的な推論と人間らしい推論を区別,部分,依頼688で期待費用による選択と架空の人々の多数派予測を比較。観察行動の固定例であり、人間らしい思考過程そのものや自由な説明は未評価,coverage-ai-introduction.md,39,原典照合結果は監査記録参照・区分を要確認
-AI-Introduction:学習成果:未記載:3,AI,AI-Introduction,学習成果,未記載,3,AI・機械学習・深層学習を区別,部分,依頼375で３種類の固定例を整理。一般の手法の分類は未評価,coverage-ai-introduction.md,40,原典照合結果は監査記録参照・区分を要確認
-AI-Introduction:学習成果:未記載:4,AI,AI-Introduction,学習成果,未記載,4,具体的な問題の特性を列挙,部分,依頼687で３環境の特性を選択。自由な列挙や一般の環境の判断は未評価,coverage-ai-introduction.md,41,原典照合結果は監査記録参照・区分を要確認
+AI-Introduction:トピック:CS Core:3,AI,AI-Introduction,トピック,CS Core,3,知的な振る舞い,部分,依頼686・688で対話の判定と推論方針を比較。知能の一般的な定義や自由な議論は未評価,coverage-ai-introduction.md,11,原典照合結果は監査記録参照・親子重複候補
+AI-Introduction:トピック:CS Core:3a,AI,AI-Introduction,トピック,CS Core,3a,模倣ゲームと限界,部分,依頼686の架空の対話と振り返り。実際の試験や自由な議論は未評価,coverage-ai-introduction.md,12,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:3b,AI,AI-Introduction,トピック,CS Core,3b,複数の種類の入力・出力,部分,依頼686で瓶の絵・文字札の３入力と文字・絵記号の２出力を組み合わせ、不足情報を比較。固定規則の模型で、実際の画像認識・音声・異種情報の対応付けや学習は未対応,coverage-ai-introduction.md,13,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:3c,AI,AI-Introduction,トピック,CS Core,3c,知的な振る舞いの模倣,部分,依頼375・686に固定規則や架空の応答の例。一般の模倣とその限界の網羅は未確認,coverage-ai-introduction.md,14,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:3d,AI,AI-Introduction,トピック,CS Core,3d,合理的・非合理的な推論,部分,依頼368・688で与えられた費用と期待値、688で架空の多数派予測との目的の違いを比較。人の思考過程や一般の合理性は未評価,coverage-ai-introduction.md,15,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:4,AI,AI-Introduction,トピック,CS Core,4,問題の特性,部分,依頼687で観測・主体・変化などの特性を選択。一般の環境や自由な説明は未評価,coverage-ai-introduction.md,16,原典照合結果は監査記録参照・親子重複候補
+AI-Introduction:トピック:CS Core:4a,AI,AI-Introduction,トピック,CS Core,4a,完全観測と部分観測,部分,依頼109・687の固定環境。一般の観測モデルは未対応,coverage-ai-introduction.md,17,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:4b,AI,AI-Introduction,トピック,CS Core,4b,単一主体と複数主体,部分,依頼687の人形と番人。一般の主体間相互作用は未対応,coverage-ai-introduction.md,18,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:4c,AI,AI-Introduction,トピック,CS Core,4c,決定的と確率的,部分,依頼687で同一条件の分岐を比較。一般の確率モデルは未対応,coverage-ai-introduction.md,19,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:4d,AI,AI-Introduction,トピック,CS Core,4d,静的と動的,部分,依頼687で判断中の番人の移動を比較。一般の動的環境は未対応,coverage-ai-introduction.md,20,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:4e,AI,AI-Introduction,トピック,CS Core,4e,離散と連続,部分,依頼687で離散の２環境と、実数の時刻・位置を持つ川の模型を比較。川の表示は３時点の観測例であり、連続性は模型の定義による。一般の連続環境は未対応,coverage-ai-introduction.md,21,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:5,AI,AI-Introduction,トピック,CS Core,5,主体の性質,部分,依頼688・689で固定方針と人との分担を比較。一般の主体や実環境は未評価,coverage-ai-introduction.md,22,原典照合結果は監査記録参照・親子重複候補
+AI-Introduction:トピック:CS Core:5a,AI,AI-Introduction,トピック,CS Core,5a,自律・半自律・混合主導,部分,依頼689で人・人形の提案と確認を比較。方式全般や実際の人との協働は未評価,coverage-ai-introduction.md,23,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:5b,AI,AI-Introduction,トピック,CS Core,5b,反射・目標・効用に基づく主体,部分,依頼688で３つの固定方針を比較。一般の主体構造は未対応,coverage-ai-introduction.md,24,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:5c,AI,AI-Introduction,トピック,CS Core,5c,不確実・不完全な情報の下での判断,部分,依頼98・685で条件付き見込みと費用を比較。一般の判断は未対応,coverage-ai-introduction.md,25,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:5d,AI,AI-Introduction,トピック,CS Core,5d,知覚と環境との相互作用,部分,依頼28・687・691の観測と動作。実機や一般の環境は未対応,coverage-ai-introduction.md,26,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:5e,AI,AI-Introduction,トピック,CS Core,5e,学習する主体,部分,依頼379の２状態での行動価値更新。一般の学習主体は未対応,coverage-ai-introduction.md,27,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:5f,AI,AI-Introduction,トピック,CS Core,5f,身体を持つ主体,部分,依頼28・691の人形の移動模型。実機や一般の身体性は未対応,coverage-ai-introduction.md,28,原典照合結果は監査記録参照・親子重複候補
+AI-Introduction:トピック:CS Core:5f.i,AI,AI-Introduction,トピック,CS Core,5f.i,センサー、動力学、動作器,部分,依頼691で観測器・移動方法・消費を選択。連続的な動力学や実機は未対応,coverage-ai-introduction.md,29,原典照合結果は監査記録参照
+AI-Introduction:トピック:CS Core:6,AI,AI-Introduction,トピック,CS Core,6,AI 応用の成長と経済・社会・倫理への影響,部分,依頼118で架空の公平性指標を比較。実在の応用、経済的影響や体系的概説は未照合,coverage-ai-introduction.md,30,原典照合結果は監査記録参照
+AI-Introduction:トピック:KA Core:7,AI,AI-Introduction,トピック,KA Core,7,例で問題の特性を判定,部分,依頼687で３環境の５特性を選択。一般の判定・自由な列挙は未評価,coverage-ai-introduction.md,31,原典照合結果は監査記録参照
+AI-Introduction:トピック:KA Core:8,AI,AI-Introduction,トピック,KA Core,8,主体の性質を例で深める,部分,依頼688・689で方針と提案の分担を比較。追加の深さ全体は未確認,coverage-ai-introduction.md,32,原典照合結果は監査記録参照
+AI-Introduction:トピック:KA Core:9,AI,AI-Introduction,トピック,KA Core,9,AI 応用と経済・社会・倫理・安全上の影響を深める,部分,依頼1279で自動運転試験車の事故報告を読み、認識・制御・監視・組織の各要因を区別。経済・倫理・セキュリティや他の実例は未評価,coverage-ai-introduction.md,33,原典照合結果は監査記録参照
+AI-Introduction:トピック:Non-core:10,AI,AI-Introduction,トピック,Non-core,10,哲学的な問題,部分,依頼686で中国語の部屋と異なる立場に触れる。他の哲学的問題や自由な議論は未評価,coverage-ai-introduction.md,34,原典照合結果は監査記録参照
+AI-Introduction:トピック:Non-core:11,AI,AI-Introduction,トピック,Non-core,11,AI の歴史,部分,依頼363で1955年の研究計画提案、1980年の R1、2012年の画像分類、2017年の Transformer を史料とともに並べる。多くの人物・研究系統・社会的背景や歴史全体は未対応,coverage-ai-introduction.md,35,原典照合結果は監査記録参照
+AI-Introduction:学習成果:未記載:1,AI,AI-Introduction,学習成果,未記載,1,チューリングテストと中国語の部屋を説明,部分,依頼686で固定の選択肢から観察と立場を区別。自由な文章による説明は直接評価しない,coverage-ai-introduction.md,41,原典照合結果は監査記録参照・区分を要確認
+AI-Introduction:学習成果:未記載:2,AI,AI-Introduction,学習成果,未記載,2,最適・合理的な推論と人間らしい推論を区別,部分,依頼688で期待費用による選択と架空の人々の多数派予測を比較。観察行動の固定例であり、人間らしい思考過程そのものや自由な説明は未評価,coverage-ai-introduction.md,42,原典照合結果は監査記録参照・区分を要確認
+AI-Introduction:学習成果:未記載:3,AI,AI-Introduction,学習成果,未記載,3,AI・機械学習・深層学習を区別,部分,依頼375で３種類の固定例を整理。一般の手法の分類は未評価,coverage-ai-introduction.md,43,原典照合結果は監査記録参照・区分を要確認
+AI-Introduction:学習成果:未記載:4,AI,AI-Introduction,学習成果,未記載,4,具体的な問題の特性を列挙,部分,依頼687で３環境の特性を選択。自由な列挙や一般の環境の判断は未評価,coverage-ai-introduction.md,44,原典照合結果は監査記録参照・区分を要確認
 AI-KRR:トピック:CS Core:1a-i,AI,AI-KRR,トピック,CS Core,1a-i,自然言語から記号・論理表現,部分,682で４文に量化・含意の候補を選び反例を確認。任意の文の翻訳は未評価。,coverage-ai-krr.md,9,原典照合結果は監査記録参照
 AI-KRR:トピック:CS Core:1b,AI,AI-KRR,トピック,CS Core,1b,学習された非記号的表現,部分,456で共起に合う２次元の語ベクトルを更新。一般の学習済み表現は未評価。,coverage-ai-krr.md,10,原典照合結果は監査記録参照
 AI-KRR:トピック:CS Core:1c,AI,AI-KRR,トピック,CS Core,1c,グラフィカルモデル,部分,81で３変数の有限分布、564で変数消去。一般の設計は未評価。,coverage-ai-krr.md,11,原典照合結果は監査記録参照

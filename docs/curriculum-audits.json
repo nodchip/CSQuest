@@ -472,6 +472,22 @@
       "topics": 13,
       "outcomes": 11,
       "scope_sha256": "65e0a11ab8f2da2ada306a7877336747d854eb6e48aa7de827891f22a57e46a3"
+    },
+    "AI-Introduction": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-introduction.md",
+      "topics": 27,
+      "outcomes": 4,
+      "scope_sha256": "77f550836da6e4138ed6cbbb77a92231a90554ff7651a56e7487264162aac316"
+    },
+    "AI-Search": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-search.md",
+      "topics": 45,
+      "outcomes": 12,
+      "scope_sha256": "be9eec0b198ed4d17d44756a0dd29b9310fea2bf48dd71093753968320bbd323"
     }
   }
 }
