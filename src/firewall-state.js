@@ -1,10 +1,10 @@
 export const firewallLevel={id:'castle-firewall-state',number:'279',kind:'firewall-state',name:'門番と返事の記録',tag:'ステートフルな通信制御',title:'頼んだ返事だけを通そう',story:'城の門番が、外の商人への依頼と外部からの伝令を区別します。'};
 export const firewallModes={open:'外からの伝令をすべて通す',closed:'外からの伝令をすべて止める',stateful:'依頼に対応する返事だけ通す'};
-export const firewallActions={out:'城から商人へ依頼',reply:'商人から返事',stranger:'別の相手から新しい伝令'};
+export const firewallActions={out:'城から商人へ依頼',reply:'商人から返事',stranger:'別の相手から新しい伝令',expire:'記録の期限を過ぎる'};
 export function firewallRun(mode,history){
  if(!Object.hasOwn(firewallModes,mode)||!Array.isArray(history)||history.length>24||!history.every(a=>Object.hasOwn(firewallActions,a)))throw new RangeError('操作が不正です。');
  let known=false;const events=[];
- for(const action of history){const before=known,allow=action==='out'||mode==='open'||mode==='stateful'&&action==='reply'&&known;if(action==='out'&&allow)known=true;events.push({action,before,allow,known});}
+ for(const action of history){const before=known,allow=action==='expire'?null:action==='out'||mode==='open'||mode==='stateful'&&action==='reply'&&known;if(action==='out'&&allow)known=true;if(action==='expire')known=false;events.push({action,before,allow,known});}
  return {known,events};
 }
 export function createFirewall(){return {selected:'open',histories:{open:[],closed:[],stateful:[]}};}
