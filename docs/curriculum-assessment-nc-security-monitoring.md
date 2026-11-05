@@ -8,4 +8,6 @@
 
 [NIST SP 800-41 Rev.1](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf) の状態を利用する通信制御と [NIST SP 800-94](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-94.pdf) の誤警報・見逃しの説明を参考にした固定模型。実 IP・ポート、実時間、実際の警報分布や性能、DoS・なりすまし対策、実機の設定・運用は評価しない。内容を検査しない門番はすべての実製品の挙動を示さない。原典の例示範囲全体には届かないため部分対応とする。
 
-`tests/firewall-state.test.js`、`tests/intrusion-threshold.test.js`、`tests/signature-lab.test.js` の９件が成功。390px幅の公開版で両依頼を達成して解説を確認し、横あふれはなかった。期限切れ、返事の内容、警報中の比率と途中再開も各追加時に確認した。実際の防御効果や自由な説明は評価していない。
+`tests/firewall-state.test.js`、`tests/intrusion-threshold.test.js`、`tests/signature-lab.test.js` の10件が成功。390px幅の公開版で両依頼を達成して解説を確認し、横あふれはなかった。期限切れ、返事の内容、警報中の比率と途中再開も各追加時に確認した。実際の防御効果や自由な説明は評価していない。
+
+依頼280では、警報中の危険な通信の割合と、危険な通信のうち検知できた割合を区別する選択肢を追加した。しきい値４では正常通信を複製しても危険な４件中３件は変わらない。誤答の理由・修正・途中再開を390px幅で確認。固定された例で実データの発生率や性能は推定しない。
