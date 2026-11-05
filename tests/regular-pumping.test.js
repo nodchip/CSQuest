@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {regularPump,regularPumpCreate,regularPumpDone,regularPumpRestore} from '../src/regular-pumping.js';
+import {createLanguageStacks,restoreLanguageStacks} from '../src/language-stacks.js';
+test('all valid cuts for each example stay within the first p a symbols',()=>{for(const p of [2,3,4])for(let start=0;start<p;start++)for(let length=1;start+length<=p;length++)for(const repeat of [0,1,2]){const r=regularPump(p,start,length,repeat);assert.equal(r.x+r.y+r.z,'a'.repeat(p)+'b'.repeat(p));assert.equal(r.result,r.x+r.y.repeat(repeat)+r.z);assert.equal(r.a,p+length*(repeat-1));assert.equal(r.b,p);assert.equal(r.inLanguage,repeat===1);}assert.throws(()=>regularPump(2,1,2,0));assert.throws(()=>regularPump(2,0,0,0));});
+test('required observations and reflection persist and legacy states restore',()=>{const q=regularPumpCreate();q.observed=['2:0:1','3:1:2','4:0:4'];q.answer='all';assert(regularPumpDone(q));const copy=regularPumpRestore(q);copy.observed.pop();assert.equal(q.observed.length,3);assert.throws(()=>regularPumpRestore({...q,observed:['2:0:3']}));const {pump,...old}=createLanguageStacks();assert.deepEqual(restoreLanguageStacks(old),createLanguageStacks());});

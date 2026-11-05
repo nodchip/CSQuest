@@ -1,3 +1,4 @@
+import {regularPumpCreate,regularPumpRestore} from './regular-pumping.js';
 export const languageStacksLevel={id:'archive-language-stacks',number:'644',kind:'language-stacks',name:'対になる文字の門',tag:'正規言語と文脈自由言語',title:'文字の列を二つの門に通そう',story:'書庫の門は、a を並べた後に同じ数の b が続く列だけを通します。有限の札で数える門と、山札を使う門を調べましょう。'};
 export const languageModes=['finite','stack'];
 export const languageRequired=['finite,3,3','finite,4,4','stack,4,4','stack,4,3'];
@@ -20,7 +21,7 @@ export const hierarchyClasses={regular:'正規言語',contextFree:'文脈自由�
 export const hierarchyExamples={star:{name:'a を０個以上並べた列',minimum:0,reason:'有限状態で a を繰り返し読み、他の文字を拒めます。'},pairs:{name:'aⁿbⁿ（n は０以上）',minimum:1,reason:'山札で a と b の数を対応させられますが、有限状態では任意の数を区別できません。'},triples:{name:'aⁿbⁿcⁿ（n は１以上）',minimum:2,reason:'入力の帯に印を付けて３種類を照合でき、文脈自由でないことはポンピング補題などで示せます。'},halting:{name:'停止する機械と入力の符号の組',minimum:3,reason:'機械を模倣し、停止したら受理できます。停止しない組は待ち続ける場合があり、停止問題の決定不能性から文脈依存には含まれません。'}};
 export function hierarchyMembership(example,category){const examples=Object.keys(hierarchyExamples),classes=Object.keys(hierarchyClasses);if(!examples.includes(example)||!classes.includes(category))throw new RangeError('階層の選択が不正です。');return classes.indexOf(category)>=hierarchyExamples[example].minimum;}
 export function hierarchyExplanation(example,category){const belongs=hierarchyMembership(example,category),item=hierarchyExamples[example],smallest=Object.keys(hierarchyClasses)[item.minimum];return {belongs,smallest:hierarchyClasses[smallest],reason:item.reason};}
-export function createLanguageStacks(){return {mode:'finite',n:3,m:3,step:0,observed:[],states:[0,0,0,0],i:null,j:null,proof:[],answer:null,checked:false,hierarchy:{example:'star',category:'regular',guess:null,observed:[],checked:false}};}
+export function createLanguageStacks(){return {mode:'finite',n:3,m:3,step:0,observed:[],states:[0,0,0,0],i:null,j:null,proof:[],answer:null,checked:false,hierarchy:{example:'star',category:'regular',guess:null,observed:[],checked:false},pump:regularPumpCreate()};}
 export function languageStacksComplete(s){return languageRequired.every(k=>s.observed.includes(k))&&['accept','reject'].every(k=>s.proof.includes(k))&&s.answer==='memory'&&s.checked;}
 export function restoreLanguageStacks(s){
  const valid=new Set(languageModes.flatMap(mode=>[0,1,2,3,4].flatMap(n=>[0,1,2,3,4].map(m=>`${mode},${n},${m}`))));
@@ -28,5 +29,5 @@ export function restoreLanguageStacks(s){
  languageTrace(s.mode,s.n,s.m,s.step);for(const d of s.proof)languageProof(s.states,s.i,s.j,d);
  const h=Object.hasOwn(s,'hierarchy')?s.hierarchy:createLanguageStacks().hierarchy;
  if(!h||!Object.hasOwn(hierarchyExamples,h.example)||!Object.hasOwn(hierarchyClasses,h.category)||![null,'yes','no'].includes(h.guess)||!Array.isArray(h.observed)||new Set(h.observed).size!==h.observed.length||h.observed.some(key=>{const parts=key.split(':');return parts.length!==2||!Object.hasOwn(hierarchyExamples,parts[0])||!Object.hasOwn(hierarchyClasses,parts[1]);})||typeof h.checked!=='boolean'||(h.checked&&h.guess===null))throw new RangeError('階層の途中記録が不正です。');
- return {...s,observed:[...s.observed],states:[...s.states],proof:[...s.proof],hierarchy:{...h,observed:[...h.observed]}};
+ return {...s,observed:[...s.observed],states:[...s.states],proof:[...s.proof],hierarchy:{...h,observed:[...h.observed]},pump:Object.hasOwn(s,'pump')?regularPumpRestore(s.pump):regularPumpCreate()};
 }
