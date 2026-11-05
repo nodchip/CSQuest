@@ -504,6 +504,22 @@
       "topics": 13,
       "outcomes": 9,
       "scope_sha256": "3d99aa23b2389d850082832553488ef5ddd4a496dea79ec7998ee3ab1027d756"
+    },
+    "AI-LRR": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-lrr.md",
+      "topics": 16,
+      "outcomes": 13,
+      "scope_sha256": "e34c4603a13e2f7b1c403cb659ddfab23bf1974d38722033b02eaa9e76d9455e"
+    },
+    "AI-Planning": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-planning.md",
+      "topics": 14,
+      "outcomes": 4,
+      "scope_sha256": "962b4a9cb500fb53585db7f391982f33a2385793abde06fe6612a1bee989888b"
     }
   }
 }
