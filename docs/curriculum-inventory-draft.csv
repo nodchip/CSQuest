@@ -2610,7 +2610,7 @@ PDC-Coordination:学習成果:KA Core:7,PDC,PDC-Coordination,学習成果,KA Cor
 PDC-Coordination:学習成果:KA Core:8,PDC,PDC-Coordination,学習成果,KA Core,8,複数主体の時刻合意と限界,部分,503で往復測定と非対称性を比較。複数ノードの合意・実装は未評価。,coverage-pdc-coordination.md,47,原典照合結果は監査記録参照
 PDC-Coordination:学習成果:KA Core:9,PDC,PDC-Coordination,学習成果,KA Core,9,要求ごとにスレッド等を作るサービス,部分,452で知らせごとの活動を操作。実サービスの実装は未評価。,coverage-pdc-coordination.md,48,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:1,PDC,PDC-Evaluation,トピック,CS Core,1,時相論理による安全性・活性の要件,部分,438で排他と飢餓、439で２式と循環記録を比較。一般の式の作成と全実行の検証は未評価。,coverage-pdc-evaluation.md,9,原典照合結果は監査記録参照
-PDC-Evaluation:トピック:CS Core:2,PDC,PDC-Evaluation,トピック,CS Core,2,順序・原子性・終了に関する違反の発見、試験、修正,部分,15・16・30で更新喪失、排他、循環待ちを操作。チェック後の実行やライブロックを含む一般の試験・修正は未評価。,coverage-pdc-evaluation.md,10,原典照合結果は監査記録参照
+PDC-Evaluation:トピック:CS Core:2,PDC,PDC-Evaluation,トピック,CS Core,2,順序・原子性・終了に関する違反の発見、試験、修正,部分,15・16・30で更新喪失、排他、循環待ち、244で固定された再挑戦の繰返しを操作。チェック後の実行や一般の試験・修正は未評価。,coverage-pdc-evaluation.md,10,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:3,PDC,PDC-Evaluation,トピック,CS Core,3,性能指標とサービス水準,部分,66・437で時間や仕事量、161で仮定の電力を比較。応答性、遅延、可用性、資源、通信、待ち、制限、公平性、合意されたサービス水準の体系的な評価・実測は未評価。,coverage-pdc-evaluation.md,11,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:4,PDC,PDC-Evaluation,トピック,CS Core,4,粒度・オーバーヘッド・合意・エネルギーによる性能への影響,部分,418で袋の粒度と準備、437で人数に応じた仮定費用、161・1285で時間と電力を比較。1285は逐次の固定模型で、並列処理のエネルギーや合意費用・実測は未評価。,coverage-pdc-evaluation.md,12,原典照合結果は監査記録参照
 PDC-Evaluation:トピック:CS Core:5,PDC,PDC-Evaluation,トピック,CS Core,5,拡張性の限界の見積り,部分,66で逐次準備による限界、437・1052で固定・変動仕事量を比較。一般のモデルや万能スケーラビリティ法則は未評価。,coverage-pdc-evaluation.md,13,原典照合結果は監査記録参照
@@ -2806,7 +2806,7 @@ SE-Formal:トピック:Non-core:1a,SE,SE-Formal,トピック,Non-core,1a,事前�
 SE-Formal:トピック:Non-core:1b,SE,SE-Formal,トピック,Non-core,1b,仕様の形式言語,未照合,実際の形式言語の記述と解析を要照合。,coverage-se-formal.md,13,原典照合結果は監査記録参照
 SE-Formal:トピック:Non-core:2,SE,SE-Formal,トピック,Non-core,2,形式手法が有用な問題領域,部分,242・244で並行動作を有限模型として探索。一般の適用は未評価。,coverage-se-formal.md,14,原典照合結果は監査記録参照・親子重複候補
 SE-Formal:トピック:Non-core:2a,SE,SE-Formal,トピック,Non-core,2a,ロックフリーとデータ競合,部分,15で固定の並行更新。ロックフリー一般は未評価。,coverage-se-formal.md,15,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:2b,SE,SE-Formal,トピック,Non-core,2b,非同期・分散・デッドロック,部分,242で入口の封鎖と入室可能性、244で有限のデッドロックを比較。ライブロック等は未評価。,coverage-se-formal.md,16,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:2b,SE,SE-Formal,トピック,Non-core,2b,非同期・分散・デッドロック,部分,242で入口の封鎖と入室可能性、244で有限のデッドロックと同時再挑戦のライブロックを比較。一般の実行や実装は未評価。,coverage-se-formal.md,16,原典照合結果は監査記録参照
 SE-Formal:トピック:Non-core:3,SE,SE-Formal,トピック,Non-core,3,他の欠陥検出技法との比較,部分,243で有限範囲と一例、349で手動変異と模型を比較。一般の比較は未評価。,coverage-se-formal.md,17,原典照合結果は監査記録参照・親子重複候補
 SE-Formal:トピック:Non-core:3a,SE,SE-Formal,トピック,Non-core,3a,試験との比較,部分,243で１例と有限の網羅を比較。実プログラムは未評価。,coverage-se-formal.md,18,原典照合結果は監査記録参照
 SE-Formal:トピック:Non-core:3b,SE,SE-Formal,トピック,Non-core,3b,ファジングとの比較,部分,349で手動変異による観察と故障の道を省いた有限模型の検査を比較。実ファザー・実検査器や一般の比較は未評価。,coverage-se-formal.md,19,原典照合結果は監査記録参照
