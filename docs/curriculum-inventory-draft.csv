@@ -1561,10 +1561,10 @@ FPL-Types:トピック:Non-core:14,FPL,FPL-Types,トピック,Non-core,14,静的
 FPL-Types:トピック:Non-core:15,FPL,FPL-Types,トピック,Non-core,15,型としての命題,部分,768で含意と関数、連言と積、選言とタグ付き和の対応を示し、５つの証明と道具を組み立てる。一般の論理体系や任意の型は未評価。,coverage-fpl-types.md,44,原典照合結果は監査記録参照
 FPL-Types:トピック:Non-core:16,FPL,FPL-Types,トピック,Non-core,16,依存型,部分,769で入力の数に依存する長さの列、数と列の依存対、連結と範囲内の位置を操作。全称・存在との対応の一般的な証明や実言語は未評価。,coverage-fpl-types.md,45,原典照合結果は監査記録参照
 FPL-Types:学習成果:CS Core:1,FPL,FPL-Types,学習成果,CS Core,1,基本型と複合型の値を説明,部分,24・595で固定型の値。一般の型と自由な説明は未評価。,coverage-fpl-types.md,51,原典照合結果は監査記録参照
-FPL-Types:学習成果:CS Core:2,FPL,FPL-Types,学習成果,CS Core,2,静的に禁止される操作を説明,部分,24で不適合な接続。実言語と自由な説明は未評価。,coverage-fpl-types.md,52,原典照合結果は監査記録参照
+FPL-Types:学習成果:CS Core:2,FPL,FPL-Types,学習成果,CS Core,2,特定の静的型付き言語で禁止される操作を説明,部分,24で不適合な接続。実言語と自由な説明は未評価。,coverage-fpl-types.md,52,原典照合結果は監査記録参照
 FPL-Types:学習成果:CS Core:3,FPL,FPL-Types,学習成果,CS Core,3,型が検出する誤りの例を説明,部分,24で入力型の不一致。自由な説明は未評価。,coverage-fpl-types.md,53,原典照合結果は監査記録参照
 FPL-Types:学習成果:CS Core:4,FPL,FPL-Types,学習成果,CS Core,4,複数言語で静的・動的に検査される性質を区別,部分,1041で Rust と Python の分岐中の加算の検査時点を比較。言語全般や自由な説明は未評価。,coverage-fpl-types.md,54,原典照合結果は監査記録参照
-FPL-Types:学習成果:CS Core:5,FPL,FPL-Types,学習成果,CS Core,5,検査に通らないが実行しても誤りのない例を説明,部分,510で通らない分岐の不適合を比較。実言語と自由な説明は未評価。,coverage-fpl-types.md,55,原典照合結果は監査記録参照
+FPL-Types:学習成果:CS Core:5,FPL,FPL-Types,学習成果,CS Core,5,特定言語で検査に通らないが実行しても誤りのない例を説明,部分,510で架空の型検査、1041で Rust の不受理と Python の実行経路を比較。Rust の不受理プログラムを実行したわけではなく、自由な説明は未評価。,coverage-fpl-types.md,55,原典照合結果は監査記録参照
 FPL-Types:学習成果:CS Core:6,FPL,FPL-Types,学習成果,CS Core,6,型とエラーを用いてプログラムを作成・修正,部分,24・772で固定の道具を修正。実言語での作成は評価しない。,coverage-fpl-types.md,56,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:7,FPL,FPL-Types,学習成果,KA Core,7,型規則と許される操作の関係を説明,部分,24で入出力の型に基づく接続。自由な説明は未評価。,coverage-fpl-types.md,57,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:8,FPL,FPL-Types,学習成果,KA Core,8,複合型に適用される型規則を列挙,未照合,固定例はあるが規則の列挙は未評価。,coverage-fpl-types.md,58,原典照合結果は監査記録参照

@@ -747,6 +747,28 @@
         "src/app.js": "e9d0998d87309df69181ec1cb9138b934ec830a5ef569bbe54fa318c7c725d6a",
         "tests/tree-fold.test.js": "37a4918e4c5d9991c3df743c896647688ad04b71c2d8537cbf039c94b9aaf630"
       }
+    },
+    "FPL-Types:学習成果:CS Core:4": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-types-language.md",
+      "row_sha256": "f50f925a44ee045617225689e8d324c783bd06182147099f10ff432d9cbb349f",
+      "files": {
+        "src/language-type-check.js": "a6483f94dc9bf2b1ad65486ab96e6bab41d9e4e4d72c1d5b9a16f5c16a7b80f2",
+        "src/app.js": "e9d0998d87309df69181ec1cb9138b934ec830a5ef569bbe54fa318c7c725d6a",
+        "tests/language-type-check.test.js": "5091f2e2e22b54f415a48f9ffea91c57a2034def527ef504140de5a9b155f9b2"
+      }
+    },
+    "FPL-Types:学習成果:CS Core:5": {
+      "date": "2026-11-06",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-types-language.md",
+      "row_sha256": "57d550829a608713de6f03408cbff959386cf2174c2789b3c1c6bf767e3ad7d0",
+      "files": {
+        "src/language-type-check.js": "a6483f94dc9bf2b1ad65486ab96e6bab41d9e4e4d72c1d5b9a16f5c16a7b80f2",
+        "src/app.js": "e9d0998d87309df69181ec1cb9138b934ec830a5ef569bbe54fa318c7c725d6a",
+        "tests/language-type-check.test.js": "5091f2e2e22b54f415a48f9ffea91c57a2034def527ef504140de5a9b155f9b2"
+      }
     }
   }
 }

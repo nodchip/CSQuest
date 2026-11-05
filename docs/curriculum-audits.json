@@ -800,6 +800,14 @@
       "topics": 22,
       "outcomes": 13,
       "scope_sha256": "a8297a8aedcc866ba2e79fd006e1b7e360b938d14619cdede67e2615739153bb"
+    },
+    "FPL-Types": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-types.md",
+      "topics": 37,
+      "outcomes": 18,
+      "scope_sha256": "ccb746ad873ae0048ca95a801c81390df79cb6bb4b7358ed20742b59d50b7c12"
     }
   }
 }
