@@ -3296,26 +3296,26 @@ SF-Evaluation:学習成果:CS Core:5,SF,SF-Evaluation,学習成果,CS Core,5,簡
 SF-Evaluation:学習成果:CS Core:6,SF,SF-Evaluation,学習成果,CS Core,6,ツールで性能を測定・分析,部分,1097でブラウザーの時計を使って固定探索を実測し、順序・平均・分解能を比較。実サービスや一般のツール操作は未評価。,coverage-sf-evaluation.md,29,原典照合結果は監査記録参照
 SF-Evaluation:学習成果:KA Core:7,SF,SF-Evaluation,学習成果,KA Core,7,代表的なシステムの性能実験を設計・実施,未照合,実システムの実験は未確認。,coverage-sf-evaluation.md,30,原典照合結果は監査記録参照
 SF-Evaluation:学習成果:KA Core:8,SF,SF-Evaluation,学習成果,KA Core,8,階層化システムのパラメータと性能の実験を設計,部分,依頼573は固定キャッシュ模型の配置と時間を比較。一般の実験設計や実測は未評価。,coverage-sf-evaluation.md,31,原典照合結果は監査記録参照
-SF-Foundations:トピック:未記載:1,SF,SF-Foundations,トピック,未記載,1,デジタル・アナログ、離散・連続,部分,依頼221・222で量子化と標本化。一般的な分類と実測は未評価。,coverage-sf-foundations.md,9,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:2,SF,SF-Foundations,トピック,未記載,2,論理ゲート、論理式、簡単化,部分,依頼06の回路。一般の簡単化は未評価。,coverage-sf-foundations.md,10,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:3,SF,SF-Foundations,トピック,未記載,3,クロック、状態、順序,部分,依頼265で合図による記憶、73で命令段階。一般のクロック設計は未評価。,coverage-sf-foundations.md,11,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:4,SF,SF-Foundations,トピック,未記載,4,初期・終端を含む状態と遷移,部分,依頼31の固定遷移、267の４状態。一般の状態設計は未評価。,coverage-sf-foundations.md,12,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:5,SF,SF-Foundations,トピック,未記載,5,有限状態機械、NFA と DFA,部分,依頼561で NFA の候補集合から DFA の遷移を構築。一般の構築と他の機械は未評価。,coverage-sf-foundations.md,13,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:6,SF,SF-Foundations,トピック,未記載,6,組合せ・順序論理、レジスタ、メモリ,部分,依頼06・37・265〜267の固定回路。一般の回路・メモリ設計は未評価。,coverage-sf-foundations.md,14,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:7,SF,SF-Foundations,トピック,未記載,7,状態機械としての計算機とネットワークプロトコル,部分,依頼73の命令処理と263の番号付き伝令。一般の計算機・実プロトコルは未評価。,coverage-sf-foundations.md,15,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:8,SF,SF-Foundations,トピック,未記載,8,逐次処理と並列処理,部分,依頼130・254で固定の仕事を比較。一般の実行は未評価。,coverage-sf-foundations.md,16,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:9,SF,SF-Foundations,トピック,未記載,9,単一スレッドの逐次処理,部分,依頼14の固定仕事順。実行環境全般は未評価。,coverage-sf-foundations.md,17,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:トピック:未記載:10,SF,SF-Foundations,トピック,未記載,10,要求単位の並列・サーバー・スレッド・パイプライン,部分,依頼254の受付、272の区間の重なり。実サーバーやスレッドは未評価。,coverage-sf-foundations.md,18,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:1,SF,SF-Foundations,学習成果,未記載,1,デジタル・アナログ、離散・連続の違いと例,部分,依頼221・222で標本化と量子化。自由な説明と実例全般は未評価。,coverage-sf-foundations.md,24,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:2,SF,SF-Foundations,学習成果,未記載,2,計算を状態と遷移で説明,部分,依頼31・73の固定例。一般の説明は未評価。,coverage-sf-foundations.md,25,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:3,SF,SF-Foundations,学習成果,未記載,3,状態を持つ系と持たない系の区別,部分,依頼109で記憶の有無を比較。一般の説明は未評価。,coverage-sf-foundations.md,26,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:4,SF,SF-Foundations,学習成果,未記載,4,単純な問題の状態機械を構築,部分,依頼267で４状態の規則、561で固定 NFA の遷移表を構築。任意の問題は未評価。,coverage-sf-foundations.md,27,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:5,SF,SF-Foundations,学習成果,未記載,5,命令を解釈する状態機械としての計算機,部分,依頼73で架空命令の取出し・解読・実行。自由な説明は未評価。,coverage-sf-foundations.md,28,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:6,SF,SF-Foundations,学習成果,未記載,6,プログラム・プロトコルの状態機械と別表現,部分,依頼263の番号付き伝令。一般的な別表現との比較は未評価。,coverage-sf-foundations.md,29,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:7,SF,SF-Foundations,学習成果,未記載,7,状態機械から時系列の振る舞いを導く,部分,依頼31・267の固定遷移。一般の導出は未評価。,coverage-sf-foundations.md,30,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:8,SF,SF-Foundations,学習成果,未記載,8,同一問題の逐次・並列プログラムを書く,部分,依頼130で固定の分担と集約を操作。実コードの記述能力は評価しない。,coverage-sf-foundations.md,31,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:9,SF,SF-Foundations,学習成果,未記載,9,異なる規模で逐次・並列版の性能を評価,部分,依頼437で人数と仕事量を変える固定模型。実プログラムの評価は対象外。,coverage-sf-foundations.md,32,原典照合結果は監査記録参照・区分を要確認
-SF-Foundations:学習成果:未記載:10,SF,SF-Foundations,学習成果,未記載,10,時系列の同時性と経過時間短縮を説明,部分,依頼254の受付で完了時刻を比較。一般の時系列と自由な説明は未評価。,coverage-sf-foundations.md,33,原典照合結果は監査記録参照・区分を要確認
+SF-Foundations:トピック:CS Core:1,SF,SF-Foundations,トピック,CS Core,1,デジタル・アナログ、離散・連続,部分,依頼221・222で量子化と標本化。一般的な分類と実測は未評価。,coverage-sf-foundations.md,9,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:2,SF,SF-Foundations,トピック,CS Core,2,論理ゲート、論理式、簡単化,部分,依頼06の回路。一般の簡単化は未評価。,coverage-sf-foundations.md,10,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:3,SF,SF-Foundations,トピック,CS Core,3,クロック、状態、順序,部分,依頼265で合図による記憶、73で命令段階。一般のクロック設計は未評価。,coverage-sf-foundations.md,11,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:4,SF,SF-Foundations,トピック,CS Core,4,初期・終端を含む状態と遷移,部分,依頼31の固定遷移、267の４状態。一般の状態設計は未評価。,coverage-sf-foundations.md,12,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:5,SF,SF-Foundations,トピック,CS Core,5,有限状態機械、NFA と DFA,部分,依頼561で NFA の候補集合から DFA の遷移を構築。一般の構築と他の機械は未評価。,coverage-sf-foundations.md,13,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:6,SF,SF-Foundations,トピック,CS Core,6,組合せ・順序論理、レジスタ、メモリ,部分,依頼06・37・265〜267の固定回路。一般の回路・メモリ設計は未評価。,coverage-sf-foundations.md,14,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:7,SF,SF-Foundations,トピック,CS Core,7,状態機械としての計算機とネットワークプロトコル,部分,依頼73の命令処理と263の番号付き伝令。一般の計算機・実プロトコルは未評価。,coverage-sf-foundations.md,15,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:8,SF,SF-Foundations,トピック,CS Core,8,逐次処理と並列処理,部分,依頼130・254で固定の仕事を比較。一般の実行は未評価。,coverage-sf-foundations.md,16,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:9,SF,SF-Foundations,トピック,CS Core,9,単一スレッドの逐次処理,部分,依頼14の固定仕事順。実行環境全般は未評価。,coverage-sf-foundations.md,17,原典照合結果は監査記録参照
+SF-Foundations:トピック:CS Core:10,SF,SF-Foundations,トピック,CS Core,10,要求単位の並列・サーバー・スレッド・パイプライン,部分,依頼254の受付、272の区間の重なり。実サーバーやスレッドは未評価。,coverage-sf-foundations.md,18,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:1,SF,SF-Foundations,学習成果,CS Core,1,デジタル・アナログ、離散・連続の違いと例,部分,依頼221・222で標本化と量子化。自由な説明と実例全般は未評価。,coverage-sf-foundations.md,24,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:2,SF,SF-Foundations,学習成果,CS Core,2,計算を状態と遷移で説明,部分,依頼31・73の固定例。一般の説明は未評価。,coverage-sf-foundations.md,25,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:3,SF,SF-Foundations,学習成果,CS Core,3,状態を持つ系と持たない系の区別,部分,依頼109で記憶の有無を比較。一般の説明は未評価。,coverage-sf-foundations.md,26,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:4,SF,SF-Foundations,学習成果,CS Core,4,単純な問題の状態機械を構築,部分,依頼267で４状態の規則、561で固定 NFA の遷移表を構築。任意の問題は未評価。,coverage-sf-foundations.md,27,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:5,SF,SF-Foundations,学習成果,CS Core,5,命令を解釈する状態機械としての計算機,部分,依頼73で架空命令の取出し・解読・実行。自由な説明は未評価。,coverage-sf-foundations.md,28,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:6,SF,SF-Foundations,学習成果,CS Core,6,プログラム・プロトコルの状態機械と別表現,部分,依頼263の番号付き伝令。一般的な別表現との比較は未評価。,coverage-sf-foundations.md,29,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:7,SF,SF-Foundations,学習成果,CS Core,7,状態機械から時系列の振る舞いを導く,部分,依頼31・267の固定遷移。一般の導出は未評価。,coverage-sf-foundations.md,30,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:8,SF,SF-Foundations,学習成果,CS Core,8,同一問題の逐次・並列プログラムを書く,部分,依頼130で固定の分担と集約を操作。実コードの記述能力は評価しない。,coverage-sf-foundations.md,31,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:9,SF,SF-Foundations,学習成果,CS Core,9,異なる規模で逐次・並列版の性能を評価,部分,依頼437で人数と仕事量を変える固定模型。実プログラムの評価は対象外。,coverage-sf-foundations.md,32,原典照合結果は監査記録参照
+SF-Foundations:学習成果:CS Core:10,SF,SF-Foundations,学習成果,CS Core,10,時系列の同時性と経過時間短縮を説明,部分,依頼254の受付で完了時刻を比較。一般の時系列と自由な説明は未評価。,coverage-sf-foundations.md,33,原典照合結果は監査記録参照
 SF-Overview:トピック:CS Core:1,SF,SF-Overview,トピック,CS Core,1,ゲート、記憶、接続、データ経路、制御など,部分,依頼06・37の回路、73の命令処理、265の記憶。部品全体の統合は未評価。,coverage-sf-overview.md,9,原典照合結果は監査記録参照
 SF-Overview:トピック:CS Core:2,SF,SF-Overview,トピック,CS Core,2,論理部品、論理式の簡単化、積和形,部分,依頼06で指定回路を構築。一般の簡単化と積和形は未評価。,coverage-sf-overview.md,10,原典照合結果は監査記録参照
 SF-Overview:トピック:CS Core:3,SF,SF-Overview,トピック,CS Core,3,プログラミング抽象化、インターフェース、ライブラリ,部分,依頼518で道具の呼出しと枠組みへの登録を比較。一般の抽象化、API 設計や実ライブラリの利用は未評価。,coverage-sf-overview.md,11,原典照合結果は監査記録参照

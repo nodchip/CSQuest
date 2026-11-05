@@ -376,6 +376,22 @@
       "topics": 2,
       "outcomes": 3,
       "scope_sha256": "d78cd5498cefcd1f3c4272f45c7ef17e5aec9a27b51eb293b40e4aa0fbaf7d8b"
+    },
+    "SF-Foundations": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sf-foundations.md",
+      "topics": 10,
+      "outcomes": 10,
+      "scope_sha256": "fe4d5f509bd4d53bc32624e4c0795fe2c7c571b5bed787f379b1785987c28129"
+    },
+    "SF-Resource": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sf-resource.md",
+      "topics": 3,
+      "outcomes": 4,
+      "scope_sha256": "edc48594e6c93512dc422037ad0e118ab842f2964a6d9a2f9483dfb1dd25477f"
     }
   }
 }
