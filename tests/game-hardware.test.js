@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {gameHardwareInputs,gameHardwareTrace,gameHardwareCreate,gameHardwareDone,gameHardwareRestore} from '../src/game-hardware.js';
+import {createCaptions,restoreCaptions} from '../src/game-captions.js';
+test('each input moves, then hits the wall, and vibration depends on output setting',()=>{for(const input of Object.keys(gameHardwareInputs))for(const v of [false,true]){assert.equal(gameHardwareTrace(input,v,0).position,1);assert.equal(gameHardwareTrace(input,v,1).position,2);const r=gameHardwareTrace(input,v,2);assert(r.collision);assert.equal(r.vibration,v);}assert.throws(()=>gameHardwareTrace('stick',true,3));});
+test('four complete trials and the direction answer survive restoring old drafts',()=>{const q=gameHardwareCreate();for(const k of Object.keys(gameHardwareInputs))q.phases[k]={off:2,on:2};assert(!gameHardwareDone(q));q.answer='direction';assert(gameHardwareDone(q));const copy=gameHardwareRestore(q);copy.phases.stick.on=0;assert.equal(q.phases.stick.on,2);assert.throws(()=>gameHardwareRestore({...q,phases:{...q.phases,tilt:{off:3,on:2}}}));const {hardware,...old}=createCaptions();assert.deepEqual(restoreCaptions(old),createCaptions());});
