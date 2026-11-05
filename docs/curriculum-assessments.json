@@ -508,6 +508,30 @@
         "tests/game-scene-workshop.test.js": "75d30a4389d6e1ecdce82d6dcd5f27e6d579f6a4bdfeb17dff16a7483ec8bab6",
         "tests/game-scene-testing.test.js": "a2d4d674c6730f2ea02454aaed09c0eecda0b50ad41247083e5b33f522f7e8d6"
       }
+    },
+    "SPD-Game:トピック:KA Core:5a": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-game-design.md",
+      "row_sha256": "edcfcd928a5435d93868a5ce537d2b7fcfab9cb8b2f1192c040747dfada98223",
+      "files": {
+        "src/app.js": "379bc9b5defaed2516b9f1ff5d8eefa069c38d23c1c63e01ad9f12ae014ebf77",
+        "src/game-captions.js": "02d6b98a29237f548cf3d51592e1a7cd70efb68f7d1a6d6f55d1fe4aec4b8af5",
+        "src/game-design-rules.js": "23b9bb951ea88fee9327016cd266470fdb1634c70c4ef1903d56ce49349cc6a5",
+        "tests/game-design-rules.test.js": "4f6e20c9579d21a5c30cf28d2c6ba0e22a079d03dacbc029195399740f3de895"
+      }
+    },
+    "SPD-Game:トピック:KA Core:5b": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-game-design.md",
+      "row_sha256": "397fcfc3424d1e22ee9eb0ad8910cd1a53709f187b49c378097239557cf4c6bb",
+      "files": {
+        "src/app.js": "379bc9b5defaed2516b9f1ff5d8eefa069c38d23c1c63e01ad9f12ae014ebf77",
+        "src/game-captions.js": "02d6b98a29237f548cf3d51592e1a7cd70efb68f7d1a6d6f55d1fe4aec4b8af5",
+        "src/game-playtest.js": "6802af141df4ffdadf379bcbcea58dc021efc3189abccb7c90e27795ff9ec3a7",
+        "tests/game-playtest.test.js": "3b34c9c976896cc18f26d5a059f45573ba439bef49b4b33fab4b1ef06100219b"
+      }
     }
   }
 }
