@@ -420,6 +420,30 @@
         "src/app.js": "e1244f3789fe86e0e5fdb681e633dea9438d93534b2abdfeb86bd92ed0f0d9be",
         "tests/left-recursion.test.js": "4b2a91b48b5c69e3a6df526b4c8811ce1150fe2b5efa1a37ffb5a3b9d642ea31"
       }
+    },
+    "FPL-Semantics:トピック:Non-core:8": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-semantics-attributes.md",
+      "row_sha256": "f5c770a5741a9a0e4b285d7f33cb3b8667882dbbb1073a4d5296bbfd340b6f50",
+      "files": {
+        "src/compiler-stages.js": "0454a6e004ef78605be19ca872dd0eec845c53b6d3c61137542d7f7d836b8cf2",
+        "src/app.js": "e1244f3789fe86e0e5fdb681e633dea9438d93534b2abdfeb86bd92ed0f0d9be",
+        "tests/compiler-stages.test.js": "ee52d12e7d186fe1eb6f271085bfe21ad6973b398f11448be8dae2e1845edacf",
+        "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
+      }
+    },
+    "FPL-Semantics:学習成果:Non-core:3": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-semantics-attributes.md",
+      "row_sha256": "0ea383bff9cb9830e546852629c20fe0d85af8fdc5cc4459b8ea348aa8fce4d1",
+      "files": {
+        "src/compiler-stages.js": "0454a6e004ef78605be19ca872dd0eec845c53b6d3c61137542d7f7d836b8cf2",
+        "src/app.js": "e1244f3789fe86e0e5fdb681e633dea9438d93534b2abdfeb86bd92ed0f0d9be",
+        "tests/compiler-stages.test.js": "ee52d12e7d186fe1eb6f271085bfe21ad6973b398f11448be8dae2e1845edacf",
+        "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
+      }
     }
   }
 }

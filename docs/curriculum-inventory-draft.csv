@@ -1166,21 +1166,22 @@ FPL-Abstraction:学習成果:KA Core:4,FPL,FPL-Abstraction,学習成果,KA Core,
 FPL-Abstraction:学習成果:KA Core:5,FPL,FPL-Abstraction,学習成果,KA Core,5,小言語の文法と抽象構文木,部分,75・309・788で固定の式・規則。任意の文法や木の説明は未評価。,coverage-fpl-abstraction.md,37,原典照合結果は監査記録参照
 FPL-Abstraction:学習成果:KA Core:6,FPL,FPL-Abstraction,学習成果,KA Core,6,ソース文字列以外の表現の利点,部分,75・309で木、787で中間コードを操作。表現間の一般的な比較は未評価。,coverage-fpl-abstraction.md,38,原典照合結果は監査記録参照
 FPL-Abstraction:学習成果:KA Core:7,FPL,FPL-Abstraction,学習成果,KA Core,7,コード表現を処理するプログラムを実装,部分,311・315で入力の巻物を処理する固定模型。実際のプログラムを書く能力は方針上評価しない。,coverage-fpl-abstraction.md,39,原典照合結果は監査記録参照
-FPL-Analysis:トピック:未記載:4,FPL,FPL-Analysis,トピック,未記載,4,基本ブロック・制御フロー・定義使用連鎖・SSA,部分,204で固定の制御フロー、205で届く定義。SSA 等は未評価。,coverage-fpl-analysis.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:5,FPL,FPL-Analysis,トピック,未記載,5,決定不能性と解析への帰結,部分,416で停止問題、1241で型不一致の判定への帰着、1244で増大する区間と拡大を扱う。一般の解析器は未評価。,coverage-fpl-analysis.md,10,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:6,FPL,FPL-Analysis,トピック,未記載,6,フロー非依存の型・ポインタ・別名解析,部分,1181で制約から指し先候補を伝播し、分岐の２候補を統合。一般の解析や実ツールは未評価。,coverage-fpl-analysis.md,11,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:7,FPL,FPL-Analysis,トピック,未記載,7,前向き・後向きのデータフロー解析,部分,205・206で到達定義と固定点、207で必要な書込み、833で生存値、1186で２経路の確実な代入を扱う。任意のプログラムや一般の解析は未評価。,coverage-fpl-analysis.md,12,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:8,FPL,FPL-Analysis,トピック,未記載,8,経路依存のモデル検査・検証,部分,282で固定の条件分岐を記号実行。一般の経路解析は未評価。,coverage-fpl-analysis.md,13,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:9,FPL,FPL-Analysis,トピック,未記載,9,解析器のツールと枠組み,未照合,対応教材を要照合。,coverage-fpl-analysis.md,14,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:10,FPL,FPL-Analysis,トピック,未記載,10,最適化と並行性のデータ依存における静的解析,部分,207・208で不要な書込みと別の効果を比較、1242で固定の２反復の依存と実行順を比較。一般の依存解析と実コンパイラーは未評価。,coverage-fpl-analysis.md,15,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:11,FPL,FPL-Analysis,トピック,未記載,11,部分検証と不具合発見,部分,657で固定の静的規則と実行試験の検出・見逃しを比較。実ツールや一般の検証は未評価。,coverage-fpl-analysis.md,16,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:12a,FPL,FPL-Analysis,トピック,未記載,12a,自動並列化の解析,部分,1242で２反復の読み書きと実行順を比べ、自由な並べ替えが結果を保つか判断。一般の解析や実コンパイラーは未評価。,coverage-fpl-analysis.md,17,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:トピック:未記載:12b,FPL,FPL-Analysis,トピック,未記載,12b,並行性不具合の検出,部分,1243で２操作の鍵の共通集合による候補検出と合図による誤警告を比較。一般の検出器、全経路、実言語のメモリモデルは未評価。,coverage-fpl-analysis.md,18,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:学習成果:未記載:1,FPL,FPL-Analysis,学習成果,未記載,1,データフローグラフと制御フローグラフの違いを説明,部分,1182で204の分岐について手順と直接の値の矢印を選び、２入力の経路を確認。一般の表現や自由な説明は未評価。,coverage-fpl-analysis.md,24,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:学習成果:未記載:2,FPL,FPL-Analysis,学習成果,未記載,2,健全な非自明解析に近似が必要な理由,部分,416で万能停止判定、1241で実行時型不一致の帰着、1244で有限更新と過大近似を比較。一般的な説明は未評価。,coverage-fpl-analysis.md,25,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:学習成果:未記載:3,FPL,FPL-Analysis,学習成果,未記載,3,解析の健全性と停止性を論じる,部分,1244で無限に増える区間に拡大を適用し、全値の包含・安定・精度を選択操作で比較。一般の証明と自由な議論は評価しない。,coverage-fpl-analysis.md,26,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:学習成果:未記載:4,FPL,FPL-Analysis,学習成果,未記載,4,別名が解析を制約する理由と別名解析,部分,1181で候補集合と具体実行を比較し、書込み後の読取り省略を判断。一般の解析・自由な説明は未評価。,coverage-fpl-analysis.md,27,原典照合結果は監査記録参照・区分を要確認
-FPL-Analysis:学習成果:未記載:5,FPL,FPL-Analysis,学習成果,未記載,5,解析結果を最適化または部分的正しさに利用,部分,207で固定例の不要な書込みを外して出力を比較。任意のプログラムの解析・証明は未評価。,coverage-fpl-analysis.md,28,原典照合結果は監査記録参照・区分を要確認
+FPL-Analysis:トピック:Non-core:4,FPL,FPL-Analysis,トピック,Non-core,4,基本ブロック・制御フロー・定義使用連鎖・SSA,部分,204で固定の制御フロー、205で届く定義。SSA 等は未評価。,coverage-fpl-analysis.md,9,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:5,FPL,FPL-Analysis,トピック,Non-core,5,決定不能性と解析への帰結,部分,416で停止問題、1241で型不一致の判定への帰着、1244で増大する区間と拡大を扱う。一般の解析器は未評価。,coverage-fpl-analysis.md,10,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:6,FPL,FPL-Analysis,トピック,Non-core,6,フロー非依存の型・ポインタ・別名解析,部分,1181で制約から指し先候補を伝播し、分岐の２候補を統合。一般の解析や実ツールは未評価。,coverage-fpl-analysis.md,11,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:7,FPL,FPL-Analysis,トピック,Non-core,7,前向き・後向きのデータフロー解析,部分,205・206で到達定義と固定点、207で必要な書込み、833で生存値、1186で２経路の確実な代入を扱う。任意のプログラムや一般の解析は未評価。,coverage-fpl-analysis.md,12,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:8,FPL,FPL-Analysis,トピック,Non-core,8,経路依存のモデル検査・検証,部分,282で固定の条件分岐を記号実行。一般の経路解析は未評価。,coverage-fpl-analysis.md,13,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:9,FPL,FPL-Analysis,トピック,Non-core,9,解析器のツールと枠組み,未照合,対応教材を要照合。,coverage-fpl-analysis.md,14,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:10,FPL,FPL-Analysis,トピック,Non-core,10,最適化と並行性のデータ依存における静的解析,部分,207・208で不要な書込みと別の効果を比較、1242で固定の２反復の依存と実行順を比較。一般の依存解析と実コンパイラーは未評価。,coverage-fpl-analysis.md,15,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:11,FPL,FPL-Analysis,トピック,Non-core,11,部分検証と不具合発見,部分,657で固定の静的規則と実行試験の検出・見逃しを比較。実ツールや一般の検証は未評価。,coverage-fpl-analysis.md,16,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:12,FPL,FPL-Analysis,トピック,Non-core,12,並列化,部分,自動並列化と並行性不具合の解析は子項目を参照。一般の解析は未評価。,coverage-fpl-analysis.md,17,原典照合結果は監査記録参照・親子重複候補
+FPL-Analysis:トピック:Non-core:12a,FPL,FPL-Analysis,トピック,Non-core,12a,自動並列化の解析,部分,1242で２反復の読み書きと実行順を比べ、自由な並べ替えが結果を保つか判断。一般の解析や実コンパイラーは未評価。,coverage-fpl-analysis.md,18,原典照合結果は監査記録参照
+FPL-Analysis:トピック:Non-core:12b,FPL,FPL-Analysis,トピック,Non-core,12b,並行性不具合の検出,部分,1243で２操作の鍵の共通集合による候補検出と合図による誤警告を比較。一般の検出器、全経路、実言語のメモリモデルは未評価。,coverage-fpl-analysis.md,19,原典照合結果は監査記録参照
+FPL-Analysis:学習成果:Non-core:1,FPL,FPL-Analysis,学習成果,Non-core,1,データフローグラフと制御フローグラフの違いを説明,部分,1182で204の分岐について手順と直接の値の矢印を選び、２入力の経路を確認。一般の表現や自由な説明は未評価。,coverage-fpl-analysis.md,25,原典照合結果は監査記録参照
+FPL-Analysis:学習成果:Non-core:2,FPL,FPL-Analysis,学習成果,Non-core,2,健全な非自明解析に近似が必要な理由,部分,416で万能停止判定、1241で実行時型不一致の帰着、1244で有限更新と過大近似を比較。一般的な説明は未評価。,coverage-fpl-analysis.md,26,原典照合結果は監査記録参照
+FPL-Analysis:学習成果:Non-core:3,FPL,FPL-Analysis,学習成果,Non-core,3,解析の健全性と停止性を論じる,部分,1244で無限に増える区間に拡大を適用し、全値の包含・安定・精度を選択操作で比較。一般の証明と自由な議論は評価しない。,coverage-fpl-analysis.md,27,原典照合結果は監査記録参照
+FPL-Analysis:学習成果:Non-core:4,FPL,FPL-Analysis,学習成果,Non-core,4,別名が解析を制約する理由と別名解析,部分,1181で候補集合と具体実行を比較し、書込み後の読取り省略を判断。一般の解析・自由な説明は未評価。,coverage-fpl-analysis.md,28,原典照合結果は監査記録参照
+FPL-Analysis:学習成果:Non-core:5,FPL,FPL-Analysis,学習成果,Non-core,5,解析結果を最適化または部分的正しさに利用,部分,207で固定例の不要な書込みを外して出力を比較。任意のプログラムの解析・証明は未評価。,coverage-fpl-analysis.md,29,原典照合結果は監査記録参照
 FPL-Aspect:トピック:未記載:1,FPL,FPL-Aspect,トピック,未記載,1,アスペクト,部分,323で共通の記録をまとめる固定模型。実際の設計や織込みは未評価。,coverage-fpl-aspect.md,7,原典照合結果は監査記録参照・区分を要確認
 FPL-Aspect:トピック:未記載:2,FPL,FPL-Aspect,トピック,未記載,2,ジョインポイント,部分,323で操作実行を節目とする。他の節目や実言語は未評価。,coverage-fpl-aspect.md,8,原典照合結果は監査記録参照・区分を要確認
 FPL-Aspect:トピック:未記載:3a,FPL,FPL-Aspect,トピック,未記載,3a,実行前のアドバイス,部分,323で実行前の記録を選ぶ。一般のアドバイスは未評価。,coverage-fpl-aspect.md,9,原典照合結果は監査記録参照・区分を要確認
@@ -1448,19 +1449,20 @@ FPL-Scripting:トピック:未記載:8,FPL,FPL-Scripting,トピック,未記載,
 FPL-Scripting:トピック:未記載:9,FPL,FPL-Scripting,トピック,未記載,9,ワークフロー,部分,151で複数の処理を組合せる。実際の自動化や多様なワークフローは未評価。,coverage-fpl-scripting.md,17,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:学習成果:未記載:1,FPL,FPL-Scripting,学習成果,未記載,1,システムの仕事を自動化するスクリプトを作成・実行,部分,151で処理の順序を組み立てる代替体験。実システムの操作、スクリプトの記述と実行は直接評価しない。,coverage-fpl-scripting.md,23,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:学習成果:未記載:2,FPL,FPL-Scripting,学習成果,未記載,2,スクリプトを用いて様々なテキスト処理を解く,部分,151で固定の選択・整列・件数、154で文字パターンを操作。実言語による多様な処理は評価しない。,coverage-fpl-scripting.md,24,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:1,FPL,FPL-Semantics,トピック,未記載,1,抽象構文木と具体構文,部分,75で固定の算術式の木を組む。具体構文との一般的な比較は未評価。,coverage-fpl-semantics.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:2,FPL,FPL-Semantics,トピック,未記載,2,高水準の表現の定義・走査・変更,部分,75で固定の木を構築。一般の走査や変更は未評価。,coverage-fpl-semantics.md,10,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:3,FPL,FPL-Semantics,トピック,未記載,3,スコープと束縛の解決,部分,308で静的・動的スコープ、791で名前と場所の対応の固定例。実言語の名前解決は未評価。,coverage-fpl-semantics.md,11,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:4a,FPL,FPL-Semantics,トピック,未記載,4a,型検査,部分,24・315で固定の型の組合せを検査。一般の型検査器は未評価。,coverage-fpl-semantics.md,12,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:4b,FPL,FPL-Semantics,トピック,未記載,4b,使用前の定義,部分,1186で２経路の確実な代入を共通部分で求め、不足する代入を修正。一般の言語・経路は未評価。,coverage-fpl-semantics.md,13,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:4c,FPL,FPL-Semantics,トピック,未記載,4c,注釈と拡張静的検査の枠組み,未照合,対応教材を要照合。,coverage-fpl-semantics.md,14,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:5,FPL,FPL-Semantics,トピック,未記載,5,左辺値と右辺値,部分,306の値と箱への参照、791の名前・場所・値の固定例。左辺値と右辺値の一般的な区別は未評価。,coverage-fpl-semantics.md,15,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:6,FPL,FPL-Semantics,トピック,未記載,6,呼出しの意味,部分,199・306で値を写す呼出しと参照の固定例。言語ごとの意味は未評価。,coverage-fpl-semantics.md,16,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:7,FPL,FPL-Semantics,トピック,未記載,7,値・参照・値結果・名前・必要呼び等,部分,306で値と参照、326・327で値・名前・必要呼びを比較。値結果呼びと実言語の詳細は未評価。,coverage-fpl-semantics.md,17,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:トピック:未記載:8,FPL,FPL-Semantics,トピック,未記載,8,属性文法等による宣言的な仕様,部分,315で型の合成属性と名前の環境の継承属性を操作。一般の属性文法は未評価。,coverage-fpl-semantics.md,18,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:学習成果:未記載:1,FPL,FPL-Semantics,学習成果,未記載,1,小さな言語の抽象構文木を描く,部分,75で固定された算術式の木を組む。任意の言語の木を描く能力は未評価。,coverage-fpl-semantics.md,24,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:学習成果:未記載:2,FPL,FPL-Semantics,学習成果,未記載,2,型検査や束縛解決などの静的解析を実装,部分,315で固定の式の型確認、308でスコープの模型を操作。解析器の実装は直接評価しない。,coverage-fpl-semantics.md,25,原典照合結果は監査記録参照・区分を要確認
-FPL-Semantics:学習成果:未記載:3,FPL,FPL-Semantics,学習成果,未記載,3,属性文法を使って意味解析を記述,部分,315で提示された規則に従い２式の属性を選択。自由な仕様記述は評価しない。,coverage-fpl-semantics.md,26,原典照合結果は監査記録参照・区分を要確認
+FPL-Semantics:トピック:Non-core:1,FPL,FPL-Semantics,トピック,Non-core,1,抽象構文木と具体構文,部分,75で固定の算術式の木を組む。具体構文との一般的な比較は未評価。,coverage-fpl-semantics.md,9,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:2,FPL,FPL-Semantics,トピック,Non-core,2,高水準の表現の定義・走査・変更,部分,75で固定の木を構築。一般の走査や変更は未評価。,coverage-fpl-semantics.md,10,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:3,FPL,FPL-Semantics,トピック,Non-core,3,スコープと束縛の解決,部分,308で静的・動的スコープ、791で名前と場所の対応の固定例。実言語の名前解決は未評価。,coverage-fpl-semantics.md,11,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:4,FPL,FPL-Semantics,トピック,Non-core,4,静的意味解析,部分,型検査、使用前の定義、注釈と検査は子項目を参照。一般の静的意味解析は未評価。,coverage-fpl-semantics.md,12,原典照合結果は監査記録参照・親子重複候補
+FPL-Semantics:トピック:Non-core:4a,FPL,FPL-Semantics,トピック,Non-core,4a,型検査,部分,24・315で固定の型の組合せを検査。一般の型検査器は未評価。,coverage-fpl-semantics.md,13,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:4b,FPL,FPL-Semantics,トピック,Non-core,4b,使用前の定義,部分,1186で２経路の確実な代入を共通部分で求め、不足する代入を修正。一般の言語・経路は未評価。,coverage-fpl-semantics.md,14,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:4c,FPL,FPL-Semantics,トピック,Non-core,4c,注釈と拡張静的検査の枠組み,未照合,対応教材を要照合。,coverage-fpl-semantics.md,15,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:5,FPL,FPL-Semantics,トピック,Non-core,5,左辺値と右辺値,部分,306の値と箱への参照、791の名前・場所・値の固定例。左辺値と右辺値の一般的な区別は未評価。,coverage-fpl-semantics.md,16,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:6,FPL,FPL-Semantics,トピック,Non-core,6,呼出しの意味,部分,199・306で値を写す呼出しと参照の固定例。言語ごとの意味は未評価。,coverage-fpl-semantics.md,17,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:7,FPL,FPL-Semantics,トピック,Non-core,7,値・参照・値結果・名前・必要呼び等,部分,306で値と参照、326・327で値・名前・必要呼びを比較。値結果呼びと実言語の詳細は未評価。,coverage-fpl-semantics.md,18,原典照合結果は監査記録参照
+FPL-Semantics:トピック:Non-core:8,FPL,FPL-Semantics,トピック,Non-core,8,属性文法等による宣言的な仕様,部分,315で型の合成属性と名前の環境の継承属性を操作。一般の属性文法は未評価。,coverage-fpl-semantics.md,19,原典照合結果は監査記録参照
+FPL-Semantics:学習成果:Non-core:1,FPL,FPL-Semantics,学習成果,Non-core,1,小さな言語の抽象構文木を描く,部分,75で固定された算術式の木を組む。任意の言語の木を描く能力は未評価。,coverage-fpl-semantics.md,25,原典照合結果は監査記録参照
+FPL-Semantics:学習成果:Non-core:2,FPL,FPL-Semantics,学習成果,Non-core,2,型検査や束縛解決などの静的解析を実装,部分,315で固定の式の型確認、308でスコープの模型を操作。解析器の実装は直接評価しない。,coverage-fpl-semantics.md,26,原典照合結果は監査記録参照
+FPL-Semantics:学習成果:Non-core:3,FPL,FPL-Semantics,学習成果,Non-core,3,属性文法を使って意味解析を記述,部分,315で提示された規則に従い２式の属性を選択。自由な仕様記述は評価しない。,coverage-fpl-semantics.md,27,原典照合結果は監査記録参照
 FPL-SEP:トピック:未記載:1,FPL,FPL-SEP,トピック,未記載,1,英語中心の言語の影響,部分,350で架空の利用者への翻訳を比較。言語構文や教育・開発環境の影響は未評価。,coverage-fpl-sep.md,9,原典照合結果は監査記録参照・区分を要確認
 FPL-SEP:トピック:未記載:2,FPL,FPL-SEP,トピック,未記載,2,障害のある人の包摂と支援技術,部分,350で読み上げ用の操作名を比較。実際の支援技術や多様な利用者による評価は未実施。,coverage-fpl-sep.md,10,原典照合結果は監査記録参照・区分を要確認
 FPL-SEP:トピック:未記載:3a,FPL,FPL-SEP,トピック,未記載,3a,構文とアクセシビリティ,部分,350で操作名を比較。構文自体の系統的な評価は未実施。,coverage-fpl-sep.md,11,原典照合結果は監査記録参照・区分を要確認
