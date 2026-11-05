@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {ipPrefixCases,ipPrefixRoutes,ipPrefixResult,ipLongestRoute,prefixRoutes,prefixCases,matchingRoutes,longestRoute,createPrefix,prefixResult,restorePrefix,prefixComplete} from '../src/prefix.js';
+import {ipPrefixCases,ipPrefixRoutes,ipPrefixResult,ipMatchingRoutes,ipLongestRoute,prefixRoutes,prefixCases,matchingRoutes,longestRoute,createPrefix,prefixResult,restorePrefix,prefixComplete} from '../src/prefix.js';
 test('all 256 addresses match independently calculated numeric ranges',()=>{
   for(let n=0;n<256;n++){const bits=n.toString(2).padStart(8,'0'),expected=['default',...(n>=128?['one']:[]),...(n>=160&&n<=191?['three']:[]),...(n>=176&&n<=191?['four']:[])];assert.deepEqual(matchingRoutes(bits),expected);assert.equal(longestRoute(bits),expected.at(-1));}
 });
@@ -17,3 +17,5 @@ test('documentation IPv4 examples select the longest matching range and restore 
 test('removing the /26 entry falls back to /25 for both fixed addresses',()=>{for(const id of Object.keys(ipPrefixCases)){assert.equal(ipPrefixResult(id,id==='other'?'default':'half',false),true);assert.equal(ipPrefixResult(id,'quarter',false),false);}assert.equal(ipPrefixResult('east','quarter',true),true);assert.throws(()=>ipPrefixResult('east','half','no'),RangeError);const old=createPrefix();delete old.ipSpecific;assert.equal(restorePrefix(old).ipSpecific,true);old.ipSpecific=false;assert.equal(restorePrefix(old).ipSpecific,false);old.ipAnswers.east='quarter';assert.throws(()=>restorePrefix(old),RangeError);old.ipAnswers.east='';old.ipSpecific='no';assert.throws(()=>restorePrefix(old),RangeError);});
 
 test('IPv4 fixed table matches independent numeric ranges for all last octets',()=>{for(let n=0;n<256;n++)for(const specific of [false,true]){const expected=n>=192&&specific?'quarter':n>=128?'half':'net';assert.equal(ipLongestRoute(`192.0.2.${n}`,specific),expected);assert.equal(ipLongestRoute(`198.51.100.${n}`,specific),'default');}for(const a of ['192.0.2.256','1.2.3','a.b.c.d'])assert.throws(()=>ipLongestRoute(a),RangeError);});
+
+test('IPv4 feedback reports every matching entry, including default and removed routes',()=>{assert.deepEqual(ipMatchingRoutes('192.0.2.129'),['default','net','half']);assert.deepEqual(ipMatchingRoutes('192.0.2.193'),['default','net','half','quarter']);assert.deepEqual(ipMatchingRoutes('192.0.2.193',false),['default','net','half']);assert.deepEqual(ipMatchingRoutes('198.51.100.3'),['default']);assert.throws(()=>ipMatchingRoutes('bad'),RangeError);});
