@@ -1544,7 +1544,7 @@ FPL-Types:トピック:KA Core:7,FPL,FPL-Types,トピック,KA Core,7,構造・�
 FPL-Types:トピック:KA Core:8,FPL,FPL-Types,トピック,KA Core,8,静的・動的型付けの相補的な利点,部分,510で検査時点と両分岐を比較。一般の利点と制約は未評価。,coverage-fpl-types.md,27,原典照合結果は監査記録参照・親子重複候補
 FPL-Types:トピック:KA Core:8a,FPL,FPL-Types,トピック,KA Core,8a,早期・後期の誤り検出、回避,部分,510で未実行分岐にある不適合を比較。実言語全般は未評価。,coverage-fpl-types.md,28,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8b,FPL,FPL-Types,トピック,KA Core,8b,開発・保守の不変条件と柔軟な試作,部分,510で数だけという袋の約束と異種の品を入れる方法、追加時の確認を比較。一般の保守・開発効率や任意の不変条件は未評価。,coverage-fpl-types.md,29,原典照合結果は監査記録参照
-FPL-Types:トピック:KA Core:8c,FPL,FPL-Types,トピック,KA Core,8c,関数・積・和の型規則,部分,595・596・765で固定の構成と適用。一般の規則の列挙は未評価。,coverage-fpl-types.md,30,原典照合結果は監査記録参照
+FPL-Types:トピック:KA Core:8c,FPL,FPL-Types,トピック,KA Core,8c,関数・積・和の型規則,部分,595で積の構成と左右の取り出し、596・765で固定の構成と適用。関数・和を含む一般の規則は未評価。,coverage-fpl-types.md,30,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8d,FPL,FPL-Types,トピック,KA Core,8d,誤用防止と再利用,部分,509・510で固定の型指定・検査。体系的な比較は未評価。,coverage-fpl-types.md,31,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8e,FPL,FPL-Types,トピック,KA Core,8e,未完成プログラムの検出・実行,部分,510で未完成の札を開始前に拒否する門と使用時に失敗する門を比較。実言語の型検査が未完成を必ず検出するわけではない。,coverage-fpl-types.md,32,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8f,FPL,FPL-Types,トピック,KA Core,8f,静的解析との関係,部分,1241で到達可能性を調べず操作の型を検査する固定の鏡を比較。一般の静的解析や型付け規則は未評価。,coverage-fpl-types.md,33,原典照合結果は監査記録参照
@@ -1567,7 +1567,7 @@ FPL-Types:学習成果:CS Core:4,FPL,FPL-Types,学習成果,CS Core,4,複数言�
 FPL-Types:学習成果:CS Core:5,FPL,FPL-Types,学習成果,CS Core,5,特定言語で検査に通らないが実行しても誤りのない例を説明,部分,510で架空の型検査、1041で Rust の不受理と Python の実行経路を比較。Rust の不受理プログラムを実行したわけではなく、自由な説明は未評価。,coverage-fpl-types.md,55,原典照合結果は監査記録参照
 FPL-Types:学習成果:CS Core:6,FPL,FPL-Types,学習成果,CS Core,6,型とエラーを用いてプログラムを作成・修正,部分,24・772で固定の道具を修正。実言語での作成は評価しない。,coverage-fpl-types.md,56,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:7,FPL,FPL-Types,学習成果,KA Core,7,型規則と許される操作の関係を説明,部分,24で入出力の型に基づく接続。自由な説明は未評価。,coverage-fpl-types.md,57,原典照合結果は監査記録参照
-FPL-Types:学習成果:KA Core:8,FPL,FPL-Types,学習成果,KA Core,8,複合型に適用される型規則を列挙,未照合,固定例はあるが規則の列挙は未評価。,coverage-fpl-types.md,58,原典照合結果は監査記録参照
+FPL-Types:学習成果:KA Core:8,FPL,FPL-Types,学習成果,KA Core,8,複合型に適用される型規則を列挙,部分,595で積の構成と左右の取り出しの３規則を選択。自由な列挙や他の複合型は未評価。,coverage-fpl-types.md,58,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:9,FPL,FPL-Types,学習成果,KA Core,9,決定不能性と保守的近似を説明,部分,1241で４例の検査と実行を比較し、停止問題への帰着を選択。自由な説明や一般の証明構築は評価しない。,coverage-fpl-types.md,59,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:10,FPL,FPL-Types,学習成果,KA Core,10,ジェネリック型を使う部品を定義・利用,部分,509で用意された袋を利用。実言語での定義・利用は評価しない。,coverage-fpl-types.md,60,原典照合結果は監査記録参照
 FPL-Types:学習成果:KA Core:11,FPL,FPL-Types,学習成果,KA Core,11,ジェネリクス、サブタイプ、オーバーロードを比較,部分,945で同じ品に３方式を適用して受入れと手順を比較。実言語全般と自由な説明は未評価。,coverage-fpl-types.md,61,原典照合結果は監査記録参照

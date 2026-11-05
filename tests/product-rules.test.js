@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {productResult,productRulesCorrect,createProductLab,restoreProductLab} from '../src/product-rules.js';
+import {createTypeCargo,restoreTypeCargo} from '../src/type-cargo.js';
+test('whole, left and right types follow the declared pair rules',()=>{assert.deepEqual(['whole','left','right'].map(a=>productResult('ls',a)),['ls','light','stone']);assert.deepEqual(['whole','left','right'].map(a=>productResult('sl',a)),['sl','stone','light']);assert.deepEqual(['whole','left','right'].map(a=>productResult('ll',a)),['ll','light','light']);assert.deepEqual(['whole','left','right'].map(a=>productResult('single',a)),['light','error','error']);assert.throws(()=>productResult('bad','left'));});
+test('only all three rules are correct and legacy records migrate independently',()=>{for(let mask=0;mask<32;mask++){const keys=['build','first','second','always','single'].filter((_,i)=>mask&(1<<i));assert.equal(productRulesCorrect(keys),mask===7);}const q=createTypeCargo();delete q.productRules;assert.deepEqual(restoreTypeCargo(q).productRules,createProductLab());const p=createProductLab();p.seen.push('ls:left');const c=restoreProductLab(p);c.seen.pop();assert.equal(p.seen.length,1);assert.throws(()=>restoreProductLab({...p,seen:['bad']}));});
