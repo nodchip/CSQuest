@@ -728,7 +728,7 @@ AR-Assembly:トピック:CS Core:1,AR,AR-Assembly,トピック,CS Core,1,フォ�
 AR-Assembly:トピック:CS Core:2,AR,AR-Assembly,トピック,CS Core,2,命令の取出し・解読・実行,部分,73・643で架空の命令を実行。一般の制御回路や実機は未評価。,coverage-ar-assembly.md,10,原典照合結果は監査記録参照
 AR-Assembly:トピック:CS Core:3,AR,AR-Assembly,トピック,CS Core,3,SIMD・MIMD と分類,部分,162で共有命令と別々の命令を比較。実機の分類と制約は未評価。,coverage-ar-assembly.md,11,原典照合結果は監査記録参照
 AR-Assembly:トピック:CS Core:4,AR,AR-Assembly,トピック,CS Core,4,共有メモリ型マルチプロセッサ・マルチコア,部分,104・505・567で共有と原子的取得の固定模型。実機の構成とメモリ順序は未評価。,coverage-ar-assembly.md,12,原典照合結果は監査記録参照
-AR-Assembly:トピック:KA Core:5（ISA）,AR,AR-Assembly,トピック,KA Core,5（ISA）,命令セットアーキテクチャ,部分,643で架空の８ビット命令を解読・実行。実 ISA の仕様全体は未評価。,coverage-ar-assembly.md,13,原典照合結果は監査記録参照・番号を要確認
+AR-Assembly:トピック:KA Core:5,AR,AR-Assembly,トピック,KA Core,5,命令セットアーキテクチャ,部分,643で架空の８ビット命令を解読・実行。実 ISA の仕様全体は未評価。,coverage-ar-assembly.md,13,原典照合結果は監査記録参照・親子重複候補
 AR-Assembly:トピック:KA Core:5a,AR,AR-Assembly,トピック,KA Core,5a,固定長・可変長命令,部分,1008で架空の１・２バイト形式と固定２バイト形式を操作し、命令境界と２例の容量を比較。実 ISA や一般の性能は未評価。,coverage-ar-assembly.md,14,原典照合結果は監査記録参照
 AR-Assembly:トピック:KA Core:5b,AR,AR-Assembly,トピック,KA Core,5b,命令形式,部分,643で操作３ビット・番地５ビットの固定形式を操作。一般の形式比較は未評価。,coverage-ar-assembly.md,15,原典照合結果は監査記録参照
 AR-Assembly:トピック:KA Core:5c,AR,AR-Assembly,トピック,KA Core,5c,データ操作・制御・I/O,部分,643で読込み・分岐・加算・書戻し、105で通知の固定例。実 ISA の I/O 命令は未評価。,coverage-ar-assembly.md,16,原典照合結果は監査記録参照

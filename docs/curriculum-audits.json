@@ -568,6 +568,14 @@
       "topics": 8,
       "outcomes": 7,
       "scope_sha256": "0f66076f181902a18ac6cd5bc71c0965efff98a5a77116109f53beb10f37f8cb"
+    },
+    "AR-Assembly": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-assembly.md",
+      "topics": 14,
+      "outcomes": 9,
+      "scope_sha256": "df7974ed2bda1097051bae64620c934aaa6eb6acb6c121c1771bfa19450e623c"
     }
   }
 }
