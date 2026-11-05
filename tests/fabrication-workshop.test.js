@@ -14,3 +14,10 @@ test('forming requires heat, shape, cool, and check in order',()=>{
 test('all three trials and reflection required, drafts replay and invalid histories fail',()=>{
  const q=fabricationCreate();for(const [id,steps] of [['add',['column:0','column:0','column:1','column:1','column:1','column:2','check']],['cut',['column:0','column:2','column:2','check']],['form',['heat','shape','cool','check']]]){q.selected=id;for(const a of steps){fabricationStep(q,a);assert.deepEqual(fabricationRestore(q),q);}}assert(!fabricationComplete(q));q.answer='mechanism';assert(fabricationComplete(q));const bad=structuredClone(q);bad.trials.add=['column:0','check'];assert.throws(()=>fabricationRestore(bad));assert.throws(()=>fabricationReplay('add',Array(31).fill('column:0')));
 });
+
+test('drafts from before the planning exercise remain usable', () => {
+ const old=fabricationCreate();delete old.plan;old.trials.add=['column:0'];
+ const restored=fabricationRestore(old);
+ assert.deepEqual(restored.plan,{method:'add',quantity:1,checked:[]});
+ assert.deepEqual(restored.trials.add,['column:0']);
+});

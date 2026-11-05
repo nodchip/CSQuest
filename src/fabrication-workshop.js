@@ -1,3 +1,4 @@
+import {fabricationPlanCreate, fabricationPlanRestore} from './fabrication-plan.js';
 export const fabricationLevel={id:'workshop-fabrication',number:'807',kind:'fabrication-workshop',name:'三つの製作台',tag:'積層・切削・成形',title:'薬瓶の道具を工房で作ろう',story:'薬師から、段差のある土台と薄い覆いの注文が届きました。素材を積む、削る、型に沿わせる三つの製作台を試しましょう。'};
 export const fabricationCases={add:'材料を積む台',cut:'材料を削る台',form:'薄い板を成形する台'};
 export const fabricationTarget=[2,3,1];
@@ -20,7 +21,7 @@ export function fabricationExecute(s,action){
  return s;
 }
 export function fabricationReplay(id,history){if(!Array.isArray(history)||history.length>30)throw new RangeError('記録が不正です');const s=fabricationInitial(id);for(const a of history){if(typeof a!=='string')throw new RangeError('記録が不正です');fabricationExecute(s,a);}return s;}
-export function fabricationCreate(){return {selected:'add',trials:{add:[],cut:[],form:[]},answer:null};}
+export function fabricationCreate(){return {selected:'add',trials:{add:[],cut:[],form:[]},answer:null,plan:fabricationPlanCreate()};}
 export function fabricationStep(q,action){const h=q.trials[q.selected];if(h.length>=30)throw new RangeError('操作は30回までです。最初からやり直せます。');fabricationExecute(fabricationReplay(q.selected,h),action);h.push(action);}
 export function fabricationComplete(q){return Object.keys(fabricationCases).every(id=>fabricationReplay(id,q.trials[id]).done)&&q.answer==='mechanism';}
-export function fabricationRestore(q){if(!q||!Object.hasOwn(fabricationCases,q.selected)||!q.trials||![null,'mechanism','same','always'].includes(q.answer))throw new RangeError('記録が不正です');const n=fabricationCreate();n.selected=q.selected;n.answer=q.answer;for(const id of Object.keys(fabricationCases)){fabricationReplay(id,q.trials[id]);n.trials[id]=[...q.trials[id]];}return n;}
+export function fabricationRestore(q){if(!q||!Object.hasOwn(fabricationCases,q.selected)||!q.trials||![null,'mechanism','same','always'].includes(q.answer))throw new RangeError('記録が不正です');const n=fabricationCreate();n.selected=q.selected;n.answer=q.answer;n.plan=q.plan===undefined?fabricationPlanCreate():fabricationPlanRestore(q.plan);for(const id of Object.keys(fabricationCases)){fabricationReplay(id,q.trials[id]);n.trials[id]=[...q.trials[id]];}return n;}
