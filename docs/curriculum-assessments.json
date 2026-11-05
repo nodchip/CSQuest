@@ -290,6 +290,17 @@
         "src/road-replanning.js": "fae6c79893c06560646797cb5d23869ee20694cf0e3e6e545545eb9dea594f07",
         "tests/road-replanning.test.js": "b4cdccd1e847adc61299d650610d7ba9e342cd6d9b84e60d2965d96dfd97b633"
       }
+    },
+    "SF-Overview:トピック:CS Core:3": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-sf-overview-library.md",
+      "row_sha256": "53a6ba2bdaa3590a0f5efac22f634d89f624417f023748e812aa239de2588c97",
+      "files": {
+        "src/library-framework.js": "50bb1a7864efcaf1f84fb3ad3ee1a5191bbb053bb8bb10e604e020b8e5fcd032",
+        "src/app.js": "f96dd6a1ed9b1c03c0d71325d2097d0537eef3126e993c19f5370a86c3e833af",
+        "tests/library-framework.test.js": "de166dfcb232a8bc171d5e47171543fda9a9549ed89ec249cae7a5f5a5208008"
+      }
     }
   }
 }

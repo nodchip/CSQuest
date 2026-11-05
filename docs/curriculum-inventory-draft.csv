@@ -3318,7 +3318,7 @@ SF-Foundations:学習成果:未記載:9,SF,SF-Foundations,学習成果,未記載
 SF-Foundations:学習成果:未記載:10,SF,SF-Foundations,学習成果,未記載,10,時系列の同時性と経過時間短縮を説明,部分,依頼254の受付で完了時刻を比較。一般の時系列と自由な説明は未評価。,coverage-sf-foundations.md,33,原典照合結果は監査記録参照・区分を要確認
 SF-Overview:トピック:CS Core:1,SF,SF-Overview,トピック,CS Core,1,ゲート、記憶、接続、データ経路、制御など,部分,依頼06・37の回路、73の命令処理、265の記憶。部品全体の統合は未評価。,coverage-sf-overview.md,9,原典照合結果は監査記録参照
 SF-Overview:トピック:CS Core:2,SF,SF-Overview,トピック,CS Core,2,論理部品、論理式の簡単化、積和形,部分,依頼06で指定回路を構築。一般の簡単化と積和形は未評価。,coverage-sf-overview.md,10,原典照合結果は監査記録参照
-SF-Overview:トピック:CS Core:3,SF,SF-Overview,トピック,CS Core,3,プログラミング抽象化、インターフェース、ライブラリ,未照合,ライブラリ利用と抽象化を通して扱う体験と検証は未確認。,coverage-sf-overview.md,11,原典照合結果は監査記録参照
+SF-Overview:トピック:CS Core:3,SF,SF-Overview,トピック,CS Core,3,プログラミング抽象化、インターフェース、ライブラリ,部分,依頼518で道具の呼出しと枠組みへの登録を比較。一般の抽象化、API 設計や実ライブラリの利用は未評価。,coverage-sf-overview.md,11,原典照合結果は監査記録参照
 SF-Overview:トピック:CS Core:4,SF,SF-Overview,トピック,CS Core,4,アプリと OS サービスの連携、遠隔手続き呼出し,部分,依頼54の装置への要求は固定例。遠隔手続き呼出しや一般の連携は未評価。,coverage-sf-overview.md,12,原典照合結果は監査記録参照
 SF-Overview:トピック:CS Core:5,SF,SF-Overview,トピック,CS Core,5,パイプラインと段階の重なり,部分,依頼158の３段階と依存の模型。一般の解析と実機は未評価。,coverage-sf-overview.md,13,原典照合結果は監査記録参照
 SF-Overview:トピック:CS Core:6,SF,SF-Overview,トピック,CS Core,6,規模と性能のスケーリング,部分,依頼437で固定量と一人あたり固定の規模を比較。一般の性能や実測は未評価。,coverage-sf-overview.md,14,原典照合結果は監査記録参照
