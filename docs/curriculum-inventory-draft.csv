@@ -3555,7 +3555,7 @@ SPD-Game:トピック:KA Core:3d,SPD,SPD-Game,トピック,KA Core,3d,開発ツ�
 SPD-Game:トピック:KA Core:4a,SPD,SPD-Game,トピック,KA Core,4a,ゲームエンジン,部分,799で場面・対象・共有資産・移動と衝突を固定模型で操作。実エンジンの開発や一般の構成は未評価。,coverage-spd-game.md,22,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:4b,SPD,SPD-Game,トピック,KA Core,4b,発想・試作・反復・ビルド・試験・性能・移植・国際化・通信,部分,799で壁の試作を２試験で比較し、修正後に再試験。実ゲームや性能最適化は未評価。,coverage-spd-game.md,23,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:5a,SPD,SPD-Game,トピック,KA Core,5a,ゲームデザインの語彙・経験モデル,部分,117で盾のルール・遊び中の行動・本人の体験を MDA の視点で比較。定義全体や他の経験モデルは未評価。,coverage-spd-game.md,24,原典照合結果は監査記録参照
-SPD-Game:トピック:KA Core:5b,SPD,SPD-Game,トピック,KA Core,5b,利用者中心の設計・反復,未照合,ゲーム固有の設計過程の照合が必要。,coverage-spd-game.md,25,原典照合結果は監査記録参照
+SPD-Game:トピック:KA Core:5b,SPD,SPD-Game,トピック,KA Core,5b,利用者中心の設計・反復,部分,117で架空の２人の声に対応した試作を比較・再試行。実際の利用者調査や開発過程全体は未評価。,coverage-spd-game.md,25,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:5c,SPD,SPD-Game,トピック,KA Core,5c,ゲームのジャンル,未照合,ジャンル比較の照合が必要。,coverage-spd-game.md,26,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:5d,SPD,SPD-Game,トピック,KA Core,5d,遊び手の多様性と分類,未照合,実際の遊び手を含む調査は未確認。,coverage-spd-game.md,27,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:5e,SPD,SPD-Game,トピック,KA Core,5e,娯楽以外へのゲーム技術,未照合,教育等での活用の学習体験を確認する必要がある。,coverage-spd-game.md,28,原典照合結果は監査記録参照
