@@ -10,3 +10,21 @@ test('searching the last leaf visits the entire full tree, despite its logarithm
  for(let depth=2;depth<=6;depth++){const n=2**(depth+1)-1,b=completeTreeSearch(depth,'breadth'),d=completeTreeSearch(depth,'depth');assert.equal(b.checks,n);assert.equal(d.checks,n);assert.equal(b.peak,2**depth);assert.equal(d.peak,depth+1);}
  assert.throws(()=>completeTreeSearch(7,'breadth'));const old=createIterative();delete old.growthDepth;delete old.growthGuess;delete old.growthChecked;assert.equal(restoreIterative(old).growthDepth,3);assert.throws(()=>restoreIterative({...old,growthDepth:7}));assert.throws(()=>restoreIterative({...old,growthChecked:true}));
 });
+
+test('the first leaf shows how goal position changes breadth and depth search work',()=>{
+ for(let depth=2;depth<=6;depth++){
+  const breadth=completeTreeSearch(depth,'breadth','first'),dfs=completeTreeSearch(depth,'depth','first');
+  assert.equal(breadth.checks,2**depth);
+  assert.equal(dfs.checks,depth+1);
+  assert.equal(breadth.peak,2**depth);
+  assert.equal(dfs.peak,depth+1);
+ }
+ assert.throws(()=>completeTreeSearch(3,'breadth','unknown'));
+ assert.deepEqual(completeTreeSearch(2,'breadth','first').visited,['','L','R','LL']);
+ assert.deepEqual(completeTreeSearch(2,'depth','first').visited,['','L','LL']);
+ assert.deepEqual(completeTreeSearch(2,'depth','last').visited,['','L','LL','LR','R','RL','RR']);
+ const s=createIterative();delete s.growthTarget;s.growthGuess='all';s.growthChecked=true;
+ assert.equal(restoreIterative(s).growthTarget,'last');
+ assert.equal(restoreIterative(s).growthChecked,true);
+ assert.throws(()=>restoreIterative({...s,growthTarget:'unknown'}));
+});

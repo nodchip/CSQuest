@@ -411,7 +411,7 @@ AI-Search:トピック:CS Core:3c,AI,AI-Search,トピック,CS Core,3c,局所最
 AI-Search:トピック:CS Core:3c.i,AI,AI-Search,トピック,CS Core,3c.i,局所解と大域解,部分,依頼372で C と E を比較。一般の大域最適性は未評価。,coverage-ai-search.md,26,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:3d,AI,AI-Search,トピック,CS Core,3d,貪欲最良優先探索,部分,依頼43で同じ見積もりを使う A* と比較し、貪欲は費用10、A* は６の道を発見。一般のグラフや実装は未評価。,coverage-ai-search.md,27,原典照合結果は監査記録参照
 AI-Search:トピック:CS Core:3e,AI,AI-Search,トピック,CS Core,3e,A* 探索,部分,依頼42・43の正費用の固定グラフ。一般のグラフ・実装は未評価。,coverage-ai-search.md,28,原典照合結果は監査記録参照
-AI-Search:トピック:CS Core:4,AI,AI-Search,トピック,CS Core,4,グラフ探索の時間・空間計算量,部分,依頼369で固定木と深さ２〜６の完全二分木について調査回数と待機数を比較。一般グラフの漸近計算量は未評価。,coverage-ai-search.md,29,原典照合結果は監査記録参照
+AI-Search:トピック:CS Core:4,AI,AI-Search,トピック,CS Core,4,グラフ探索の時間・空間計算量,部分,依頼369で固定木と深さ２〜６の完全二分木について、目標を左端・右端に変えて調査回数と待機数を比較。一般グラフの漸近計算量は未評価。,coverage-ai-search.md,29,原典照合結果は監査記録参照
 AI-Search:トピック:KA Core:5,AI,AI-Search,トピック,KA Core,5,双方向探索,部分,依頼371で有向・等費用の固定グラフを両端から探索。一般の重み付きグラフは未評価。,coverage-ai-search.md,30,原典照合結果は監査記録参照
 AI-Search:トピック:KA Core:6,AI,AI-Search,トピック,KA Core,6,ビーム探索,部分,依頼370で幅１・２と探索漏れを比較。同点・循環や一般の実装は未評価。,coverage-ai-search.md,31,原典照合結果は監査記録参照
 AI-Search:トピック:KA Core:7,AI,AI-Search,トピック,KA Core,7,２人対戦の探索,部分,依頼44・45・97の有限な固定例。一般の対戦木は未評価。,coverage-ai-search.md,32,原典照合結果は監査記録参照・親子重複候補
@@ -423,7 +423,7 @@ AI-Search:トピック:KA Core:9,AI,AI-Search,トピック,KA Core,9,制約充�
 AI-Search:トピック:Non-core:10,AI,AI-Search,トピック,Non-core,10,探索空間の理解,部分,依頼369・372の固定された木と地形、85の橋が閉じる固定例。一般の動的空間等は未評価。,coverage-ai-search.md,38,原典照合結果は監査記録参照・親子重複候補
 AI-Search:トピック:Non-core:10a,AI,AI-Search,トピック,Non-core,10a,探索木を作る,部分,依頼369で固定木をたどる。自由な木の構築は未評価。,coverage-ai-search.md,39,原典照合結果は監査記録参照
 AI-Search:トピック:Non-core:10b,AI,AI-Search,トピック,Non-core,10b,動的な探索空間,部分,依頼85で分かれ道への到着後に橋が閉じ、現在地から回り道を選ぶ。閉鎖１回・正確な観測の固定例で、一般の動的環境は未評価。,coverage-ai-search.md,40,原典照合結果は監査記録参照
-AI-Search:トピック:Non-core:10c,AI,AI-Search,トピック,Non-core,10c,組合せ爆発,部分,依頼369で深さ３の木の候補数と回数を比較。一般の増大率は未評価。,coverage-ai-search.md,41,原典照合結果は監査記録参照
+AI-Search:トピック:Non-core:10c,AI,AI-Search,トピック,Non-core,10c,組合せ爆発,部分,依頼369で深さ２〜６の木の候補数と回数を比較。一般の増大率は未評価。,coverage-ai-search.md,41,原典照合結果は監査記録参照
 AI-Search:トピック:Non-core:10d,AI,AI-Search,トピック,Non-core,10d,尾根・鞍点・局所最小などの地形,部分,依頼372で局所最大と谷、固定格子の尾根方向と鞍点の近傍を比較。一般の連続地形や局所最小化は未評価。,coverage-ai-search.md,42,原典照合結果は監査記録参照
 AI-Search:トピック:Non-core:11,AI,AI-Search,トピック,Non-core,11,局所探索,部分,依頼372で山登りと別の開始地点を操作。一般の局所探索は未評価。,coverage-ai-search.md,43,原典照合結果は監査記録参照
 AI-Search:トピック:Non-core:12,AI,AI-Search,トピック,Non-core,12,タブー探索,部分,依頼372で直前の地点を１回禁止し、最良値の更新による例外を同点を含む固定例で比較。長い記憶や一般の例外基準は未評価。,coverage-ai-search.md,44,原典照合結果は監査記録参照
@@ -590,7 +590,7 @@ AL-Foundational:トピック:CS Core:10,AL,AL-Foundational,トピック,CS Core,
 AL-Foundational:トピック:CS Core:11,AL,AL-Foundational,トピック,CS Core,11,探索アルゴリズム,部分,08・21・29・88で固定例を操作。一般の分析は未評価。,coverage-al-foundational.md,28,原典照合結果は監査記録参照・親子重複候補
 AL-Foundational:トピック:CS Core:11a,AL,AL-Foundational,トピック,CS Core,11a,線形探索,部分,29で固定列を探索。一般の解析は未評価。,coverage-al-foundational.md,29,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:11b,AL,AL-Foundational,トピック,CS Core,11b,二分探索,部分,29・88で固定例と候補範囲。一般の証明は未評価。,coverage-al-foundational.md,30,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:11c,AL,AL-Foundational,トピック,CS Core,11c,木の深さ・幅優先探索,部分,08・21で固定グラフを探索し、369で深さ２〜６の完全二分木の右端を探す調査数を比較。一般の解析は未評価。,coverage-al-foundational.md,31,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:11c,AL,AL-Foundational,トピック,CS Core,11c,木の深さ・幅優先探索,部分,08・21で固定グラフを探索し、369で深さ２〜６の完全二分木の左端・右端を探す調査数を比較。一般の解析は未評価。,coverage-al-foundational.md,31,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:12,AL,AL-Foundational,トピック,CS Core,12,整列アルゴリズム,部分,05・55・713・894・909で固定例を操作。一般の正しさと分析は未評価。,coverage-al-foundational.md,32,原典照合結果は監査記録参照・親子重複候補
 AL-Foundational:トピック:CS Core:12a,AL,AL-Foundational,トピック,CS Core,12a,二次時間の整列,部分,05で隣接交換、713で選択ソート、894で挿入ソートと安定性を操作。一般の正しさと計算量の証明は未評価。,coverage-al-foundational.md,33,原典照合結果は監査記録参照
 AL-Foundational:トピック:CS Core:12b,AL,AL-Foundational,トピック,CS Core,12b,対数線形時間の整列,部分,55で安定なマージ、909で３分割クイックソートの基準選択と重複を比較。Tim sort、一般の平均計算量や正しさの証明は未評価。,coverage-al-foundational.md,34,原典照合結果は監査記録参照
