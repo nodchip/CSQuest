@@ -4,7 +4,7 @@ export function posterior(prior,sequence){
  if(!Object.hasOwn(priorChoices,prior)||!Array.isArray(sequence)||sequence.length>8||sequence.some(x=>!['on','off'].includes(x)))throw new RangeError('見込みまたは記録が不正です。');
  const initial=priorChoices[prior],success=sequence.filter(x=>x==='on').length,fail=sequence.length-success,alpha=initial.alpha+success,beta=initial.beta+fail,n=sequence.length;
  const comparison=n===0?null:alpha*n===success*(alpha+beta)?'same':alpha*n>success*(alpha+beta)?'higher':'lower';
- return {success,fail,alpha,beta,meanNumerator:alpha,meanDenominator:alpha+beta,comparison};
+ return {success,fail,alpha,beta,meanNumerator:alpha,meanDenominator:alpha+beta,varianceNumerator:alpha*beta,varianceDenominator:(alpha+beta)**2*(alpha+beta+1),comparison};
 }
 export function createBayesUpdate(){return {prior:'light',sequence:[],guess:null,trialChecked:false,seen:{light:{more:false,less:false},strong:{more:false,less:false}},answer:null,checked:false};}
 export function bayesRecordTrial(s){const r=posterior(s.prior,s.sequence);if(!s.sequence.length)throw new RangeError('点灯か消灯を１回以上記録しましょう。');const next={...s,seen:{...s.seen,[s.prior]:{...s.seen[s.prior]}},trialChecked:true,checked:false};if(s.guess===r.comparison&&s.sequence.length===4){if(r.success===3)next.seen[s.prior].more=true;if(r.success===1)next.seen[s.prior].less=true;}return next;}
