@@ -635,7 +635,7 @@ AL-Models:トピック:CS Core:1a,AL,AL-Models,トピック,CS Core,1a,有限状
 AL-Models:トピック:CS Core:1b,AL,AL-Models,トピック,CS Core,1b,プッシュダウン機械,部分,80・644で括弧と aⁿbⁿ の山札を操作。一般の機械は未評価。,coverage-al-models.md,11,原典照合結果は監査記録参照
 AL-Models:トピック:CS Core:1c,AL,AL-Models,トピック,CS Core,1c,線形拘束オートマトン,部分,697で入力長の帯を使い三色を照合する決定的な固定模型。非決定性や一般の構成は未評価。,coverage-al-models.md,12,原典照合結果は監査記録参照
 AL-Models:トピック:CS Core:1d,AL,AL-Models,トピック,CS Core,1d,チューリング機械,部分,417で帯の読書きと移動を操作。任意の機械は未評価。,coverage-al-models.md,13,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:2,AL,AL-Models,トピック,CS Core,2,形式言語・文法と Chomsky 階層,部分,644・647・698などで限定された言語と文法を扱う。階層全体の関係は未評価。,coverage-al-models.md,14,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:CS Core:2,AL,AL-Models,トピック,CS Core,2,形式言語・文法と Chomsky 階層,部分,644で４クラスの包含と４例を比較し、647・698でも限定例を操作。一般の証明と機械の構成は未評価。,coverage-al-models.md,14,原典照合結果は監査記録参照・親子重複候補
 AL-Models:トピック:CS Core:2a,AL,AL-Models,トピック,CS Core,2a,正規言語,部分,31・647で有限状態と限定された正規表現を操作。一般の関係は未評価。,coverage-al-models.md,15,原典照合結果は監査記録参照・親子重複候補
 AL-Models:トピック:CS Core:2a-i,AL,AL-Models,トピック,CS Core,2a-i,正規表現,部分,647で和・連結・星を組む固定例。一般の式は未評価。,coverage-al-models.md,16,原典照合結果は監査記録参照
 AL-Models:トピック:CS Core:2b,AL,AL-Models,トピック,CS Core,2b,文脈自由言語,部分,644で aⁿbⁿ の山札と文法に触れる。一般の文法は未評価。,coverage-al-models.md,17,原典照合結果は監査記録参照
@@ -1476,7 +1476,7 @@ FPL-Syntax:トピック:Non-core:4,FPL,FPL-Syntax,トピック,Non-core,4,トー
 FPL-Syntax:トピック:Non-core:5,FPL,FPL-Syntax,トピック,Non-core,5,トップダウン・ボトムアップ解析,部分,314で予測構文解析、587で CYK の表を操作。LR・GLR や一般の比較は未評価。,coverage-fpl-syntax.md,13,原典照合結果は監査記録参照・親子重複候補
 FPL-Syntax:トピック:Non-core:5a,FPL,FPL-Syntax,トピック,Non-core,5a,先読み表と解析への適用,部分,314で固定の一文字先読み表を使用。一般の表作成は未評価。,coverage-fpl-syntax.md,14,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:6,FPL,FPL-Syntax,トピック,Non-core,6,言語理論,部分,階層、導出・曖昧性と文法変換は子項目を参照。一般の言語理論は未評価。,coverage-fpl-syntax.md,15,原典照合結果は監査記録参照・親子重複候補
-FPL-Syntax:トピック:Non-core:6a,FPL,FPL-Syntax,トピック,Non-core,6a,チョムスキー階層,未照合,対応する階層全体の比較を未確認。,coverage-fpl-syntax.md,16,原典照合結果は監査記録参照
+FPL-Syntax:トピック:Non-core:6a,FPL,FPL-Syntax,トピック,Non-core,6a,チョムスキー階層,部分,644で４言語と４クラスの包含を比較。一般の証明や機械・文法の構成は未評価。,coverage-fpl-syntax.md,16,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:6b,FPL,FPL-Syntax,トピック,Non-core,6b,左端・右端導出と曖昧性,部分,309で固定の導出、310で二つの木。一般の左右導出の比較は未評価。,coverage-fpl-syntax.md,17,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:6c,FPL,FPL-Syntax,トピック,Non-core,6c,文法変換,部分,1299で直接左再帰の除去前後の規則から３文字列を導出し、構文木の違いを考える。一般の変換や実解析器は未評価。,coverage-fpl-syntax.md,18,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:7,FPL,FPL-Syntax,トピック,Non-core,7,解析器のエラー回復,部分,792で区切りまで札を捨てて再開し、次の文を失う場合を比較。一般の回復・入れ子・実解析器は未評価。,coverage-fpl-syntax.md,19,原典照合結果は監査記録参照
