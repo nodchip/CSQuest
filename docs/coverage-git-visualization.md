@@ -66,4 +66,4 @@
 
 依頼1162の追加例は [UBC の科学可視化と情報可視化](https://www.cs.ubc.ca/~tmm/courses/533-09/slides/scivis-6up.pdf)を参考に、空間上の風向きの入替えと村名・値を保つ項目の並替えを図と表で比較する。`tests/visualization-contexts.test.js` は４条件、図の方向と値、旧記録の復元を検査する。両領域は重なり、科学データにも多次元・時系列、情報データにも位置属性がある。固定例は一般の分類や自由な説明を評価しない。
 
-依頼1162の応用例は [UBC の科学データ可視化](https://www.cs.ubc.ca/~tmm/courses/533-09/slides/scivis-6up.pdf)と [NIH の CT 断面画像](https://www.nibib.nih.gov/science-education/science-topics/computed-tomography-ct)を参考に、５つの固定目的に表示方法を選ぶ。`tests/visualization-applications.test.js` は候補と旧記録の復元を検査する。用途に対する唯一の方法を主張せず、実データや医療診断は評価しない。
+依頼1162の応用例は [UBC の科学データ可視化](https://www.cs.ubc.ca/~tmm/courses/533-09/slides/scivis-6up.pdf)と [NIH の CT 断面画像](https://www.nibib.nih.gov/science-education/science-topics/computed-tomography-ct)を参考に、５つの固定目的に表示方法を選ぶ。`tests/visualization-applications.test.js` は候補、５種類の模式図と旧記録の復元を検査する。用途に対する唯一の方法を主張せず、実データや医療診断は評価しない。
