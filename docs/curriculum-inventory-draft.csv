@@ -1698,9 +1698,9 @@ GIT-Immersion:トピック:KA Core:7,GIT,GIT-Immersion,トピック,KA Core,7,�
 GIT-Immersion:トピック:KA Core:8,GIT,GIT-Immersion,トピック,KA Core,8,プレゼンスと没入に影響する要因,未照合,利用者体験と要因の評価は未確認。,coverage-git-immersion.md,25,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:9,GIT,GIT-Immersion,トピック,KA Core,9,３次元の操作,部分,1180で３軸の移動と方向の回転、二つの断面を操作。実機・連続的な操作・完全な姿勢は未評価。,coverage-git-immersion.md,26,原典照合結果は監査記録参照
 GIT-Immersion:トピック:KA Core:10,GIT,GIT-Immersion,トピック,KA Core,10,医療・訓練・可視化等への応用,未照合,各応用の具体的な要件は未確認。,coverage-git-immersion.md,27,原典照合結果は監査記録参照
-GIT-Immersion:トピック:KA Core:11,GIT,GIT-Immersion,トピック,KA Core,11,没入型アプリケーションの安全性,未照合,酔いや実空間での事故への対策は未確認。,coverage-git-immersion.md,28,原典照合結果は監査記録参照・親子重複候補
+GIT-Immersion:トピック:KA Core:11,GIT,GIT-Immersion,トピック,KA Core,11,没入型アプリケーションの安全性,部分,1179で障害物と動物の架空の２場面を扱う。酔いや実環境での安全評価は未確認。,coverage-git-immersion.md,28,原典照合結果は監査記録参照・親子重複候補
 GIT-Immersion:トピック:KA Core:11a,GIT,GIT-Immersion,トピック,KA Core,11a,没入時の酔い,未照合,症状と設計上の要因の対応は未確認。,coverage-git-immersion.md,29,原典照合結果は監査記録参照
-GIT-Immersion:トピック:KA Core:11b,GIT,GIT-Immersion,トピック,KA Core,11b,実世界を見失うことによる転倒等,未照合,実環境の安全対策は未確認。,coverage-git-immersion.md,30,原典照合結果は監査記録参照
+GIT-Immersion:トピック:KA Core:11b,GIT,GIT-Immersion,トピック,KA Core,11b,実世界を見失うことによる転倒等,部分,1179で開始前の障害物と途中の動物への対応を選ぶ。実環境の確認や安全の保証は未評価。,coverage-git-immersion.md,30,原典照合結果は監査記録参照
 GIT-Immersion:学習成果:KA Core:1,GIT,GIT-Immersion,学習成果,KA Core,1,立体画像を作成,部分,216 で点の左右投影を選ぶ。実画像の作成・表示は未評価。,coverage-git-immersion.md,36,原典照合結果は監査記録参照
 GIT-Immersion:学習成果:KA Core:2,GIT,GIT-Immersion,学習成果,KA Core,2,AR・VR アプリを設計・作成,未照合,218 の固定模型は実アプリの設計・作成を評価しない。,coverage-git-immersion.md,37,原典照合結果は監査記録参照
 GIT-Immersion:学習成果:KA Core:3,GIT,GIT-Immersion,学習成果,KA Core,3,利用者追跡の各方式の長短,部分,1176で遮蔽物による可視性の違いを比較。一般の方式・精度や実機の長短は未評価。,coverage-git-immersion.md,38,原典照合結果は監査記録参照

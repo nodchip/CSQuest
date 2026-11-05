@@ -25,9 +25,9 @@
 | 8 | KA Core | プレゼンスと没入に影響する要因 | 未照合 | 利用者体験と要因の評価は未確認。 |
 | 9 | KA Core | ３次元の操作 | 部分 | 1180で３軸の移動と方向の回転、二つの断面を操作。実機・連続的な操作・完全な姿勢は未評価。 |
 | 10 | KA Core | 医療・訓練・可視化等への応用 | 未照合 | 各応用の具体的な要件は未確認。 |
-| 11 | KA Core | 没入型アプリケーションの安全性 | 未照合 | 酔いや実空間での事故への対策は未確認。 |
+| 11 | KA Core | 没入型アプリケーションの安全性 | 部分 | 1179で障害物と動物の架空の２場面を扱う。酔いや実環境での安全評価は未確認。 |
 | 11a | KA Core | 没入時の酔い | 未照合 | 症状と設計上の要因の対応は未確認。 |
-| 11b | KA Core | 実世界を見失うことによる転倒等 | 未照合 | 実環境の安全対策は未確認。 |
+| 11b | KA Core | 実世界を見失うことによる転倒等 | 部分 | 1179で開始前の障害物と途中の動物への対応を選ぶ。実環境の確認や安全の保証は未評価。 |
 
 ## 例示学習成果
 
@@ -55,5 +55,7 @@
 依頼1179はさらに [Slater と Wilbur の没入とプレゼンスの整理](https://direct.mit.edu/pvar/article-pdf/6/6/603/1623151/pres.1997.6.6.603.pdf)を一例として、装置の表示能力と旅人の主観的な感覚を分類する。没入という語には異なる定義もある。架空の記述２件であり、実利用者の体験、測定や一般の要因は評価しない。
 
 依頼1179の詳細度の模型は [Epic の LOD の説明](https://dev.epicgames.com/documentation/unreal-engine/creating-and-using-lods-in-unreal-engine)を参考に、手前と奥の像それぞれに８枚または３枚の三角形を割り当て、合計12枚以内と手前の細部維持を比較する。枚数や要件は架空の固定条件。実際のメッシュ、処理時間・遅延・視覚品質の測定は行わず、三角形数だけから性能や知覚を保証しない。
+
+依頼1179は [PlayStation VR2 の安全説明](https://www.playstation.com/content/dam/global_pdc/en-gb/corporate/support/manuals/psvr2-docs/CFI-ZVR1_PSVR2_IM%24en-gb.pdf)を参考に、開始前の床の荷物・家具と、途中で動物が入る架空の２場面について対応を選ぶ。境界の検出は完全とは限らず、この模型の達成は実際の安全を保証しない。利用機器の説明書と現場の状況に応じた確認が必要で、酔いや実際の環境評価は扱わない。
 
 依頼1180は [Microsoft の３軸の移動と回転](https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/advanced-hololens-emulator-and-mixed-reality-simulator-input)を参考に、依頼640の回転を使って格子内の物体の位置と矢印の方向を操作する。`tests/spatial-cargo-3d.test.js` は各格子・各移動の境界と壁、経路、回転・保存と達成を検査。連続的な衝突、完全な姿勢、実機操作や利用者評価は扱わない。
