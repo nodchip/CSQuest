@@ -674,12 +674,12 @@
       "scope_sha256": "c7f428d5e7cadd29cb3cfbc7071c36eb51a4dca197ec4760990479ca036bee29"
     },
     "FPL-Semantics": {
-      "date": "2026-11-05",
+      "date": "2026-11-06",
       "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
       "document": "docs/curriculum-audit-fpl-semantics.md",
       "topics": 11,
       "outcomes": 3,
-      "scope_sha256": "e07b8d09376458eb37571a2da44bfb26abe04f8a7c60948d0bcb512414328407"
+      "scope_sha256": "5b1321fbaf55fca483d319e65c6ba797e59bfd2a0ddf0676cad19c79dd5c1a24"
     },
     "FPL-Analysis": {
       "date": "2026-11-05",

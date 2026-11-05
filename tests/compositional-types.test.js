@@ -16,7 +16,7 @@ test('derivations explain each local premise in child-first order',()=>{
  const inner=ruleDerivation(['plus',['plus',['light']]],r);assert.equal(inner.result,'error');assert.match(inner.steps.at(-1).reason,/中身に型が付かない/);
  const child=ruleDerivation(['branch',['light'],['plus',['light']],['number']],r);assert.match(child.steps.at(-1).reason,/型が付かない部分式/);
 });
-test('every displayed step matches an independent type checker for all rule settings and examples',()=>{
+test('each example result matches an independent type checker for all rule settings',()=>{
  function expected([kind,...child],r){if(kind==='number'||kind==='light')return r[kind];if(kind==='plus'){const value=expected(child[0],r);return value===r.plus?value:'error';}const [c,a,b]=child.map(x=>expected(x,r));return c===r.branch&&a!=='error'&&a===b?a:'error';}
  for(let mask=0;mask<16;mask++){const r=Object.fromEntries(Object.keys(ruleParts).map((k,i)=>[k,mask&(1<<i)?'light':'number']));for(const {term} of Object.values(ruleExamples)){const d=ruleDerivation(term,r);assert.equal(d.result,expected(term,r));assert.equal(d.steps.at(-1).result,d.result);assert.ok(d.steps.every(x=>x.reason&&x.path));}}
 });
