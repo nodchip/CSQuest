@@ -15,10 +15,26 @@ export function barrierStep(state,id){
   return next;
 }
 export function barrierCaseCorrect(id,state){if(id==='free')return Object.values(state.workers).every(w=>w.phase==='done')&&state.workers.A.result!==state.workers.B.result;if(id==='barrier')return state.waited&&Object.values(state.workers).every(w=>w.phase==='done'&&w.result===5);throw new RangeError('未知の方法です。');}
-export function createBarrierSet(){return {selected:'free',states:{free:createBarrier('free'),barrier:createBarrier('barrier')}};}
+// A deliberately small visibility model, not a simulation of a particular CPU.
+export const handoffModes={relaxed:'順序保証のない印',ordered:'Release / Acquire の印'};
+export function handoffReplay(mode,history){
+ if(!Object.hasOwn(handoffModes,mode)||!Array.isArray(history)||history.length>12)throw new RangeError('引き渡しの記録が不正です。');
+ let data=0,pending=false,written=false,flag=false,observed=false,result=null;const trace=[];
+ for(const action of history){
+  if(action==='write'&&!written){written=true;pending=true;trace.push('Ａがデータ１を書き、一時置き場に置く');}
+  else if(action==='signal'&&written&&!flag){if(mode==='ordered'){data=1;pending=false;}flag=true;trace.push(mode==='ordered'?'Ａがデータを反映して完了の印を出す':'Ａが完了の印を出す');}
+  else if(action==='flush'&&pending){data=1;pending=false;trace.push('Ａのデータが共有棚に反映される');}
+  else if(action==='poll'&&!observed&&result===null){if(flag){observed=true;trace.push('Ｂが完了の印１を確認');}else trace.push('Ｂは印０を見て待つ');}
+  else if(action==='read'&&observed&&result===null){result=data;trace.push(`Ｂがデータ ${result} を読む`);}
+  else throw new RangeError('引き渡しの順番を確認しましょう。');
+ }
+ return {data,pending,written,flag,observed,result,trace};
+}
+export function createBarrierSet(){return {selected:'free',states:{free:createBarrier('free'),barrier:createBarrier('barrier')},handoffSelected:'relaxed',handoffHistory:{relaxed:[],ordered:[]}};}
 export function restoreBarrier(saved){
   if(!saved||!Object.hasOwn(barrierModes,saved.selected)||!saved.history)throw new RangeError('途中記録が不正です。');const result=createBarrierSet();result.selected=saved.selected;
   for(const id of Object.keys(barrierModes)){const history=saved.history[id],limit=id==='free'?4:6;if(!Array.isArray(history)||history.length>limit)throw new RangeError('途中記録が不正です。');for(const worker of history){const state=result.states[id],next=barrierStep(state,worker);if(next.history.length!==state.history.length+1)throw new RangeError('途中記録が不正です。');result.states[id]=next;}}
+  result.handoffSelected=saved.handoffSelected??'relaxed';if(!Object.hasOwn(handoffModes,result.handoffSelected))throw new RangeError('途中記録が不正です。');for(const mode of Object.keys(handoffModes)){const h=saved.handoffHistory?.[mode]??[];handoffReplay(mode,h);result.handoffHistory[mode]=[...h];}
   return result;
 }
 export function barrierComplete(value){return Object.keys(barrierModes).every(id=>barrierCaseCorrect(id,value.states[id]));}

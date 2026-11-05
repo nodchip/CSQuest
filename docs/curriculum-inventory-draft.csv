@@ -839,7 +839,7 @@ AR-Performance-Energy:トピック:KA Core:3,AR,AR-Performance-Energy,トピッ�
 AR-Performance-Energy:トピック:KA Core:4,AR,AR-Performance-Energy,トピック,KA Core,4,マルチスレッドのハードウェア支援,部分,90・814で同期・競合の固定模型。ハードウェア支援全体と実機は未評価。,coverage-ar-performance-energy.md,12,原典照合結果は監査記録参照・親子重複候補
 AR-Performance-Energy:トピック:KA Core:4a,AR,AR-Performance-Energy,トピック,KA Core,4a,マルチスレッド支援：競合,部分,814 は競合と比較交換の抽象模型。実機の支援は未評価。,coverage-ar-performance-energy.md,13,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:4b,AR,AR-Performance-Energy,トピック,KA Core,4b,マルチスレッド支援：ロック実装,部分,814 はロックと原子的操作の模型。実機実装は未評価。,coverage-ar-performance-energy.md,14,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:4c,AR,AR-Performance-Energy,トピック,KA Core,4c,マルチスレッド支援：２点間同期,未照合,ハードウェア支援を含む対応を要照合。,coverage-ar-performance-energy.md,15,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:4c,AR,AR-Performance-Energy,トピック,KA Core,4c,マルチスレッド支援：２点間同期,部分,90で２つの原子的な値による通知とデータの引渡しを操作し、順序保証のない例と Release / Acquire を比較。実 CPU・実言語の実行と一般の支援は未評価。,coverage-ar-performance-energy.md,15,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:4d,AR,AR-Performance-Energy,トピック,KA Core,4d,マルチスレッド支援：バリア実装,部分,90 は２人の到着を待つ固定模型。ハードウェア支援や実装全般は未評価。,coverage-ar-performance-energy.md,16,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:5,AR,AR-Performance-Energy,トピック,KA Core,5,スケーラビリティ,部分,437 は強・弱スケーリングの固定模型。実機の構成と測定は未評価。,coverage-ar-performance-energy.md,17,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:6,AR,AR-Performance-Energy,トピック,KA Core,6,VLIW/EPIC、アクセラレータ等,部分,163 は専用機械と汎用機械の費用模型。VLIW/EPIC と実機は未評価。,coverage-ar-performance-energy.md,18,原典照合結果は監査記録参照
