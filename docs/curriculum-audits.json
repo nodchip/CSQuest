@@ -760,6 +760,14 @@
       "topics": 10,
       "outcomes": 5,
       "scope_sha256": "3240f5a85b53d9f9eee6f5c3da5a3e6527e6b4bedbb5f5f965c6b31ef7a4a2e6"
+    },
+    "FPL-Constructs": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-constructs.md",
+      "topics": 12,
+      "outcomes": 3,
+      "scope_sha256": "4e5b449111934dc339532e2e8638a3a70955fb6517a735af6685646f25a61189"
     }
   }
 }

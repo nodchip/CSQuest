@@ -657,6 +657,28 @@
         "src/app.js": "a2385601c8d5d7e89d7885a95a3e5af2c8edeb84fbf7985f0700b6c89827b9cd",
         "tests/aspect-ledger.test.js": "590d9db2ed67a571a4b972cfead4d34f80db1628642e0424a3c8d05bb27c3120"
       }
+    },
+    "FPL-Constructs:トピック:Non-core:11": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-constructs-delivery.md",
+      "row_sha256": "5a8fa6bbdb9379e12e73e8a866059534454690946f537cfac9ec89feda5aba89",
+      "files": {
+        "src/delivery-language.js": "175fb67c5fbf395f4f704678530f2c4276b3c174afb332637a2fb78f656b4282",
+        "src/app.js": "a2385601c8d5d7e89d7885a95a3e5af2c8edeb84fbf7985f0700b6c89827b9cd",
+        "tests/delivery-language.test.js": "9c47ca747461deb3205d0b11c0ad803097b5e4a05502007776c40ea0861f3fc2"
+      }
+    },
+    "FPL-Constructs:学習成果:Non-core:2": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-constructs-delivery.md",
+      "row_sha256": "1c3b8a7f7dab93763c911a6deac9ad4332f8898d0282f5b6d3f6b05bf95f265d",
+      "files": {
+        "src/delivery-language.js": "175fb67c5fbf395f4f704678530f2c4276b3c174afb332637a2fb78f656b4282",
+        "src/app.js": "a2385601c8d5d7e89d7885a95a3e5af2c8edeb84fbf7985f0700b6c89827b9cd",
+        "tests/delivery-language.test.js": "9c47ca747461deb3205d0b11c0ad803097b5e4a05502007776c40ea0861f3fc2"
+      }
     }
   }
 }
