@@ -42,7 +42,7 @@
 | 4 | KA Core | データ・課題・対象者に合う可視化を設計 | 部分 | 111で棒・点と尺度を選ぶ。一般の設計や対象者の評価は未対応。 |
 | 5 | KA Core | 目的に対する可視化の有効性を分析 | 部分 | 111で棒の長さと軸範囲を比較。一般の課題や利用者による検証は未評価。 |
 | 6 | KA Core | 可視化の有用性を評価する手順を設計 | 部分 | 60で収穫の図を比較する課題・参加者・記録・順序・同意・結果の扱いを選択。自由な計画や実利用者の評価は未評価。 |
-| 7 | KA Core | 科学・医療・数学・流れ・空間分析の応用例を特定 | 未照合 | 列挙された応用の体系的な比較は未確認。 |
+| 7 | KA Core | 科学・医療・数学・流れ・空間分析の応用例を特定 | 部分 | 1162で５目的に合う表示を選択。実データ、幅広い応用や自由な説明は未評価。 |
 
 関連検査には `tests/visualization.test.js`、`tests/histogram.test.js`、`tests/clustering.test.js`、`tests/color-mixing.test.js` がある。各模型の範囲を検査し、可視化全体の有効性や実利用者による評価を保証しない。
 
@@ -65,3 +65,5 @@
 評価計画では [米国 HHS の説明と同意の解説](https://www.hhs.gov/ohrp/regulations-and-policy/guidance/faq/informed-consent/index.html)も参考に、目的・記録方法の説明、同意、途中でやめる選択と記録の保護を選ぶ。各国の法令や個別研究の要件を評価するものではない。
 
 依頼1162の追加例は [UBC の科学可視化と情報可視化](https://www.cs.ubc.ca/~tmm/courses/533-09/slides/scivis-6up.pdf)を参考に、空間上の風向きの入替えと村名・値を保つ項目の並替えを図と表で比較する。`tests/visualization-contexts.test.js` は４条件、図の方向と値、旧記録の復元を検査する。両領域は重なり、科学データにも多次元・時系列、情報データにも位置属性がある。固定例は一般の分類や自由な説明を評価しない。
+
+依頼1162の応用例は [UBC の科学データ可視化](https://www.cs.ubc.ca/~tmm/courses/533-09/slides/scivis-6up.pdf)と [NIH の CT 断面画像](https://www.nibib.nih.gov/science-education/science-topics/computed-tomography-ct)を参考に、５つの固定目的に表示方法を選ぶ。`tests/visualization-applications.test.js` は候補と旧記録の復元を検査する。用途に対する唯一の方法を主張せず、実データや医療診断は評価しない。

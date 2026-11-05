@@ -1893,7 +1893,7 @@ GIT-Visualization:学習成果:KA Core:3,GIT,GIT-Visualization,学習成果,KA C
 GIT-Visualization:学習成果:KA Core:4,GIT,GIT-Visualization,学習成果,KA Core,4,データ・課題・対象者に合う可視化を設計,部分,111で棒・点と尺度を選ぶ。一般の設計や対象者の評価は未対応。,coverage-git-visualization.md,42,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:5,GIT,GIT-Visualization,学習成果,KA Core,5,目的に対する可視化の有効性を分析,部分,111で棒の長さと軸範囲を比較。一般の課題や利用者による検証は未評価。,coverage-git-visualization.md,43,原典照合結果は監査記録参照
 GIT-Visualization:学習成果:KA Core:6,GIT,GIT-Visualization,学習成果,KA Core,6,可視化の有用性を評価する手順を設計,部分,60で収穫の図を比較する課題・参加者・記録・順序・同意・結果の扱いを選択。自由な計画や実利用者の評価は未評価。,coverage-git-visualization.md,44,原典照合結果は監査記録参照
-GIT-Visualization:学習成果:KA Core:7,GIT,GIT-Visualization,学習成果,KA Core,7,科学・医療・数学・流れ・空間分析の応用例を特定,未照合,列挙された応用の体系的な比較は未確認。,coverage-git-visualization.md,45,原典照合結果は監査記録参照
+GIT-Visualization:学習成果:KA Core:7,GIT,GIT-Visualization,学習成果,KA Core,7,科学・医療・数学・流れ・空間分析の応用例を特定,部分,1162で５目的に合う表示を選択。実データ、幅広い応用や自由な説明は未評価。,coverage-git-visualization.md,45,原典照合結果は監査記録参照
 HCI-Accessibility:トピック:CS Core:1a,HCI,HCI-Accessibility,トピック,CS Core,1a,社会的・法的支援と義務,部分,1114で日本の障害者差別解消法と事業者の合理的配慮、対話を紹介。法域全般や個別の法的判断は未評価。,coverage-hci-accessibility.md,9,原典照合結果は監査記録参照
 HCI-Accessibility:トピック:CS Core:1b,HCI,HCI-Accessibility,トピック,CS Core,1b,アクセシブルな設計の広い利益,部分,575 で複数条件への効用を検討。一般的な利益は未評価。,coverage-hci-accessibility.md,10,原典照合結果は監査記録参照
 HCI-Accessibility:トピック:CS Core:2a,HCI,HCI-Accessibility,トピック,CS Core,2a,アクセシビリティ標準,部分,394・575 は WCAG の一部を参照。適合判定全体ではない。,coverage-hci-accessibility.md,11,原典照合結果は監査記録参照
