@@ -3356,7 +3356,7 @@ SF-Reliability:学習成果:CS Core:1,SF,SF-Reliability,学習成果,CS Core,1,�
 SF-Reliability:学習成果:CS Core:2,SF,SF-Reliability,学習成果,CS Core,2,検出・処理・復旧の違いと実現方法を説明,部分,依頼23の検出・代替、依頼229・136の復旧は固定模型。方法の一般的な分類と自由な説明は未評価。,coverage-sf-reliability.md,22,原典照合結果は監査記録参照
 SF-Reliability:学習成果:CS Core:3,SF,SF-Reliability,学習成果,CS Core,3,メモリ・記憶装置・ネットワークにおける誤り検査と訂正符号の役割を説明,部分,依頼106・107で伝達時の符号と訂正・検出、229で記憶装置の故障時の復元模型を操作。各媒体の実際の使用例や自由な説明は未評価。,coverage-sf-reliability.md,23,原典照合結果は監査記録参照
 SF-Reliability:学習成果:CS Core:4,SF,SF-Reliability,学習成果,CS Core,4,冗長情報を使う簡単な訂正手順を適用,部分,依頼106の７ビット符号で固定の単一誤りを訂正。任意の符号や一般的な手順の構築は評価しない。,coverage-sf-reliability.md,24,原典照合結果は監査記録参照
-SF-Reliability:学習成果:KA Core:5,SF,SF-Reliability,学習成果,KA Core,5,検出・訂正方式のデータ量、実装の複雑さ、符号化・検出・訂正に要する相対時間を比較,部分,依頼107で４ビットのデータから７ビットの CRC と８ビットの訂正符号を扱い、検出と訂正を区別。符号化・検出・訂正の時間や実装の複雑さの比較は未対応。,coverage-sf-reliability.md,25,原典照合結果は監査記録参照
+SF-Reliability:学習成果:KA Core:5,SF,SF-Reliability,学習成果,KA Core,5,検出・訂正方式のデータ量、実装の複雑さ、符号化・検出・訂正に要する相対時間を比較,部分,依頼107で７ビットの CRC と８ビットの訂正符号の検査を比較し、固定実装の XOR 回数を数える。実時間や符号化・訂正の処理量、実装全体の複雑さは未評価。,coverage-sf-reliability.md,25,原典照合結果は監査記録参照
 SF-Resource:トピック:CS Core:1,SF,SF-Resource,トピック,CS Core,1,CPU、メモリ、記憶装置、帯域などの有限資源,部分,依頼14で炉を仕事に割り当て、40で頁の行き先を確認。資源の種類全体や一般の管理は未評価。,coverage-sf-resource.md,9,原典照合結果は監査記録参照
 SF-Resource:トピック:CS Core:2,SF,SF-Resource,トピック,CS Core,2,先着・優先度・公平・中断などの割当方式,部分,依頼14で先着とラウンドロビン、176で中断、177で優先度と待ち時間を操作。一般の方式や公平性は未評価。,coverage-sf-resource.md,10,原典照合結果は監査記録参照
 SF-Resource:トピック:KA Core:3,SF,SF-Resource,トピック,KA Core,3,一般的な方式の長所・短所,部分,依頼176で応答と切替費用、177で優先度と飢餓を比較。広い負荷・方式の比較は未評価。,coverage-sf-resource.md,11,原典照合結果は監査記録参照

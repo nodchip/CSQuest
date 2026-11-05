@@ -2,6 +2,7 @@ export const crcGenerator=[1,0,1,1];
 export const crcData=[0,1,0,1];
 function validate(bits,length){if(!Array.isArray(bits)||bits.length!==length||bits.some(b=>b!==0&&b!==1))throw new RangeError('ビット列が不正です。');}
 export function crcDivision(bits){validate(bits,7);let work=bits.slice();const trace=[work.slice()];for(let i=0;i<4;i++){if(work[i]===1)for(let j=0;j<crcGenerator.length;j++)work[i+j]^=crcGenerator[j];trace.push(work.slice());}return trace;}
+export function crcBitXorCount(bits){const trace=crcDivision(bits);return trace.slice(0,4).filter((row,i)=>row[i]===1).length*crcGenerator.length;}
 export function crcEncode(data){validate(data,4);const remainder=crcDivision([...data,0,0,0]).at(-1).slice(-3);return [...data,...remainder];}
 export const crcOriginal=crcEncode(crcData);
 export function createCrcLab(){return {flips:[],stage:null,seen:[],answer:null,checked:false,history:[]};}

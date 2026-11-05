@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {crcEncode,crcDivision,crcOriginal,createCrcLab,crcLabAct,crcLabComplete,crcReceived,restoreCrcLab} from '../src/crc-lab.js';
+import {crcEncode,crcDivision,crcOriginal,createCrcLab,crcLabAct,crcLabComplete,crcReceived,restoreCrcLab,crcBitXorCount} from '../src/crc-lab.js';
 
 const number=bits=>bits.reduce((n,b)=>(n<<1)|b,0);
 function remainder(n){for(let bit=6;bit>=3;bit--)if(n&(1<<bit))n^=0b1011<<(bit-3);return n;}
+test('bit XOR count follows each taken division step for all seven-bit inputs',()=>{for(let word=0;word<128;word++){let n=word,taken=0;for(let bit=6;bit>=3;bit--){if(n&(1<<bit)){taken++;n^=0b1011<<(bit-3);}}const bits=[6,5,4,3,2,1,0].map(i=>(word>>i)&1);assert.equal(crcBitXorCount(bits),taken*4);}assert.throws(()=>crcBitXorCount([0]));});
 test('CRC encoding and all one- and two-bit errors agree with independent polynomial division',()=>{
  assert.equal(number(crcOriginal),0b0101100);
  for(let data=0;data<16;data++){
