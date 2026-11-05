@@ -336,6 +336,30 @@
       "topics": 9,
       "outcomes": 4,
       "scope_sha256": "d0082cca449b1f5ea5ea1428310015c6c9d1d365ec52317eb1de1a3886b660c9"
+    },
+    "AL-SEP": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-al-sep.md",
+      "topics": 8,
+      "outcomes": 6,
+      "scope_sha256": "42ae93a68d197af8e0176f07739d847d15a462b721dc48f9485d09bad671369f"
+    },
+    "AR-SEP": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-sep.md",
+      "topics": 5,
+      "outcomes": 1,
+      "scope_sha256": "27b4bfd673ee308ec921aa7eda40b30c09d133821bd983568ebe21800c598637"
+    },
+    "SF-SEP": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sf-sep.md",
+      "topics": 3,
+      "outcomes": 3,
+      "scope_sha256": "55720eee3bb55ef69f6f8623b1695640c3b84d5a1bd7ec8b0c48ac9b307ab0d0"
     }
   }
 }
