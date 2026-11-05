@@ -1142,29 +1142,30 @@ DM-Unstructured:トピック:未記載:2c-i,DM,DM-Unstructured,トピック,未�
 DM-Unstructured:トピック:未記載:2c-ii,DM,DM-Unstructured,トピック,未記載,2c-ii,半構造データを扱う製品事例,部分,189で PostgreSQL の JSON 経路取得を３固定例で予測。実 PostgreSQL の実行、MongoDB・Snowflake や一般の製品比較は未評価。,coverage-dm-unstructured.md,18,原典照合結果は監査記録参照・区分を要確認
 FPL-Abstraction:トピック:KA Core:1,FPL,FPL-Abstraction,トピック,KA Core,1,BNF と正規表現,部分,154で正規表現、309・788で固定の文法・拡張記法。一般の記述は未評価。,coverage-fpl-abstraction.md,9,原典照合結果は監査記録参照
 FPL-Abstraction:トピック:KA Core:2,FPL,FPL-Abstraction,トピック,KA Core,2,プログラムを入力とする翻訳器等,部分,311・315・789で翻訳、型確認と最適化の固定模型。文書生成器や一般の実装は未評価。,coverage-fpl-abstraction.md,10,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:3a,FPL,FPL-Abstraction,トピック,KA Core,3a,字母、区切り、文、構文、意味の定義,部分,313でトークン、309で規則と文。用語の一般的な定義は未評価。,coverage-fpl-abstraction.md,11,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:3b,FPL,FPL-Abstraction,トピック,KA Core,3b,構文と意味の違い,部分,75で構造と値、315で構文・型の誤りを比較。一般の区別は未評価。,coverage-fpl-abstraction.md,12,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:4,FPL,FPL-Abstraction,トピック,KA Core,4,曖昧でなく意味のある文としてのプログラム,部分,310で曖昧な文法、315で構文と型の誤り。一般の曖昧性・有意味性は未評価。,coverage-fpl-abstraction.md,13,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:5,FPL,FPL-Abstraction,トピック,KA Core,5,基本的な構成要素・手続き・モジュール・例外,部分,01〜04・197〜199・224・513・583で命令、呼出し、境界、例外、反復子の固定例。全構成の一般的な設計は未評価。,coverage-fpl-abstraction.md,14,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:6,FPL,FPL-Abstraction,トピック,KA Core,6,可変・不変、コピーと再利用、部分計算と再計算,部分,590で版の共有、593で不変値と変更、777で結果の再利用。一般の費用・設計は未評価。,coverage-fpl-abstraction.md,15,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:7,FPL,FPL-Abstraction,トピック,KA Core,7,静的・局所・非局所・大域の変数と課題,部分,199で局所、307で大域、582で種類ごとの変数、591で捕捉。一般の比較は未評価。,coverage-fpl-abstraction.md,16,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:8,FPL,FPL-Abstraction,トピック,KA Core,8,静的・動的スコープ、可視性と副作用,部分,308で二つのスコープ、791で内側の名前による隠蔽。一般の規則は未評価。,coverage-fpl-abstraction.md,17,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:KA Core:9,FPL,FPL-Abstraction,トピック,KA Core,9,非局所・大域・別名による副作用,部分,307で大域変更、791で同じ箱を指す別名の更新。一般の作用と修正は未評価。,coverage-fpl-abstraction.md,18,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:10,FPL,FPL-Abstraction,トピック,Non-core,10,左辺値・右辺値と可変・不変の対応,部分,791で可変の名前から場所を選び、定数を値に直接対応させる模型。言語ごとの左辺値と不変変数の表現は未評価。,coverage-fpl-abstraction.md,19,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:11,FPL,FPL-Abstraction,トピック,Non-core,11,環境とストア,部分,791で名前→場所または値、場所→値を操作。一般の形式的意味論は未評価。,coverage-fpl-abstraction.md,20,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:12,FPL,FPL-Abstraction,トピック,Non-core,12,データと制御の抽象化,部分,199で関数、224でモジュール境界。一般の抽象化設計は未評価。,coverage-fpl-abstraction.md,21,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:13,FPL,FPL-Abstraction,トピック,Non-core,13,プログラム単位間の情報交換,部分,306で値・参照、224で境界、790で名前解決。一般の方式と実言語の実装は未評価。,coverage-fpl-abstraction.md,22,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:14,FPL,FPL-Abstraction,トピック,Non-core,14,実行・翻訳・伝送のためのコード表現,部分,75で抽象構文木、787で中間コード、790で固定の呼出し先。一般の表現・伝送は未評価。,coverage-fpl-abstraction.md,23,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:15,FPL,FPL-Abstraction,トピック,Non-core,15,仮想機械・アセンブリ・二進の命令表現,部分,73・783で架空の命令、787で VM 向け表現の概念。実機の符号化は未評価。,coverage-fpl-abstraction.md,24,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:16,FPL,FPL-Abstraction,トピック,Non-core,16,ラムダ計算、束縛と名前の変更,部分,283で固定の α・β 変換、591で捕捉環境。一般の変換は未評価。,coverage-fpl-abstraction.md,25,原典照合結果は監査記録参照
-FPL-Abstraction:トピック:Non-core:17,FPL,FPL-Abstraction,トピック,Non-core,17,意味論の種類、抽象・具体構文木,部分,771で操作的・表示的・公理的な見方、75で式の木。振る舞い意味論と具体構文木との一般の比較は未評価。,coverage-fpl-abstraction.md,26,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:1,FPL,FPL-Abstraction,学習成果,KA Core,1,変数のスコープと可視性を例示,部分,308・791でスコープや名前の隠蔽。一般の説明は未評価。,coverage-fpl-abstraction.md,32,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:2,FPL,FPL-Abstraction,学習成果,KA Core,2,複数の引数渡しを例示,部分,306で値の写しと参照。一般の方式は未評価。,coverage-fpl-abstraction.md,33,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:3,FPL,FPL-Abstraction,学習成果,KA Core,3,大域・非局所変数の副作用と修正,部分,307で共有箱と明示入力を比較。一般の修正・自由記述は未評価。,coverage-fpl-abstraction.md,34,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:4,FPL,FPL-Abstraction,学習成果,KA Core,4,プログラムを処理するプログラムの入力,部分,311・315で巻物を入力とする翻訳と検査。一般の説明は未評価。,coverage-fpl-abstraction.md,35,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:5,FPL,FPL-Abstraction,学習成果,KA Core,5,小言語の文法と抽象構文木,部分,75・309・788で固定の式・規則。任意の文法や木の説明は未評価。,coverage-fpl-abstraction.md,36,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:6,FPL,FPL-Abstraction,学習成果,KA Core,6,ソース文字列以外の表現の利点,部分,75・309で木、787で中間コードを操作。表現間の一般的な比較は未評価。,coverage-fpl-abstraction.md,37,原典照合結果は監査記録参照
-FPL-Abstraction:学習成果:KA Core:7,FPL,FPL-Abstraction,学習成果,KA Core,7,コード表現を処理するプログラムを実装,部分,311・315で入力の巻物を処理する固定模型。実際のプログラムを書く能力は方針上評価しない。,coverage-fpl-abstraction.md,38,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:3,FPL,FPL-Abstraction,トピック,KA Core,3,言語の構成要素,部分,字母などの定義と構文・意味の区別は子項目を参照。一般の定義と区別は未評価。,coverage-fpl-abstraction.md,11,原典照合結果は監査記録参照・親子重複候補
+FPL-Abstraction:トピック:KA Core:3a,FPL,FPL-Abstraction,トピック,KA Core,3a,字母、区切り、文、構文、意味の定義,部分,313でトークン、309で規則と文。用語の一般的な定義は未評価。,coverage-fpl-abstraction.md,12,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:3b,FPL,FPL-Abstraction,トピック,KA Core,3b,構文と意味の違い,部分,75で構造と値、315で構文・型の誤りを比較。一般の区別は未評価。,coverage-fpl-abstraction.md,13,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:4,FPL,FPL-Abstraction,トピック,KA Core,4,曖昧でなく意味のある文としてのプログラム,部分,310で曖昧な文法、315で構文と型の誤り。一般の曖昧性・有意味性は未評価。,coverage-fpl-abstraction.md,14,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:5,FPL,FPL-Abstraction,トピック,KA Core,5,基本的な構成要素・手続き・モジュール・例外,部分,01〜04・197〜199・224・513・583で命令、呼出し、境界、例外、反復子の固定例。全構成の一般的な設計は未評価。,coverage-fpl-abstraction.md,15,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:6,FPL,FPL-Abstraction,トピック,KA Core,6,可変・不変、コピーと再利用、部分計算と再計算,部分,590で版の共有、593で不変値と変更、777で結果の再利用。一般の費用・設計は未評価。,coverage-fpl-abstraction.md,16,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:7,FPL,FPL-Abstraction,トピック,KA Core,7,静的・局所・非局所・大域の変数と課題,部分,199で局所、307で大域、582で種類ごとの変数、591で捕捉。一般の比較は未評価。,coverage-fpl-abstraction.md,17,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:8,FPL,FPL-Abstraction,トピック,KA Core,8,静的・動的スコープ、可視性と副作用,部分,308で二つのスコープ、791で内側の名前による隠蔽。一般の規則は未評価。,coverage-fpl-abstraction.md,18,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:KA Core:9,FPL,FPL-Abstraction,トピック,KA Core,9,非局所・大域・別名による副作用,部分,307で大域変更、791で同じ箱を指す別名の更新。一般の作用と修正は未評価。,coverage-fpl-abstraction.md,19,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:10,FPL,FPL-Abstraction,トピック,Non-core,10,左辺値・右辺値と可変・不変の対応,部分,791で可変の名前から場所を選び、定数を値に直接対応させる模型。言語ごとの左辺値と不変変数の表現は未評価。,coverage-fpl-abstraction.md,20,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:11,FPL,FPL-Abstraction,トピック,Non-core,11,環境とストア,部分,791で名前→場所または値、場所→値を操作。一般の形式的意味論は未評価。,coverage-fpl-abstraction.md,21,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:12,FPL,FPL-Abstraction,トピック,Non-core,12,データと制御の抽象化,部分,199で関数、224でモジュール境界。一般の抽象化設計は未評価。,coverage-fpl-abstraction.md,22,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:13,FPL,FPL-Abstraction,トピック,Non-core,13,プログラム単位間の情報交換,部分,306で値・参照、224で境界、790で名前解決。一般の方式と実言語の実装は未評価。,coverage-fpl-abstraction.md,23,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:14,FPL,FPL-Abstraction,トピック,Non-core,14,実行・翻訳・伝送のためのコード表現,部分,75で抽象構文木、787で中間コード、790で固定の呼出し先。一般の表現・伝送は未評価。,coverage-fpl-abstraction.md,24,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:15,FPL,FPL-Abstraction,トピック,Non-core,15,仮想機械・アセンブリ・二進の命令表現,部分,73・783で架空の命令、787で VM 向け表現の概念。実機の符号化は未評価。,coverage-fpl-abstraction.md,25,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:16,FPL,FPL-Abstraction,トピック,Non-core,16,ラムダ計算、束縛と名前の変更,部分,283で固定の α・β 変換、591で捕捉環境。一般の変換は未評価。,coverage-fpl-abstraction.md,26,原典照合結果は監査記録参照
+FPL-Abstraction:トピック:Non-core:17,FPL,FPL-Abstraction,トピック,Non-core,17,意味論の種類、抽象・具体構文木,部分,771で操作的・表示的・公理的な見方、75で式の木。振る舞い意味論と具体構文木との一般の比較は未評価。,coverage-fpl-abstraction.md,27,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:1,FPL,FPL-Abstraction,学習成果,KA Core,1,変数のスコープと可視性を例示,部分,308・791でスコープや名前の隠蔽。一般の説明は未評価。,coverage-fpl-abstraction.md,33,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:2,FPL,FPL-Abstraction,学習成果,KA Core,2,複数の引数渡しを例示,部分,306で値の写しと参照。一般の方式は未評価。,coverage-fpl-abstraction.md,34,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:3,FPL,FPL-Abstraction,学習成果,KA Core,3,大域・非局所変数の副作用と修正,部分,307で共有箱と明示入力を比較。一般の修正・自由記述は未評価。,coverage-fpl-abstraction.md,35,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:4,FPL,FPL-Abstraction,学習成果,KA Core,4,プログラムを処理するプログラムの入力,部分,311・315で巻物を入力とする翻訳と検査。一般の説明は未評価。,coverage-fpl-abstraction.md,36,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:5,FPL,FPL-Abstraction,学習成果,KA Core,5,小言語の文法と抽象構文木,部分,75・309・788で固定の式・規則。任意の文法や木の説明は未評価。,coverage-fpl-abstraction.md,37,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:6,FPL,FPL-Abstraction,学習成果,KA Core,6,ソース文字列以外の表現の利点,部分,75・309で木、787で中間コードを操作。表現間の一般的な比較は未評価。,coverage-fpl-abstraction.md,38,原典照合結果は監査記録参照
+FPL-Abstraction:学習成果:KA Core:7,FPL,FPL-Abstraction,学習成果,KA Core,7,コード表現を処理するプログラムを実装,部分,311・315で入力の巻物を処理する固定模型。実際のプログラムを書く能力は方針上評価しない。,coverage-fpl-abstraction.md,39,原典照合結果は監査記録参照
 FPL-Analysis:トピック:未記載:4,FPL,FPL-Analysis,トピック,未記載,4,基本ブロック・制御フロー・定義使用連鎖・SSA,部分,204で固定の制御フロー、205で届く定義。SSA 等は未評価。,coverage-fpl-analysis.md,9,原典照合結果は監査記録参照・区分を要確認
 FPL-Analysis:トピック:未記載:5,FPL,FPL-Analysis,トピック,未記載,5,決定不能性と解析への帰結,部分,416で停止問題、1241で型不一致の判定への帰着、1244で増大する区間と拡大を扱う。一般の解析器は未評価。,coverage-fpl-analysis.md,10,原典照合結果は監査記録参照・区分を要確認
 FPL-Analysis:トピック:未記載:6,FPL,FPL-Analysis,トピック,未記載,6,フロー非依存の型・ポインタ・別名解析,部分,1181で制約から指し先候補を伝播し、分岐の２候補を統合。一般の解析や実ツールは未評価。,coverage-fpl-analysis.md,11,原典照合結果は監査記録参照・区分を要確認
@@ -1474,15 +1475,16 @@ FPL-Syntax:トピック:Non-core:3,FPL,FPL-Syntax,トピック,Non-core,3,正規
 FPL-Syntax:トピック:Non-core:4,FPL,FPL-Syntax,トピック,Non-core,4,トークンとその利用,部分,313で英字・数字・等号、315で字句から構文への受渡し。一般の種類や実言語は未評価。,coverage-fpl-syntax.md,12,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:5,FPL,FPL-Syntax,トピック,Non-core,5,トップダウン・ボトムアップ解析,部分,314で予測構文解析、587で CYK の表を操作。LR・GLR や一般の比較は未評価。,coverage-fpl-syntax.md,13,原典照合結果は監査記録参照・親子重複候補
 FPL-Syntax:トピック:Non-core:5a,FPL,FPL-Syntax,トピック,Non-core,5a,先読み表と解析への適用,部分,314で固定の一文字先読み表を使用。一般の表作成は未評価。,coverage-fpl-syntax.md,14,原典照合結果は監査記録参照
-FPL-Syntax:トピック:Non-core:6a,FPL,FPL-Syntax,トピック,Non-core,6a,チョムスキー階層,未照合,対応する階層全体の比較を未確認。,coverage-fpl-syntax.md,15,原典照合結果は監査記録参照
-FPL-Syntax:トピック:Non-core:6b,FPL,FPL-Syntax,トピック,Non-core,6b,左端・右端導出と曖昧性,部分,309で固定の導出、310で二つの木。一般の左右導出の比較は未評価。,coverage-fpl-syntax.md,16,原典照合結果は監査記録参照
-FPL-Syntax:トピック:Non-core:6c,FPL,FPL-Syntax,トピック,Non-core,6c,文法変換,部分,1299で直接左再帰の除去前後の規則から３文字列を導出し、構文木の違いを考える。一般の変換や実解析器は未評価。,coverage-fpl-syntax.md,17,原典照合結果は監査記録参照
-FPL-Syntax:トピック:Non-core:7,FPL,FPL-Syntax,トピック,Non-core,7,解析器のエラー回復,部分,792で区切りまで札を捨てて再開し、次の文を失う場合を比較。一般の回復・入れ子・実解析器は未評価。,coverage-fpl-syntax.md,18,原典照合結果は監査記録参照
-FPL-Syntax:トピック:Non-core:8,FPL,FPL-Syntax,トピック,Non-core,8,宣言的仕様からの字句・構文解析器の生成,未照合,実際の生成器を用いる教材は未確認。,coverage-fpl-syntax.md,19,原典照合結果は監査記録参照
-FPL-Syntax:学習成果:Non-core:1,FPL,FPL-Syntax,学習成果,Non-core,1,形式文法で言語の構文を指定,部分,309・788で固定の規則を選び文を試す。自由な文法記述は評価しない。,coverage-fpl-syntax.md,25,原典照合結果は監査記録参照
-FPL-Syntax:学習成果:Non-core:2,FPL,FPL-Syntax,学習成果,Non-core,2,先読み表の役割を例示,部分,314で１文字先読みと表を使用。一般の表の生成は未評価。,coverage-fpl-syntax.md,26,原典照合結果は監査記録参照
-FPL-Syntax:学習成果:Non-core:3,FPL,FPL-Syntax,学習成果,Non-core,3,宣言的ツールで解析器を生成,未照合,実ツールの利用・生成は未確認。,coverage-fpl-syntax.md,27,原典照合結果は監査記録参照
-FPL-Syntax:学習成果:Non-core:4,FPL,FPL-Syntax,学習成果,Non-core,4,曖昧性・結合・優先順位,部分,75・310で式の優先順位と結合を比較。一般的な分析は未評価。,coverage-fpl-syntax.md,28,原典照合結果は監査記録参照
+FPL-Syntax:トピック:Non-core:6,FPL,FPL-Syntax,トピック,Non-core,6,言語理論,部分,階層、導出・曖昧性と文法変換は子項目を参照。一般の言語理論は未評価。,coverage-fpl-syntax.md,15,原典照合結果は監査記録参照・親子重複候補
+FPL-Syntax:トピック:Non-core:6a,FPL,FPL-Syntax,トピック,Non-core,6a,チョムスキー階層,未照合,対応する階層全体の比較を未確認。,coverage-fpl-syntax.md,16,原典照合結果は監査記録参照
+FPL-Syntax:トピック:Non-core:6b,FPL,FPL-Syntax,トピック,Non-core,6b,左端・右端導出と曖昧性,部分,309で固定の導出、310で二つの木。一般の左右導出の比較は未評価。,coverage-fpl-syntax.md,17,原典照合結果は監査記録参照
+FPL-Syntax:トピック:Non-core:6c,FPL,FPL-Syntax,トピック,Non-core,6c,文法変換,部分,1299で直接左再帰の除去前後の規則から３文字列を導出し、構文木の違いを考える。一般の変換や実解析器は未評価。,coverage-fpl-syntax.md,18,原典照合結果は監査記録参照
+FPL-Syntax:トピック:Non-core:7,FPL,FPL-Syntax,トピック,Non-core,7,解析器のエラー回復,部分,792で区切りまで札を捨てて再開し、次の文を失う場合を比較。一般の回復・入れ子・実解析器は未評価。,coverage-fpl-syntax.md,19,原典照合結果は監査記録参照
+FPL-Syntax:トピック:Non-core:8,FPL,FPL-Syntax,トピック,Non-core,8,宣言的仕様からの字句・構文解析器の生成,未照合,実際の生成器を用いる教材は未確認。,coverage-fpl-syntax.md,20,原典照合結果は監査記録参照
+FPL-Syntax:学習成果:Non-core:1,FPL,FPL-Syntax,学習成果,Non-core,1,形式文法で言語の構文を指定,部分,309・788で固定の規則を選び文を試す。自由な文法記述は評価しない。,coverage-fpl-syntax.md,26,原典照合結果は監査記録参照
+FPL-Syntax:学習成果:Non-core:2,FPL,FPL-Syntax,学習成果,Non-core,2,先読み表の役割を例示,部分,314で１文字先読みと表を使用。一般の表の生成は未評価。,coverage-fpl-syntax.md,27,原典照合結果は監査記録参照
+FPL-Syntax:学習成果:Non-core:3,FPL,FPL-Syntax,学習成果,Non-core,3,宣言的ツールで解析器を生成,未照合,実ツールの利用・生成は未確認。,coverage-fpl-syntax.md,28,原典照合結果は監査記録参照
+FPL-Syntax:学習成果:Non-core:4,FPL,FPL-Syntax,学習成果,Non-core,4,曖昧性・結合・優先順位,部分,75・310で式の優先順位と結合を比較。一般的な分析は未評価。,coverage-fpl-syntax.md,29,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:1,FPL,FPL-Systems,トピック,CS Core,1,実行・翻訳等のスタック、ヒープ、別名、添字付き列、文字列,部分,171でリスト、173で配列配置、203・782で別名、388・560・774でスタックやヒープ。文字列とコード移動の実行時表現は未評価。,coverage-fpl-systems.md,9,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:2,FPL,FPL-Systems,トピック,CS Core,2,メモリ位置への直接・間接・添字アクセス,部分,782で固定された棚の３通りの読取りと別名による書換え。任意のアドレスや実際の命令規則は未評価。,coverage-fpl-systems.md,10,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:3,FPL,FPL-Systems,トピック,CS Core,3,変数、配列、ベクトル、レコード、参照構造やオブジェクトの実行時表現,部分,171・173でリストと配列、582で個体とクラスの変数。一般の配置やレコード・木・オブジェクト全体の低水準表現は未評価。,coverage-fpl-systems.md,11,原典照合結果は監査記録参照
