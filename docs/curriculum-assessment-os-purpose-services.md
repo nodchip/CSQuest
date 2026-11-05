@@ -8,4 +8,6 @@
 
 [OSTEP の OS 入門](https://pages.cs.wisc.edu/~remzi/OSTEP/intro.pdf)、[Linux の装置モデル](https://docs.kernel.org/driver-api/driver-model/overview.html)、[Linux fsync の説明](https://man7.org/linux/man-pages/man2/fsync.2.html)を参照。依頼382の同期失敗後に旧記録が残るのはその場面の仮定であり、実際のエラー後の内容や名前の永続性を保証しない。依頼674の装置担当と認可も模型の前提で、実ドライバーの検出や安全性を示さない。
 
-`tests/os-service.test.js`、`tests/syscall.test.js`、`tests/device-bridge.test.js` の８件が成功。390px幅の公開版で依頼382の３場面と振り返りを達成し、エラー後の限界表示と横あふれがないことを確認。誤操作と途中再開は同期失敗の追加時に確認した。実装・運用能力や実機の耐久性は評価しない。
+`tests/os-service.test.js`、`tests/syscall.test.js`、`tests/device-bridge.test.js` の９件が成功。390px幅の公開版で依頼382の３場面と振り返りを達成し、エラー後の限界表示と横あふれがないことを確認。誤操作と途中再開は同期失敗の追加時に確認した。実装・運用能力や実機の耐久性は評価しない。
+
+依頼382は別の固定例で、新規ファイルの内容だけ同期した場合に名前が残る・残らない両結果と、目録も正常同期した場合を比較する。成功と装置の正常動作を仮定し、実ファイルシステムの障害後の状態を保証しない。390px幅で３条件と途中再開を確認した。
