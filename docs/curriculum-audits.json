@@ -528,6 +528,22 @@
       "topics": 39,
       "outcomes": 3,
       "scope_sha256": "d578907591a56eda14e7689377cc91b9ad837b40a07ccccedbb9b7ceb8b4d305"
+    },
+    "AL-Strategies": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-al-strategies.md",
+      "topics": 21,
+      "outcomes": 9,
+      "scope_sha256": "5980ccb12705732eb4518243869974c101a29005f28da8d2223055ec15c55360"
+    },
+    "AL-Complexity": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-al-complexity.md",
+      "topics": 32,
+      "outcomes": 20,
+      "scope_sha256": "596cb0d58a58cdbb1345848d5ff11d302599e22b2bd939579c500345401339fd"
     }
   }
 }
