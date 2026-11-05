@@ -17,8 +17,9 @@ export function languageProof(states,i,j,decision){
  return {left:'a'.repeat(i)+'b'.repeat(i),right:'a'.repeat(j)+'b'.repeat(i),leftCorrect:decision==='accept',rightCorrect:decision==='reject'};
 }
 export const hierarchyClasses={regular:'正規言語',contextFree:'文脈自由言語',contextSensitive:'文脈依存言語',recognizable:'チューリング認識可能な言語'};
-export const hierarchyExamples={star:{name:'a を０個以上並べた列',minimum:0},pairs:{name:'aⁿbⁿ（n は０以上）',minimum:1},triples:{name:'aⁿbⁿcⁿ（n は１以上）',minimum:2},halting:{name:'停止する機械と入力の符号の組',minimum:3}};
+export const hierarchyExamples={star:{name:'a を０個以上並べた列',minimum:0,reason:'有限状態で a を繰り返し読み、他の文字を拒めます。'},pairs:{name:'aⁿbⁿ（n は０以上）',minimum:1,reason:'山札で a と b の数を対応させられますが、有限状態では任意の数を区別できません。'},triples:{name:'aⁿbⁿcⁿ（n は１以上）',minimum:2,reason:'入力の帯に印を付けて３種類を照合でき、文脈自由でないことはポンピング補題などで示せます。'},halting:{name:'停止する機械と入力の符号の組',minimum:3,reason:'機械を模倣し、停止したら受理できます。停止しない組は待ち続ける場合があり、停止問題の決定不能性から文脈依存には含まれません。'}};
 export function hierarchyMembership(example,category){const examples=Object.keys(hierarchyExamples),classes=Object.keys(hierarchyClasses);if(!examples.includes(example)||!classes.includes(category))throw new RangeError('階層の選択が不正です。');return classes.indexOf(category)>=hierarchyExamples[example].minimum;}
+export function hierarchyExplanation(example,category){const belongs=hierarchyMembership(example,category),item=hierarchyExamples[example],smallest=Object.keys(hierarchyClasses)[item.minimum];return {belongs,smallest:hierarchyClasses[smallest],reason:item.reason};}
 export function createLanguageStacks(){return {mode:'finite',n:3,m:3,step:0,observed:[],states:[0,0,0,0],i:null,j:null,proof:[],answer:null,checked:false,hierarchy:{example:'star',category:'regular',guess:null,observed:[],checked:false}};}
 export function languageStacksComplete(s){return languageRequired.every(k=>s.observed.includes(k))&&['accept','reject'].every(k=>s.proof.includes(k))&&s.answer==='memory'&&s.checked;}
 export function restoreLanguageStacks(s){

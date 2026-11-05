@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {languageTrace,languageProof,languageRequired,hierarchyMembership,createLanguageStacks,languageStacksComplete,restoreLanguageStacks} from '../src/language-stacks.js';
+import {languageTrace,languageProof,languageRequired,hierarchyMembership,hierarchyExplanation,createLanguageStacks,languageStacksComplete,restoreLanguageStacks} from '../src/language-stacks.js';
 
 test('２つの門で０〜４個の a と b をすべて試す',()=>{
  for(let n=0;n<=4;n++)for(let m=0;m<=4;m++){
@@ -25,3 +25,4 @@ test('４観察と２つの仮定、振り返りを検査して復元する',()=
 });
 test('four examples match the nested language classes',()=>{const expected={star:[true,true,true,true],pairs:[false,true,true,true],triples:[false,false,true,true],halting:[false,false,false,true]};for(const [example,answers] of Object.entries(expected))assert.deepEqual(['regular','contextFree','contextSensitive','recognizable'].map(c=>hierarchyMembership(example,c)),answers);assert.throws(()=>hierarchyMembership('bad','regular'));});
 test('hierarchy restores old drafts and rejects invalid new records',()=>{const old=createLanguageStacks();delete old.hierarchy;assert.deepEqual(restoreLanguageStacks(old).hierarchy,{example:'star',category:'regular',guess:null,observed:[],checked:false});const q=createLanguageStacks();q.hierarchy={example:'pairs',category:'regular',guess:'no',observed:['pairs:regular'],checked:true};const r=restoreLanguageStacks(q);r.hierarchy.observed.push('star:regular');assert.equal(q.hierarchy.observed.length,1);q.hierarchy.observed=['pairs:regular','pairs:regular'];assert.throws(()=>restoreLanguageStacks(q));q.hierarchy=null;assert.throws(()=>restoreLanguageStacks(q));});
+test('feedback identifies the smallest class and states whether the selected class includes the example',()=>{const cases=[['star','regular','正規言語',true],['pairs','regular','文脈自由言語',false],['triples','recognizable','文脈依存言語',true],['halting','contextSensitive','チューリング認識可能な言語',false]];for(const [example,category,smallest,belongs] of cases){const result=hierarchyExplanation(example,category);assert.equal(result.smallest,smallest);assert.equal(result.belongs,belongs);assert.ok(result.reason.length>10);}assert.throws(()=>hierarchyExplanation('bad','regular'));});
