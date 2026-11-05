@@ -1498,7 +1498,7 @@ FPL-Systems:トピック:CS Core:5a,FPL,FPL-Systems,トピック,CS Core,5a,選�
 FPL-Systems:トピック:CS Core:5b,FPL,FPL-Systems,トピック,CS Core,5b,制御フロー図から低水準コードへの翻訳,部分,783で固定の減算ループの地図から条件分岐と無条件ジャンプの飛び先を選び、０と２で実行。一般の図や実機コードへの翻訳は未評価。,coverage-fpl-systems.md,15,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:5c,FPL,FPL-Systems,トピック,CS Core,5c,ループ、再帰、末尾呼出しの実装,部分,526・566で再帰と反復、783で分岐と戻り、784で末尾呼出し時の枠積みと再利用を比較。一般の実装は未評価。,coverage-fpl-systems.md,16,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:5d,FPL,FPL-Systems,トピック,CS Core,5d,抽象機械による呼出し、復帰、各種引数渡し,部分,306で値の写し・参照、560で戻り先、774で呼出し枠、790で配置された呼出し先と復帰。一般の引数渡しや一体の機械は未評価。,coverage-fpl-systems.md,17,原典照合結果は監査記録参照
-FPL-Systems:トピック:CS Core:6a,FPL,FPL-Systems,トピック,CS Core,6a,基本値・多次元配列・レコード等の低水準確保とアクセス,部分,173で３×３配列とレコードの配置、782で番号を用いた読書き。確保や他の一般構造は未評価。,coverage-fpl-systems.md,18,原典照合結果は監査記録参照
+FPL-Systems:トピック:CS Core:6a,FPL,FPL-Systems,トピック,CS Core,6a,基本値・多次元配列・レコード等の低水準確保とアクセス,部分,173で３×３配列とレコードの配置・２つ目の記録の番地、782で番号を用いた読書き。確保や他の一般構造は未評価。,coverage-fpl-systems.md,18,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:6b,FPL,FPL-Systems,トピック,CS Core,6b,復帰時の局所データの自動解放,部分,388で局所の寿命、774で呼出し枠が戻る例。言語処理系一般の配置は未評価。,coverage-fpl-systems.md,19,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:6c,FPL,FPL-Systems,トピック,CS Core,6c,ヒープの手動確保・解放・再利用,部分,388で箱の確保と解放、203で解放後の別名、786で同じ棚の再利用と古いキーを比較。一般のアロケータや実ポインタは未評価。,coverage-fpl-systems.md,20,原典照合結果は監査記録参照
 FPL-Systems:トピック:CS Core:6d,FPL,FPL-Systems,トピック,CS Core,6d,到達可能性に基づく自動回収,部分,201・774で根から到達する箱、202で参照カウントの循環。実際の GC 戦略全般は未評価。,coverage-fpl-systems.md,21,原典照合結果は監査記録参照
