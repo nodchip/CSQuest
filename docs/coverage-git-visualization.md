@@ -64,4 +64,4 @@
 
 評価計画では [米国 HHS の説明と同意の解説](https://www.hhs.gov/ohrp/regulations-and-policy/guidance/faq/informed-consent/index.html)も参考に、目的・記録方法の説明、同意、途中でやめる選択と記録の保護を選ぶ。各国の法令や個別研究の要件を評価するものではない。
 
-依頼1162の追加例は [UBC の科学可視化と情報可視化](https://www.cs.ubc.ca/~tmm/courses/533-09/slides/scivis-6up.pdf)を参考に、空間上の風向きの入替えと村名・値を保つ項目の並替えを比較する。`tests/visualization-contexts.test.js` は４条件と旧記録の復元を検査する。両領域は重なり、科学データにも多次元・時系列、情報データにも位置属性がある。固定例は一般の分類や自由な説明を評価しない。
+依頼1162の追加例は [UBC の科学可視化と情報可視化](https://www.cs.ubc.ca/~tmm/courses/533-09/slides/scivis-6up.pdf)を参考に、空間上の風向きの入替えと村名・値を保つ項目の並替えを図と表で比較する。`tests/visualization-contexts.test.js` は４条件、図の方向と値、旧記録の復元を検査する。両領域は重なり、科学データにも多次元・時系列、情報データにも位置属性がある。固定例は一般の分類や自由な説明を評価しない。
