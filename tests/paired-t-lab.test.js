@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {tCases,tCritical,tResult,tLabCreate,tLabRestore} from '../src/paired-t-lab.js';
+import {createPairedPermutation,restorePairedPermutation} from '../src/paired-permutation.js';
+test('paired t uses the sample standard deviation and four pairs',()=>{const a=tResult('close'),b=tResult('wide');assert.equal(a.mean,5);assert.equal(b.mean,5);assert.ok(Math.abs(a.sd-Math.sqrt(10/3))<1e-12);assert.ok(Math.abs(b.sd-Math.sqrt(60))<1e-12);assert.ok(Math.abs(a.t-Math.sqrt(30))<1e-12);assert.ok(Math.abs(b.t-Math.sqrt(5/3))<1e-12);assert.equal(a.df,3);assert.ok(a.t>tCritical&&b.t<tCritical);assert.equal(a.decision,'reject');assert.equal(b.decision,'retain');assert.throws(()=>tResult('bad'));});
+test('old permutation drafts migrate and independent trials are validated',()=>{const q=createPairedPermutation();delete q.tLab;assert.deepEqual(restorePairedPermutation(q).tLab,tLabCreate());const lab=tLabCreate();lab.trials.close.guess='reject';const copy=tLabRestore(lab);copy.trials.close.guess='';assert.equal(lab.trials.close.guess,'reject');assert.throws(()=>tLabRestore({...lab,trials:{...lab.trials,wide:{guess:'',checked:true}}}));assert.equal(Object.keys(tCases).length,2);});

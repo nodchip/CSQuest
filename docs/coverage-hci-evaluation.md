@@ -35,7 +35,7 @@
 | 5 | Non-core | 量的分析の方法と道具 | 部分 | 統計道具・可視化・検定・効果量は子を参照。実ツールや一般的な分析は未評価。 |
 | 5a | Non-core | 統計パッケージ | 未照合 | 実ツールに相当する教材を要照合。 |
 | 5b | Non-core | 可視化ツール | 未照合 | 調査分析用ツールの対応を要照合。 |
-| 5c | Non-core | 各種統計検定 | 部分 | 529 は４組の置換検定。原典例の検定と一般の選択は未評価。 |
+| 5c | Non-core | 各種統計検定 | 部分 | 529 は４組の置換検定と対応のある t 検定。その他の検定と一般の選択は未評価。 |
 | 5d | Non-core | データ探索、視覚分析、効果量 | 部分 | 529 は対応する平均差。標準化効果量と一般の視覚分析は未評価。 |
 | 6 | Non-core | データ管理 | 部分 | 保存・共有・機微性・識別可能性は子を参照。実データの管理は未評価。 |
 | 6a | Non-core | データの保存・共有 | 部分 | 532 は架空の同意範囲と保存期限。実データの管理は未評価。 |
@@ -59,3 +59,5 @@
 依頼532の追加例は [HHS の研究の免除判断に関する解説](https://www.hhs.gov/ohrp/regulations-and-policy/guidance/faq/exempt-research-determination/index.html)を参考に、確認が必要という架空の工房で計画、提出、修正、通知、募集を順にたどる。`tests/study-ethics-review.test.js` は順序違いと記録の復元を検査する。すべての研究で同じ承認が必要と主張せず、実際の審査・法令適合や参加者への連絡は行わない。
 
 依頼536の素材模型は [米国 EPA の電子機器の再利用と資源](https://www.epa.gov/electronics-batteries-management/electronics-basic-information-research-and-initiatives)を参考に、３年と６年のサービス期間で修理・本体交換の架空の材料単位を比べる。`tests/material-repair.test.js` は４条件と旧記録の復元を検査する。実材料、製造・運搬・廃棄や全環境負荷の優劣は評価しない。
+
+依頼529の追加例は [NIST の対応のある観測](https://www.itl.nist.gov/div898/handbook/prc/section3/prc311.htm)と [t 分布の境界](https://www.itl.nist.gov/div898/handbook/eda/section3/eda3672.htm)に基づき、４組・２種類の架空の差について平均、標本標準偏差、標準誤差と両側５％の判断を比較する。`tests/paired-t-lab.test.js` は独立した手計算値と旧記録の復元を検査する。独立性・母集団の正規性は仮定で、実データや一般の検定の選択は評価しない。
