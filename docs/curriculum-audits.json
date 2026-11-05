@@ -768,6 +768,14 @@
       "topics": 12,
       "outcomes": 3,
       "scope_sha256": "4e5b449111934dc339532e2e8638a3a70955fb6517a735af6685646f25a61189"
+    },
+    "FPL-Design": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-design.md",
+      "topics": 13,
+      "outcomes": 1,
+      "scope_sha256": "cac0669ea0f3788005c5df139ccc2ef7477526b4d56842ea708174c412748dd9"
     }
   }
 }

@@ -679,6 +679,28 @@
         "src/app.js": "37b813846003db757a46ac280e6d249c236860a784644a035c32481ef456bb67",
         "tests/delivery-language.test.js": "9c47ca747461deb3205d0b11c0ad803097b5e4a05502007776c40ea0861f3fc2"
       }
+    },
+    "FPL-Design:トピック:Non-core:1e": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-design-orthogonality.md",
+      "row_sha256": "8a974a6167d10361cb3255ae9f9b2ab1fc5feaa5762c8e522d0cbd9bf5828937",
+      "files": {
+        "src/language-orthogonality.js": "aa3d89d9757110fa60e722ed4032d9adda375141acc85c46b88d38bbdec61e2d",
+        "src/app.js": "37b813846003db757a46ac280e6d249c236860a784644a035c32481ef456bb67",
+        "tests/language-orthogonality.test.js": "b33c64cfbf94a479189edd5ae4c41c20df6ecacdb54683deab8acb2c5c87275e"
+      }
+    },
+    "FPL-Design:学習成果:Non-core:1": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-design-orthogonality.md",
+      "row_sha256": "24d2162a3e1195e2e063753380a73791dea3dc340db26bfbddf2e970329b01d7",
+      "files": {
+        "src/language-orthogonality.js": "aa3d89d9757110fa60e722ed4032d9adda375141acc85c46b88d38bbdec61e2d",
+        "src/app.js": "37b813846003db757a46ac280e6d249c236860a784644a035c32481ef456bb67",
+        "tests/language-orthogonality.test.js": "b33c64cfbf94a479189edd5ae4c41c20df6ecacdb54683deab8acb2c5c87275e"
+      }
     }
   }
 }
