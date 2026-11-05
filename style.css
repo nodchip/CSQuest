@@ -201,3 +201,12 @@
 .actual-chart{margin:1rem 0;padding:1rem;background:#f8faf4;border:1px solid #ccd9c9;border-radius:12px}.actual-chart figcaption{line-height:1.6}.actual-chart-row{margin-top:1rem}.actual-chart-line{display:grid;grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);align-items:center;gap:.5rem;margin:.25rem 0}.actual-chart-track{height:.8rem;background:#e3e9e0;border-radius:4px;overflow:hidden}.actual-chart-track span{display:block;height:100%}.actual-chart-linear{background:#205ca3}.actual-chart-binary{background:#a34314}
 
 .curve-gradient-figure{margin:1rem 0}.curve-gradient-figure svg{display:block;width:min(100%,240px);height:auto}.curve-gradient-figure figcaption{line-height:1.6}
+
+/* Scene coordinates supplement the textual status; both instances use one image. */
+.scene-map { width: 100%; max-width: 32rem; table-layout: fixed; border-collapse: collapse; margin: .8rem 0; text-align: center; }
+.scene-map th, .scene-map td { border: 1px solid #8b806b; padding: .35rem .1rem; }
+.scene-map td { height: 2.8rem; background: #f7f1df; }
+.scene-map .scene-wall { border-right: .3rem solid #76533f; }
+.scene-image { display: inline-block; font-size: 1.5rem; line-height: 1; }
+.scene-image-gold { color: #806000; }
+.scene-image-blue { color: #0758a4; }
