@@ -574,6 +574,45 @@
         "tests/mobile-general-compare.test.js": "ea087aa68a2b74edd9a8a7ff813409fea2667a7ff51496749c76cee55b293dc6",
         "tests/mobile-session-recovery.test.js": "4417d8e63d278383fe43405eea7cd2c1cb9aa9fdd2817b9ad4488e8c9e2c15ed"
       }
+    },
+    "SPD-Mobile:トピック:KA Core:3a": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-mobile-location-api.md",
+      "row_sha256": "14a86d27d0abd0221a97b7c366bf79f412d32b3aef70d59b66c31b91c09eaa82",
+      "files": {
+        "src/app.js": "da354bc25c21e370d4ad8a48d3098fa2a26faba36c343d4c946ce5a4bc9ddd07",
+        "src/mobile-location.js": "1f173bbb8ea59a70370751d2cf777321cad24312acbc6bbc0f271451f06f91c9",
+        "src/mobile-location-api.js": "ebe7387c2115fd244eac4045597e2100c4a3c4ebf887e7da85eaa6eb2e531771",
+        "tests/mobile-location.test.js": "8a84afb2698a8e7d90a9e050d2b36e96a32000dbeb333f9b8d4954ead0540816",
+        "tests/mobile-location-api.test.js": "8dea1c7ffaa092706bc349c914debce85ed68c679f6f081ae0aaf84f8f1a53ef"
+      }
+    },
+    "SPD-Mobile:トピック:KA Core:3c": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-mobile-location-api.md",
+      "row_sha256": "64e128be5aeed6976bf82476346acefc5bc494dd50c673fb38394a2271528c8c",
+      "files": {
+        "src/app.js": "da354bc25c21e370d4ad8a48d3098fa2a26faba36c343d4c946ce5a4bc9ddd07",
+        "src/mobile-location.js": "1f173bbb8ea59a70370751d2cf777321cad24312acbc6bbc0f271451f06f91c9",
+        "src/mobile-location-api.js": "ebe7387c2115fd244eac4045597e2100c4a3c4ebf887e7da85eaa6eb2e531771",
+        "tests/mobile-location.test.js": "8a84afb2698a8e7d90a9e050d2b36e96a32000dbeb333f9b8d4954ead0540816",
+        "tests/mobile-location-api.test.js": "8dea1c7ffaa092706bc349c914debce85ed68c679f6f081ae0aaf84f8f1a53ef"
+      }
+    },
+    "SPD-Mobile:学習成果:KA Core:2": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-spd-mobile-location-api.md",
+      "row_sha256": "45c326984d02a7da8e8c22b6adc35f3114635bf02ac383a70a0b0d100647bcfe",
+      "files": {
+        "src/app.js": "da354bc25c21e370d4ad8a48d3098fa2a26faba36c343d4c946ce5a4bc9ddd07",
+        "src/mobile-location.js": "1f173bbb8ea59a70370751d2cf777321cad24312acbc6bbc0f271451f06f91c9",
+        "src/mobile-location-api.js": "ebe7387c2115fd244eac4045597e2100c4a3c4ebf887e7da85eaa6eb2e531771",
+        "tests/mobile-location.test.js": "8a84afb2698a8e7d90a9e050d2b36e96a32000dbeb333f9b8d4954ead0540816",
+        "tests/mobile-location-api.test.js": "8dea1c7ffaa092706bc349c914debce85ed68c679f6f081ae0aaf84f8f1a53ef"
+      }
     }
   }
 }

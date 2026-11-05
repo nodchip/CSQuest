@@ -4,8 +4,8 @@ import {locationApiCreate,locationApiResult,locationApiRun,locationApiDone,locat
 import {createMobileLocation,restoreMobileLocation} from '../src/mobile-location.js';
 
 test('permission, source, manual region and connectivity control the fixed request',()=>{
- for(const permission of ['allowed','denied'])for(const source of ['auto','manual'])for(const manual of ['north','south'])for(const network of ['online','offline']){
-  const q={...locationApiCreate(),permission,source,manual,network},r=locationApiResult(q);if(source==='auto'&&permission==='denied')assert.deepEqual(r,{status:'permission',region:null});else assert.deepEqual(r,{status:network==='online'?'ok':'offline',region:source==='auto'?'north':manual});
+ for(const permission of ['allowed','denied'])for(const source of ['auto','manual'])for(const manual of ['north','south'])for(const network of ['online','offline'])for(const server of ['ok','error']){
+  const q={...locationApiCreate(),permission,source,manual,network,server},r=locationApiResult(q);if(source==='auto'&&permission==='denied')assert.deepEqual(r,{status:'permission',region:null});else assert.deepEqual(r,{status:network==='offline'?'offline':server==='error'?'server':'ok',region:source==='auto'?'north':manual});
  }
 });
 test('an offline failure differs from an error response, and old drafts migrate',()=>{
