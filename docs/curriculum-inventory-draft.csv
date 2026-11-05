@@ -3326,8 +3326,8 @@ SF-Overview:学習成果:CS Core:1,SF,SF-Overview,学習成果,CS Core,1,計算�
 SF-Overview:学習成果:CS Core:2,SF,SF-Overview,学習成果,CS Core,2,基本部品から単純な論理回路を設計,部分,依頼06・37で指定回路と加算器を構築。任意の設計は未評価。,coverage-sf-overview.md,21,原典照合結果は監査記録参照
 SF-Overview:学習成果:CS Core:3,SF,SF-Overview,学習成果,CS Core,3,層の境界と詳細の隠蔽を説明,部分,依頼54でアプリと装置への要求を扱う。一般の階層や自由な説明は未評価。,coverage-sf-overview.md,22,原典照合結果は監査記録参照
 SF-Overview:学習成果:CS Core:4,SF,SF-Overview,学習成果,CS Core,4,ハードウェア・OS・VM・アプリの階層を説明,部分,依頼54・135は異なる一部の境界を扱う。全階層の連携は未評価。,coverage-sf-overview.md,23,原典照合結果は監査記録参照
-SF-Overview:学習成果:CS Core:5,SF,SF-Overview,学習成果,CS Core,5,階層間の誤りの検出・通知・処理を説明,部分,依頼200で失敗の固定例を扱う。一般の層間伝播は未評価。,coverage-sf-overview.md,24,原典照合結果は監査記録参照
-SF-Overview:学習成果:CS Core:6,SF,SF-Overview,学習成果,CS Core,6,階層化と誤り処理を使うプログラムを構築,未照合,対応する代替体験の十分性は未確認。実コードの記述は対象外。,coverage-sf-overview.md,25,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:5,SF,SF-Overview,学習成果,CS Core,5,階層間の誤りの検出・通知・処理を説明,部分,依頼200で読取り失敗を道具からアプリに伝える例と無視する例を比較。一般の層間伝播や自由な説明は未評価。,coverage-sf-overview.md,24,原典照合結果は監査記録参照
+SF-Overview:学習成果:CS Core:6,SF,SF-Overview,学習成果,CS Core,6,階層化と誤り処理を使うプログラムを構築,部分,依頼200で固定３層の失敗時の処理を選び、結果を比べる代替体験。一般の層構築や実コードの記述は評価しない。,coverage-sf-overview.md,25,原典照合結果は監査記録参照
 SF-Overview:学習成果:CS Core:7,SF,SF-Overview,学習成果,CS Core,7,トレース等で階層化プログラムの不具合を特定,部分,依頼247は固定記録の照合。実際のデバッグツールは評価しない。,coverage-sf-overview.md,26,原典照合結果は監査記録参照
 SF-Overview:学習成果:CS Core:8,SF,SF-Overview,学習成果,CS Core,8,強・弱スケーリングの違いを理解,部分,依頼437で４人数・２仕事量の模型を比較。実測や一般の分析は未評価。,coverage-sf-overview.md,27,原典照合結果は監査記録参照
 SF-Performance:トピック:CS Core:1a,SF,SF-Performance,トピック,CS Core,1a,光速と計算機の時間,部分,依頼25で真空中の光の片道３距離と 1 GHz の周期、0.3 m での 2 GHz との比較を操作。配線・材料や実機の応答時間は未評価。,coverage-sf-performance.md,9,原典照合結果は監査記録参照
