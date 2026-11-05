@@ -248,6 +248,30 @@
       "topics": 7,
       "outcomes": 4,
       "scope_sha256": "1fc8444d99eb3313a75071e2cd6e0c424daa8253372ed5d6a4d7e4282ef06bc4"
+    },
+    "OS-Scheduling": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-scheduling.md",
+      "topics": 7,
+      "outcomes": 7,
+      "scope_sha256": "b3fee191f0c6554d11cd7e03490198e84de94b2108bbe65448a549c5570b69a7"
+    },
+    "OS-Process": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-process.md",
+      "topics": 5,
+      "outcomes": 5,
+      "scope_sha256": "75ee7014dc72f84ca0a255112ef4af99efc9cc052b962f48c8a72b038edcf274"
+    },
+    "OS-Memory": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-memory.md",
+      "topics": 8,
+      "outcomes": 6,
+      "scope_sha256": "048774c2f58f5ca49a6207c3c8c1aeeb8393dabd372a135703e55ebf630b1966"
     }
   }
 }
