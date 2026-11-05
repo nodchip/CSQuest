@@ -138,6 +138,50 @@
         "src/app.js": "97cbb8aeb34e78882b39de79dc8ca8041b744e29338a5db5db3ae3a10819b3e3",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
+    },
+    "NC-Mobility:トピック:KA Core:1": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-cellular.md",
+      "row_sha256": "784ebf450bdeb542117032843983dd6d72cdbb6d5c87a0ebd0db5447c00cb863",
+      "files": {
+        "src/cellular-registration.js": "6368e169f9fb41fac5da4009a80d1c9d6aae78d34d3a27183c847894097d87ba",
+        "src/app.js": "97cbb8aeb34e78882b39de79dc8ca8041b744e29338a5db5db3ae3a10819b3e3",
+        "tests/cellular-registration.test.js": "e3f608ee319a2a3c33526f1608cbf4c03265357cef257a8ccaf1be0f8d911ad8"
+      }
+    },
+    "NC-Mobility:学習成果:KA Core:1": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-cellular.md",
+      "row_sha256": "93fbe15c1560790bc31224a4836828cc546b23642291f9968bf6b02e8cb5f8eb",
+      "files": {
+        "src/cellular-registration.js": "6368e169f9fb41fac5da4009a80d1c9d6aae78d34d3a27183c847894097d87ba",
+        "src/app.js": "97cbb8aeb34e78882b39de79dc8ca8041b744e29338a5db5db3ae3a10819b3e3",
+        "tests/cellular-registration.test.js": "e3f608ee319a2a3c33526f1608cbf4c03265357cef257a8ccaf1be0f8d911ad8"
+      }
+    },
+    "NC-Mobility:トピック:KA Core:2": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-roaming.md",
+      "row_sha256": "c5d7c6b19aa529be972639b07529bf6310571ce58b1bc6b776d6d5399775e7c3",
+      "files": {
+        "src/wireless-roaming.js": "978c981078b354bd5f5eb8d7f678297ab5ec9acc2bebf7241510d1a692bcafac",
+        "src/app.js": "97cbb8aeb34e78882b39de79dc8ca8041b744e29338a5db5db3ae3a10819b3e3",
+        "tests/wireless-roaming.test.js": "796ec674475adf4c1141a316c2f0a4ccba2e54dd3d812f3da8f11647b76db507"
+      }
+    },
+    "NC-Mobility:学習成果:KA Core:2": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-nc-mobility-roaming.md",
+      "row_sha256": "b565bdc24480dd8f347eb38c3845e24a352c3a78af3f015a76a39c1f00dee88a",
+      "files": {
+        "src/wireless-roaming.js": "978c981078b354bd5f5eb8d7f678297ab5ec9acc2bebf7241510d1a692bcafac",
+        "src/app.js": "97cbb8aeb34e78882b39de79dc8ca8041b744e29338a5db5db3ae3a10819b3e3",
+        "tests/wireless-roaming.test.js": "796ec674475adf4c1141a316c2f0a4ccba2e54dd3d812f3da8f11647b76db507"
+      }
     }
   }
 }
