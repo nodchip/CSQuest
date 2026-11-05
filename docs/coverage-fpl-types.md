@@ -83,4 +83,4 @@
 
 依頼595は [Cornell の組の型と取り出し](https://www.cs.cornell.edu/courses/cs4120/2022sp/notes/subtyping/)を参考に、４種類の品と３操作で型を予想し、積の構成・左右の取り出しの３規則を選ぶ。`tests/product-rules.test.js` は12条件と規則の選択32通り、旧記録の復元を検査する。自由記述・一般の言語やサブタイプは評価しない。
 
-依頼767では [Cornell の型付き算術式](https://www.cs.cornell.edu/courses/cs4160/2020sp/sf/plf/terse/Types.html)を参考に、数・灯り・１を足す・分岐の規則を選び、６つの固定式に部分式から適用する。`tests/compositional-types.test.js` は規則の16通り、入れ子と不一致、旧記録の復元を検査する。選択肢から規則を選ぶ代替体験であり、自由な定義や規則自体の安全性の証明は評価しない。
+依頼767では [Cornell の型付き算術式](https://www.cs.cornell.edu/courses/cs4160/2020sp/sf/plf/terse/Types.html)を参考に、数・灯り・１を足す・分岐の規則を選び、６つの固定式に部分式から適用する。`tests/compositional-types.test.js` は規則の16通り、入れ子と不一致、旧記録の復元、および各規則の組合せと例について部分式からの導出を検査する。選択肢から規則を選ぶ代替体験であり、自由な定義や規則自体の安全性の証明は評価しない。
