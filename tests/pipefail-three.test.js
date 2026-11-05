@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pipefailThreeCases,pipefailThreeResult,pipefailThreeCreate,pipefailThreeCheck,pipefailThreeDone,pipefailThreeRestore} from '../src/pipefail-three.js';
+import {createPipeStatus,restorePipeStatus} from '../src/pipe-status.js';
+test('the ordinary status is the last command while pipefail uses the rightmost nonzero',()=>{assert.deepEqual(Object.keys(pipefailThreeCases).map(k=>[pipefailThreeResult(k,false),pipefailThreeResult(k,true)]),[[0,0],[0,1],[0,2],[0,2],[3,3]]);assert.throws(()=>pipefailThreeResult('bad',false));});
+test('all ten predictions and the explanation are required; legacy drafts restore',()=>{const q=pipefailThreeCreate();assert.throws(()=>pipefailThreeCheck(q));for(const k of Object.keys(pipefailThreeCases))for(const e of [false,true]){q.caseId=k;q.enabled=e;const correct=pipefailThreeResult(k,e);q.guess=(correct+1)%4;assert(!pipefailThreeCheck(q));q.guess=correct;assert(pipefailThreeCheck(q));}assert(!pipefailThreeDone(q));q.answer='position';assert(pipefailThreeDone(q));const c=pipefailThreeRestore(q);c.seen.pop();assert.equal(q.seen.length,10);assert.throws(()=>pipefailThreeRestore({...q,seen:['ok:true','ok:true']}));const {three,...old}=createPipeStatus();assert.deepEqual(restorePipeStatus(old),createPipeStatus());});

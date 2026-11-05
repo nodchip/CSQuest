@@ -1439,7 +1439,7 @@ FPL-Run-Time:学習成果:Non-core:5,FPL,FPL-Run-Time,学習成果,Non-core,5,JI
 FPL-Run-Time:学習成果:Non-core:6,FPL,FPL-Run-Time,学習成果,Non-core,6,移動コードのサンドボックス,部分,依頼1207で固定コードの実行と親文書へのアクセス制限を比較。外部コードの取得・安全性の保証は未評価。,coverage-fpl-run-time.md,34,原典照合結果は監査記録参照
 FPL-Run-Time:学習成果:Non-core:7,FPL,FPL-Run-Time,学習成果,Non-core,7,現代の言語実行時システムのサービス,部分,201・202・312・785の個別模型。サービスの全体像や一般的な特定は未評価。,coverage-fpl-run-time.md,35,原典照合結果は監査記録参照
 FPL-Scripting:トピック:未記載:1,FPL,FPL-Scripting,トピック,未記載,1,エラー・例外処理,部分,依頼151で失敗と空入力、152で終了状態を比較。一般の例外処理は未評価。,coverage-fpl-scripting.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:2,FPL,FPL-Scripting,トピック,未記載,2,パイプ,部分,151で固定の処理を連結し、152で標準出力・標準エラーと終了状態、出口の変更順を比較。実際の並行実行やファイル書込みは未評価。,coverage-fpl-scripting.md,10,原典照合結果は監査記録参照・区分を要確認
+FPL-Scripting:トピック:未記載:2,FPL,FPL-Scripting,トピック,未記載,2,パイプ,部分,151で固定の処理を連結し、152で出口の変更順と３係の pipefail を比較。実際の並行実行やファイル書込みは未評価。,coverage-fpl-scripting.md,10,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:トピック:未記載:3・3a,FPL,FPL-Scripting,トピック,未記載,3・3a,システムコマンドと OS との接点,部分,151で仮想の読込み・保存と権限による拒否を操作。実際のコマンドやシステム呼出しは未評価。,coverage-fpl-scripting.md,11,原典照合結果は監査記録参照・番号を要確認・区分を要確認
 FPL-Scripting:トピック:未記載:4,FPL,FPL-Scripting,トピック,未記載,4,環境変数,部分,153で子の起動時の継承、変更と一回だけの値を操作。実シェルの構文や環境全体は未評価。,coverage-fpl-scripting.md,12,原典照合結果は監査記録参照・区分を要確認
 FPL-Scripting:トピック:未記載:5,FPL,FPL-Scripting,トピック,未記載,5,ファイルの抽象と演算,部分,151で読込みと固定の置換書込み・拒否を比較。実ファイルや各種操作は未評価。,coverage-fpl-scripting.md,13,原典照合結果は監査記録参照・区分を要確認
