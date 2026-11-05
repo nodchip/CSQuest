@@ -2001,7 +2001,7 @@ HCI-Design:トピック:Non-core:8a,HCI,HCI-Design,トピック,Non-core,8a,XR,�
 HCI-Design:トピック:Non-core:8b,HCI,HCI-Design,トピック,Non-core,8b,空間音響,部分,933 で音源と見張りの向きから単純な左右のステレオ出力を比較。距離・反射・前後上下や実際の知覚は未評価。,coverage-hci-design.md,45,原典照合結果は監査記録参照
 HCI-Design:トピック:Non-core:9,HCI,HCI-Design,トピック,Non-core,9,３D 印刷と製作,部分,807 は材料を積む・削る・成形する固定模型。実際の３D 印刷機や製作過程は未評価。,coverage-hci-design.md,46,原典照合結果は監査記録参照
 HCI-Design:トピック:Non-core:10,HCI,HCI-Design,トピック,Non-core,10,非同期インタラクション,部分,288 は遅れた通知と競合。モデル全般は未評価。,coverage-hci-design.md,47,原典照合結果は監査記録参照
-HCI-Design:トピック:Non-core:11,HCI,HCI-Design,トピック,Non-core,11,創造性を支援する道具,未照合,対応教材を要照合。,coverage-hci-design.md,48,原典照合結果は監査記録参照
+HCI-Design:トピック:Non-core:11,HCI,HCI-Design,トピック,Non-core,11,創造性を支援する道具,部分,826 で紋章の升目を編集し、操作を戻し、２案を保存して比較。実利用者の創作・道具の効果は未評価。,coverage-hci-design.md,48,原典照合結果は監査記録参照
 HCI-Design:トピック:Non-core:12,HCI,HCI-Design,トピック,Non-core,12,音声 UI,部分,427 は架空の音声入出力を候補として比較。音声 UI の設計全般は未評価。,coverage-hci-design.md,49,原典照合結果は監査記録参照
 HCI-Design:学習成果:CS Core:1,HCI,HCI-Design,学習成果,CS Core,1,指定された対話方法に合わせてシステム設計を提案,部分,287・427 の固定選択。自由な提案は未評価。,coverage-hci-design.md,55,原典照合結果は監査記録参照
 HCI-Design:学習成果:CS Core:2,HCI,HCI-Design,学習成果,CS Core,2,利用者理解・開発・評価・反映を含む反復過程,部分,188・287 の架空の声と固定試作は子を参照。実利用者を含む開発過程は未評価。,coverage-hci-design.md,56,原典照合結果は監査記録参照・親子重複候補

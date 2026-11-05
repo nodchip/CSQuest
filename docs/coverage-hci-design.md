@@ -45,7 +45,7 @@
 | 8b | Non-core | 空間音響 | 部分 | 933 で音源と見張りの向きから単純な左右のステレオ出力を比較。距離・反射・前後上下や実際の知覚は未評価。 |
 | 9 | Non-core | ３D 印刷と製作 | 部分 | 807 は材料を積む・削る・成形する固定模型。実際の３D 印刷機や製作過程は未評価。 |
 | 10 | Non-core | 非同期インタラクション | 部分 | 288 は遅れた通知と競合。モデル全般は未評価。 |
-| 11 | Non-core | 創造性を支援する道具 | 未照合 | 対応教材を要照合。 |
+| 11 | Non-core | 創造性を支援する道具 | 部分 | 826 で紋章の升目を編集し、操作を戻し、２案を保存して比較。実利用者の創作・道具の効果は未評価。 |
 | 12 | Non-core | 音声 UI | 部分 | 427 は架空の音声入出力を候補として比較。音声 UI の設計全般は未評価。 |
 
 ## 例示学習成果
@@ -78,3 +78,5 @@
 依頼1298の部品模型は、光センサーまたは押しボタン、制御部、灯りまたは音の出力を選ぶ。暗い値は０に固定し、電源と配線は仮定。ボタンと LED を扱う実例は [Arduino のボタンの解説](https://docs.arduino.cc/built-in-examples/digital/Button)を参照。実物の配線、電流、抵抗、安全性、利用者による試用や一般のハードウェア設計は評価しない。`tests/gesture-map.test.js` は模型の信号と保存を検査する。
 
 依頼933の追加模型は地図上の左・正面・右と見張りの正面・後ろの６条件を左右のステレオ出力に変換する。正面は同じ、左右端は片側だけと仮定し、任意の操作で600 Hz を StereoPannerNode で再生し文字でも結果を示す。出力と知覚は異なり、実機や人による聞こえ方、距離・反射・前後上下・HRTF は評価しない。参考：[MDN StereoPannerNode](https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode) と [MDN 空間音響](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)。`tests/light-sonification.test.js` は６条件・記録・panner 接続と未対応時のエラーを検査する。
+
+依頼826は３×３の升目を操作し、直前の変更の取り消し、２案の保存・比較・再開を試す。形の正解や創造性は判定せず、利用者の発想・創作過程や実際の道具の効果を評価しない。案の探索や履歴を支える考え方は [Shneiderman の創作支援の研究](https://www.cs.umd.edu/~ben/papers/Shneiderman2007Creativity.pdf)を参照。`tests/prototype-fidelity.test.js` は編集、保存、取り消し、旧記録の移行を検査する。
