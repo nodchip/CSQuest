@@ -872,6 +872,14 @@
       "topics": 36,
       "outcomes": 10,
       "scope_sha256": "bc1923574eec71aba8365a95131e20db4136e752444daeee83bf1bd813b8cc55"
+    },
+    "GIT-Interaction": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-interaction.md",
+      "topics": 26,
+      "outcomes": 6,
+      "scope_sha256": "3a5236b9ddbe5bec9d47fdb85612f4bcbbd09ae74d9119255f0ca5c6097a9f90"
     }
   }
 }
