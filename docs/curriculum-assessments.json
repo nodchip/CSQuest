@@ -635,6 +635,28 @@
         "src/app.js": "fd89a592f727bf44cd76f2d3560b6e4dfcd3a0b1754c113c1ad1a51f38150959",
         "tests/environment.test.js": "6961c0c19a28a6f6a6d65c84af4fbe008a5fcf64eba9804c6b477e9f64e42789"
       }
+    },
+    "FPL-Aspect:トピック:Non-core:4-本体": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-aspect-pointcuts.md",
+      "row_sha256": "30429cb1e50fe3087d8ebaa9bc35f655ce8d8275253d0c51d68f9686b1f7f631",
+      "files": {
+        "src/aspect-ledger.js": "c81d88516263740ae832580a4cafd28fd36c9aa7a1d0c525f89ee158fa0cdf7a",
+        "src/app.js": "fd89a592f727bf44cd76f2d3560b6e4dfcd3a0b1754c113c1ad1a51f38150959",
+        "tests/aspect-ledger.test.js": "10a919435002c8732599eca4dde525a95cbb2c80f5411245629ee6ac8d2482c0"
+      }
+    },
+    "FPL-Aspect:トピック:Non-core:4a": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-aspect-pointcuts.md",
+      "row_sha256": "76ae67bccac57909276e959071d431183e5825708325a40887070f4835cfabcc",
+      "files": {
+        "src/aspect-ledger.js": "c81d88516263740ae832580a4cafd28fd36c9aa7a1d0c525f89ee158fa0cdf7a",
+        "src/app.js": "fd89a592f727bf44cd76f2d3560b6e4dfcd3a0b1754c113c1ad1a51f38150959",
+        "tests/aspect-ledger.test.js": "10a919435002c8732599eca4dde525a95cbb2c80f5411245629ee6ac8d2482c0"
+      }
     }
   }
 }

@@ -1182,14 +1182,15 @@ FPL-Analysis:学習成果:Non-core:2,FPL,FPL-Analysis,学習成果,Non-core,2,�
 FPL-Analysis:学習成果:Non-core:3,FPL,FPL-Analysis,学習成果,Non-core,3,解析の健全性と停止性を論じる,部分,1244で無限に増える区間に拡大を適用し、全値の包含・安定・精度を選択操作で比較。一般の証明と自由な議論は評価しない。,coverage-fpl-analysis.md,27,原典照合結果は監査記録参照
 FPL-Analysis:学習成果:Non-core:4,FPL,FPL-Analysis,学習成果,Non-core,4,別名が解析を制約する理由と別名解析,部分,1181で候補集合と具体実行を比較し、書込み後の読取り省略を判断。一般の解析・自由な説明は未評価。,coverage-fpl-analysis.md,28,原典照合結果は監査記録参照
 FPL-Analysis:学習成果:Non-core:5,FPL,FPL-Analysis,学習成果,Non-core,5,解析結果を最適化または部分的正しさに利用,部分,207で固定例の不要な書込みを外して出力を比較。任意のプログラムの解析・証明は未評価。,coverage-fpl-analysis.md,29,原典照合結果は監査記録参照
-FPL-Aspect:トピック:未記載:1,FPL,FPL-Aspect,トピック,未記載,1,アスペクト,部分,323で共通の記録をまとめる固定模型。実際の設計や織込みは未評価。,coverage-fpl-aspect.md,7,原典照合結果は監査記録参照・区分を要確認
-FPL-Aspect:トピック:未記載:2,FPL,FPL-Aspect,トピック,未記載,2,ジョインポイント,部分,323で操作実行を節目とする。他の節目や実言語は未評価。,coverage-fpl-aspect.md,8,原典照合結果は監査記録参照・区分を要確認
-FPL-Aspect:トピック:未記載:3a,FPL,FPL-Aspect,トピック,未記載,3a,実行前のアドバイス,部分,323で実行前の記録を選ぶ。一般のアドバイスは未評価。,coverage-fpl-aspect.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-Aspect:トピック:未記載:3b,FPL,FPL-Aspect,トピック,未記載,3b,正常・例外・終了後のアドバイス,部分,323で正常後と失敗を含む終了後を比較。例外時のみの指定は未評価。,coverage-fpl-aspect.md,10,原典照合結果は監査記録参照・区分を要確認
-FPL-Aspect:トピック:未記載:3c,FPL,FPL-Aspect,トピック,未記載,3c,周囲のアドバイス,部分,324で固定の引出しを実行するか拒否。一般の置換や複数アドバイスは未評価。,coverage-fpl-aspect.md,11,原典照合結果は監査記録参照・区分を要確認
-FPL-Aspect:トピック:未記載:4a,FPL,FPL-Aspect,トピック,未記載,4a,ポイントカット指定子,部分,323で書込みまたは全操作を選ぶ固定例。実際の指定子や構文は未評価。,coverage-fpl-aspect.md,12,原典照合結果は監査記録参照・区分を要確認
-FPL-Aspect:トピック:未記載:5,FPL,FPL-Aspect,トピック,未記載,5,静的・動的ウィービング,部分,1247で準備時・読込み時・実行中の織込みと、既存の処理の有効化を固定模型で比較。実処理系や一般的な実装は未評価。,coverage-fpl-aspect.md,13,原典照合結果は監査記録参照・区分を要確認
-FPL-Aspect:トピック:未記載:6,FPL,FPL-Aspect,トピック,未記載,6,注釈や IDE などの代替手段,部分,1248で手作業と注釈を読む生成ツールの固定模型を比較。実言語の注釈処理や IDE は未評価。,coverage-fpl-aspect.md,14,原典照合結果は監査記録参照・区分を要確認
+FPL-Aspect:トピック:Non-core:1,FPL,FPL-Aspect,トピック,Non-core,1,アスペクト,部分,323で共通の記録をまとめる固定模型。実際の設計や織込みは未評価。,coverage-fpl-aspect.md,7,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:2,FPL,FPL-Aspect,トピック,Non-core,2,ジョインポイント,部分,323で操作実行を節目とする。他の節目や実言語は未評価。,coverage-fpl-aspect.md,8,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:3a,FPL,FPL-Aspect,トピック,Non-core,3a,実行前のアドバイス,部分,323で実行前の記録を選ぶ。一般のアドバイスは未評価。,coverage-fpl-aspect.md,9,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:3b,FPL,FPL-Aspect,トピック,Non-core,3b,正常・例外・終了後のアドバイス,部分,323で正常後と失敗を含む終了後を比較。例外時のみの指定は未評価。,coverage-fpl-aspect.md,10,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:3c,FPL,FPL-Aspect,トピック,Non-core,3c,周囲のアドバイス,部分,324で固定の引出しを実行するか拒否。一般の置換や複数アドバイスは未評価。,coverage-fpl-aspect.md,11,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:4-本体,FPL,FPL-Aspect,トピック,Non-core,4-本体,ポイントカット,部分,323で選んだ操作の節目に記録を適用。一般の節目の集合と実言語は未評価。,coverage-fpl-aspect.md,12,原典照合結果は監査記録参照・番号を要確認
+FPL-Aspect:トピック:Non-core:4a,FPL,FPL-Aspect,トピック,Non-core,4a,ポイントカット指定子,部分,323で書込みまたは全操作を選ぶ固定例。実際の指定子や構文は未評価。,coverage-fpl-aspect.md,13,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:5,FPL,FPL-Aspect,トピック,Non-core,5,静的・動的ウィービング,部分,1247で準備時・読込み時・実行中の織込みと、既存の処理の有効化を固定模型で比較。実処理系や一般的な実装は未評価。,coverage-fpl-aspect.md,14,原典照合結果は監査記録参照
+FPL-Aspect:トピック:Non-core:6,FPL,FPL-Aspect,トピック,Non-core,6,注釈や IDE などの代替手段,部分,1248で手作業と注釈を読む生成ツールの固定模型を比較。実言語の注釈処理や IDE は未評価。,coverage-fpl-aspect.md,15,原典照合結果は監査記録参照
 FPL-Code:トピック:Non-core:1,FPL,FPL-Code,トピック,Non-core,1,命令セット,部分,73で架空命令の実行。実 ISA や一般の命令生成は未評価。,coverage-fpl-code.md,9,原典照合結果は監査記録参照
 FPL-Code:トピック:Non-core:2,FPL,FPL-Code,トピック,Non-core,2,制御フロー,部分,783で固定ループの条件分岐とジャンプを対応付ける。一般の生成は未評価。,coverage-fpl-code.md,10,原典照合結果は監査記録参照
 FPL-Code:トピック:Non-core:3,FPL,FPL-Code,トピック,Non-core,3,メモリ管理,部分,785で大域・枠・ヒープを操作。コンパイラによる管理コード生成は未評価。,coverage-fpl-code.md,11,原典照合結果は監査記録参照
