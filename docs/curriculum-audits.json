@@ -456,6 +456,22 @@
       "topics": 26,
       "outcomes": 6,
       "scope_sha256": "739896be011e0869026a225d5d0e814f89fe65d5d52d8117b927a95dc1affd43"
+    },
+    "AI-Robotics": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-robotics.md",
+      "topics": 32,
+      "outcomes": 10,
+      "scope_sha256": "3b100ede99baf14e9cb041d6339f2b9b29455d48f6aa8a1cad71225ec7dd12db"
+    },
+    "AI-Vision": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-vision.md",
+      "topics": 13,
+      "outcomes": 11,
+      "scope_sha256": "65e0a11ab8f2da2ada306a7877336747d854eb6e48aa7de827891f22a57e46a3"
     }
   }
 }
