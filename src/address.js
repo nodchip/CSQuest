@@ -13,10 +13,11 @@ export function checkAddress(id,selection){
   return {expected,page:selection.page===expected.page,offset:selection.offset===expected.offset,outcome:selection.outcome===expected.outcome};
 }
 export function recoverMissingPage(victim){if(![0,2,3].includes(victim))throw new RangeError('譲る頁が不正です。');const frame=pageTable[victim].frame;return {victim,frame,newPhysical:frame*4+1,victimPresent:false};}
-export function createAddress(){return {recovery:null,selected:'read0',choices:Object.fromEntries(Object.keys(addressCases).map(id=>[id,{page:null,offset:null,outcome:'',tested:false}]))};}
+export function createAddress(){return {recovery:null,explore:{address:0,write:false,tested:false},selected:'read0',choices:Object.fromEntries(Object.keys(addressCases).map(id=>[id,{page:null,offset:null,outcome:'',tested:false}]))};}
 export function restoreAddress(saved){
   if(!saved||!Object.hasOwn(addressCases,saved.selected)||!saved.choices)throw new RangeError('途中記録が不正です。');
   const state=createAddress();state.selected=saved.selected;if(saved.recovery!==undefined&&saved.recovery!==null&&![0,2,3].includes(saved.recovery))throw new RangeError('頁の回復が不正です。');state.recovery=saved.recovery??null;
+  if(saved.explore!==undefined){const e=saved.explore;if(!e||!Number.isInteger(e.address)||e.address<0||e.address>15||typeof e.write!=='boolean'||typeof e.tested!=='boolean')throw new RangeError('探索の記録が不正です。');state.explore={address:e.address,write:e.write,tested:e.tested};}
   for(const id of Object.keys(addressCases)){
     const choice=saved.choices[id]??(['readProtected','write0','missingWrite'].includes(id)?{page:null,offset:null,outcome:'',tested:false}:null),validNumber=n=>n===null||(Number.isInteger(n)&&n>=0&&n<4);
     if(!choice||!validNumber(choice.page)||!validNumber(choice.offset)||typeof choice.tested!=='boolean'||typeof choice.outcome!=='string'||!['','fault','denied',...Array.from({length:12},(_,n)=>`physical:${n}`)].includes(choice.outcome))throw new RangeError('途中記録が不正です。');
