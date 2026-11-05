@@ -1234,7 +1234,7 @@ FPL-Design:トピック:Non-core:4,FPL,FPL-Design,トピック,Non-core,4,言語
 FPL-Design:トピック:Non-core:5,FPL,FPL-Design,トピック,Non-core,5,プログラミング言語の形式的記述,部分,281 の固定式の操作的意味論。実言語の記述は未評価。,coverage-fpl-design.md,20,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:6,FPL,FPL-Design,トピック,Non-core,6,グリーンコンピューティングの原則,未照合,言語設計との関連を扱う教材を要照合。,coverage-fpl-design.md,21,原典照合結果は監査記録参照
 FPL-Design:学習成果:Non-core:1,FPL,FPL-Design,学習成果,Non-core,1,良い言語設計を理解し実在言語の評価へ適用,部分,355 は架空規則の一部を比較。実在言語全体の評価は未評価。,coverage-fpl-design.md,27,原典照合結果は監査記録参照
-FPL-Event-Driven:トピック:CS Core:1,FPL,FPL-Event-Driven,トピック,CS Core,1,手続き型と反応型の比較,部分,92でイベントへの反応を操作。両方式の体系的比較は未評価。,coverage-fpl-event-driven.md,9,原典照合結果は監査記録参照
+FPL-Event-Driven:トピック:CS Core:1,FPL,FPL-Event-Driven,トピック,CS Core,1,手続き型と反応型の比較,部分,1102で固定時刻の状態確認と通知の保存・処理を比較。両方式の体系的な比較や実装は未評価。,coverage-fpl-event-driven.md,9,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:CS Core:2,FPL,FPL-Event-Driven,トピック,CS Core,2,発生源・信号・リスナー・ディスパッチ・イベント・アダプタ・処理,部分,92で２種類の信号・待ち行列・処理、594で登録した処理の参照を比較。一般のイベントオブジェクトやアダプタは未評価。,coverage-fpl-event-driven.md,10,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:CS Core:3,FPL,FPL-Event-Driven,トピック,CS Core,3,無状態と状態遷移のモデル,部分,92で灯りの値の状態遷移を操作。無状態方式との一般的比較は未評価。,coverage-fpl-event-driven.md,11,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:CS Core:4,FPL,FPL-Event-Driven,トピック,CS Core,4,GUI・モバイル端末・ロボット・サーバ等の利用,部分,1102で案内板・携帯地図・人形・受付の固定イベントを比較。実装・実環境の詳細は未評価。,coverage-fpl-event-driven.md,12,原典照合結果は監査記録参照
@@ -1244,7 +1244,7 @@ FPL-Event-Driven:トピック:KA Core:5c,FPL,FPL-Event-Driven,トピック,KA Co
 FPL-Event-Driven:トピック:KA Core:6,FPL,FPL-Event-Driven,トピック,KA Core,6,モデル・ビュー・コントローラーの分離,部分,92で入力係・記録係・２枚の表示を順に操作。一般の実装・通知方式は未評価。,coverage-fpl-event-driven.md,16,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:KA Core:7,FPL,FPL-Event-Driven,トピック,KA Core,7,イベント駆動プログラムの状態遷移,部分,92でイベントと灯りの固定遷移を操作。一般の状態機械や実プログラムは未評価。,coverage-fpl-event-driven.md,17,原典照合結果は監査記録参照
 FPL-Event-Driven:学習成果:CS Core:1,FPL,FPL-Event-Driven,学習成果,CS Core,1,イベント処理を実装,部分,92で処理を選択・登録する代替体験。実言語での実装は直接評価しない。,coverage-fpl-event-driven.md,23,原典照合結果は監査記録参照
-FPL-Event-Driven:学習成果:CS Core:2,FPL,FPL-Event-Driven,学習成果,CS Core,2,外部イベントに反応する分野での自然さを検討,部分,92で印の到着に応じた処理を操作。一般の比較や自由な説明は未評価。,coverage-fpl-event-driven.md,24,原典照合結果は監査記録参照
+FPL-Event-Driven:学習成果:CS Core:2,FPL,FPL-Event-Driven,学習成果,CS Core,2,外部イベントに反応する分野での自然さを検討,部分,92で印の到着に応じた処理、1102で短い信号を見回りと保存された通知で比較。一般の比較や自由な説明は未評価。,coverage-fpl-event-driven.md,24,原典照合結果は監査記録参照
 FPL-Event-Driven:学習成果:KA Core:3,FPL,FPL-Event-Driven,学習成果,KA Core,3,反応型フレームワークを定義・利用,未照合,実フレームワークに関する対応は未確認。,coverage-fpl-event-driven.md,25,原典照合結果は監査記録参照
 FPL-Event-Driven:学習成果:KA Core:4,FPL,FPL-Event-Driven,学習成果,KA Core,4,対話システムを MVC で説明,部分,92で入力・記録・表示の固定模型を操作。一般の設計と自由な説明は未評価。,coverage-fpl-event-driven.md,26,原典照合結果は監査記録参照
 FPL-Formalism:トピック:Non-core:1,FPL,FPL-Formalism,トピック,Non-core,1,構文と意味の違い,部分,281で命令と遷移規則を区別。一般の言語の体系的比較は未評価。,coverage-fpl-formalism.md,9,原典照合結果は監査記録参照
