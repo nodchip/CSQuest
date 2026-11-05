@@ -856,6 +856,14 @@
       "topics": 41,
       "outcomes": 12,
       "scope_sha256": "3f3099a1fa93d28439edce6af83fe56972fc8ce1c1d173bbfef546965f181585"
+    },
+    "HCI-SEP": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-hci-sep.md",
+      "topics": 8,
+      "outcomes": 5,
+      "scope_sha256": "1d354413c63b6810f055e794e299bbe8e48c86e101f4f245a0d3fd9a5e9cc90e"
     }
   }
 }
