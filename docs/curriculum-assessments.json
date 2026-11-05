@@ -49,7 +49,7 @@
       "files": {
         "src/transport-needs.js": "57c737c60cf6797942d7a97a75d641c14361360788a64ba187f8d1d1a63daff4",
         "src/link-choice.js": "f8af061dafa25b524ede06fce2792f3c07acf10a58472a00f871773a1eb246af",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/transport-needs.test.js": "38c352ce5c2b7bf87e9d7b14260ecb420abe827c82f254e586547f810c216810",
         "tests/link-choice.test.js": "025005acfeee888b4747c9070a877274038f34c51a7c41ace71fa544d7d92794"
       }
@@ -62,7 +62,7 @@
       "files": {
         "src/transport-needs.js": "57c737c60cf6797942d7a97a75d641c14361360788a64ba187f8d1d1a63daff4",
         "src/link-choice.js": "f8af061dafa25b524ede06fce2792f3c07acf10a58472a00f871773a1eb246af",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/transport-needs.test.js": "38c352ce5c2b7bf87e9d7b14260ecb420abe827c82f254e586547f810c216810",
         "tests/link-choice.test.js": "025005acfeee888b4747c9070a877274038f34c51a7c41ace71fa544d7d92794"
       }
@@ -75,7 +75,7 @@
       "files": {
         "src/validation-boundary.js": "9b9512c326c97dc41492eb127b0f6d1ccd11e8d586bd0f7a5d38edcd1d144c69",
         "src/acid-workshop.js": "c2d6303289d45629abe482994d645a5bacbe8b734dec1cb97676dffb425fd235",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/validation-boundary.test.js": "162da09a99682d0bdb936fc111eff69a1613ef40b5130950eef16e63342d72cb",
         "tests/acid-workshop.test.js": "c622c03e23d4417430d1817d800534a534483c294a7faadf1ac549d8756d2890"
       }
@@ -86,7 +86,7 @@
       "document": "docs/curriculum-assessment-dm-unstructured-overview.md",
       "row_sha256": "ed3fd4ec53c3d3a658b398277f7eaa92234f27b423e14e515dc475fb58c247e6",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/nosql-models.js": "47617c746b8faa207613bbbdc583c1f80a3565a0152aae551a9e51dcfc21f2f9",
         "src/data-formats.js": "2262a31be5849eaac86fc3e05097913e5cd96d67bdb876e5db2d68b0ed200650",
         "src/document-schema.js": "309277d61a120def08e8e018f5995472f1797e301decd1fa137ce47554eaf7a3",
@@ -102,7 +102,7 @@
       "row_sha256": "4e48b8e1f20f773b0f946d00b844361599b74352e0f41cb2845dc502fabd9773",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -113,7 +113,7 @@
       "row_sha256": "23677bdfed8b75f8c78cda62f3947cc33169c3914a092e809b485fa138527647",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -124,7 +124,7 @@
       "row_sha256": "7eefff6ff335d3da0d733d0e9765067e88877ed499d7289f6b502be30da37747",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -135,7 +135,7 @@
       "row_sha256": "b24d4ac726391a570df9d0cf04d3ed9fab23d45d10f30e983ee4f05bb1388dd4",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -146,7 +146,7 @@
       "row_sha256": "784ebf450bdeb542117032843983dd6d72cdbb6d5c87a0ebd0db5447c00cb863",
       "files": {
         "src/cellular-registration.js": "6368e169f9fb41fac5da4009a80d1c9d6aae78d34d3a27183c847894097d87ba",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/cellular-registration.test.js": "e3f608ee319a2a3c33526f1608cbf4c03265357cef257a8ccaf1be0f8d911ad8"
       }
     },
@@ -157,7 +157,7 @@
       "row_sha256": "93fbe15c1560790bc31224a4836828cc546b23642291f9968bf6b02e8cb5f8eb",
       "files": {
         "src/cellular-registration.js": "6368e169f9fb41fac5da4009a80d1c9d6aae78d34d3a27183c847894097d87ba",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/cellular-registration.test.js": "e3f608ee319a2a3c33526f1608cbf4c03265357cef257a8ccaf1be0f8d911ad8"
       }
     },
@@ -168,7 +168,7 @@
       "row_sha256": "c5d7c6b19aa529be972639b07529bf6310571ce58b1bc6b776d6d5399775e7c3",
       "files": {
         "src/wireless-roaming.js": "978c981078b354bd5f5eb8d7f678297ab5ec9acc2bebf7241510d1a692bcafac",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/wireless-roaming.test.js": "796ec674475adf4c1141a316c2f0a4ccba2e54dd3d812f3da8f11647b76db507"
       }
     },
@@ -179,7 +179,7 @@
       "row_sha256": "b565bdc24480dd8f347eb38c3845e24a352c3a78af3f015a76a39c1f00dee88a",
       "files": {
         "src/wireless-roaming.js": "978c981078b354bd5f5eb8d7f678297ab5ec9acc2bebf7241510d1a692bcafac",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/wireless-roaming.test.js": "796ec674475adf4c1141a316c2f0a4ccba2e54dd3d812f3da8f11647b76db507"
       }
     },
@@ -192,7 +192,7 @@
         "src/firewall-state.js": "0e6ad1195e1ff58ae6716dcab2f2047ec86f2a0f2b220908ff43233dde628ed0",
         "src/intrusion-threshold.js": "f89af4639de42140815014220f3b4eb7dcff64bc4a381ba6944f8fe864d19c43",
         "src/signature-lab.js": "75b9c671697ba981a9f059b58123fed911d9fecf6b019c58d04c9e0f74c035fd",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/firewall-state.test.js": "b77d388a2e0f162895d39f584a3ff898e0d156bb774dfe06f654c0425ae7085b",
         "tests/intrusion-threshold.test.js": "217a9a3980cc96a64f70effc18b875026efbde075fab40d2688bc6215228f775",
         "tests/signature-lab.test.js": "ceb28b6a9d70177294963911813733d933ae53d2c1306135d3086f4ca8acc094"
@@ -206,7 +206,7 @@
       "files": {
         "src/forwarding.js": "84811ee5e3c0a009149e9e081522f4e621547bba61ee2ec8146e822b203ed6d4",
         "src/prefix.js": "5bdc9b0b68c35120605154499148dc7ba71784ac00050842f57adda769b738f6",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/forwarding.test.js": "563ce5e477703fa6d36f8a8ccd0befca972c2dc28ddecf391164915084bbc7d4",
         "tests/prefix.test.js": "374978f214d17dd8c7188ae76397f1ccb379bcf4c5c010ec3c2b27669d4b3e70"
       }
@@ -219,7 +219,7 @@
       "files": {
         "src/forwarding.js": "84811ee5e3c0a009149e9e081522f4e621547bba61ee2ec8146e822b203ed6d4",
         "src/prefix.js": "5bdc9b0b68c35120605154499148dc7ba71784ac00050842f57adda769b738f6",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/forwarding.test.js": "563ce5e477703fa6d36f8a8ccd0befca972c2dc28ddecf391164915084bbc7d4",
         "tests/prefix.test.js": "374978f214d17dd8c7188ae76397f1ccb379bcf4c5c010ec3c2b27669d4b3e70"
       }
@@ -233,7 +233,7 @@
         "src/os-service.js": "ac474d6be6bfa6f9ac96aed16bc9c3d372bde9be422a792dcb40534c9ac6e20d",
         "src/syscall.js": "6abcafa19874e56f71fc664f77b097b9483dec394e7d8e1c087e07199346979c",
         "src/device-bridge.js": "6329bb8f47d2f8f53353eab20f1745673529d1c9f7a3b11d1094352a8c7bbce9",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/os-service.test.js": "9bf981a99cc1e0de629949b43896074054ecc5f1123852129e23d7f18fe4a72c",
         "tests/syscall.test.js": "ae5a802f12cdf121dc19e9f49b3f22ed67c1a2c9be28e364ae95748b6833ba47",
         "tests/device-bridge.test.js": "6526df0024f4f690647d45dee6aaed73bee2feeeb7902732a21a8a039ea4bb7c"
@@ -248,7 +248,7 @@
         "src/os-service.js": "ac474d6be6bfa6f9ac96aed16bc9c3d372bde9be422a792dcb40534c9ac6e20d",
         "src/syscall.js": "6abcafa19874e56f71fc664f77b097b9483dec394e7d8e1c087e07199346979c",
         "src/device-bridge.js": "6329bb8f47d2f8f53353eab20f1745673529d1c9f7a3b11d1094352a8c7bbce9",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/os-service.test.js": "9bf981a99cc1e0de629949b43896074054ecc5f1123852129e23d7f18fe4a72c",
         "tests/syscall.test.js": "ae5a802f12cdf121dc19e9f49b3f22ed67c1a2c9be28e364ae95748b6833ba47",
         "tests/device-bridge.test.js": "6526df0024f4f690647d45dee6aaed73bee2feeeb7902732a21a8a039ea4bb7c"
@@ -262,7 +262,7 @@
       "files": {
         "src/address.js": "4482e4987cfd5cfc6edf1a6582b55cd6ba78e6ab972adf35f5f29e1808f1b285",
         "src/process-pages.js": "818e22f4e3f25b450edf26857f1c232f3adb7dd68bc51c34294d6a7afa6a0a37",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/address.test.js": "fb4c2063c7cbabf615a70ccc257b1f961661acd63b3d7a35060ca3ba0acfb8ab",
         "tests/process-pages.test.js": "6fc23539dfcd6345659cacd634a26662ca240b57269eb2de6e38fdaf18fcf565"
       }
@@ -275,7 +275,7 @@
       "files": {
         "src/address.js": "4482e4987cfd5cfc6edf1a6582b55cd6ba78e6ab972adf35f5f29e1808f1b285",
         "src/process-pages.js": "818e22f4e3f25b450edf26857f1c232f3adb7dd68bc51c34294d6a7afa6a0a37",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/address.test.js": "fb4c2063c7cbabf615a70ccc257b1f961661acd63b3d7a35060ca3ba0acfb8ab",
         "tests/process-pages.test.js": "6fc23539dfcd6345659cacd634a26662ca240b57269eb2de6e38fdaf18fcf565"
       }
@@ -286,7 +286,7 @@
       "document": "docs/curriculum-assessment-al-sep-context.md",
       "row_sha256": "439f8b6d4e7804dc2f80e14712969266b693be28d2c71c5c5f32bf5aedfa95d3",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/road-replanning.js": "fae6c79893c06560646797cb5d23869ee20694cf0e3e6e545545eb9dea594f07",
         "tests/road-replanning.test.js": "b4cdccd1e847adc61299d650610d7ba9e342cd6d9b84e60d2965d96dfd97b633"
       }
@@ -298,7 +298,7 @@
       "row_sha256": "53a6ba2bdaa3590a0f5efac22f634d89f624417f023748e812aa239de2588c97",
       "files": {
         "src/library-framework.js": "b8529702aee6f39669ce58c9eb24456c5c5f35b4230da73067e497e30b2806ad",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/library-framework.test.js": "e27c3bc44bde92423b16f96728bdde7af28d523dd45eb2a4b91085592c5b62ea"
       }
     },
@@ -308,7 +308,7 @@
       "document": "docs/curriculum-assessment-sf-overview-layering.md",
       "row_sha256": "5e08d18f219a4d5ff495da030a214d9d4d37dfec8e894d0a2b295a7291ad0273",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/read-recovery.js": "112aac26a769e1c3e7ed13a50de1f87830a703d5e6fe17c9a9e508fa122b5f03",
         "tests/read-recovery.test.js": "1acc5bb6c41c5d0b3557a05831a917ffad72450063f6db95af27ef9d54075589"
       }
@@ -319,7 +319,7 @@
       "document": "docs/curriculum-assessment-sf-reliability-cost.md",
       "row_sha256": "1a9f0b1d75ec02eb586acf9f77730260b5dac5dce1219a17bd2959a5e2501b27",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/crc-lab.js": "8665f5eb08f0a637643ae16ddad4761d965f824a1cd65b29e7337c56a3ac09a6",
         "src/secded.js": "12601d44d31374053b20175c7c4f7910ff0faf5cbdb51f916c9177558f5ce492",
         "tests/crc-lab.test.js": "2d68dbd187b7b4aca1053eddf4fe0fcca55b483a3439af5e88159f713661a50a",
@@ -333,7 +333,7 @@
       "row_sha256": "8e42431c3ddb594f5fa3104f700e2c3466e271b97fb77a82a9ae48faf69be17d",
       "files": {
         "src/actual-benchmark.js": "28e0d4396feee767d4e0d1383c5f7f24e5207595078e7c2578af57076a0ce61c",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/actual-benchmark.test.js": "c9f7bd26523741f2bc770a535676e866722d31f97aa9010559194f4ecc474673"
       }
     },
@@ -344,7 +344,7 @@
       "row_sha256": "fa596109ddf95cbb1762a43e813cd06862dbb307de176649e0c57784e95e53ff",
       "files": {
         "src/actual-benchmark.js": "28e0d4396feee767d4e0d1383c5f7f24e5207595078e7c2578af57076a0ce61c",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/actual-benchmark.test.js": "c9f7bd26523741f2bc770a535676e866722d31f97aa9010559194f4ecc474673"
       }
     },
@@ -354,7 +354,7 @@
       "document": "docs/curriculum-assessment-ai-nlp-attitudes.md",
       "row_sha256": "8709641675d08e0e96549fbff3d04f0d84bb5b5aec2c1b438bd94bee3dcca97d",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/agent-bdi-courier.js": "46ed7893580e71fc86a449c07ba28d35ad7c2ecaf4a6aa2a4ca1f865cd8c4215",
         "tests/agent-bdi-courier.test.js": "e895553a0efcb87b0c9b2615fbed8fed159c21faf89e822466dc827dc4d42205"
       }
@@ -365,7 +365,7 @@
       "document": "docs/curriculum-assessment-ai-vision-applications.md",
       "row_sha256": "e2983ca8f917771468fb7eaf5f5c662c96774e47cec5c9d2cd974bb20c921186",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/digit-lab.js": "dcb9f2607130597d05b467acde8974fcf9eac3a8942055403e76636d3248a0e7",
         "tests/digit-lab.test.js": "712234a49f63193a61c72603e941719ba3387ca1881c071f74d6b57a27f450ee"
       }
@@ -376,7 +376,7 @@
       "document": "docs/curriculum-assessment-ai-search-basics.md",
       "row_sha256": "7f7b87f84cf75df68dfc7ec108439dd6937295413e1e4f018cbf56077a7b4b1f",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/search.js": "8317f9990804f60909ec39c6dfa3c775b4101ff2c543a9e2039e5f616dc4fce5",
         "src/iterative-deepening.js": "d60b01c46bd280d737bb39245f1c72cd43226d6bde3c4c89c4cc0b24e4a79988",
         "src/search-budget.js": "3d1ce4a2504d720f44a233c1bbec2156d617e108b07b1f6b48173050c669bd68",
@@ -396,7 +396,7 @@
       "document": "docs/curriculum-assessment-ai-search-basics.md",
       "row_sha256": "bb69c23dafe63cac88dc64c2536b20a0a4e8c4b0f9d7538f6c3dd8d3d851b92b",
       "files": {
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "src/search.js": "8317f9990804f60909ec39c6dfa3c775b4101ff2c543a9e2039e5f616dc4fce5",
         "src/iterative-deepening.js": "d60b01c46bd280d737bb39245f1c72cd43226d6bde3c4c89c4cc0b24e4a79988",
         "src/search-budget.js": "3d1ce4a2504d720f44a233c1bbec2156d617e108b07b1f6b48173050c669bd68",
@@ -417,7 +417,7 @@
       "row_sha256": "cccd7abc7c60c6b0c296b888c8216fcd15bec336aa2f84f876e627cd155f64c0",
       "files": {
         "src/left-recursion.js": "ff899a29afd6a6584a3f4e8960f24efd703fca7b1fc02a7af923ff5b34c5a91a",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/left-recursion.test.js": "4b2a91b48b5c69e3a6df526b4c8811ce1150fe2b5efa1a37ffb5a3b9d642ea31"
       }
     },
@@ -428,7 +428,7 @@
       "row_sha256": "f5c770a5741a9a0e4b285d7f33cb3b8667882dbbb1073a4d5296bbfd340b6f50",
       "files": {
         "src/compiler-stages.js": "0454a6e004ef78605be19ca872dd0eec845c53b6d3c61137542d7f7d836b8cf2",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/compiler-stages.test.js": "ee52d12e7d186fe1eb6f271085bfe21ad6973b398f11448be8dae2e1845edacf",
         "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
       }
@@ -440,7 +440,7 @@
       "row_sha256": "0ea383bff9cb9830e546852629c20fe0d85af8fdc5cc4459b8ea348aa8fce4d1",
       "files": {
         "src/compiler-stages.js": "0454a6e004ef78605be19ca872dd0eec845c53b6d3c61137542d7f7d836b8cf2",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/compiler-stages.test.js": "ee52d12e7d186fe1eb6f271085bfe21ad6973b398f11448be8dae2e1845edacf",
         "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
       }
@@ -452,7 +452,7 @@
       "row_sha256": "af28946f707966d0192e1771c9e750a76ea5fdae162516cee3a4e973b26a8646",
       "files": {
         "src/instruction-tiles-workshop.js": "1800b0a4e9db3c1128e72f15267f1d3badf4fc23bd58a836269db5b67846c71b",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/instruction-tiles-workshop.test.js": "3325fa9e815ba80e074350cf0303d48e02c9dcca9c9c49168c911340a96713b9",
         "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
       }
@@ -464,7 +464,7 @@
       "row_sha256": "87472f8f5c002650c384a8bb8b3e1f68827a5973f844fe3feb553e64d31d3470",
       "files": {
         "src/instruction-tiles-workshop.js": "1800b0a4e9db3c1128e72f15267f1d3badf4fc23bd58a836269db5b67846c71b",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/instruction-tiles-workshop.test.js": "3325fa9e815ba80e074350cf0303d48e02c9dcca9c9c49168c911340a96713b9",
         "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
       }
@@ -476,7 +476,7 @@
       "row_sha256": "b24cbf13e8d0098196205765a7822f0a1fefeb9fa567e516c761ccd1195b26d5",
       "files": {
         "src/instruction-tiles-workshop.js": "1800b0a4e9db3c1128e72f15267f1d3badf4fc23bd58a836269db5b67846c71b",
-        "src/app.js": "1bd9d665d3d2aed0a6a90d0995428adef27838671a13c69fbc3f7f43e7227726",
+        "src/app.js": "a42a15d608512d4c61eec6a14c9df2f94c07e83475267e378834fb3cefa40724",
         "tests/instruction-tiles-workshop.test.js": "3325fa9e815ba80e074350cf0303d48e02c9dcca9c9c49168c911340a96713b9",
         "tests/app-syntax.test.js": "10868bce5f660948a49a16c8fe51e5b96d7bb38326bb84d548ce05115091010d"
       }
