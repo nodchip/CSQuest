@@ -808,6 +808,14 @@
       "topics": 37,
       "outcomes": 18,
       "scope_sha256": "ccb746ad873ae0048ca95a801c81390df79cb6bb4b7358ed20742b59d50b7c12"
+    },
+    "GIT-Fundamentals": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-fundamentals.md",
+      "topics": 34,
+      "outcomes": 14,
+      "scope_sha256": "6bcd7a997f4d2f8dacaade739a205761d2fe341aa140665a38019ecd3704d03f"
     }
   }
 }

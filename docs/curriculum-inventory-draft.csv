@@ -1603,47 +1603,54 @@ GIT-Animation:学習成果:KA Core:3,GIT,GIT-Animation,学習成果,KA Core,3,�
 GIT-Animation:学習成果:KA Core:4,GIT,GIT-Animation,学習成果,KA Core,4,回転表現のトレードオフ比較,部分,730でオイラー角の特異点とクォータニオン、731で正規化線形補間と球面線形補間を比較。一般の姿勢、精度・性能は未評価。,coverage-git-animation.md,36,原典照合結果は監査記録参照
 GIT-Animation:学習成果:KA Core:5,GIT,GIT-Animation,学習成果,KA Core,5,スプライン補間のプログラム,部分,634で１次元の Catmull–Rom を操作。一般の位置・向きと実際のプログラム作成は評価しない。,coverage-git-animation.md,37,原典照合結果は監査記録参照
 GIT-Animation:学習成果:KA Core:6,GIT,GIT-Animation,学習成果,KA Core,6,既存ソフトで形状・リグ・アニメーションを制作,未照合,実際のソフトでの制作は未評価。,coverage-git-animation.md,38,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:1a,GIT,GIT-Fundamentals,トピック,CS Core,1a,娯楽・事業・科学での用途,部分,83・514で画像標本、641で描画を操作。用途全般の比較は未評価。,coverage-git-fundamentals.md,9,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:1b,GIT,GIT-Fundamentals,トピック,CS Core,1b,知的財産・偽画像・顔認識・プライバシー,部分,399で画像素材の利用条件、397で生成下書きの照合を検討。偽画像・顔認識の一般的リスクは未評価。,coverage-git-fundamentals.md,10,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:2a,GIT,GIT-Fundamentals,トピック,CS Core,2a,ディスプレイ,部分,953で理想化した TN 型 LCD のバックライト、偏光板、電圧と３色の小窓を操作。実機の透過率・階調・他方式は未評価。,coverage-git-fundamentals.md,11,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:2b,GIT,GIT-Fundamentals,トピック,CS Core,2b,プリンター,部分,954で白紙と等面積の黒点による５段階の印刷模型を操作。実際の印刷機構・インクや紙は未評価。,coverage-git-fundamentals.md,12,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:2c,GIT,GIT-Fundamentals,トピック,CS Core,2c,アナログフィルム,部分,1106で計算機の絵を光でフィルムに露光し、ネガと印画紙のポジを比較。白黒２値の固定模型で、実フィルムの階調・化学・カラーは未評価。,coverage-git-fundamentals.md,13,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:2d-i,GIT,GIT-Fundamentals,トピック,CS Core,2d-i,解像度,部分,83・514で異なる画素数を比較。表示・印刷装置の一般的な解像度は未評価。,coverage-git-fundamentals.md,14,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:2d-ii,GIT,GIT-Fundamentals,トピック,CS Core,2d-ii,縦横比,部分,947で正方形の絵を正方形・16:9 の枠に収め、保持と引き伸ばしを比較。実機や一般の画像は未評価。,coverage-git-fundamentals.md,15,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:2d-iii,GIT,GIT-Fundamentals,トピック,CS Core,2d-iii,フレームレート,部分,947で２・４ fps のコマと実際のプレビューを比較。端末のリフレッシュや再生精度は未評価。,coverage-git-fundamentals.md,16,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:3a,GIT,GIT-Fundamentals,トピック,CS Core,3a,三刺激と色の受容,部分,515で理想的な RGB の組合せ。実際の視細胞・知覚は未評価。,coverage-git-fundamentals.md,17,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:3b,GIT,GIT-Fundamentals,トピック,CS Core,3b,眼の投影,部分,64で平行・透視投影を比較。眼の構造や生理は未評価。,coverage-git-fundamentals.md,18,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:3c,GIT,GIT-Fundamentals,トピック,CS Core,3c,時間方向の視覚・動きぼけ,部分,735で時間標本の平均による動きぼけ、892で架空のちらつき観察、947でフレーム表示を比較。視覚の持続の生理や実際の知覚は未評価。,coverage-git-fundamentals.md,19,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:3d,GIT,GIT-Fundamentals,トピック,CS Core,3d,コントラスト・視覚効果・ディザ・エイリアシング,部分,83で画素標本と境界、891で架空の背景と信号の検出、954で４点の規則的ディザを操作。実際の知覚・マッハバンド・一般のディザは未評価。,coverage-git-fundamentals.md,20,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:3e,GIT,GIT-Fundamentals,トピック,CS Core,3e,非線形応答・ダイナミックレンジ・トーンマッピング,部分,952で５つの明るさの上限切捨てと非線形圧縮、露光を比較。実画像、視覚の非線形応答や実画面は未評価。,coverage-git-fundamentals.md,21,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:3f,GIT,GIT-Fundamentals,トピック,CS Core,3f,両眼視・立体視,部分,216で左右の投影位置と距離・視差を比較。実際の両眼視、画像の融合と個人差は未評価。,coverage-git-fundamentals.md,22,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:3g,GIT,GIT-Fundamentals,トピック,CS Core,3g,色覚・点滅・片眼視などへのアクセシビリティ,部分,22で色以外の情報を選択。点滅や片眼視、実利用者による評価は未対応。,coverage-git-fundamentals.md,23,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:4a-i,GIT,GIT-Fundamentals,トピック,CS Core,4a-i,可逆ラスタ形式,部分,514で画素表現を比較。実ファイル形式・圧縮は未評価。,coverage-git-fundamentals.md,24,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:4a-ii,GIT,GIT-Fundamentals,トピック,CS Core,4a-ii,非可逆ラスタ形式,部分,514で拡大の標本を比較。JPEG 等の圧縮と品質の比較は未評価。,coverage-git-fundamentals.md,25,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:4b,GIT,GIT-Fundamentals,トピック,CS Core,4b,ベクタ形式,部分,514で図形記述から再標本化。実 SVG ファイルの作成や一般の形式は未評価。,coverage-git-fundamentals.md,26,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:5a,GIT,GIT-Fundamentals,トピック,CS Core,5a,ラスタ化,部分,83・514で図形の画素標本を操作。一般のラスタ化は未評価。,coverage-git-fundamentals.md,27,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:5b,GIT,GIT-Fundamentals,トピック,CS Core,5b,解像度,部分,514で３解像度を比較。一般の画像は未評価。,coverage-git-fundamentals.md,28,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:5c,GIT,GIT-Fundamentals,トピック,CS Core,5c,標本化・量子化,部分,83・221・222で固定の標本・量子化を比較し、951で２つの時間波形と３記録速度の標本を比較。連続信号の一般的分析は未評価。,coverage-git-fundamentals.md,29,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:6,GIT,GIT-Fundamentals,トピック,CS Core,6,加法・減法・HSV 色モデル,部分,515で二値 RGB と理想的 CMY、726で HSV の色相・彩度・明度を比較。黒インクと実際の色知覚は未評価。,coverage-git-fundamentals.md,30,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:7,GIT,GIT-Fundamentals,トピック,CS Core,7,画像の保存と再計算のトレードオフ,部分,514で画素拡大と図形からの再標本化を比較。記憶量・再計算時間の一般的評価は未評価。,coverage-git-fundamentals.md,31,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:8,GIT,GIT-Fundamentals,トピック,CS Core,8,座標系・絶対位置と相対位置,部分,26・64で座標と投影の固定例。一般の座標系の構築は未評価。,coverage-git-fundamentals.md,32,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:CS Core:9,GIT,GIT-Fundamentals,トピック,CS Core,9,静止画列としてのアニメーション,部分,719で１秒30枚の画像の記憶量を比較。実際の表示・知覚は未評価。,coverage-git-fundamentals.md,33,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:KA Core:10,GIT,GIT-Fundamentals,トピック,KA Core,10,対話的グラフィックスの実装,未照合,実際のライブラリを使う実装は未確認。,coverage-git-fundamentals.md,34,原典照合結果は監査記録参照
-GIT-Fundamentals:トピック:KA Core:11,GIT,GIT-Fundamentals,トピック,KA Core,11,ディスプレイのプロトコル・ポート,未照合,実機の表示接続に関する教材は未確認。,coverage-git-fundamentals.md,35,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:1,GIT,GIT-Fundamentals,学習成果,CS Core,1,デジタル表現の一般的な用途を特定,部分,83・514で画像を操作。音声等を含む用途全般は未評価。,coverage-git-fundamentals.md,41,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:2,GIT,GIT-Fundamentals,学習成果,CS Core,2,アナログ信号を離散標本で表す方法を説明,部分,83で画素標本を比較し、951で連続的に変化する２波形を等間隔で記録。一般の信号と自由な説明は未評価。,coverage-git-fundamentals.md,42,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:3,GIT,GIT-Fundamentals,学習成果,CS Core,3,解像度からカラー画像の記憶量を計算,部分,719で RGB・RGBA と２解像度の固定例。一般の色深度・圧縮形式は未評価。,coverage-git-fundamentals.md,43,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:4,GIT,GIT-Fundamentals,学習成果,CS Core,4,知覚の限界とデジタル表現の選択を図で示す,部分,83で境界標本を比較。人間の知覚限界の図示・一般化は未評価。,coverage-git-fundamentals.md,44,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:5,GIT,GIT-Fundamentals,学習成果,CS Core,5,JPG・PNG・MP3・MP4・GIF の用途を説明,部分,949で５種類の用意された品を透明度・画質・音声・受信側・容量で選択。一般の形式や自由な説明は未評価。,coverage-git-fundamentals.md,45,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:6,GIT,GIT-Fundamentals,学習成果,CS Core,6,色モデルと表示装置での利用を説明,部分,515で RGB と CMY、953で LCD の３色の小窓を操作。実機と一般的な説明は未評価。,coverage-git-fundamentals.md,46,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:7,GIT,GIT-Fundamentals,学習成果,CS Core,7,解像度・秒数・フレームレートから動画の記憶量を計算,部分,719で１秒30枚の無圧縮 RGB を計算。一般の動画形式・圧縮や音声は未評価。,coverage-git-fundamentals.md,47,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:8,GIT,GIT-Fundamentals,学習成果,CS Core,8,デジタル動画とアナログ動画を比較,部分,950で記録時の丸め、誤りのないデジタルコピー、再符号化、アナログ複製の誤差とデータの欠損を比較。固定の４値の模型で、実信号・動画や自由な説明は未評価。,coverage-git-fundamentals.md,48,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:9,GIT,GIT-Fundamentals,学習成果,CS Core,9,静止画列から連続的な動きを生む過程を説明,部分,947で２・４ fps の固定コマを時刻ごとに選び、１秒間の表示を観察。知覚の個人差や自由な説明は未評価。,coverage-git-fundamentals.md,49,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:10,GIT,GIT-Fundamentals,学習成果,CS Core,10,デジタル標本化による誤表現を説明,部分,83で境界標本を、951で異なる時間波形が同じ標本列となる例を比較。一般的な誤表現と自由な説明は未評価。,coverage-git-fundamentals.md,50,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:11,GIT,GIT-Fundamentals,学習成果,CS Core,11,解像度・色符号化から記憶量を計算,部分,719で８ビット成分の RGB・RGBA を比較。一般の符号化は未評価。,coverage-git-fundamentals.md,51,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:CS Core:12,GIT,GIT-Fundamentals,学習成果,CS Core,12,リフレッシュレートとラスタ化から時間を計算,部分,948で空白を含む走査位置、１フレームの時間と画素クロックを４条件で比較。実機のタイミング・一般の方式は未評価。,coverage-git-fundamentals.md,52,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:KA Core:13,GIT,GIT-Fundamentals,学習成果,KA Core,13,色覚特性に対応する UI と代替案の設計,部分,22で色以外の情報を選ぶ。一般の設計・実利用者の評価は未評価。,coverage-git-fundamentals.md,53,原典照合結果は監査記録参照
-GIT-Fundamentals:学習成果:KA Core:14,GIT,GIT-Fundamentals,学習成果,KA Core,14,グラフィックスライブラリによる GUI の構築,未照合,実ライブラリによる構築は未確認。コードを書く能力は直接評価しない。,coverage-git-fundamentals.md,54,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:1,GIT,GIT-Fundamentals,トピック,CS Core,1,グラフィックス・対話技術の用途とリスク,部分,用途とリスクの固定例は子項目を参照。一般的な比較は未評価。,coverage-git-fundamentals.md,9,原典照合結果は監査記録参照・親子重複候補
+GIT-Fundamentals:トピック:CS Core:1a,GIT,GIT-Fundamentals,トピック,CS Core,1a,娯楽・事業・科学での用途,部分,83・514で画像標本、641で描画を操作。用途全般の比較は未評価。,coverage-git-fundamentals.md,10,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:1b,GIT,GIT-Fundamentals,トピック,CS Core,1b,知的財産・偽画像・顔認識・プライバシー,部分,399で画像素材の利用条件、397で生成下書きの照合を検討。偽画像・顔認識の一般的リスクは未評価。,coverage-git-fundamentals.md,11,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:2,GIT,GIT-Fundamentals,トピック,CS Core,2,グラフィックスの出力,部分,装置と出力の概念は子項目を参照。一般的な出力の比較は未評価。,coverage-git-fundamentals.md,12,原典照合結果は監査記録参照・親子重複候補
+GIT-Fundamentals:トピック:CS Core:2a,GIT,GIT-Fundamentals,トピック,CS Core,2a,ディスプレイ,部分,953で理想化した TN 型 LCD のバックライト、偏光板、電圧と３色の小窓を操作。実機の透過率・階調・他方式は未評価。,coverage-git-fundamentals.md,13,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:2b,GIT,GIT-Fundamentals,トピック,CS Core,2b,プリンター,部分,954で白紙と等面積の黒点による５段階の印刷模型を操作。実際の印刷機構・インクや紙は未評価。,coverage-git-fundamentals.md,14,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:2c,GIT,GIT-Fundamentals,トピック,CS Core,2c,アナログフィルム,部分,1106で計算機の絵を光でフィルムに露光し、ネガと印画紙のポジを比較。白黒２値の固定模型で、実フィルムの階調・化学・カラーは未評価。,coverage-git-fundamentals.md,15,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:2d,GIT,GIT-Fundamentals,トピック,CS Core,2d,グラフィックス出力の基本概念,部分,解像度・縦横比・フレームレートの固定例は子項目を参照。一般的な出力は未評価。,coverage-git-fundamentals.md,16,原典照合結果は監査記録参照・親子重複候補
+GIT-Fundamentals:トピック:CS Core:2d-i,GIT,GIT-Fundamentals,トピック,CS Core,2d-i,解像度,部分,83・514で異なる画素数を比較。表示・印刷装置の一般的な解像度は未評価。,coverage-git-fundamentals.md,17,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:2d-ii,GIT,GIT-Fundamentals,トピック,CS Core,2d-ii,縦横比,部分,947で正方形の絵を正方形・16:9 の枠に収め、保持と引き伸ばしを比較。実機や一般の画像は未評価。,coverage-git-fundamentals.md,18,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:2d-iii,GIT,GIT-Fundamentals,トピック,CS Core,2d-iii,フレームレート,部分,947で２・４ fps のコマと実際のプレビューを比較。端末のリフレッシュや再生精度は未評価。,coverage-git-fundamentals.md,19,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:3,GIT,GIT-Fundamentals,トピック,CS Core,3,人間の視覚系,部分,色・投影・時間・知覚とアクセシビリティの固定例は子項目を参照。視覚系全般は未評価。,coverage-git-fundamentals.md,20,原典照合結果は監査記録参照・親子重複候補
+GIT-Fundamentals:トピック:CS Core:3a,GIT,GIT-Fundamentals,トピック,CS Core,3a,三刺激と色の受容,部分,515で理想的な RGB の組合せ。実際の視細胞・知覚は未評価。,coverage-git-fundamentals.md,21,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:3b,GIT,GIT-Fundamentals,トピック,CS Core,3b,眼の投影,部分,64で平行・透視投影を比較。眼の構造や生理は未評価。,coverage-git-fundamentals.md,22,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:3c,GIT,GIT-Fundamentals,トピック,CS Core,3c,時間方向の視覚・動きぼけ,部分,735で時間標本の平均による動きぼけ、892で架空のちらつき観察、947でフレーム表示を比較。視覚の持続の生理や実際の知覚は未評価。,coverage-git-fundamentals.md,23,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:3d,GIT,GIT-Fundamentals,トピック,CS Core,3d,コントラスト・視覚効果・ディザ・エイリアシング,部分,83で画素標本と境界、891で架空の背景と信号の検出、954で４点の規則的ディザを操作。実際の知覚・マッハバンド・一般のディザは未評価。,coverage-git-fundamentals.md,24,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:3e,GIT,GIT-Fundamentals,トピック,CS Core,3e,非線形応答・ダイナミックレンジ・トーンマッピング,部分,952で５つの明るさの上限切捨てと非線形圧縮、露光を比較。実画像、視覚の非線形応答や実画面は未評価。,coverage-git-fundamentals.md,25,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:3f,GIT,GIT-Fundamentals,トピック,CS Core,3f,両眼視・立体視,部分,216で左右の投影位置と距離・視差を比較。実際の両眼視、画像の融合と個人差は未評価。,coverage-git-fundamentals.md,26,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:3g,GIT,GIT-Fundamentals,トピック,CS Core,3g,色覚・点滅・片眼視などへのアクセシビリティ,部分,22で色以外の情報を選択。点滅や片眼視、実利用者による評価は未対応。,coverage-git-fundamentals.md,27,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:4,GIT,GIT-Fundamentals,トピック,CS Core,4,標準画像形式,部分,ラスタとベクタの固定例は子項目を参照。実形式の一般的な比較は未評価。,coverage-git-fundamentals.md,28,原典照合結果は監査記録参照・親子重複候補
+GIT-Fundamentals:トピック:CS Core:4a,GIT,GIT-Fundamentals,トピック,CS Core,4a,ラスタ画像形式,部分,画素表現と拡大は子項目を参照。可逆・非可逆の圧縮と実形式は未評価。,coverage-git-fundamentals.md,29,原典照合結果は監査記録参照・親子重複候補
+GIT-Fundamentals:トピック:CS Core:4a-i,GIT,GIT-Fundamentals,トピック,CS Core,4a-i,可逆ラスタ形式,部分,514で画素表現を比較。実ファイル形式・圧縮は未評価。,coverage-git-fundamentals.md,30,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:4a-ii,GIT,GIT-Fundamentals,トピック,CS Core,4a-ii,非可逆ラスタ形式,部分,514で拡大の標本を比較。JPEG 等の圧縮と品質の比較は未評価。,coverage-git-fundamentals.md,31,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:4b,GIT,GIT-Fundamentals,トピック,CS Core,4b,ベクタ形式,部分,514で図形記述から再標本化。実 SVG ファイルの作成や一般の形式は未評価。,coverage-git-fundamentals.md,32,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:5,GIT,GIT-Fundamentals,トピック,CS Core,5,アナログデータのデジタル化,部分,ラスタ化・解像度・標本化と量子化の固定例は子項目を参照。一般の信号処理は未評価。,coverage-git-fundamentals.md,33,原典照合結果は監査記録参照・親子重複候補
+GIT-Fundamentals:トピック:CS Core:5a,GIT,GIT-Fundamentals,トピック,CS Core,5a,ラスタ化,部分,83・514で図形の画素標本を操作。一般のラスタ化は未評価。,coverage-git-fundamentals.md,34,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:5b,GIT,GIT-Fundamentals,トピック,CS Core,5b,解像度,部分,514で３解像度を比較。一般の画像は未評価。,coverage-git-fundamentals.md,35,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:5c,GIT,GIT-Fundamentals,トピック,CS Core,5c,標本化・量子化,部分,83・221・222で固定の標本・量子化を比較し、951で２つの時間波形と３記録速度の標本を比較。連続信号の一般的分析は未評価。,coverage-git-fundamentals.md,36,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:6,GIT,GIT-Fundamentals,トピック,CS Core,6,加法・減法・HSV 色モデル,部分,515で二値 RGB と理想的 CMY、726で HSV の色相・彩度・明度を比較。黒インクと実際の色知覚は未評価。,coverage-git-fundamentals.md,37,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:7,GIT,GIT-Fundamentals,トピック,CS Core,7,画像の保存と再計算のトレードオフ,部分,514で画素拡大と図形からの再標本化を比較。記憶量・再計算時間の一般的評価は未評価。,coverage-git-fundamentals.md,38,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:8,GIT,GIT-Fundamentals,トピック,CS Core,8,座標系・絶対位置と相対位置,部分,26・64で座標と投影の固定例。一般の座標系の構築は未評価。,coverage-git-fundamentals.md,39,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:CS Core:9,GIT,GIT-Fundamentals,トピック,CS Core,9,静止画列としてのアニメーション,部分,719で１秒30枚の画像の記憶量を比較。実際の表示・知覚は未評価。,coverage-git-fundamentals.md,40,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:KA Core:10,GIT,GIT-Fundamentals,トピック,KA Core,10,対話的グラフィックスの実装,未照合,実際のライブラリを使う実装は未確認。,coverage-git-fundamentals.md,41,原典照合結果は監査記録参照
+GIT-Fundamentals:トピック:KA Core:11,GIT,GIT-Fundamentals,トピック,KA Core,11,ディスプレイのプロトコル・ポート,未照合,実機の表示接続に関する教材は未確認。,coverage-git-fundamentals.md,42,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:1,GIT,GIT-Fundamentals,学習成果,CS Core,1,デジタル表現の一般的な用途を特定,部分,83・514で画像を操作。音声等を含む用途全般は未評価。,coverage-git-fundamentals.md,48,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:2,GIT,GIT-Fundamentals,学習成果,CS Core,2,アナログ信号を離散標本で表す方法を説明,部分,83で画素標本を比較し、951で連続的に変化する２波形を等間隔で記録。一般の信号と自由な説明は未評価。,coverage-git-fundamentals.md,49,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:3,GIT,GIT-Fundamentals,学習成果,CS Core,3,解像度からカラー画像の記憶量を計算,部分,719で RGB・RGBA と２解像度の固定例。一般の色深度・圧縮形式は未評価。,coverage-git-fundamentals.md,50,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:4,GIT,GIT-Fundamentals,学習成果,CS Core,4,知覚の限界とデジタル表現の選択を図で示す,部分,83で境界標本を比較。人間の知覚限界の図示・一般化は未評価。,coverage-git-fundamentals.md,51,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:5,GIT,GIT-Fundamentals,学習成果,CS Core,5,JPG・PNG・MP3・MP4・GIF の用途を説明,部分,949で５種類の用意された品を透明度・画質・音声・受信側・容量で選択。一般の形式や自由な説明は未評価。,coverage-git-fundamentals.md,52,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:6,GIT,GIT-Fundamentals,学習成果,CS Core,6,色モデルと表示装置での利用を説明,部分,515で RGB と CMY、953で LCD の３色の小窓を操作。実機と一般的な説明は未評価。,coverage-git-fundamentals.md,53,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:7,GIT,GIT-Fundamentals,学習成果,CS Core,7,解像度・秒数・フレームレートから動画の記憶量を計算,部分,719で１秒30枚の無圧縮 RGB を計算。一般の動画形式・圧縮や音声は未評価。,coverage-git-fundamentals.md,54,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:8,GIT,GIT-Fundamentals,学習成果,CS Core,8,デジタル動画とアナログ動画を比較,部分,950で記録時の丸め、誤りのないデジタルコピー、再符号化、アナログ複製の誤差とデータの欠損を比較。固定の４値の模型で、実信号・動画や自由な説明は未評価。,coverage-git-fundamentals.md,55,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:9,GIT,GIT-Fundamentals,学習成果,CS Core,9,静止画列から連続的な動きを生む過程を説明,部分,947で２・４ fps の固定コマを時刻ごとに選び、１秒間の表示を観察。知覚の個人差や自由な説明は未評価。,coverage-git-fundamentals.md,56,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:10,GIT,GIT-Fundamentals,学習成果,CS Core,10,デジタル標本化による誤表現を説明,部分,83で境界標本を、951で異なる時間波形が同じ標本列となる例を比較。一般的な誤表現と自由な説明は未評価。,coverage-git-fundamentals.md,57,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:11,GIT,GIT-Fundamentals,学習成果,CS Core,11,解像度・色符号化から記憶量を計算,部分,719で８ビット成分の RGB・RGBA を比較。一般の符号化は未評価。,coverage-git-fundamentals.md,58,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:CS Core:12,GIT,GIT-Fundamentals,学習成果,CS Core,12,リフレッシュレートとラスタ化から時間を計算,部分,948で空白を含む走査位置、１フレームの時間と画素クロックを４条件で比較。実機のタイミング・一般の方式は未評価。,coverage-git-fundamentals.md,59,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:KA Core:13,GIT,GIT-Fundamentals,学習成果,KA Core,13,色覚特性に対応する UI と代替案の設計,部分,22で色以外の情報を選ぶ。一般の設計・実利用者の評価は未評価。,coverage-git-fundamentals.md,60,原典照合結果は監査記録参照
+GIT-Fundamentals:学習成果:KA Core:14,GIT,GIT-Fundamentals,学習成果,KA Core,14,グラフィックスライブラリによる GUI の構築,未照合,実ライブラリによる構築は未確認。コードを書く能力は直接評価しない。,coverage-git-fundamentals.md,61,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:1a,GIT,GIT-Image,トピック,KA Core,1a,連結成分,部分,144で４・８近傍を比較。一般の画像は未評価。,coverage-git-image.md,9,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:1b,GIT,GIT-Image,トピック,KA Core,1b,膨張,部分,139・140・728で十字近傍の固定例。一般の構造要素は未評価。,coverage-git-image.md,10,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:1c,GIT,GIT-Image,トピック,KA Core,1c,収縮,部分,139・140・728で十字近傍の固定例。一般の構造要素は未評価。,coverage-git-image.md,11,原典照合結果は監査記録参照
