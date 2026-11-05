@@ -9,7 +9,7 @@
 | 1 | CS Core | 手続き型と反応型の比較 | 部分 | 92でイベントへの反応を操作。両方式の体系的比較は未評価。 |
 | 2 | CS Core | 発生源・信号・リスナー・ディスパッチ・イベント・アダプタ・処理 | 部分 | 92で２種類の信号・待ち行列・処理、594で登録した処理の参照を比較。一般のイベントオブジェクトやアダプタは未評価。 |
 | 3 | CS Core | 無状態と状態遷移のモデル | 部分 | 92で灯りの値の状態遷移を操作。無状態方式との一般的比較は未評価。 |
-| 4 | CS Core | GUI・モバイル端末・ロボット・サーバ等の利用 | 部分 | 1102で案内板・人形・受付の固定イベントを比較。モバイル端末、実装・実環境の詳細は未評価。 |
+| 4 | CS Core | GUI・モバイル端末・ロボット・サーバ等の利用 | 部分 | 1102で案内板・携帯地図・人形・受付の固定イベントを比較。実装・実環境の詳細は未評価。 |
 | 5a | KA Core | フレームワークでの処理・リスナー定義 | 部分 | 92で固定の処理を選択・登録。実フレームワークでの定義は未評価。 |
 | 5b | KA Core | 送信元とイベント引数のパラメータ化 | 部分 | 1092で送信元・対象・増分を含む固定イベントを処理。実言語での定義・一般の引数は未評価。 |
 | 5c | KA Core | 外部・プログラム生成のイベント | 部分 | 1092で板の印と処理中に予約した知らせを比較。実際の API・複数タスク源の順序は未評価。 |
@@ -29,4 +29,4 @@
 
 依頼1092は [MDN のタイマー](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)と [実行モデル](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model)を参考に、外部の板の印と処理中に予約した知らせの送信元・対象・増分を１つの FIFO 行列で扱う。`tests/event-origin-arguments.test.js` で２順序、処理値、送信元と引数、途中記録を検査。実ブラウザーの複数タスク源・マイクロタスク・正確なタイマー順序や API 実装は評価しない。
 
-依頼1102は [MDN のイベント](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events) と [Node.js のイベント処理](https://nodejs.org/learn/asynchronous-work/the-nodejs-event-emitter)を参考に、案内板・人形・受付で１つの係を登録・解除し２つの知らせを処理する。処理時に登録を確認する単一 FIFO の仮定は教材独自で、各 API・ロボットやサーバーの挙動を再現しない。`tests/event-worlds.test.js` は待機中の解除、FIFO、誤登録と復元を検査する。
+依頼1102は [MDN のイベント](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)、[ポインターの押下](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event) と [Node.js のイベント処理](https://nodejs.org/learn/asynchronous-work/the-nodejs-event-emitter)を参考に、案内板・携帯地図・人形・受付で１つの係を登録・解除し２つの知らせを処理する。処理時に登録を確認する単一 FIFO の仮定は教材独自で、各 API・ジェスチャー・ロボットやサーバーの挙動を再現しない。`tests/event-worlds.test.js` は待機中の解除、FIFO、誤登録と復元を検査する。
