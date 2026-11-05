@@ -568,50 +568,68 @@ AL-Complexity:学習成果:KA Core:17,AL,AL-Complexity,学習成果,KA Core,17,C
 AL-Complexity:学習成果:KA Core:18,AL,AL-Complexity,学習成果,KA Core,18,P と NP,部分,412・414で候補検証とクラスの関係を操作。一般の説明は未評価。,coverage-al-complexity.md,71,原典照合結果は監査記録参照
 AL-Complexity:学習成果:KA Core:19,AL,AL-Complexity,学習成果,KA Core,19,帰着による NP 完全性の証明,部分,411・413で固定の問題変換を操作。完全な証明の構築は未評価。,coverage-al-complexity.md,72,原典照合結果は監査記録参照
 AL-Complexity:学習成果:KA Core:20,AL,AL-Complexity,学習成果,KA Core,20,PSPACE と EXP の関係,部分,868で有限の構成数と決定的な再訪を操作し、PSPACE ⊆ EXP を説明。一般の構成数上界や自由な証明は未評価。,coverage-al-complexity.md,73,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:1・1a,AL,AL-Foundational,トピック,CS Core,1・1a,抽象データ型・辞書操作,部分,174で２方式の登録・更新・削除・検索。一般の仕様と実装は未評価。,coverage-al-foundational.md,9,原典照合結果は監査記録参照・番号を要確認
-AL-Foundational:トピック:CS Core:2a,AL,AL-Foundational,トピック,CS Core,2a,数値・非数値配列、文字列,部分,173で数値の配置、1129・1344で符号単位・符号位置・書記素と正規化を固定例で比較。配列の各型と一般の文字処理は未評価。,coverage-al-foundational.md,10,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:2b,AL,AL-Foundational,トピック,CS Core,2b,一次元・多次元配列,部分,173で３×３の２通りの配置。一般の添字・実装は未評価。,coverage-al-foundational.md,11,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:3,AL,AL-Foundational,トピック,CS Core,3,レコード・タプル・オブジェクト,部分,511でレコード型、65でオブジェクト、1128で位置で読むタプルと名前で読む記録を比較。一般の言語・実装は未評価。,coverage-al-foundational.md,12,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:4a,AL,AL-Foundational,トピック,CS Core,4a,単方向・双方向、直線・循環リスト,部分,171で単方向の挿入・切離し、911で双方向循環リストの参照変更を操作。一般の実装、番兵やメモリ管理は未評価。,coverage-al-foundational.md,13,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:5,AL,AL-Foundational,トピック,CS Core,5,スタック,部分,21で探索の足跡を操作。一般の実装は未評価。,coverage-al-foundational.md,14,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:6・6a,AL,AL-Foundational,トピック,CS Core,6・6a,キュー・両端キュー・ヒープによる優先度付きキュー,部分,79・559・164で操作。一般の実装と費用は未評価。,coverage-al-foundational.md,15,原典照合結果は監査記録参照・番号を要確認
-AL-Foundational:トピック:CS Core:7・7a,AL,AL-Foundational,トピック,CS Core,7・7a,ハッシュ表、衝突処理と計算量,部分,19・345〜347で連鎖と線形探索、1342・1343で拡張時の再ハッシュを固定例と選択した３鍵で比較。一般の計算量は未評価。,coverage-al-foundational.md,16,原典照合結果は監査記録参照・番号を要確認
-AL-Foundational:トピック:CS Core:8・8a,AL,AL-Foundational,トピック,CS Core,8・8a,グラフの性質と隣接表・行列,部分,56で有向辺と閉路、172で２表現。全性質・一般の費用は未評価。,coverage-al-foundational.md,17,原典照合結果は監査記録参照・番号を要確認
-AL-Foundational:トピック:CS Core:9a,AL,AL-Foundational,トピック,CS Core,9a,二分・多分木・探索木,部分,57で二分探索木、794で削除の６固定例。一般の多分木や削除・平衡化は未評価。,coverage-al-foundational.md,18,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:9b,AL,AL-Foundational,トピック,CS Core,9b,平衡木・ヒープ,部分,348で AVL 回転、164で最小ヒープ、915で赤黒木の挿入後の３修復例。一般の平衡化・削除や証明は未評価。,coverage-al-foundational.md,19,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:10,AL,AL-Foundational,トピック,CS Core,10,集合,部分,46で有限集合の演算。一般の表現・実装は未評価。,coverage-al-foundational.md,20,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:11a,AL,AL-Foundational,トピック,CS Core,11a,線形探索,部分,29で固定列を探索。一般の解析は未評価。,coverage-al-foundational.md,21,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:11b,AL,AL-Foundational,トピック,CS Core,11b,二分探索,部分,29・88で固定例と候補範囲。一般の証明は未評価。,coverage-al-foundational.md,22,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:11c,AL,AL-Foundational,トピック,CS Core,11c,木の深さ・幅優先探索,部分,08・21で固定グラフを探索。木での一般的な解析は未評価。,coverage-al-foundational.md,23,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:12a,AL,AL-Foundational,トピック,CS Core,12a,二次時間の整列,部分,05で隣接交換、713で選択ソート、894で挿入ソートと安定性を操作。一般の正しさと計算量の証明は未評価。,coverage-al-foundational.md,24,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:12b,AL,AL-Foundational,トピック,CS Core,12b,対数線形時間の整列,部分,55で安定なマージ、909で３分割クイックソートの基準選択と重複を比較。Tim sort、一般の平均計算量や正しさの証明は未評価。,coverage-al-foundational.md,25,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:13a,AL,AL-Foundational,トピック,CS Core,13a,最短路,部分,09・138でダイクストラ法と負辺の緩和、912で全域木との目的、913で全点対の更新と負の閉路を比較、1309で負の閉路の到達可能性と地点間への影響を分類、1310で閉路を断ち二つの届け先への到達を確保、1311で５本の門を組み替え負の辺・閉路と最短路の関係を比較し、1312で同じ２地図の経路表を段階更新する。一般の証明・経路復元は未評価。,coverage-al-foundational.md,26,原典照合結果は監査記録参照
-AL-Foundational:トピック:CS Core:13b,AL,AL-Foundational,トピック,CS Core,13b,最小全域木,部分,32でクラスカル法、910でプリム法、912で最短経路木と比較。一般の証明や実装効率は未評価。,coverage-al-foundational.md,27,原典照合結果は監査記録参照
-AL-Foundational:トピック:KA Core:14a,AL,AL-Foundational,トピック,KA Core,14a,ヒープ整列,部分,165の固定例。一般の計算量と安定性は未評価。,coverage-al-foundational.md,28,原典照合結果は監査記録参照
-AL-Foundational:トピック:KA Core:14b,AL,AL-Foundational,トピック,KA Core,14b,桶・計数・基数整列,部分,166〜168の固定例。一般の入力と分析は未評価。,coverage-al-foundational.md,29,原典照合結果は監査記録参照
-AL-Foundational:トピック:KA Core:15a,AL,AL-Foundational,トピック,KA Core,15a,推移閉包,部分,170で経由地を増やす固定例。一般の証明は未評価。,coverage-al-foundational.md,30,原典照合結果は監査記録参照
-AL-Foundational:トピック:KA Core:15b,AL,AL-Foundational,トピック,KA Core,15b,トポロジカルソート,部分,56で順序と閉路を操作。一般の証明は未評価。,coverage-al-foundational.md,31,原典照合結果は監査記録参照
-AL-Foundational:トピック:KA Core:16a,AL,AL-Foundational,トピック,KA Core,16a,効率的な文字列照合,部分,714で KMP の重なり表、914で Boyer–Moore 系 Horspool 法の右端からの比較と送り幅を操作。完全な Boyer–Moore 法、一般の実装や計算量の証明は未評価。,coverage-al-foundational.md,32,原典照合結果は監査記録参照
-AL-Foundational:トピック:KA Core:16b,AL,AL-Foundational,トピック,KA Core,16b,最長共通部分列,部分,169で表と復元。一般の解析は未評価。,coverage-al-foundational.md,33,原典照合結果は監査記録参照
-AL-Foundational:トピック:KA Core:16c,AL,AL-Foundational,トピック,KA Core,16c,正規表現照合,部分,154で限定された表現。一般の照合と計算量は未評価。,coverage-al-foundational.md,34,原典照合結果は監査記録参照
-AL-Foundational:トピック:Non-core:17,AL,AL-Foundational,トピック,Non-core,17,暗号関連アルゴリズム,部分,601で Web Crypto の SHA-256 と HMAC を比較。SHA-256 の内部アルゴリズムは未評価。,coverage-al-foundational.md,35,原典照合結果は監査記録参照
-AL-Foundational:トピック:Non-core:18,AL,AL-Foundational,トピック,Non-core,18,並列アルゴリズム,部分,285の累積和、446の並列整列は固定模型。実並列実行と一般の分析は未評価。,coverage-al-foundational.md,36,原典照合結果は監査記録参照
-AL-Foundational:トピック:Non-core:19・19a,AL,AL-Foundational,トピック,Non-core,19・19a,合意、作業証明・ステーク証明,部分,607で固定難易度の枝と資源配分を比較。実際の分散合意・確定は未評価。,coverage-al-foundational.md,37,原典照合結果は監査記録参照・番号を要確認
-AL-Foundational:トピック:Non-core:20a,AL,AL-Foundational,トピック,Non-core,20a,オラクルを用いる量子アルゴリズム,部分,821で２ビットの Bernstein–Vazirani、822で Simon の測定結果から秘密を絞る固定例。一般の入力、Simon の回路、オラクル構築費用や実機は未評価。,coverage-al-foundational.md,38,原典照合結果は監査記録参照
-AL-Foundational:トピック:Non-core:20b,AL,AL-Foundational,トピック,Non-core,20b,QFT による高速化,部分,610で15の周期探索の理想的な測定結果と古典的後処理。QFT 回路や一般の高速化は未評価。,coverage-al-foundational.md,39,原典照合結果は監査記録参照
-AL-Foundational:トピック:Non-core:20c,AL,AL-Foundational,トピック,Non-core,20c,振幅増幅による高速化,部分,820で４候補の符号反転・拡散、861で４・８・16候補の反復回数と成功確率を比較。一般の候補数・複数解、実機や漸近計算量の証明は未評価。,coverage-al-foundational.md,40,原典照合結果は監査記録参照
-AL-Foundational:トピック:Non-core:21,AL,AL-Foundational,トピック,Non-core,21,FFT,部分,175で４点の分割と結合。一般の長さと分析は未評価。,coverage-al-foundational.md,41,原典照合結果は監査記録参照
-AL-Foundational:トピック:Non-core:22,AL,AL-Foundational,トピック,Non-core,22,差分進化,部分,908で固定４個体・２変数について差による変異、交叉、選択を４条件で比較。乱数による集団全体の更新、一般の問題や収束は未評価。,coverage-al-foundational.md,42,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:1a,AL,AL-Foundational,学習成果,CS Core,1a,各データ構造の定義・性質・表現・操作を説明,部分,複数の構造の固定例を操作。全構造の一般的な説明は未評価。,coverage-al-foundational.md,48,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:1b,AL,AL-Foundational,学習成果,CS Core,1b,操作による状態変化を段階的に説明,部分,171・174などを操作。全構造と自由な説明は未評価。,coverage-al-foundational.md,49,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:2,AL,AL-Foundational,学習成果,CS Core,2,各アルゴリズムの動作を段階的に説明,部分,55などの固定例。全アルゴリズムと自由な説明は未評価。,coverage-al-foundational.md,50,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:3,AL,AL-Foundational,学習成果,CS Core,3,各手法の代表例を適用,部分,55などの固定例。全手法や多様な入力は未評価。,coverage-al-foundational.md,51,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:4,AL,AL-Foundational,学習成果,CS Core,4,複数の解法を作成し要件に照らし選択,部分,527で配列とリスト、912で同じ地図の建設費用と最短距離を比較。自由な設計や多様な要件は未評価。,coverage-al-foundational.md,52,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:5,AL,AL-Foundational,学習成果,CS Core,5,衝突回避と解決を説明,部分,19・345で衝突処理。一般の回避と自由な説明は未評価。,coverage-al-foundational.md,53,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:6,AL,AL-Foundational,学習成果,CS Core,6,効率以外の選択要因を説明,部分,980で追加領域と開発期限を固定費用と合わせて比較。保守性、実際の開発や自由な説明は未評価。,coverage-al-foundational.md,54,原典照合結果は監査記録参照
-AL-Foundational:学習成果:CS Core:7,AL,AL-Foundational,学習成果,CS Core,7,ヒープの性質と優先度付きキューを説明,部分,164で親子交換。一般の実装と自由な説明は未評価。,coverage-al-foundational.md,55,原典照合結果は監査記録参照
-AL-Foundational:学習成果:KA Core:8a・8b,AL,AL-Foundational,学習成果,KA Core,8a・8b,各手法の代表例と動作を説明,部分,56・165〜170の固定例。全手法と自由な説明は未評価。,coverage-al-foundational.md,56,原典照合結果は監査記録参照・番号を要確認
-AL-Foundational:学習成果:Non-core:9,AL,AL-Foundational,学習成果,Non-core,9,量子計算と応用への理解,部分,610で因数分解の後処理、820・861で探索の反転と反復、821・822でオラクル問題の固定例。一般的な応用・実機や自由な説明は未評価。,coverage-al-foundational.md,57,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:1,AL,AL-Foundational,トピック,CS Core,1,抽象データ型と操作,部分,174で辞書の操作を比較。一般の抽象的な仕様と実装は未評価。,coverage-al-foundational.md,9,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:1a,AL,AL-Foundational,トピック,CS Core,1a,抽象データ型・辞書操作,部分,174で２方式の登録・更新・削除・検索。一般の仕様と実装は未評価。,coverage-al-foundational.md,10,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:2,AL,AL-Foundational,トピック,CS Core,2,配列,部分,173で３×３配列の配置、1129で文字表現の固定例を比較。一般の型・実装は未評価。,coverage-al-foundational.md,11,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:2a,AL,AL-Foundational,トピック,CS Core,2a,数値・非数値配列、文字列,部分,173で数値の配置、1129・1344で符号単位・符号位置・書記素と正規化を固定例で比較。配列の各型と一般の文字処理は未評価。,coverage-al-foundational.md,12,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:2b,AL,AL-Foundational,トピック,CS Core,2b,一次元・多次元配列,部分,173で３×３の２通りの配置。一般の添字・実装は未評価。,coverage-al-foundational.md,13,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:3,AL,AL-Foundational,トピック,CS Core,3,レコード・タプル・オブジェクト,部分,511でレコード型、65でオブジェクト、1128で位置で読むタプルと名前で読む記録を比較。一般の言語・実装は未評価。,coverage-al-foundational.md,14,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:4,AL,AL-Foundational,トピック,CS Core,4,連結リスト,部分,171・911で参照の変更を操作。一般の実装は未評価。,coverage-al-foundational.md,15,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:4a,AL,AL-Foundational,トピック,CS Core,4a,単方向・双方向、直線・循環リスト,部分,171で単方向の挿入・切離し、911で双方向循環リストの参照変更を操作。一般の実装、番兵やメモリ管理は未評価。,coverage-al-foundational.md,16,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:5,AL,AL-Foundational,トピック,CS Core,5,スタック,部分,21で探索の足跡を操作。一般の実装は未評価。,coverage-al-foundational.md,17,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:6,AL,AL-Foundational,トピック,CS Core,6,キュー・両端キュー,部分,79・559で操作。一般の実装と費用は未評価。,coverage-al-foundational.md,18,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:6a,AL,AL-Foundational,トピック,CS Core,6a,ヒープによる優先度付きキュー,部分,79・559・164で操作。一般の実装と費用は未評価。,coverage-al-foundational.md,19,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:7,AL,AL-Foundational,トピック,CS Core,7,ハッシュ表,部分,19・345〜347・1342・1343で衝突と拡張を操作。一般の実装と費用は未評価。,coverage-al-foundational.md,20,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:7a,AL,AL-Foundational,トピック,CS Core,7a,ハッシュ表、衝突処理と計算量,部分,19・345〜347で連鎖と線形探索、1342・1343で拡張時の再ハッシュを固定例と選択した３鍵で比較。一般の計算量は未評価。,coverage-al-foundational.md,21,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:8,AL,AL-Foundational,トピック,CS Core,8,グラフの性質,部分,56で有向辺と閉路を操作。一般の性質は未評価。,coverage-al-foundational.md,22,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:8a,AL,AL-Foundational,トピック,CS Core,8a,グラフの隣接表・隣接行列,部分,56で有向辺と閉路、172で２表現。全性質・一般の費用は未評価。,coverage-al-foundational.md,23,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:9,AL,AL-Foundational,トピック,CS Core,9,木,部分,57・164・348・915で木の限定例を操作。一般の構造と証明は未評価。,coverage-al-foundational.md,24,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:9a,AL,AL-Foundational,トピック,CS Core,9a,二分・多分木・探索木,部分,57で二分探索木、794で削除の６固定例。一般の多分木や削除・平衡化は未評価。,coverage-al-foundational.md,25,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:9b,AL,AL-Foundational,トピック,CS Core,9b,平衡木・ヒープ,部分,348で AVL 回転、164で最小ヒープ、915で赤黒木の挿入後の３修復例。一般の平衡化・削除や証明は未評価。,coverage-al-foundational.md,26,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:10,AL,AL-Foundational,トピック,CS Core,10,集合,部分,46で有限集合の演算。一般の表現・実装は未評価。,coverage-al-foundational.md,27,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:11,AL,AL-Foundational,トピック,CS Core,11,探索アルゴリズム,部分,08・21・29・88で固定例を操作。一般の分析は未評価。,coverage-al-foundational.md,28,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:11a,AL,AL-Foundational,トピック,CS Core,11a,線形探索,部分,29で固定列を探索。一般の解析は未評価。,coverage-al-foundational.md,29,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:11b,AL,AL-Foundational,トピック,CS Core,11b,二分探索,部分,29・88で固定例と候補範囲。一般の証明は未評価。,coverage-al-foundational.md,30,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:11c,AL,AL-Foundational,トピック,CS Core,11c,木の深さ・幅優先探索,部分,08・21で固定グラフを探索。木での一般的な解析は未評価。,coverage-al-foundational.md,31,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:12,AL,AL-Foundational,トピック,CS Core,12,整列アルゴリズム,部分,05・55・713・894・909で固定例を操作。一般の正しさと分析は未評価。,coverage-al-foundational.md,32,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:12a,AL,AL-Foundational,トピック,CS Core,12a,二次時間の整列,部分,05で隣接交換、713で選択ソート、894で挿入ソートと安定性を操作。一般の正しさと計算量の証明は未評価。,coverage-al-foundational.md,33,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:12b,AL,AL-Foundational,トピック,CS Core,12b,対数線形時間の整列,部分,55で安定なマージ、909で３分割クイックソートの基準選択と重複を比較。Tim sort、一般の平均計算量や正しさの証明は未評価。,coverage-al-foundational.md,34,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:13,AL,AL-Foundational,トピック,CS Core,13,グラフアルゴリズム,部分,09・32・913で最短路と全域木の例。一般の証明は未評価。,coverage-al-foundational.md,35,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:CS Core:13a,AL,AL-Foundational,トピック,CS Core,13a,最短路,部分,09・138でダイクストラ法と負辺の緩和、912で全域木との目的、913で全点対の更新と負の閉路を比較、1309で負の閉路の到達可能性と地点間への影響を分類、1310で閉路を断ち二つの届け先への到達を確保、1311で５本の門を組み替え負の辺・閉路と最短路の関係を比較し、1312で同じ２地図の経路表を段階更新する。一般の証明・経路復元は未評価。,coverage-al-foundational.md,36,原典照合結果は監査記録参照
+AL-Foundational:トピック:CS Core:13b,AL,AL-Foundational,トピック,CS Core,13b,最小全域木,部分,32でクラスカル法、910でプリム法、912で最短経路木と比較。一般の証明や実装効率は未評価。,coverage-al-foundational.md,37,原典照合結果は監査記録参照
+AL-Foundational:トピック:KA Core:14,AL,AL-Foundational,トピック,KA Core,14,追加の整列アルゴリズム,部分,165〜168でヒープ・桶・計数・基数整列の固定例。一般の分析は未評価。,coverage-al-foundational.md,38,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:KA Core:14a,AL,AL-Foundational,トピック,KA Core,14a,ヒープ整列,部分,165の固定例。一般の計算量と安定性は未評価。,coverage-al-foundational.md,39,原典照合結果は監査記録参照
+AL-Foundational:トピック:KA Core:14b,AL,AL-Foundational,トピック,KA Core,14b,桶・計数・基数整列,部分,166〜168の固定例。一般の入力と分析は未評価。,coverage-al-foundational.md,40,原典照合結果は監査記録参照
+AL-Foundational:トピック:KA Core:15,AL,AL-Foundational,トピック,KA Core,15,追加のグラフアルゴリズム,部分,56・170で順序付けと推移閉包。一般の証明は未評価。,coverage-al-foundational.md,41,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:KA Core:15a,AL,AL-Foundational,トピック,KA Core,15a,推移閉包,部分,170で経由地を増やす固定例。一般の証明は未評価。,coverage-al-foundational.md,42,原典照合結果は監査記録参照
+AL-Foundational:トピック:KA Core:15b,AL,AL-Foundational,トピック,KA Core,15b,トポロジカルソート,部分,56で順序と閉路を操作。一般の証明は未評価。,coverage-al-foundational.md,43,原典照合結果は監査記録参照
+AL-Foundational:トピック:KA Core:16,AL,AL-Foundational,トピック,KA Core,16,照合,部分,154・169・714・914で文字列の固定例。一般の実装と分析は未評価。,coverage-al-foundational.md,44,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:KA Core:16a,AL,AL-Foundational,トピック,KA Core,16a,効率的な文字列照合,部分,714で KMP の重なり表、914で Boyer–Moore 系 Horspool 法の右端からの比較と送り幅を操作。完全な Boyer–Moore 法、一般の実装や計算量の証明は未評価。,coverage-al-foundational.md,45,原典照合結果は監査記録参照
+AL-Foundational:トピック:KA Core:16b,AL,AL-Foundational,トピック,KA Core,16b,最長共通部分列,部分,169で表と復元。一般の解析は未評価。,coverage-al-foundational.md,46,原典照合結果は監査記録参照
+AL-Foundational:トピック:KA Core:16c,AL,AL-Foundational,トピック,KA Core,16c,正規表現照合,部分,154で限定された表現。一般の照合と計算量は未評価。,coverage-al-foundational.md,47,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:17,AL,AL-Foundational,トピック,Non-core,17,暗号関連アルゴリズム,部分,601で Web Crypto の SHA-256 と HMAC を比較。SHA-256 の内部アルゴリズムは未評価。,coverage-al-foundational.md,48,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:18,AL,AL-Foundational,トピック,Non-core,18,並列アルゴリズム,部分,285の累積和、446の並列整列は固定模型。実並列実行と一般の分析は未評価。,coverage-al-foundational.md,49,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:19,AL,AL-Foundational,トピック,Non-core,19,合意アルゴリズム,部分,607で固定難易度の枝を比較。実際の分散合意は未評価。,coverage-al-foundational.md,50,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:Non-core:19a,AL,AL-Foundational,トピック,Non-core,19a,作業証明・ステーク証明,部分,607で固定難易度の枝と資源配分を比較。実際の分散合意・確定は未評価。,coverage-al-foundational.md,51,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:20,AL,AL-Foundational,トピック,Non-core,20,量子計算のアルゴリズム,部分,610・820〜822で限定例を操作。一般の入力、実機と証明は未評価。,coverage-al-foundational.md,52,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:トピック:Non-core:20a,AL,AL-Foundational,トピック,Non-core,20a,オラクルを用いる量子アルゴリズム,部分,821で２ビットの Bernstein–Vazirani、822で Simon の測定結果から秘密を絞る固定例。一般の入力、Simon の回路、オラクル構築費用や実機は未評価。,coverage-al-foundational.md,53,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:20b,AL,AL-Foundational,トピック,Non-core,20b,QFT による高速化,部分,610で15の周期探索の理想的な測定結果と古典的後処理。QFT 回路や一般の高速化は未評価。,coverage-al-foundational.md,54,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:20c,AL,AL-Foundational,トピック,Non-core,20c,振幅増幅による高速化,部分,820で４候補の符号反転・拡散、861で４・８・16候補の反復回数と成功確率を比較。一般の候補数・複数解、実機や漸近計算量の証明は未評価。,coverage-al-foundational.md,55,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:21,AL,AL-Foundational,トピック,Non-core,21,FFT,部分,175で４点の分割と結合。一般の長さと分析は未評価。,coverage-al-foundational.md,56,原典照合結果は監査記録参照
+AL-Foundational:トピック:Non-core:22,AL,AL-Foundational,トピック,Non-core,22,差分進化,部分,908で固定４個体・２変数について差による変異、交叉、選択を４条件で比較。乱数による集団全体の更新、一般の問題や収束は未評価。,coverage-al-foundational.md,57,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:1,AL,AL-Foundational,学習成果,CS Core,1,各データ構造の性質と操作を説明,部分,171・174などの固定例。全構造と自由な説明は未評価。,coverage-al-foundational.md,63,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:学習成果:CS Core:1a,AL,AL-Foundational,学習成果,CS Core,1a,各データ構造の定義・性質・表現・操作を説明,部分,複数の構造の固定例を操作。全構造の一般的な説明は未評価。,coverage-al-foundational.md,64,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:1b,AL,AL-Foundational,学習成果,CS Core,1b,操作による状態変化を段階的に説明,部分,171・174などを操作。全構造と自由な説明は未評価。,coverage-al-foundational.md,65,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:2,AL,AL-Foundational,学習成果,CS Core,2,各アルゴリズムの動作を段階的に説明,部分,55などの固定例。全アルゴリズムと自由な説明は未評価。,coverage-al-foundational.md,66,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:3,AL,AL-Foundational,学習成果,CS Core,3,各手法の代表例を適用,部分,55などの固定例。全手法や多様な入力は未評価。,coverage-al-foundational.md,67,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:4,AL,AL-Foundational,学習成果,CS Core,4,複数の解法を作成し要件に照らし選択,部分,527で配列とリスト、912で同じ地図の建設費用と最短距離を比較。自由な設計や多様な要件は未評価。,coverage-al-foundational.md,68,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:5,AL,AL-Foundational,学習成果,CS Core,5,衝突回避と解決を説明,部分,19・345で衝突処理。一般の回避と自由な説明は未評価。,coverage-al-foundational.md,69,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:6,AL,AL-Foundational,学習成果,CS Core,6,効率以外の選択要因を説明,部分,980で追加領域と開発期限を固定費用と合わせて比較。保守性、実際の開発や自由な説明は未評価。,coverage-al-foundational.md,70,原典照合結果は監査記録参照
+AL-Foundational:学習成果:CS Core:7,AL,AL-Foundational,学習成果,CS Core,7,ヒープの性質と優先度付きキューを説明,部分,164で親子交換。一般の実装と自由な説明は未評価。,coverage-al-foundational.md,71,原典照合結果は監査記録参照
+AL-Foundational:学習成果:KA Core:8,AL,AL-Foundational,学習成果,KA Core,8,各手法の代表例と動作を説明,部分,56・165〜170の固定例。全手法と自由な説明は未評価。,coverage-al-foundational.md,72,原典照合結果は監査記録参照・親子重複候補
+AL-Foundational:学習成果:KA Core:8a,AL,AL-Foundational,学習成果,KA Core,8a,各手法の代表例を説明,部分,56・165〜170の固定例。全手法と自由な説明は未評価。,coverage-al-foundational.md,73,原典照合結果は監査記録参照
+AL-Foundational:学習成果:KA Core:8b,AL,AL-Foundational,学習成果,KA Core,8b,各手法の動作を段階的に説明,部分,56・165〜170の固定例。全手法と自由な説明は未評価。,coverage-al-foundational.md,74,原典照合結果は監査記録参照
+AL-Foundational:学習成果:Non-core:9,AL,AL-Foundational,学習成果,Non-core,9,量子計算と応用への理解,部分,610で因数分解の後処理、820・861で探索の反転と反復、821・822でオラクル問題の固定例。一般的な応用・実機や自由な説明は未評価。,coverage-al-foundational.md,75,原典照合結果は監査記録参照
 AL-Models:トピック:CS Core:1,AL,AL-Models,トピック,CS Core,1,形式オートマトン,部分,31・80・417・697で異なる機械の固定例を操作。一般の機械と構築は未評価。,coverage-al-models.md,9,原典照合結果は監査記録参照・親子重複候補
 AL-Models:トピック:CS Core:1a,AL,AL-Models,トピック,CS Core,1a,有限状態機械,部分,31で２状態の遷移を組む。一般の機械は未評価。,coverage-al-models.md,10,原典照合結果は監査記録参照
 AL-Models:トピック:CS Core:1b,AL,AL-Models,トピック,CS Core,1b,プッシュダウン機械,部分,80・644で括弧と aⁿbⁿ の山札を操作。一般の機械は未評価。,coverage-al-models.md,11,原典照合結果は監査記録参照

@@ -616,6 +616,14 @@
       "topics": 23,
       "outcomes": 8,
       "scope_sha256": "0b59888b83852fff4c3f7cf77821b2f0dc5fc0f2bdcf5541490c21a26e226e83"
+    },
+    "AL-Foundational": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-al-foundational.md",
+      "topics": 49,
+      "outcomes": 13,
+      "scope_sha256": "a039bf930f1889157fb3ce47f27d9547d520079eedb3837548c28f326f4dfaad"
     }
   }
 }
