@@ -824,6 +824,14 @@
       "topics": 25,
       "outcomes": 7,
       "scope_sha256": "56d97d029809b4da8e5e330523448b85ae5b017077a5a01f6c9e642f8101ea77"
+    },
+    "HCI-Evaluation": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-hci-evaluation.md",
+      "topics": 34,
+      "outcomes": 8,
+      "scope_sha256": "26ab948a565abf27f4d41a268bc3aa47261c8b25647290a339b5108787b8027b"
     }
   }
 }

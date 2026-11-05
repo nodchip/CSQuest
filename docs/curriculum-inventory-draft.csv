@@ -1991,42 +1991,48 @@ HCI-Design:学習成果:KA Core:5,HCI,HCI-Design,学習成果,KA Core,5,分散�
 HCI-Design:学習成果:KA Core:6,HCI,HCI-Design,学習成果,KA Core,6,入力方法のプライバシー影響を比較,部分,824 の広場と個室で声・ボタン・撮影等を固定条件で比較。実利用者の意向や実装全般は未評価。,coverage-hci-design.md,55,原典照合結果は監査記録参照
 HCI-Design:学習成果:KA Core:7,HCI,HCI-Design,学習成果,KA Core,7,視覚設計原則に基づく根拠を説明,部分,825 で近接とプログラム上の関係を選択して比較。一般の設計根拠や自由な説明は未評価。,coverage-hci-design.md,56,原典照合結果は監査記録参照
 HCI-Design:学習成果:Non-core:8,HCI,HCI-Design,学習成果,Non-core,8,VR・AR・MR のプライバシー影響を評価,部分,824 は AR の位置合わせで映像の端末内処理・外部保存・停止を固定条件で比較。実機、周囲の人の意向、VR・MR 全般は未評価。,coverage-hci-design.md,57,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:CS Core:1a,HCI,HCI-Evaluation,トピック,CS Core,1a,形成的・総括的評価,部分,60 で改善のための観察と評価の違いを提示。実利用者や総括的評価は未評価。,coverage-hci-evaluation.md,9,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:CS Core:1b,HCI,HCI-Evaluation,トピック,CS Core,1b,有用性、効率、学習しやすさ、満足度、感情等,部分,60・535 で架空の所要時間と発言を比較。各評価対象の全体像と実測は未評価。,coverage-hci-evaluation.md,10,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:CS Core:1c,HCI,HCI-Evaluation,トピック,CS Core,1c,利用者研究前の倫理承認要件,部分,532 で架空の同意範囲と保存期限を比較。実際の倫理審査・承認要件の適用は未評価。,coverage-hci-evaluation.md,11,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:2a,HCI,HCI-Evaluation,トピック,KA Core,2a,質的な分類とテーマ分析,部分,535 は固定の２観点の分類。観点の発見、解釈や合意は未評価。,coverage-hci-evaluation.md,12,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:2b,HCI,HCI-Evaluation,トピック,KA Core,2b,量的方法と統計検定,部分,529 で固定４組の置換検定。一般の統計手法は未評価。,coverage-hci-evaluation.md,13,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:2c,HCI,HCI-Evaluation,トピック,KA Core,2c,混合的方法,部分,535 で発言の分類と所要時間を比較。実利用者や一般の混合研究は未評価。,coverage-hci-evaluation.md,14,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:2d,HCI,HCI-Evaluation,トピック,KA Core,2d,報告書やペルソナ等の提示要件,部分,観察や報告の固定例がある。実際の報告書作成と提示要件全般は未評価。,coverage-hci-evaluation.md,15,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:2e,HCI,HCI-Evaluation,トピック,KA Core,2e,利用者中心の試験,部分,60・287 は架空の利用者の観察と試作品の固定例。実利用者による試験は未評価。,coverage-hci-evaluation.md,16,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:2f,HCI,HCI-Evaluation,トピック,KA Core,2f,ヒューリスティック評価,部分,534 は３原則で架空の試作品を点検。実評価者や全原則は未評価。,coverage-hci-evaluation.md,17,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:2g,HCI,HCI-Evaluation,トピック,KA Core,2g,標本や一般化等の課題,部分,60・535 は架空の少人数の例と一般化の限界を示す。標本設計一般は未評価。,coverage-hci-evaluation.md,18,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:3a,HCI,HCI-Evaluation,トピック,KA Core,3a,調査目的の設定,部分,530 で固定候補から目的と測定を選ぶ。一般の計画立案は未評価。,coverage-hci-evaluation.md,19,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:3b,HCI,HCI-Evaluation,トピック,KA Core,3b,仮説の設計,部分,530 で固定候補の検定計画を選ぶ。自由な仮説立案は未評価。,coverage-hci-evaluation.md,20,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:3c,HCI,HCI-Evaluation,トピック,KA Core,3c,研究倫理委員会等の承認,未照合,532 の同意・保存は承認手続きの実施ではない。対応教材を要照合。,coverage-hci-evaluation.md,21,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:3d,HCI,HCI-Evaluation,トピック,KA Core,3d,研究の事前登録,部分,530 は固定計画を封じて変更を明示。外部登録は未評価。,coverage-hci-evaluation.md,22,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:3e,HCI,HCI-Evaluation,トピック,KA Core,3e,被験者内・被験者間の設計,部分,531・533 で順序と参加者割当の固定例。実験計画全般は未評価。,coverage-hci-evaluation.md,23,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4a,HCI,HCI-Evaluation,トピック,KA Core,4a,設計の環境への影響,部分,536 は仮定した１台の電力量を比較。ライフサイクルは未評価。,coverage-hci-evaluation.md,24,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4b,HCI,HCI-Evaluation,トピック,KA Core,4b,設計の素材への影響,未照合,製造・素材の影響に関する対応教材を要照合。,coverage-hci-evaluation.md,25,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4c,HCI,HCI-Evaluation,トピック,KA Core,4c,設計の社会への影響,部分,536 は利用条件の固定比較。社会への影響全般は未評価。,coverage-hci-evaluation.md,26,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4d,HCI,HCI-Evaluation,トピック,KA Core,4d,設計のセキュリティへの影響,部分,536 は情報の露出と通信停止を比較。実際の安全性は未評価。,coverage-hci-evaluation.md,27,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4e,HCI,HCI-Evaluation,トピック,KA Core,4e,設計のプライバシーへの影響,部分,536 は公開範囲の固定比較。実際のプライバシー評価は未評価。,coverage-hci-evaluation.md,28,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4f,HCI,HCI-Evaluation,トピック,KA Core,4f,設計の倫理への影響,部分,532・536 は同意や利用条件の固定例。実際の利害関係者による評価は未評価。,coverage-hci-evaluation.md,29,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4g,HCI,HCI-Evaluation,トピック,KA Core,4g,設計の広い影響,部分,536 は４観点の固定比較。全影響の評価は未対応。,coverage-hci-evaluation.md,30,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:Non-core:5a,HCI,HCI-Evaluation,トピック,Non-core,5a,統計パッケージ,未照合,実ツールに相当する教材を要照合。,coverage-hci-evaluation.md,31,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:Non-core:5b,HCI,HCI-Evaluation,トピック,Non-core,5b,可視化ツール,未照合,調査分析用ツールの対応を要照合。,coverage-hci-evaluation.md,32,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:Non-core:5c,HCI,HCI-Evaluation,トピック,Non-core,5c,各種統計検定,部分,529 は４組の置換検定。原典例の検定と一般の選択は未評価。,coverage-hci-evaluation.md,33,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:Non-core:5d,HCI,HCI-Evaluation,トピック,Non-core,5d,データ探索、視覚分析、効果量,部分,529 は対応する平均差。標準化効果量と一般の視覚分析は未評価。,coverage-hci-evaluation.md,34,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:Non-core:6a,HCI,HCI-Evaluation,トピック,Non-core,6a,データの保存・共有,部分,532 は架空の同意範囲と保存期限。実データの管理は未評価。,coverage-hci-evaluation.md,35,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:Non-core:6b,HCI,HCI-Evaluation,トピック,Non-core,6b,機微性と識別可能性,部分,532 は元記録と集計候補を比較。再識別や匿名性の保証は未評価。,coverage-hci-evaluation.md,36,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:CS Core:1,HCI,HCI-Evaluation,学習成果,CS Core,1,形成的・総括的評価の違いと役割を論じる,部分,60 の固定例。自由な議論は未評価。,coverage-hci-evaluation.md,42,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:KA Core:2,HCI,HCI-Evaluation,学習成果,KA Core,2,設計段階に合う形成的・総括的評価方法を選ぶ,部分,60・287 の試作品の例。多様な段階や方法は未評価。,coverage-hci-evaluation.md,43,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:KA Core:3,HCI,HCI-Evaluation,学習成果,KA Core,3,質的・量的方法を併用する利点を論じる,部分,535 で発言と時間を比較。自由な議論と一般化は未評価。,coverage-hci-evaluation.md,44,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:KA Core:4,HCI,HCI-Evaluation,学習成果,KA Core,4,設計の広い影響を評価,部分,536 の固定４観点。実際の利害関係者と実測は未評価。,coverage-hci-evaluation.md,45,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:KA Core:5,HCI,HCI-Evaluation,学習成果,KA Core,5,目的・仮説・研究設計を正当化し評価を計画,部分,530・531・533 の固定候補。実際の計画作成と倫理審査は未評価。,coverage-hci-evaluation.md,46,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:KA Core:6,HCI,HCI-Evaluation,学習成果,KA Core,6,利用者評価を実施し、研究設計に即した結論を出す,部分,架空の小標本からの限定的な結論。実際の評価実施は未評価。,coverage-hci-evaluation.md,47,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:Non-core:7,HCI,HCI-Evaluation,学習成果,Non-core,7,適切な統計検定を選び実施,部分,529 の固定された置換検定。一般的選択と実データは未評価。,coverage-hci-evaluation.md,48,原典照合結果は監査記録参照
-HCI-Evaluation:学習成果:Non-core:8,HCI,HCI-Evaluation,学習成果,Non-core,8,統計計画を含め研究を事前登録,部分,530 の計画と変更明示。実際の登録・計画の記述は未評価。,coverage-hci-evaluation.md,49,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:CS Core:1,HCI,HCI-Evaluation,トピック,CS Core,1,利用者と行う評価の方法,部分,評価の目的・対象・倫理承認は子を参照。一般の評価計画と実施は未評価。,coverage-hci-evaluation.md,9,原典照合結果は監査記録参照・親子重複候補
+HCI-Evaluation:トピック:CS Core:1a,HCI,HCI-Evaluation,トピック,CS Core,1a,形成的・総括的評価,部分,60 で改善のための観察と評価の違いを提示。実利用者や総括的評価は未評価。,coverage-hci-evaluation.md,10,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:CS Core:1b,HCI,HCI-Evaluation,トピック,CS Core,1b,有用性、効率、学習しやすさ、満足度、感情等,部分,60・535 で架空の所要時間と発言を比較。各評価対象の全体像と実測は未評価。,coverage-hci-evaluation.md,11,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:CS Core:1c,HCI,HCI-Evaluation,トピック,CS Core,1c,利用者研究前の倫理承認要件,部分,532 で架空の同意範囲と保存期限を比較。実際の倫理審査・承認要件の適用は未評価。,coverage-hci-evaluation.md,12,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:2,HCI,HCI-Evaluation,トピック,KA Core,2,利用者と行う評価の方法,部分,質的・量的・混合的方法や課題は子を参照。実利用者の評価は未実施。,coverage-hci-evaluation.md,13,原典照合結果は監査記録参照・親子重複候補
+HCI-Evaluation:トピック:KA Core:2a,HCI,HCI-Evaluation,トピック,KA Core,2a,質的な分類とテーマ分析,部分,535 は固定の２観点の分類。観点の発見、解釈や合意は未評価。,coverage-hci-evaluation.md,14,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:2b,HCI,HCI-Evaluation,トピック,KA Core,2b,量的方法と統計検定,部分,529 で固定４組の置換検定。一般の統計手法は未評価。,coverage-hci-evaluation.md,15,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:2c,HCI,HCI-Evaluation,トピック,KA Core,2c,混合的方法,部分,535 で発言の分類と所要時間を比較。実利用者や一般の混合研究は未評価。,coverage-hci-evaluation.md,16,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:2d,HCI,HCI-Evaluation,トピック,KA Core,2d,報告書やペルソナ等の提示要件,部分,観察や報告の固定例がある。実際の報告書作成と提示要件全般は未評価。,coverage-hci-evaluation.md,17,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:2e,HCI,HCI-Evaluation,トピック,KA Core,2e,利用者中心の試験,部分,60・287 は架空の利用者の観察と試作品の固定例。実利用者による試験は未評価。,coverage-hci-evaluation.md,18,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:2f,HCI,HCI-Evaluation,トピック,KA Core,2f,ヒューリスティック評価,部分,534 は３原則で架空の試作品を点検。実評価者や全原則は未評価。,coverage-hci-evaluation.md,19,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:2g,HCI,HCI-Evaluation,トピック,KA Core,2g,標本や一般化等の課題,部分,60・535 は架空の少人数の例と一般化の限界を示す。標本設計一般は未評価。,coverage-hci-evaluation.md,20,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:3,HCI,HCI-Evaluation,トピック,KA Core,3,研究の計画,部分,目的・仮説・承認・事前登録・参加者割当は子を参照。一般の研究計画と実施は未評価。,coverage-hci-evaluation.md,21,原典照合結果は監査記録参照・親子重複候補
+HCI-Evaluation:トピック:KA Core:3a,HCI,HCI-Evaluation,トピック,KA Core,3a,調査目的の設定,部分,530 で固定候補から目的と測定を選ぶ。一般の計画立案は未評価。,coverage-hci-evaluation.md,22,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:3b,HCI,HCI-Evaluation,トピック,KA Core,3b,仮説の設計,部分,530 で固定候補の検定計画を選ぶ。自由な仮説立案は未評価。,coverage-hci-evaluation.md,23,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:3c,HCI,HCI-Evaluation,トピック,KA Core,3c,研究倫理委員会等の承認,部分,532 で架空の窓口への提出・修正・通知を順にたどる。実際の審査・承認の実施は未評価。,coverage-hci-evaluation.md,24,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:3d,HCI,HCI-Evaluation,トピック,KA Core,3d,研究の事前登録,部分,530 は固定計画を封じて変更を明示。外部登録は未評価。,coverage-hci-evaluation.md,25,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:3e,HCI,HCI-Evaluation,トピック,KA Core,3e,被験者内・被験者間の設計,部分,531・533 で順序と参加者割当の固定例。実験計画全般は未評価。,coverage-hci-evaluation.md,26,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4,HCI,HCI-Evaluation,トピック,KA Core,4,設計による影響,部分,環境・素材・社会・安全・プライバシー・倫理と広い影響は子を参照。全体の評価は未対応。,coverage-hci-evaluation.md,27,原典照合結果は監査記録参照・親子重複候補
+HCI-Evaluation:トピック:KA Core:4a,HCI,HCI-Evaluation,トピック,KA Core,4a,設計の環境への影響,部分,536 は仮定した１台の電力量を比較。ライフサイクルは未評価。,coverage-hci-evaluation.md,28,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4b,HCI,HCI-Evaluation,トピック,KA Core,4b,設計の素材への影響,未照合,製造・素材の影響に関する対応教材を要照合。,coverage-hci-evaluation.md,29,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4c,HCI,HCI-Evaluation,トピック,KA Core,4c,設計の社会への影響,部分,536 は利用条件の固定比較。社会への影響全般は未評価。,coverage-hci-evaluation.md,30,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4d,HCI,HCI-Evaluation,トピック,KA Core,4d,設計のセキュリティへの影響,部分,536 は情報の露出と通信停止を比較。実際の安全性は未評価。,coverage-hci-evaluation.md,31,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4e,HCI,HCI-Evaluation,トピック,KA Core,4e,設計のプライバシーへの影響,部分,536 は公開範囲の固定比較。実際のプライバシー評価は未評価。,coverage-hci-evaluation.md,32,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4f,HCI,HCI-Evaluation,トピック,KA Core,4f,設計の倫理への影響,部分,532・536 は同意や利用条件の固定例。実際の利害関係者による評価は未評価。,coverage-hci-evaluation.md,33,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4g,HCI,HCI-Evaluation,トピック,KA Core,4g,設計の広い影響,部分,536 は４観点の固定比較。全影響の評価は未対応。,coverage-hci-evaluation.md,34,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:Non-core:5,HCI,HCI-Evaluation,トピック,Non-core,5,量的分析の方法と道具,部分,統計道具・可視化・検定・効果量は子を参照。実ツールや一般的な分析は未評価。,coverage-hci-evaluation.md,35,原典照合結果は監査記録参照・親子重複候補
+HCI-Evaluation:トピック:Non-core:5a,HCI,HCI-Evaluation,トピック,Non-core,5a,統計パッケージ,未照合,実ツールに相当する教材を要照合。,coverage-hci-evaluation.md,36,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:Non-core:5b,HCI,HCI-Evaluation,トピック,Non-core,5b,可視化ツール,未照合,調査分析用ツールの対応を要照合。,coverage-hci-evaluation.md,37,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:Non-core:5c,HCI,HCI-Evaluation,トピック,Non-core,5c,各種統計検定,部分,529 は４組の置換検定。原典例の検定と一般の選択は未評価。,coverage-hci-evaluation.md,38,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:Non-core:5d,HCI,HCI-Evaluation,トピック,Non-core,5d,データ探索、視覚分析、効果量,部分,529 は対応する平均差。標準化効果量と一般の視覚分析は未評価。,coverage-hci-evaluation.md,39,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:Non-core:6,HCI,HCI-Evaluation,トピック,Non-core,6,データ管理,部分,保存・共有・機微性・識別可能性は子を参照。実データの管理は未評価。,coverage-hci-evaluation.md,40,原典照合結果は監査記録参照・親子重複候補
+HCI-Evaluation:トピック:Non-core:6a,HCI,HCI-Evaluation,トピック,Non-core,6a,データの保存・共有,部分,532 は架空の同意範囲と保存期限。実データの管理は未評価。,coverage-hci-evaluation.md,41,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:Non-core:6b,HCI,HCI-Evaluation,トピック,Non-core,6b,機微性と識別可能性,部分,532 は元記録と集計候補を比較。再識別や匿名性の保証は未評価。,coverage-hci-evaluation.md,42,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:CS Core:1,HCI,HCI-Evaluation,学習成果,CS Core,1,形成的・総括的評価の違いと役割を論じる,部分,60 の固定例。自由な議論は未評価。,coverage-hci-evaluation.md,48,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:KA Core:2,HCI,HCI-Evaluation,学習成果,KA Core,2,設計段階に合う形成的・総括的評価方法を選ぶ,部分,60・287 の試作品の例。多様な段階や方法は未評価。,coverage-hci-evaluation.md,49,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:KA Core:3,HCI,HCI-Evaluation,学習成果,KA Core,3,質的・量的方法を併用する利点を論じる,部分,535 で発言と時間を比較。自由な議論と一般化は未評価。,coverage-hci-evaluation.md,50,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:KA Core:4,HCI,HCI-Evaluation,学習成果,KA Core,4,設計の広い影響を評価,部分,536 の固定４観点。実際の利害関係者と実測は未評価。,coverage-hci-evaluation.md,51,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:KA Core:5,HCI,HCI-Evaluation,学習成果,KA Core,5,目的・仮説・研究設計を正当化し評価を計画,部分,60 で図の課題・参加者・記録・同意・順序、530・531・533 で固定の仮説と割当を選ぶ。自由な計画作成と倫理審査は未評価。,coverage-hci-evaluation.md,52,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:KA Core:6,HCI,HCI-Evaluation,学習成果,KA Core,6,利用者評価を実施し、研究設計に即した結論を出す,部分,架空の小標本からの限定的な結論。実際の評価実施は未評価。,coverage-hci-evaluation.md,53,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:Non-core:7,HCI,HCI-Evaluation,学習成果,Non-core,7,提示されたデータの有意性を調べる統計検定を選び実施,部分,529 の固定された置換検定。一般的選択と実データは未評価。,coverage-hci-evaluation.md,54,原典照合結果は監査記録参照
+HCI-Evaluation:学習成果:Non-core:8,HCI,HCI-Evaluation,学習成果,Non-core,8,統計計画を含め研究を事前登録,部分,530 の計画と変更明示。実際の登録・計画の記述は未評価。,coverage-hci-evaluation.md,55,原典照合結果は監査記録参照
 HCI-SEP:トピック:CS Core:1,HCI,HCI-SEP,トピック,CS Core,1,ユニバーサル・利用者中心の設計,部分,188・287・359・823 は架空の声と試作。実際の利用者中心設計は未評価。,coverage-hci-sep.md,9,原典照合結果は監査記録参照
 HCI-SEP:トピック:CS Core:2,HCI,HCI-SEP,トピック,CS Core,2,説明責任,部分,359・823 は利用条件を考える固定例。説明責任の制度や実践は未評価。,coverage-hci-sep.md,10,原典照合結果は監査記録参照
 HCI-SEP:トピック:CS Core:3,HCI,HCI-SEP,トピック,CS Core,3,アクセシビリティと包摂的設計,部分,22・117・350・358・359 は文字や読み上げ等の固定例。支援技術と多様な利用者での検証は未評価。,coverage-hci-sep.md,11,原典照合結果は監査記録参照
