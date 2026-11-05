@@ -1,6 +1,14 @@
 {
   "version": 1,
   "units": {
+    "GIT-Animation": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-animation.md",
+      "topics": 23,
+      "outcomes": 6,
+      "scope_sha256": "b1b29d94fe7d009c522b603e69bc5ea7a3c39b5306b82fdec11d0d11c5f90896"
+    },
     "SPD-Web": {
       "date": "2026-11-04",
       "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",

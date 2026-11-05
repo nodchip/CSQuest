@@ -1579,30 +1579,34 @@ FPL-Types:学習成果:Non-core:16,FPL,FPL-Types,学習成果,Non-core,16,保存
 FPL-Types:学習成果:Non-core:17,FPL,FPL-Types,学習成果,Non-core,17,単一化に基づく型推論を実装,部分,764・765で等式整理と適用の代替体験。推論器を実装する能力は評価しない。,coverage-fpl-types.md,67,原典照合結果は監査記録参照
 FPL-Types:学習成果:Non-core:18,FPL,FPL-Types,学習成果,Non-core,18,静的オーバーロードの解決と実行時の振る舞いを説明,部分,581で固定候補と動的ディスパッチ。一般の解決法と自由な説明は未評価。,coverage-fpl-types.md,68,原典照合結果は監査記録参照
 GIT-Animation:トピック:KA Core:1,GIT,GIT-Animation,トピック,KA Core,1,アニメーションの原則,部分,182で一定速度と緩急を比較。他の原則、人物表現や自由な説明は未評価。,coverage-git-animation.md,9,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:2a,GIT,GIT-Animation,トピック,KA Core,2a,２次元・３次元,部分,182〜185で平面の動作を操作。３次元の制作と比較は未評価。,coverage-git-animation.md,10,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:2b,GIT,GIT-Animation,トピック,KA Core,2b,モーショングラフィックス,部分,1254で文字と紋章の位置を設定し、動く祭りの案内を作る。実制作や幅広い用途は未評価。,coverage-git-animation.md,11,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:2c,GIT,GIT-Animation,トピック,KA Core,2c,モーションキャプチャ,部分,635で欠測を含む架空の記録を操作。実収録や制作は未評価。,coverage-git-animation.md,12,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:2d,GIT,GIT-Animation,トピック,KA Core,2d,モーショングラフィックス,部分,1254で動く文字と紋章を操作。原典で 2b と重複するため集計時は重複させない。,coverage-git-animation.md,13,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:2e,GIT,GIT-Animation,トピック,KA Core,2e,ストップモーション,部分,1253で人形を４位置に動かして撮影し、２速度で再生。実際の撮影や映像制作は未評価。,coverage-git-animation.md,14,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:3a,GIT,GIT-Animation,トピック,KA Core,3a,キーフレームの線形・球面線形・スプライン補間,部分,182・633・634で線形、平面角、Catmull–Rom、731で３軸の固定例、回転済みの始点と異なる軸の終点、同一姿勢・180°を球面線形補間。任意の３次元回転の学習操作と補間実装は未評価。,coverage-git-animation.md,15,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:4,GIT,GIT-Animation,トピック,KA Core,4,順運動学・逆運動学,部分,183・184で平面２関節の位置と姿勢を操作。一般の３次元や逆運動学の解法は未評価。,coverage-git-animation.md,16,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:5a,GIT,GIT-Animation,トピック,KA Core,5a,スキニングの捕捉,部分,原典の Capturing の解釈の一例として、1257で観測例に合う重みを比較。原典は詳細を指定しておらず、一般的な捕捉手法の網羅は未確認。,coverage-git-animation.md,17,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:5b,GIT,GIT-Animation,トピック,KA Core,5b,線形ブレンドと双対クォータニオン,部分,185で平面２変換の線形ブレンド。双対クォータニオンと一般のメッシュは未評価。,coverage-git-animation.md,18,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:5c,GIT,GIT-Animation,トピック,KA Core,5c,リギング,部分,1251で固定位置の２本の骨をつなぎ、１点の重みと３姿勢を試す。自由な３次元リグ構築や実ソフトは未評価。,coverage-git-animation.md,19,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:5d,GIT,GIT-Animation,トピック,KA Core,5d,ブレンド形状,部分,1249で基準の２次元の口に笑顔と開口の変化を重み付きで加え、３見本に合わせる。３次元形状の制作や実ソフトは未評価。,coverage-git-animation.md,20,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:5e,GIT,GIT-Animation,トピック,KA Core,5e,姿勢空間変形,部分,1250で１関節の３角度から２次元の補正量を選び、手動と連動を比較。一般の姿勢空間・３次元制作は未評価。,coverage-git-animation.md,21,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:6a,GIT,GIT-Animation,トピック,KA Core,6a,モーションキャプチャの準備と基礎,部分,635で遮蔽と欠測の模型。実際の装置の準備・測定は未評価。,coverage-git-animation.md,22,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:6b,GIT,GIT-Animation,トピック,KA Core,6b,モーションキャプチャのクリップ合成,部分,729で２つの架空の位置記録を重み付きで合成。実際の収録、関節と接地は未評価。,coverage-git-animation.md,23,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:6c,GIT,GIT-Animation,トピック,KA Core,6c,キャプチャとキーフレームの合成,部分,1252で架空の５刻の角度記録に補間したキーフレーム調整を加算・置換して比較。実収録、３次元回転や制作ソフトは未評価。,coverage-git-animation.md,24,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:6d-i,GIT,GIT-Animation,トピック,KA Core,6d-i,一つの歩行を標準とみなさない,部分,1255で架空の３位置列と１・２見本の照合を比較し、不一致だけで良し悪しを決めないことを扱う。実際の多様な歩行データは未評価。,coverage-git-animation.md,25,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:6d-ii,GIT,GIT-Animation,トピック,KA Core,6d-ii,アクセシビリティ,部分,1256で架空の二人の希望を聞き収録計画を調整。実利用者との共同設計や評価は未実施。,coverage-git-animation.md,26,原典照合結果は監査記録参照
-GIT-Animation:トピック:KA Core:6d,GIT,GIT-Animation,トピック,KA Core,6d,倫理的配慮,部分,635で記録の別用途への利用条件を確認。実際の同意や法的判断は未評価。,coverage-git-animation.md,27,原典照合結果は監査記録参照・親子重複候補
-GIT-Animation:学習成果:KA Core:1,GIT,GIT-Animation,学習成果,KA Core,1,モデルとリグで各原則を視覚的に説明,部分,182で緩急を操作。モデル・リグと各原則の説明は未評価。,coverage-git-animation.md,33,原典照合結果は監査記録参照
-GIT-Animation:学習成果:KA Core:2,GIT,GIT-Animation,学習成果,KA Core,2,順運動学で各部の位置・向き,部分,183で平面２関節を操作。任意の角度や３次元は未評価。,coverage-git-animation.md,34,原典照合結果は監査記録参照
-GIT-Animation:学習成果:KA Core:3,GIT,GIT-Animation,学習成果,KA Core,3,位置・向きから逆運動学で関節の向き,部分,184で選択肢から姿勢を探す。一般の解法と先端の向きは未評価。,coverage-git-animation.md,35,原典照合結果は監査記録参照
-GIT-Animation:学習成果:KA Core:4,GIT,GIT-Animation,学習成果,KA Core,4,回転表現のトレードオフ比較,部分,730でオイラー角の特異点とクォータニオン、731で正規化線形補間と球面線形補間を比較。一般の姿勢、精度・性能は未評価。,coverage-git-animation.md,36,原典照合結果は監査記録参照
-GIT-Animation:学習成果:KA Core:5,GIT,GIT-Animation,学習成果,KA Core,5,スプライン補間のプログラム,部分,634で１次元の Catmull–Rom を操作。一般の位置・向きと実際のプログラム作成は評価しない。,coverage-git-animation.md,37,原典照合結果は監査記録参照
-GIT-Animation:学習成果:KA Core:6,GIT,GIT-Animation,学習成果,KA Core,6,既存ソフトで形状・リグ・アニメーションを制作,未照合,実際のソフトでの制作は未評価。,coverage-git-animation.md,38,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:2,GIT,GIT-Animation,トピック,KA Core,2,アニメーションの種類,部分,子項目２a〜２eの固定例を参照。３次元制作や種類全体の比較は未評価。,coverage-git-animation.md,10,原典照合結果は監査記録参照・親子重複候補
+GIT-Animation:トピック:KA Core:2a,GIT,GIT-Animation,トピック,KA Core,2a,２次元・３次元,部分,182〜185で平面の動作を操作。３次元の制作と比較は未評価。,coverage-git-animation.md,11,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:2b,GIT,GIT-Animation,トピック,KA Core,2b,モーショングラフィックス,部分,1254で文字と紋章の位置を設定し、動く祭りの案内を作る。実制作や幅広い用途は未評価。,coverage-git-animation.md,12,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:2c,GIT,GIT-Animation,トピック,KA Core,2c,モーションキャプチャ,部分,635で欠測を含む架空の記録を操作。実収録や制作は未評価。,coverage-git-animation.md,13,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:2d,GIT,GIT-Animation,トピック,KA Core,2d,モーショングラフィックス,部分,1254で動く文字と紋章を操作。原典で 2b と重複するため集計時は重複させない。,coverage-git-animation.md,14,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:2e,GIT,GIT-Animation,トピック,KA Core,2e,ストップモーション,部分,1253で人形を４位置に動かして撮影し、２速度で再生。実際の撮影や映像制作は未評価。,coverage-git-animation.md,15,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:3,GIT,GIT-Animation,トピック,KA Core,3,キーフレームアニメーション,部分,182・633・634・731で補間の固定例を比較。任意の３次元回転や実制作は未評価。,coverage-git-animation.md,16,原典照合結果は監査記録参照・親子重複候補
+GIT-Animation:トピック:KA Core:3a,GIT,GIT-Animation,トピック,KA Core,3a,キーフレームの線形・球面線形・スプライン補間,部分,182・633・634で線形、平面角、Catmull–Rom、731で３軸の固定例、回転済みの始点と異なる軸の終点、同一姿勢・180°を球面線形補間。任意の３次元回転の学習操作と補間実装は未評価。,coverage-git-animation.md,17,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:4,GIT,GIT-Animation,トピック,KA Core,4,順運動学・逆運動学,部分,183・184で平面２関節の位置と姿勢を操作。一般の３次元や逆運動学の解法は未評価。,coverage-git-animation.md,18,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:5,GIT,GIT-Animation,トピック,KA Core,5,スキニングのアルゴリズム,部分,子項目５a〜５eの固定例を参照。双対クォータニオンや一般の３次元制作は未評価。,coverage-git-animation.md,19,原典照合結果は監査記録参照・親子重複候補
+GIT-Animation:トピック:KA Core:5a,GIT,GIT-Animation,トピック,KA Core,5a,スキニングの捕捉,部分,原典の Capturing の解釈の一例として、1257で観測例に合う重みを比較。原典は詳細を指定しておらず、一般的な捕捉手法の網羅は未確認。,coverage-git-animation.md,20,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:5b,GIT,GIT-Animation,トピック,KA Core,5b,線形ブレンドと双対クォータニオン,部分,185で平面２変換の線形ブレンド。双対クォータニオンと一般のメッシュは未評価。,coverage-git-animation.md,21,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:5c,GIT,GIT-Animation,トピック,KA Core,5c,リギング,部分,1251で固定位置の２本の骨をつなぎ、１点の重みと３姿勢を試す。自由な３次元リグ構築や実ソフトは未評価。,coverage-git-animation.md,22,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:5d,GIT,GIT-Animation,トピック,KA Core,5d,ブレンド形状,部分,1249で基準の２次元の口に笑顔と開口の変化を重み付きで加え、３見本に合わせる。３次元形状の制作や実ソフトは未評価。,coverage-git-animation.md,23,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:5e,GIT,GIT-Animation,トピック,KA Core,5e,姿勢空間変形,部分,1250で１関節の３角度から２次元の補正量を選び、手動と連動を比較。一般の姿勢空間・３次元制作は未評価。,coverage-git-animation.md,24,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:6,GIT,GIT-Animation,トピック,KA Core,6,モーションキャプチャ,部分,子項目６a〜６dの架空の固定例を参照。実収録や実利用者との共同設計は未評価。,coverage-git-animation.md,25,原典照合結果は監査記録参照・親子重複候補
+GIT-Animation:トピック:KA Core:6a,GIT,GIT-Animation,トピック,KA Core,6a,モーションキャプチャの準備と基礎,部分,635で遮蔽と欠測の模型。実際の装置の準備・測定は未評価。,coverage-git-animation.md,26,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:6b,GIT,GIT-Animation,トピック,KA Core,6b,モーションキャプチャのクリップ合成,部分,729で２つの架空の位置記録を重み付きで合成。実際の収録、関節と接地は未評価。,coverage-git-animation.md,27,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:6c,GIT,GIT-Animation,トピック,KA Core,6c,キャプチャとキーフレームの合成,部分,1252で架空の５刻の角度記録に補間したキーフレーム調整を加算・置換して比較。実収録、３次元回転や制作ソフトは未評価。,coverage-git-animation.md,28,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:6d-i,GIT,GIT-Animation,トピック,KA Core,6d-i,一つの歩行を標準とみなさない,部分,1255で架空の３位置列と１・２見本の照合を比較し、不一致だけで良し悪しを決めないことを扱う。実際の多様な歩行データは未評価。,coverage-git-animation.md,29,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:6d-ii,GIT,GIT-Animation,トピック,KA Core,6d-ii,アクセシビリティ,部分,1256で架空の二人の希望を聞き収録計画を調整。実利用者との共同設計や評価は未実施。,coverage-git-animation.md,30,原典照合結果は監査記録参照
+GIT-Animation:トピック:KA Core:6d,GIT,GIT-Animation,トピック,KA Core,6d,倫理的配慮,部分,635で記録の別用途への利用条件を確認。実際の同意や法的判断は未評価。,coverage-git-animation.md,31,原典照合結果は監査記録参照・親子重複候補
+GIT-Animation:学習成果:KA Core:1,GIT,GIT-Animation,学習成果,KA Core,1,モデルとリグで各原則を視覚的に説明,部分,182で緩急を操作。モデル・リグと各原則の説明は未評価。,coverage-git-animation.md,37,原典照合結果は監査記録参照
+GIT-Animation:学習成果:KA Core:2,GIT,GIT-Animation,学習成果,KA Core,2,順運動学で各部の位置・向き,部分,183で平面２関節を操作。任意の角度や３次元は未評価。,coverage-git-animation.md,38,原典照合結果は監査記録参照
+GIT-Animation:学習成果:KA Core:3,GIT,GIT-Animation,学習成果,KA Core,3,位置・向きから逆運動学で関節の向き,部分,184で選択肢から姿勢を探す。一般の解法と先端の向きは未評価。,coverage-git-animation.md,39,原典照合結果は監査記録参照
+GIT-Animation:学習成果:KA Core:4,GIT,GIT-Animation,学習成果,KA Core,4,回転表現のトレードオフ比較,部分,730でオイラー角の特異点とクォータニオン、731で正規化線形補間と球面線形補間を比較。一般の姿勢、精度・性能は未評価。,coverage-git-animation.md,40,原典照合結果は監査記録参照
+GIT-Animation:学習成果:KA Core:5,GIT,GIT-Animation,学習成果,KA Core,5,スプライン補間のプログラム,部分,634で１次元の Catmull–Rom を操作。一般の位置・向きと実際のプログラム作成は評価しない。,coverage-git-animation.md,41,原典照合結果は監査記録参照
+GIT-Animation:学習成果:KA Core:6,GIT,GIT-Animation,学習成果,KA Core,6,既存ソフトで単純な有機的形状を構築・リグ付け・アニメーション制作,未照合,実際のソフトでの制作は未評価。,coverage-git-animation.md,42,原典照合結果は監査記録参照
 GIT-Fundamentals:トピック:CS Core:1,GIT,GIT-Fundamentals,トピック,CS Core,1,グラフィックス・対話技術の用途とリスク,部分,用途とリスクの固定例は子項目を参照。一般的な比較は未評価。,coverage-git-fundamentals.md,9,原典照合結果は監査記録参照・親子重複候補
 GIT-Fundamentals:トピック:CS Core:1a,GIT,GIT-Fundamentals,トピック,CS Core,1a,娯楽・事業・科学での用途,部分,83・514で画像標本、641で描画を操作。用途全般の比較は未評価。,coverage-git-fundamentals.md,10,原典照合結果は監査記録参照
 GIT-Fundamentals:トピック:CS Core:1b,GIT,GIT-Fundamentals,トピック,CS Core,1b,知的財産・偽画像・顔認識・プライバシー,部分,399で画像素材の利用条件、397で生成下書きの照合を検討。偽画像・顔認識の一般的リスクは未評価。,coverage-git-fundamentals.md,11,原典照合結果は監査記録参照
