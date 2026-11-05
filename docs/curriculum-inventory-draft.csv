@@ -1425,7 +1425,7 @@ FPL-Run-Time:トピック:Non-core:6,FPL,FPL-Run-Time,トピック,Non-core,6,�
 FPL-Run-Time:トピック:Non-core:7,FPL,FPL-Run-Time,トピック,Non-core,7,引数と非局所変数・静的リンクのメモリ確保の比較,部分,依頼1211で内側の引数と外側の変数、静的リンクと呼出し元の鎖を比較。実配置・再帰・自由な説明は未評価。,coverage-fpl-run-time.md,15,原典照合結果は監査記録参照
 FPL-Run-Time:トピック:Non-core:8,FPL,FPL-Run-Time,トピック,Non-core,8,手動・回収・参照計数・リージョン,部分,201・202で到達可能性と参照計数の循環、785・786で手動解放と再利用。コピー方式や実際の処理系は未評価。,coverage-fpl-run-time.md,16,原典照合結果は監査記録参照
 FPL-Run-Time:トピック:Non-core:9,FPL,FPL-Run-Time,トピック,Non-core,9,JIT・動的再コンパイル,部分,312で固定回数後の翻訳と費用を比較。動的再コンパイルと実測は未評価。,coverage-fpl-run-time.md,17,原典照合結果は監査記録参照
-FPL-Run-Time:トピック:Non-core:10,FPL,FPL-Run-Time,トピック,Non-core,10,初期化等の OS とのインターフェース,未照合,対応教材を要照合。,coverage-fpl-run-time.md,18,原典照合結果は監査記録参照
+FPL-Run-Time:トピック:Non-core:10,FPL,FPL-Run-Time,トピック,Non-core,10,初期化等の OS とのインターフェース,部分,382で OS からの起動情報、実行時の初期化と終了を操作。実装ごとの詳細は未評価。,coverage-fpl-run-time.md,18,原典照合結果は監査記録参照
 FPL-Run-Time:トピック:Non-core:11,FPL,FPL-Run-Time,トピック,Non-core,11,言語間相互運用・引数とデータ表現,部分,831で共通形式の数値交換。実言語の引数渡しや呼出し規約は未評価。,coverage-fpl-run-time.md,19,原典照合結果は監査記録参照・親子重複候補
 FPL-Run-Time:トピック:Non-core:11a,FPL,FPL-Run-Time,トピック,Non-core,11a,バイト順,部分,460・831で２バイトの順序を比較。実機全般は未評価。,coverage-fpl-run-time.md,20,原典照合結果は監査記録参照
 FPL-Run-Time:トピック:Non-core:11b,FPL,FPL-Run-Time,トピック,Non-core,11b,配列等の複合データ配置,部分,173で行優先・列優先の固定例。言語間交換は未評価。,coverage-fpl-run-time.md,21,原典照合結果は監査記録参照

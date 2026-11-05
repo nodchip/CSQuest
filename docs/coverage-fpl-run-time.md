@@ -15,7 +15,7 @@
 | 7 | Non-core | 引数と非局所変数・静的リンクのメモリ確保の比較 | 部分 | 依頼1211で内側の引数と外側の変数、静的リンクと呼出し元の鎖を比較。実配置・再帰・自由な説明は未評価。 |
 | 8 | Non-core | 手動・回収・参照計数・リージョン | 部分 | 201・202で到達可能性と参照計数の循環、785・786で手動解放と再利用。コピー方式や実際の処理系は未評価。 |
 | 9 | Non-core | JIT・動的再コンパイル | 部分 | 312で固定回数後の翻訳と費用を比較。動的再コンパイルと実測は未評価。 |
-| 10 | Non-core | 初期化等の OS とのインターフェース | 未照合 | 対応教材を要照合。 |
+| 10 | Non-core | 初期化等の OS とのインターフェース | 部分 | 382で OS からの起動情報、実行時の初期化と終了を操作。実装ごとの詳細は未評価。 |
 | 11 | Non-core | 言語間相互運用・引数とデータ表現 | 部分 | 831で共通形式の数値交換。実言語の引数渡しや呼出し規約は未評価。 |
 | 11a | Non-core | バイト順 | 部分 | 460・831で２バイトの順序を比較。実機全般は未評価。 |
 | 11b | Non-core | 配列等の複合データ配置 | 部分 | 173で行優先・列優先の固定例。言語間交換は未評価。 |
@@ -43,3 +43,5 @@
 依頼1207は [HTML Standard の iframe sandbox](https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox)を参考に、固定された同一サイトの srcdoc 内コードについて、不透明オリジンと同一オリジン許可時の親文書アクセスをブラウザで実測する。両者ともスクリプトを許し、後者は信頼済みの固定実験だけに限定。外部コードの読込みはしない。`tests/sandbox-origin-lab.test.js` は観測の記録を検査し、実際の制限はブラウザで検査する。全 API や環境全体の安全性は未評価。
 
 依頼1211は [Princeton の静的リンクと呼出し枠](https://www.cs.princeton.edu/courses/archive/spring15/cos320/lectures/05-ActivationRecords-3x1.pdf)を参考に、直接と仲介経由の呼出しで、内側の引数と非局所変数の探索を比較する。呼出し元の鎖による名前探索は動的スコープの比較用模型。`tests/static-link-lab.test.js` は４経路、誤経路と復元を検査する。再帰・クロージャや実メモリ配置は未評価。
+
+依頼382の追加例では、OS がプログラムと引数・環境を用意し、実行時の初期化後にアプリが値を使い終了を返す。２条件を扱う固定模型で、動的リンクや実装ごとの起動・終了処理の詳細は扱わない。参考：[GNU C Library の環境](https://sourceware.org/glibc/manual/latest/html_node/Environment-Variables.html)、[Linux execve](https://man7.org/linux/man-pages/man2/execve.2.html)。
