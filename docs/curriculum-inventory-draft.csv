@@ -3540,7 +3540,7 @@ SPD-Embedded:学習成果:KA Core:6,SPD,SPD-Embedded,学習成果,KA Core,6,要�
 SPD-Embedded:学習成果:KA Core:7,SPD,SPD-Embedded,学習成果,KA Core,7,ハードウェアとやりとりし制御するソフトウェアの設計・開発,部分,依頼219の固定された読み取り・駆動操作のみ。実際のソフトウェアの設計・開発は直接練習・評価しない,coverage-spd-embedded.md,50,原典照合結果は監査記録参照
 SPD-Embedded:学習成果:KA Core:8,SPD,SPD-Embedded,学習成果,KA Core,8,リアルタイムシステムの設計手法,部分,依頼133・134で期限と優先度継承、420で２種類の周期待機の固定例。一般の設計手法は未対応,coverage-spd-embedded.md,51,原典照合結果は監査記録参照
 SPD-Embedded:学習成果:KA Core:9,SPD,SPD-Embedded,学習成果,KA Core,9,リアルタイムスケジューリングとスケジュール可能性の評価,部分,依頼133で２仕事の３刻、757で周期４・６の仕事を12刻にわたり比較。一般の到着や実行時間での解析は未評価,coverage-spd-embedded.md,52,原典照合結果は監査記録参照
-SPD-Embedded:学習成果:KA Core:10,SPD,SPD-Embedded,学習成果,KA Core,10,時間制約・性質の形式仕様と検証の評価,未照合,依頼133は固定した期限を比較し、439は時間の上限を持たない性質を記録上で検査する。時間制約を形式仕様として表し検証する操作は未確認,coverage-spd-embedded.md,53,原典照合結果は監査記録参照
+SPD-Embedded:学習成果:KA Core:10,SPD,SPD-Embedded,学習成果,KA Core,10,時間制約・性質の形式仕様と検証の評価,部分,依頼439で通知から２刻以内の応答という固定仕様を有限記録で判定。記録１件の判定であり、仕様の自由な構築、全実行の検証や実機の保証は未対応,coverage-spd-embedded.md,53,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:1a,SPD,SPD-Game,トピック,KA Core,1a,ゲームプラットフォームの発展,未照合,個別の歴史と発展の教材を確認する必要がある。,coverage-spd-game.md,9,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:1b,SPD,SPD-Game,トピック,KA Core,1b,代表的なゲームプラットフォーム,部分,117で携帯・据置・ブラウザー向けの架空の提供方法を比較。実製品や配信方式全般は未評価。,coverage-spd-game.md,10,原典照合結果は監査記録参照
 SPD-Game:トピック:KA Core:1c,SPD,SPD-Game,トピック,KA Core,1c,プラットフォームの特性・制約,部分,117で通信・導入・操作の固定条件を比較。実機の性能、資源や一般の制約は未評価。,coverage-spd-game.md,11,原典照合結果は監査記録参照
