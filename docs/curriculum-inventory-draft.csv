@@ -3609,7 +3609,7 @@ SPD-Mobile:トピック:Non-core:5b,SPD,SPD-Mobile,トピック,Non-core,5b,端�
 SPD-Mobile:トピック:Non-core:5c,SPD,SPD-Mobile,トピック,Non-core,5c,モバイルと Web の利用体験の違い,部分,1329で Web 版と端末向け版の導入・事前保存・圏外の固定例を比較。実端末や一般的な利用体験は未評価。,coverage-spd-mobile.md,20,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:5d,SPD,SPD-Mobile,トピック,Non-core,5d,電力と性能のトレードオフ,部分,356で架空の資源と遅れを比較。実端末の電力・性能は未評価。,coverage-spd-mobile.md,21,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:6a,SPD,SPD-Mobile,トピック,Non-core,6a,位置情報を使うアプリ,部分,393で位置の精度・時間・手動代替を選ぶ模型。実位置やアプリは未評価。,coverage-spd-mobile.md,22,原典照合結果は監査記録参照
-SPD-Mobile:トピック:Non-core:6b,SPD,SPD-Mobile,トピック,Non-core,6b,センサーを使う計算,部分,219〜222で測定・量子化等の固定模型。モバイル実センサーは未評価。,coverage-spd-mobile.md,23,原典照合結果は監査記録参照
+SPD-Mobile:トピック:Non-core:6b,SPD,SPD-Mobile,トピック,Non-core,6b,センサーを使う計算,部分,219〜222で測定・量子化等、1325で仮想の明るさ入力の固定模型。モバイル実センサーは未評価。,coverage-spd-mobile.md,23,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:6c,SPD,SPD-Mobile,トピック,Non-core,6c,電話と即時メッセージ,部分,1327で保留・受付・配達・既読通知を操作。電話・実通信は未評価。,coverage-spd-mobile.md,24,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:6d,SPD,SPD-Mobile,トピック,Non-core,6d,拡張現実,部分,217・218で重ね合わせの固定模型。実モバイル端末は未評価。,coverage-spd-mobile.md,25,原典照合結果は監査記録参照
 SPD-Mobile:トピック:Non-core:7,SPD,SPD-Mobile,トピック,Non-core,7,仕様と試験,部分,354で二つの再送方針を比較。実アプリの試験は未評価。,coverage-spd-mobile.md,26,原典照合結果は監査記録参照

@@ -20,7 +20,7 @@
 | 5c | Non-core | モバイルと Web の利用体験の違い | 部分 | 1329で Web 版と端末向け版の導入・事前保存・圏外の固定例を比較。実端末や一般的な利用体験は未評価。 |
 | 5d | Non-core | 電力と性能のトレードオフ | 部分 | 356で架空の資源と遅れを比較。実端末の電力・性能は未評価。 |
 | 6a | Non-core | 位置情報を使うアプリ | 部分 | 393で位置の精度・時間・手動代替を選ぶ模型。実位置やアプリは未評価。 |
-| 6b | Non-core | センサーを使う計算 | 部分 | 219〜222で測定・量子化等の固定模型。モバイル実センサーは未評価。 |
+| 6b | Non-core | センサーを使う計算 | 部分 | 219〜222で測定・量子化等、1325で仮想の明るさ入力の固定模型。モバイル実センサーは未評価。 |
 | 6c | Non-core | 電話と即時メッセージ | 部分 | 1327で保留・受付・配達・既読通知を操作。電話・実通信は未評価。 |
 | 6d | Non-core | 拡張現実 | 部分 | 217・218で重ね合わせの固定模型。実モバイル端末は未評価。 |
 | 7 | Non-core | 仕様と試験 | 部分 | 354で二つの再送方針を比較。実アプリの試験は未評価。 |
@@ -60,3 +60,5 @@
 依頼1329は [MDN の Web アプリのインストール](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable) と [キャッシュ](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching) を参考に、URL から開く Web 版と地図を同梱する端末向け版の固定例を操作する。導入や圏外利用は方式名だけで決まらず、設計と環境に依存する。実端末や実通信、全機能の比較ではない。`tests/mobile-web-access.test.js` は導入と保存の条件および途中記録を検査する。
 
 依頼1325の工房では Android 向けに Kotlin・Android Studio、iOS 向けに Swift・Xcode を指定する２例について、ビルド、仮想端末と実機確認の計画を進める。これは指定に沿う模型で、他の言語や道具を排除しない。実コードの作成・実環境の起動・実機試験は行わず、元の依頼の達成条件には含めない。参考：[Android Studio](https://developer.android.com/studio/)、[Apple の iOS 開発](https://developer.apple.com/ios/get-started/)。
+
+依頼1325の仮想入力では、架空の値０・12と閾値10で「暗い」「明るい」を予想し、結果を比較する。実照度や実端末、エミュレーターを使わない。実際の仮想センサーは入力を模擬できるが、実センサーの精度や実環境はこの模型から評価できない。参考：[Android のセンサーと仮想入力](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview)。元の依頼の達成条件には含めない。
