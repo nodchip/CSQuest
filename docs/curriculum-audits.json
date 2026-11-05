@@ -1,6 +1,14 @@
 {
   "version": 1,
   "units": {
+    "GIT-Image": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-image.md",
+      "topics": 24,
+      "outcomes": 5,
+      "scope_sha256": "28559e2b97a5c3c28bcea8e475039e8c067e37c0e8e68c67df2f650bf394a9d0"
+    },
     "GIT-Immersion": {
       "date": "2026-11-06",
       "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
