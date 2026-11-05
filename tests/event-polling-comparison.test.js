@@ -16,3 +16,14 @@ test('comparison restores independently and old event-world drafts migrate',()=>
  const c=createEventComparison();c.steps['event:pulse']=2;c.answer='assumptions';const r=restoreEventComparison(c);r.steps['event:pulse']=3;assert.equal(c.steps['event:pulse'],2);
  c.steps['poll:held']=4;assert.throws(()=>restoreEventComparison(c));
 });
+test('latched changes survive until polling and late registration does not recover a past event',()=>{
+ for(const signal of ['pulse','held']){
+  const saved=eventComparisonState('pollLatch',signal,2),read=eventComparisonState('pollLatch',signal,3);
+  assert.equal(saved.latched,true);assert.equal(read.latched,false);assert.equal(read.observed,true);assert.equal(read.checks,2);
+  const lost=eventComparisonState('eventLate',signal,3);assert.equal(lost.observed,false);assert.equal(lost.queued,false);
+ }
+});
+test('older comparison drafts keep their four trials and gain the new modes',()=>{
+ const c=createEventComparison();c.steps['event:pulse']=3;for(const key of Object.keys(c.steps))if(key.startsWith('pollLatch:')||key.startsWith('eventLate:'))delete c.steps[key];
+ const restored=restoreEventComparison(c);assert.equal(restored.steps['event:pulse'],3);assert.equal(restored.steps['pollLatch:pulse'],0);assert.equal(restored.steps['eventLate:held'],0);
+});

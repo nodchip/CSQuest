@@ -31,4 +31,4 @@
 
 依頼1102は [MDN のイベント](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)、[ポインターの押下](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event) と [Node.js のイベント処理](https://nodejs.org/learn/asynchronous-work/the-nodejs-event-emitter)を参考に、案内板・携帯地図・人形・受付で１つの係を登録・解除し２つの知らせを処理する。処理時に登録を確認する単一 FIFO の仮定は教材独自で、各 API・ジェスチャー・ロボットやサーバーの挙動を再現しない。`tests/event-worlds.test.js` は待機中の解除、FIFO、誤登録と復元を検査する。
 
-依頼1102の比較は、[Linux カーネルの入力イベント](https://docs.kernel.org/input/event-codes.html)に見られる状態変化の通知を手がかりにした固定模型。状態を時刻０・２で読む場合と、時刻１の変化を必ず保存して時刻２に処理する場合を比較する。どちらも特定の言語や実 API の挙動全体を表さず、状態確認での履歴保存や通知の損失もあり得る。`tests/event-polling-comparison.test.js` は４条件と途中復元を検査する。
+依頼1102の比較は、[Linux カーネルの入力イベント](https://docs.kernel.org/input/event-codes.html)に見られる状態変化の通知を手がかりにした固定模型。時刻０・２に現在の状態を読む場合、変化を控えて後で読む場合、通知時に係が登録済みの場合、通知後に登録する場合を短い信号と持続する信号で比べる。控えは時刻１に立って時刻２に読まれ、通知は変化時のみ発生すると仮定する。特定の言語や実 API の挙動全体を表さず、実際には登録時に状態を確認する方式や、通知の損失もあり得る。`tests/event-polling-comparison.test.js` は８条件と途中復元を検査する。
