@@ -736,6 +736,14 @@
       "topics": 9,
       "outcomes": 4,
       "scope_sha256": "1771d11b47084df3de7eae887a234f9639fc1297538c6bbb562ad40bb13cfc95"
+    },
+    "FPL-Scripting": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-scripting.md",
+      "topics": 9,
+      "outcomes": 2,
+      "scope_sha256": "7cc84ec3ab2df8e6556d5f8ef7564a6c6f30d33712e42a9c12e4d38b38d6e2a9"
     }
   }
 }

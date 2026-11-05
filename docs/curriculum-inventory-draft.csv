@@ -1438,17 +1438,17 @@ FPL-Run-Time:学習成果:Non-core:4,FPL,FPL-Run-Time,学習成果,Non-core,4,�
 FPL-Run-Time:学習成果:Non-core:5,FPL,FPL-Run-Time,学習成果,Non-core,5,JIT・動的再コンパイルの利点・欠点,部分,312で固定費用と回数を比較。実際の最適化や自由な議論は未評価。,coverage-fpl-run-time.md,33,原典照合結果は監査記録参照
 FPL-Run-Time:学習成果:Non-core:6,FPL,FPL-Run-Time,学習成果,Non-core,6,移動コードのサンドボックス,部分,依頼1207で固定コードの実行と親文書へのアクセス制限を比較。外部コードの取得・安全性の保証は未評価。,coverage-fpl-run-time.md,34,原典照合結果は監査記録参照
 FPL-Run-Time:学習成果:Non-core:7,FPL,FPL-Run-Time,学習成果,Non-core,7,現代の言語実行時システムのサービス,部分,201・202・312・785の個別模型。サービスの全体像や一般的な特定は未評価。,coverage-fpl-run-time.md,35,原典照合結果は監査記録参照
-FPL-Scripting:トピック:未記載:1,FPL,FPL-Scripting,トピック,未記載,1,エラー・例外処理,部分,依頼151で失敗と空入力、152で終了状態を比較。一般の例外処理は未評価。,coverage-fpl-scripting.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:2,FPL,FPL-Scripting,トピック,未記載,2,パイプ,部分,151で固定の処理を連結し、152で出口の変更順と３係の pipefail を比較。実際の並行実行やファイル書込みは未評価。,coverage-fpl-scripting.md,10,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:3・3a,FPL,FPL-Scripting,トピック,未記載,3・3a,システムコマンドと OS との接点,部分,151で仮想の読込み・保存と権限による拒否を操作。実際のコマンドやシステム呼出しは未評価。,coverage-fpl-scripting.md,11,原典照合結果は監査記録参照・番号を要確認・区分を要確認
-FPL-Scripting:トピック:未記載:4,FPL,FPL-Scripting,トピック,未記載,4,環境変数,部分,153で子の起動時の継承、変更と一回だけの値を操作。実シェルの構文や環境全体は未評価。,coverage-fpl-scripting.md,12,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:5,FPL,FPL-Scripting,トピック,未記載,5,ファイルの抽象と演算,部分,151で読込みと固定の置換書込み・拒否を比較。実ファイルや各種操作は未評価。,coverage-fpl-scripting.md,13,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:6,FPL,FPL-Scripting,トピック,未記載,6,配列・リストなどのデータ構造,部分,151で配列の位置を順にたどり、赤い札を重複を保って抽出。シェルの構文や一般のデータ構造の操作は未評価。,coverage-fpl-scripting.md,14,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:7,FPL,FPL-Scripting,トピック,未記載,7,正規表現,部分,154で開始・終了、文字条件と繰返しの固定例。方言や一般のパターンは未評価。,coverage-fpl-scripting.md,15,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:8,FPL,FPL-Scripting,トピック,未記載,8,プログラムとプロセス,部分,153で子の起動時の環境を比較。一般のプロセス生成・管理は未評価。,coverage-fpl-scripting.md,16,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:トピック:未記載:9,FPL,FPL-Scripting,トピック,未記載,9,ワークフロー,部分,151で複数の処理を組合せ、３入力に繰り返して失敗の報告を比較。実際の自動化や多様なワークフローは未評価。,coverage-fpl-scripting.md,17,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:学習成果:未記載:1,FPL,FPL-Scripting,学習成果,未記載,1,システムの仕事を自動化するスクリプトを作成・実行,部分,151で処理の順序を組み立てる代替体験。実システムの操作、スクリプトの記述と実行は直接評価しない。,coverage-fpl-scripting.md,23,原典照合結果は監査記録参照・区分を要確認
-FPL-Scripting:学習成果:未記載:2,FPL,FPL-Scripting,学習成果,未記載,2,スクリプトを用いて様々なテキスト処理を解く,部分,151で固定の選択・整列・件数、154で文字パターンを操作。実言語による多様な処理は評価しない。,coverage-fpl-scripting.md,24,原典照合結果は監査記録参照・区分を要確認
+FPL-Scripting:トピック:CS Core:1,FPL,FPL-Scripting,トピック,CS Core,1,エラー・例外処理,部分,依頼151で失敗と空入力、152で終了状態を比較。一般の例外処理は未評価。,coverage-fpl-scripting.md,9,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:2,FPL,FPL-Scripting,トピック,CS Core,2,パイプ,部分,151で固定の処理を連結し、152で出口の変更順と３係の pipefail を比較。実際の並行実行やファイル書込みは未評価。,coverage-fpl-scripting.md,10,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:3,FPL,FPL-Scripting,トピック,CS Core,3,システムコマンドと OS との接点,部分,151で仮想の読込み・保存と権限による拒否を操作。実際のコマンドやシステム呼出しは未評価。,coverage-fpl-scripting.md,11,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:4,FPL,FPL-Scripting,トピック,CS Core,4,環境変数,部分,153で子の起動時の継承、変更と一回だけの値を操作。実シェルの構文や環境全体は未評価。,coverage-fpl-scripting.md,12,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:5,FPL,FPL-Scripting,トピック,CS Core,5,ファイルの抽象と演算,部分,151で読込みと固定の置換書込み・拒否を比較。実ファイルや各種操作は未評価。,coverage-fpl-scripting.md,13,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:6,FPL,FPL-Scripting,トピック,CS Core,6,配列・リストなどのデータ構造,部分,151で配列の位置を順にたどり、赤い札を重複を保って抽出。シェルの構文や一般のデータ構造の操作は未評価。,coverage-fpl-scripting.md,14,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:7,FPL,FPL-Scripting,トピック,CS Core,7,正規表現,部分,154で開始・終了、文字条件と繰返しの固定例。方言や一般のパターンは未評価。,coverage-fpl-scripting.md,15,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:8,FPL,FPL-Scripting,トピック,CS Core,8,プログラムとプロセス,部分,153で子の起動時の環境を比較。一般のプロセス生成・管理は未評価。,coverage-fpl-scripting.md,16,原典照合結果は監査記録参照
+FPL-Scripting:トピック:CS Core:9,FPL,FPL-Scripting,トピック,CS Core,9,ワークフロー,部分,151で複数の処理を組合せ、３入力に繰り返して失敗の報告を比較。実際の自動化や多様なワークフローは未評価。,coverage-fpl-scripting.md,17,原典照合結果は監査記録参照
+FPL-Scripting:学習成果:CS Core:1,FPL,FPL-Scripting,学習成果,CS Core,1,システムの仕事を自動化するスクリプトを作成・実行,部分,151で処理の順序を組み立てる代替体験。実システムの操作、スクリプトの記述と実行は直接評価しない。,coverage-fpl-scripting.md,23,原典照合結果は監査記録参照
+FPL-Scripting:学習成果:CS Core:2,FPL,FPL-Scripting,学習成果,CS Core,2,スクリプトを用いて様々なテキスト処理を解く,部分,151で固定の選択・整列・件数、154で文字パターンを操作。実言語による多様な処理は評価しない。,coverage-fpl-scripting.md,24,原典照合結果は監査記録参照
 FPL-Semantics:トピック:Non-core:1,FPL,FPL-Semantics,トピック,Non-core,1,抽象構文木と具体構文,部分,75で固定の算術式の木を組む。具体構文との一般的な比較は未評価。,coverage-fpl-semantics.md,9,原典照合結果は監査記録参照
 FPL-Semantics:トピック:Non-core:2,FPL,FPL-Semantics,トピック,Non-core,2,高水準の表現の定義・走査・変更,部分,75で固定の木を構築。一般の走査や変更は未評価。,coverage-fpl-semantics.md,10,原典照合結果は監査記録参照
 FPL-Semantics:トピック:Non-core:3,FPL,FPL-Semantics,トピック,Non-core,3,スコープと束縛の解決,部分,308で静的・動的スコープ、791で名前と場所の対応の固定例。実言語の名前解決は未評価。,coverage-fpl-semantics.md,11,原典照合結果は監査記録参照

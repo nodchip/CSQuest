@@ -624,6 +624,17 @@
         "src/app.js": "1f10c1228190e89c57a630639ef36445e7135b9c0453dadfc41e9cabc11b84ca",
         "tests/event-worlds.test.js": "5c7a87e01798df9ec1a5ff6b6deb4f00bd585a4dff115ca44111ae2efa8cdf0c"
       }
+    },
+    "FPL-Scripting:トピック:CS Core:4": {
+      "date": "2026-11-05",
+      "status": "部分",
+      "document": "docs/curriculum-assessment-fpl-script-environment.md",
+      "row_sha256": "72d3853fc585e9a469d837c92086bffbac0cffa7a0819c27237a26f6e88e7304",
+      "files": {
+        "src/environment.js": "db8a4a234459b2e1047b49d31813e04b3d8a8e515c7a3887aee6752f9e561dc3",
+        "src/app.js": "1f10c1228190e89c57a630639ef36445e7135b9c0453dadfc41e9cabc11b84ca",
+        "tests/environment.test.js": "408775cce2893dc05a5ded94c92b88346a59442c5344604d77b481fd1ef5a149"
+      }
     }
   }
 }
