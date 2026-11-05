@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {copiesCreate,copiesAct,copiesReplay,copiesDone,copiesRestore} from '../src/cloud-copies.js';
+import {cloudCreate,cloudRestore} from '../src/cloud-responsibility.js';
+test('deleting an original leaves its backup and allows restoration, then both can be removed in this model',()=>{const q=copiesCreate();let s=copiesAct(q,'delete-primary');assert.equal(s.primary,false);assert.equal(s.backup,true);assert(!copiesDone(q));s=copiesAct(q,'restore');assert(s.primary&&s.backup&&s.sawRestore);copiesAct(q,'delete-backup');s=copiesAct(q,'delete-primary');assert(!s.primary&&!s.backup&&copiesDone(q));assert.throws(()=>copiesAct(q,'restore'));assert.deepEqual(copiesRestore(q),q);});
+test('invalid operations do not change history and old drafts gain a fresh exercise',()=>{const q=copiesCreate();assert.throws(()=>copiesAct(q,'restore'));assert.deepEqual(q.history,[]);copiesAct(q,'delete-primary');copiesAct(q,'delete-backup');assert(!copiesDone(q));assert.throws(()=>copiesReplay(['delete-backup','delete-backup']));const {copies,...legacy}=cloudCreate();assert.deepEqual(cloudRestore(legacy),cloudCreate());});
+test('repeated restoration keeps the meaningful observations and a bounded history',()=>{const q=copiesCreate();for(let i=0;i<200;i++){copiesAct(q,'delete-primary');copiesAct(q,'restore');}assert(q.history.length<80);const restored=copiesRestore(q);copiesAct(restored,'delete-backup');copiesAct(restored,'delete-primary');assert(copiesDone(restored));});
