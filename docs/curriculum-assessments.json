@@ -49,7 +49,7 @@
       "files": {
         "src/transport-needs.js": "57c737c60cf6797942d7a97a75d641c14361360788a64ba187f8d1d1a63daff4",
         "src/link-choice.js": "f8af061dafa25b524ede06fce2792f3c07acf10a58472a00f871773a1eb246af",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/transport-needs.test.js": "38c352ce5c2b7bf87e9d7b14260ecb420abe827c82f254e586547f810c216810",
         "tests/link-choice.test.js": "025005acfeee888b4747c9070a877274038f34c51a7c41ace71fa544d7d92794"
       }
@@ -62,7 +62,7 @@
       "files": {
         "src/transport-needs.js": "57c737c60cf6797942d7a97a75d641c14361360788a64ba187f8d1d1a63daff4",
         "src/link-choice.js": "f8af061dafa25b524ede06fce2792f3c07acf10a58472a00f871773a1eb246af",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/transport-needs.test.js": "38c352ce5c2b7bf87e9d7b14260ecb420abe827c82f254e586547f810c216810",
         "tests/link-choice.test.js": "025005acfeee888b4747c9070a877274038f34c51a7c41ace71fa544d7d92794"
       }
@@ -75,7 +75,7 @@
       "files": {
         "src/validation-boundary.js": "9b9512c326c97dc41492eb127b0f6d1ccd11e8d586bd0f7a5d38edcd1d144c69",
         "src/acid-workshop.js": "c2d6303289d45629abe482994d645a5bacbe8b734dec1cb97676dffb425fd235",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/validation-boundary.test.js": "162da09a99682d0bdb936fc111eff69a1613ef40b5130950eef16e63342d72cb",
         "tests/acid-workshop.test.js": "c622c03e23d4417430d1817d800534a534483c294a7faadf1ac549d8756d2890"
       }
@@ -86,7 +86,7 @@
       "document": "docs/curriculum-assessment-dm-unstructured-overview.md",
       "row_sha256": "ed3fd4ec53c3d3a658b398277f7eaa92234f27b423e14e515dc475fb58c247e6",
       "files": {
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "src/nosql-models.js": "47617c746b8faa207613bbbdc583c1f80a3565a0152aae551a9e51dcfc21f2f9",
         "src/data-formats.js": "2262a31be5849eaac86fc3e05097913e5cd96d67bdb876e5db2d68b0ed200650",
         "src/document-schema.js": "309277d61a120def08e8e018f5995472f1797e301decd1fa137ce47554eaf7a3",
@@ -102,7 +102,7 @@
       "row_sha256": "4e48b8e1f20f773b0f946d00b844361599b74352e0f41cb2845dc502fabd9773",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -113,7 +113,7 @@
       "row_sha256": "23677bdfed8b75f8c78cda62f3947cc33169c3914a092e809b485fa138527647",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -124,7 +124,7 @@
       "row_sha256": "7eefff6ff335d3da0d733d0e9765067e88877ed499d7289f6b502be30da37747",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -135,7 +135,7 @@
       "row_sha256": "b24d4ac726391a570df9d0cf04d3ed9fab23d45d10f30e983ee4f05bb1388dd4",
       "files": {
         "src/delay-tolerant.js": "7b2533858cfaf60253228b0251caff12c7c32869a9deb775c38208f86985aaf9",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/delay-tolerant.test.js": "88abdb63950dadb93a4c587710598fe916b70c261e6f3f5521b9e7a9a30e16f6"
       }
     },
@@ -146,7 +146,7 @@
       "row_sha256": "784ebf450bdeb542117032843983dd6d72cdbb6d5c87a0ebd0db5447c00cb863",
       "files": {
         "src/cellular-registration.js": "6368e169f9fb41fac5da4009a80d1c9d6aae78d34d3a27183c847894097d87ba",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/cellular-registration.test.js": "e3f608ee319a2a3c33526f1608cbf4c03265357cef257a8ccaf1be0f8d911ad8"
       }
     },
@@ -157,7 +157,7 @@
       "row_sha256": "93fbe15c1560790bc31224a4836828cc546b23642291f9968bf6b02e8cb5f8eb",
       "files": {
         "src/cellular-registration.js": "6368e169f9fb41fac5da4009a80d1c9d6aae78d34d3a27183c847894097d87ba",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/cellular-registration.test.js": "e3f608ee319a2a3c33526f1608cbf4c03265357cef257a8ccaf1be0f8d911ad8"
       }
     },
@@ -168,7 +168,7 @@
       "row_sha256": "c5d7c6b19aa529be972639b07529bf6310571ce58b1bc6b776d6d5399775e7c3",
       "files": {
         "src/wireless-roaming.js": "978c981078b354bd5f5eb8d7f678297ab5ec9acc2bebf7241510d1a692bcafac",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/wireless-roaming.test.js": "796ec674475adf4c1141a316c2f0a4ccba2e54dd3d812f3da8f11647b76db507"
       }
     },
@@ -179,7 +179,7 @@
       "row_sha256": "b565bdc24480dd8f347eb38c3845e24a352c3a78af3f015a76a39c1f00dee88a",
       "files": {
         "src/wireless-roaming.js": "978c981078b354bd5f5eb8d7f678297ab5ec9acc2bebf7241510d1a692bcafac",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/wireless-roaming.test.js": "796ec674475adf4c1141a316c2f0a4ccba2e54dd3d812f3da8f11647b76db507"
       }
     },
@@ -192,7 +192,7 @@
         "src/firewall-state.js": "0e6ad1195e1ff58ae6716dcab2f2047ec86f2a0f2b220908ff43233dde628ed0",
         "src/intrusion-threshold.js": "f89af4639de42140815014220f3b4eb7dcff64bc4a381ba6944f8fe864d19c43",
         "src/signature-lab.js": "75b9c671697ba981a9f059b58123fed911d9fecf6b019c58d04c9e0f74c035fd",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/firewall-state.test.js": "b77d388a2e0f162895d39f584a3ff898e0d156bb774dfe06f654c0425ae7085b",
         "tests/intrusion-threshold.test.js": "217a9a3980cc96a64f70effc18b875026efbde075fab40d2688bc6215228f775",
         "tests/signature-lab.test.js": "ceb28b6a9d70177294963911813733d933ae53d2c1306135d3086f4ca8acc094"
@@ -205,10 +205,10 @@
       "row_sha256": "73a79746c92fd83aacea37918f261d9d8295fc1cfa2c0fe9dfb84c19545de2a3",
       "files": {
         "src/forwarding.js": "84811ee5e3c0a009149e9e081522f4e621547bba61ee2ec8146e822b203ed6d4",
-        "src/prefix.js": "9d3fd6182fd2824534d77aa2de008ab354eb0f52f8fc002276cf5d119484ee67",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/prefix.js": "27b5708b2c877402bfa38d85c54dbe77b343f1852182eefdd3bb392bee2bfc31",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/forwarding.test.js": "563ce5e477703fa6d36f8a8ccd0befca972c2dc28ddecf391164915084bbc7d4",
-        "tests/prefix.test.js": "785555eb2bc31d4b2a1ac46b6a5581a5f80dc0cbf1d31d41601817585b64629c"
+        "tests/prefix.test.js": "88951571070ce30d4378ffe5d40d45ae18015c5463efd25f3466631a106a81c0"
       }
     },
     "NC-Routing:学習成果:KA Core:2": {
@@ -218,10 +218,10 @@
       "row_sha256": "23dd48fe723638ff17f028a60dda5c5a81c5a2720d3de6a22794ec525ba8cc96",
       "files": {
         "src/forwarding.js": "84811ee5e3c0a009149e9e081522f4e621547bba61ee2ec8146e822b203ed6d4",
-        "src/prefix.js": "9d3fd6182fd2824534d77aa2de008ab354eb0f52f8fc002276cf5d119484ee67",
-        "src/app.js": "65d46dcaf557c5a668bea8cf9648e6e247435eb246d1629c86956016ef31a0c5",
+        "src/prefix.js": "27b5708b2c877402bfa38d85c54dbe77b343f1852182eefdd3bb392bee2bfc31",
+        "src/app.js": "b8edcd0ee1b9af680f2eac1c5f702ad309fda84ffd915c9ae5dff5f2147074e4",
         "tests/forwarding.test.js": "563ce5e477703fa6d36f8a8ccd0befca972c2dc28ddecf391164915084bbc7d4",
-        "tests/prefix.test.js": "785555eb2bc31d4b2a1ac46b6a5581a5f80dc0cbf1d31d41601817585b64629c"
+        "tests/prefix.test.js": "88951571070ce30d4378ffe5d40d45ae18015c5463efd25f3466631a106a81c0"
       }
     }
   }
