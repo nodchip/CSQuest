@@ -1767,27 +1767,32 @@ GIT-Modeling:学習成果:未記載:4,GIT,GIT-Modeling,学習成果,未記載,4,
 GIT-Modeling:学習成果:未記載:5,GIT,GIT-Modeling,学習成果,未記載,5,レーザー走査点からメッシュを作成,未照合,実走査点からの再構成は未確認。,coverage-git-modeling.md,32,原典照合結果は監査記録参照・区分を要確認
 GIT-Modeling:学習成果:未記載:6,GIT,GIT-Modeling,学習成果,未記載,6,基本立体による CSG モデルを作成,部分,143で２次元画素集合の演算。３次元の立方体や二次曲面は未評価。,coverage-git-modeling.md,33,原典照合結果は監査記録参照・区分を要確認
 GIT-Modeling:学習成果:未記載:7,GIT,GIT-Modeling,学習成果,未記載,7,方式の時間・空間計算量と画像品質を比較,未照合,異なるモデリング方式の一般的な費用・品質比較は未確認。,coverage-git-modeling.md,34,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:1a,GIT,GIT-Physical,トピック,未記載,1a,センサーからの取得,部分,219〜222 で光の読取り、揺れ、量子化と標本化の固定模型。実機・回路は未評価。,coverage-git-physical.md,9,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:1b,GIT,GIT-Physical,トピック,未記載,1b,外部アクチュエーターの駆動,部分,219 で読み取り後の目標角度と移動を操作。実際の電気信号・機器は未評価。,coverage-git-physical.md,10,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:2a,GIT,GIT-Physical,トピック,未記載,2a,CAD,部分,26 の２次元変換、143 の形状集合演算の模型。CAD での３次元設計は未評価。,coverage-git-physical.md,11,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:2b,GIT,GIT-Physical,トピック,未記載,2b,CAM,未照合,製造工程の設計と連携の対応は未確認。,coverage-git-physical.md,12,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:2c-i,GIT,GIT-Physical,トピック,未記載,2c-i,試作,未照合,物理的な試作と評価は未確認。,coverage-git-physical.md,13,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:2c-ii,GIT,GIT-Physical,トピック,未記載,2c-ii,積層造形,部分,807 で３列の断面を積み上げる固定模型。実際の３Ｄ印刷と材料・精度の制約は未評価。,coverage-git-physical.md,14,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:2c-iii,GIT,GIT-Physical,トピック,未記載,2c-iii,切削加工,部分,807 で塊から３列を削る固定模型。実際の CNC や工具・加工経路は未評価。,coverage-git-physical.md,15,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:2c-iv,GIT,GIT-Physical,トピック,未記載,2c-iv,成形,部分,807 で板を温め型に沿わせ冷やす固定模型。実装置や材料の制約は未評価。,coverage-git-physical.md,16,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:3a,GIT,GIT-Physical,トピック,未記載,3a,ネットワーク接続,部分,10 の消失と再送の模型。物理機器とネットワークの接続は未評価。,coverage-git-physical.md,17,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:トピック:未記載:3b,GIT,GIT-Physical,トピック,未記載,3b,無線通信,未照合,実際の IoT 通信方式の比較・接続は未確認。,coverage-git-physical.md,18,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:1,GIT,GIT-Physical,学習成果,未記載,1,スイッチ・ボタンから LED を点灯,未照合,仮想スイッチと LED の接続を構築する依頼は未確認。,coverage-git-physical.md,24,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:2,GIT,GIT-Physical,学習成果,未記載,2,センサーに応じてサーボを動かすシステムを作る,部分,219 の固定模型で読取り・目標・動作を操作。実機の構築は未評価。,coverage-git-physical.md,25,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:3,GIT,GIT-Physical,学習成果,未記載,3,光センサーに反応する回路とマイコンのコード,部分,219 の３値と角度の模型。回路とコードは作らない。,coverage-git-physical.md,26,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:4,GIT,GIT-Physical,学習成果,未記載,4,可変抵抗を読む回路とプログラム,未照合,対応する模型・実装は未確認。,coverage-git-physical.md,27,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:5a,GIT,GIT-Physical,学習成果,未記載,5a,CAD で３Ｄ形状とアフィン変換を示す,部分,26 は２次元の固定変換。３Ｄ CAD の作成は未評価。,coverage-git-physical.md,28,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:5b,GIT,GIT-Physical,学習成果,未記載,5b,物体のインスタンスを示す,未照合,CAD 内のインスタンス操作は未確認。,coverage-git-physical.md,29,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:5c,GIT,GIT-Physical,学習成果,未記載,5c,製造方法・費用・時間を計画,未照合,物理製作の計画・見積りは未確認。,coverage-git-physical.md,30,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:5d,GIT,GIT-Physical,学習成果,未記載,5d,実製作し計画との差を比較,未照合,実製作は対象外で、代替となる比較も未確認。,coverage-git-physical.md,31,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:6,GIT,GIT-Physical,学習成果,未記載,6,G・M コードと CAD/CAM による迷路の検査,未照合,実コード・CAD/CAM の操作と代替は未確認。,coverage-git-physical.md,32,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:7,GIT,GIT-Physical,学習成果,未記載,7,IoT 薬剤ディスペンサーの通信選択と製作,未照合,具体的な接続方式の選択と製作は未確認。,coverage-git-physical.md,33,原典照合結果は監査記録参照・区分を要確認
-GIT-Physical:学習成果:未記載:8,GIT,GIT-Physical,学習成果,未記載,8,製作方式の違いと用途,部分,807 で土台の断面と薄い覆いを作り、３方式の材料の変化を比較。一般の用途選定や自由な説明は未評価。,coverage-git-physical.md,34,原典照合結果は監査記録参照・区分を要確認
+GIT-Physical:トピック:KA Core:1,GIT,GIT-Physical,トピック,KA Core,1,物理世界との相互作用,部分,219〜222と1298の固定模型。実センサー・回路・アクチュエーターは未評価。,coverage-git-physical.md,9,原典照合結果は監査記録参照・親子重複候補
+GIT-Physical:トピック:KA Core:1a,GIT,GIT-Physical,トピック,KA Core,1a,センサーからの取得,部分,219〜222 で光の読取り、揺れ、量子化と標本化の固定模型。実機・回路は未評価。,coverage-git-physical.md,10,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:1b,GIT,GIT-Physical,トピック,KA Core,1b,外部アクチュエーターの駆動,部分,219 で読み取り後の目標角度と移動を操作。実際の電気信号・機器は未評価。,coverage-git-physical.md,11,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:2,GIT,GIT-Physical,トピック,KA Core,2,物理的な製作物との接続,部分,26・143・807の固定模型。CAD/CAMや実際の製作は未評価。,coverage-git-physical.md,12,原典照合結果は監査記録参照・親子重複候補
+GIT-Physical:トピック:KA Core:2a,GIT,GIT-Physical,トピック,KA Core,2a,CAD,部分,26 の２次元変換、143 の形状集合演算の模型。CAD での３次元設計は未評価。,coverage-git-physical.md,13,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:2b,GIT,GIT-Physical,トピック,KA Core,2b,CAM,未照合,製造工程の設計と連携の対応は未確認。,coverage-git-physical.md,14,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:2c,GIT,GIT-Physical,トピック,KA Core,2c,製作,部分,807で積層・切削・成形の固定模型。試作、実物の製作や評価は未確認。,coverage-git-physical.md,15,原典照合結果は監査記録参照・親子重複候補
+GIT-Physical:トピック:KA Core:2c-i,GIT,GIT-Physical,トピック,KA Core,2c-i,試作,未照合,物理的な試作と評価は未確認。,coverage-git-physical.md,16,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:2c-ii,GIT,GIT-Physical,トピック,KA Core,2c-ii,積層造形,部分,807 で３列の断面を積み上げる固定模型。実際の３Ｄ印刷と材料・精度の制約は未評価。,coverage-git-physical.md,17,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:2c-iii,GIT,GIT-Physical,トピック,KA Core,2c-iii,切削加工,部分,807 で塊から３列を削る固定模型。実際の CNC や工具・加工経路は未評価。,coverage-git-physical.md,18,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:2c-iv,GIT,GIT-Physical,トピック,KA Core,2c-iv,成形,部分,807 で板を温め型に沿わせ冷やす固定模型。実装置や材料の制約は未評価。,coverage-git-physical.md,19,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:3,GIT,GIT-Physical,トピック,KA Core,3,モノのインターネット,部分,10で消失と再送を操作。実際の物理機器や通信方式との接続は未評価。,coverage-git-physical.md,20,原典照合結果は監査記録参照・親子重複候補
+GIT-Physical:トピック:KA Core:3a,GIT,GIT-Physical,トピック,KA Core,3a,ネットワーク接続,部分,10 の消失と再送の模型。物理機器とネットワークの接続は未評価。,coverage-git-physical.md,21,原典照合結果は監査記録参照
+GIT-Physical:トピック:KA Core:3b,GIT,GIT-Physical,トピック,KA Core,3b,無線通信,未照合,実際の IoT 通信方式の比較・接続は未確認。,coverage-git-physical.md,22,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:1,GIT,GIT-Physical,学習成果,KA Core,1,スイッチ・ボタンから LED を点灯,部分,1298で押しボタン・制御部・灯りを選び、押す・離すと点灯・消灯を試す固定模型。実回路、電源や抵抗の設計は未評価。,coverage-git-physical.md,28,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:2,GIT,GIT-Physical,学習成果,KA Core,2,センサーに応じてサーボを動かすシステムを作る,部分,219 の固定模型で読取り・目標・動作を操作。実機の構築は未評価。,coverage-git-physical.md,29,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:3,GIT,GIT-Physical,学習成果,KA Core,3,光センサーに反応する回路とマイコンのコード,部分,219 の３値と角度の模型。回路とコードは作らない。,coverage-git-physical.md,30,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:4,GIT,GIT-Physical,学習成果,KA Core,4,可変抵抗を読む回路とプログラム,未照合,対応する模型・実装は未確認。,coverage-git-physical.md,31,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:5,GIT,GIT-Physical,学習成果,KA Core,5,CAD で３次元の形を作成,未照合,実 CAD における３次元形状の作成は未評価。,coverage-git-physical.md,32,原典照合結果は監査記録参照・親子重複候補
+GIT-Physical:学習成果:KA Core:5a,GIT,GIT-Physical,学習成果,KA Core,5a,CAD で３Ｄ形状とアフィン変換を示す,部分,26 は２次元の固定変換。３Ｄ CAD の作成は未評価。,coverage-git-physical.md,33,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:5b,GIT,GIT-Physical,学習成果,KA Core,5b,物体のインスタンスを示す,未照合,CAD 内のインスタンス操作は未確認。,coverage-git-physical.md,34,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:5c,GIT,GIT-Physical,学習成果,KA Core,5c,製造方法・費用・時間を計画,未照合,物理製作の計画・見積りは未確認。,coverage-git-physical.md,35,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:5d,GIT,GIT-Physical,学習成果,KA Core,5d,実製作し計画との差を比較,未照合,実製作は対象外で、代替となる比較も未確認。,coverage-git-physical.md,36,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:6,GIT,GIT-Physical,学習成果,KA Core,6,G・M コードと CAD/CAM による迷路の検査,未照合,実コード・CAD/CAM の操作と代替は未確認。,coverage-git-physical.md,37,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:7,GIT,GIT-Physical,学習成果,KA Core,7,IoT 薬剤ディスペンサーの通信選択と製作,未照合,具体的な接続方式の選択と製作は未確認。,coverage-git-physical.md,38,原典照合結果は監査記録参照
+GIT-Physical:学習成果:KA Core:8,GIT,GIT-Physical,学習成果,KA Core,8,製作方式の違いと用途,部分,807 で土台の断面と薄い覆いを作り、３方式の材料の変化を比較。一般の用途選定や自由な説明は未評価。,coverage-git-physical.md,39,原典照合結果は監査記録参照
 GIT-Rendering:トピック:未記載:1a,GIT,GIT-Rendering,トピック,未記載,1a,ポリゴン・パラメトリック等の物体表現,部分,83で三角形、514で図形からの標本化を扱う。一般のポリゴンやパラメトリック表現は未評価。,coverage-git-rendering.md,9,原典照合結果は監査記録参照・区分を要確認
 GIT-Rendering:トピック:未記載:1b,GIT,GIT-Rendering,トピック,未記載,1b,アフィン・座標系の変換,部分,26・640で固定角度の回転と移動を操作。一般の変換・行列の記述は未評価。,coverage-git-rendering.md,10,原典照合結果は監査記録参照・区分を要確認
 GIT-Rendering:トピック:未記載:1c,GIT,GIT-Rendering,トピック,未記載,1c,シーングラフ,部分,637で台座・腕・旗・灯りの親子変換を操作。一般の階層や構築は未評価。,coverage-git-rendering.md,11,原典照合結果は監査記録参照・区分を要確認

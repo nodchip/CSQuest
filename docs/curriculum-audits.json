@@ -1,6 +1,14 @@
 {
   "version": 1,
   "units": {
+    "GIT-Physical": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-physical.md",
+      "topics": 14,
+      "outcomes": 12,
+      "scope_sha256": "57d92060951f563f635983221921f1b954917eb150817920146a4d4e34bf45da"
+    },
     "GIT-Image": {
       "date": "2026-11-06",
       "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
