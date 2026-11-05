@@ -17,6 +17,12 @@ export function benchmarkBars(samples){
  const max=Math.max(0,...samples.flatMap(s=>[s.linearMs,s.binaryMs]));
  return {max,rows:samples.map(s=>({linear:max?s.linearMs/max*100:0,binary:max?s.binaryMs/max*100:0}))};
 }
+export function benchmarkSummary(samples){
+ benchmarkBars(samples);
+ if(samples.length===0)return null;
+ const summary=key=>{const values=samples.map(s=>s[key]);return {min:Math.min(...values),max:Math.max(...values),mean:values.reduce((sum,value)=>sum+value,0)/values.length};};
+ return {linear:summary('linearMs'),binary:summary('binaryMs')};
+}
 export function actualBenchmarkCreate(){return {warmed:false,samples:[],reflection:null,timer:null};}
 export function actualBenchmarkRestore(q){if(!q||typeof q.warmed!=='boolean'||!Array.isArray(q.samples)||q.samples.length>10||!q.samples.every((s,i)=>s&&s.first===(i%2===0?'linear':'binary')&&Number.isFinite(s.linearMs)&&s.linearMs>=0&&Number.isFinite(s.binaryMs)&&s.binaryMs>=0&&s.checksum===benchmarkChecksum)||(!q.warmed&&q.samples.length)||![null,'context','universal'].includes(q.reflection)||![null,'resolution','exact'].includes(q.timer))throw new RangeError('途中記録が不正です');return {warmed:q.warmed,samples:q.samples.map(s=>({...s})),reflection:q.reflection,timer:q.timer};}
 export function actualBenchmarkDone(q){return q.warmed&&q.samples.length>=3&&q.reflection==='context'&&q.timer==='resolution';}
