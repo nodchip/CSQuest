@@ -450,42 +450,48 @@ AI-Search:学習成果:明示なし:9,AI,AI-Search,学習成果,明示なし,9,�
 AI-Search:学習成果:明示なし:10,AI,AI-Search,学習成果,明示なし,10,遺伝的手法と他の探索・最適化を比較,部分,依頼374で同じ４灯の目的に対し固定した交叉と全列挙の評価回数を比較。勾配法は文章で触れるのみで、モデル学習や一般の適用条件は未評価。,coverage-ai-search.md,72,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:11,AI,AI-Search,学習成果,明示なし,11,複数のヒューリスティック探索の適用性を比較,部分,依頼43で同一地図・同一見積もりの貪欲探索と A* を比較。一般の問題への適用性は未評価。,coverage-ai-search.md,73,原典照合結果は監査記録参照
 AI-Search:学習成果:明示なし:12,AI,AI-Search,学習成果,明示なし,12,パズルを制約充足として解きアーク整合性の効果を調べる,部分,依頼49で固定の色分け、後戻り、候補の削除と候補の直積27→12を比較。一般のモデル設計や実際の探索回数の比較は未評価。,coverage-ai-search.md,74,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:1a,AI,AI-SEP,トピック,CS Core,1a,特定の応用の問題設定と評価,部分,122は架空の配達予測の工程、549・550は実測 Iris の一部の分類と評価。実際の応用の設定と運用評価は未対応。,coverage-ai-sep.md,9,原典照合結果は監査記録参照・親子重複候補
-AI-SEP:トピック:CS Core:1a-i,AI,AI-SEP,トピック,CS Core,1a-i,仕様不足・不適切な問題への対処,部分,1064の架空の規則と、1065の画像分類研究の通常画像・条件変更時の平均とモデル間のばらつきを比較し、追加試験を検討。実利用先の要求定義・運用中の対処や実モデルの評価は未対応。,coverage-ai-sep.md,10,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:1b,AI,AI-SEP,トピック,CS Core,1b,データの入手・不足・品質,部分,122で架空の準備工程。実応用での入手と不足は未評価。,coverage-ai-sep.md,11,原典照合結果は監査記録参照・親子重複候補
-AI-SEP:トピック:CS Core:1b-i,AI,AI-SEP,トピック,CS Core,1b-i,データの基本的な整形・前処理,部分,553で実測 Iris の標準化と漏洩を比較。実応用の準備全体は未評価。,coverage-ai-sep.md,12,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:1b-ii,AI,AI-SEP,トピック,CS Core,1b-ii,データ集合の偏り,部分,118で架空の２集団の割合を比較。実応用のデータ収集時の偏りは未評価。,coverage-ai-sep.md,13,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:1c,AI,AI-SEP,トピック,CS Core,1c,アルゴリズムの偏り,部分,118の架空例に加え1042で実研究の分類器３種の集団別誤分類率を比較。学習データや原因の断定はしない。,coverage-ai-sep.md,14,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:1d,AI,AI-SEP,トピック,CS Core,1d,評価の偏り,部分,553でテスト混入、1042で全体値と集団別の評価を比較。評価全般や実利用での性能は未評価。,coverage-ai-sep.md,15,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:1e,AI,AI-SEP,トピック,CS Core,1e,応用の社会的影響の評価,部分,705で医療予測研究における代理指標と集団の違いを比較。実際の影響の総合分析は未評価。,coverage-ai-sep.md,16,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:2a,AI,AI-SEP,トピック,CS Core,2a,展開済み画像生成モデルの概要・用途・欠点,部分,458は条件付き復元の固定模型。実モデルの利用・欠点の概要は未対応。,coverage-ai-sep.md,17,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:2b,AI,AI-SEP,トピック,CS Core,2b,展開済み大規模言語モデルの概要・用途・欠点,部分,457で生成文と架空記録の食い違いを比較。実モデルの用途・欠点の概要は未対応。,coverage-ai-sep.md,18,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:3a,AI,AI-SEP,トピック,CS Core,3a,倫理,部分,118で集団別の判断を比較。AI 倫理の体系的な概要は未評価。,coverage-ai-sep.md,19,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:3b,AI,AI-SEP,トピック,CS Core,3b,公平性,部分,118で２集団の指標を比較。公平性全般は未評価。,coverage-ai-sep.md,20,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:3c,AI,AI-SEP,トピック,CS Core,3c,信頼と説明可能性,部分,620で Iris の２分類方式の理由を比較。実利用者の信頼は未評価。,coverage-ai-sep.md,21,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:3d,AI,AI-SEP,トピック,CS Core,3d,学習データの利用とプライバシー,部分,457で GPT-2 の学習データ抽出の研究結果と限界を確認。実モデルの評価や対策の実装は未評価。,coverage-ai-sep.md,22,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:3e,AI,AI-SEP,トピック,CS Core,3e,人の自律性・監督・法規制,部分,689で人の確認と自動選択を比較。法規制や実機の監督は未評価。,coverage-ai-sep.md,23,原典照合結果は監査記録参照
-AI-SEP:トピック:CS Core:3f,AI,AI-SEP,トピック,CS Core,3f,持続可能性,部分,161で仮定した電力と時間を比較。AI の学習・運用全体の影響は未評価。,coverage-ai-sep.md,24,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:4a,AI,AI-SEP,トピック,KA Core,4a,異なる分野での問題設定と評価,未照合,追加の実応用は未確認。,coverage-ai-sep.md,25,原典照合結果は監査記録参照・親子重複候補
-AI-SEP:トピック:KA Core:4a-i,AI,AI-SEP,トピック,KA Core,4a-i,追加応用の仕様不足への対処,未照合,異なる分野の実応用での対処は未確認。,coverage-ai-sep.md,26,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:4b,AI,AI-SEP,トピック,KA Core,4b,追加応用のデータ入手・不足・品質,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,27,原典照合結果は監査記録参照・親子重複候補
-AI-SEP:トピック:KA Core:4b-i,AI,AI-SEP,トピック,KA Core,4b-i,追加応用の前処理,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,28,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:4b-ii,AI,AI-SEP,トピック,KA Core,4b-ii,追加応用のデータの偏り,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,29,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:4c,AI,AI-SEP,トピック,KA Core,4c,追加応用のアルゴリズムの偏り,部分,1042で医療予測とは異なる画像分類の実研究における誤分類率を比較。原因や実利用への一般化は未評価。,coverage-ai-sep.md,30,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:4d,AI,AI-SEP,トピック,KA Core,4d,追加応用の評価の偏り,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,31,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:4e,AI,AI-SEP,トピック,KA Core,4e,追加応用の社会的影響,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,32,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:5a,AI,AI-SEP,トピック,KA Core,5a,画像生成の仕組みと attention,部分,458の復元と459の attention は別々の固定模型。実モデルの学習・逐次生成・両者の接続は未対応。,coverage-ai-sep.md,33,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:5b,AI,AI-SEP,トピック,KA Core,5b,言語モデルの仕組みと attention,部分,457の語の選択と459の attention は別々の固定模型。実モデル全体との接続は未対応。,coverage-ai-sep.md,34,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:5c,AI,AI-SEP,トピック,KA Core,5c,基盤モデルの利用と大量データ学習の利点・問題,未照合,対応する教材は未確認。,coverage-ai-sep.md,35,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:6a,AI,AI-SEP,トピック,KA Core,6a,倫理の分析と議論,部分,118で架空の判断を比較。実応用の倫理分析は未評価。,coverage-ai-sep.md,36,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:6b,AI,AI-SEP,トピック,KA Core,6b,公平性の分析と議論,部分,118で架空の集団別指標を比較。実応用は未評価。,coverage-ai-sep.md,37,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:6c,AI,AI-SEP,トピック,KA Core,6c,信頼・説明可能性の分析と議論,部分,620で２分類方式の説明を比較。実利用者と実応用は未評価。,coverage-ai-sep.md,38,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:6d,AI,AI-SEP,トピック,KA Core,6d,学習データとプライバシーの分析,部分,457で公開 GPT-2 に関する研究の方法・結果・限界を比較。一般の応用や対策の効果は未評価。,coverage-ai-sep.md,39,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:6e,AI,AI-SEP,トピック,KA Core,6e,自律性・監督・法の分析,部分,689で架空の共同方式を比較。実応用と法規制は未評価。,coverage-ai-sep.md,40,原典照合結果は監査記録参照
-AI-SEP:トピック:KA Core:6f,AI,AI-SEP,トピック,KA Core,6f,持続可能性の分析,部分,161で一定電力の模型を比較。AI の実際の環境影響は未評価。,coverage-ai-sep.md,41,原典照合結果は監査記録参照
-AI-SEP:学習成果:未記載:1,AI,AI-SEP,学習成果,未記載,1,実問題を入力・前処理・表現・手法・評価を含む AI 解法として定式化,部分,122は架空の工程、549・550は Iris の固定分類。実問題の一貫した定式化は未評価。,coverage-ai-sep.md,49,原典照合結果は監査記録参照・区分を要確認
-AI-SEP:学習成果:未記載:2,AI,AI-SEP,学習成果,未記載,2,実 AI 応用の倫理・公平性・偏り・信頼・説明可能性を分析,部分,118・620は固定例、457で GPT-2 のデータ抽出事例を調べる。他の社会的影響の体系的な分析は未評価。,coverage-ai-sep.md,50,原典照合結果は監査記録参照・区分を要確認
-AI-SEP:学習成果:未記載:3,AI,AI-SEP,学習成果,未記載,3,現在の生成モデルの失敗と応用への影響を説明,部分,457で架空の誤生成と GPT-2 の学習データ抽出研究を比較。実モデルを用いた分析や影響全般は未評価。,coverage-ai-sep.md,51,原典照合結果は監査記録参照・区分を要確認
+AI-SEP:トピック:CS Core:1,AI,AI-SEP,トピック,CS Core,1,特定の問題・分野での AI 応用,部分,705の医療予測研究と1042の画像分類研究の限られた結果を比較。実応用の一貫した定式化と運用評価は未評価。,coverage-ai-sep.md,9,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:CS Core:1a,AI,AI-SEP,トピック,CS Core,1a,特定の応用の問題設定と評価,部分,122は架空の配達予測の工程、549・550は実測 Iris の一部の分類と評価。実際の応用の設定と運用評価は未対応。,coverage-ai-sep.md,10,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:CS Core:1a-i,AI,AI-SEP,トピック,CS Core,1a-i,仕様不足・不適切な問題への対処,部分,1064の架空の規則と、1065の画像分類研究の通常画像・条件変更時の平均とモデル間のばらつきを比較し、追加試験を検討。実利用先の要求定義・運用中の対処や実モデルの評価は未対応。,coverage-ai-sep.md,11,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:1b,AI,AI-SEP,トピック,CS Core,1b,データの入手・不足・品質,部分,122で架空の準備工程。実応用での入手と不足は未評価。,coverage-ai-sep.md,12,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:CS Core:1b-i,AI,AI-SEP,トピック,CS Core,1b-i,データの基本的な整形・前処理,部分,553で実測 Iris の標準化と漏洩を比較。実応用の準備全体は未評価。,coverage-ai-sep.md,13,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:1b-ii,AI,AI-SEP,トピック,CS Core,1b-ii,データ集合の偏り,部分,118で架空の２集団の割合を比較。実応用のデータ収集時の偏りは未評価。,coverage-ai-sep.md,14,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:1c,AI,AI-SEP,トピック,CS Core,1c,アルゴリズムの偏り,部分,118の架空例に加え1042で実研究の分類器３種の集団別誤分類率を比較。学習データや原因の断定はしない。,coverage-ai-sep.md,15,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:1d,AI,AI-SEP,トピック,CS Core,1d,評価の偏り,部分,553でテスト混入、1042で全体値と集団別の評価を比較。評価全般や実利用での性能は未評価。,coverage-ai-sep.md,16,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:1e,AI,AI-SEP,トピック,CS Core,1e,応用の社会的影響の評価,部分,705で医療予測研究における代理指標と集団の違いを比較。実際の影響の総合分析は未評価。,coverage-ai-sep.md,17,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:2,AI,AI-SEP,トピック,CS Core,2,展開済み深層生成モデル,部分,457・458で架空の生成と復元を操作。実モデルの全体像と用途は未評価。,coverage-ai-sep.md,18,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:CS Core:2a,AI,AI-SEP,トピック,CS Core,2a,展開済み画像生成モデルの概要・用途・欠点,部分,458は条件付き復元の固定模型。実モデルの利用・欠点の概要は未対応。,coverage-ai-sep.md,19,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:2b,AI,AI-SEP,トピック,CS Core,2b,展開済み大規模言語モデルの概要・用途・欠点,部分,457で生成文と架空記録の食い違いを比較。実モデルの用途・欠点の概要は未対応。,coverage-ai-sep.md,20,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:3,AI,AI-SEP,トピック,CS Core,3,AI の社会的影響の概要,部分,118・457・620で公平性、データ抽出、説明を扱う。影響全体の体系的説明は未評価。,coverage-ai-sep.md,21,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:CS Core:3a,AI,AI-SEP,トピック,CS Core,3a,倫理,部分,118で集団別の判断を比較。AI 倫理の体系的な概要は未評価。,coverage-ai-sep.md,22,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:3b,AI,AI-SEP,トピック,CS Core,3b,公平性,部分,118で２集団の指標を比較。公平性全般は未評価。,coverage-ai-sep.md,23,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:3c,AI,AI-SEP,トピック,CS Core,3c,信頼と説明可能性,部分,620で Iris の２分類方式の理由を比較。実利用者の信頼は未評価。,coverage-ai-sep.md,24,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:3d,AI,AI-SEP,トピック,CS Core,3d,学習データの利用とプライバシー,部分,457で GPT-2 の学習データ抽出の研究結果と限界を確認。実モデルの評価や対策の実装は未評価。,coverage-ai-sep.md,25,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:3e,AI,AI-SEP,トピック,CS Core,3e,人の自律性・監督・法規制,部分,689で人の確認と自動選択を比較。法規制や実機の監督は未評価。,coverage-ai-sep.md,26,原典照合結果は監査記録参照
+AI-SEP:トピック:CS Core:3f,AI,AI-SEP,トピック,CS Core,3f,持続可能性,部分,161で仮定した電力と時間を比較。AI の学習・運用全体の影響は未評価。,coverage-ai-sep.md,27,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:4,AI,AI-SEP,トピック,KA Core,4,別分野の追加 AI 応用,部分,1042で画像分類の研究結果を比較。異なる分野の実応用を一貫して定式化・評価する範囲は未確認。,coverage-ai-sep.md,28,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:KA Core:4a,AI,AI-SEP,トピック,KA Core,4a,異なる分野での問題設定と評価,未照合,追加の実応用は未確認。,coverage-ai-sep.md,29,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:KA Core:4a-i,AI,AI-SEP,トピック,KA Core,4a-i,追加応用の仕様不足への対処,未照合,異なる分野の実応用での対処は未確認。,coverage-ai-sep.md,30,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:4b,AI,AI-SEP,トピック,KA Core,4b,追加応用のデータ入手・不足・品質,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,31,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:KA Core:4b-i,AI,AI-SEP,トピック,KA Core,4b-i,追加応用の前処理,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,32,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:4b-ii,AI,AI-SEP,トピック,KA Core,4b-ii,追加応用のデータの偏り,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,33,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:4c,AI,AI-SEP,トピック,KA Core,4c,追加応用のアルゴリズムの偏り,部分,1042で医療予測とは異なる画像分類の実研究における誤分類率を比較。原因や実利用への一般化は未評価。,coverage-ai-sep.md,34,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:4d,AI,AI-SEP,トピック,KA Core,4d,追加応用の評価の偏り,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,35,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:4e,AI,AI-SEP,トピック,KA Core,4e,追加応用の社会的影響,未照合,異なる分野の実応用は未確認。,coverage-ai-sep.md,36,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:5,AI,AI-SEP,トピック,KA Core,5,展開済み深層生成モデルの追加的な理解,部分,457〜459で生成・復元・注意の限定例を操作。実モデルとの接続は未評価。,coverage-ai-sep.md,37,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:KA Core:5a,AI,AI-SEP,トピック,KA Core,5a,画像生成の仕組みと attention,部分,458の復元と459の attention は別々の固定模型。実モデルの学習・逐次生成・両者の接続は未対応。,coverage-ai-sep.md,38,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:5b,AI,AI-SEP,トピック,KA Core,5b,言語モデルの仕組みと attention,部分,457の語の選択と459の attention は別々の固定模型。実モデル全体との接続は未対応。,coverage-ai-sep.md,39,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:5c,AI,AI-SEP,トピック,KA Core,5c,基盤モデルの利用と大量データ学習の利点・問題,未照合,対応する教材は未確認。,coverage-ai-sep.md,40,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:6,AI,AI-SEP,トピック,KA Core,6,AI の社会的影響の分析・議論,部分,118・457・620の限定例を比較。実応用の影響全般と自由な議論は未評価。,coverage-ai-sep.md,41,原典照合結果は監査記録参照・親子重複候補
+AI-SEP:トピック:KA Core:6a,AI,AI-SEP,トピック,KA Core,6a,倫理の分析と議論,部分,118で架空の判断を比較。実応用の倫理分析は未評価。,coverage-ai-sep.md,42,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:6b,AI,AI-SEP,トピック,KA Core,6b,公平性の分析と議論,部分,118で架空の集団別指標を比較。実応用は未評価。,coverage-ai-sep.md,43,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:6c,AI,AI-SEP,トピック,KA Core,6c,信頼・説明可能性の分析と議論,部分,620で２分類方式の説明を比較。実利用者と実応用は未評価。,coverage-ai-sep.md,44,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:6d,AI,AI-SEP,トピック,KA Core,6d,学習データとプライバシーの分析,部分,457で公開 GPT-2 に関する研究の方法・結果・限界を比較。一般の応用や対策の効果は未評価。,coverage-ai-sep.md,45,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:6e,AI,AI-SEP,トピック,KA Core,6e,自律性・監督・法の分析,部分,689で架空の共同方式を比較。実応用と法規制は未評価。,coverage-ai-sep.md,46,原典照合結果は監査記録参照
+AI-SEP:トピック:KA Core:6f,AI,AI-SEP,トピック,KA Core,6f,持続可能性の分析,部分,161で一定電力の模型を比較。AI の実際の環境影響は未評価。,coverage-ai-sep.md,47,原典照合結果は監査記録参照
+AI-SEP:学習成果:未記載:1,AI,AI-SEP,学習成果,未記載,1,実問題を入力・前処理・表現・手法・評価を含む AI 解法として定式化,部分,122は架空の工程、549・550は Iris の固定分類。実問題の一貫した定式化は未評価。,coverage-ai-sep.md,55,原典照合結果は監査記録参照・区分を要確認
+AI-SEP:学習成果:未記載:2,AI,AI-SEP,学習成果,未記載,2,実 AI 応用の倫理・公平性・偏り・信頼・説明可能性を分析,部分,118・620は固定例、457で GPT-2 のデータ抽出事例を調べる。他の社会的影響の体系的な分析は未評価。,coverage-ai-sep.md,56,原典照合結果は監査記録参照・区分を要確認
+AI-SEP:学習成果:未記載:3,AI,AI-SEP,学習成果,未記載,3,現在の生成モデルの失敗と応用への影響を説明,部分,457で架空の誤生成と GPT-2 の学習データ抽出研究を比較。実モデルを用いた分析や影響全般は未評価。,coverage-ai-sep.md,57,原典照合結果は監査記録参照・区分を要確認
 AI-Vision:トピック:Non-core:1,AI,AI-Vision,トピック,Non-core,1,コンピュータビジョン,部分,141・230〜233で固定画素の変化・分割・動きを操作。実画像や一般の認識は未評価。,coverage-ai-vision.md,9,原典照合結果は監査記録参照・親子重複候補
 AI-Vision:トピック:Non-core:1a,AI,AI-Vision,トピック,Non-core,1a,画像の取得・表現・処理,部分,141で１方向の３画素の変化を操作。実画像の取得と一般の処理は未評価。,coverage-ai-vision.md,10,原典照合結果は監査記録参照
 AI-Vision:トピック:Non-core:1b,AI,AI-Vision,トピック,Non-core,1b,形状表現・物体認識・領域分割,部分,144・230〜232で固定画像の連結成分・分割・形の特徴を比較。実画像の認識は未評価。,coverage-ai-vision.md,11,原典照合結果は監査記録参照

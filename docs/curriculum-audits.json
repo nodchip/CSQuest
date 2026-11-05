@@ -520,6 +520,14 @@
       "topics": 14,
       "outcomes": 4,
       "scope_sha256": "962b4a9cb500fb53585db7f391982f33a2385793abde06fe6612a1bee989888b"
+    },
+    "AI-SEP": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-sep.md",
+      "topics": 39,
+      "outcomes": 3,
+      "scope_sha256": "d578907591a56eda14e7689377cc91b9ad837b40a07ccccedbb9b7ceb8b4d305"
     }
   }
 }
