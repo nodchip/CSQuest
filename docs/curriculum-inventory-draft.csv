@@ -2011,7 +2011,7 @@ HCI-Evaluation:トピック:KA Core:3d,HCI,HCI-Evaluation,トピック,KA Core,3
 HCI-Evaluation:トピック:KA Core:3e,HCI,HCI-Evaluation,トピック,KA Core,3e,被験者内・被験者間の設計,部分,531・533 で順序と参加者割当の固定例。実験計画全般は未評価。,coverage-hci-evaluation.md,26,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:KA Core:4,HCI,HCI-Evaluation,トピック,KA Core,4,設計による影響,部分,環境・素材・社会・安全・プライバシー・倫理と広い影響は子を参照。全体の評価は未対応。,coverage-hci-evaluation.md,27,原典照合結果は監査記録参照・親子重複候補
 HCI-Evaluation:トピック:KA Core:4a,HCI,HCI-Evaluation,トピック,KA Core,4a,設計の環境への影響,部分,536 は仮定した１台の電力量を比較。ライフサイクルは未評価。,coverage-hci-evaluation.md,28,原典照合結果は監査記録参照
-HCI-Evaluation:トピック:KA Core:4b,HCI,HCI-Evaluation,トピック,KA Core,4b,設計の素材への影響,未照合,製造・素材の影響に関する対応教材を要照合。,coverage-hci-evaluation.md,29,原典照合結果は監査記録参照
+HCI-Evaluation:トピック:KA Core:4b,HCI,HCI-Evaluation,トピック,KA Core,4b,設計の素材への影響,部分,536 で固定期間の修理と本体交換の材料量を比較。材質、採掘、製造や廃棄は未評価。,coverage-hci-evaluation.md,29,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:KA Core:4c,HCI,HCI-Evaluation,トピック,KA Core,4c,設計の社会への影響,部分,536 は利用条件の固定比較。社会への影響全般は未評価。,coverage-hci-evaluation.md,30,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:KA Core:4d,HCI,HCI-Evaluation,トピック,KA Core,4d,設計のセキュリティへの影響,部分,536 は情報の露出と通信停止を比較。実際の安全性は未評価。,coverage-hci-evaluation.md,31,原典照合結果は監査記録参照
 HCI-Evaluation:トピック:KA Core:4e,HCI,HCI-Evaluation,トピック,KA Core,4e,設計のプライバシーへの影響,部分,536 は公開範囲の固定比較。実際のプライバシー評価は未評価。,coverage-hci-evaluation.md,32,原典照合結果は監査記録参照

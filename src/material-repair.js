@@ -1,0 +1,6 @@
+export const materialDurations={3:'３年間',6:'６年間'};
+export const materialStrategies={repair:'部品を交換して使い続ける',replace:'本体ごと交換する'};
+export const materialChoices=[10,12,20];
+export function materialResult(duration,strategy){if(!Object.hasOwn(materialDurations,duration)||!Object.hasOwn(materialStrategies,strategy))throw new RangeError('条件が不正です');const event=Number(duration)===6;return {initial:10,extra:event?(strategy==='repair'?2:10):0,total:10+(event?(strategy==='repair'?2:10):0),events:event?1:0};}
+export function materialCreate(){return {duration:'3',strategy:'repair',guess:null,checked:false,seen:[],reflection:'',reflectionChecked:false};}
+export function materialRestore(s){const keys=Object.keys(materialDurations).flatMap(d=>Object.keys(materialStrategies).map(k=>`${d}:${k}`));if(!s||!Object.hasOwn(materialDurations,s.duration)||!Object.hasOwn(materialStrategies,s.strategy)||![null,...materialChoices].includes(s.guess)||typeof s.checked!=='boolean'||s.checked&&s.guess===null||!Array.isArray(s.seen)||new Set(s.seen).size!==s.seen.length||!s.seen.every(k=>keys.includes(k))||!['','scope','always','energy'].includes(s.reflection)||typeof s.reflectionChecked!=='boolean')throw new RangeError('素材の記録が不正です');return {...s,seen:[...s.seen]};}
