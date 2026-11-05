@@ -752,6 +752,14 @@
       "topics": 9,
       "outcomes": 0,
       "scope_sha256": "f688852b1346d95a602ac64f23e6031d0ca6eb6d0ea255a34d8bdb6d7f312ac0"
+    },
+    "FPL-Pragmatics": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-pragmatics.md",
+      "topics": 10,
+      "outcomes": 5,
+      "scope_sha256": "3240f5a85b53d9f9eee6f5c3da5a3e6527e6b4bedbb5f5f965c6b31ef7a4a2e6"
     }
   }
 }
