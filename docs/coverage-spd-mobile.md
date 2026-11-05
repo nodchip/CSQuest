@@ -63,4 +63,4 @@
 
 依頼1325の仮想入力では、架空の値０・９・10・12と閾値10で「暗い」「明るい」を予想し、境界の直前と境界自体を比較する。実照度や実端末、エミュレーターを使わない。実際の仮想センサーは入力を模擬できるが、実センサーの精度や実環境はこの模型から評価できない。参考：[Android のセンサーと仮想入力](https://developer.android.com/develop/sensors-and-location/sensors/sensors_overview)。元の依頼の達成条件には含めない。
 
-依頼1325の比較では、同じ経路計算の共通性と、携帯端末の例における中断・位置の拒否への対応を３つの固定状況で選ぶ。中断や権限はモバイル固有とは限らず、ほかのプログラムにも同様の課題がある。実端末や自由な比較説明は評価しない。元の依頼の達成条件には含めない。参考：[Android の画面の状態](https://developer.android.com/guide/components/activities/activity-lifecycle)、[権限の要求と拒否](https://developer.android.com/training/permissions/requesting)。
+依頼1325の比較では、同じ経路計算の共通性と、携帯端末の例における中断・位置の拒否への対応を３つの固定状況で選ぶ。中断や権限はモバイル固有とは限らず、ほかのプログラムにも同様の課題がある。携帯・据置の両模型で終了と再起動を起こし、メモリーのみと保存済みの復元も比較する。保存の成功と再読込みを仮定し、書込み失敗や実 OS の全挙動は扱わない。実端末や自由な比較説明は評価しない。元の依頼の達成条件には含めない。参考：[Android の画面の状態](https://developer.android.com/guide/components/activities/activity-lifecycle)、[権限の要求と拒否](https://developer.android.com/training/permissions/requesting)。
