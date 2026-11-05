@@ -14,3 +14,5 @@ test('途中記録を検証し配列と役割を複製する',()=>{
  const s=prepared(),r=restoreBridgeTeam(s);r.heard.pop();r.roles.safety='resident';assert.equal(s.heard.length,3);assert.equal(s.roles.safety,'engineer');
  for(const p of [{agenda:['hear','hear']},{heard:['unknown']},{schedule:'bad'},{alternative:'bad'},{roles:{...s.roles,safety:'bad'}},{checked:1}])assert.throws(()=>restoreBridgeTeam({...s,...p}),RangeError);
 });
+
+test('meeting choices restore independently and older drafts gain empty choices',()=>{const s=prepared();s.meeting.selected='hybrid';s.meeting.answers.hybrid='adapt';const r=restoreBridgeTeam(s);r.meeting.answers.hybrid='ignore';assert.equal(s.meeting.answers.hybrid,'adapt');const legacy={...s};delete legacy.meeting;assert.equal(restoreBridgeTeam(legacy).meeting.answers.hybrid,null);assert.throws(()=>restoreBridgeTeam({...s,meeting:{...s.meeting,selected:'unknown'}}));});
