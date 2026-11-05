@@ -6,5 +6,6 @@ export function designRulesReplay(mode,history){
  for(const action of history){if(action==='evade')evaded++;else if(mode==='renew'||shields>0){blocked++;if(mode==='limited')shields--;}else hit++;}
  return {steps:history.length,shields:mode==='limited'?shields:null,blocked,evaded,hit};
 }
-export function designRulesDone(q){return Object.keys(designRules).every(k=>q.histories[k].length===3)&&q.feel!==null&&q.answer==='options';}
+export function designRulesChallenge(q){const r=designRulesReplay('limited',q.histories.limited);return r.steps===3&&r.blocked===2&&r.evaded===1&&r.hit===0;}
+export function designRulesDone(q){return Object.keys(designRules).every(k=>q.histories[k].length===3)&&designRulesChallenge(q)&&q.feel!==null&&q.answer==='options';}
 export function designRulesRestore(q){if(!q||!Object.hasOwn(designRules,q.mode)||!q.histories||![null,'careful','free','other'].includes(q.feel)||![null,'options','same','everyone'].includes(q.answer))throw new RangeError('試練の記録が不正です。');const histories={};for(const mode of Object.keys(designRules)){designRulesReplay(mode,q.histories[mode]);histories[mode]=[...q.histories[mode]];}return {mode:q.mode,histories,feel:q.feel,answer:q.answer};}
