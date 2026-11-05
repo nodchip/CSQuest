@@ -1233,7 +1233,7 @@ FPL-Design:トピック:Non-core:2,FPL,FPL-Design,トピック,Non-core,2,特定
 FPL-Design:トピック:Non-core:3,FPL,FPL-Design,トピック,Non-core,3,言語間の相互運用性,部分,831で共通のバイト順、1184で異なる架空の呼出し規約を比較。実言語間の相互運用や実 ABI は未評価。,coverage-fpl-design.md,18,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:4,FPL,FPL-Design,トピック,Non-core,4,言語の移植性,部分,787で機械語の対象と VM の対応を比較。実言語の移植性、実装差や実機は未評価。,coverage-fpl-design.md,19,原典照合結果は監査記録参照
 FPL-Design:トピック:Non-core:5,FPL,FPL-Design,トピック,Non-core,5,プログラミング言語の形式的記述,部分,281 の固定式の操作的意味論。実言語の記述は未評価。,coverage-fpl-design.md,20,原典照合結果は監査記録参照
-FPL-Design:トピック:Non-core:6,FPL,FPL-Design,トピック,Non-core,6,グリーンコンピューティングの原則,未照合,言語設計との関連を扱う教材を要照合。,coverage-fpl-design.md,21,原典照合結果は監査記録参照
+FPL-Design:トピック:Non-core:6,FPL,FPL-Design,トピック,Non-core,6,グリーンコンピューティングの原則,部分,1223で２つの翻訳方法の仮定した実行時間・平均電力からエネルギーを比較。言語の設計全体や製造・冷却等の影響は未評価。,coverage-fpl-design.md,21,原典照合結果は監査記録参照
 FPL-Design:学習成果:Non-core:1,FPL,FPL-Design,学習成果,Non-core,1,良い言語設計を理解し実在言語の評価へ適用,部分,355 は架空規則の一部を比較。実在言語全体の評価は未評価。,coverage-fpl-design.md,27,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:CS Core:1,FPL,FPL-Event-Driven,トピック,CS Core,1,手続き型と反応型の比較,部分,1102で固定時刻の状態確認と通知の保存・処理を比較。両方式の体系的な比較や実装は未評価。,coverage-fpl-event-driven.md,9,原典照合結果は監査記録参照
 FPL-Event-Driven:トピック:CS Core:2,FPL,FPL-Event-Driven,トピック,CS Core,2,発生源・信号・リスナー・ディスパッチ・イベント・アダプタ・処理,部分,92で２種類の信号・待ち行列・処理、594で登録した処理の参照を比較。一般のイベントオブジェクトやアダプタは未評価。,coverage-fpl-event-driven.md,10,原典照合結果は監査記録参照

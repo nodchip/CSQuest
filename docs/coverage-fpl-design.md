@@ -18,7 +18,7 @@
 | 3 | Non-core | 言語間の相互運用性 | 部分 | 831で共通のバイト順、1184で異なる架空の呼出し規約を比較。実言語間の相互運用や実 ABI は未評価。 |
 | 4 | Non-core | 言語の移植性 | 部分 | 787で機械語の対象と VM の対応を比較。実言語の移植性、実装差や実機は未評価。 |
 | 5 | Non-core | プログラミング言語の形式的記述 | 部分 | 281 の固定式の操作的意味論。実言語の記述は未評価。 |
-| 6 | Non-core | グリーンコンピューティングの原則 | 未照合 | 言語設計との関連を扱う教材を要照合。 |
+| 6 | Non-core | グリーンコンピューティングの原則 | 部分 | 1223で２つの翻訳方法の仮定した実行時間・平均電力からエネルギーを比較。言語の設計全体や製造・冷却等の影響は未評価。 |
 
 ## 例示学習成果
 
@@ -29,3 +29,5 @@
 依頼1223は [Clang の最適化レベル](https://clang.llvm.org/docs/CommandGuide/clang.html)と [OpenJDK の起動・準備・性能](https://openjdk.org/projects/leyden/slides/leyden-heidinga-devnexus-2024-03.pdf)を参照。４入力に対する２候補と誤った候補、架空の翻訳費用と実行費用の合計を `tests/compile-tradeoff.test.js` で検査する。実際のコンパイラや実行時間は計測しない。依頼1013は [SEC-Coding の検証記録](coverage-sec-coding.md)、787は [FPL-Translation の検証記録](coverage-fpl-translation.md)、1184は [FPL-Code の検証記録](coverage-fpl-code.md)に記す限定例であり、それぞれ言語全体の安全性・移植性・相互運用を保証しない。
 
 依頼355の可読性の比較は [Rust API Guidelines の命名指針](https://rust-lang.github.io/api-guidelines/naming.html)を参考にした固定例で、日本語の名前を理解する初見の旅人が、表示された情報だけから意味を判断する。記号の割当ては札ごとに変わりうる。８通りの判断と既存記録の復元は `tests/readability-lab.test.js` で検査する。
+
+依頼1223のエネルギー比較は [言語実装のエネルギー測定に関する研究](https://arxiv.org/abs/2410.05460)を参考に、２つの仮想の仕事で時間と平均電力を掛けて実行中の消費エネルギーを比較する。これは実測や実在言語の順位ではなく、翻訳・待機や機器の製造・冷却を含まない。`tests/energy-lab.test.js` で値と旧記録の復元を検査する。
