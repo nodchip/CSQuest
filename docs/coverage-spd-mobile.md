@@ -6,8 +6,8 @@
 
 | 番号 | 区分 | 要約 | 状態 | 対応例と限界 |
 |---|---|---|---|---|
-| 1a | KA Core | モバイルの言語 | 未照合 | 実言語・環境を用いた開発は未評価。 |
-| 1b | KA Core | 開発環境 | 未照合 | 実開発環境の操作を要照合。 |
+| 1a | KA Core | モバイルの言語 | 部分 | 1325で指定された Kotlin と Swift の例を言語として選ぶ。実言語の記述・一般の比較は未評価。 |
+| 1b | KA Core | 開発環境 | 部分 | 1325で Android Studio・Xcode とビルド、仮想端末・実機の確認計画を比較。実環境の操作は未評価。 |
 | 2a | KA Core | UI の制約 | 部分 | 394で対象の大きさと間隔の固定比較。実端末・利用者は未評価。 |
 | 2b | KA Core | セキュリティの制約 | 部分 | 1323で架空の位置権限の拒否・精度・変更と手動代替を試す。実端末・OS・他のセキュリティ制約は未評価。 |
 | 3a | KA Core | API によるデータへのアクセス | 部分 | 354でオフライン保留・再送の模型。実 API への接続は未評価。 |
@@ -58,3 +58,5 @@
 依頼1328は [Android の UI 状態の保存](https://developer.android.com/topic/libraries/architecture/saving-states) と [UI 層](https://developer.android.com/topic/architecture/ui-layer) を参考に、画面内、画面外のメモリー、復元用の保存という３つの模型で画面の再生成とプロセス終了を比較する。表示内状態を自動保存しない案や、保存が利用可能な復元は模型の仮定であり、実端末・実アプリの実装や永続保存を評価しない。`tests/mobile-state-holder.test.js` で６条件と保存状態を検査する。
 
 依頼1329は [MDN の Web アプリのインストール](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable) と [キャッシュ](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching) を参考に、URL から開く Web 版と地図を同梱する端末向け版の固定例を操作する。導入や圏外利用は方式名だけで決まらず、設計と環境に依存する。実端末や実通信、全機能の比較ではない。`tests/mobile-web-access.test.js` は導入と保存の条件および途中記録を検査する。
+
+依頼1325の工房では Android 向けに Kotlin・Android Studio、iOS 向けに Swift・Xcode を指定する２例について、ビルド、仮想端末と実機確認の計画を進める。これは指定に沿う模型で、他の言語や道具を排除しない。実コードの作成・実環境の起動・実機試験は行わず、元の依頼の達成条件には含めない。参考：[Android Studio](https://developer.android.com/studio/)、[Apple の iOS 開発](https://developer.apple.com/ios/get-started/)。
