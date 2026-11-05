@@ -29,7 +29,7 @@
 | 8b | KA Core | 開発・保守の不変条件と柔軟な試作 | 未照合 | 不変条件や異種コレクションとの比較は未評価。 |
 | 8c | KA Core | 関数・積・和の型規則 | 部分 | 595・596・765で固定の構成と適用。一般の規則の列挙は未評価。 |
 | 8d | KA Core | 誤用防止と再利用 | 部分 | 509・510で固定の型指定・検査。体系的な比較は未評価。 |
-| 8e | KA Core | 未完成プログラムの検出・実行 | 未照合 | 対応する教材を未確認。 |
+| 8e | KA Core | 未完成プログラムの検出・実行 | 部分 | 510で未完成の札を開始前に拒否する門と使用時に失敗する門を比較。実言語の型検査が未完成を必ず検出するわけではない。 |
 | 8f | KA Core | 静的解析との関係 | 部分 | 1241で到達可能性を調べず操作の型を検査する固定の鏡を比較。一般の静的解析や型付け規則は未評価。 |
 | 8g | KA Core | 決定可能性 | 部分 | 1241で任意の機械の停止と実行時型不一致の判定を結ぶ構成を選択。各型システムの判定可能性は未評価。 |
 | 9 | Non-core | 積・和・関数・量化・再帰の型構成子 | 部分 | 595–597で積・和・関数・列の固定例。量化や一般の構成は未評価。 |
@@ -76,3 +76,5 @@
 依頼1041は [Rust の型](https://doc.rust-lang.org/book/ch03-02-data-types.html)と [Python の TypeError](https://docs.python.org/3/library/exceptions.html#TypeError)を参考に、数字と文字列の加算を到達する場合・しない場合で比較する。`scripts/check_type_language_examples.py` で rustc 1.99.1 は両方をコンパイル時 E0277 とし、Python 3.13.15 は分岐を通る場合のみ TypeError、通らない場合は done を表示することを確認した。画面はこの結果の再現で実コンパイラーを起動しない。`tests/language-type-check.test.js` は４条件・選択肢・保存を検査する。実言語の全規則、外部静的解析、独自のコード作成や自由な説明は評価しない。
 
 依頼1105は CS2023 が定義を示さない prescriptive / descriptive の解釈の一例として、[Pfenning の論理プログラミングにおける型の見方](https://www.cs.cmu.edu/~fp/papers/iclp90.pdf) と [多相型の二つの役割](https://scholar.lib.vt.edu/ejournals/JFLP/jflp-mirror/articles/2001/S01-01/JFLP-A01-01.pdf) を参考にする。３種類すべてをそのまま返す架空の操作に対して、許可する型を数・言葉に限定した門と、元の振る舞いを変えずに３型を調べる門を比較する。有限の観察は一般のプログラムの型や健全な近似の証明ではなく、型が規範と記述の役割を併せ持つ場合もある。`tests/polymorphism-views.test.js` は６条件・達成・復元を検査する。
+
+依頼510では [Python の未実装を示す例外](https://docs.python.org/3/library/exceptions.html#NotImplementedError)を参考に、型検査に加えて未完成の札を開始前に拒否する架空の門と、呼び出したときに止まる門を比較する。`tests/unfinished-check.test.js` は８条件と旧記録の復元を検査する。未完成の検出はこの門の追加規則であり、静的型検査一般が未完成を必ず拒否するという意味ではない。

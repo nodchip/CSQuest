@@ -1546,7 +1546,7 @@ FPL-Types:トピック:KA Core:8a,FPL,FPL-Types,トピック,KA Core,8a,早期�
 FPL-Types:トピック:KA Core:8b,FPL,FPL-Types,トピック,KA Core,8b,開発・保守の不変条件と柔軟な試作,未照合,不変条件や異種コレクションとの比較は未評価。,coverage-fpl-types.md,29,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8c,FPL,FPL-Types,トピック,KA Core,8c,関数・積・和の型規則,部分,595・596・765で固定の構成と適用。一般の規則の列挙は未評価。,coverage-fpl-types.md,30,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8d,FPL,FPL-Types,トピック,KA Core,8d,誤用防止と再利用,部分,509・510で固定の型指定・検査。体系的な比較は未評価。,coverage-fpl-types.md,31,原典照合結果は監査記録参照
-FPL-Types:トピック:KA Core:8e,FPL,FPL-Types,トピック,KA Core,8e,未完成プログラムの検出・実行,未照合,対応する教材を未確認。,coverage-fpl-types.md,32,原典照合結果は監査記録参照
+FPL-Types:トピック:KA Core:8e,FPL,FPL-Types,トピック,KA Core,8e,未完成プログラムの検出・実行,部分,510で未完成の札を開始前に拒否する門と使用時に失敗する門を比較。実言語の型検査が未完成を必ず検出するわけではない。,coverage-fpl-types.md,32,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8f,FPL,FPL-Types,トピック,KA Core,8f,静的解析との関係,部分,1241で到達可能性を調べず操作の型を検査する固定の鏡を比較。一般の静的解析や型付け規則は未評価。,coverage-fpl-types.md,33,原典照合結果は監査記録参照
 FPL-Types:トピック:KA Core:8g,FPL,FPL-Types,トピック,KA Core,8g,決定可能性,部分,1241で任意の機械の停止と実行時型不一致の判定を結ぶ構成を選択。各型システムの判定可能性は未評価。,coverage-fpl-types.md,34,原典照合結果は監査記録参照
 FPL-Types:トピック:Non-core:9,FPL,FPL-Types,トピック,Non-core,9,積・和・関数・量化・再帰の型構成子,部分,595–597で積・和・関数・列の固定例。量化や一般の構成は未評価。,coverage-fpl-types.md,35,原典照合結果は監査記録参照
