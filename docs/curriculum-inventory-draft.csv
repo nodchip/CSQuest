@@ -2010,7 +2010,7 @@ HCI-Design:学習成果:CS Core:2b,HCI,HCI-Design,学習成果,CS Core,2b,反復
 HCI-Design:学習成果:CS Core:2c,HCI,HCI-Design,学習成果,CS Core,2c,反復過程：増分を評価,部分,287 の固定反応で再試行。実利用者評価は未評価。,coverage-hci-design.md,59,原典照合結果は監査記録参照
 HCI-Design:学習成果:CS Core:2d,HCI,HCI-Design,学習成果,CS Core,2d,反復過程：結果を次の反復に反映,部分,287 の観察と固定の改善。一般の設計過程は未評価。,coverage-hci-design.md,60,原典照合結果は監査記録参照
 HCI-Design:学習成果:CS Core:3,HCI,HCI-Design,学習成果,CS Core,3,制約変更とトレードオフの影響を説明,部分,427 で架空の予算を変えて比較。自由な説明と実費用は未評価。,coverage-hci-design.md,61,原典照合結果は監査記録参照
-HCI-Design:学習成果:KA Core:4,HCI,HCI-Design,学習成果,KA Core,4,目的に照らしてアーキテクチャ設計を評価,未照合,対応教材を要照合。,coverage-hci-design.md,62,原典照合結果は監査記録参照
+HCI-Design:学習成果:KA Core:4,HCI,HCI-Design,学習成果,KA Core,4,目的に照らしてアーキテクチャ設計を評価,部分,92 で展示の変更予定と仮定した作業点に照らし、一体型と MVC の役割分離を比較。実際の計画と一般の評価は未評価。,coverage-hci-design.md,62,原典照合結果は監査記録参照
 HCI-Design:学習成果:KA Core:5,HCI,HCI-Design,学習成果,KA Core,5,分散環境の同期と利用体験の課題を特定,部分,288 で競合、下書き、古い通知を操作。一般の分散環境は未評価。,coverage-hci-design.md,63,原典照合結果は監査記録参照
 HCI-Design:学習成果:KA Core:6,HCI,HCI-Design,学習成果,KA Core,6,入力方法のプライバシー影響を比較,部分,824 の広場と個室で声・ボタン・撮影等を固定条件で比較。実利用者の意向や実装全般は未評価。,coverage-hci-design.md,64,原典照合結果は監査記録参照
 HCI-Design:学習成果:KA Core:7,HCI,HCI-Design,学習成果,KA Core,7,視覚設計原則に基づく根拠を説明,部分,825 で近接とプログラム上の関係を選択して比較。一般の設計根拠や自由な説明は未評価。,coverage-hci-design.md,65,原典照合結果は監査記録参照
