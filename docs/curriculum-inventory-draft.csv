@@ -3330,21 +3330,22 @@ SF-Overview:学習成果:CS Core:5,SF,SF-Overview,学習成果,CS Core,5,階層�
 SF-Overview:学習成果:CS Core:6,SF,SF-Overview,学習成果,CS Core,6,階層化と誤り処理を使うプログラムを構築,部分,依頼200で固定３層の失敗時の処理を選び、結果を比べる代替体験。一般の層構築や実コードの記述は評価しない。,coverage-sf-overview.md,25,原典照合結果は監査記録参照
 SF-Overview:学習成果:CS Core:7,SF,SF-Overview,学習成果,CS Core,7,トレース等で階層化プログラムの不具合を特定,部分,依頼247は固定記録の照合。実際のデバッグツールは評価しない。,coverage-sf-overview.md,26,原典照合結果は監査記録参照
 SF-Overview:学習成果:CS Core:8,SF,SF-Overview,学習成果,CS Core,8,強・弱スケーリングの違いを理解,部分,依頼437で４人数・２仕事量の模型を比較。実測や一般の分析は未評価。,coverage-sf-overview.md,27,原典照合結果は監査記録参照
-SF-Performance:トピック:CS Core:1a,SF,SF-Performance,トピック,CS Core,1a,光速と計算機の時間,部分,依頼25で真空中の光の片道３距離と 1 GHz の周期、0.3 m での 2 GHz との比較を操作。配線・材料や実機の応答時間は未評価。,coverage-sf-performance.md,9,原典照合結果は監査記録参照
-SF-Performance:トピック:CS Core:1b,SF,SF-Performance,トピック,CS Core,1b,メモリ・ディスク・ネットワークの遅延,部分,依頼25で手元の記憶・記録装置と、行き・読取り・帰りを足す遠隔記憶の固定例を比較。実機や一般の遅延は未評価。,coverage-sf-performance.md,10,原典照合結果は監査記録参照
-SF-Performance:トピック:CS Core:2,SF,SF-Performance,トピック,CS Core,2,キャッシュと時間的・空間的局所性,部分,依頼25・103で固定された参照列と棚を比較。実機や一般のアクセス列は未評価。,coverage-sf-performance.md,11,原典照合結果は監査記録参照
-SF-Performance:トピック:CS Core:3,SF,SF-Performance,トピック,CS Core,3,複数システムにおけるキャッシュと一貫性,部分,依頼104の共有値と無効化は固定模型。実プロトコルや各システムでの一貫性は未評価。,coverage-sf-performance.md,12,原典照合結果は監査記録参照
-SF-Performance:トピック:CS Core:4,SF,SF-Performance,トピック,CS Core,4,プロセッサの記憶階層の導入,部分,依頼489で速い棚と遠い書庫の２階層・容量・費用を比較。実際の複数階層やプロセッサ内部は未評価。,coverage-sf-performance.md,13,原典照合結果は監査記録参照
-SF-Performance:トピック:KA Core:5,SF,SF-Performance,トピック,KA Core,5,平均メモリアクセス時間の式,部分,依頼103で棚を調べる時間＋ミス率×追加時間を３構成に適用。複数階層や実測は未評価。,coverage-sf-performance.md,14,原典照合結果は監査記録参照
-SF-Performance:トピック:KA Core:6,SF,SF-Performance,トピック,KA Core,6,仮想化と隔離の理由,部分,依頼135で共有カーネルと別ゲストの互換性、２ VM の架空の資源上限と処理数を比較。実際の保護や性能保証は未評価。,coverage-sf-performance.md,15,原典照合結果は監査記録参照
-SF-Performance:トピック:KA Core:7,SF,SF-Performance,トピック,KA Core,7,仮想メモリによる間接参照,部分,依頼40・385で仮想頁から物理枠への対応を操作。一般のページング機構は未評価。,coverage-sf-performance.md,16,原典照合結果は監査記録参照
-SF-Performance:トピック:KA Core:8,SF,SF-Performance,トピック,KA Core,8,仮想メモリと VM の実装方法,部分,依頼40・135は頁表と環境の固定模型。一般の VM・仮想メモリの実装や実機は未評価。,coverage-sf-performance.md,17,原典照合結果は監査記録参照
-SF-Performance:学習成果:CS Core:1,SF,SF-Performance,学習成果,CS Core,1,メモリ・ディスク・ネットワークの遅延の内訳を説明,部分,依頼25で４経路の架空時間と遠隔の３段階を比較。実装や自由な説明は未評価。,coverage-sf-performance.md,23,原典照合結果は監査記録参照
-SF-Performance:学習成果:CS Core:2,SF,SF-Performance,学習成果,CS Core,2,局所性と性能の関係を説明,部分,依頼25・103の時間・空間局所性の固定例。自由な説明は評価しない。,coverage-sf-performance.md,24,原典照合結果は監査記録参照
-SF-Performance:学習成果:CS Core:3,SF,SF-Performance,学習成果,CS Core,3,平均アクセス時間を計算し容量・ヒット率・時間の兼ね合いを説明,部分,依頼103の平均式・３構成と489の容量・費用・時間の固定例。実測や自由な説明は未評価。,coverage-sf-performance.md,25,原典照合結果は監査記録参照
-SF-Performance:学習成果:KA Core:4,SF,SF-Performance,学習成果,KA Core,4,実行環境の隔離・保護の重要性を説明,部分,依頼385で別枠と共有枠を比較。一般の VM の保護や自由な説明は未評価。,coverage-sf-performance.md,26,原典照合結果は監査記録参照
-SF-Performance:学習成果:KA Core:5,SF,SF-Performance,学習成果,KA Core,5,間接参照による専用資源の見かけを説明,部分,依頼385の同じ仮想頁から異なる物理枠への固定対応。専用機械全体の見かけや自由な説明は未評価。,coverage-sf-performance.md,27,原典照合結果は監査記録参照
-SF-Performance:学習成果:KA Core:6,SF,SF-Performance,学習成果,KA Core,6,別 VM の２アプリの性能分離を評価,部分,依頼135で４条件の１刻の処理数と未使用容量を比較。固定した優先順・上限の模型で、実 VM の実測や一般的な性能分離は未評価。,coverage-sf-performance.md,28,原典照合結果は監査記録参照
+SF-Performance:トピック:CS Core:1,SF,SF-Performance,トピック,CS Core,1,計算機システムの遅延,部分,依頼25で光速や記憶・遠隔アクセスの固定例を比較。実機や一般の遅延は未評価。,coverage-sf-performance.md,9,原典照合結果は監査記録参照・親子重複候補
+SF-Performance:トピック:CS Core:1a,SF,SF-Performance,トピック,CS Core,1a,光速と計算機の時間,部分,依頼25で真空中の光の片道３距離と 1 GHz の周期、0.3 m での 2 GHz との比較を操作。配線・材料や実機の応答時間は未評価。,coverage-sf-performance.md,10,原典照合結果は監査記録参照
+SF-Performance:トピック:CS Core:1b,SF,SF-Performance,トピック,CS Core,1b,メモリ・ディスク・ネットワークの遅延,部分,依頼25で手元の記憶・記録装置と、行き・読取り・帰りを足す遠隔記憶の固定例を比較。実機や一般の遅延は未評価。,coverage-sf-performance.md,11,原典照合結果は監査記録参照
+SF-Performance:トピック:CS Core:2,SF,SF-Performance,トピック,CS Core,2,キャッシュと時間的・空間的局所性,部分,依頼25・103で固定された参照列と棚を比較。実機や一般のアクセス列は未評価。,coverage-sf-performance.md,12,原典照合結果は監査記録参照
+SF-Performance:トピック:CS Core:3,SF,SF-Performance,トピック,CS Core,3,複数システムにおけるキャッシュと一貫性,部分,依頼104の共有値と無効化は固定模型。実プロトコルや各システムでの一貫性は未評価。,coverage-sf-performance.md,13,原典照合結果は監査記録参照
+SF-Performance:トピック:CS Core:4,SF,SF-Performance,トピック,CS Core,4,プロセッサの記憶階層の導入,部分,依頼489で速い棚と遠い書庫の２階層・容量・費用を比較。実際の複数階層やプロセッサ内部は未評価。,coverage-sf-performance.md,14,原典照合結果は監査記録参照
+SF-Performance:トピック:KA Core:5,SF,SF-Performance,トピック,KA Core,5,平均メモリアクセス時間の式,部分,依頼103で棚を調べる時間＋ミス率×追加時間を３構成に適用。複数階層や実測は未評価。,coverage-sf-performance.md,15,原典照合結果は監査記録参照
+SF-Performance:トピック:KA Core:6,SF,SF-Performance,トピック,KA Core,6,仮想化と隔離の理由,部分,依頼135で共有カーネルと別ゲストの互換性、２ VM の架空の資源上限と処理数を比較。実際の保護や性能保証は未評価。,coverage-sf-performance.md,16,原典照合結果は監査記録参照
+SF-Performance:トピック:KA Core:7,SF,SF-Performance,トピック,KA Core,7,仮想メモリによる間接参照,部分,依頼40・385で仮想頁から物理枠への対応を操作。一般のページング機構は未評価。,coverage-sf-performance.md,17,原典照合結果は監査記録参照
+SF-Performance:トピック:KA Core:8,SF,SF-Performance,トピック,KA Core,8,仮想メモリと VM の実装方法,部分,依頼40・135は頁表と環境の固定模型。一般の VM・仮想メモリの実装や実機は未評価。,coverage-sf-performance.md,18,原典照合結果は監査記録参照
+SF-Performance:学習成果:CS Core:1,SF,SF-Performance,学習成果,CS Core,1,メモリ・ディスク・ネットワークの遅延の内訳を説明,部分,依頼25で４経路の架空時間と遠隔の３段階を比較。実装や自由な説明は未評価。,coverage-sf-performance.md,24,原典照合結果は監査記録参照
+SF-Performance:学習成果:CS Core:2,SF,SF-Performance,学習成果,CS Core,2,局所性と性能の関係を説明,部分,依頼25・103の時間・空間局所性の固定例。自由な説明は評価しない。,coverage-sf-performance.md,25,原典照合結果は監査記録参照
+SF-Performance:学習成果:CS Core:3,SF,SF-Performance,学習成果,CS Core,3,平均アクセス時間を計算し容量・ヒット率・時間の兼ね合いを説明,部分,依頼103の平均式・３構成と489の容量・費用・時間の固定例。実測や自由な説明は未評価。,coverage-sf-performance.md,26,原典照合結果は監査記録参照
+SF-Performance:学習成果:KA Core:4,SF,SF-Performance,学習成果,KA Core,4,実行環境の隔離・保護の重要性を説明,部分,依頼385で別枠と共有枠を比較。一般の VM の保護や自由な説明は未評価。,coverage-sf-performance.md,27,原典照合結果は監査記録参照
+SF-Performance:学習成果:KA Core:5,SF,SF-Performance,学習成果,KA Core,5,間接参照による専用資源の見かけを説明,部分,依頼385の同じ仮想頁から異なる物理枠への固定対応。専用機械全体の見かけや自由な説明は未評価。,coverage-sf-performance.md,28,原典照合結果は監査記録参照
+SF-Performance:学習成果:KA Core:6,SF,SF-Performance,学習成果,KA Core,6,別 VM の２アプリの性能分離を評価,部分,依頼135で４条件の１刻の処理数と未使用容量を比較。固定した優先順・上限の模型で、実 VM の実測や一般的な性能分離は未評価。,coverage-sf-performance.md,29,原典照合結果は監査記録参照
 SF-Reliability:トピック:CS Core:1,SF,SF-Reliability,トピック,CS Core,1,バグ・故障・障害の区別,部分,依頼23で門の書き間違い、記憶破損、内部結果と約束違反を比較。一般の分類と障害連鎖は未評価。,coverage-sf-reliability.md,9,原典照合結果は監査記録参照
 SF-Reliability:トピック:CS Core:2,SF,SF-Reliability,トピック,CS Core,2,信頼性と可用性,部分,依頼108で同じ稼働割合の２記録と４刻連続の航海を比較。一般の確率モデルや将来の推定は未対応。,coverage-sf-reliability.md,10,原典照合結果は監査記録参照
 SF-Reliability:トピック:CS Core:3,SF,SF-Reliability,トピック,CS Core,3,冗長性による信頼性,部分,再送・符号・複製の固定例は子項目に記載。一般の信頼性設計は未評価。,coverage-sf-reliability.md,11,原典照合結果は監査記録参照・親子重複候補
