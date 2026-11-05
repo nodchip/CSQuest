@@ -4,10 +4,16 @@ import {createEnvironment,createEnvironmentTrial,stepEnvironment,environmentCorr
 
 test('export copies the value at child startup and later changes are separate',()=>{
   const all=createEnvironment();
-  for(const [id,actions] of Object.entries({local:['blue','spawn'],exported:['blue','export','spawn'],copies:['blue','export','spawn','red','green'],temporary:['blue','export','spawnTemp','spawnAgain']})){
+  for(const [id,actions] of Object.entries({local:['blue','spawn'],exported:['blue','export','spawn'],copies:['blue','export','spawn','red','green'],temporary:['blue','export','spawnTemp','spawnAgain'],inherited:['spawn','unset','spawnAgain']})){
     let s=createEnvironmentTrial(id);for(const action of actions)s=stepEnvironment(s,action);s.checked=true;assert.ok(environmentCorrect(s));all.trials[id]=s;
   }
   assert.equal(all.trials.local.child.value,null);assert.equal(all.trials.copies.atSpawn,'blue');assert.equal(all.trials.copies.parent,'red');assert.equal(all.trials.copies.child.value,'green');assert.equal(all.trials.temporary.parent,'blue');assert.equal(all.trials.temporary.child.value,'red');assert.equal(all.trials.temporary.second.value,'blue');assert.ok(environmentComplete(all));assert.deepEqual(restoreEnvironment(all),all);
+});
+test('inherited exported value reaches the first child, but unset prevents delivery to a later child',()=>{
+ let s=createEnvironmentTrial('inherited');assert.equal(s.parent,'blue');assert.equal(s.exported,true);
+ for(const action of ['spawn','unset','spawnAgain'])s=stepEnvironment(s,action);
+ assert.equal(s.child.value,'blue');assert.equal(s.parent,null);assert.equal(s.second.value,null);s.checked=true;assert.equal(environmentCorrect(s),true);
+ const old=createEnvironment();delete old.trials.inherited;const restored=restoreEnvironment(old);assert.equal(restored.trials.inherited.parent,'blue');assert.equal(restored.trials.inherited.exported,true);
 });
 test('temporary assignment affects only the first child and old drafts gain the new case',()=>{
   let s=createEnvironmentTrial('temporary');assert.equal(stepEnvironment(s,'spawnAgain').history.length,0);

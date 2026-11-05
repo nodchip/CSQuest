@@ -21,3 +21,7 @@ test('markers survive old-format parsing, unknown records and cross-tab union',(
  assert.equal(completionStatus(id,merged.completed,merged.unknown),'current');
  assert.deepEqual(parseCompleted(JSON.stringify([...merged.completed,...merged.unknown]),known),merged);
 });
+test('environment completion from the previous expansion stays recorded but requires the new case',()=>{
+ const id='guild-child-environment',old=`csquest-current-completion:${id}:1`;
+ assert.equal(completionStatus(id,[id],[old]),'unverified');const updated=markCurrentCompletion(id,[old]);assert.equal(completionStatus(id,[id],updated),'current');assert.ok(updated.includes(old));
+});
