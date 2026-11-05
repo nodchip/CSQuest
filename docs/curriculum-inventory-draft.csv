@@ -1952,7 +1952,7 @@ HCI-Accountability:トピック:KA Core:4a,HCI,HCI-Accountability,トピック,K
 HCI-Accountability:トピック:KA Core:4b,HCI,HCI-Accountability,トピック,KA Core,4b,多様な関係者の価値を特定して含める,部分,359・823 は架空の利用条件を比較。価値体系の体系的分析は未評価。,coverage-hci-accountability.md,24,原典照合結果は監査記録参照
 HCI-Accountability:トピック:KA Core:5,HCI,HCI-Accountability,トピック,KA Core,5,設計による説得,部分,説得の内容・目標・操作的画面の区別は子を参照。一般の設計や実際の行動は未評価。,coverage-hci-accountability.md,25,原典照合結果は監査記録参照・親子重複候補
 HCI-Accountability:トピック:KA Core:5a,HCI,HCI-Accountability,トピック,KA Core,5a,設計の説得的な内容を評価,部分,289 は初期設定と選択肢の見せ方の固定例。実際の意図・効果は未評価。,coverage-hci-accountability.md,26,原典照合結果は監査記録参照
-HCI-Accountability:トピック:KA Core:5b,HCI,HCI-Accountability,トピック,KA Core,5b,説得を設計の目標として用いる,未照合,説得を目標として設計する教材を要照合。,coverage-hci-accountability.md,27,原典照合結果は監査記録参照
+HCI-Accountability:トピック:KA Core:5b,HCI,HCI-Accountability,トピック,KA Core,5b,説得を設計の目標として用いる,部分,289 で休憩を考えるきっかけを設計し、理由と選択のある案を選ぶ。自由設計や実際の効果は未評価。,coverage-hci-accountability.md,27,原典照合結果は監査記録参照
 HCI-Accountability:トピック:KA Core:5c,HCI,HCI-Accountability,トピック,KA Core,5c,説得的・操作的な画面を区別,部分,289 で設定と結果を比較。一般の意図や実行動は未評価。,coverage-hci-accountability.md,28,原典照合結果は監査記録参照
 HCI-Accountability:学習成果:CS Core:1,HCI,HCI-Accountability,学習成果,CS Core,1,設計の社会・共同体への影響を特定し批判的に検討,部分,63・289・824 の固定例。実社会の広範な分析は未評価。,coverage-hci-accountability.md,34,原典照合結果は監査記録参照
 HCI-Accountability:学習成果:KA Core:2,HCI,HCI-Accountability,学習成果,KA Core,2,設計に関わる人間要因を特定,部分,289 の初期設定と見せ方。一般の人間要因分析は未評価。,coverage-hci-accountability.md,35,原典照合結果は監査記録参照
