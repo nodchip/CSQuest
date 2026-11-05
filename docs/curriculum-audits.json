@@ -576,6 +576,22 @@
       "topics": 14,
       "outcomes": 9,
       "scope_sha256": "df7974ed2bda1097051bae64620c934aaa6eb6acb6c121c1771bfa19450e623c"
+    },
+    "AR-Memory": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-memory.md",
+      "topics": 17,
+      "outcomes": 4,
+      "scope_sha256": "f69e3b74246347321c0d8f7b36955162b5ce3ca9df0b967b263cf5e0eaa47aad"
+    },
+    "AR-Performance-Energy": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ar-performance-energy.md",
+      "topics": 12,
+      "outcomes": 7,
+      "scope_sha256": "c8789251217f03c943506d9b2d9d38f0ee2134f2b36a81a9725698eede6b6686"
     }
   }
 }

@@ -1,6 +1,6 @@
 # AR-Performance-Energy：項目別の対応状況
 
-原典：[CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 pp.106–107。[既存の調査](ar-performance-energy.md)と依頼を照合した。状態は[追跡方法](coverage-status.md)を参照。4 は子項目で追う。
+原典：[CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 pp.106–107。[既存の調査](ar-performance-energy.md)と依頼を照合した。状態は[追跡方法](coverage-status.md)を参照。親子の重複は集計時に検討する。
 
 ## トピック
 
@@ -9,6 +9,7 @@
 | 1 | KA Core | 性能、電力、記憶、通信の費用の評価 | 部分 | 161 は架空の所要時間・平均電力・エネルギー。記憶・通信や実測は未評価。 |
 | 2 | KA Core | 分岐予測、投機、順序外実行、Tomasulo 法 | 部分 | 159・160は予測と投機結果、1233は順序外開始、1234は結果の札と依存の固定例。Tomasulo 法全体や実機は未評価。 |
 | 3 | KA Core | ベクトルプロセッサと GPU の改良 | 部分 | 1085で４読み取りと32バイト区画のまとまりを比較。実 GPU の実行・性能や他の改良は未評価。 |
+| 4 | KA Core | マルチスレッドのハードウェア支援 | 部分 | 90・814で同期・競合の固定模型。ハードウェア支援全体と実機は未評価。 |
 | 4a | KA Core | マルチスレッド支援：競合 | 部分 | 814 は競合と比較交換の抽象模型。実機の支援は未評価。 |
 | 4b | KA Core | マルチスレッド支援：ロック実装 | 部分 | 814 はロックと原子的操作の模型。実機実装は未評価。 |
 | 4c | KA Core | マルチスレッド支援：２点間同期 | 未照合 | ハードウェア支援を含む対応を要照合。 |

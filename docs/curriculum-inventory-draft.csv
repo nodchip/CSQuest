@@ -802,21 +802,23 @@ AR-Memory:トピック:CS Core:1,AR,AR-Memory,トピック,CS Core,1,階層と�
 AR-Memory:トピック:CS Core:2,AR,AR-Memory,トピック,CS Core,2,主記憶の構成と操作,部分,455 の４番地の読書き。実装と構成一般は未評価。,coverage-ar-memory.md,10,原典照合結果は監査記録参照
 AR-Memory:トピック:CS Core:3,AR,AR-Memory,トピック,CS Core,3,永続記憶,部分,455 で保存・電源断を操作。実機のストレージ構造と障害は未評価。,coverage-ar-memory.md,11,原典照合結果は監査記録参照
 AR-Memory:トピック:CS Core:4,AR,AR-Memory,トピック,CS Core,4,遅延・サイクル時間・帯域・インタリーブ,部分,1012で１・４バンクと３参照列の発行・完了を比較。サイクル時間を４刻に固定し、実測や一般の構成は未評価。,coverage-ar-memory.md,12,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:5a,AR,AR-Memory,トピック,CS Core,5a,キャッシュのアドレス対応付け,部分,573 の直接対応、795 の直接対応と２ウェイ。一般の番地分割や実機は未評価。,coverage-ar-memory.md,13,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:5b,AR,AR-Memory,トピック,CS Core,5b,ブロックの大きさ,部分,103 は１・２頁を比較。一般の構成と転送費用は未評価。,coverage-ar-memory.md,14,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:5c,AR,AR-Memory,トピック,CS Core,5c,置換・書込み方式,部分,487 で置換、574 で書込み、795 で組内 LRU。全方式や並行処理は未評価。,coverage-ar-memory.md,15,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:5d,AR,AR-Memory,トピック,CS Core,5d,先読み,部分,796 でミス時の次ブロック先読み、不要な転送と追出しを比較。実機の時間・並行処理や他の方式は未評価。,coverage-ar-memory.md,16,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:6,AR,AR-Memory,トピック,CS Core,6,複数プロセッサのキャッシュ一貫性,部分,104 の単一値・順次操作。実プロトコルと通信競合は未評価。,coverage-ar-memory.md,17,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:7,AR,AR-Memory,トピック,CS Core,7,仮想記憶のハードウェア支援,部分,40 の固定ページ変換。実機支援は未評価。,coverage-ar-memory.md,18,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:8,AR,AR-Memory,トピック,CS Core,8,故障処理と信頼性,部分,1009で一時的な１・２ビット誤りと巡回点検、訂正不能時の利用停止を比較。故障処理の全体像や実機は未評価。,coverage-ar-memory.md,19,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:9a,AR,AR-Memory,トピック,CS Core,9a,誤り符号,部分,106・107 で符号の１ビット訂正と２ビット検出。一般の故障や符号は未評価。,coverage-ar-memory.md,20,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:9b,AR,AR-Memory,トピック,CS Core,9b,圧縮,部分,110 で固定頻度のハフマン符号。付帯情報と一般のファイル形式は未評価。,coverage-ar-memory.md,21,原典照合結果は監査記録参照
-AR-Memory:トピック:CS Core:9c,AR,AR-Memory,トピック,CS Core,9c,データ整合性,部分,1009で訂正と書戻し、訂正不能時の通知・利用停止を一時的な誤りの固定例で扱う。一般の整合性や実装は未評価。,coverage-ar-memory.md,22,原典照合結果は監査記録参照
-AR-Memory:トピック:KA Core:10,AR,AR-Memory,トピック,KA Core,10,メモリ内処理,部分,1023で３行の多数決による AND・OR と専用作業行、外部へ運ぶ行データを比較。実装・一般の PIM や実測は未評価。,coverage-ar-memory.md,23,原典照合結果は監査記録参照
-AR-Memory:学習成果:CS Core:1,AR,AR-Memory,学習成果,CS Core,1,図から記憶技術と相対的な費用・性能を特定,部分,1019で SRAM・DRAM の保持と架空の費用・速度による２階層を比較。実製品の数値や一般の構成は未評価。,coverage-ar-memory.md,29,原典照合結果は監査記録参照
-AR-Memory:学習成果:CS Core:2,AR,AR-Memory,学習成果,CS Core,2,メモリ遅延の実行時間への影響を計測,部分,103 は模型の固定値を集計。実機測定は未評価。,coverage-ar-memory.md,30,原典照合結果は監査記録参照
-AR-Memory:学習成果:CS Core:3,AR,AR-Memory,学習成果,CS Core,3,仮想記憶管理の機能を列挙,部分,40 の固定変換。管理機能の一般的な列挙は未評価。,coverage-ar-memory.md,31,原典照合結果は監査記録参照
-AR-Memory:学習成果:CS Core:4,AR,AR-Memory,学習成果,CS Core,4,複数構成・命令とデータの参照混合で平均アクセス時間を計算,部分,103 は単一キャッシュの４例。複数構成一般と混合参照は未評価。,coverage-ar-memory.md,32,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:5,AR,AR-Memory,トピック,CS Core,5,キャッシュメモリ,部分,487・573・795・796で対応付け、置換、先読みを比較。実機と一般の設計は未評価。,coverage-ar-memory.md,13,原典照合結果は監査記録参照・親子重複候補
+AR-Memory:トピック:CS Core:5a,AR,AR-Memory,トピック,CS Core,5a,キャッシュのアドレス対応付け,部分,573 の直接対応、795 の直接対応と２ウェイ。一般の番地分割や実機は未評価。,coverage-ar-memory.md,14,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:5b,AR,AR-Memory,トピック,CS Core,5b,ブロックの大きさ,部分,103 は１・２頁を比較。一般の構成と転送費用は未評価。,coverage-ar-memory.md,15,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:5c,AR,AR-Memory,トピック,CS Core,5c,置換・書込み方式,部分,487 で置換、574 で書込み、795 で組内 LRU。全方式や並行処理は未評価。,coverage-ar-memory.md,16,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:5d,AR,AR-Memory,トピック,CS Core,5d,先読み,部分,796 でミス時の次ブロック先読み、不要な転送と追出しを比較。実機の時間・並行処理や他の方式は未評価。,coverage-ar-memory.md,17,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:6,AR,AR-Memory,トピック,CS Core,6,複数プロセッサのキャッシュ一貫性,部分,104 の単一値・順次操作。実プロトコルと通信競合は未評価。,coverage-ar-memory.md,18,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:7,AR,AR-Memory,トピック,CS Core,7,仮想記憶のハードウェア支援,部分,40 の固定ページ変換。実機支援は未評価。,coverage-ar-memory.md,19,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:8,AR,AR-Memory,トピック,CS Core,8,故障処理と信頼性,部分,1009で一時的な１・２ビット誤りと巡回点検、訂正不能時の利用停止を比較。故障処理の全体像や実機は未評価。,coverage-ar-memory.md,20,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:9,AR,AR-Memory,トピック,CS Core,9,信頼性,部分,106・107・110・1009で誤り訂正、圧縮、点検を扱う。一般の障害・信頼性は未評価。,coverage-ar-memory.md,21,原典照合結果は監査記録参照・親子重複候補
+AR-Memory:トピック:CS Core:9a,AR,AR-Memory,トピック,CS Core,9a,誤り符号,部分,106・107 で符号の１ビット訂正と２ビット検出。一般の故障や符号は未評価。,coverage-ar-memory.md,22,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:9b,AR,AR-Memory,トピック,CS Core,9b,圧縮,部分,110 で固定頻度のハフマン符号。付帯情報と一般のファイル形式は未評価。,coverage-ar-memory.md,23,原典照合結果は監査記録参照
+AR-Memory:トピック:CS Core:9c,AR,AR-Memory,トピック,CS Core,9c,データ整合性,部分,1009で訂正と書戻し、訂正不能時の通知・利用停止を一時的な誤りの固定例で扱う。一般の整合性や実装は未評価。,coverage-ar-memory.md,24,原典照合結果は監査記録参照
+AR-Memory:トピック:KA Core:10,AR,AR-Memory,トピック,KA Core,10,メモリ内処理,部分,1023で３行の多数決による AND・OR と専用作業行、外部へ運ぶ行データを比較。実装・一般の PIM や実測は未評価。,coverage-ar-memory.md,25,原典照合結果は監査記録参照
+AR-Memory:学習成果:CS Core:1,AR,AR-Memory,学習成果,CS Core,1,図から記憶技術と相対的な費用・性能を特定,部分,1019で SRAM・DRAM の保持と架空の費用・速度による２階層を比較。実製品の数値や一般の構成は未評価。,coverage-ar-memory.md,31,原典照合結果は監査記録参照
+AR-Memory:学習成果:CS Core:2,AR,AR-Memory,学習成果,CS Core,2,メモリ遅延の実行時間への影響を計測,部分,103 は模型の固定値を集計。実機測定は未評価。,coverage-ar-memory.md,32,原典照合結果は監査記録参照
+AR-Memory:学習成果:CS Core:3,AR,AR-Memory,学習成果,CS Core,3,仮想記憶管理の機能を列挙,部分,40 の固定変換。管理機能の一般的な列挙は未評価。,coverage-ar-memory.md,33,原典照合結果は監査記録参照
+AR-Memory:学習成果:CS Core:4,AR,AR-Memory,学習成果,CS Core,4,複数構成・命令とデータの参照混合で平均アクセス時間を計算,部分,103 は単一キャッシュの４例。複数構成一般と混合参照は未評価。,coverage-ar-memory.md,34,原典照合結果は監査記録参照
 AR-Organization:トピック:KA Core:1,AR,AR-Organization,トピック,KA Core,1,単純なデータパスとパイプライン、ハザード検出・解決,部分,158 で１つの依存と待機・転送を比較。一般の設計や他のハザードは未評価。,coverage-ar-organization.md,9,原典照合結果は監査記録参照
 AR-Organization:トピック:KA Core:2,AR,AR-Organization,トピック,KA Core,2,制御装置,部分,1033で固定回路とマイクロプログラムの２刻の信号を比較。一般の制御装置設計は未評価。,coverage-ar-organization.md,10,原典照合結果は監査記録参照・親子重複候補
 AR-Organization:トピック:KA Core:2a,AR,AR-Organization,トピック,KA Core,2a,固定回路による制御,部分,1033で命令と刻から制御信号を生成する固定規則の模型。実際の論理回路の設計は未評価。,coverage-ar-organization.md,11,原典照合結果は監査記録参照
@@ -831,21 +833,22 @@ AR-Organization:学習成果:KA Core:5,AR,AR-Organization,学習成果,KA Core,5
 AR-Performance-Energy:トピック:KA Core:1,AR,AR-Performance-Energy,トピック,KA Core,1,性能、電力、記憶、通信の費用の評価,部分,161 は架空の所要時間・平均電力・エネルギー。記憶・通信や実測は未評価。,coverage-ar-performance-energy.md,9,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:2,AR,AR-Performance-Energy,トピック,KA Core,2,分岐予測、投機、順序外実行、Tomasulo 法,部分,159・160は予測と投機結果、1233は順序外開始、1234は結果の札と依存の固定例。Tomasulo 法全体や実機は未評価。,coverage-ar-performance-energy.md,10,原典照合結果は監査記録参照
 AR-Performance-Energy:トピック:KA Core:3,AR,AR-Performance-Energy,トピック,KA Core,3,ベクトルプロセッサと GPU の改良,部分,1085で４読み取りと32バイト区画のまとまりを比較。実 GPU の実行・性能や他の改良は未評価。,coverage-ar-performance-energy.md,11,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:4a,AR,AR-Performance-Energy,トピック,KA Core,4a,マルチスレッド支援：競合,部分,814 は競合と比較交換の抽象模型。実機の支援は未評価。,coverage-ar-performance-energy.md,12,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:4b,AR,AR-Performance-Energy,トピック,KA Core,4b,マルチスレッド支援：ロック実装,部分,814 はロックと原子的操作の模型。実機実装は未評価。,coverage-ar-performance-energy.md,13,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:4c,AR,AR-Performance-Energy,トピック,KA Core,4c,マルチスレッド支援：２点間同期,未照合,ハードウェア支援を含む対応を要照合。,coverage-ar-performance-energy.md,14,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:4d,AR,AR-Performance-Energy,トピック,KA Core,4d,マルチスレッド支援：バリア実装,部分,90 は２人の到着を待つ固定模型。ハードウェア支援や実装全般は未評価。,coverage-ar-performance-energy.md,15,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:5,AR,AR-Performance-Energy,トピック,KA Core,5,スケーラビリティ,部分,437 は強・弱スケーリングの固定模型。実機の構成と測定は未評価。,coverage-ar-performance-energy.md,16,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:6,AR,AR-Performance-Energy,トピック,KA Core,6,VLIW/EPIC、アクセラレータ等,部分,163 は専用機械と汎用機械の費用模型。VLIW/EPIC と実機は未評価。,coverage-ar-performance-energy.md,17,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:7,AR,AR-Performance-Energy,トピック,KA Core,7,電圧・周波数の動的調整,部分,1039で開始前の動作点、1040で計算と待機の間の切替えを模型で比較。実機制御は未評価。,coverage-ar-performance-energy.md,18,原典照合結果は監査記録参照
-AR-Performance-Energy:トピック:KA Core:8,AR,AR-Performance-Energy,トピック,KA Core,8,ダークシリコン,部分,1082で固定の電力上限、稼働核数と速度の選択を比較。実機の回路・温度・負荷や一般の性能は未評価。,coverage-ar-performance-energy.md,19,原典照合結果は監査記録参照
-AR-Performance-Energy:学習成果:KA Core:1,AR,AR-Performance-Energy,学習成果,KA Core,1,性能とエネルギー効率の指標を論じる,部分,161 は架空の時間・電力・エネルギーの比較。自由な説明と実測は未評価。,coverage-ar-performance-energy.md,25,原典照合結果は監査記録参照
-AR-Performance-Energy:学習成果:KA Core:2,AR,AR-Performance-Energy,学習成果,KA Core,2,投機実行図を分析し判断を記述する,部分,160 は固定例の仮結果と確定を操作。一般の図と自由記述は未評価。,coverage-ar-performance-energy.md,26,原典照合結果は監査記録参照
-AR-Performance-Energy:学習成果:KA Core:3,AR,AR-Performance-Energy,学習成果,KA Core,3,GPU の性能・電力ベンチマーク図を作る,未照合,実測と図の作成に相当する教材を要照合。,coverage-ar-performance-energy.md,27,原典照合結果は監査記録参照
-AR-Performance-Energy:学習成果:KA Core:4,AR,AR-Performance-Energy,学習成果,KA Core,4,並列の整数ベクトル加算プログラムを作る,部分,1083で２組８人へ６要素を割り当て、範囲外を避けて加算を操作。実際の GPU 実行とプログラム記述能力は直接評価しない。,coverage-ar-performance-energy.md,28,原典照合結果は監査記録参照
-AR-Performance-Energy:学習成果:KA Core:5,AR,AR-Performance-Energy,学習成果,KA Core,5,代替アーキテクチャの設計選択を提案,部分,163 は固定の費用と仕事量から選ぶ。一般的な設計提案は未評価。,coverage-ar-performance-energy.md,29,原典照合結果は監査記録参照
-AR-Performance-Energy:学習成果:KA Core:6,AR,AR-Performance-Energy,学習成果,KA Core,6,電圧・周波数の動的調整の要点を挙げる,部分,1039・1040で電圧・周波数、基礎電力、期限、切替え費用を模型で比較。実機制御や自由な説明は未評価。,coverage-ar-performance-energy.md,30,原典照合結果は監査記録参照
-AR-Performance-Energy:学習成果:KA Core:7,AR,AR-Performance-Energy,学習成果,KA Core,7,８ビット量子化と32ビットの省エネルギー改善を測る,部分,1084で縮尺・丸め・範囲と架空の費用を比較。実機のエネルギー測定と改善は未評価。,coverage-ar-performance-energy.md,31,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:4,AR,AR-Performance-Energy,トピック,KA Core,4,マルチスレッドのハードウェア支援,部分,90・814で同期・競合の固定模型。ハードウェア支援全体と実機は未評価。,coverage-ar-performance-energy.md,12,原典照合結果は監査記録参照・親子重複候補
+AR-Performance-Energy:トピック:KA Core:4a,AR,AR-Performance-Energy,トピック,KA Core,4a,マルチスレッド支援：競合,部分,814 は競合と比較交換の抽象模型。実機の支援は未評価。,coverage-ar-performance-energy.md,13,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:4b,AR,AR-Performance-Energy,トピック,KA Core,4b,マルチスレッド支援：ロック実装,部分,814 はロックと原子的操作の模型。実機実装は未評価。,coverage-ar-performance-energy.md,14,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:4c,AR,AR-Performance-Energy,トピック,KA Core,4c,マルチスレッド支援：２点間同期,未照合,ハードウェア支援を含む対応を要照合。,coverage-ar-performance-energy.md,15,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:4d,AR,AR-Performance-Energy,トピック,KA Core,4d,マルチスレッド支援：バリア実装,部分,90 は２人の到着を待つ固定模型。ハードウェア支援や実装全般は未評価。,coverage-ar-performance-energy.md,16,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:5,AR,AR-Performance-Energy,トピック,KA Core,5,スケーラビリティ,部分,437 は強・弱スケーリングの固定模型。実機の構成と測定は未評価。,coverage-ar-performance-energy.md,17,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:6,AR,AR-Performance-Energy,トピック,KA Core,6,VLIW/EPIC、アクセラレータ等,部分,163 は専用機械と汎用機械の費用模型。VLIW/EPIC と実機は未評価。,coverage-ar-performance-energy.md,18,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:7,AR,AR-Performance-Energy,トピック,KA Core,7,電圧・周波数の動的調整,部分,1039で開始前の動作点、1040で計算と待機の間の切替えを模型で比較。実機制御は未評価。,coverage-ar-performance-energy.md,19,原典照合結果は監査記録参照
+AR-Performance-Energy:トピック:KA Core:8,AR,AR-Performance-Energy,トピック,KA Core,8,ダークシリコン,部分,1082で固定の電力上限、稼働核数と速度の選択を比較。実機の回路・温度・負荷や一般の性能は未評価。,coverage-ar-performance-energy.md,20,原典照合結果は監査記録参照
+AR-Performance-Energy:学習成果:KA Core:1,AR,AR-Performance-Energy,学習成果,KA Core,1,性能とエネルギー効率の指標を論じる,部分,161 は架空の時間・電力・エネルギーの比較。自由な説明と実測は未評価。,coverage-ar-performance-energy.md,26,原典照合結果は監査記録参照
+AR-Performance-Energy:学習成果:KA Core:2,AR,AR-Performance-Energy,学習成果,KA Core,2,投機実行図を分析し判断を記述する,部分,160 は固定例の仮結果と確定を操作。一般の図と自由記述は未評価。,coverage-ar-performance-energy.md,27,原典照合結果は監査記録参照
+AR-Performance-Energy:学習成果:KA Core:3,AR,AR-Performance-Energy,学習成果,KA Core,3,GPU の性能・電力ベンチマーク図を作る,未照合,実測と図の作成に相当する教材を要照合。,coverage-ar-performance-energy.md,28,原典照合結果は監査記録参照
+AR-Performance-Energy:学習成果:KA Core:4,AR,AR-Performance-Energy,学習成果,KA Core,4,並列の整数ベクトル加算プログラムを作る,部分,1083で２組８人へ６要素を割り当て、範囲外を避けて加算を操作。実際の GPU 実行とプログラム記述能力は直接評価しない。,coverage-ar-performance-energy.md,29,原典照合結果は監査記録参照
+AR-Performance-Energy:学習成果:KA Core:5,AR,AR-Performance-Energy,学習成果,KA Core,5,代替アーキテクチャの設計選択を提案,部分,163 は固定の費用と仕事量から選ぶ。一般的な設計提案は未評価。,coverage-ar-performance-energy.md,30,原典照合結果は監査記録参照
+AR-Performance-Energy:学習成果:KA Core:6,AR,AR-Performance-Energy,学習成果,KA Core,6,電圧・周波数の動的調整の要点を挙げる,部分,1039・1040で電圧・周波数、基礎電力、期限、切替え費用を模型で比較。実機制御や自由な説明は未評価。,coverage-ar-performance-energy.md,31,原典照合結果は監査記録参照
+AR-Performance-Energy:学習成果:KA Core:7,AR,AR-Performance-Energy,学習成果,KA Core,7,８ビット量子化と32ビットの省エネルギー改善を測る,部分,1084で縮尺・丸め・範囲と架空の費用を比較。実機のエネルギー測定と改善は未評価。,coverage-ar-performance-energy.md,32,原典照合結果は監査記録参照
 AR-Quantum:トピック:KA Core:1a,AR,AR-Quantum,トピック,KA Core,1a,波動と粒子の二重性,部分,74 の二つの道の干渉と光子の個々の検出・反復した割合を対応づける理想模型。一般の波動・粒子の性質や物理実験は未評価。,coverage-ar-quantum.md,9,原典照合結果は監査記録参照
 AR-Quantum:トピック:KA Core:1b,AR,AR-Quantum,トピック,KA Core,1b,二重スリット実験と不確定性,部分,1214 で４区画の検出確率と経路を区別する印、位相反転を比較。1215 で最小不確定性ガウス波束の位置と運動量の幅を比較。二重スリットの連続分布、一般の波束や実験装置は未評価。,coverage-ar-quantum.md,10,原典照合結果は監査記録参照
 AR-Quantum:トピック:KA Core:1c,AR,AR-Quantum,トピック,KA Core,1c,量子ビット、重ね合わせ・干渉・測定、光子,部分,74 は単一量子ビットの干渉と途中測定。光子の実現等は未評価。,coverage-ar-quantum.md,11,原典照合結果は監査記録参照
