@@ -272,6 +272,30 @@
       "topics": 8,
       "outcomes": 6,
       "scope_sha256": "048774c2f58f5ca49a6207c3c8c1aeeb8393dabd372a135703e55ebf630b1966"
+    },
+    "OS-Virtualization": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-virtualization.md",
+      "topics": 10,
+      "outcomes": 4,
+      "scope_sha256": "06b75717a96e5fd05bf2b1f3d981fbbb23810396e92d2d8d8d4d400f17367f17"
+    },
+    "OS-Real-time": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-real-time.md",
+      "topics": 6,
+      "outcomes": 4,
+      "scope_sha256": "ffab4e35826e1086550caea0e1616be1dce4b7026df57972138a385cc94a83af"
+    },
+    "OS-Faults": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-os-faults.md",
+      "topics": 9,
+      "outcomes": 5,
+      "scope_sha256": "c37cfa495a725e433ec205cd8d4113664d59361e5165b14756e2aa9c5c31cb76"
     }
   }
 }
