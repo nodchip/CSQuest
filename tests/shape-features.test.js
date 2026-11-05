@@ -1,9 +1,11 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {shapeSamples,shapeFeature,shapeFeatureWorks,createShapeFeature,shapeFeatureComplete,restoreShapeFeature} from '../src/shape-features.js';
+import {shapeSamples,shapeFeature,shapeFeatureWorks,shapeMeasures,createShapeFeature,shapeFeatureComplete,restoreShapeFeature} from '../src/shape-features.js';
 test('four-pixel objects need shape-sensitive and translation-invariant features for these examples',()=>{
  assert.deepEqual(Object.values(shapeSamples).map(s=>shapeFeature('area',s)),['4','4','4']);assert.notEqual(shapeFeature('position',shapeSamples.A),shapeFeature('position',shapeSamples.B));assert.deepEqual(Object.values(shapeSamples).map(s=>shapeFeature('bounds',s)),['幅2・高さ2','幅2・高さ2','幅4・高さ1']);assert.deepEqual(['area','position','bounds'].filter(shapeFeatureWorks),['bounds']);assert.throws(()=>shapeFeature('area',[0,0]),RangeError);
 });
+test('grid boundary counts exposed edges and centroid moves with a translated object',()=>{assert.deepEqual(shapeMeasures(shapeSamples.A),{perimeter:8,centroid:'1.5,1.5'});assert.deepEqual(shapeMeasures(shapeSamples.B),{perimeter:8,centroid:'3.5,3.5'});assert.deepEqual(shapeMeasures(shapeSamples.C),{perimeter:10,centroid:'2.5,3'});assert.deepEqual(shapeMeasures([0]),{perimeter:4,centroid:'1,1'});assert.deepEqual(shapeMeasures([0,15]),{perimeter:8,centroid:'2.5,2.5'});assert.throws(()=>shapeMeasures([]));});
+test('measurement choices restore independently and legacy drafts remain valid',()=>{const s=createShapeFeature();s.measure={sample:'C',perimeter:10,centroid:'2.5,3',checked:true};assert.deepEqual(restoreShapeFeature(s).measure,s.measure);const old={...s};delete old.measure;assert.equal(restoreShapeFeature(old).measure.checked,false);assert.throws(()=>restoreShapeFeature({...s,measure:{...s.measure,perimeter:9}}));});
 test('all features must be tried, valid state is copied, and wrong decisions fail',()=>{
  const s=createShapeFeature();for(const k of ['area','position','bounds'])s.tested[k]=true;s.choice='bounds';s.checked=true;const copy=restoreShapeFeature(s);s.tested.area=false;assert.equal(shapeFeatureComplete(copy),true);assert.equal(shapeFeatureComplete(s),false);copy.choice='position';assert.equal(shapeFeatureComplete(copy),false);assert.throws(()=>restoreShapeFeature({...copy,selected:'bad'}),RangeError);
 });

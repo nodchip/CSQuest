@@ -1655,11 +1655,11 @@ GIT-Fundamentals:学習成果:CS Core:11,GIT,GIT-Fundamentals,学習成果,CS Co
 GIT-Fundamentals:学習成果:CS Core:12,GIT,GIT-Fundamentals,学習成果,CS Core,12,リフレッシュレートとラスタ化から時間を計算,部分,948で空白を含む走査位置、１フレームの時間と画素クロックを４条件で比較。実機のタイミング・一般の方式は未評価。,coverage-git-fundamentals.md,59,原典照合結果は監査記録参照
 GIT-Fundamentals:学習成果:KA Core:13,GIT,GIT-Fundamentals,学習成果,KA Core,13,色覚特性に対応する UI と代替案の設計,部分,22で色以外の情報を選ぶ。一般の設計・実利用者の評価は未評価。,coverage-git-fundamentals.md,60,原典照合結果は監査記録参照
 GIT-Fundamentals:学習成果:KA Core:14,GIT,GIT-Fundamentals,学習成果,KA Core,14,グラフィックスライブラリによる GUI の構築,未照合,実ライブラリによる構築は未確認。コードを書く能力は直接評価しない。,coverage-git-fundamentals.md,61,原典照合結果は監査記録参照
-GIT-Image:トピック:KA Core:1,GIT,GIT-Image,トピック,KA Core,1,形態学的操作,部分,139・140・144・232などの固定例を参照。一般の画像・構造要素、周長や重心は未評価。,coverage-git-image.md,9,原典照合結果は監査記録参照・親子重複候補
+GIT-Image:トピック:KA Core:1,GIT,GIT-Image,トピック,KA Core,1,形態学的操作,部分,139・140・144・232などの固定例を参照。一般の画像・構造要素や実際の輪郭推定は未評価。,coverage-git-image.md,9,原典照合結果は監査記録参照・親子重複候補
 GIT-Image:トピック:KA Core:1a,GIT,GIT-Image,トピック,KA Core,1a,連結成分,部分,144で４・８近傍を比較。一般の画像は未評価。,coverage-git-image.md,10,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:1b,GIT,GIT-Image,トピック,KA Core,1b,膨張,部分,139・140・728で十字近傍の固定例。一般の構造要素は未評価。,coverage-git-image.md,11,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:1c,GIT,GIT-Image,トピック,KA Core,1c,収縮,部分,139・140・728で十字近傍の固定例。一般の構造要素は未評価。,coverage-git-image.md,12,原典照合結果は監査記録参照
-GIT-Image:トピック:KA Core:1d,GIT,GIT-Image,トピック,KA Core,1d,面積・周長・重心など,部分,232で画素数と外接矩形を比較。周長・重心や一般の領域は未評価。,coverage-git-image.md,13,原典照合結果は監査記録参照
+GIT-Image:トピック:KA Core:1d,GIT,GIT-Image,トピック,KA Core,1d,面積・周長・重心など,部分,232で画素数・外接矩形、画素の辺を数える周囲と重心を比較。一般の領域や実際の輪郭推定は未評価。,coverage-git-image.md,13,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:2,GIT,GIT-Image,トピック,KA Core,2,色ヒストグラム,部分,724で灰色値の画素数と伸張を操作。カラーの複数チャンネルや一般の画像は未評価。,coverage-git-image.md,14,原典照合結果は監査記録参照・親子重複候補
 GIT-Image:トピック:KA Core:2a,GIT,GIT-Image,トピック,KA Core,2a,色ヒストグラムの表現,部分,724で灰色値ごとの画素数を表示。カラーの複数チャンネルや一般の区間は未評価。,coverage-git-image.md,15,原典照合結果は監査記録参照
 GIT-Image:トピック:KA Core:2b,GIT,GIT-Image,トピック,KA Core,2b,正規化によるコントラスト強調,部分,724で最小・最大を使う線形な伸張とノイズ・一色の例。カラー、外れ値、実画像は未評価。,coverage-git-image.md,16,原典照合結果は監査記録参照
