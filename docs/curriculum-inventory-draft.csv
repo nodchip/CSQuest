@@ -612,63 +612,74 @@ AL-Foundational:学習成果:CS Core:6,AL,AL-Foundational,学習成果,CS Core,6
 AL-Foundational:学習成果:CS Core:7,AL,AL-Foundational,学習成果,CS Core,7,ヒープの性質と優先度付きキューを説明,部分,164で親子交換。一般の実装と自由な説明は未評価。,coverage-al-foundational.md,55,原典照合結果は監査記録参照
 AL-Foundational:学習成果:KA Core:8a・8b,AL,AL-Foundational,学習成果,KA Core,8a・8b,各手法の代表例と動作を説明,部分,56・165〜170の固定例。全手法と自由な説明は未評価。,coverage-al-foundational.md,56,原典照合結果は監査記録参照・番号を要確認
 AL-Foundational:学習成果:Non-core:9,AL,AL-Foundational,学習成果,Non-core,9,量子計算と応用への理解,部分,610で因数分解の後処理、820・861で探索の反転と反復、821・822でオラクル問題の固定例。一般的な応用・実機や自由な説明は未評価。,coverage-al-foundational.md,57,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:1a,AL,AL-Models,トピック,CS Core,1a,有限状態機械,部分,31で２状態の遷移を組む。一般の機械は未評価。,coverage-al-models.md,9,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:1b,AL,AL-Models,トピック,CS Core,1b,プッシュダウン機械,部分,80・644で括弧と aⁿbⁿ の山札を操作。一般の機械は未評価。,coverage-al-models.md,10,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:1c,AL,AL-Models,トピック,CS Core,1c,線形拘束オートマトン,部分,697で入力長の帯を使い三色を照合する決定的な固定模型。非決定性や一般の構成は未評価。,coverage-al-models.md,11,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:1d,AL,AL-Models,トピック,CS Core,1d,チューリング機械,部分,417で帯の読書きと移動を操作。任意の機械は未評価。,coverage-al-models.md,12,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:2a,AL,AL-Models,トピック,CS Core,2a,正規言語,部分,31・647で有限状態と限定された正規表現を操作。一般の関係は未評価。,coverage-al-models.md,13,原典照合結果は監査記録参照・親子重複候補
-AL-Models:トピック:CS Core:2a-i,AL,AL-Models,トピック,CS Core,2a-i,正規表現,部分,647で和・連結・星を組む固定例。一般の式は未評価。,coverage-al-models.md,14,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:2b,AL,AL-Models,トピック,CS Core,2b,文脈自由言語,部分,644で aⁿbⁿ の山札と文法に触れる。一般の文法は未評価。,coverage-al-models.md,15,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:2c,AL,AL-Models,トピック,CS Core,2c,文脈依存言語,部分,697で aⁿbⁿcⁿ の限定された入力を帯内で照合、698で n≧1 の同言語の文脈依存文法の導出を操作。一般の文法と等価性は未評価。,coverage-al-models.md,16,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:2d,AL,AL-Models,トピック,CS Core,2d,帰納的可算言語,部分,862で認識と判定、863で言語と補集合の認識器を交互に動かす。無限の入力の列挙や自由な証明は未評価。,coverage-al-models.md,17,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:3,AL,AL-Models,トピック,CS Core,3,オートマトン・言語・文法の関係,部分,644で有限状態、山札と文法を比較、697・698で帯内認識と文脈依存文法の例を扱う。一般の等価性や階層全体は未評価。,coverage-al-models.md,18,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:4,AL,AL-Models,トピック,CS Core,4,決定可能性・計算不能性・停止,部分,416・648で停止判定と空言語判定の帰着、863で認識器の対からの判定を操作。一般の判定問題や自由な証明は未評価。,coverage-al-models.md,19,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:5,AL,AL-Models,トピック,CS Core,5,Church–Turing のテーゼ,部分,646で形式モデル間の等価性とテーゼを区別。一般の論証は未評価。,coverage-al-models.md,20,原典照合結果は監査記録参照
-AL-Models:トピック:CS Core:6a,AL,AL-Models,トピック,CS Core,6a,正しさと不変条件,部分,69で二分探索の候補範囲と反例を調べる。一般の証明は未評価。,coverage-al-models.md,21,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:7,AL,AL-Models,トピック,KA Core,7,決定性・非決定性,部分,561・565で有限状態の候補集合と空遷移を操作。他の機械は未評価。,coverage-al-models.md,22,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:8a,AL,AL-Models,トピック,KA Core,8a,正規言語・有限状態の限界の証明,部分,644で同一状態の接頭辞から aⁿbⁿ の非正規性を論じる。ポンピング補題を使う証明は未評価。,coverage-al-models.md,23,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:8b,AL,AL-Models,トピック,KA Core,8b,文脈自由言語・山札機械の限界の証明,部分,696で aⁿbⁿcⁿ の分割とポンピング補題の量化を扱い、aⁿbⁿ の対照例を比較。任意の言語の証明は未評価。,coverage-al-models.md,24,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:9a,AL,AL-Models,トピック,KA Core,9a,算術化と対角化,部分,416で仮定の停止判定と自己入力を操作。算術化は未評価。,coverage-al-models.md,25,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:10,AL,AL-Models,トピック,KA Core,10,帰着可能性と帰着,部分,648で停止問題から空言語判定、899で全入力に対する判定器の性質への構成を操作。一般の構成は未評価。,coverage-al-models.md,26,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:11,AL,AL-Models,トピック,KA Core,11,チューリング機械に基づく時間計算量,部分,865で単一記号の帯を処理する機械の遷移数を数える。一般の機械や時間階層は未評価。,coverage-al-models.md,27,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:12,AL,AL-Models,トピック,KA Core,12,領域計算量・Savitch の定理,部分,865で決定性１帯機械の訪問マス、866で中継点分割と領域再利用を扱う。非決定性機械の一般的構成や定理の証明は未評価。,coverage-al-models.md,28,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:13a,AL,AL-Models,トピック,KA Core,13a,チューリング機械と変種,部分,645・646で限定された帯と２箱の機械を比較。多テープ・非決定性と一般の等価性は未評価。,coverage-al-models.md,29,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:13b,AL,AL-Models,トピック,KA Core,13b,ラムダ計算,部分,283で α 変換と β 簡約を選択。機械との一般の等価性は未評価。,coverage-al-models.md,30,原典照合結果は監査記録参照
-AL-Models:トピック:KA Core:13c,AL,AL-Models,トピック,KA Core,13c,μ 再帰関数,部分,864で最小化と値が返らない場合を３例で操作。一般の関数体系・機械との等価性は未評価。,coverage-al-models.md,31,原典照合結果は監査記録参照
-AL-Models:トピック:Non-core:14a-i,AL,AL-Models,トピック,Non-core,14a-i,量子状態空間,部分,74・677で固定状態の振幅を操作。一般の複素ヒルベルト空間は未評価。,coverage-al-models.md,32,原典照合結果は監査記録参照
-AL-Models:トピック:Non-core:14a-ii,AL,AL-Models,トピック,Non-core,14a-ii,状態の発展,部分,74・677で固定ゲートの作用を操作。一般のユニタリー作用は未評価。,coverage-al-models.md,33,原典照合結果は監査記録参照
-AL-Models:トピック:Non-core:14a-iii,AL,AL-Models,トピック,Non-core,14a-iii,状態の合成,部分,676・677で２量子ビットの固定例を比較。一般のテンソル積は未評価。,coverage-al-models.md,34,原典照合結果は監査記録参照
-AL-Models:トピック:Non-core:14a-iv,AL,AL-Models,トピック,Non-core,14a-iv,測定,部分,74・676で固定状態の測定確率を比較。一般の測定は未評価。,coverage-al-models.md,35,原典照合結果は監査記録参照
-AL-Models:トピック:Non-core:14b,AL,AL-Models,トピック,Non-core,14b,量子ビットの列ベクトル,部分,677で固定状態の振幅を表示。一般の複素状態は未評価。,coverage-al-models.md,36,原典照合結果は監査記録参照
-AL-Models:トピック:Non-core:14c,AL,AL-Models,トピック,Non-core,14c,量子操作の行列表現,部分,677で H・X・Z・CNOT の固定例を操作。任意の行列は未評価。,coverage-al-models.md,37,原典照合結果は監査記録参照
-AL-Models:トピック:Non-core:14d,AL,AL-Models,トピック,Non-core,14d,単純な量子ゲート,部分,676・677で X と２方向の CNOT を操作。一般の状態は未評価。,coverage-al-models.md,38,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:1a,AL,AL-Models,学習成果,CS Core,1a,各オートマトンの定義・特徴を比較,部分,31・80・417・644の固定例。線形拘束機械と一般の比較は未評価。,coverage-al-models.md,44,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:1b,AL,AL-Models,学習成果,CS Core,1b,入力に対する動作と受理を説明,部分,31・80・644で遷移を操作。全機械と自由な説明は未評価。,coverage-al-models.md,45,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:1c,AL,AL-Models,学習成果,CS Core,1c,受理・不受理の入力を例示,部分,80・644で固定入力を比較。全機械は未評価。,coverage-al-models.md,46,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:2,AL,AL-Models,学習成果,CS Core,2,問題に適したオートマトンを構築,部分,31で偶奇を記憶する２状態の遷移を組む。一般の構築は未評価。,coverage-al-models.md,47,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:3,AL,AL-Models,学習成果,CS Core,3,自然言語の条件から正規表現を作成,部分,647で３条件と限定された札を組む。一般の条件は未評価。,coverage-al-models.md,48,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:4,AL,AL-Models,学習成果,CS Core,4,理論と実言語の正規表現の違い,部分,647で理論の操作と JavaScript 後方参照を比較。全処理系は未評価。,coverage-al-models.md,49,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:5a,AL,AL-Models,学習成果,CS Core,5a,形式モデルの定義・特徴を比較,部分,644で限定された門と文法を比較。階層全体は未評価。,coverage-al-models.md,50,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:5b,AL,AL-Models,学習成果,CS Core,5b,言語・文法に含まれる入力と含まれない入力,部分,644で aⁿbⁿ の固定入力を比較。他の階層は未評価。,coverage-al-models.md,51,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:6,AL,AL-Models,学習成果,CS Core,6,万能チューリング機械,部分,645で限定された規則表を共通機構で模倣。任意の機械や符号化は未評価。,coverage-al-models.md,52,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:7,AL,AL-Models,学習成果,CS Core,7,停止問題の不可能性と実務上の意義を発表,部分,416で自己入力の矛盾を操作。実務の解析と自由な発表は未評価。,coverage-al-models.md,53,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:8,AL,AL-Models,学習成果,CS Core,8,代表的な計算不能問題,部分,648で機械の受理言語の空判定を扱う。他の例は未評価。,coverage-al-models.md,54,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:9,AL,AL-Models,学習成果,CS Core,9,Church–Turing のテーゼと意義,部分,646で帯と２箱の固定例、テーゼと等価性を比較。一般の説明は未評価。,coverage-al-models.md,55,原典照合結果は監査記録参照
-AL-Models:学習成果:CS Core:10,AL,AL-Models,学習成果,CS Core,10,不変条件による正しさの証明,部分,69で初期・維持・終了と反例を扱う。自由な証明は未評価。,coverage-al-models.md,56,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:11,AL,AL-Models,学習成果,KA Core,11,各オートマトンの決定性・非決定性,部分,561・565で有限状態の固定例。他の機械は未評価。,coverage-al-models.md,57,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:12,AL,AL-Models,学習成果,KA Core,12,ポンピング補題などによる限界の証明,部分,644で有限状態の限界を同一状態の論法、696で aⁿbⁿcⁿ の非文脈自由性を扱う。任意の言語の自由な証明は未評価。,coverage-al-models.md,58,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:13,AL,AL-Models,学習成果,KA Core,13,算術化と対角化による停止問題の証明,部分,416で自己入力の矛盾を扱う。算術化と自由な証明は未評価。,coverage-al-models.md,59,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:14,AL,AL-Models,学習成果,KA Core,14,既知の決定不能言語から帰着を適用,部分,648の固定構成を操作。一般の帰着の構築は未評価。,coverage-al-models.md,60,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:15,AL,AL-Models,学習成果,KA Core,15,等価な表記の変換,部分,561・565で NFA と部分集合・空遷移を操作。他の変換方向は未評価。,coverage-al-models.md,61,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:16,AL,AL-Models,学習成果,KA Core,16,Rice の定理と意義,部分,695で非自明な言語の性質と記述上・自明な性質を分類し、０受理への帰着を操作。一般の場合の自由な証明は未評価。,coverage-al-models.md,62,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:17,AL,AL-Models,学習成果,KA Core,17,既知の問題からの帰着による計算不能性の証明例,部分,648で空判定から停止判定を得る矛盾を扱う。一般の証明は未評価。,coverage-al-models.md,63,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:18,AL,AL-Models,学習成果,KA Core,18,原始・一般再帰関数と機械による実現,部分,646で後者関数、864で最小化と部分性の固定例。関数体系と機械による一般の実現は未評価。,coverage-al-models.md,64,原典照合結果は監査記録参照
-AL-Models:学習成果:KA Core:19,AL,AL-Models,学習成果,KA Core,19,ラムダ計算と α・β 変換,部分,283で捕捉を避ける名前の変更と簡約を選択。任意の式は未評価。,coverage-al-models.md,65,原典照合結果は監査記録参照
-AL-Models:学習成果:Non-core:20a,AL,AL-Models,学習成果,Non-core,20a,状態空間の公準,部分,74・677の固定された振幅。一般の状態空間は未評価。,coverage-al-models.md,66,原典照合結果は監査記録参照
-AL-Models:学習成果:Non-core:20b,AL,AL-Models,学習成果,Non-core,20b,ユニタリー発展の公準,部分,74・677の固定ゲート。一般の操作は未評価。,coverage-al-models.md,67,原典照合結果は監査記録参照
-AL-Models:学習成果:Non-core:20c,AL,AL-Models,学習成果,Non-core,20c,テンソル積による合成,部分,676・677で２量子ビットの固定例。一般の構成は未評価。,coverage-al-models.md,68,原典照合結果は監査記録参照
-AL-Models:学習成果:Non-core:20d,AL,AL-Models,学習成果,Non-core,20d,測定の確率的出力,部分,74・676で確率を比較。実機・一般の測定は未評価。,coverage-al-models.md,69,原典照合結果は監査記録参照
-AL-Models:学習成果:Non-core:21,AL,AL-Models,学習成果,Non-core,21,XNOT・CNOT の行列と列ベクトルへの作用,部分,676・677で X・CNOT の固定例を操作。任意の複素状態と自由な説明は未評価。,coverage-al-models.md,70,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:1,AL,AL-Models,トピック,CS Core,1,形式オートマトン,部分,31・80・417・697で異なる機械の固定例を操作。一般の機械と構築は未評価。,coverage-al-models.md,9,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:CS Core:1a,AL,AL-Models,トピック,CS Core,1a,有限状態機械,部分,31で２状態の遷移を組む。一般の機械は未評価。,coverage-al-models.md,10,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:1b,AL,AL-Models,トピック,CS Core,1b,プッシュダウン機械,部分,80・644で括弧と aⁿbⁿ の山札を操作。一般の機械は未評価。,coverage-al-models.md,11,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:1c,AL,AL-Models,トピック,CS Core,1c,線形拘束オートマトン,部分,697で入力長の帯を使い三色を照合する決定的な固定模型。非決定性や一般の構成は未評価。,coverage-al-models.md,12,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:1d,AL,AL-Models,トピック,CS Core,1d,チューリング機械,部分,417で帯の読書きと移動を操作。任意の機械は未評価。,coverage-al-models.md,13,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:2,AL,AL-Models,トピック,CS Core,2,形式言語・文法と Chomsky 階層,部分,644・647・698などで限定された言語と文法を扱う。階層全体の関係は未評価。,coverage-al-models.md,14,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:CS Core:2a,AL,AL-Models,トピック,CS Core,2a,正規言語,部分,31・647で有限状態と限定された正規表現を操作。一般の関係は未評価。,coverage-al-models.md,15,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:CS Core:2a-i,AL,AL-Models,トピック,CS Core,2a-i,正規表現,部分,647で和・連結・星を組む固定例。一般の式は未評価。,coverage-al-models.md,16,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:2b,AL,AL-Models,トピック,CS Core,2b,文脈自由言語,部分,644で aⁿbⁿ の山札と文法に触れる。一般の文法は未評価。,coverage-al-models.md,17,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:2c,AL,AL-Models,トピック,CS Core,2c,文脈依存言語,部分,697で aⁿbⁿcⁿ の限定された入力を帯内で照合、698で n≧1 の同言語の文脈依存文法の導出を操作。一般の文法と等価性は未評価。,coverage-al-models.md,18,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:2d,AL,AL-Models,トピック,CS Core,2d,帰納的可算言語,部分,862で認識と判定、863で言語と補集合の認識器を交互に動かす。無限の入力の列挙や自由な証明は未評価。,coverage-al-models.md,19,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:3,AL,AL-Models,トピック,CS Core,3,オートマトン・言語・文法の関係,部分,644で有限状態、山札と文法を比較、697・698で帯内認識と文脈依存文法の例を扱う。一般の等価性や階層全体は未評価。,coverage-al-models.md,20,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:4,AL,AL-Models,トピック,CS Core,4,決定可能性・計算不能性・停止,部分,416・648で停止判定と空言語判定の帰着、863で認識器の対からの判定を操作。一般の判定問題や自由な証明は未評価。,coverage-al-models.md,21,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:5,AL,AL-Models,トピック,CS Core,5,Church–Turing のテーゼ,部分,646で形式モデル間の等価性とテーゼを区別。一般の論証は未評価。,coverage-al-models.md,22,原典照合結果は監査記録参照
+AL-Models:トピック:CS Core:6,AL,AL-Models,トピック,CS Core,6,アルゴリズムの正しさ,部分,69で不変条件の固定例を操作。一般の正しさの証明は未評価。,coverage-al-models.md,23,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:CS Core:6a,AL,AL-Models,トピック,CS Core,6a,正しさと不変条件,部分,69で二分探索の候補範囲と反例を調べる。一般の証明は未評価。,coverage-al-models.md,24,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:7,AL,AL-Models,トピック,KA Core,7,決定性・非決定性,部分,561・565で有限状態の候補集合と空遷移を操作。他の機械は未評価。,coverage-al-models.md,25,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:8,AL,AL-Models,トピック,KA Core,8,ポンピング補題による証明,部分,696で文脈自由言語の固定例を扱う。正規言語の補題や一般の証明は未評価。,coverage-al-models.md,26,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:KA Core:8a,AL,AL-Models,トピック,KA Core,8a,正規言語・有限状態の限界の証明,部分,644で同一状態の接頭辞から aⁿbⁿ の非正規性を論じる。ポンピング補題を使う証明は未評価。,coverage-al-models.md,27,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:8b,AL,AL-Models,トピック,KA Core,8b,文脈自由言語・山札機械の限界の証明,部分,696で aⁿbⁿcⁿ の分割とポンピング補題の量化を扱い、aⁿbⁿ の対照例を比較。任意の言語の証明は未評価。,coverage-al-models.md,28,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:9,AL,AL-Models,トピック,KA Core,9,決定可能性,部分,416で停止判定を仮定した矛盾を操作。算術化や一般の問題は未評価。,coverage-al-models.md,29,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:KA Core:9a,AL,AL-Models,トピック,KA Core,9a,算術化と対角化,部分,416で仮定の停止判定と自己入力を操作。算術化は未評価。,coverage-al-models.md,30,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:10,AL,AL-Models,トピック,KA Core,10,帰着可能性と帰着,部分,648で停止問題から空言語判定、899で全入力に対する判定器の性質への構成を操作。一般の構成は未評価。,coverage-al-models.md,31,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:11,AL,AL-Models,トピック,KA Core,11,チューリング機械に基づく時間計算量,部分,865で単一記号の帯を処理する機械の遷移数を数える。一般の機械や時間階層は未評価。,coverage-al-models.md,32,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:12,AL,AL-Models,トピック,KA Core,12,領域計算量・Savitch の定理,部分,865で決定性１帯機械の訪問マス、866で中継点分割と領域再利用を扱う。非決定性機械の一般的構成や定理の証明は未評価。,coverage-al-models.md,33,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:13,AL,AL-Models,トピック,KA Core,13,計算モデルの等価性,部分,283・646・864で各模型の限定例を扱う。一般の等価性の証明は未評価。,coverage-al-models.md,34,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:KA Core:13a,AL,AL-Models,トピック,KA Core,13a,チューリング機械と変種,部分,645・646で限定された帯と２箱の機械を比較。多テープ・非決定性と一般の等価性は未評価。,coverage-al-models.md,35,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:13b,AL,AL-Models,トピック,KA Core,13b,ラムダ計算,部分,283で α 変換と β 簡約を選択。機械との一般の等価性は未評価。,coverage-al-models.md,36,原典照合結果は監査記録参照
+AL-Models:トピック:KA Core:13c,AL,AL-Models,トピック,KA Core,13c,μ 再帰関数,部分,864で最小化と値が返らない場合を３例で操作。一般の関数体系・機械との等価性は未評価。,coverage-al-models.md,37,原典照合結果は監査記録参照
+AL-Models:トピック:Non-core:14,AL,AL-Models,トピック,Non-core,14,量子計算,部分,74・676・677で状態とゲートの固定例を操作。一般の計算と実機は未評価。,coverage-al-models.md,38,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:Non-core:14a,AL,AL-Models,トピック,Non-core,14a,量子力学の公準,部分,74・676・677で状態・操作・測定の限定例を比較。一般の公準と証明は未評価。,coverage-al-models.md,39,原典照合結果は監査記録参照・親子重複候補
+AL-Models:トピック:Non-core:14a-i,AL,AL-Models,トピック,Non-core,14a-i,量子状態空間,部分,74・677で固定状態の振幅を操作。一般の複素ヒルベルト空間は未評価。,coverage-al-models.md,40,原典照合結果は監査記録参照
+AL-Models:トピック:Non-core:14a-ii,AL,AL-Models,トピック,Non-core,14a-ii,状態の発展,部分,74・677で固定ゲートの作用を操作。一般のユニタリー作用は未評価。,coverage-al-models.md,41,原典照合結果は監査記録参照
+AL-Models:トピック:Non-core:14a-iii,AL,AL-Models,トピック,Non-core,14a-iii,状態の合成,部分,676・677で２量子ビットの固定例を比較。一般のテンソル積は未評価。,coverage-al-models.md,42,原典照合結果は監査記録参照
+AL-Models:トピック:Non-core:14a-iv,AL,AL-Models,トピック,Non-core,14a-iv,測定,部分,74・676で固定状態の測定確率を比較。一般の測定は未評価。,coverage-al-models.md,43,原典照合結果は監査記録参照
+AL-Models:トピック:Non-core:14b,AL,AL-Models,トピック,Non-core,14b,量子ビットの列ベクトル,部分,677で固定状態の振幅を表示。一般の複素状態は未評価。,coverage-al-models.md,44,原典照合結果は監査記録参照
+AL-Models:トピック:Non-core:14c,AL,AL-Models,トピック,Non-core,14c,量子操作の行列表現,部分,677で H・X・Z・CNOT の固定例を操作。任意の行列は未評価。,coverage-al-models.md,45,原典照合結果は監査記録参照
+AL-Models:トピック:Non-core:14d,AL,AL-Models,トピック,Non-core,14d,単純な量子ゲート,部分,676・677で X と２方向の CNOT を操作。一般の状態は未評価。,coverage-al-models.md,46,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:1,AL,AL-Models,学習成果,CS Core,1,各オートマトンの特徴・動作・受理を説明,部分,31・80・417・644の固定例。全機械と自由な説明は未評価。,coverage-al-models.md,52,原典照合結果は監査記録参照・親子重複候補
+AL-Models:学習成果:CS Core:1a,AL,AL-Models,学習成果,CS Core,1a,各オートマトンの定義・特徴を比較,部分,31・80・417・644の固定例。線形拘束機械と一般の比較は未評価。,coverage-al-models.md,53,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:1b,AL,AL-Models,学習成果,CS Core,1b,入力に対する動作と受理を説明,部分,31・80・644で遷移を操作。全機械と自由な説明は未評価。,coverage-al-models.md,54,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:1c,AL,AL-Models,学習成果,CS Core,1c,受理・不受理の入力を例示,部分,80・644で固定入力を比較。全機械は未評価。,coverage-al-models.md,55,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:2,AL,AL-Models,学習成果,CS Core,2,問題に適したオートマトンを構築,部分,31で偶奇を記憶する２状態の遷移を組む。一般の構築は未評価。,coverage-al-models.md,56,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:3,AL,AL-Models,学習成果,CS Core,3,自然言語の条件から正規表現を作成,部分,647で３条件と限定された札を組む。一般の条件は未評価。,coverage-al-models.md,57,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:4,AL,AL-Models,学習成果,CS Core,4,理論と実言語の正規表現の違い,部分,647で理論の操作と JavaScript 後方参照を比較。全処理系は未評価。,coverage-al-models.md,58,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:5,AL,AL-Models,学習成果,CS Core,5,各形式モデルの特徴と例を説明,部分,644で限定された門と文法を比較。階層全体と自由な説明は未評価。,coverage-al-models.md,59,原典照合結果は監査記録参照・親子重複候補
+AL-Models:学習成果:CS Core:5a,AL,AL-Models,学習成果,CS Core,5a,形式モデルの定義・特徴を比較,部分,644で限定された門と文法を比較。階層全体は未評価。,coverage-al-models.md,60,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:5b,AL,AL-Models,学習成果,CS Core,5b,言語・文法に含まれる入力と含まれない入力,部分,644で aⁿbⁿ の固定入力を比較。他の階層は未評価。,coverage-al-models.md,61,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:6,AL,AL-Models,学習成果,CS Core,6,万能チューリング機械,部分,645で限定された規則表を共通機構で模倣。任意の機械や符号化は未評価。,coverage-al-models.md,62,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:7,AL,AL-Models,学習成果,CS Core,7,停止問題の不可能性と実務上の意義を発表,部分,416で自己入力の矛盾を操作。実務の解析と自由な発表は未評価。,coverage-al-models.md,63,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:8,AL,AL-Models,学習成果,CS Core,8,代表的な計算不能問題,部分,648で機械の受理言語の空判定を扱う。他の例は未評価。,coverage-al-models.md,64,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:9,AL,AL-Models,学習成果,CS Core,9,Church–Turing のテーゼと意義,部分,646で帯と２箱の固定例、テーゼと等価性を比較。一般の説明は未評価。,coverage-al-models.md,65,原典照合結果は監査記録参照
+AL-Models:学習成果:CS Core:10,AL,AL-Models,学習成果,CS Core,10,不変条件による正しさの証明,部分,69で初期・維持・終了と反例を扱う。自由な証明は未評価。,coverage-al-models.md,66,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:11,AL,AL-Models,学習成果,KA Core,11,各オートマトンの決定性・非決定性,部分,561・565で有限状態の固定例。他の機械は未評価。,coverage-al-models.md,67,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:12,AL,AL-Models,学習成果,KA Core,12,ポンピング補題などによる限界の証明,部分,644で有限状態の限界を同一状態の論法、696で aⁿbⁿcⁿ の非文脈自由性を扱う。任意の言語の自由な証明は未評価。,coverage-al-models.md,68,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:13,AL,AL-Models,学習成果,KA Core,13,算術化と対角化による停止問題の証明,部分,416で自己入力の矛盾を扱う。算術化と自由な証明は未評価。,coverage-al-models.md,69,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:14,AL,AL-Models,学習成果,KA Core,14,既知の決定不能言語から帰着を適用,部分,648の固定構成を操作。一般の帰着の構築は未評価。,coverage-al-models.md,70,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:15,AL,AL-Models,学習成果,KA Core,15,等価な表記の変換,部分,561・565で NFA と部分集合・空遷移を操作。他の変換方向は未評価。,coverage-al-models.md,71,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:16,AL,AL-Models,学習成果,KA Core,16,Rice の定理と意義,部分,695で非自明な言語の性質と記述上・自明な性質を分類し、０受理への帰着を操作。一般の場合の自由な証明は未評価。,coverage-al-models.md,72,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:17,AL,AL-Models,学習成果,KA Core,17,既知の問題からの帰着による計算不能性の証明例,部分,648で空判定から停止判定を得る矛盾を扱う。一般の証明は未評価。,coverage-al-models.md,73,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:18,AL,AL-Models,学習成果,KA Core,18,原始・一般再帰関数と機械による実現,部分,646で後者関数、864で最小化と部分性の固定例。関数体系と機械による一般の実現は未評価。,coverage-al-models.md,74,原典照合結果は監査記録参照
+AL-Models:学習成果:KA Core:19,AL,AL-Models,学習成果,KA Core,19,ラムダ計算と α・β 変換,部分,283で捕捉を避ける名前の変更と簡約を選択。任意の式は未評価。,coverage-al-models.md,75,原典照合結果は監査記録参照
+AL-Models:学習成果:Non-core:20,AL,AL-Models,学習成果,Non-core,20,量子系の公準を例で説明,部分,74・676・677で固定状態と操作を比較。一般の状態と自由な説明は未評価。,coverage-al-models.md,76,原典照合結果は監査記録参照・親子重複候補
+AL-Models:学習成果:Non-core:20a,AL,AL-Models,学習成果,Non-core,20a,状態空間の公準,部分,74・677の固定された振幅。一般の状態空間は未評価。,coverage-al-models.md,77,原典照合結果は監査記録参照
+AL-Models:学習成果:Non-core:20b,AL,AL-Models,学習成果,Non-core,20b,ユニタリー発展の公準,部分,74・677の固定ゲート。一般の操作は未評価。,coverage-al-models.md,78,原典照合結果は監査記録参照
+AL-Models:学習成果:Non-core:20c,AL,AL-Models,学習成果,Non-core,20c,テンソル積による合成,部分,676・677で２量子ビットの固定例。一般の構成は未評価。,coverage-al-models.md,79,原典照合結果は監査記録参照
+AL-Models:学習成果:Non-core:20d,AL,AL-Models,学習成果,Non-core,20d,測定の確率的出力,部分,74・676で確率を比較。実機・一般の測定は未評価。,coverage-al-models.md,80,原典照合結果は監査記録参照
+AL-Models:学習成果:Non-core:21,AL,AL-Models,学習成果,Non-core,21,XNOT・CNOT の行列と列ベクトルへの作用,部分,676・677で X・CNOT の固定例を操作。任意の複素状態と自由な説明は未評価。,coverage-al-models.md,81,原典照合結果は監査記録参照
 AL-SEP:トピック:CS Core:1,AL,AL-SEP,トピック,CS Core,1,社会・倫理・安全なアルゴリズム,部分,118で架空の２集団への判定を比較。実際の社会的影響や安全性全般は未評価。,coverage-al-sep.md,9,原典照合結果は監査記録参照
 AL-SEP:トピック:CS Core:2,AL,AL-SEP,トピック,CS Core,2,アルゴリズムの公平性,部分,118で集団別の３種類の割合を比較。実社会の公平性は未評価。,coverage-al-sep.md,10,原典照合結果は監査記録参照
 AL-SEP:トピック:CS Core:3,AL,AL-SEP,トピック,CS Core,3,匿名性（差分プライバシー等）,部分,196・332・333で推測を比較。196で１回の二値回答の局所差分プライバシーの確率比を調べる。実際の公開は未評価。,coverage-al-sep.md,11,原典照合結果は監査記録参照

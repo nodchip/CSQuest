@@ -544,6 +544,14 @@
       "topics": 32,
       "outcomes": 20,
       "scope_sha256": "596cb0d58a58cdbb1345848d5ff11d302599e22b2bd939579c500345401339fd"
+    },
+    "AL-Models": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-al-models.md",
+      "topics": 38,
+      "outcomes": 30,
+      "scope_sha256": "db098f51011594b401cddc6a133fd878e3ae48555266a4644d735ac843b8c8f8"
     }
   }
 }
