@@ -624,6 +624,14 @@
       "topics": 49,
       "outcomes": 13,
       "scope_sha256": "a039bf930f1889157fb3ce47f27d9547d520079eedb3837548c28f326f4dfaad"
+    },
+    "SE-Formal": {
+      "date": "2026-11-05",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-formal.md",
+      "topics": 12,
+      "outcomes": 3,
+      "scope_sha256": "6d88d56416cd7e6b1c62c0b9f6f5385d8a23b99dc0e3aee2873245a6783f6990"
     }
   }
 }

@@ -8,6 +8,8 @@
 
 ## 完成率に向けた分母の点検
 
+2026-11-05 現在、原典と分母候補を照合したのは79／166知識単位、項目別評価の記録は31行。これは教材全体の完成率ではない。最新の値は下記スクリプトで確認する。
+
 `scripts/coverage_inventory.py --csv docs/curriculum-inventory-draft.csv` は、台帳の各行を分野・知識単位・種別・区分・番号・根拠・台帳の行番号付きで書き出す。`--check docs/curriculum-inventory-draft.csv` は CSV と台帳が一致しない場合に失敗する。166単位の台帳の対応や表の形式も確認する。GitHub Actions はこの一致を検査する。
 
 [照合記録](curriculum-audits.json)は、原典と範囲を確認した単位の文書・日付・件数と、番号・区分・要約のハッシュを持つ。`--audit docs/curriculum-audits.json` で範囲の変更や照合文書の欠落を検出する。状態や証拠の変更は分母の変更ではないためハッシュに含めない。照合記録の正しさや教材の完成はこの検査だけで証明しない。

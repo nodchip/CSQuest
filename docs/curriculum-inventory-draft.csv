@@ -2801,17 +2801,21 @@ SE-Design:学習成果:KA Core:9,SE,SE-Design,学習成果,KA Core,9,設計が�
 SE-Design:学習成果:Non-core:10,SE,SE-Design,学習成果,Non-core,10,自然言語の設計をクラス図に変換,未照合,関連依頼との対応は未確認。,coverage-se-design.md,53,原典照合結果は監査記録参照
 SE-Design:学習成果:Non-core:11,SE,SE-Design,学習成果,Non-core,11,最小権限・安全側の初期値に沿う修正,部分,11で役割別許可、1118で初期判断を選ぶ。一般の設計修正や実装は未評価。,coverage-se-design.md,54,原典照合結果は監査記録参照
 SE-Design:学習成果:Non-core:12,SE,SE-Design,学習成果,Non-core,12,異なる品質で２設計を比較,部分,680で重複・変更時の不一致を比較。一般の効率・使いやすさの比較は未評価。,coverage-se-design.md,55,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:1a,SE,SE-Formal,トピック,Non-core,1a,事前・事後条件,部分,223・243で固定の契約と有限の入力を比較。形式仕様の作成は未評価。,coverage-se-formal.md,11,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:1b,SE,SE-Formal,トピック,Non-core,1b,仕様の形式言語,未照合,実際の形式言語の記述と解析を要照合。,coverage-se-formal.md,12,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:2a,SE,SE-Formal,トピック,Non-core,2a,ロックフリーとデータ競合,部分,15で固定の並行更新。ロックフリー一般は未評価。,coverage-se-formal.md,13,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:2b,SE,SE-Formal,トピック,Non-core,2b,非同期・分散・デッドロック,部分,242・244で有限の安全性とデッドロック。ライブロック等は未評価。,coverage-se-formal.md,14,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:3a,SE,SE-Formal,トピック,Non-core,3a,試験との比較,部分,243で１例と有限の網羅を比較。実プログラムは未評価。,coverage-se-formal.md,15,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:3b,SE,SE-Formal,トピック,Non-core,3b,ファジングとの比較,未照合,形式手法とファジングの体系的比較を要照合。,coverage-se-formal.md,16,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:4a,SE,SE-Formal,トピック,Non-core,4a,モデル検査器,部分,242・244で有限状態を探索。実検査器は未評価。,coverage-se-formal.md,17,原典照合結果は監査記録参照
-SE-Formal:トピック:Non-core:4b,SE,SE-Formal,トピック,Non-core,4b,モデル探索器,未照合,実ツールの利用・比較を要照合。,coverage-se-formal.md,18,原典照合結果は監査記録参照
-SE-Formal:学習成果:原典に明記なし:1,SE,SE-Formal,学習成果,原典に明記なし,1,形式仕様・解析の役割と試験との比較,部分,242・243で有限模型と試験の限界を操作。一般の比較は未評価。,coverage-se-formal.md,24,原典照合結果は監査記録参照
-SE-Formal:学習成果:原典に明記なし:2,SE,SE-Formal,学習成果,原典に明記なし,2,小規模な設計・プログラムに形式手法を適用,部分,242で与えられた有限模型を探索。仕様作成や実コード解析は未評価。,coverage-se-formal.md,25,原典照合結果は監査記録参照
-SE-Formal:学習成果:原典に明記なし:3,SE,SE-Formal,学習成果,原典に明記なし,3,形式仕様言語の利点と欠点,未照合,一般の比較と自由な説明を要照合。,coverage-se-formal.md,26,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:1,SE,SE-Formal,トピック,Non-core,1,インターフェースの形式仕様,部分,223・243で固定の契約を比較。一般の形式仕様は未評価。,coverage-se-formal.md,11,原典照合結果は監査記録参照・親子重複候補
+SE-Formal:トピック:Non-core:1a,SE,SE-Formal,トピック,Non-core,1a,事前・事後条件,部分,223・243で固定の契約と有限の入力を比較。形式仕様の作成は未評価。,coverage-se-formal.md,12,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:1b,SE,SE-Formal,トピック,Non-core,1b,仕様の形式言語,未照合,実際の形式言語の記述と解析を要照合。,coverage-se-formal.md,13,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:2,SE,SE-Formal,トピック,Non-core,2,形式手法が有用な問題領域,部分,242・244で並行動作を有限模型として探索。一般の適用は未評価。,coverage-se-formal.md,14,原典照合結果は監査記録参照・親子重複候補
+SE-Formal:トピック:Non-core:2a,SE,SE-Formal,トピック,Non-core,2a,ロックフリーとデータ競合,部分,15で固定の並行更新。ロックフリー一般は未評価。,coverage-se-formal.md,15,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:2b,SE,SE-Formal,トピック,Non-core,2b,非同期・分散・デッドロック,部分,242・244で有限の安全性とデッドロック。ライブロック等は未評価。,coverage-se-formal.md,16,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:3,SE,SE-Formal,トピック,Non-core,3,他の欠陥検出技法との比較,部分,243で有限範囲と一例、349で手動変異と模型を比較。一般の比較は未評価。,coverage-se-formal.md,17,原典照合結果は監査記録参照・親子重複候補
+SE-Formal:トピック:Non-core:3a,SE,SE-Formal,トピック,Non-core,3a,試験との比較,部分,243で１例と有限の網羅を比較。実プログラムは未評価。,coverage-se-formal.md,18,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:3b,SE,SE-Formal,トピック,Non-core,3b,ファジングとの比較,部分,349で手動変異による観察と故障の道を省いた有限模型の検査を比較。実ファザー・実検査器や一般の比較は未評価。,coverage-se-formal.md,19,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:4,SE,SE-Formal,トピック,Non-core,4,形式的なモデル化と解析,部分,242・244で有限模型を探索。一般のモデル化や実ツールは未評価。,coverage-se-formal.md,20,原典照合結果は監査記録参照・親子重複候補
+SE-Formal:トピック:Non-core:4a,SE,SE-Formal,トピック,Non-core,4a,モデル検査器,部分,242・244で有限状態を探索。実検査器は未評価。,coverage-se-formal.md,21,原典照合結果は監査記録参照
+SE-Formal:トピック:Non-core:4b,SE,SE-Formal,トピック,Non-core,4b,モデル探索器,未照合,実ツールの利用・比較を要照合。,coverage-se-formal.md,22,原典照合結果は監査記録参照
+SE-Formal:学習成果:原典に明記なし:1,SE,SE-Formal,学習成果,原典に明記なし,1,形式仕様・解析の役割と試験との比較,部分,242・243で有限模型と試験の限界を操作。一般の比較は未評価。,coverage-se-formal.md,28,原典照合結果は監査記録参照
+SE-Formal:学習成果:原典に明記なし:2,SE,SE-Formal,学習成果,原典に明記なし,2,小規模な設計・プログラムに形式手法を適用,部分,242で与えられた有限模型を探索。仕様作成や実コード解析は未評価。,coverage-se-formal.md,29,原典照合結果は監査記録参照
+SE-Formal:学習成果:原典に明記なし:3,SE,SE-Formal,学習成果,原典に明記なし,3,形式仕様言語の利点と欠点,未照合,一般の比較と自由な説明を要照合。,coverage-se-formal.md,30,原典照合結果は監査記録参照
 SE-Refactoring:トピック:KA Core:1,SE,SE-Refactoring,トピック,KA Core,1,暗黙のインターフェース,部分,234で一覧順への依存を比較。未知の利用者は未評価。,coverage-se-refactoring.md,9,原典照合結果は監査記録参照
 SE-Refactoring:トピック:KA Core:2a,SE,SE-Refactoring,トピック,KA Core,2a,互換性は提供側と利用側の関係,部分,234で３種類の利用者を比較。一般の関係は未評価。,coverage-se-refactoring.md,10,原典照合結果は監査記録参照
 SE-Refactoring:トピック:KA Core:2b,SE,SE-Refactoring,トピック,KA Core,2b,約束と利用方法による互換性,部分,234で明示と暗黙の期待を比較。一般の分析は未評価。,coverage-se-refactoring.md,11,原典照合結果は監査記録参照
