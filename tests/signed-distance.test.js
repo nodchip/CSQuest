@@ -15,9 +15,10 @@ test('completion requires all classifications and correct checked comparison; dr
 });
 
 test('older drafts receive an independent contour exercise',()=>{
- const old=distanceCreate();delete old.contour;delete old.tetra;old.trials.inside.points=[6];
+ const old=distanceCreate();delete old.contour;delete old.tetra;delete old.neighbors;old.trials.inside.points=[6];
  const restored=distanceRestore(old);
  assert.deepEqual(restored.contour,{mask:1,selected:[],checked:[],feedback:false});
  assert.deepEqual(restored.tetra,{mask:1,selected:[],checked:[],feedback:false});
+ assert.deepEqual(restored.neighbors,{mask:1,selected:[],checked:[],feedback:false});
  assert.deepEqual(restored.trials.inside.points,[6]);
 });
