@@ -13,7 +13,7 @@ const bundleName=`app.js?v=${digest}`;
 await writeFile(`${out}/app.js`,bundle);
 const css=await readFile('style.css');
 const cssName=`style.css?v=${createHash('sha256').update(css).digest('hex').slice(0,16)}`;
-for(const name of ['index.html','sources.html']){
+for(const name of ['index.html','sources.html','workshop-preview.html']){
   let html=await readFile(name,'utf8');
   if(name==='index.html'){
     const source="import('./src/app.js')";
