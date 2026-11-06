@@ -15,3 +15,7 @@ test('途中記録は妥当な状態だけ復元し独立した配列を返す',
  const s=createTextureFilter();s.observed=[textureRequired[0]];const r=restoreTextureFilter(s);r.observed.push(textureRequired[1]);assert.equal(s.observed.length,1);
  for(const patch of [{u:26},{observed:['linear,1,1']},{observed:[textureRequired[0],textureRequired[0]]},{answer:'wrong'},{checked:1}])assert.throws(()=>restoreTextureFilter({...s,...patch}),RangeError);
 });
+test('ミップマップ追加前の途中記録を復元できる',()=>{
+ const old=createTextureFilter();delete old.mip;old.observed=[textureRequired[0]];
+ const restored=restoreTextureFilter(old);assert.equal(restored.mip.cell,0);assert.deepEqual(restored.observed,[textureRequired[0]]);
+});

@@ -1812,7 +1812,7 @@ GIT-Rendering:トピック:KA Core:4,GIT,GIT-Rendering,トピック,KA Core,4,�
 GIT-Rendering:トピック:KA Core:4a,GIT,GIT-Rendering,トピック,KA Core,4a,三角形のラスタ化,部分,83で中心・４標本の固定例。一般の三角形と実装は未評価。,coverage-git-rendering.md,22,原典照合結果は監査記録参照
 GIT-Rendering:トピック:KA Core:4b,GIT,GIT-Rendering,トピック,KA Core,4b,シェーダーを用いる API による描画,部分,639で描画工程の模型、871で WebGL の頂点・索引・シェーダーを使う固定立方体を描画。自由な API やシェーダーの作成は未評価。,coverage-git-rendering.md,23,原典照合結果は監査記録参照
 GIT-Rendering:トピック:KA Core:4c,GIT,GIT-Rendering,トピック,KA Core,4c,可視性・遮蔽と解決方法,部分,506・641で深度比較と視線交差、869で描画順序と深さ判定を比較。一般の３次元・透過は未評価。,coverage-git-rendering.md,24,原典照合結果は監査記録参照
-GIT-Rendering:トピック:KA Core:4d,GIT,GIT-Rendering,トピック,KA Core,4d,テクスチャの縮小・拡大,部分,638で４値の最近傍・線形標本化を比較。ミップマップ・三線形補間と一般の画像は未評価。,coverage-git-rendering.md,25,原典照合結果は監査記録参照
+GIT-Rendering:トピック:KA Core:4d,GIT,GIT-Rendering,トピック,KA Core,4d,テクスチャの縮小・拡大,部分,638で最近傍・線形標本化と４×４画像の縮小・３種類のレベル間補間を比較。一般の画像・GPU や詳細度選択は未評価。,coverage-git-rendering.md,25,原典照合結果は監査記録参照
 GIT-Rendering:トピック:KA Core:4e,GIT,GIT-Rendering,トピック,KA Core,4e,描画への空間データ構造の適用,部分,720で２箱の境界を使う視線、800で２次元の区画と画面の候補を絞る。一般の階層構築・３次元・実測は未評価。,coverage-git-rendering.md,26,原典照合結果は監査記録参照
 GIT-Rendering:トピック:KA Core:4f,GIT,GIT-Rendering,トピック,KA Core,4f,レイトレーシング,部分,641で２線分と視線の交差を計算。一般の３次元、反射・屈折は未評価。,coverage-git-rendering.md,27,原典照合結果は監査記録参照
 GIT-Rendering:トピック:KA Core:4g,GIT,GIT-Rendering,トピック,KA Core,4g,標本化・アンチエイリアス,部分,83で中心と４標本の違いを比較。一般のフィルターや品質は未評価。,coverage-git-rendering.md,28,原典照合結果は監査記録参照
