@@ -1,6 +1,14 @@
 {
   "version": 1,
   "units": {
+    "GIT-Rendering": {
+      "date": "2026-11-06",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-rendering.md",
+      "topics": 20,
+      "outcomes": 14,
+      "scope_sha256": "6d2efc599a4f9f2b243004d8e7e8e48274a391c3cfd76762421f8d1b69f77aab"
+    },
     "GIT-Modeling": {
       "date": "2026-11-06",
       "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
