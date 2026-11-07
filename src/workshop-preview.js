@@ -42,7 +42,7 @@ function persist(){
 }
 function warning(){return error?`<p class="notice" role="status">${error}</p>`:'';}
 function show(place){state.place=place;persist();render();window.scrollTo(0,0);}
-function dialogue(id,line){const who={lira:'リラ',nono:'ノノ',kaede:'カエデ',mizuho:'ミズホ',mina:'ミナ',sara:'サラ',ren:'レン',aoi:'アオイ',toma:'トウマ'}[id];return `<div class="speech"><span class="portrait ${id}" role="img" aria-label="${who}の顔"></span><p class="dialogue"><strong>${who}</strong><br>「${line}」</p></div>`;}
+function dialogue(id,line){const who={lira:'リラ',nono:'ノノ',kaede:'カエデ',mizuho:'ミズホ',mina:'ミナ',sara:'サラ',ren:'レン',aoi:'アオイ',toma:'ゲン'}[id];return `<div class="speech"><span class="portrait ${id}" role="img" aria-label="${who}の顔"></span><p class="dialogue"><strong>${who}</strong><br>「${line}」</p></div>`;}
 function advice(place,speaker){
   const suggestion=recommend(place,state.completed),key=suggestion?`${place}:${suggestion[0]}`:null;
   let line='';
@@ -212,10 +212,10 @@ function harborResult(){
   app.querySelector('#back').onclick=()=>show('harbor');app.querySelector('#travel').onclick=()=>show('travel');
 }
 function midRegion(region){
-  const archive=region==='archive',speaker=archive?'aoi':'toma',name=archive?'アオイ':'トウマ',title=archive?'木もれびの文庫':'風車の里';
+  const archive=region==='archive',speaker=archive?'aoi':'toma',name=archive?'アオイ':'ゲン',title=archive?'木もれびの文庫':'風車の里';
   const role=archive?'森の文庫で記録を守る司書':'風車と橋を手入れする職人';
   const own=midIds.filter(id=>midQuests[id].region===region),helped=own.some(id=>state.completed.includes(id)),ready=bridgeReady(state.completed);
-  const line=state.bridgeOpen?'橋がつながって、また行き来できるようになったね。':ready?'両方の準備が整ったよ。橋のところへ行ってみよう！':helped?(archive?'ありがとう。風車の里でも橋を直そうとしているの。訪ねてみてね。':'ありがとう。森の文庫でも橋に必要なものを探しているよ。訪ねてみてね。'):(archive?'こんにちは。私はアオイ、この文庫の司書よ。橋が使えず山へ本を届けられなくて、記録を探しているの。':'ようこそ。わしはトウマ、風車と橋を直す職人だよ。橋の形は直ったが、安全に渡る準備がまだなんだ。');
+  const line=state.bridgeOpen?'橋がつながって、また行き来できるようになったね。':ready?'両方の準備が整ったよ。橋のところへ行ってみよう！':helped?(archive?'ありがとう。風車の里でも橋を直そうとしているの。訪ねてみてね。':'ありがとう。森の文庫でも橋に必要なものを探しているよ。訪ねてみてね。'):(archive?'こんにちは。私はアオイ、この文庫の司書よ。橋が使えず山へ本を届けられなくて、記録を探しているの。':'ようこそ。わしはゲン、風車と橋を直す職人だよ。橋の形は直ったが、安全に渡る準備がまだなんだ。');
   const quests=own.map(id=>`<button data-mid-quest="${id}">${midQuests[id].short}${state.completed.includes(id)?'（達成済み）':''}</button>`).join('');
   app.innerHTML=`<section class="scene mid-scene"><img src="./data/art/${archive?'forest-library':'windmill-village'}.png" alt="${title}の風景"><h1>${title}</h1><p>${archive?'木々の間にある文庫には、人と精霊が集めた本や記録が並んでいます。':'風車の音が響く里では、人と精霊が道具や灯りを手入れしています。'}</p><div class="characters"><figure><img src="./data/art/${archive?'aoi-pose-v3':'toma-pose-v2'}.png" alt="${role}、${name}の全身"><figcaption><strong>${name}</strong><br>${role}</figcaption></figure></div>${dialogue(speaker,line)}${dialogue('nono','どんなお手伝いができるかな？')}<p>手伝いたいことを選びましょう。もう一方も後から選べます。</p>${warning()}<div class="actions">${quests}${ready&&!state.bridgeOpen?'<button id="bridge">橋の開通を見届ける</button>':''}${state.bridgeOpen?`<button id="cross">つながりの道を通って${archive?'風車の里':'森の文庫'}へ</button>`:''}<button id="travel">旅先を選ぶ</button></div></section>`;
   app.querySelectorAll('[data-mid-quest]').forEach(button=>button.onclick=()=>{state.midActive=button.dataset.midQuest;state.midDrafts[state.midActive]??=[];show('mid-quest');});
@@ -267,7 +267,7 @@ function midResult(){
 }
 function midBridge(){
   const open=state.bridgeOpen;
-  app.innerHTML=`<section class="scene">${open?'<img src="./data/art/connected-bridge.png" alt="森と風車の里を結ぶ橋">':''}<h1>${open?'つながりの道が開きました':'橋の開通'}</h1><p>${open?'森の文庫と風車の里を結ぶ橋に、人と精霊が行き交い始めました。':'文庫と里で受け取った助けをもとに、みんなが橋の仕上げをしています。'}</p>${dialogue('aoi',open?'これで本を山へ届けられるわ。みんな、ありがとう！':'文庫での手助けが、橋の準備につながったわ。トウマ、こちらはどう？')}${dialogue('toma',open?'里の灯りも、森まで届けられるようになったよ。':'みんなの手助けで準備は万端だよ。一緒に橋を開こう！')}${dialogue('nono',open?'新しい道を歩けるんだね！':'文庫と里がつながるの、楽しみ！')}${warning()}<div class="actions">${open?'<button id="archive">つながりの道で森の文庫へ</button><button id="windmill">つながりの道で風車の里へ</button><button id="travel">旅先を選ぶ</button>':'<button id="open" class="primary">橋を開く</button><button id="back">いったん戻る</button>'}</div></section>`;
+  app.innerHTML=`<section class="scene">${open?'<img src="./data/art/connected-bridge.png" alt="森と風車の里を結ぶ橋">':''}<h1>${open?'つながりの道が開きました':'橋の開通'}</h1><p>${open?'森の文庫と風車の里を結ぶ橋に、人と精霊が行き交い始めました。':'文庫と里で受け取った助けをもとに、みんなが橋の仕上げをしています。'}</p>${dialogue('aoi',open?'これで本を山へ届けられるわ。みんな、ありがとう！':'文庫での手助けが、橋の準備につながったわ。ゲン、こちらはどう？')}${dialogue('toma',open?'里の灯りも、森まで届けられるようになったよ。':'みんなの手助けで準備は万端だよ。一緒に橋を開こう！')}${dialogue('nono',open?'新しい道を歩けるんだね！':'文庫と里がつながるの、楽しみ！')}${warning()}<div class="actions">${open?'<button id="archive">つながりの道で森の文庫へ</button><button id="windmill">つながりの道で風車の里へ</button><button id="travel">旅先を選ぶ</button>':'<button id="open" class="primary">橋を開く</button><button id="back">いったん戻る</button>'}</div></section>`;
   app.querySelector('#open')?.addEventListener('click',()=>{state.bridgeOpen=true;persist();midBridge();app.querySelector('h1').tabIndex=-1;app.querySelector('h1').focus();});
   app.querySelector('#back')?.addEventListener('click',()=>show(`mid-${state.bridgeFrom}`));app.querySelector('#archive')?.addEventListener('click',()=>show('mid-archive'));app.querySelector('#windmill')?.addEventListener('click',()=>show('mid-windmill'));app.querySelector('#travel')?.addEventListener('click',()=>show('travel'));
 }
