@@ -3,11 +3,12 @@ import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {readFile} from 'node:fs/promises';
 
-test('production build references a versioned, self-contained bundle and retains old source URLs',async()=>{
+test('production build serves the workshop adventure at the top and retains old source URLs',async()=>{
   execFileSync(process.execPath,['scripts/build.mjs']);
   const html=await readFile('dist/index.html','utf8');
-  assert.match(html,/import\('\.\/app\.js\?v=[a-f0-9]{16}'\)/);
-  assert.match(html,/style\.css\?v=[a-f0-9]{16}/);
+  assert.match(html,/src="\.\/src\/workshop-preview\.js\?v=city2"/);
+  assert.match(html,/id="preview"/);
+  assert.doesNotMatch(html,/id="app"/);
   const bundle=await readFile('dist/app.js','utf8');
   assert.ok(bundle.includes('room-scan-privacy'));
   assert.ok((await readFile('dist/src/app.js','utf8')).includes('room-scan-privacy'));
