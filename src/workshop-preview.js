@@ -9,7 +9,7 @@ const app=document.querySelector('#preview');
 const level=levels.find(item=>item.id==='sequence');
 const forestLevel={cols:2,rows:2,start:[0,0],direction:1,goal:[1,1],walls:[[0,1]],available:['forward','right'],max:4};
 const saveKey='csquest-workshop-journey-v1',settingsKey='csquest-workshop-preview-settings-v1';
-let state=null,saveProtected=false,settingsProtected=false,settings={size:'normal',contrast:'normal'};
+let state=null,saveProtected=false,settingsProtected=false,settings={size:'normal',contrast:'normal',motion:'system'};
 let error='';
 try{
   const raw=localStorage.getItem(saveKey);
@@ -33,9 +33,9 @@ try{
 }catch{saveProtected=true;}
 try{
   const raw=localStorage.getItem(settingsKey);
-  if(raw!==null){const value=JSON.parse(raw);if(!value||!['normal','large'].includes(value.size)||!['normal','high'].includes(value.contrast))throw Error('invalid');settings=value;}
+  if(raw!==null){const value=JSON.parse(raw);if(!value||!['normal','large'].includes(value.size)||!['normal','high'].includes(value.contrast)||!['system','on'].includes(value.motion??'system'))throw Error('invalid');settings={...value,motion:value.motion??'system'};}
 }catch{settingsProtected=true;}
-function applySettings(){document.documentElement.dataset.size=settings.size;document.documentElement.dataset.contrast=settings.contrast;}
+function applySettings(){document.documentElement.dataset.size=settings.size;document.documentElement.dataset.contrast=settings.contrast;document.documentElement.dataset.motion=settings.motion;}
 function persist(){
   if(saveProtected){error='冒険の記録を読み込めないため、元の記録を保護しています。今回の進行は保存されません。';return;}
   try{localStorage.setItem(saveKey,JSON.stringify(state));error='';}catch{error='冒険を保存できません。再読み込みすると進行が失われます。';}
@@ -57,10 +57,10 @@ function title(){
   app.querySelector('#settings').onclick=settingScreen;
 }
 function settingScreen(){
-  app.innerHTML=`<section class="panel"><h1>表示設定</h1><label>文字の大きさ <select id="size"><option value="normal">標準</option><option value="large">大きめ</option></select></label><label>コントラスト <select id="contrast"><option value="normal">標準</option><option value="high">強め</option></select></label><p role="status">${settingsProtected?'表示設定を保存できません。':''}</p><button id="settings-back">タイトルへ戻る</button></section>`;
-  const size=app.querySelector('#size'),contrast=app.querySelector('#contrast');size.value=settings.size;contrast.value=settings.contrast;
-  const update=()=>{settings={size:size.value,contrast:contrast.value};applySettings();if(!settingsProtected)try{localStorage.setItem(settingsKey,JSON.stringify(settings));}catch{settingsProtected=true;}app.querySelector('[role=status]').textContent=settingsProtected?'表示設定を保存できません。':'';};
-  size.onchange=update;contrast.onchange=update;app.querySelector('#settings-back').onclick=title;size.focus();
+  app.innerHTML=`<section class="panel"><h1>表示設定</h1><label>文字の大きさ <select id="size"><option value="normal">標準</option><option value="large">大きめ</option></select></label><label>コントラスト <select id="contrast"><option value="normal">標準</option><option value="high">強め</option></select></label><label>依頼達成の演出 <select id="motion"><option value="system">端末の設定に従う</option><option value="on">動かす</option></select></label><p role="status">${settingsProtected?'表示設定を保存できません。':''}</p><button id="settings-back">タイトルへ戻る</button></section>`;
+  const size=app.querySelector('#size'),contrast=app.querySelector('#contrast'),motion=app.querySelector('#motion');size.value=settings.size;contrast.value=settings.contrast;motion.value=settings.motion;
+  const update=()=>{settings={size:size.value,contrast:contrast.value,motion:motion.value};applySettings();if(!settingsProtected)try{localStorage.setItem(settingsKey,JSON.stringify(settings));}catch{settingsProtected=true;}app.querySelector('[role=status]').textContent=settingsProtected?'表示設定を保存できません。':'';};
+  size.onchange=update;contrast.onchange=update;motion.onchange=update;app.querySelector('#settings-back').onclick=title;size.focus();
 }
 function world(){
   app.innerHTML=`<section class="scene"><img src="./data/art/spirit-workshop.png" alt="森のそばにたたずむ精霊の工房"><h1>精霊と人が暮らす世界</h1><p>この世界では、人と精霊が力を合わせて暮らしています。町はずれの工房では、灯りや道具を作り、旅人たちを助けています。</p><p>ある夕暮れ、工房の灯りが消えてしまいました。</p>${warning()}<button class="primary" id="next">工房を訪ねる</button></section>`;
