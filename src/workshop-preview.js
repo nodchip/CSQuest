@@ -90,7 +90,7 @@ function choices(){
   app.querySelector('#title')?.addEventListener('click',title);
 }
 function forestEncounter(){
-  app.innerHTML=`<section class="scene"><h1>森の入口での出会い</h1><p>工房の外へ出ると、森の入口で旅支度をした人が地図を広げていました。</p><div class="characters"><figure><img src="./data/art/kaede-courier.png" alt="外套をまとった森の配達人カエデの全身"><figcaption><strong>カエデ</strong><br>森を行き来する配達人</figcaption></figure></div>${dialogue('kaede','向こうに薬草を忘れてしまって。細い道は荷物を持ったままでは通れないんだ。')}${dialogue('nono','わたしなら通れるよ！ 道を教えてくれない？')}<p>ノノに道を教え、薬草のところまで案内しましょう。</p>${warning()}<div class="actions"><button class="primary" id="forest-accept">手伝う</button><button id="forest-back">いったん工房へ戻る</button></div></section>`;
+  app.innerHTML=`<section class="scene"><h1>森の入口での出会い</h1><p>工房の外へ出ると、森の入口で旅支度をした人が地図を広げていました。</p><div class="characters"><figure><img src="./data/art/kaede.png" alt="外套をまとった森の配達人カエデの全身"><figcaption><strong>カエデ</strong><br>森を行き来する配達人</figcaption></figure></div>${dialogue('kaede','向こうに薬草を忘れてしまって。細い道は荷物を持ったままでは通れないんだ。')}${dialogue('nono','わたしなら通れるよ！ 道を教えてくれない？')}<p>ノノに道を教え、薬草のところまで案内しましょう。</p>${warning()}<div class="actions"><button class="primary" id="forest-accept">手伝う</button><button id="forest-back">いったん工房へ戻る</button></div></section>`;
   app.querySelector('#forest-accept').onclick=()=>show('forest-quest');app.querySelector('#forest-back').onclick=()=>show('choices');
 }
 function forestQuest(){
