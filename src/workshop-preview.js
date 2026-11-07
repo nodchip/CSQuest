@@ -79,7 +79,9 @@ function quest(){
 function choices(){
   const selection=state.place==='talk'?`<section class="panel" id="next-scene" tabindex="-1"><h2>ノノの話</h2>${dialogue('nono','もっといろんな道を歩いてみたいな。一緒に冒険しようよ！')}</section>`:'';
   const count=workshopQuestIds.filter(id=>state.completed.includes(id)).length;
-  app.innerHTML=`<section class="scene"><img src="./data/art/spirit-workshop.png" alt="森のそばの精霊の工房"><h1>精霊の工房</h1>${dialogue('lira','灯りを取り戻してくれてありがとう。工房の近くにも、手助けを待っている人たちがいるの。') }<p>お願いを順番に並べたものを、コンピュータでは「プログラム」と呼びます。</p><p>工房周辺の依頼：${count}件達成。異なる２件を手伝うと、水辺の村や街へ旅立てます。</p>${advice('workshop','lira')}<div class="actions"><button id="talk">ノノと話す</button><button id="outside">森の入口へ：薬草の届けもの${state.completed.includes('forest')?'（達成済み）':''}</button><button data-encounter="branch">木立の道へ：届けもの${state.completed.includes('branch')?'（達成済み）':''}</button><button data-encounter="loop">工房の水路へ：消えた灯り${state.completed.includes('loop')?'（達成済み）':''}</button>${unlocked(state.completed)?'<button id="travel" class="primary">旅先を選ぶ</button>':''}</div>${selection}${warning()}<p><button id="title">タイトルへ戻る</button></p></section>`;
+  const ready=unlocked(state.completed);
+  const journeyAdvice=ready?'近くの人たちを助けてくれてありがとう。経験も積めたし、そろそろ遠くへ出かけてみませんか？':count?'遠出の前に、近くで困っている人たちをもう少し手伝って、経験を積みましょう。':'初めて遠くへ出かける前に、近くで困っている人たちを手伝って、経験を積みましょう。';
+  app.innerHTML=`<section class="scene"><img src="./data/art/spirit-workshop.png" alt="森のそばの精霊の工房"><h1>精霊の工房</h1>${dialogue('lira',journeyAdvice)}<p>お願いを順番に並べたものを、コンピュータでは「プログラム」と呼びます。</p>${advice('workshop','lira')}<div class="actions"><button id="talk">ノノと話す</button><button id="outside">森の入口へ：薬草の届けもの${state.completed.includes('forest')?'（達成済み）':''}</button><button data-encounter="branch">木立の道へ：届けもの${state.completed.includes('branch')?'（達成済み）':''}</button><button data-encounter="loop">工房の水路へ：消えた灯り${state.completed.includes('loop')?'（達成済み）':''}</button>${ready?'<button id="travel" class="primary">旅先を選ぶ</button>':''}</div>${selection}${warning()}<p><button id="title">タイトルへ戻る</button></p></section>`;
   bindAdvice('workshop','lira');
   app.querySelector('#talk').onclick=()=>{state.place='talk';persist();choices();app.querySelector('#next-scene').focus();};
   app.querySelector('#outside').onclick=()=>show('outside');
@@ -88,7 +90,7 @@ function choices(){
   app.querySelector('#title')?.addEventListener('click',title);
 }
 function forestEncounter(){
-  app.innerHTML=`<section class="scene"><h1>森の入口での出会い</h1><p>工房の外へ出ると、森の入口で旅支度をした人が地図を広げていました。</p><div class="characters"><figure><img src="./data/art/kaede.png" alt="外套をまとった森の配達人カエデの全身"><figcaption><strong>カエデ</strong><br>森を行き来する配達人</figcaption></figure></div>${dialogue('kaede','向こうに薬草を忘れてしまって。細い道は荷物を持ったままでは通れないんだ。')}${dialogue('nono','わたしなら通れるよ！ 道を教えてくれない？')}<p>ノノに道を教え、薬草のところまで案内しましょう。</p>${warning()}<div class="actions"><button class="primary" id="forest-accept">手伝う</button><button id="forest-back">いったん工房へ戻る</button></div></section>`;
+  app.innerHTML=`<section class="scene"><h1>森の入口での出会い</h1><p>工房の外へ出ると、森の入口で旅支度をした人が地図を広げていました。</p><div class="characters"><figure><img src="./data/art/kaede-courier.png" alt="外套をまとった森の配達人カエデの全身"><figcaption><strong>カエデ</strong><br>森を行き来する配達人</figcaption></figure></div>${dialogue('kaede','向こうに薬草を忘れてしまって。細い道は荷物を持ったままでは通れないんだ。')}${dialogue('nono','わたしなら通れるよ！ 道を教えてくれない？')}<p>ノノに道を教え、薬草のところまで案内しましょう。</p>${warning()}<div class="actions"><button class="primary" id="forest-accept">手伝う</button><button id="forest-back">いったん工房へ戻る</button></div></section>`;
   app.querySelector('#forest-accept').onclick=()=>show('forest-quest');app.querySelector('#forest-back').onclick=()=>show('choices');
 }
 function forestQuest(){
