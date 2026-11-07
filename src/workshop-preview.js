@@ -3,6 +3,7 @@ import {journeyQuests,workshopQuestIds,unlocked,completeQuest,emptyDraft,validDr
 import {cityQuestIds,recommend,validAnnouncements,restoreCitySort,restoreCityQueue} from './workshop-city.js';
 import {containerEvents,containerStep} from './containers.js';
 import {harborNodes,harborUnlocked,validHarborRoute,harborNext,harborDelivered} from './harbor-route.js';
+import {midQuests,midIds,recordNumbers,windTasks,midUnlocked,bridgeReady,midReplay,validMidDrafts} from './midgame.js';
 
 const app=document.querySelector('#preview');
 const level=levels.find(item=>item.id==='sequence');
@@ -14,18 +15,20 @@ try{
   const raw=localStorage.getItem(saveKey);
   if(raw!==null){
     const saved=JSON.parse(raw);
-    const places=['world','introduction','quest','choices','talk','outside','forest-quest','forest-done','encounter','journey-quest','journey-done','travel','river','city','city-guild','city-market','city-quest','city-result','city-festival','harbor','harbor-quest','harbor-result'];
+    const places=['world','introduction','quest','choices','talk','outside','forest-quest','forest-done','encounter','journey-quest','journey-done','travel','river','city','city-guild','city-market','city-quest','city-result','city-festival','harbor','harbor-quest','harbor-result','mid-archive','mid-windmill','mid-quest','mid-result','mid-bridge'];
     if(!saved||!places.includes(saved.place)||!Array.isArray(saved.program)||saved.program.length>level.max||saved.program.some(id=>!level.available.includes(id))||typeof saved.executed!=='boolean'||(saved.executed&&!saved.program.length)||(!['world','introduction','quest'].includes(saved.place)&&(!saved.executed||!runScenarios(level,saved.program).success)))throw Error('invalid');
     const forestProgram=saved.forestProgram??[],forestExecuted=saved.forestExecuted??false;
     if(!Array.isArray(forestProgram)||forestProgram.length>forestLevel.max||forestProgram.some(id=>!forestLevel.available.includes(id))||typeof forestExecuted!=='boolean'||(forestExecuted&&!forestProgram.length)||(saved.place==='forest-done'&&(!forestExecuted||!runScenarios(forestLevel,forestProgram).success)))throw Error('invalid');
     const completed=saved.completed??[],drafts=saved.drafts??{},activeQuest=saved.activeQuest??null;
-    if(!Array.isArray(completed)||completed.some(id=>!['forest','branch','loop','river','harbor-message',...cityQuestIds].includes(id))||new Set(completed).size!==completed.length||!drafts||typeof drafts!=='object'||Object.keys(drafts).some(id=>!validDraft(id,drafts[id]))||(['encounter','journey-quest','journey-done'].includes(saved.place)&&!journeyQuests[activeQuest])||(['travel','river','city','city-guild','city-market','city-quest','city-result','city-festival','harbor','harbor-quest','harbor-result'].includes(saved.place)&&!unlocked(completed))||(saved.place==='journey-done'&&(!completed.includes(activeQuest)||!drafts[activeQuest]?.executed||!runScenarios(journeyQuests[activeQuest].level,drafts[activeQuest].program).success)))throw Error('invalid');
+    if(!Array.isArray(completed)||completed.some(id=>!['forest','branch','loop','river','harbor-message',...cityQuestIds,...midIds].includes(id))||new Set(completed).size!==completed.length||!drafts||typeof drafts!=='object'||Object.keys(drafts).some(id=>!validDraft(id,drafts[id]))||(['encounter','journey-quest','journey-done'].includes(saved.place)&&!journeyQuests[activeQuest])||(['travel','river','city','city-guild','city-market','city-quest','city-result','city-festival','harbor','harbor-quest','harbor-result',...['mid-archive','mid-windmill','mid-quest','mid-result','mid-bridge']].includes(saved.place)&&!unlocked(completed))||(saved.place==='journey-done'&&(!completed.includes(activeQuest)||!drafts[activeQuest]?.executed||!runScenarios(journeyQuests[activeQuest].level,drafts[activeQuest].program).success)))throw Error('invalid');
     const citySort=saved.citySort??[],cityQueue=saved.cityQueue??[],cityQuest=saved.cityQuest??null,cityFrom=saved.cityFrom??'city-guild',announced=saved.announced??[];
     const sorted=restoreCitySort(citySort),queue=restoreCityQueue(cityQueue);
     if(!validAnnouncements(announced)||![null,...cityQuestIds].includes(cityQuest)||!['city-guild','city-market'].includes(cityFrom)||(['city-quest','city-result'].includes(saved.place)&&!cityQuest)||(saved.place==='city-result'&&(!completed.includes(cityQuest)||(cityQuest==='city-sort'?!sorted.done:queue.history.length!==containerEvents.length)))||(saved.place==='city-festival'&&!cityQuestIds.some(id=>completed.includes(id))))throw Error('invalid');
     const harborRoute=saved.harborRoute??[];
     if(!validHarborRoute(harborRoute)||(saved.place.startsWith('harbor')&&!harborUnlocked(completed))||(saved.place==='harbor-result'&&(!completed.includes('harbor-message')||!harborDelivered(harborRoute))))throw Error('invalid');
-    state={place:saved.place,program:[...saved.program],executed:saved.executed,forestProgram:[...forestProgram],forestExecuted,completed:[...completed],drafts,activeQuest,citySort:[...citySort],cityQueue:[...cityQueue],cityQuest,cityFrom,announced:[...announced],harborRoute:[...harborRoute]};
+    const midActive=saved.midActive??null,midDrafts=saved.midDrafts??{},bridgeOpen=saved.bridgeOpen??false,bridgeFrom=saved.bridgeFrom??'archive';
+    if(!validMidDrafts(midDrafts)||![null,...midIds].includes(midActive)||typeof bridgeOpen!=='boolean'||!['archive','windmill'].includes(bridgeFrom)||(saved.place.startsWith('mid-')&&!midUnlocked(completed))||(['mid-quest','mid-result'].includes(saved.place)&&!midActive)||(saved.place==='mid-result'&&(!completed.includes(midActive)||!midReplay(midActive,midDrafts[midActive]??[]).done))||((bridgeOpen||saved.place==='mid-bridge')&&!bridgeReady(completed)))throw Error('invalid');
+    state={place:saved.place,program:[...saved.program],executed:saved.executed,forestProgram:[...forestProgram],forestExecuted,completed:[...completed],drafts,activeQuest,citySort:[...citySort],cityQueue:[...cityQueue],cityQuest,cityFrom,announced:[...announced],harborRoute:[...harborRoute],midActive,midDrafts,bridgeOpen,bridgeFrom};
   }
 }catch{saveProtected=true;}
 try{
@@ -39,7 +42,7 @@ function persist(){
 }
 function warning(){return error?`<p class="notice" role="status">${error}</p>`:'';}
 function show(place){state.place=place;persist();render();window.scrollTo(0,0);}
-function dialogue(id,line){const who={lira:'リラ',nono:'ノノ',kaede:'カエデ',mizuho:'ミズホ',mina:'ミナ',sara:'サラ',ren:'レン'}[id];return `<div class="speech"><span class="portrait ${id}" role="img" aria-label="${who}の顔"></span><p class="dialogue"><strong>${who}</strong><br>「${line}」</p></div>`;}
+function dialogue(id,line){const who={lira:'リラ',nono:'ノノ',kaede:'カエデ',mizuho:'ミズホ',mina:'ミナ',sara:'サラ',ren:'レン',aoi:'アオイ',toma:'トウマ'}[id];return `<div class="speech"><span class="portrait ${id}" role="img" aria-label="${who}の顔"></span><p class="dialogue"><strong>${who}</strong><br>「${line}」</p></div>`;}
 function advice(place,speaker){
   const suggestion=recommend(place,state.completed),key=suggestion?`${place}:${suggestion[0]}`:null;
   let line='';
@@ -49,7 +52,7 @@ function advice(place,speaker){
 function bindAdvice(place,speaker){app.querySelector('#ask-advice').onclick=()=>{const suggestion=recommend(place,state.completed);app.querySelector('#advice-response').innerHTML=dialogue(speaker,suggestion?`『${suggestion[1]}』を手伝ってみない？ 好きな依頼を選んでね。`:'この場所で紹介できる依頼は、今は全部お手伝い済みだよ。');};}
 function title(){
   app.innerHTML=`<section class="scene title-screen"><img src="./data/art/spirit-workshop.png" alt="森のそばの精霊の工房"><h1>CS Quest</h1><p>精霊とともに、小さな冒険へ。</p><p>この冒険は開発中です。遊べる地域は今後増えていきます。</p>${warning()}<div class="actions"><button class="${state?'':'primary'}" id="new">冒険を始める</button><button id="continue" ${state?'':'disabled'}>続きから</button><button id="settings">設定</button></div><details><summary>この体験版について</summary><p>風景・人物のイラストは CS Quest のために画像生成ツールを使って制作しました。学習内容の参考：<a href="https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm">Computer Science Curricula 2023</a>。</p></details></section>`;
-  app.querySelector('#new').onclick=()=>{if(state&&!window.confirm('体験版の現在の冒険を最初から始めます。よろしいですか？'))return;state={place:'world',program:[],executed:false,forestProgram:[],forestExecuted:false,completed:[],drafts:{},activeQuest:null,citySort:[],cityQueue:[],cityQuest:null,cityFrom:'city-guild',announced:[],harborRoute:[]};persist();render();};
+  app.querySelector('#new').onclick=()=>{if(state&&!window.confirm('体験版の現在の冒険を最初から始めます。よろしいですか？'))return;state={place:'world',program:[],executed:false,forestProgram:[],forestExecuted:false,completed:[],drafts:{},activeQuest:null,citySort:[],cityQueue:[],cityQuest:null,cityFrom:'city-guild',announced:[],harborRoute:[],midActive:null,midDrafts:{},bridgeOpen:false,bridgeFrom:'archive'};persist();render();};
   app.querySelector('#continue').onclick=render;
   app.querySelector('#settings').onclick=settingScreen;
 }
@@ -140,8 +143,8 @@ function journeyDone(){
   app.querySelector('#back').onclick=()=>show(state.activeQuest==='river'?'river':'choices');
 }
 function travel(){
-  const harbor=harborUnlocked(state.completed);
-  app.innerHTML=`<section class="scene"><h1>旅先を選ぶ</h1><img src="./data/art/world-map.png" alt="森や川、町が描かれた旅の地図">${dialogue('lira',harbor?'村や街を旅して、少し遠くまで出かけられそうね。風の港町にも行ってみない？':'川向こうの村や、祭りの準備でにぎわう街にも行けるわ。工房にはいつでも帰れるからね。')}<p>行き先を選んでください。</p>${warning()}<div class="actions"><button id="river">水辺の村へ行く</button><button id="city">街へ行く</button>${harbor?'<button id="harbor">風の港町へ行く</button>':''}<button id="back">工房にとどまる</button></div></section>`;app.querySelector('#river').onclick=()=>show('river');app.querySelector('#city').onclick=()=>show('city');app.querySelector('#harbor')?.addEventListener('click',()=>show('harbor'));app.querySelector('#back').onclick=()=>show('choices');
+  const harbor=harborUnlocked(state.completed),mid=midUnlocked(state.completed);
+  app.innerHTML=`<section class="scene"><h1>旅先を選ぶ</h1><img src="./data/art/world-map.png" alt="森や川、町が描かれた旅の地図">${dialogue('lira',mid?'レンが教えてくれた森の文庫と風車の里にも行ってみましょう。どちらから訪ねてもいいわ。':harbor?'村や街を旅して、少し遠くまで出かけられそうね。風の港町にも行ってみない？':'川向こうの村や、祭りの準備でにぎわう街にも行けるわ。工房にはいつでも帰れるからね。')}<p>行き先を選んでください。</p>${warning()}<div class="actions"><button id="river">水辺の村へ行く</button><button id="city">街へ行く</button>${harbor?'<button id="harbor">風の港町へ行く</button>':''}${mid?'<button id="archive">森の文庫へ行く</button><button id="windmill">風車の里へ行く</button>':''}<button id="back">工房にとどまる</button></div></section>`;app.querySelector('#river').onclick=()=>show('river');app.querySelector('#city').onclick=()=>show('city');app.querySelector('#harbor')?.addEventListener('click',()=>show('harbor'));app.querySelector('#archive')?.addEventListener('click',()=>show('mid-archive'));app.querySelector('#windmill')?.addEventListener('click',()=>show('mid-windmill'));app.querySelector('#back').onclick=()=>show('choices');
 }
 function river(){
   app.innerHTML=`<section class="scene river-scene"><img src="./data/art/river-village.png" alt="川と橋のある水辺の村"><h1>水辺の村</h1>${dialogue('nono','川がきらきらしてる！ あそこにいる人に話しかけてみよう。')}<p>村では道を照らす灯りが消え、川の水かさによって道が変わるようです。</p>${advice('river','nono')}${warning()}<div class="actions"><button id="help" class="primary">村の世話役に話す${state.completed.includes('river')?'（依頼達成済み）':''}</button><button id="back">工房へ戻る</button></div></section>`;
@@ -205,8 +208,74 @@ function harborQuest(){
   const dialog=app.querySelector('#success-dialog');if(dialog){let reviewing=false;app.querySelector('#open-result').onclick=()=>dialog.showModal();app.querySelector('#review').onclick=()=>{reviewing=true;dialog.close();};app.querySelector('#finish').onclick=()=>{dialog.close();state.completed=completeQuest(state.completed,'harbor-message');show('harbor-result');};dialog.addEventListener('close',()=>{if(!app.contains(dialog))return;if(reviewing){reviewing=false;const details=app.querySelector('details');details.open=true;details.querySelector('summary').focus();}else app.querySelector('#open-result')?.focus();});}
 }
 function harborResult(){
-  app.innerHTML=`<section class="scene"><h1>家族へ知らせが届きました</h1><p>離れた家では、旅人の家族が知らせを受け取り、ほっと胸をなでおろしました。</p>${dialogue('ren','ありがとう！ 中継所をつないだから、港から遠くまで知らせが届いたね。')}${dialogue('nono','つながっている道を選ぶと、遠くの人にも伝えられるんだね！')}<p>コンピュータの通信でも、情報がいくつかの中継地点を通って届くことがあります。この依頼は、その道筋を選ぶ考え方を表しています。</p>${warning()}<div class="actions"><button id="back">港へ戻る</button><button id="travel">旅先を選ぶ</button></div></section>`;
+  app.innerHTML=`<section class="scene"><h1>家族へ知らせが届きました</h1><p>離れた家では、旅人の家族が知らせを受け取り、ほっと胸をなでおろしました。</p>${dialogue('ren',state.bridgeOpen?'ありがとう！ 中継所をつないだから、港から遠くまで知らせが届いたね。森と里の橋も開いて、みんな喜んでいるよ！':'ありがとう！ 中継所をつないだから、港から遠くまで知らせが届いたね。森の文庫と風車の里を結ぶ橋も使えなくて、みんな困っているんだ。よかったら訪ねてみて！')}${dialogue('nono','つながっている道を選ぶと、遠くの人にも伝えられるんだね！')}<p>コンピュータの通信でも、情報がいくつかの中継地点を通って届くことがあります。この依頼は、その道筋を選ぶ考え方を表しています。</p>${warning()}<div class="actions"><button id="back">港へ戻る</button><button id="travel">旅先を選ぶ</button></div></section>`;
   app.querySelector('#back').onclick=()=>show('harbor');app.querySelector('#travel').onclick=()=>show('travel');
 }
-function render(){const cityPlace=state?.place?.startsWith('city'),harborPlace=state?.place?.startsWith('harbor');document.documentElement.dataset.region=harborPlace?'harbor':cityPlace?'city':state?.place==='river'||state?.activeQuest==='river'&&['encounter','journey-quest','journey-done'].includes(state?.place)?'river':'workshop';document.querySelector('header small').textContent=harborPlace?'風の港町':cityPlace?'灯花の街':document.documentElement.dataset.region==='river'?'水辺の村':'工房のはじまり';if(!state){title();return;}if(state.place==='world')world();else if(state.place==='introduction')introduction();else if(state.place==='quest')quest();else if(state.place==='outside')forestEncounter();else if(state.place==='forest-quest')forestQuest();else if(state.place==='forest-done')forestDone();else if(state.place==='encounter')encounter();else if(state.place==='journey-quest')journeyQuest();else if(state.place==='journey-done')journeyDone();else if(state.place==='travel')travel();else if(state.place==='river')river();else if(state.place==='city')city();else if(state.place==='city-guild'||state.place==='city-market')cityPerson(state.place);else if(state.place==='city-quest')cityQuest();else if(state.place==='city-result')cityResult();else if(state.place==='city-festival')cityFestival();else if(state.place==='harbor')harbor();else if(state.place==='harbor-quest')harborQuest();else if(state.place==='harbor-result')harborResult();else choices();}
+function midRegion(region){
+  const archive=region==='archive',speaker=archive?'aoi':'toma',name=archive?'アオイ':'トウマ',title=archive?'木もれびの文庫':'風車の里';
+  const role=archive?'森の文庫で記録を守る司書':'風車と橋を手入れする職人';
+  const own=midIds.filter(id=>midQuests[id].region===region),helped=own.some(id=>state.completed.includes(id)),ready=bridgeReady(state.completed);
+  const line=state.bridgeOpen?'橋がつながって、また行き来できるようになったね。':ready?'両方の準備が整ったよ。橋のところへ行ってみよう！':helped?(archive?'ありがとう。風車の里でも橋を直そうとしているの。訪ねてみてね。':'ありがとう。森の文庫でも橋に必要なものを探しているよ。訪ねてみてね。'):(archive?'こんにちは。私はアオイ、この文庫の司書よ。橋が使えず山へ本を届けられなくて、記録を探しているの。':'ようこそ。わしはトウマ、風車と橋を直す職人だよ。橋の形は直ったが、安全に渡る準備がまだなんだ。');
+  const quests=own.map(id=>`<button data-mid-quest="${id}">${midQuests[id].short}${state.completed.includes(id)?'（達成済み）':''}</button>`).join('');
+  app.innerHTML=`<section class="scene mid-scene"><img src="./data/art/${archive?'forest-library':'windmill-village'}.png" alt="${title}の風景"><h1>${title}</h1><p>${archive?'木々の間にある文庫には、人と精霊が集めた本や記録が並んでいます。':'風車の音が響く里では、人と精霊が道具や灯りを手入れしています。'}</p><div class="characters"><figure><img src="./data/art/${speaker}-mid.png" alt="${role}、${name}の全身"><figcaption><strong>${name}</strong><br>${role}</figcaption></figure></div>${dialogue(speaker,line)}${dialogue('nono','どんなお手伝いができるかな？')}<p>手伝いたいことを選びましょう。もう一方も後から選べます。</p>${warning()}<div class="actions">${quests}${ready&&!state.bridgeOpen?'<button id="bridge">橋の開通を見届ける</button>':''}${state.bridgeOpen?`<button id="cross">つながりの道を通って${archive?'風車の里':'森の文庫'}へ</button>`:''}<button id="travel">旅先を選ぶ</button></div></section>`;
+  app.querySelectorAll('[data-mid-quest]').forEach(button=>button.onclick=()=>{state.midActive=button.dataset.midQuest;state.midDrafts[state.midActive]??=[];show('mid-quest');});
+  app.querySelector('#bridge')?.addEventListener('click',()=>{state.bridgeFrom=region;show('mid-bridge');});
+  app.querySelector('#cross')?.addEventListener('click',()=>show(archive?'mid-windmill':'mid-archive'));
+  app.querySelector('#travel').onclick=()=>show('travel');
+}
+function midQuest(){
+  const id=state.midActive,quest=midQuests[id],history=state.midDrafts[id]??(state.midDrafts[id]=[]),draft=midReplay(id,history),speaker=quest.region==='archive'?'aoi':'toma';
+  let introduction='',activity='',hint='';
+  if(id==='archive-search'){
+    introduction='橋の古い記録は、棚に番号の小さい順に並んでいるの。番号50の記録を探してくれる？ 選んだ番号が小さければ、もっと大きい方を探せるわ。';
+    const inspected=history.filter(action=>action.startsWith('pick:')).map(action=>Number(action.slice(5)));
+    const last=inspected.at(-1),comparison=last===undefined?'':`棚${last+1}は番号${recordNumbers[last]}。${recordNumbers[last]<50?'50より小さいので右側を探します。':recordNumbers[last]>50?'50より大きいので左側を探します。':'探していた記録です。'}`;
+    activity=`<p>目標：番号50の記録を見つける。棚の番号札を選ぶと、中の記録を見られます。記録は左から小さい順に並んでいます。</p><div class="actions">${recordNumbers.map((number,index)=>`<button data-mid-action="pick:${index}" ${draft.done||index<draft.lo||index>draft.hi?'disabled':''}>棚${index+1}${inspected.includes(index)?`（${number}）`:''}</button>`).join('')}</div><p role="status">${comparison} ${draft.done?'番号50の記録が見つかりました！':`まだ探せるのは棚${draft.lo+1}から棚${draft.hi+1}です。`}</p>`;
+    hint='真ん中付近を選ぶと、比べた結果に応じて広い範囲を一度に外せます。';
+  }else if(id==='archive-filter'){
+    introduction='橋が使えなくて山への本を届けられないの。山へ届ける「本」だけを選んで、準備してくれる？ 地図や森の本は今回は入れないでね。';
+    activity=`<p>目標：「本」と「山向け」の両方に当てはまるものを表示する。条件を選んで「確かめる」を押します。</p><div class="actions"><button data-mid-action="book" aria-pressed="${draft.book}" ${draft.done?'disabled':''}>本：${draft.book?'選択中':'選んでいない'}</button><button data-mid-action="mountain" aria-pressed="${draft.mountain}" ${draft.done?'disabled':''}>山向け：${draft.mountain?'選択中':'選んでいない'}</button><button data-mid-action="test" class="primary" ${draft.done?'disabled':''}>確かめる</button></div><p>記録には、本か地図か、山向けか森向けかが書かれています。</p><ul><li>山の薬草図鑑：本・山向け</li><li>山道の手引き：本・山向け</li><li>森の絵本：本・森向け</li><li>山の地図：地図・山向け</li></ul>${draft.tested?`<p role="status">選ばれたもの：${draft.books.map(item=>item.name).join('、')||'なし'}。${draft.done?'必要な本がそろいました！':'条件をもう一度確かめましょう。'}</p>`:''}`;
+    hint='「本」と「山向け」を両方選ぶと、両方に当てはまる記録だけ残ります。';
+  }else if(id==='windmill-lamp'){
+    introduction='橋の安全灯を直したいんだ。橋が丈夫で、向こうから合図が来たときだけ灯るようにしたい。どんな部品を使おうか？';
+    activity=`<p>目標：二つの合図が両方そろったときだけ灯る部品を選ぶ。部品を選び、すべての組み合わせで試します。</p><div class="actions">${[['AND','両方なら灯る'],['OR','どちらかなら灯る'],['NAND','両方なら消える']].map(([part,label])=>`<button data-mid-action="${part}" aria-pressed="${draft.part===part}" ${draft.done?'disabled':''}>${label}${draft.part===part?'（選択中）':''}</button>`).join('')}<button data-mid-action="test" class="primary" ${draft.done?'disabled':''}>試す</button></div>${draft.tested?`<table><caption>試した結果（点灯＝●、消灯＝○）</caption><thead><tr><th>橋</th><th>合図</th><th>灯り</th><th>目標</th></tr></thead><tbody>${draft.rows.map(row=>`<tr><td>${row.a?'丈夫':'未確認'}</td><td>${row.b?'あり':'なし'}</td><td>${row.actual?'●':'○'}</td><td>${row.expected?'●':'○'}</td></tr>`).join('')}</tbody></table><p role="status">${draft.done?'すべての組み合わせで、目標どおりです！':'目標と違うところがあります。別の部品も試せます。'}</p>`:''}`;
+    hint='橋が丈夫でも合図がなければ消灯、合図があっても橋が未確認なら消灯です。';
+  }else{
+    introduction='森と里を結ぶ橋の道具を準備しよう。まず橋を調べ、それから板と灯りを用意して、最後に取り付けるんだ。板と灯りはどちらを先に用意してもいいよ。';
+    activity=`<p>目標：橋を調べ、板と灯りの両方を用意してから、橋に取り付ける。順番に仕事を選びます。</p><div class="actions">${windTasks.map(task=>`<button data-mid-action="${task.id}" ${draft.chosen.includes(task.id)?'disabled':''}>${task.name}${draft.chosen.includes(task.id)?'（準備済み）':''}</button>`).join('')}</div><p role="status">${draft.done?'橋の準備が整いました！':`済んだ仕事：${draft.chosen.length?draft.chosen.map(key=>windTasks.find(task=>task.id===key).name).join(' → '):'まだありません。'}`}</p>`;
+    hint='橋を調べた後、板と灯りは好きな順番で準備できます。取り付けは両方の準備が済んでからです。';
+  }
+  const actionLabel=action=>action.startsWith('pick:')?`番号${recordNumbers[Number(action.slice(5))]}を調べた`:action==='book'?'本の条件を切り替えた':action==='mountain'?'山向けの条件を切り替えた':action==='test'?'確かめた':windTasks.find(task=>task.id===action)?.name??({AND:'両方なら灯る部品を選んだ',OR:'どちらかなら灯る部品を選んだ',NAND:'両方なら消える部品を選んだ'}[action]);
+  const steps=history.length?history.map((action,index)=>`${index+1}. ${actionLabel(action)}`).join(' → '):'まだ操作はありません。';
+  app.innerHTML=`<h1>${quest.title}</h1>${dialogue(speaker,introduction)}<section class="panel">${activity}<p id="mid-message" role="status"></p><details><summary>手がかりを聞く</summary><p>${hint}</p></details><details id="mid-record"><summary>操作の記録を見る</summary><p>${steps}</p></details>${warning()}<div class="actions"><button id="undo" ${history.length?'':'disabled'}>一つ前に戻る</button><button id="reset">依頼を最初からやり直す</button><button id="back">${quest.region==='archive'?'文庫':'里'}へ戻る</button></div></section>${draft.done?`<section class="panel result"><h2>目標を達成しました！</h2><button id="open-result" class="primary">達成の場面を見る</button></section><dialog id="success-dialog" aria-labelledby="mid-success"><h2 id="mid-success">目標を達成しました！</h2>${dialogue(speaker,'ありがとう！ これで橋の準備が進むよ。')}<div class="actions"><button id="finish" class="primary">結果を伝える</button><button id="review">操作を見直す</button></div></dialog>`:''}`;
+  app.querySelectorAll('[data-mid-action]').forEach(button=>button.onclick=()=>{
+    const action=button.dataset.midAction,candidate=[...history,action];
+    try{midReplay(id,candidate);}catch(e){app.querySelector('#mid-message').textContent=e.message;return;}
+    state.midDrafts[id]=candidate;persist();midQuest();if(midReplay(id,candidate).done)app.querySelector('#success-dialog').showModal();else app.querySelector(`[data-mid-action="${action}"]:not(:disabled)`)?.focus();
+  });
+  app.querySelector('#undo').onclick=()=>{state.midDrafts[id]=history.slice(0,-1);persist();midQuest();app.querySelector('#undo').focus();};
+  app.querySelector('#reset').onclick=()=>{if(!window.confirm('この依頼の操作を最初からやり直しますか？'))return;state.midDrafts[id]=[];persist();midQuest();app.querySelector('[data-mid-action]:not(:disabled)')?.focus();};
+  app.querySelector('#back').onclick=()=>show(`mid-${quest.region}`);
+  const dialog=app.querySelector('#success-dialog');if(dialog){let reviewing=false;app.querySelector('#open-result').onclick=()=>dialog.showModal();app.querySelector('#review').onclick=()=>{reviewing=true;dialog.close();};app.querySelector('#finish').onclick=()=>{dialog.close();state.completed=completeQuest(state.completed,id);show('mid-result');};dialog.addEventListener('close',()=>{if(!app.contains(dialog))return;if(reviewing){reviewing=false;const details=app.querySelector('#mid-record');details.open=true;details.querySelector('summary').focus();}else app.querySelector('#open-result')?.focus();});}
+}
+function midResult(){
+  const id=state.midActive,quest=midQuests[id],archive=quest.region==='archive',speaker=archive?'aoi':'toma';
+  const lesson={'archive-search':'番号順の記録は、比べた結果から探す範囲を狭められます。中央付近を調べる方法は、二分探索の考え方につながります。','archive-filter':'二つの条件を両方満たす記録だけを選ぶとき、「かつ（AND）」を使って考えられます。','windmill-lamp':'二つの合図が両方あるときだけ灯る部品は、論理積（AND）の例です。すべての組み合わせで試すと、振る舞いを確かめられます。','windmill-order':'作業には、先に終えておく必要があるものがあります。互いに待つ必要のない仕事は、どちらから進めてもかまいません。'}[id];
+  const line=state.bridgeOpen?'手伝ってくれてありがとう。橋がつながって、行き来が楽しくなったね。':bridgeReady(state.completed)?'両方の準備が整ったよ。橋の開通を見届けに行こう！':archive?'ありがとう。これで橋へ運ぶ資料の準備が進んだわ。風車の里にも訪ねてみてね。':'ありがとう。橋を直す準備が進んだよ。森の文庫にも訪ねてみてね。';
+  app.innerHTML=`<section class="scene"><h1>${quest.title}を達成しました</h1>${dialogue(speaker,line)}<p>${lesson}</p>${warning()}<div class="actions"><button id="back" class="primary">${archive?'文庫':'里'}へ戻る</button><button id="travel">旅先を選ぶ</button></div></section>`;
+  app.querySelector('#back').onclick=()=>show(`mid-${quest.region}`);app.querySelector('#travel').onclick=()=>show('travel');
+}
+function midBridge(){
+  const open=state.bridgeOpen;
+  app.innerHTML=`<section class="scene">${open?'<img src="./data/art/connected-bridge.png" alt="森と風車の里を結ぶ橋">':''}<h1>${open?'つながりの道が開きました':'橋の開通'}</h1><p>${open?'森の文庫と風車の里を結ぶ橋に、人と精霊が行き交い始めました。':'文庫と里で受け取った助けをもとに、みんなが橋の仕上げをしています。'}</p>${dialogue('aoi',open?'これで本を山へ届けられるわ。みんな、ありがとう！':'文庫での手助けが、橋の準備につながったわ。トウマ、こちらはどう？')}${dialogue('toma',open?'里の灯りも、森まで届けられるようになったよ。':'みんなの手助けで準備は万端だよ。一緒に橋を開こう！')}${dialogue('nono',open?'新しい道を歩けるんだね！':'文庫と里がつながるの、楽しみ！')}${warning()}<div class="actions">${open?'<button id="archive">つながりの道で森の文庫へ</button><button id="windmill">つながりの道で風車の里へ</button><button id="travel">旅先を選ぶ</button>':'<button id="open" class="primary">橋を開く</button><button id="back">いったん戻る</button>'}</div></section>`;
+  app.querySelector('#open')?.addEventListener('click',()=>{state.bridgeOpen=true;persist();midBridge();app.querySelector('h1').tabIndex=-1;app.querySelector('h1').focus();});
+  app.querySelector('#back')?.addEventListener('click',()=>show(`mid-${state.bridgeFrom}`));app.querySelector('#archive')?.addEventListener('click',()=>show('mid-archive'));app.querySelector('#windmill')?.addEventListener('click',()=>show('mid-windmill'));app.querySelector('#travel')?.addEventListener('click',()=>show('travel'));
+}
+function render(){
+  const cityPlace=state?.place?.startsWith('city'),harborPlace=state?.place?.startsWith('harbor'),midPlace=state?.place?.startsWith('mid-');
+  const midRegionName=state?.place==='mid-archive'?'archive':state?.place==='mid-windmill'?'windmill':state?.place==='mid-bridge'?state?.bridgeFrom:midQuests[state?.midActive]?.region;
+  document.documentElement.dataset.region=midPlace?midRegionName:harborPlace?'harbor':cityPlace?'city':state?.place==='river'||state?.activeQuest==='river'&&['encounter','journey-quest','journey-done'].includes(state?.place)?'river':'workshop';
+  document.querySelector('header small').textContent=midPlace?(midRegionName==='archive'?'木もれびの文庫':'風車の里'):harborPlace?'風の港町':cityPlace?'灯花の街':document.documentElement.dataset.region==='river'?'水辺の村':'工房のはじまり';
+  if(!state){title();return;}if(state.place==='world')world();else if(state.place==='introduction')introduction();else if(state.place==='quest')quest();else if(state.place==='outside')forestEncounter();else if(state.place==='forest-quest')forestQuest();else if(state.place==='forest-done')forestDone();else if(state.place==='encounter')encounter();else if(state.place==='journey-quest')journeyQuest();else if(state.place==='journey-done')journeyDone();else if(state.place==='travel')travel();else if(state.place==='river')river();else if(state.place==='city')city();else if(state.place==='city-guild'||state.place==='city-market')cityPerson(state.place);else if(state.place==='city-quest')cityQuest();else if(state.place==='city-result')cityResult();else if(state.place==='city-festival')cityFestival();else if(state.place==='harbor')harbor();else if(state.place==='harbor-quest')harborQuest();else if(state.place==='harbor-result')harborResult();else if(state.place==='mid-archive')midRegion('archive');else if(state.place==='mid-windmill')midRegion('windmill');else if(state.place==='mid-quest')midQuest();else if(state.place==='mid-result')midResult();else if(state.place==='mid-bridge')midBridge();else choices();
+}
 applySettings();if(saveProtected)error='以前の体験版の記録を読み込めません。元の記録を保護します。';title();
