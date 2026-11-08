@@ -4,6 +4,7 @@ export const mountainQuests={
   'mountain-time':{title:'早く届く道を探す',short:'所要時間が短い経路を探す',goal:'中継所から山の集落まで、所要時間の合計が最も短い経路を選ぶ'},
 };
 export const mountainIds=Object.keys(mountainQuests);
+export const mountainButtonOrder=['start','lookout','ridge','forest','village','stream'];
 export const mountainNames={start:'中継所',ridge:'尾根',forest:'森の道',stream:'小川',lookout:'見晴らし台',village:'山の集落'};
 // Roads are one-way in this exercise: every arrow represents a permitted route.
 export const mountainRoads={start:[['ridge',5],['forest',2],['lookout',1]],ridge:[['village',5]],forest:[['stream',2]],stream:[['village',2]],lookout:[],village:[]};

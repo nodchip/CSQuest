@@ -8,6 +8,7 @@ export const expansionQuests={
 };
 export const expansionIds=Object.keys(expansionQuests);
 export const searchIds=['search-bfs','search-weighted','search-compare'];
+export const searchButtonOrder=['s','b','a','t','c'];
 export const recordNames={s:'中継所',a:'尾根',b:'森の道',c:'小川',t:'山の集落'};
 export const roads={s:[['a',2],['b',3]],a:[['t',9]],b:[['c',1]],c:[['t',2]],t:[]};
 export const shipments=[{id:'A',dest:'10',ready:true},{id:'B',dest:'20',ready:true},{id:'C',dest:'10',ready:false},{id:'D',dest:'10',ready:true}];
