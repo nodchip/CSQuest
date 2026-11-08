@@ -25,7 +25,7 @@
 
 /* Place buttons sit on the map; the canvas can scroll on narrow screens. */
 .interactive-map .map-canvas{position:relative;min-width:30rem}
-.interactive-map svg{width:100%;min-width:0}
+.interactive-map svg{position:static;width:100%;min-width:0}
 .interactive-map .map-place{position:absolute;transform:translate(-50%,-50%);width:17%;min-height:44px;padding:.3rem .15rem;line-height:1.25;white-space:normal;overflow-wrap:anywhere}
 .interactive-map .map-place:focus-visible{outline:3px solid #a75f0b;outline-offset:2px;z-index:1}
 .route-map .place-start{left:8.33%;top:50%}.route-map .place-lookout{left:43.33%;top:17.3%}.route-map .place-ridge{left:43.33%;top:50%}.route-map .place-forest{left:43.33%;top:82.7%}.route-map .place-stream{left:67.5%;top:82.7%}.route-map .place-village{left:91.5%;top:50%}
