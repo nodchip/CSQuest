@@ -12,7 +12,8 @@ test('existing travel prerequisites independently control destinations',()=>{
  s.bridgeOpen=true;assert.ok(ids(s).includes('mountain'));assert.ok(!ids(s).includes('valley'));
  s.completed.push('search-bfs','search-weighted','search-compare');assert.ok(ids(s).includes('valley'));assert.ok(!ids(s).includes('sky'));
  s.completed.push('data-record','data-filter','data-join');assert.ok(ids(s).includes('sky'));assert.ok(ids(s).includes('mist'));assert.ok(!ids(s).includes('forge'));
- s.completed.push(...towerGateIds);s.towerGateSeen=true;assert.equal(ids(s).length,12);assert.equal(new Set(travelPlaces.map(p=>p.id)).size,12);
+ s.completed.push(...towerGateIds);s.towerGateSeen=true;assert.equal(ids(s).length,12);assert.equal(new Set(travelPlaces.map(p=>p.id)).size,16);
+ s.completed.push(...forgeStationIds);s.forgeStationSeen=true;assert.equal(ids(s).length,16);
 });
 test('story notices remain until the corresponding event is seen',()=>{
  const s={completed:['archive-search','windmill-lamp'],bridgeOpen:false,towerGateSeen:false,forgeStationSeen:false};assert.match(travelNotice('archive',s),/橋/);s.bridgeOpen=true;assert.equal(travelNotice('archive',s),'');
