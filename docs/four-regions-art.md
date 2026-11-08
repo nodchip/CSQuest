@@ -9,3 +9,4 @@
 - `four-garden.webp`、`four-observatory.webp`、`four-tailor.webp`、`four-guide.webp`: 組み込み imagegen。`forest-library.png` の画風を参照し、それぞれ星花の庭園、雲の観測所、仕立て屋の室内、旅人の案内所を新規生成。目視確認。
 - `travel-island.webp`: 組み込み imagegen。`travel-terrain-mobile.webp` を絵柄の参照に、元の地図の海の向こうに重ねず継ぎ足す島の地形を新規生成。既存地形自体は描き直していない。
 - `travel-island-desktop.png`: 組み込み imagegen。`travel-terrain.webp` の画風を参照し、海に囲まれた横長の島を生成。PC の下部地図で縦横比を保って表示する。
+- `travel-island-desktop.webp`: 上記画像を WebP に変換して軽量化。旧バージョンのキャッシュで参照される PNG も残す。
