@@ -33,7 +33,7 @@
 .route-map .place-start{left:13%;top:50%}.route-map .place-lookout{left:43%;top:17.3%}.route-map .place-ridge{left:43%;top:50%}.route-map .place-forest{left:43%;top:82.7%}.route-map .place-stream{left:69%;top:82.7%}.route-map .place-village{left:87%;top:50%}
 .search-map .place-s{left:13%;top:47.5%}.search-map .place-b{left:43%;top:17.5%}.search-map .place-a{left:43%;top:72.5%}.search-map .place-t{left:87%;top:17.5%}.search-map .place-c{left:87%;top:72.5%}
 .map-time{position:absolute;transform:translate(-50%,-50%);padding:0 .15rem;background:#f3f7ee;color:#183b28;font-size:.8rem;font-weight:700;white-space:nowrap;pointer-events:none}
-.rt-1{left:27%;top:30%}.rt-2{left:48%;top:38%}.rt-3{left:27%;top:70%}.rt-4{left:65%;top:43%}.rt-5{left:56%;top:95%;transform:translate(calc(-50% + 20px),calc(-50% - 7px))}.rt-6{left:73%;top:63%}
+.rt-1{left:27%;top:30%}.rt-2{left:40%;top:38%}.rt-3{left:27%;top:70%}.rt-4{left:65%;top:43%}.rt-5{left:56%;top:95%;transform:translate(calc(-50% + 20px),calc(-50% - 7px))}.rt-6{left:73%;top:63%}
 .st-1{left:27%;top:29%}.st-2{left:27%;top:61%}.st-3{left:58.33%;top:53.33%;transform:translate(-50%,calc(-50% - 18px))}.st-4{left:71.67%;top:53.33%;transform:translate(-50%,calc(-50% + 18px))}.st-5{left:87%;top:45%;transform:translate(calc(-50% - 20px),-50%)}
 .map-description{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 
