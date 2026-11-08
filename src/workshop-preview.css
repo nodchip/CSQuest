@@ -43,3 +43,22 @@
 .interactive-map svg marker path{fill:#315f46;stroke:none;stroke-dasharray:none}
 
 .route-map .place-start{width:21%;font-size:.8rem}.route-map .place-ridge{width:17%;font-size:.85rem}
+
+.portrait.alto{background-image:url('../data/art/sky-keeper.png');background-size:500% auto;background-position:center 3%}
+.portrait.shino{background-image:url('../data/art/mist-keeper.png');background-size:500% auto;background-position:center 0%}
+:root[data-region=tower]{background:#e7f2f6;color:#183f4a}
+:root[data-region=gate]{background:#eef1e9;color:#2b4133}
+:root[data-region=tower] .scene,:root[data-region=tower] .panel{background:#f8fcfd;border-color:#7e9fa6}
+:root[data-region=gate] .scene,:root[data-region=gate] .panel{background:#fcfcf5;border-color:#8a9e88}
+:root[data-region=tower] .dialogue{background:#e5f2f4;border-color:#568b93}
+:root[data-region=gate] .dialogue{background:#e9f1e6;border-color:#718b6b}
+:root[data-contrast=high][data-region=tower],:root[data-contrast=high][data-region=gate]{background:#fff;color:#102719}
+:root[data-contrast=high][data-region=tower] .scene,:root[data-contrast=high][data-region=tower] .panel,:root[data-contrast=high][data-region=gate] .scene,:root[data-contrast=high][data-region=gate] .panel{border-color:#102719}
+.access-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:.7rem;margin:1rem 0}
+.access-row{border:1px solid #8a9e88;border-radius:.6rem;padding:.8rem;background:#fff}
+.access-row h3{margin:0}.access-row button{width:100%}
+[data-tg-action][aria-pressed=true]{border-width:3px;text-decoration:underline}
+#tg-status{position:sticky;bottom:.5rem;z-index:2;background:#fffdf4;border:1px solid #78978c;border-radius:.45rem;padding:.55rem .7rem}
+#tg-status:focus{outline:3px solid #a75f0b;outline-offset:2px}
+
+.tower-gate-characters{grid-template-columns:minmax(0,1fr)}
