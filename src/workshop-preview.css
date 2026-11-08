@@ -62,3 +62,10 @@
 #tg-status:focus{outline:3px solid #a75f0b;outline-offset:2px}
 
 .tower-gate-characters{grid-template-columns:minmax(0,1fr)}
+.portrait.akari{background-image:url('../data/art/forge-smith.png');background-size:500% auto;background-position:51% 3%}
+.portrait.haru{background-image:url('../data/art/station-keeper.png');background-size:500% auto;background-position:42% 3%}
+:root[data-region=forge]{background:#f5ede3;color:#493525}:root[data-region=station]{background:#e9f2ef;color:#1b4038}
+:root[data-region=forge] .scene,:root[data-region=forge] .panel{background:#fffaf3;border-color:#a58b70}:root[data-region=station] .scene,:root[data-region=station] .panel{background:#f8fcf9;border-color:#7d9f91}
+:root[data-contrast=high][data-region=forge],:root[data-contrast=high][data-region=station]{background:#fff;color:#102719}
+:root[data-contrast=high][data-region=forge] .scene,:root[data-contrast=high][data-region=forge] .panel,:root[data-contrast=high][data-region=station] .scene,:root[data-contrast=high][data-region=station] .panel{border-color:#102719}
+#fs-status{position:sticky;bottom:.5rem;z-index:2;background:#fffdf4;border:1px solid #78978c;border-radius:.45rem;padding:.55rem .7rem}#fs-status:focus{outline:3px solid #a75f0b;outline-offset:2px}
