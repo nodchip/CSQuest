@@ -68,3 +68,8 @@ SF-Foundations:学習成果:CS Core:10,windmill-pipeline,部分対応,二台の�
 SF-Reliability:トピック:CS Core:3b,windmill-recovery,部分対応,偶数パリティの検査と二枚の誤りの見逃しを試す。一般の符号と訂正能力は未対応。,風車の基礎２依頼の後。endgame-reliability.playwright.js,tests/endgame-recovery.test.js,docs/endgame-reliability-audit.md
 SF-Reliability:学習成果:CS Core:2,windmill-recovery,部分対応,固定模型で検出・保留・控えによる訂正・利用再開を区別する。実サービスの復旧方法一般は未対応。,風車の基礎２依頼の後。endgame-reliability.playwright.js,tests/endgame-recovery.test.js,docs/endgame-reliability-audit.md
 SF-Reliability:学習成果:CS Core:3,windmill-recovery,部分対応,四枚の札で誤り検査の一例を扱う。実際のメモリや通信路の方式は未対応。,風車の基礎２依頼の後。endgame-reliability.playwright.js,tests/endgame-recovery.test.js,docs/endgame-reliability-audit.md
+SPD-Common:トピック:未記載:1b-iv,observatory-offline,部分対応,圏外と返事の喪失を固定例で扱う。実ネットワークの制約一般は未対応。,集いと四地域の後に観測所から到達。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
+SPD-Common:学習成果:未記載:3,observatory-layers,部分対応,端末・受付・記録庫と失敗応答の固定模型。Web構成や実装の一般比較は未対応。,集いと四地域の後に観測所から到達。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
+SPD-Common:学習成果:未記載:4,observatory-conflict,部分対応,版に基づく条件付き更新の固定模型。実Webの状態維持全般は未対応。,観測帳の基礎２依頼の後。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
+SPD-Mobile:トピック:Non-core:8c,observatory-offline,部分対応,返事が届かない固定例で未確認を保ち再送する。非同期障害一般や実APIは未対応。,集いと四地域の後に観測所から到達。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
+PDC-Coordination:トピック:KA Core:4f,observatory-conflict,部分対応,版照合による楽観的な更新の固定例。保守的方式との一般比較や実装は未対応。,観測帳の基礎２依頼の後。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
