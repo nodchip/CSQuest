@@ -35,3 +35,7 @@ HCI-Accessibility:トピック:CS Core:3a,guide-accessibility-lab,部分対応,�
 HCI-Accessibility:学習成果:CS Core:3,guide-accessibility-lab,部分対応,操作や選択位置の表示と名前を考える。標準全体や適合判定は未対応。,集いと四地域の後に案内所から到達。endgame-hci.playwright.js,tests/endgame-accessibility.test.js,docs/endgame-hci-audit.md
 HCI-Evaluation:トピック:CS Core:1a,guide-usability-lab,部分対応,形成的・総括的評価を目的で区別する。調査実施や方法全般は未対応。,集いと四地域の後に案内所から到達。endgame-hci.playwright.js,tests/endgame-usability.test.js,docs/endgame-hci-audit.md
 HCI-Evaluation:学習成果:CS Core:1,guide-usability-lab,部分対応,固定例で二種類の評価の役割を選ぶ。一般に論じる深さは未対応。,集いと四地域の後に案内所から到達。endgame-hci.playwright.js,tests/endgame-usability.test.js,docs/endgame-hci-audit.md
+AI-ML:トピック:CS Core:7a,observatory-forecast-lab,部分対応,比較に使った記録を独立した最終評価に再利用できないことを扱う。分離の設計全般は未対応。,集いと四地域の後に観測所から到達。endgame-ai.playwright.js,tests/endgame-ai.test.js,docs/endgame-ai-audit.md
+AI-ML:トピック:CS Core:7b,observatory-errors-lab,部分対応,架空例の正解数と見逃し・空振りを比べる。一般的な指標は未対応。,集いと四地域の後に観測所から到達。endgame-ai.playwright.js,tests/endgame-ai.test.js,docs/endgame-ai-audit.md
+AI-ML:トピック:CS Core:7c,observatory-forecast-lab,部分対応,事前に決めた規則を未使用の固定例で比較する。一般の性能推定は未対応。,集いと四地域の後に観測所から到達。endgame-ai.playwright.js,tests/endgame-ai.test.js,docs/endgame-ai-audit.md
+AI-ML:トピック:KA Core:13c,observatory-errors-lab,部分対応,予測と実際の四つの組み合わせを分ける。混同行列の構築と一般的な分析は未対応。,集いと四地域の後に観測所から到達。endgame-ai.playwright.js,tests/endgame-ai.test.js,docs/endgame-ai-audit.md
