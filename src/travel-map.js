@@ -5,7 +5,7 @@ import {searchIds} from './adventure-expansion.js';
 import {towerGateOpen,towerGateConverged} from './tower-gate.js';
 import {forgeStationConverged} from './forge-station.js';
 import {festivalReady} from './four-regions.js?v=world-finale1';
-import {helpedRegionCount} from './world-progress.js';
+import {storyRegions,worldRegionProgress} from './world-progress.js?v=story-climax1';
 export const travelPlaces=[
  {id:'sky',name:'空の中継塔',target:'sky',image:'sky-tower.png',description:'雲の上で、各地からの知らせをつなぐ塔。',x:50,y:9,mx:50,my:11},
  {id:'mountain',name:'山の中継所',target:'mountain',image:'mountain-relay.png',description:'山道の情報が集まり、知らせをつなぐ中継所。',x:28,y:23,mx:17,my:24},
@@ -33,12 +33,17 @@ export function legacyTravelIds(state){
 }
 // The first three destinations open together. Each additional region helped
 // reveals one more place, regardless of which places the player chose.
-export const laterTravelIds=['archive','windmill','mountain','valley','sky','mist','forge','station','garden','observatory','tailor','guide'];
+export const laterTravelIds=['archive','windmill','mountain','valley','sky','mist','forge','station'];
+export const laterStoryRegions=['garden','observatory','tailor','guide'];
 export function availableTravelPlaces(state){
  const c=state.completed??[];
  if(!unlocked(c))return travelPlaces.filter(p=>p.id==='workshop');
- const count=Math.max(0,helpedRegionCount(c)-1);
- const available=new Set(['workshop','river','city','harbor',...laterTravelIds.slice(0,count),...(state.mapVisited??[]),...(state.legacyUnlocked??[])]);
+ const progress=worldRegionProgress(c);
+ const count=Math.max(0,storyRegions.filter(id=>progress[id]===2).length-1);
+ // Old visit history still preserves unlocked upper places, but the four new
+ // places open together only after this version's story has been completed.
+ const prior=[...(state.mapVisited??[]),...(state.legacyUnlocked??[])].filter(id=>!laterStoryRegions.includes(id));
+ const available=new Set(['workshop','river','city','harbor',...laterTravelIds.slice(0,count),...prior,...(state.storyClimaxComplete?laterStoryRegions:[])]);
  return travelPlaces.filter(p=>available.has(p.id));
 }
 export function travelNotice(id,state){

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {travelPlaces,laterTravelIds,legacyTravelIds,availableTravelPlaces,travelNotice,validTravelVisits} from '../src/travel-map.js';
+import {travelPlaces,laterTravelIds,laterStoryRegions,legacyTravelIds,availableTravelPlaces,travelNotice,validTravelVisits} from '../src/travel-map.js';
 import {towerGateIds} from '../src/tower-gate.js';
 import {forgeStationIds} from '../src/forge-station.js';
 const ids=s=>availableTravelPlaces(s).map(p=>p.id);
@@ -12,19 +12,21 @@ test('first destinations open together and one new place follows each additional
  s.completed.push('river','river-signals');assert.ok(ids(s).includes('windmill'));assert.ok(!ids(s).includes('mountain'));
  s.completed.push('harbor-message','harbor-parallel');assert.ok(ids(s).includes('mountain'));
  assert.equal(new Set(travelPlaces.map(p=>p.id)).size,16);
- assert.equal(new Set(laterTravelIds).size,12);
+ assert.equal(new Set(laterTravelIds).size,8);
 });
-test('previously visited destinations remain available in old saves',()=>{
+test('previously visited upper destinations remain available in old saves',()=>{
  const s={completed:['forest','branch'],mapVisited:['workshop','sky','garden']};
- assert.ok(ids(s).includes('sky'));assert.ok(ids(s).includes('garden'));
+ assert.ok(ids(s).includes('sky'));assert.ok(!ids(s).includes('garden'));
 });
-test('migration preserves places unlocked by a former story event even if not visited',()=>{
+test('all four lower destinations open together only after the new climax',()=>{
  const old={completed:['forest','branch'],forgeStationSeen:true,mapVisited:['workshop','garden']};
  const legacyUnlocked=legacyTravelIds(old);
  assert.ok(legacyUnlocked.includes('guide'));
- assert.ok(ids({...old,legacyUnlocked}).includes('guide'));
+ for(const id of laterStoryRegions){
+  assert.ok(!ids({...old,legacyUnlocked}).includes(id));
+  assert.ok(ids({...old,legacyUnlocked,storyClimaxComplete:true}).includes(id));
+ }
  assert.equal(old.mapVisited.includes('guide'),false);
- assert.equal(ids({...old,legacyUnlocked:[]}).includes('guide'),false);
 });
 test('which early place is helped does not change the next destination',()=>{
  const base=['forest','branch'];

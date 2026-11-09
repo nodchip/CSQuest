@@ -27,6 +27,10 @@ export const worldRegionQuests={
  ...Object.fromEntries(Object.entries(fourRegions).map(([id,region])=>[id,[...Object.keys(region.quests),...idsFor(newEntrances,id)]])),
 };
 
+// The opening lamp is deliberately absent: it introduces the workshop,
+// while these twelve places each require two distinct helping quests.
+export const storyRegions=['workshop','river','city','harbor','archive','windmill','mountain','valley','sky','mist','forge','station'];
+
 export function worldRegionProgress(completed){
  const unique=new Set(completed);
  return Object.fromEntries(Object.entries(worldRegionQuests).map(([region,ids])=>[region,Math.min(2,ids.filter(id=>unique.has(id)).length)]));
@@ -37,5 +41,6 @@ export function helpedRegionCount(completed){
 }
 
 export function worldFinaleReady(completed){
- return helpedRegionCount(completed)>=6;
+ const progress=worldRegionProgress(completed);
+ return storyRegions.every(region=>progress[region]===2);
 }
