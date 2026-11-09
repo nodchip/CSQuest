@@ -611,7 +611,9 @@ function finaleNotice(){
  const section=document.createElement('section');section.className='panel story-progress';
  const visible=new Set(availableTravelPlaces(state).map(p=>p.id));
  const names=storyRegions.filter(id=>visible.has(id)).map(id=>travelPlaces.find(p=>p.id===id)).filter(Boolean);
- section.innerHTML=`<h2>各地をつなぐ知らせ</h2>${ready?`<p>${state.storyClimaxComplete?'みんなで届けた知らせを振り返れます。':'各地の仲間から集いへの知らせが届きました。好きなときに向かえます。'}</p><button id="world-finale-open">集いへ向かう</button>`:`<p>各地では、道しるべや知らせに小さな行き違いがあるようです。12の土地それぞれで二つのお手伝いをして、仲間と話を集めましょう。</p><details><summary>各地の手伝いの進み具合（${storyRegions.filter(id=>progress[id]===2).length} / 12 地域）</summary><ul>${names.map(p=>`<li>${p.name}：${progress[p.id]} / 2 件</li>`).join('')}</ul><p>まだ知らせの届いていない土地もあります。</p></details>`}`;
+ const helpedCount=storyRegions.filter(id=>progress[id]===2).length;
+ const rumor=helpedCount<4?'旅人から、道しるべの向きが古いままの場所があると聞きました。':helpedCount<8?'別の土地からも、待っている手紙がなかなか届かないという話が聞こえてきました。':'各地の道しるべや配達の行き違いが重なっているようです。仲間と話を集め、力を合わせる準備をしましょう。';
+ section.innerHTML=`<h2>各地をつなぐ知らせ</h2>${ready?`<p>${state.storyClimaxComplete?'みんなで届けた知らせを振り返れます。':'各地の仲間から集いへの知らせが届きました。好きなときに向かえます。'}</p><button id="world-finale-open">集いへ向かう</button>`:`<p>${rumor} 12の土地それぞれで二つのお手伝いをしましょう。</p><details><summary>各地の手伝いの進み具合（${helpedCount} / 12 地域）</summary><ul>${names.map(p=>`<li>${p.name}：${progress[p.id]} / 2 件</li>`).join('')}</ul><p>まだ知らせの届いていない土地もあります。</p></details>`}`;
  app.append(section);section.querySelector('#world-finale-open')?.addEventListener('click',()=>{state.worldFinaleFrom=state.place;state.storyClimaxHistory??=[];state.storyClimaxComplete??=false;show('world-finale');});
 }
 function worldFinale(){
