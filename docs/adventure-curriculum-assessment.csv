@@ -65,3 +65,6 @@ SF-Reliability:トピック:CS Core:3c,windmill-copies,部分対応,同じ元か
 SF-Reliability:学習成果:CS Core:4,windmill-copies,部分対応,最大一枚の変化を多数の色で訂正する。一般の冗長符号は未対応。,集いと四地域の後に風車の里から到達。endgame-reliability.playwright.js,tests/endgame-reliability.test.js,docs/endgame-reliability-audit.md
 SF-Evaluation:トピック:CS Core:1,windmill-pipeline,部分対応,全体と最初の完了時刻を固定条件で比べる。一般の性能指標は未対応。,集いと四地域の後に風車の里から到達。endgame-reliability.playwright.js,tests/endgame-reliability.test.js,docs/endgame-reliability-audit.md
 SF-Foundations:学習成果:CS Core:10,windmill-pipeline,部分対応,二台の作業を同じ刻に進める固定例。一般的な実行や性能分析は未対応。,集いと四地域の後に風車の里から到達。endgame-reliability.playwright.js,tests/endgame-reliability.test.js,docs/endgame-reliability-audit.md
+SF-Reliability:トピック:CS Core:3b,windmill-recovery,部分対応,偶数パリティの検査と二枚の誤りの見逃しを試す。一般の符号と訂正能力は未対応。,風車の基礎２依頼の後。endgame-reliability.playwright.js,tests/endgame-recovery.test.js,docs/endgame-reliability-audit.md
+SF-Reliability:学習成果:CS Core:2,windmill-recovery,部分対応,固定模型で検出・保留・控えによる訂正・利用再開を区別する。実サービスの復旧方法一般は未対応。,風車の基礎２依頼の後。endgame-reliability.playwright.js,tests/endgame-recovery.test.js,docs/endgame-reliability-audit.md
+SF-Reliability:学習成果:CS Core:3,windmill-recovery,部分対応,四枚の札で誤り検査の一例を扱う。実際のメモリや通信路の方式は未対応。,風車の基礎２依頼の後。endgame-reliability.playwright.js,tests/endgame-recovery.test.js,docs/endgame-reliability-audit.md
