@@ -31,3 +31,7 @@ OS-Scheduling:トピック:KA Core:1,station-schedule-lab,部分対応,到着順
 OS-Scheduling:トピック:KA Core:2,station-schedule-lab,部分対応,一台の作業台で二つの方針を比べる。一般のスケジューラの方針は未対応。,集いと四地域の後に駅から到達。endgame-os.playwright.js,tests/endgame-scheduling.test.js,docs/endgame-os-audit.md
 OS-Scheduling:学習成果:KA Core:1,station-schedule-lab,部分対応,三組の完了時刻を比べる。優先度・公平性・一般的な性能比較は未対応。,集いと四地域の後に駅から到達。endgame-os.playwright.js,tests/endgame-scheduling.test.js,docs/endgame-os-audit.md
 OS-Memory:トピック:KA Core:1,forge-pages-lab,部分対応,道具ごとの表で仮想ページから物理枠を探す。ページ内の位置・管理ハードウェアは未対応。,集いと四地域の後に鍛冶街から到達。endgame-os.playwright.js,tests/endgame-pages.test.js,docs/endgame-os-audit.md
+HCI-Accessibility:トピック:CS Core:3a,guide-accessibility-lab,部分対応,キーボード操作や読み上げ名を模型で考える。実際の支援技術の検証は未実施。,集いと四地域の後に案内所から到達。endgame-hci.playwright.js,tests/endgame-accessibility.test.js,docs/endgame-hci-audit.md
+HCI-Accessibility:学習成果:CS Core:3,guide-accessibility-lab,部分対応,操作や選択位置の表示と名前を考える。標準全体や適合判定は未対応。,集いと四地域の後に案内所から到達。endgame-hci.playwright.js,tests/endgame-accessibility.test.js,docs/endgame-hci-audit.md
+HCI-Evaluation:トピック:CS Core:1a,guide-usability-lab,部分対応,形成的・総括的評価を目的で区別する。調査実施や方法全般は未対応。,集いと四地域の後に案内所から到達。endgame-hci.playwright.js,tests/endgame-usability.test.js,docs/endgame-hci-audit.md
+HCI-Evaluation:学習成果:CS Core:1,guide-usability-lab,部分対応,固定例で二種類の評価の役割を選ぶ。一般に論じる深さは未対応。,集いと四地域の後に案内所から到達。endgame-hci.playwright.js,tests/endgame-usability.test.js,docs/endgame-hci-audit.md
