@@ -1,3 +1,5 @@
+import {newEntrances} from './new-entrances.js';
+
 // Each scenario includes its own evidence; no other quest is required to solve it.
 const scenario=(prompt,choices,answer,hint)=>({prompt,choices,answer,hint});
 const sequence=(prompt,choices,answer,hint)=>({prompt,choices,answer,hint,mode:'sequence'});
@@ -83,7 +85,11 @@ export const fourResults={
  'guide-observe':{thanks:'困ったところを聞き、直した後も確かめてくれたわ。少しずつ使いやすくしていけるわね。',lesson:'使う様子を観察し、改善して、再び評価する流れは反復的な設計の例です。'},
 };
 export function festivalProgress(completed){
- return Object.fromEntries(fourRegionIds.map(region=>[region,Math.min(2,Object.keys(fourRegions[region].quests).filter(id=>completed.includes(id)).length)]));
+ const distinct=new Set(completed);
+ return Object.fromEntries(fourRegionIds.map(region=>{
+  const extra=Object.entries(newEntrances).filter(([,quest])=>quest.region===region).map(([id])=>id);
+  return [region,Math.min(2,[...Object.keys(fourRegions[region].quests),...extra].filter(id=>distinct.has(id)).length)];
+ }));
 }
 export function festivalReady(completed){return fourRegionIds.every(region=>festivalProgress(completed)[region]===2);}
 export function validFourDraft(id,draft){

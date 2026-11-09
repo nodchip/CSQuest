@@ -8,7 +8,7 @@ export const journeyQuests={
 };
 
 export const workshopQuestIds=['forest','branch','loop'];
-export function unlocked(completed){return workshopQuestIds.filter(id=>completed.includes(id)).length>=2;}
+export function unlocked(completed){return [...workshopQuestIds,'workshop-steps'].filter(id=>completed.includes(id)).length>=2;}
 export function completeQuest(completed,id){return completed.includes(id)?completed:[...completed,id];}
 export function emptyDraft(){return {program:[],executed:false};}
 export function validDraft(id,draft){const level=journeyQuests[id]?.level;return !!level&&!!draft&&Array.isArray(draft.program)&&draft.program.length<=level.max&&draft.program.every(id=>typeof id==='string'&&level.available.includes(id))&&typeof draft.executed==='boolean'&&(!draft.executed||draft.program.length>0);}

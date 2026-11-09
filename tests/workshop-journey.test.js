@@ -10,7 +10,7 @@ test('travel requires two distinct workshop quests and ignores retries and the d
   assert.deepEqual(done,['forest']);
   assert.equal(unlocked(done),false);
   assert.equal(unlocked([...done,'river']),false);
-  for(const second of ['branch','loop']) assert.equal(unlocked(completeQuest(done,second)),true);
+  for(const second of ['branch','loop','workshop-steps']) assert.equal(unlocked(completeQuest(done,second)),true);
   assert.equal(unlocked(['branch','loop']),true);
 });
 

@@ -50,6 +50,10 @@ test('festival requires two distinct quests in each region',()=>{
  assert.equal(festivalReady(ids.flatMap(a=>a.slice(0,2))),true);
  assert.equal(festivalReady(ids.flat()),true);
 });
+test('additional requests at a festival location also count as distinct help',()=>{
+ assert.equal(festivalProgress(['garden-mosaic','garden-sets']).garden,2);
+ assert.equal(festivalProgress(['garden-mosaic','garden-mosaic']).garden,1);
+});
 test('repair and observation require the right actions in order',()=>{
  for(const id of ['tailor-debug','guide-observe']){
   for(let i=0;i<fourQuests[id].scenarios.length;i++){
