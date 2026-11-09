@@ -1,6 +1,6 @@
 export const mountainQuests={
   'mountain-connect':{title:'山の集落へ知らせを届ける',short:'つながる道を探す',goal:'中継所から山の集落へ、つながった道をたどって知らせを届ける'},
-  'mountain-hops':{title:'少ない中継で届ける',short:'道の数が少ない経路を探す',goal:'中継所から山の集落まで、通る道の数が最も少ない経路を選ぶ'},
+  'mountain-hops':{title:'少ない道で届ける',short:'道の数が少ない経路を探す',goal:'中継所から山の集落まで、通る道の数が最も少ない経路を選ぶ'},
   'mountain-time':{title:'早く届く道を探す',short:'所要時間が短い経路を探す',goal:'中継所から山の集落まで、所要時間の合計が最も短い経路を選ぶ'},
 };
 export const mountainIds=Object.keys(mountainQuests);

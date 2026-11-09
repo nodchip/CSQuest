@@ -29,10 +29,10 @@ export function forgeStationReplay(id,history){
    else throw new RangeError('灯りを選びましょう。');
   }else if(id==='forge-cpu'){
    const order=['fetch','decode','execute','fetch','decode','execute'];
-   if(a!==order[s.step])throw new RangeError('今の命令の状態を確かめましょう。');s.step++;s.done=s.step===6;
+   if(a!==order[s.step])throw new RangeError('命令は、取り出す → 読み解く → 実行する、の順に進めましょう。');s.step++;s.done=s.step===6;
   }else if(id==='forge-memory'){
    const order=['read:B','value:7','write:B','read:B'];
-   if(a!==order[s.step])throw new RangeError('箱の名前と、今行いたい操作を確かめましょう。');s.step++;s.done=s.step===4;
+   if(a!==order[s.step])throw new RangeError('箱Ｂを読む → 値７を用意する → 箱Ｂに書く → もう一度読む、の順に確かめましょう。');s.step++;s.done=s.step===4;
   }else if(id==='forge-cache'){
    const requested=['A','B','B'][s.step],expected=requested===s.cache?'cache':'store';
    if(a!==expected)throw new RangeError('手元の棚に注文された部品があるか確かめましょう。');
