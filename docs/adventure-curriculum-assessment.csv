@@ -73,3 +73,7 @@ SPD-Common:学習成果:未記載:3,observatory-layers,部分対応,端末・受
 SPD-Common:学習成果:未記載:4,observatory-conflict,部分対応,版に基づく条件付き更新の固定模型。実Webの状態維持全般は未対応。,観測帳の基礎２依頼の後。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
 SPD-Mobile:トピック:Non-core:8c,observatory-offline,部分対応,返事が届かない固定例で未確認を保ち再送する。非同期障害一般や実APIは未対応。,集いと四地域の後に観測所から到達。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
 PDC-Coordination:トピック:KA Core:4f,observatory-conflict,部分対応,版照合による楽観的な更新の固定例。保守的方式との一般比較や実装は未対応。,観測帳の基礎２依頼の後。endgame-mobile.playwright.js,tests/endgame-mobile.test.js,docs/endgame-mobile-audit.md
+SEP-Privacy:トピック:CS Core:1,guide-privacy-collection,部分対応,受取目的に不要な情報と閲覧・保存期間を比較。広範なデータ収集や監視の影響全般は未対応。,集いと四地域の後に案内所から到達。応用は基礎２依頼達成後。endgame-privacy.playwright.js,tests/endgame-privacy.test.js,docs/endgame-privacy-audit.md
+SEP-Privacy:トピック:CS Core:2,guide-privacy-identity,部分対応,番号と対応表や少人数の集計を固定例で比較。実社会の匿名性評価は未対応。,集いと四地域の後に案内所から到達。応用は基礎２依頼達成後。endgame-privacy.playwright.js,tests/endgame-privacy.test.js,docs/endgame-privacy-audit.md
+SEP-Privacy:学習成果:CS Core:1,guide-privacy-safeguards,部分対応,架空の受取帳で閲覧制限と情報の組合せを考える。一般の脅威分析や対策の実装は未対応。,集いと四地域の後に案内所から到達。応用は基礎２依頼達成後。endgame-privacy.playwright.js,tests/endgame-privacy.test.js,docs/endgame-privacy-audit.md
+SEP-Privacy:学習成果:CS Core:3,guide-privacy-identity,部分対応,仮名と匿名の違いを固定例で選ぶ。自由な説明や一般の評価は未対応。,集いと四地域の後に案内所から到達。応用は基礎２依頼達成後。endgame-privacy.playwright.js,tests/endgame-privacy.test.js,docs/endgame-privacy-audit.md
