@@ -47,3 +47,6 @@ FPL-Types:トピック:CS Core:5,river-type-branch,部分対応,固定分岐を�
 FPL-Types:学習成果:CS Core:5,river-type-branch,部分対応,未実行の不正分岐がある模型を実行前に拒み実行時に数を得る例を比較する。特定の実言語は未対応。,基礎２依頼の後に水辺から到達。endgame-types.playwright.js,tests/endgame-types.test.js,docs/endgame-types-audit.md
 GIT-Fundamentals:トピック:CS Core:2d-i,garden-image-pixels,部分対応,同じ幅の格子に１画素幅の線を描いて比べる。実画像や物理画素密度は未対応。,集いと四地域の後に庭園から到達。endgame-image.playwright.js,tests/endgame-image.test.js,docs/endgame-image-audit.md
 GIT-Fundamentals:トピック:CS Core:2d-ii,garden-image-fit,部分対応,固定の絵と二つの枠で全体・余白・形を比べる。一般の変換や補間は未対応。,集いと四地域の後に庭園から到達。endgame-image.playwright.js,tests/endgame-image.test.js,docs/endgame-image-audit.md
+GIT-Fundamentals:トピック:CS Core:5b,garden-image-resample,部分対応,固定の離散画像を縮め広げて細部の損失を比べる。解像度の一般的な扱いは未対応。,庭園の灯り絵の基礎２依頼の後。endgame-resample.playwright.js,tests/endgame-resample.test.js,docs/endgame-image-audit.md
+GIT-Fundamentals:トピック:CS Core:5c,garden-image-resample,部分対応,離散画像から選んだ画素を残す一例。連続信号の標本化や量子化は未対応。,庭園の灯り絵の基礎２依頼の後。endgame-resample.playwright.js,tests/endgame-resample.test.js,docs/endgame-image-audit.md
+GIT-Fundamentals:学習成果:CS Core:10,garden-image-resample,部分対応,小さな模様が縮小で消える固定例を調べる。誤表現全般の説明は未対応。,庭園の灯り絵の基礎２依頼の後。endgame-resample.playwright.js,tests/endgame-resample.test.js,docs/endgame-image-audit.md
