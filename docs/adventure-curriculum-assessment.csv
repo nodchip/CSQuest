@@ -55,3 +55,9 @@ PDC-Coordination:トピック:CS Core:2a,harbor-join,部分対応,二つの結�
 PDC-Coordination:トピック:CS Core:3b,harbor-lock,部分対応,二人が同じ鍵を読み書き全体で使う固定例。粒度や実装は未対応。,港の基礎２依頼の後。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
 PDC-Coordination:学習成果:CS Core:1,harbor-lock,部分対応,固定模型で鍵を使い更新を残す。実プログラムの競合修正は未対応。,港の基礎２依頼の後。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
 PDC-Coordination:学習成果:CS Core:2,harbor-join,部分対応,両方の完了を待って送る。実プログラムの終了制御は未対応。,集いと四地域の後に港から到達。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
+SE-Validation:トピック:CS Core:1a,tailor-validation,部分対応,指定された整数の例で仕様と道具の動きを比べる。一般の検証は未対応。,集いと四地域の後に仕立て屋から到達。endgame-validation.playwright.js,tests/endgame-validation.test.js,docs/endgame-validation-audit.md
+SE-Validation:トピック:CS Core:1b,tailor-validation,部分対応,架空の旅人の希望と道具を比べる。実利用者調査や一般の妥当性確認は未対応。,集いと四地域の後に仕立て屋から到達。endgame-validation.playwright.js,tests/endgame-validation.test.js,docs/endgame-validation-audit.md
+SE-Validation:トピック:CS Core:2,tailor-regression,部分対応,仕様変更後の予定された違いと既存動作の崩れを比べる。実コードと一般の回帰試験は未対応。,仕立て屋の基礎２依頼の後。endgame-validation.playwright.js,tests/endgame-validation.test.js,docs/endgame-validation-audit.md
+SE-Validation:トピック:KA Core:6a,tailor-boundary,部分対応,固定の受付仕様の境界付近を試す。一般の試験生成は未対応。,集いと四地域の後に仕立て屋から到達。endgame-validation.playwright.js,tests/endgame-validation.test.js,docs/endgame-validation-audit.md
+SE-Validation:学習成果:CS Core:2,tailor-validation,部分対応,仕様と架空の希望への一致を区別する。一般の説明と実際の利用者の評価は未対応。,集いと四地域の後に仕立て屋から到達。endgame-validation.playwright.js,tests/endgame-validation.test.js,docs/endgame-validation-audit.md
+SE-Validation:学習成果:CS Core:4,tailor-regression,部分対応,変更後の固定例を再試行する。他の試験方式との比較は未対応。,仕立て屋の基礎２依頼の後。endgame-validation.playwright.js,tests/endgame-validation.test.js,docs/endgame-validation-audit.md
