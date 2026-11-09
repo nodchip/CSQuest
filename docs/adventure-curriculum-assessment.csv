@@ -45,3 +45,5 @@ FPL-Types:トピック:CS Core:2,river-type-record,部分対応,組の二つの�
 FPL-Types:トピック:CS Core:4,river-type-tools,部分対応,数と真偽を道具に入れて型違いを確かめる。一般の型エラーは未対応。,集いと四地域の後に水辺から到達。endgame-types.playwright.js,tests/endgame-types.test.js,docs/endgame-types-audit.md
 FPL-Types:トピック:CS Core:5,river-type-branch,部分対応,固定分岐を実行前と実行時に検査して比較する。実言語の方式や限界全般は未対応。,基礎２依頼の後に水辺から到達。endgame-types.playwright.js,tests/endgame-types.test.js,docs/endgame-types-audit.md
 FPL-Types:学習成果:CS Core:5,river-type-branch,部分対応,未実行の不正分岐がある模型を実行前に拒み実行時に数を得る例を比較する。特定の実言語は未対応。,基礎２依頼の後に水辺から到達。endgame-types.playwright.js,tests/endgame-types.test.js,docs/endgame-types-audit.md
+GIT-Fundamentals:トピック:CS Core:2d-i,garden-image-pixels,部分対応,同じ幅の格子に１画素幅の線を描いて比べる。実画像や物理画素密度は未対応。,集いと四地域の後に庭園から到達。endgame-image.playwright.js,tests/endgame-image.test.js,docs/endgame-image-audit.md
+GIT-Fundamentals:トピック:CS Core:2d-ii,garden-image-fit,部分対応,固定の絵と二つの枠で全体・余白・形を比べる。一般の変換や補間は未対応。,集いと四地域の後に庭園から到達。endgame-image.playwright.js,tests/endgame-image.test.js,docs/endgame-image-audit.md
