@@ -4,7 +4,7 @@ import {fourRegions,fourRegionIds,fourQuestIds,fourQuests,fourResults,festivalPr
 
 test('four independent regions each have four quests with two or three scenarios',()=>{
  assert.equal(fourRegionIds.length,4);
- assert.equal(fourQuestIds.length,16);
+ assert.equal(fourQuestIds.length,18);
  assert.deepEqual(Object.keys(fourResults).sort(),[...fourQuestIds].sort());
  for(const region of fourRegionIds){
   assert.equal(Object.keys(fourRegions[region].quests).length,4);

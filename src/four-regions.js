@@ -1,4 +1,5 @@
 import {newEntrances} from './new-entrances.js';
+import {gardenAdvanced,gardenAdvancedResults} from './endgame-garden.js';
 
 // Each scenario includes its own evidence; no other quest is required to solve it.
 const scenario=(prompt,choices,answer,hint)=>({prompt,choices,answer,hint});
@@ -62,11 +63,12 @@ export const fourRegions={
  }}
 };
 export const fourRegionIds=Object.keys(fourRegions);
-export const fourQuests=Object.fromEntries(fourRegionIds.flatMap(region=>Object.entries(fourRegions[region].quests).map(([id,quest])=>[id,{...quest,region}])));
+export const fourQuests={...Object.fromEntries(fourRegionIds.flatMap(region=>Object.entries(fourRegions[region].quests).map(([id,quest])=>[id,{...quest,region}]))),...Object.fromEntries(Object.entries(gardenAdvanced).map(([id,quest])=>[id,{...quest,region:'garden'}]))};
 export const fourQuestIds=Object.keys(fourQuests);
 // The result ties each individual action to the story and names the CS idea
 // without suggesting that a small example covers the entire subject.
 export const fourResults={
+ ...gardenAdvancedResults,
  'garden-combinations':{thanks:'選んでくれた色と形で、花壇の飾り石が作れたよ。花のそばに並べよう。',lesson:'色と形のように、別々の選択を組み合わせて一つの飾りを作りました。'},
  'garden-sets':{thanks:'札を重ねてくれたおかげで、香りと色の両方に合う花が見つかったよ。',lesson:'それぞれの仲間を「集合」と呼び、両方に入るものを共通部分と呼びます。'},
  'garden-logic':{thanks:'灯りと門の約束を確かめられたね。庭の灯りを安心して使えるよ。',lesson:'「両方」は論理積、「少なくとも一方」は論理和の例です。論理和には両方の場合も含まれます。'},

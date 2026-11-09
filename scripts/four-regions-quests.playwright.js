@@ -5,7 +5,7 @@ async page => {
  try{
   await p.goto(new URL('./',source).href);
   const fixture=await p.evaluate(async()=>{const t=await import('./src/tower-gate.js'),f=await import('./src/forge-station.js');return {place:'station',program:['forward','forward'],executed:true,completed:['forest','branch','river','harbor-message','archive-search','windmill-lamp','search-bfs','search-weighted','search-compare','data-record','data-filter','data-join',...t.towerGateIds,...f.forgeStationIds],bridgeOpen:true,towerGateSeen:true,forgeStationSeen:true,mapVisited:['workshop','station']};});
-  const quests=await p.evaluate(async()=>{const m=await import('./src/four-regions.js');return Object.entries(m.fourQuests).map(([id,q])=>({id,answers:q.scenarios.map(s=>s.answer)}));});
+  const quests=await p.evaluate(async()=>{const m=await import('./src/four-regions.js');return m.fourRegionIds.flatMap(region=>Object.keys(m.fourRegions[region].quests).map(id=>({id,answers:m.fourQuests[id].scenarios.map(s=>s.answer)})));});
   const result=[];
   for(const q of quests){
    stage=q.id;
