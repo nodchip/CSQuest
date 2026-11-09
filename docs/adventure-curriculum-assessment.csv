@@ -50,3 +50,8 @@ GIT-Fundamentals:トピック:CS Core:2d-ii,garden-image-fit,部分対応,固定
 GIT-Fundamentals:トピック:CS Core:5b,garden-image-resample,部分対応,固定の離散画像を縮め広げて細部の損失を比べる。解像度の一般的な扱いは未対応。,庭園の灯り絵の基礎２依頼の後。endgame-resample.playwright.js,tests/endgame-resample.test.js,docs/endgame-image-audit.md
 GIT-Fundamentals:トピック:CS Core:5c,garden-image-resample,部分対応,離散画像から選んだ画素を残す一例。連続信号の標本化や量子化は未対応。,庭園の灯り絵の基礎２依頼の後。endgame-resample.playwright.js,tests/endgame-resample.test.js,docs/endgame-image-audit.md
 GIT-Fundamentals:学習成果:CS Core:10,garden-image-resample,部分対応,小さな模様が縮小で消える固定例を調べる。誤表現全般の説明は未対応。,庭園の灯り絵の基礎２依頼の後。endgame-resample.playwright.js,tests/endgame-resample.test.js,docs/endgame-image-audit.md
+PDC-Coordination:トピック:CS Core:1a,harbor-count,部分対応,二人の操作順で更新が消える場合と残る場合を比べる。一般の依存や保証は未対応。,集いと四地域の後に港から到達。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
+PDC-Coordination:トピック:CS Core:2a,harbor-join,部分対応,二つの結果が完成する前の送付を拒み両方を待つ。失敗や一般の終了制御は未対応。,集いと四地域の後に港から到達。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
+PDC-Coordination:トピック:CS Core:3b,harbor-lock,部分対応,二人が同じ鍵を読み書き全体で使う固定例。粒度や実装は未対応。,港の基礎２依頼の後。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
+PDC-Coordination:学習成果:CS Core:1,harbor-lock,部分対応,固定模型で鍵を使い更新を残す。実プログラムの競合修正は未対応。,港の基礎２依頼の後。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
+PDC-Coordination:学習成果:CS Core:2,harbor-join,部分対応,両方の完了を待って送る。実プログラムの終了制御は未対応。,集いと四地域の後に港から到達。endgame-cooperation.playwright.js,tests/endgame-cooperation.test.js,docs/endgame-cooperation-audit.md
