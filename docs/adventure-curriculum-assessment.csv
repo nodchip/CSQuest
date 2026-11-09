@@ -22,3 +22,7 @@ SEC-Foundations:トピック:CS Core:5,gate-access,部分対応,三人の仕事�
 NC-Applications:トピック:CS Core:1,tower-name-lab,部分対応,名前と宛先番号を照合し一時控えの期限を確かめる。DNS 階層・URI・実装全般は未対応。,集いと四地域の後に中継塔から到達。endgame-names.playwright.js,tests/endgame-names.test.js,docs/endgame-network-audit.md
 NC-Applications:学習成果:CS Core:1,tower-name-lab,部分対応,固定の名前と番号を使う。名前・住所・資源の位置に関する一般的な説明は未確認。,集いと四地域の後に中継塔から到達。endgame-names.playwright.js,tests/endgame-names.test.js,docs/endgame-network-audit.md
 NC-Fundamentals:トピック:CS Core:7,tower-queue-lab,部分対応,一つの送信口の到着順と待ち時間を四場面で試す。一般の遅延・輻輳・サービス水準は未対応。,集いと四地域の後に中継塔から到達。endgame-queue.playwright.js,tests/endgame-queue.test.js,docs/endgame-network-audit.md
+SEC-Foundations:トピック:CS Core:2,gate-access-lab;gate-paths-lab,部分対応,本人確認と作業権限を分けて確認し二つの入口を試す。実際の認証手段や権限管理の全般は未対応。,集いと四地域の後に関所から到達。endgame-security.playwright.js,tests/endgame-security.test.js;tests/endgame-paths.test.js,docs/endgame-security-audit.md
+SEC-Foundations:トピック:CS Core:3,gate-paths-lab,部分対応,二入口の模型で裏口からの閲覧を確認する。一般の脆弱性・脅威・攻撃経路は未対応。,集いと四地域の後に関所から到達。endgame-security.playwright.js,tests/endgame-paths.test.js,docs/endgame-security-audit.md
+SEC-Foundations:学習成果:CS Core:1,gate-paths-lab,部分対応,固定の二入口の確認漏れを観察する。現実の攻撃可能性全体の評価は未対応。,集いと四地域の後に関所から到達。endgame-security.playwright.js,tests/endgame-paths.test.js,docs/endgame-security-audit.md
+SEC-Foundations:学習成果:CS Core:2,gate-paths-lab,部分対応,二入口に既存の権限確認を置いて試す。現実の保護の設計と開発は未対応。,集いと四地域の後に関所から到達。endgame-security.playwright.js,tests/endgame-paths.test.js,docs/endgame-security-audit.md
