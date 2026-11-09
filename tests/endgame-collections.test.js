@@ -15,7 +15,7 @@ test('operate a structure before selecting it for the stated need',()=>{
  assert.equal(replayCollections('choose',['choose:map','trial:putMoon','trial:putStar','trial:get','check']),null);
  assert.equal(replayCollections('choose',['choose:queue','check']),null);
  const h=['choose:map','trial:putMoon','trial:putStar','trial:get','choose:queue','trial:addA','trial:addB','trial:take','check','choose:map','trial:putMoon','trial:putStar','trial:get','check','choose:set','trial:addA','trial:addB','trial:addA','check'];assert.equal(replayCollections('choose',h).done,true);
- const p=replayCollections('choose',['choose:set','trial:addA','trial:addB','trial:addA']);assert.deepEqual(p.trialItems,['アオイ','ナギ']);
+ const p=replayCollections('choose',['choose:set','trial:addA','trial:addB','trial:addA']);assert.deepEqual(p.trialItems,['アオイ','ナギ']);assert.match(p.trialLast,/すでにあるため増えません/);
  const q=replayCollections('choose',['choose:queue','trial:addA','trial:addB','trial:take']);assert.deepEqual(q.trialItems,['ナギ']);assert.match(q.trialLast,/アオイ/);
  const m=replayCollections('choose',['choose:map','trial:putMoon','trial:putStar','trial:get']);assert.deepEqual(m.trialEntries,{'11':'星の本'});assert.match(m.trialLast,/星の本/);
 });

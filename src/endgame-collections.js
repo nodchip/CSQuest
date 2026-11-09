@@ -44,7 +44,7 @@ export function replayCollections(kind,history){
     }else if(selection==='map'){
      if(command==='putMoon'||command==='putStar'){trialEntries['11']=command==='putMoon'?'月の本':'星の本';trialLast='番号11の名前を記録しました。';}
      else trialLast=`番号11は${trialEntries['11']}です。`;
-    }else{const name=command==='addA'?'アオイ':'ナギ';if(!trialItems.includes(name))trialItems.push(name);trialLast=`${name}を加えました。`;}trialStep++;
+    }else{const name=command==='addA'?'アオイ':'ナギ';if(trialItems.includes(name))trialLast=`${name}はすでにあるため増えません。`;else{trialItems.push(name);trialLast=`${name}を加えました。`;}}trialStep++;
    }
    else if(action==='check'&&selection===task.answer&&trialStep===trialOperations[selection].length){results.push(selection);scene++;selection=null;trialStep=0;trialItems=[];trialEntries={};trialLast=null;}
    else return null;
