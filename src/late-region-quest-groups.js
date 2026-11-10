@@ -14,6 +14,7 @@ const extra={
   {id:'logic-rules',title:'花の記録から知らせを導く',quests:['garden-logic-derive','garden-logic-unify','garden-logic-combine']},
  ],
  observatory:[
+  {id:'derivative',title:'精霊の瞬間の速さを調べる',quests:['observatory-derivative-after','observatory-derivative-before','observatory-derivative-compare']},
   {id:'reward-route',title:'報酬から道を学ぶ',quests:['observatory-reward-safe','observatory-reward-room','observatory-reward-compare']},
   {id:'descent',title:'誤差の谷を進む',quests:['observatory-descent-small','observatory-descent-large','observatory-descent-compare']},
   {id:'interquartile',title:'観測の中央の広がりを調べる',quests:['observatory-interquartile-even','observatory-interquartile-odd','observatory-interquartile-compare']},
@@ -46,6 +47,7 @@ const prerequisites={
  'garden-quantifiers-nested':['garden-quantifiers-simple','garden-quantifiers-negation'],
  'garden-relations-composition':['garden-relations-relation','garden-relations-function'],
  'garden-logic-combine':['garden-logic-derive','garden-logic-unify'],
+ 'observatory-derivative-compare':['observatory-derivative-after','observatory-derivative-before'],
  'observatory-reward-compare':['observatory-reward-safe','observatory-reward-room'],
  'observatory-descent-compare':['observatory-descent-small','observatory-descent-large'],
  'observatory-interquartile-compare':['observatory-interquartile-even','observatory-interquartile-odd'],
