@@ -1032,6 +1032,30 @@
       "topics": 12,
       "outcomes": 7,
       "scope_sha256": "3b9c4a1c946c5c65d9073f9322a07d16c889633d5a356985657e31d092e13a0b"
+    },
+    "SPD-SEP/Web": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-sep-web.md",
+      "topics": 9,
+      "outcomes": 5,
+      "scope_sha256": "a10e977bd0e91291ade0481ebffee853bc178a8ce6871444150a768d85cf44a0"
+    },
+    "SEP-Communication": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-communication.md",
+      "topics": 8,
+      "outcomes": 9,
+      "scope_sha256": "f6e06411786ccb17a420226ef95c372198493656dbcb90f8d7fb019c8381ec4c"
+    },
+    "SE-Teamwork": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-teamwork.md",
+      "topics": 14,
+      "outcomes": 10,
+      "scope_sha256": "19d9c5d06042b5dec5f4fa9012ddb143ab10bce583283453fc764e2f219f81ac"
     }
   }
 }

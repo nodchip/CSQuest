@@ -6,6 +6,7 @@ const groups={
   {id:'crypto',title:'知らせを守る',quests:['tower-crypto-encrypt','tower-crypto-digest','tower-crypto-integrity']},
   {id:'events',title:'知らせと灯りを動かす',quests:['tower-events-register','tower-events-toggle','tower-events-queue']},
   {id:'address',title:'宛先と送信口を確かめる',quests:['tower-name-lab','tower-queue-lab']},
+  {id:'window',title:'三通の知らせを順に届ける',quests:['tower-window-clean','tower-window-gap','tower-window-retry']},
  ],
  mist:[
   {id:'local',title:'送り主と記録を確かめる',local:true,quests:['gate-verify','gate-access','gate-integrity']},
@@ -18,6 +19,7 @@ const prerequisites={
  'tower-layers-route':['tower-layers-wrap','tower-layers-relay'],
  'tower-crypto-integrity':['tower-crypto-encrypt','tower-crypto-digest'],
  'tower-events-queue':['tower-events-register','tower-events-toggle'],
+ 'tower-window-retry':['tower-window-clean','tower-window-gap'],
  'gate-automata-both':['gate-automata-even','gate-automata-last'],
 };
 export function towerGateQuestGroups(region,completed,endgameAvailable){
