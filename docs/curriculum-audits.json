@@ -960,6 +960,38 @@
       "topics": 14,
       "outcomes": 3,
       "scope_sha256": "2af1708bf4b4b25431110106212c35a690ddc9cf27f525a9eba2f09fc18b21bb"
+    },
+    "SEP-History": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-history.md",
+      "topics": 8,
+      "outcomes": 6,
+      "scope_sha256": "990e2916327b3998a7d0e594fe8be62b97133b7f938578c74bb54bd2ee0cdf33"
+    },
+    "SEC-SEP": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sec-sep.md",
+      "topics": 8,
+      "outcomes": 5,
+      "scope_sha256": "1cf466e10ee4ef8baa02b7f184159f5cd3ea4a22a0bae41c94059277c3099f24"
+    },
+    "PDC-Algorithms": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-pdc-algorithms.md",
+      "topics": 12,
+      "outcomes": 9,
+      "scope_sha256": "1472da27c6a4072ee3efc89d2466f1e7d14cb09bfc3b772bd6d294c469d28fee"
+    },
+    "SPD-SEP/Robotics": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-sep-robotics.md",
+      "topics": 5,
+      "outcomes": 5,
+      "scope_sha256": "a86984fd1e9709514f8b5a60dd91bdc9cc530ca0193f88eefca432592654f782"
     }
   }
 }

@@ -23,7 +23,7 @@ test('庭園の発展依頼は基礎二件と祭りの両方が必要',()=>{
  assert.equal(visible(['garden-sets','garden-logic'],true).includes('garden-shelter'),true);
 });
 test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',()=>{
- for(const [r,count] of [['garden',25],['observatory',28]]){
+ for(const [r,count] of [['garden',28],['observatory',28]]){
   const groups=lateRegionQuestGroups(r,[],false),all=groups.flatMap(g=>g.quests);
   assert.equal(all.length,count);assert.equal(new Set(all).size,count);
   assert.ok(lateRegionQuestGroups(r,all,true).every(g=>g.complete));
@@ -35,6 +35,7 @@ test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',
   ['garden','garden-vector-basis',['garden-vector-add','garden-vector-scale']],
   ['garden','garden-quantifiers-nested',['garden-quantifiers-simple','garden-quantifiers-negation']],
   ['garden','garden-relations-composition',['garden-relations-relation','garden-relations-function']],
+  ['garden','garden-logic-combine',['garden-logic-derive','garden-logic-unify']],
   ['observatory','observatory-supervised-separate',['observatory-supervised-train','observatory-supervised-evaluate']],
   ['observatory','observatory-local-plateau',['observatory-local-climb','observatory-local-restart']],
   ['observatory','observatory-agent-risk',['observatory-agent-rule','observatory-agent-observe']],
