@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'forge',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>p.locator(`[data-cpu-action="${a}"]`).click(),cycle=async n=>{for(let i=0;i<n;i++)for(const x of ['fetch','decode','execute'])await act(x);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#cpu-finish').click();await p.locator('#cpu-back').click();};
+   const basic=async()=>{await cycle(3);await act('next');await cycle(3);await act('next');};
+   stage='basic';await p.locator('#cpu-basic').click();await act('execute');if(!(await p.locator('#cpu-status').innerText()).includes('取得'))throw Error('wrong phase feedback missing');await act('fetch');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('PC：1。現在の値：0。取得した命令：番地0'))throw Error('partial state not restored');await act('decode');await act('execute');await cycle(2);if(!(await p.locator('body').innerText()).includes('表示は5'))throw Error('basic output missing');await act('next');await cycle(3);await act('next');await finish();if(await p.locator('#cpu-data').count())throw Error('advanced opened after one');
+   await p.locator('#cpu-basic').click();await p.locator('#cpu-restart').click();await basic();await finish();if(await p.locator('#cpu-data').count())throw Error('replay opened advanced');
+   stage='branch';await p.locator('#cpu-branch').click();await cycle(2);if(!(await p.locator('body').innerText()).includes('PC：3。現在の値：0'))throw Error('zero branch PC missing');await cycle(1);if(!(await p.locator('body').innerText()).includes('表示は0'))throw Error('zero result missing');await act('next');await cycle(4);if(!(await p.locator('body').innerText()).includes('表示は5'))throw Error('nonzero result missing');await act('next');await finish();if(!await p.locator('#cpu-data').isVisible())throw Error('advanced missing');
+   stage='data';await p.locator('#cpu-data').click();await cycle(3);if(!(await p.locator('body').innerText()).includes('表示は3'))throw Error('first data result missing');await act('next');await cycle(3);if(!(await p.locator('body').innerText()).includes('表示は6'))throw Error('second data result missing');await act('next');await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#cpu-data').innerText()).includes('達成済み'))throw Error('completion not restored');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
