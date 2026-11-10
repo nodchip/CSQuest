@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'sky',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#sky-open-quests').click();for(let i=0;i<15;i++){const group=p.getByRole('button',{name:/宛先の先頭から道を選ぶ/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-route-prefix-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/四つの宛先を送り分ける/}).count())throw Error('advanced opened early');
+   stage='specific';await p.getByRole('button',{name:/重なる道しるべを調べる/}).focus();await p.keyboard.press('Enter');await p.locator('[data-route-prefix-action="toggle:two"]').focus();await p.keyboard.press('Enter');await act('check');if(!(await p.locator('#route-prefix-status').innerText()).includes('確かめ'))throw Error('missing match hint');await act('toggle:default');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('選んだ印：既定、101'))throw Error('partial state lost');await sequence(['toggle:one','check','route:B']);await p.locator('#route-prefix-finish').click();await p.locator('#route-prefix-back').click();await open();if(await p.getByRole('button',{name:/四つの宛先を送り分ける/}).count())throw Error('advanced opened after one');
+   stage='fallback';await p.getByRole('button',{name:/既定の道を選ぶ/}).click();await sequence(['toggle:default','check','route:R']);await p.locator('#route-prefix-finish').click();await p.locator('#route-prefix-back').click();await open();
+   stage='compare';await p.getByRole('button',{name:/四つの宛先を送り分ける/}).click();await act('route:A');if(!(await p.locator('#route-prefix-status').innerText()).includes('確かめ'))throw Error('wrong route hint');await sequence(['route:B','route:A','route:C','route:R']);if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#route-prefix-finish').click();let body=await p.locator('body').innerText();if(!body.includes('1011 → B')||!body.includes('1110 → R'))throw Error('result missing');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#route-prefix-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/四つの宛先を送り分ける/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
