@@ -29,3 +29,7 @@
 2026-11-11、`review_candidate` が AI-Search 11、MSF-Discrete 2・学習成果 7d、DM-Core 5、AL-Foundational 12、SF-Reliability 3a の６件の固定例と原典との対応を独立確認した。DM-Core 5 の原典ページ番号を117頁から116頁へ修正した。一般的な実装・保証などは未評価であり、今回のブラウザ再操作や新規開始からの通し到達、完成を示さない。
 
 DM-Core 5 の原典ページ修正は `review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が AL-Foundational 10、SF-Reliability 3、AI-Search 3c.i、SF-Foundations 2・10、GIT-Rendering 1b・4 の７件について原典、固定例、開放と既存検証を独立確認した。一般の設計・実装や証明などは未評価。今回の対応付けレビューは元教材のレビューとは別で、ブラウザ再操作や新規開始からの通し到達、完成を意味しない。
+
+2026-11-11、`review_candidate` が AL-Foundational 1a・3、FPL-Functional 3a、AI-Search 10d、SF-Foundations 8 の５件について原典、固定例、開放と既存検証を独立確認した。一般の設計・実装や証明などは未評価。今回の対応付けレビューは元教材のレビューとは別で、ブラウザ再操作や新規開始からの通し到達、完成を意味しない。

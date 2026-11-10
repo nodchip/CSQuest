@@ -1,0 +1,8 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayPages} from '../src/endgame-page-replacement.js';
+const prefix=['access:A','access:B','access:C','access:A','access:D'];
+test('FIFO は再利用で読み込み順を変えず A を追い出す',()=>{let p=replayPages('fifo',prefix);assert.equal(p.state.waiting,'D');assert.equal(p.state.hits,1);assert.equal(p.state.misses,4);assert.equal(replayPages('fifo',[...prefix,'evict:B']),null);p=replayPages('fifo',[...prefix,'evict:A','next']);assert.deepEqual(p.results[0],{frames:['D','B','C'],hits:1,misses:4,evicted:'A'});assert.equal(p.done,true);});
+test('LRU は A の再利用を記録し、B を追い出す',()=>{let p=replayPages('lru',prefix);assert.equal(p.state.frames.find(x=>x.page==='A').used,3);assert.equal(replayPages('lru',[...prefix,'evict:A']),null);p=replayPages('lru',[...prefix,'evict:B','next']);assert.deepEqual(p.results[0],{frames:['A','D','C'],hits:1,misses:4,evicted:'B'});});
+test('２方法の結果と途中記録、完了後の拒否',()=>{const h=[...prefix,'evict:A','next',...prefix,'evict:B','next'];const p=replayPages('compare',JSON.parse(JSON.stringify(h)));assert.equal(p.results[0].evicted,'A');assert.equal(p.results[1].evicted,'B');assert.equal(replayPages('compare',[...h,'answer:same']),null);assert.equal(replayPages('compare',[...h,'reset']),null);assert.equal(replayPages('compare',[...h,'answer:different']).done,true);assert.equal(replayPages('compare',[...h,'answer:different','next']),null);});
+test('空き時や順番前の置換、途中リセットを検査',()=>{assert.equal(replayPages('fifo',['evict:A']),null);assert.equal(replayPages('fifo',['access:B']),null);assert.equal(replayPages('fifo',['access:A','next']),null);assert.deepEqual(replayPages('fifo',['access:A','reset']).state.frames,[]);assert.equal(replayPages('fifo',{}),null);});

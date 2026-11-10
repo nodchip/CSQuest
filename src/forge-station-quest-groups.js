@@ -14,6 +14,7 @@ const catalogs={
   {id:'delivery',title:'荷物を送り出す',local:true,quests:['station-fcfs','station-round','station-sharing']},
   {id:'tools',title:'道具と場所を使う',local:true,quests:['station-lock','station-memory']},
   {id:'priority',title:'急ぎの荷物を選ぶ',quests:['station-heap-queue','station-heap-insert','station-heap-remove','station-schedule-lab']},
+  {id:'replacement',title:'記憶の棚を入れ替える',quests:['station-replacement-fifo','station-replacement-lru','station-replacement-compare']},
   {id:'office',title:'駅の共通窓口を使う',quests:['station-os-queue','station-os-storage','station-os-access']},
  ],
 };
@@ -25,6 +26,7 @@ const prerequisites={
  'forge-objects-interaction':['forge-objects-identity','forge-objects-encapsulation'],
  'forge-integer-addition':['forge-integer-unsigned','forge-integer-reading'],
  'station-heap-remove':['station-heap-queue','station-heap-insert'],
+ 'station-replacement-compare':['station-replacement-fifo','station-replacement-lru'],
  'station-os-access':['station-os-queue','station-os-storage'],
 };
 export function forgeStationQuestGroups(region,completed,endgameAvailable){
