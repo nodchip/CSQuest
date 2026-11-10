@@ -1104,6 +1104,30 @@
       "topics": 11,
       "outcomes": 7,
       "scope_sha256": "10c7b8301701533bdb448b00f18dbd7754a0ffe82f8dcbce17ee30f7d48f53e3"
+    },
+    "FPL-Parallel": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-parallel.md",
+      "topics": 31,
+      "outcomes": 8,
+      "scope_sha256": "0eead7f6e075d80f1a6bb80a6fd9eb6548e0f949c1a1429e6ded2f14c8ac72dc"
+    },
+    "SEP-Ethical-Analysis": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-ethical-analysis.md",
+      "topics": 9,
+      "outcomes": 10,
+      "scope_sha256": "c062e39c3783f71cd0200e23f8ff7138a1d8ae37be15cc06260469964cb374c0"
+    },
+    "SE-Requirements": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-requirements.md",
+      "topics": 14,
+      "outcomes": 10,
+      "scope_sha256": "f309f74d02b0ec8b9db6c7bcf6a1a73560033c9dededacfcb2131cbd45709aa5"
     }
   }
 }
