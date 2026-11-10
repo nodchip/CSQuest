@@ -1,0 +1,17 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'mid-archive',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>{await p.locator(`[data-version-action="${a}"]`).click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error(`horizontal overflow after ${a}`);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#version-finish').click();await p.locator('#version-back').click();},snapshot=async()=>{for(const a of ['view:v1','view:v2','choose:v1','view:v1','view:v2','choose:v2'])await act(a);};
+   stage='snapshot';await p.locator('#version-snapshot').click();await act('choose:v1');if(!(await p.locator('#version-status').innerText()).includes('二つの版'))throw Error('view feedback missing');await act('view:v2');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('書きかけ：港の道'))throw Error('draft not preserved');for(const a of ['view:v1','choose:v1','view:v1','view:v2','choose:v2'])await act(a);await finish();if(await p.locator('#version-release').count())throw Error('advanced opened after one');
+   stage='replay';await p.locator('#version-snapshot').click();await p.locator('#version-restart').click();await snapshot();await finish();if(await p.locator('#version-release').count())throw Error('replay opened advanced');
+   stage='merge';await p.locator('#version-merge').click();for(const a of ['merge:b','merge:a','check','merge:a','merge:b'])await act(a);if(!(await p.locator('#version-status').innerText()).includes('競合'))throw Error('conflict missing');await act('resolve:a');await act('check');if(!(await p.locator('#version-status').innerText()).includes('両方'))throw Error('wrong resolution feedback missing');await act('resolve:b');await act('check');await finish();if(!await p.locator('#version-release').isVisible())throw Error('advanced missing');
+   stage='release';await p.locator('#version-release').click();await act('release:v2');if(!(await p.locator('#version-status').innerText()).includes('試して'))throw Error('untested release feedback missing');for(const a of ['test:v2','release:v2','test:v1','release:v1'])await act(a);await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#version-release').innerText()).includes('達成済み'))throw Error('completion not restored');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
