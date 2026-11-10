@@ -5,6 +5,7 @@ const groups=[
  {id:'performance',title:'荷物を数える時間を調べる',quests:['harbor-performance-serial','harbor-performance-parallel','harbor-performance-overhead']},
  {id:'cooperation',title:'荷数の札と知らせをまとめる',quests:['harbor-count','harbor-join','harbor-lock']},
  {id:'condition',title:'届く荷物を待つ',quests:['harbor-condition-wait','harbor-condition-notify','harbor-condition-recheck']},
+ {id:'rendezvous',title:'精霊の待ち合わせを調べる',quests:['harbor-rendezvous-free','harbor-rendezvous-barrier','harbor-rendezvous-compare']},
  {id:'parallel-map',title:'札を分けて数える',quests:['harbor-parallel-map','harbor-parallel-reduce','harbor-parallel-pipeline']},
 ];
 const prerequisites={
@@ -13,6 +14,7 @@ const prerequisites={
  'harbor-performance-overhead':['harbor-performance-serial','harbor-performance-parallel'],
  'harbor-lock':['harbor-count','harbor-join'],
  'harbor-condition-recheck':['harbor-condition-wait','harbor-condition-notify'],
+ 'harbor-rendezvous-compare':['harbor-rendezvous-free','harbor-rendezvous-barrier'],
  'harbor-parallel-pipeline':['harbor-parallel-map','harbor-parallel-reduce'],
 };
 export function harborQuestGroups(completed,endgameAvailable){
