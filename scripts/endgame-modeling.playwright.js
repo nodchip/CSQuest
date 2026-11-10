@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'valley',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>{await p.locator(`[data-modeling-action="${a}"]`).click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error(`horizontal overflow after ${a}`);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#modeling-finish').click();await p.locator('#modeling-back').click();};
+   const one=async()=>{for(const a of ['set:荷１:村１','set:荷２:村１','set:荷３:村２','check','set:荷１:村２','set:荷２:村３','set:荷３:村２','check'])await act(a);};
+   stage='one';await p.locator('#modeling-one').click();await act('set:荷１:村２');await act('check');if(!(await p.locator('#modeling-status').innerText()).includes('届け先'))throw Error('wrong assignment feedback missing');await act('set:荷１:村１');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('現在：村１'))throw Error('assignment not restored');for(const a of ['set:荷２:村１','set:荷３:村２','check','set:荷１:村２','set:荷２:村３','set:荷３:村２','check'])await act(a);await finish();if(await p.locator('#modeling-lookup').count())throw Error('advanced opened after one');
+   stage='replay';await p.locator('#modeling-one').click();await p.locator('#modeling-restart').click();await one();await finish();if(await p.locator('#modeling-lookup').count())throw Error('replay opened advanced');
+   stage='many';await p.locator('#modeling-many').click();await act('pair:人２:依２');await act('check');if(!(await p.locator('#modeling-status').innerText()).includes('余分'))throw Error('wrong pair feedback missing');await act('pair:人２:依２');for(const a of ['pair:人１:依１','pair:人１:依２','pair:人２:依１','check','pair:人１:依２','pair:人２:依１','pair:人２:依２','check'])await act(a);await finish();if(!await p.locator('#modeling-lookup').isVisible())throw Error('advanced missing');
+   stage='lookup';await p.locator('#modeling-lookup').click();await act('duplicate');if(!(await p.locator('#modeling-status').innerText()).includes('主キー'))throw Error('duplicate rejection missing');await act('missing');if(!(await p.locator('#modeling-status').innerText()).includes('外部キー'))throw Error('reference rejection missing');for(const a of ['select:人１','check','duplicate','missing','select:人１','select:人２','check'])await act(a);await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#modeling-lookup').innerText()).includes('達成済み'))throw Error('completion not restored');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
