@@ -17,3 +17,7 @@
 2026-11-10、catalog が実装担当と別に既存の `forge-bits`・`tower-forward`・`gate-access` の問題と原典の該当項目を照合し、固定例の範囲と不足を確認しました。ブラウザ操作の根拠は以前の `world-finale-audit.md` の記録であり、このレビュー担当が今回ブラウザを再操作したことを意味しません。
 
 2026-11-11、実装・対応付け担当とは別の `review_candidate` が MSF-Discrete 7、AL-Foundational 5、SF-Foundations 5、DM-Internals 4、PDC-Programs 3c と SPD-Embedded 3e・9 の対応を原典・教材・既存の検証記録に照らして確認した。いずれも固定例による部分対応で、SPD は入力側のみ。これは元教材のレビューとは別の対応付けレビューであり、今回のブラウザ再操作や新規開始からの通し到達、項目の完成を示さない。
+
+2026-11-11、`review_candidate` が AI-Search 1b、AL-Foundational 6、DM-Security 学習成果 2、HCI-Evaluation 6b、MSF-Discrete 学習成果 1d・7a、PDC-Programs 3d、SF-Foundations 4 の８件について原典、固定例、開放条件と既存検証の対応を独立確認した。一般的な課題や実装・自由な説明は未評価。元教材のレビューと今回の対応付けレビューは別で、今回のブラウザ再操作や新規開始からの通し到達、完成を示さない。
+
+2026-11-11、`review_candidate` が MSF-Linear 2、FPL-Event-Driven 7、OS-Principles 6、GIT-Image 5b、AI-ML 3・7、PDC-Coordination 1 の７件について原典、現行の固定例、開放条件と既存検証の対応を独立確認した。実装や一般化などは未評価。元教材のレビューと今回の対応付けレビューは別で、今回のブラウザ再操作や新規開始からの通し到達、完成を示さない。
