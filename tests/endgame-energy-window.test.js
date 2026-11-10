@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {energyWindowResult,replayEnergyWindow} from '../src/endgame-energy-window.js';
+test('処理中は速い設定４Wh、ゆっくり６Wh',()=>{assert.equal(energyWindowResult('short').active,4);assert.equal(energyWindowResult('long').active,6);assert.equal(replayEnergyWindow('active',['answer:6']),null);assert.equal(replayEnergyWindow('active',['answer:4','answer:6']).done,true);});
+test('３時間全体では待機を含め両方８Wh',()=>{assert.deepEqual(energyWindowResult('short'),{active:4,idle:4,total:8,finished:1,withinDeadline:true});assert.deepEqual(energyWindowResult('long'),{active:6,idle:2,total:8,finished:2,withinDeadline:false});assert.equal(replayEnergyWindow('idle',['answer:8','answer:8']).done,true);});
+test('同じ全体の電力量でも1.5時間の期限を満たすのは速い設定',()=>{const h=['try:long','try:short'],p=replayEnergyWindow('compare',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.tried,['long','short']);assert.equal(replayEnergyWindow('compare',[...h,'answer:long']),null);assert.equal(replayEnergyWindow('compare',[...h,'answer:short']).done,true);assert.equal(replayEnergyWindow('compare',[...h,'answer:short','reset']),null);});
+test('比較の前提と途中リセットを検査',()=>{assert.equal(replayEnergyWindow('compare',['try:short','answer:short']),null);assert.deepEqual(replayEnergyWindow('active',['answer:4','reset']).results,[]);assert.equal(replayEnergyWindow('idle',{}),null);});
