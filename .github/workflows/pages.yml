@@ -27,6 +27,7 @@ jobs:
       - run: node scripts/check-example-query.mjs
       - run: python3 -m unittest discover -s tests -p coverage_rows_test.py
       - run: python3 -m unittest discover -s tests -p assessment_static_graph_test.py
+      - run: python3 -m unittest discover -s tests -p adventure_coverage_join_test.py
       - run: python3 scripts/coverage_rows.py
       - run: python3 scripts/coverage_inventory.py --check docs/curriculum-inventory-draft.csv --audit docs/curriculum-audits.json --assessments docs/curriculum-assessments.json
       - run: npm run build
