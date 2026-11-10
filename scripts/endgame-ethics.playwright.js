@@ -1,0 +1,17 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'guide',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>{await p.locator(`[data-ethics-action="${a}"]`).click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error(`horizontal overflow after ${a}`);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#ethics-finish').click();await p.locator('#ethics-back').click();},basic=async()=>{for(const a of ['select:a','select:b','check','select:b','select:a','check'])await act(a);};
+   stage='impact';await p.locator('#ethics-impact').click();await act('select:c');await act('select:a');await act('check');if(!(await p.locator('#ethics-status').innerText()).includes('見られる'))throw Error('impact feedback missing');await act('select:c');await p.reload();await p.locator('#continue').click();if(await p.locator('[data-ethics-action="select:a"]').getAttribute('aria-pressed')!=='true')throw Error('selection not restored');for(const a of ['select:b','check','select:b','select:a','check'])await act(a);await finish();if(await p.locator('#ethics-decision').count())throw Error('advanced opened after one');
+   stage='replay';await p.locator('#ethics-impact').click();await p.locator('#ethics-restart').click();await basic();await finish();if(await p.locator('#ethics-decision').count())throw Error('replay opened advanced');
+   stage='questions';await p.locator('#ethics-questions').click();await act('select:c');await act('check');if(!(await p.locator('#ethics-status').innerText()).includes('本人の希望'))throw Error('questions feedback missing');await act('select:c');await basic();await finish();if(!await p.locator('#ethics-decision').isVisible())throw Error('advanced missing');
+   stage='decision';await p.locator('#ethics-decision').click();for(const a of ['plan:counter','reason:counter','risk:none','check'])await act(a);if(!(await p.locator('#ethics-status').innerText()).includes('不利益'))throw Error('inconsistent explanation feedback missing');for(const a of ['risk:counter','check','plan:none','reason:none','risk:none','check'])await act(a);await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#ethics-decision').innerText()).includes('達成済み'))throw Error('completion not restored');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
