@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'garden',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>{await p.locator(`[data-quantifiers-action="${a}"]`).click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error(`horizontal overflow after ${a}`);},seq=async xs=>{for(const a of xs)await act(a);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#quantifiers-finish').click();await p.locator('#quantifiers-back').click();};
+   const simple=['answer:1:1','counter:none','witness:0','next','answer:0:1','counter:1','witness:2','next','answer:0:0','counter:0','witness:none','next'];
+   stage='simple';await p.locator('#quantifiers-simple').click();await act('answer:0:1');if(!(await p.locator('#quantifiers-status').innerText()).includes('別々'))throw Error('wrong answer hint missing');await act('answer:1:1');await act('counter:0');if(!(await p.locator('#quantifiers-status').innerText()).includes('消灯'))throw Error('wrong evidence hint missing');await act('counter:none');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('反例の確認：済み'))throw Error('evidence not restored');await seq(simple.slice(2));await finish();if(await p.locator('#quantifiers-nested').count())throw Error('advanced opened after one');
+   stage='replay';await p.locator('#quantifiers-simple').click();await p.locator('#quantifiers-restart').click();await seq(simple);await finish();if(await p.locator('#quantifiers-nested').count())throw Error('replay opened advanced');
+   stage='negation';await p.locator('#quantifiers-negation').click();await seq(['answer:1:0','counter:1','witness:0','next','answer:1:1','counter:2','witness:none','next','answer:0:0','counter:none','witness:1','next']);await finish();if(!await p.locator('#quantifiers-nested').isVisible())throw Error('advanced missing');
+   stage='nested';await p.locator('#quantifiers-nested').click();await seq(['answer:1:0','person:0:0','person:1:1','refute:0:1']);await act('next');if(!(await p.locator('#quantifiers-status').innerText()).includes('各道具'))throw Error('incomplete proof hint missing');await seq(['refute:1:0','next','answer:1:1','person:0:1','person:1:0','common:0','next','answer:0:0','no-person:0','refute:0:0','refute:1:0','next']);await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#quantifiers-nested').innerText()).includes('達成済み'))throw Error('completion not restored');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
