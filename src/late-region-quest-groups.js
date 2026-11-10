@@ -14,6 +14,7 @@ const extra={
   {id:'logic-rules',title:'花の記録から知らせを導く',quests:['garden-logic-derive','garden-logic-unify','garden-logic-combine']},
  ],
  observatory:[
+  {id:'regression',title:'雨の予測のずれを比べる',quests:['observatory-regression-absolute','observatory-regression-square','observatory-regression-compare']},
   {id:'supervised',title:'花札から規則を学ぶ',quests:['observatory-supervised-train','observatory-supervised-evaluate','observatory-supervised-separate']},
   {id:'local-search',title:'探索機で光を探す',quests:['observatory-local-climb','observatory-local-restart','observatory-local-plateau']},
   {id:'agent',title:'案内人形の動きを確かめる',quests:['observatory-agent-rule','observatory-agent-observe','observatory-agent-risk']},
@@ -42,6 +43,7 @@ const prerequisites={
  'garden-quantifiers-nested':['garden-quantifiers-simple','garden-quantifiers-negation'],
  'garden-relations-composition':['garden-relations-relation','garden-relations-function'],
  'garden-logic-combine':['garden-logic-derive','garden-logic-unify'],
+ 'observatory-regression-compare':['observatory-regression-absolute','observatory-regression-square'],
  'observatory-supervised-separate':['observatory-supervised-train','observatory-supervised-evaluate'],
  'observatory-local-plateau':['observatory-local-climb','observatory-local-restart'],
  'observatory-agent-risk':['observatory-agent-rule','observatory-agent-observe'],

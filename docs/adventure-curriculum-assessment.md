@@ -25,3 +25,7 @@
 2026-11-11、`review_candidate` が MSF-Discrete 学習成果 2a、AL-Foundational 11、PDC-Coordination 3d、GIT-Image 5a、PDC-Algorithms 3b、SE-Validation 3c の６件について原典・固定例・既存検証の対応を独立確認し、後の２件の原典ページ番号の誤りを指摘した。指摘に沿って226頁と246頁に修正した。今回ブラウザは再操作しておらず、固定例で一般の設計・実装・証明や新規開始からの通し到達を評価したものではない。
 
 上記２件の修正後のページ番号は、同じ `review_candidate` が原典と照らして再確認した。
+
+2026-11-11、`review_candidate` が AI-Search 11、MSF-Discrete 2・学習成果 7d、DM-Core 5、AL-Foundational 12、SF-Reliability 3a の６件の固定例と原典との対応を独立確認した。DM-Core 5 の原典ページ番号を117頁から116頁へ修正した。一般的な実装・保証などは未評価であり、今回のブラウザ再操作や新規開始からの通し到達、完成を示さない。
+
+DM-Core 5 の原典ページ修正は `review_candidate` が再確認した。
