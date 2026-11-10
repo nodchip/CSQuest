@@ -7,3 +7,5 @@ CS2023 PDC-Programs（印字219–220ページ）と PDC-Coordination（222–22
 別担当の独立レビューで操作順、境界例、原典との関係を確認し、鍵の返却前と片側未完了をテストに追加した。依頼登録時に庭の達成処理へ港のIDが混入する不具合もレビューで発見し、公開前に修正・再レビューした。`tests/endgame-cooperation.test.js`、`scripts/endgame-cooperation.playwright.js` と `scripts/endgame-cross-journey.playwright.js` で、順序、誤答、復元、鍵の開放、庭と港の両方の訪問順を検証する。
 
 これは部分的な操作練習で、実言語で競合を修正することや、一般的な終了・排他の正しさを保証することは未対応。実際のスクリーンリーダー音声は未確認。
+
+2026-11-10、実装担当と別の `review_candidate` が [CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf#page=208) 印字208ページの OS-Concurrency、CS Core トピック２と模型を照合した。共有札の更新消失は競合の例、同じ鍵を読む前から書き戻し後まで保持する部分はクリティカル領域の一例として部分対応にあたる。画面では「クリティカル領域」という用語を確認できず、割込みの役割や実際のスレッド・メモリ可視性も扱わない。今回のレビューはコード・保存の検証と関連単体テストの確認であり、ブラウザやスクリーンリーダーは再操作していない。
