@@ -1,3 +1,15 @@
+import {legacyQuestTitles} from './legacy-quest-titles.js?v=region-navigation19';
+import {workshopQuestGroups} from './workshop-quest-groups.js?v=region-navigation19';
+import {cityQuestGroups} from './city-quest-groups.js?v=region-navigation19';
+import {riverQuestGroups} from './river-quest-groups.js?v=region-navigation19';
+import {harborQuestGroups} from './harbor-quest-groups.js?v=region-navigation19';
+import {lateRegionQuestGroups} from './late-region-quest-groups.js?v=region-navigation19';
+import {towerGateQuestGroups} from './tower-gate-quest-groups.js?v=region-navigation19';
+import {forgeStationQuestGroups} from './forge-station-quest-groups.js?v=region-navigation19';
+import {valleyQuestGroups} from './valley-quest-groups.js?v=region-navigation19';
+import {mountainQuestGroups} from './mountain-quest-groups.js?v=region-navigation19';
+import {archiveQuestGroups} from './archive-quest-groups.js?v=region-navigation19';
+import {windmillQuestGroups} from './windmill-quest-groups.js?v=region-navigation19';
 import {worldRegionProgress,worldFinaleReady,storyRegions} from './world-progress.js?v=story-climax1';
 import {climaxSteps,validClimaxHistory,tryClimaxAction,climaxComplete} from './story-climax.js';
 import {newEntrances,newEntranceIds,checkNewEntrance,validNewEntranceDrafts} from './new-entrances.js';
@@ -138,6 +150,13 @@ try{
     // The old six-region gathering is not the new climax. Preserve its record
     // without treating it as completion of the new story.
     const storyClimaxHistory=saved.storyClimaxHistory??[],storyClimaxComplete=saved.storyClimaxComplete??false;
+    const cityFestivalSeen=saved.cityFestivalSeen??(saved.place==='city-festival');
+    const mountainEndingSeen=saved.mountainEndingSeen??(saved.place==='mountain-ending');
+    const mountainCrossingSeen=saved.mountainCrossingSeen??(saved.place==='mountain-crossing');
+    const valleyEndingSeen=saved.valleyEndingSeen??(saved.place==='valley-ending');
+    if([cityFestivalSeen,mountainEndingSeen,mountainCrossingSeen,valleyEndingSeen].some(value=>typeof value!=='boolean'))throw Error('invalid');
+    const storyClimaxNoticeSeen=saved.storyClimaxNoticeSeen??(storyClimaxComplete||storyClimaxHistory.length>0);
+    if(typeof storyClimaxNoticeSeen!=='boolean')throw Error('invalid');
     if(!validClimaxHistory(storyClimaxHistory)||typeof storyClimaxComplete!=='boolean'||(storyClimaxHistory.length&&!worldFinaleReady(completed))||(storyClimaxComplete&&!climaxComplete(storyClimaxHistory)))throw Error('invalid');
     if((['four-quest','four-result'].includes(saved.place)&&gardenAdvancedIds.includes(fourActive))&&(!storyClimaxComplete||!festivalReady(completed)||!gardenAdvancedReady(completed)))throw Error('invalid');
     const searchHistory=saved.searchHistory??[],searchState=replaySearch(searchHistory);
@@ -276,7 +295,7 @@ try{
     if(!validTravelVisits(mapVisited))throw Error('invalid');
     const travelFrom=saved.travelFrom??'choices';
     if(!travelOrigins.includes(travelFrom))throw Error('invalid');
-    state={transactionCommitHistory,transactionRollbackHistory,transactionIsolationHistory,rleEncodeHistory,rleDecodeHistory,rleCompareHistory,localClimbHistory,localRestartHistory,localPlateauHistory,heapQueueHistory,heapInsertHistory,heapRemoveHistory,countingGearHistory,countingRolesHistory,countingPigeonHistory,expressionPrecedenceHistory,expressionAssociationHistory,expressionEvaluateHistory,httpRequestHistory,httpCompareHistory,httpRepairHistory,quantifiersSimpleHistory,quantifiersNegationHistory,quantifiersNestedHistory,cacheTemporalHistory,cacheSpatialHistory,cacheMappingHistory,recursionSumHistory,recursionTreeHistory,recursionRepairHistory,deadlockCycleHistory,deadlockOrderHistory,deadlockFairnessHistory,supervisedTrainHistory,supervisedEvaluateHistory,supervisedSeparateHistory,ethicsImpactHistory,ethicsQuestionsHistory,ethicsDecisionHistory,versionSnapshotHistory,versionMergeHistory,versionReleaseHistory,performanceSerialHistory,performanceParallelHistory,performanceOverheadHistory,agentRuleHistory,agentObserveHistory,agentRiskHistory,modelingOneHistory,modelingManyHistory,modelingLookupHistory,invariantTraceHistory,invariantProofHistory,invariantCompareHistory,osQueueHistory,osStorageHistory,osAccessHistory,cpuBasicHistory,cpuBranchHistory,cpuDataHistory,matrixShearHistory,matrixRotateHistory,matrixCompareHistory,automataEvenHistory,automataLastHistory,automataBothHistory,objectsIdentityHistory,objectsEncapsulationHistory,objectsInteractionHistory,layersWrapHistory,layersRelayHistory,layersRouteHistory,cryptoEncryptHistory,cryptoDigestHistory,cryptoIntegrityHistory,treeSearchHistory,treeInsertHistory,treeCompareHistory,colorLightHistory,colorFilterHistory,colorCompareHistory,functionalMapHistory,functionalFoldHistory,functionalPipelineHistory,eventsRegisterHistory,eventsToggleHistory,eventsQueueHistory,debugTraceHistory,debugBreakpointHistory,debugRepairHistory,complexityLinearHistory,complexityBinaryHistory,complexityCompareHistory,stringsSplitHistory,stringsReplaceHistory,stringsPipelineHistory,relationHistory,functionHistory,compositionHistory,hashChainHistory,hashLinearHistory,hashDeletionHistory,sortingInsertionHistory,sortingSelectionHistory,sortingCompareHistory,collectionsListHistory,collectionsMapHistory,collectionsChooseHistory,requirementsInterviewHistory,requirementsStoryHistory,requirementsAgreementHistory,statsFrequencyHistory,statsCenterHistory,statsSpreadHistory,vectorAddHistory,vectorScaleHistory,vectorBasisHistory,integerUnsignedHistory,integerReadingHistory,integerAdditionHistory,probabilityWeatherHistory,probabilityDrawsHistory,probabilityReportsHistory,privacySafeguardsHistory,privacyCollectionHistory,privacyIdentityHistory,conflictHistory,layersHistory,offlineHistory,recoveryHistory,copiesHistory,pipelineHistory,regressionHistory,boundaryHistory,validationHistory,countHistory,joinHistory,lockHistory,resampleHistory,imageFitHistory,imagePixelsHistory,typeToolsHistory,typeRecordHistory,typeBranchHistory,forecastHistory,forecastErrorsHistory,accessibilityHistory,usabilityHistory,worldFinaleSeen,worldFinaleFrom,worldFinaleSelection,storyClimaxHistory,storyClimaxComplete,searchHistory,recordHistory,flowerProgram,flowerCase,flowerShown,flowerStarted,swapProgram,swapCase,swapShown,swapStarted,nameHistory,queueHistory,accessHistory,pathsHistory,tablesHistory,integrityHistory,schedulingHistory,pagesHistory,newActive,newDrafts,newSelections,fourActive,fourDrafts,fourSelections,fourFestivalSeen,fourFestivalFrom,mapVisited,legacyUnlocked,forgeStationActive,forgeStationDrafts,forgeStationSeen,towerGateActive,towerGateDrafts,towerGateSeen,travelFrom,place:restoredPlace,program:[...saved.program],executed:saved.executed,forestProgram:[...forestProgram],forestExecuted,completed:[...completed],drafts,activeQuest,citySort:[...citySort],cityQueue:[...cityQueue],cityQuest,cityFrom,announced:[...announced],harborRoute:[...harborRoute],midActive,midDrafts,bridgeOpen,bridgeFrom,mountainActive,mountainRoutes,expansionActive,expansionDrafts};
+    state={transactionCommitHistory,transactionRollbackHistory,transactionIsolationHistory,rleEncodeHistory,rleDecodeHistory,rleCompareHistory,localClimbHistory,localRestartHistory,localPlateauHistory,heapQueueHistory,heapInsertHistory,heapRemoveHistory,countingGearHistory,countingRolesHistory,countingPigeonHistory,expressionPrecedenceHistory,expressionAssociationHistory,expressionEvaluateHistory,httpRequestHistory,httpCompareHistory,httpRepairHistory,quantifiersSimpleHistory,quantifiersNegationHistory,quantifiersNestedHistory,cacheTemporalHistory,cacheSpatialHistory,cacheMappingHistory,recursionSumHistory,recursionTreeHistory,recursionRepairHistory,deadlockCycleHistory,deadlockOrderHistory,deadlockFairnessHistory,supervisedTrainHistory,supervisedEvaluateHistory,supervisedSeparateHistory,ethicsImpactHistory,ethicsQuestionsHistory,ethicsDecisionHistory,versionSnapshotHistory,versionMergeHistory,versionReleaseHistory,performanceSerialHistory,performanceParallelHistory,performanceOverheadHistory,agentRuleHistory,agentObserveHistory,agentRiskHistory,modelingOneHistory,modelingManyHistory,modelingLookupHistory,invariantTraceHistory,invariantProofHistory,invariantCompareHistory,osQueueHistory,osStorageHistory,osAccessHistory,cpuBasicHistory,cpuBranchHistory,cpuDataHistory,matrixShearHistory,matrixRotateHistory,matrixCompareHistory,automataEvenHistory,automataLastHistory,automataBothHistory,objectsIdentityHistory,objectsEncapsulationHistory,objectsInteractionHistory,layersWrapHistory,layersRelayHistory,layersRouteHistory,cryptoEncryptHistory,cryptoDigestHistory,cryptoIntegrityHistory,treeSearchHistory,treeInsertHistory,treeCompareHistory,colorLightHistory,colorFilterHistory,colorCompareHistory,functionalMapHistory,functionalFoldHistory,functionalPipelineHistory,eventsRegisterHistory,eventsToggleHistory,eventsQueueHistory,debugTraceHistory,debugBreakpointHistory,debugRepairHistory,complexityLinearHistory,complexityBinaryHistory,complexityCompareHistory,stringsSplitHistory,stringsReplaceHistory,stringsPipelineHistory,relationHistory,functionHistory,compositionHistory,hashChainHistory,hashLinearHistory,hashDeletionHistory,sortingInsertionHistory,sortingSelectionHistory,sortingCompareHistory,collectionsListHistory,collectionsMapHistory,collectionsChooseHistory,requirementsInterviewHistory,requirementsStoryHistory,requirementsAgreementHistory,statsFrequencyHistory,statsCenterHistory,statsSpreadHistory,vectorAddHistory,vectorScaleHistory,vectorBasisHistory,integerUnsignedHistory,integerReadingHistory,integerAdditionHistory,probabilityWeatherHistory,probabilityDrawsHistory,probabilityReportsHistory,privacySafeguardsHistory,privacyCollectionHistory,privacyIdentityHistory,conflictHistory,layersHistory,offlineHistory,recoveryHistory,copiesHistory,pipelineHistory,regressionHistory,boundaryHistory,validationHistory,countHistory,joinHistory,lockHistory,resampleHistory,imageFitHistory,imagePixelsHistory,typeToolsHistory,typeRecordHistory,typeBranchHistory,forecastHistory,forecastErrorsHistory,accessibilityHistory,usabilityHistory,worldFinaleSeen,worldFinaleFrom,worldFinaleSelection,storyClimaxHistory,storyClimaxComplete,storyClimaxNoticeSeen,cityFestivalSeen,mountainEndingSeen,mountainCrossingSeen,valleyEndingSeen,searchHistory,recordHistory,flowerProgram,flowerCase,flowerShown,flowerStarted,swapProgram,swapCase,swapShown,swapStarted,nameHistory,queueHistory,accessHistory,pathsHistory,tablesHistory,integrityHistory,schedulingHistory,pagesHistory,newActive,newDrafts,newSelections,fourActive,fourDrafts,fourSelections,fourFestivalSeen,fourFestivalFrom,mapVisited,legacyUnlocked,forgeStationActive,forgeStationDrafts,forgeStationSeen,towerGateActive,towerGateDrafts,towerGateSeen,travelFrom,place:restoredPlace,program:[...saved.program],executed:saved.executed,forestProgram:[...forestProgram],forestExecuted,completed:[...completed],drafts,activeQuest,citySort:[...citySort],cityQueue:[...cityQueue],cityQuest,cityFrom,announced:[...announced],harborRoute:[...harborRoute],midActive,midDrafts,bridgeOpen,bridgeFrom,mountainActive,mountainRoutes,expansionActive,expansionDrafts};
   }
 }catch{saveProtected=true;}
 try{
@@ -358,6 +377,8 @@ function choices(){
   app.querySelectorAll('[data-encounter]').forEach(button=>button.onclick=()=>{state.activeQuest=button.dataset.encounter;show('encounter');});
   app.querySelector('#travel')?.addEventListener('click',()=>show('travel'));
   app.querySelector('#title')?.addEventListener('click',title);
+  const opening=document.createElement('button');opening.id='opening-replay';opening.textContent='工房に灯りを届ける';opening.onclick=()=>show('quest');app.querySelector('#outside').parentElement.append(opening);
+  setupMidQuestNavigation('workshop');
 }
 function flowerLab(){
  state.flowerProgram??=[];state.flowerCase??=0;state.flowerShown??=0;state.flowerStarted??=false;
@@ -429,11 +450,13 @@ function travel(){
  const from=state.travelFrom??'choices';
  const fromName=({garden:fourRegions.garden.name,observatory:fourRegions.observatory.name,tailor:fourRegions.tailor.name,guide:fourRegions.guide.name,'four-result':fourRegions[fourQuests[state.fourActive]?.region]?.name,'four-festival':fourRegions[state.fourFestivalFrom??'garden'].name,choices:'工房',talk:'工房',river:'水辺の村',city:'灯花の街',harbor:'風の港町','harbor-result':'風の港町','mid-archive':'森の文庫','mid-windmill':'風車の里','mid-result':state.midActive&&midQuests[state.midActive]?.region==='windmill'?'風車の里':'森の文庫','mid-bridge':'橋',mountain:'山の中継所','mountain-result':'山の中継所','mountain-ending':'山の中継所','mountain-crossing':'山の中継所',valley:'谷の記録所','valley-ending':'谷の記録所','expansion-result':state.expansionActive&&expansionQuests[state.expansionActive]?.region==='valley'?'谷の記録所':'山の中継所',sky:'空の中継塔',mist:'霧の関所','tower-gate-result':state.towerGateActive&&towerGateQuests[state.towerGateActive]?.region==='tower'?'空の中継塔':'霧の関所','tower-gate-ending':'谷の記録所',forge:'星鉄の鍛冶街',station:'風待ちの駅','forge-station-result':state.forgeStationActive&&forgeStationQuests[state.forgeStationActive]?.region==='forge'?'星鉄の鍛冶街':'風待ちの駅','forge-station-ending':'風待ちの駅'})[from]??'工房';
  const options=availableTravelPlaces(state),expanded=!!state.storyClimaxComplete,current=options.find(p=>p.name===fromName||p.id==='workshop'&&fromName==='工房'),visited=state.mapVisited??[];
- app.innerHTML=`<section class="scene travel-scene"><h1>旅先を選ぶ</h1><p>今いる場所：${fromName}</p><p>地図で行き先を選ぶと、その場所の様子が見られます。旅に出るときは「ここへ旅立つ」を押しましょう。各地のお手伝いを重ねると、新しい旅先からも知らせが届きます。</p>${warning()}<div class="travel-toolbar"><span id="travel-zoom-label" aria-live="polite">地図全体</span><div><button id="travel-zoom-out" disabled>縮小 −</button><button id="travel-zoom-in">拡大 ＋</button></div></div><div id="travel-window" class="travel-window" tabindex="0" aria-label="旅先の地図。拡大時はスクロールできます"><div class="travel-map ${expanded?'is-expanded':''}" role="group" aria-label="行ける場所">${options.map(p=>{const here=p.id===current?.id,news=travelNotice(p.id,state),fresh=!visited.includes(p.id),tags=[here?'現在地':'',fresh?'はじめて':'',news?'新しい知らせ':''].filter(Boolean);return `<button class="travel-place ${here?'is-current':''}" style="--x:${p.x}%;--y:${expanded&&!fourRegionIds.includes(p.id)?p.y*.7:p.y}%;--mx:${p.mx}%;--my:${expanded&&!fourRegionIds.includes(p.id)?p.my*.7:p.my}%" data-travel-place="${p.id}" aria-label="${p.name}${tags.length?'、'+tags.join('、'):''}"><img src="./data/art/travel-${p.id}.webp" alt=""><span class="travel-place-name">${p.name}</span>${tags.length?`<span class="travel-tags">${tags.map(t=>`<span class="travel-tag">${t}</span>`).join('')}</span>`:''}</button>`}).join('')}</div></div><p>拡大した地図は指やスクロールバーで動かせます。</p><div class="actions"><button id="back">${fromName}にとどまる</button></div><dialog id="travel-dialog" aria-labelledby="travel-dialog-title"><div id="travel-detail"></div></dialog></section>`;
+ const endgameAvailable=!!state.storyClimaxComplete&&festivalReady(state.completed);
+ const mapCompletion={windmill:windmillQuestGroups(state.completed,endgameAvailable).every(group=>group.complete),archive:archiveQuestGroups(state.completed,endgameAvailable).every(group=>group.complete),mountain:mountainQuestGroups(state.completed).every(group=>group.complete),valley:valleyQuestGroups(state.completed,endgameAvailable).every(group=>group.complete),forge:forgeStationQuestGroups('forge',state.completed,endgameAvailable).every(group=>group.complete),station:forgeStationQuestGroups('station',state.completed,endgameAvailable).every(group=>group.complete),sky:towerGateQuestGroups('sky',state.completed,endgameAvailable).every(group=>group.complete),mist:towerGateQuestGroups('mist',state.completed,endgameAvailable).every(group=>group.complete),tailor:lateRegionQuestGroups('tailor',state.completed,endgameAvailable).every(group=>group.complete),guide:lateRegionQuestGroups('guide',state.completed,endgameAvailable).every(group=>group.complete),garden:lateRegionQuestGroups('garden',state.completed,endgameAvailable).every(group=>group.complete),observatory:lateRegionQuestGroups('observatory',state.completed,endgameAvailable).every(group=>group.complete),harbor:harborQuestGroups(state.completed,endgameAvailable).every(group=>group.complete),river:riverQuestGroups(state.completed,endgameAvailable).every(group=>group.complete),city:cityQuestGroups(state.completed,endgameAvailable).every(group=>group.complete),workshop:workshopQuestGroups(state.completed,endgameAvailable,state.executed).every(group=>group.complete)};
+ app.innerHTML=`<section class="scene travel-scene"><h1>地図</h1><p>今いる場所：${fromName}</p><p>地図で場所を選ぶと、その場所の様子が見られます。移動するときは「ここへ移動」を押しましょう。</p>${warning()}<div class="travel-toolbar"><span id="travel-zoom-label" aria-live="polite">地図全体</span><div><button id="travel-zoom-out" disabled>縮小 −</button><button id="travel-zoom-in">拡大 ＋</button></div></div><div id="travel-window" class="travel-window" tabindex="0" aria-label="旅先の地図。拡大時はスクロールできます"><div class="travel-map ${expanded?'is-expanded':''}" role="group" aria-label="行ける場所">${options.map(p=>{const here=p.id===current?.id,news=travelNotice(p.id,state),fresh=!visited.includes(p.id),complete=!!mapCompletion[p.id],tags=[here?'現在地':'',fresh?'はじめて':'',news?'新しい知らせ':''].filter(Boolean);return `<button class="travel-place ${here?'is-current':''}" style="--x:${p.x}%;--y:${expanded&&!fourRegionIds.includes(p.id)?p.y*.7:p.y}%;--mx:${p.mx}%;--my:${expanded&&!fourRegionIds.includes(p.id)?p.my*.7:p.my}%" data-travel-place="${p.id}" aria-label="${p.name}${complete?'、依頼をすべて達成':''}${tags.length?'、'+tags.join('、'):''}"><img src="./data/art/travel-${p.id}.webp" alt=""><span class="travel-place-name">${complete?'<span aria-hidden="true">✓ </span>':''}${p.name}</span>${tags.length?`<span class="travel-tags">${tags.map(t=>`<span class="travel-tag">${t}</span>`).join('')}</span>`:''}</button>`}).join('')}</div></div>${Object.values(mapCompletion).some(Boolean)?'<p>✓ は、その場所の依頼をすべて達成した印です。</p>':''}<p>拡大した地図は指やスクロールバーで動かせます。</p><div class="actions"><button id="back">← ${fromName}へ戻る</button></div><dialog id="travel-dialog" aria-labelledby="travel-dialog-title"><div id="travel-detail"></div></dialog></section>`;
  const map=app.querySelector('.travel-map'),windowEl=app.querySelector('#travel-window'),dialog=app.querySelector('#travel-dialog'),detail=app.querySelector('#travel-detail');let zoom=1;
  const setZoom=value=>{zoom=Math.max(1,Math.min(2,value));map.style.width=`${zoom*100}%`;map.style.zoom=zoom;windowEl.classList.toggle('is-zoomed',zoom>1);app.querySelector('#travel-zoom-label').textContent=zoom===1?'地図全体':`拡大 ${Math.round(zoom*100)}%`;app.querySelector('#travel-zoom-out').disabled=zoom===1;app.querySelector('#travel-zoom-in').disabled=zoom===2;if(zoom===1){windowEl.scrollLeft=0;windowEl.scrollTop=0;}};
  app.querySelector('#travel-zoom-out').onclick=()=>setZoom(zoom-.5);app.querySelector('#travel-zoom-in').onclick=()=>setZoom(zoom+.5);app.querySelector('#back').onclick=()=>show(from);
- app.querySelectorAll('[data-travel-place]').forEach(button=>button.onclick=()=>{const p=options.find(place=>place.id===button.dataset.travelPlace),here=p.id===current?.id,news=travelNotice(p.id,state);detail.innerHTML=`<img class="travel-detail-image" src="./data/art/${p.image}" alt="${p.name}の風景"><h2 id="travel-dialog-title">${p.name}</h2><p>${p.description}</p>${!visited.includes(p.id)?'<p>初めて訪れる場所です。</p>':''}${news?`<p class="travel-news"><strong>新しい知らせ</strong><br>${news}</p>`:''}<div class="actions">${here?'<p>今いる場所です。</p>':'<button id="travel-depart" class="primary">ここへ旅立つ</button>'}<button id="travel-close">地図に戻る</button><button id="travel-stay">${fromName}にとどまる</button></div>`;dialog.showModal();detail.querySelector('#travel-depart')?.addEventListener('click',()=>{dialog.close();show(p.target)});detail.querySelector('#travel-close').onclick=()=>dialog.close();detail.querySelector('#travel-stay').onclick=()=>{dialog.close();show(from)};});
+ app.querySelectorAll('[data-travel-place]').forEach(button=>button.onclick=()=>{const p=options.find(place=>place.id===button.dataset.travelPlace),here=p.id===current?.id,news=travelNotice(p.id,state);detail.innerHTML=`<img class="travel-detail-image" src="./data/art/${p.image}" alt="${p.name}の風景"><h2 id="travel-dialog-title">${p.name}</h2><p>${p.description}</p>${!visited.includes(p.id)?'<p>初めて訪れる場所です。</p>':''}${news?`<p class="travel-news"><strong>新しい知らせ</strong><br>${news}</p>`:''}<div class="actions">${here?'<p>今いる場所です。</p>':'<button id="travel-depart" class="primary">ここへ移動</button>'}<button id="travel-close">← 地図に戻る</button></div>`;dialog.showModal();detail.querySelector('#travel-depart')?.addEventListener('click',()=>{dialog.close();show(p.target)});detail.querySelector('#travel-close').onclick=()=>dialog.close();});
 }
 
 function river(){
@@ -442,11 +465,22 @@ function river(){
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['river-type-tools','river-type-record'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>水門に届いた新しい依頼</h2><p>水門で使う札と道具を確かめましょう。</p><div class="actions"><button id="type-tools">札を道具に合わせる${state.completed.includes('river-type-tools')?'（達成済み）':''}</button><button id="type-record">水門の点検票を作る${state.completed.includes('river-type-record')?'（達成済み）':''}</button>${ready?`<button id="type-branch">型を調べる時を比べる${state.completed.includes('river-type-branch')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つのお手伝いを終えると、水門の点検に新しい依頼が届きます。</p>'}`;app.querySelector('h1').after(section);for(const [button,key,place] of [['type-tools','typeToolsHistory','river-type-tools'],['type-record','typeRecordHistory','river-type-record'],['type-branch','typeBranchHistory','river-type-branch']])section.querySelector(`#${button}`)?.addEventListener('click',()=>{state[key]??=[];show(place);});}
   bindNewButtons();bindAdvice('river','nono');app.querySelector('#travel').onclick=()=>show('travel');
   app.querySelector('#help').onclick=()=>{state.activeQuest='river';show('encounter');};app.querySelector('#back').onclick=()=>show('choices');
+  const actions=app.querySelector('#help').parentElement,heading=document.createElement('h2'),travelHeading=document.createElement('h2'),travelActions=document.createElement('div');
+  heading.textContent='お手伝い';actions.before(heading);travelHeading.textContent='移動';travelActions.className='actions';travelActions.append(app.querySelector('#travel'));actions.after(travelHeading,travelActions);
+  setupMidQuestNavigation('river');
 }
 function city(){
   const festival=cityQuestIds.some(id=>state.completed.includes(id));
   app.innerHTML=`<section class="scene city-scene"><img src="./data/art/festival-city.png" alt="旗や灯りで飾られた街の広場"><h1>灯花の街</h1><p>人と精霊が行き交う街では、灯花祭の準備が進んでいます。市場には品物が並び、ギルドには荷物が届いています。</p>${dialogue('nono','わあ、にぎやか！ どこに行ってみよう？')}${warning()}<div class="actions"><button id="guild">冒険者ギルドへ</button><button id="market">市場へ</button>${festival?'<button id="festival">祭りの準備を見る</button>':''}<button id="travel">旅先を選ぶ</button><button id="back">工房へ戻る</button></div></section>`;
   app.querySelector('#travel').onclick=()=>show('travel');app.querySelector('#guild').onclick=()=>show('city-guild');app.querySelector('#market').onclick=()=>show('city-market');app.querySelector('#festival')?.addEventListener('click',()=>show('city-festival'));app.querySelector('#back').onclick=()=>show('choices');
+  const actions=app.querySelector('#guild').parentElement,heading=document.createElement('h2'),travelHeading=document.createElement('h2'),travelActions=document.createElement('div');
+  heading.textContent='お手伝い';actions.before(heading);travelHeading.textContent='移動';travelActions.className='actions';travelActions.append(app.querySelector('#travel'));actions.after(travelHeading,travelActions);
+  const festivalButton=app.querySelector('#festival');if(festivalButton){const h=document.createElement('h2');h.textContent='灯花祭の準備';if(state.cityFestivalSeen)festivalButton.hidden=true;heading.before(h,festivalButton);}
+  if(state.storyClimaxComplete&&festivalReady(state.completed)){
+   const ready=['city-sorting-insertion','city-sorting-selection'].every(id=>state.completed.includes(id));
+   for(const kind of ['insertion','selection',...(ready?['compare']:[])]){const button=document.createElement('button');button.dataset.cityMenuQuest=`city-sorting-${kind}`;button.textContent={insertion:'札を挿し入れて並べる',selection:'小さい札を選んで並べる',compare:'二つの並べ方を比べる'}[kind];button.onclick=()=>{const key={insertion:'sortingInsertionHistory',selection:'sortingSelectionHistory',compare:'sortingCompareHistory'}[kind];state[key]??=[];show(`city-sorting-${kind}`);};actions.append(button);}
+  }
+  setupMidQuestNavigation('city');
 }
 function cityPerson(place){
   const guild=place==='city-guild',speaker=guild?'mina':'sara',name=guild?'ミナ':'サラ',role=guild?'ギルドの受付と荷物の担当':'市場で品物を扱う商人';
@@ -485,6 +519,7 @@ function cityResult(){
   app.querySelector('#festival').onclick=()=>show('city-festival');app.querySelector('#back').onclick=()=>show('city');
 }
 function cityFestival(){
+  if(!state.cityFestivalSeen){state.cityFestivalSeen=true;persist();}
   const sorted=state.completed.includes('city-sort'),delivered=state.completed.includes('city-queue');
   app.innerHTML=`<section class="scene"><img src="./data/art/festival-city.png" alt="灯りと旗で飾られた街の広場"><h1>灯花祭の準備</h1><p>広場には、色とりどりの灯りと旗が飾られています。人と精霊が一緒に、祭りの日を楽しみにしています。</p>${sorted?dialogue('sara','並べてくれた品札のおかげで、屋台の準備が進んだわ。ありがとう。'):''}${delivered?dialogue('mina','届けてくれた荷物の飾りも、広場に並べられたよ。ありがとう！'):''}${dialogue('nono','みんなで準備すると、祭りがもっと楽しみになるね！')}<p>祭りの準備は続きます。旅をしながら、ほかの土地へも出かけられます。</p>${warning()}<button id="back" class="primary">街へ戻る</button></section>`;app.querySelector('#back').onclick=()=>show('city');
 }
@@ -496,6 +531,9 @@ function harbor(){
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['harbor-performance-serial','harbor-performance-parallel'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>荷物の時間を調べる依頼</h2><p>レンと荷物の数え方や分担を考えましょう。</p><div class="actions"><button id="performance-serial">一人で荷物を数える${state.completed.includes('harbor-performance-serial')?'（達成済み）':''}</button><button id="performance-parallel">二人と三人で分担する${state.completed.includes('harbor-performance-parallel')?'（達成済み）':''}</button>${ready?`<button id="performance-overhead">調整時間も入れて比べる${state.completed.includes('harbor-performance-overhead')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つのお手伝いを終えると、調整について相談が届きます。</p>'}`;app.querySelector('h1').after(section);for(const kind of ['serial','parallel','overhead'])section.querySelector(`#performance-${kind}`)?.addEventListener('click',()=>{const key={serial:'performanceSerialHistory',parallel:'performanceParallelHistory',overhead:'performanceOverheadHistory'}[kind];state[key]??=[];show(`harbor-performance-${kind}`);});}
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['harbor-count','harbor-join'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>港に届いた新しい依頼</h2><p>二人の作業と、知らせをまとめる順番を確かめましょう。</p><div class="actions"><button id="count-lab">荷数の札を調べる${state.completed.includes('harbor-count')?'（達成済み）':''}</button><button id="join-lab">二つの知らせを待つ${state.completed.includes('harbor-join')?'（達成済み）':''}</button>${ready?`<button id="lock-lab">荷数の札を鍵で守る${state.completed.includes('harbor-lock')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つのお手伝いを終えると、荷数を守る新しい依頼が届きます。</p>'}`;app.querySelector('h1').after(section);for(const [button,key,place] of [['count-lab','countHistory','harbor-count'],['join-lab','joinHistory','harbor-join'],['lock-lab','lockHistory','harbor-lock']])section.querySelector(`#${button}`)?.addEventListener('click',()=>{state[key]??=[];show(place);});}
   bindNewButtons();app.querySelector('#help').onclick=()=>show('harbor-quest');app.querySelector('#back').onclick=()=>show('travel');
+  const actions=app.querySelector('#help').parentElement,heading=document.createElement('h2'),travelHeading=document.createElement('h2'),travelActions=document.createElement('div');
+  heading.textContent='お手伝い';actions.before(heading);travelHeading.textContent='移動';travelActions.className='actions';const travel=app.querySelector('#back');travel.id='travel';travel.textContent='地図を開く';travelActions.append(travel);actions.after(travelHeading,travelActions);
+  setupMidQuestNavigation('harbor');
 }
 function harborQuest(){
   const route=state.harborRoute,current=route.at(-1)??'port',next=harborNext(route),done=harborDelivered(route);
@@ -534,6 +572,142 @@ function midRegion(region){
   app.querySelector('#bridge')?.addEventListener('click',()=>{state.bridgeFrom=region;show('mid-bridge');});
   app.querySelector('#cross')?.addEventListener('click',()=>show(archive?'mid-windmill':'mid-archive'));
   app.querySelector('#travel').onclick=()=>show('travel');
+  setupMidQuestNavigation(region);
+}
+
+// Keep the existing quest handlers and save format while offering a smaller menu.
+function setupMidQuestNavigation(region){
+ const workshopRegion=region==='workshop',cityRegion=region==='city',riverRegion=region==='river',harborRegion=region==='harbor',late=fourRegionIds.includes(region),mountain=region==='mountain',valley=region==='valley',towerGate=region==='sky'||region==='mist',forgeStation=region==='forge'||region==='station',scene=app.querySelector(mountain||valley||forgeStation||towerGate||late||harborRegion||riverRegion||cityRegion||workshopRegion?'.scene':'.mid-scene'),archive=region==='archive';
+ const placeName=late?fourRegions[region].name:workshopRegion?'精霊の工房':cityRegion?'灯花の街':riverRegion?'水辺の村':harborRegion?'風の港町':mountain?'山の中継所':valley?'谷の記録所':region==='sky'?'空の中継塔':region==='mist'?'霧の関所':region==='forge'?'星鉄の鍛冶街':region==='station'?'風待ちの駅':archive?'森の文庫':'風車の里';
+ const endgameAvailable=!!state.storyClimaxComplete&&festivalReady(state.completed);
+ const groups=workshopRegion?workshopQuestGroups(state.completed,endgameAvailable,state.executed):cityRegion?cityQuestGroups(state.completed,endgameAvailable):riverRegion?riverQuestGroups(state.completed,endgameAvailable):harborRegion?harborQuestGroups(state.completed,endgameAvailable):late?lateRegionQuestGroups(region,state.completed,endgameAvailable):mountain?mountainQuestGroups(state.completed):towerGate?towerGateQuestGroups(region,state.completed,endgameAvailable):forgeStation?forgeStationQuestGroups(region,state.completed,endgameAvailable):(valley?valleyQuestGroups:archive?archiveQuestGroups:windmillQuestGroups)(state.completed,endgameAvailable);
+ const windmillSource={
+  'windmill-lamp':'[data-mid-quest="windmill-lamp"]',
+  'windmill-order':'[data-mid-quest="windmill-order"]',
+  'windmill-signals':'[data-new-quest="windmill-signals"]',
+  'windmill-copies':'#copies-lab','windmill-pipeline':'#pipeline-lab','windmill-recovery':'#recovery-lab',
+  'windmill-rle-encode':'#rle-encode','windmill-rle-decode':'#rle-decode','windmill-rle-compare':'#rle-compare'
+ };
+ const source=workshopRegion?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,id==='workshop-opening'?'#opening-replay':id==='forest'?'#outside':id==='branch'||id==='loop'?`[data-encounter="${id}"]`:id==='workshop-steps'?`[data-new-quest="${id}"]`:id==='workshop-flower-lab'?'#flower-lab':`#${id.slice('workshop-'.length)}`])):cityRegion?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,id==='city-sort'?'#market':id==='city-queue'?'#guild':`[data-city-menu-quest="${id}"]`])):riverRegion?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,id==='river'?'#help':id==='river-signals'?`[data-new-quest="${id}"]`:`#${id.slice('river-'.length)}`])):harborRegion?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,id==='harbor-message'?'#help':id==='harbor-parallel'?`[data-new-quest="${id}"]`:({'harbor-count':'#count-lab','harbor-join':'#join-lab','harbor-lock':'#lock-lab'}[id]??`#${id.slice('harbor-'.length)}`)])):late?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,fourQuests[id]?`[data-four-quest="${id}"]`:newEntrances[id]?`[data-new-quest="${id}"]`:({'tailor-boundary':'#boundary-lab','tailor-validation':'#validation-lab','tailor-regression':'#regression-lab','observatory-layers':'#layers-lab','observatory-offline':'#offline-lab','observatory-conflict':'#conflict-lab','observatory-errors-lab':'#forecast-errors-lab'}[id]??`#${id.slice(region.length+1)}`)])):towerGate?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,towerGateQuests[id]?`[data-tg-quest="${id}"]`:`#${id.slice(id.indexOf('-')+1)}`])):forgeStation?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,forgeStationQuests[id]?`[data-fs-quest="${id}"]`:id==='station-sharing'?`[data-new-quest="${id}"]`:id==='station-schedule-lab'?'#scheduling-lab':`#${id.slice(region.length+1)}`])):valley?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,id.startsWith('data-')?`[data-expansion="${id}"]`:id==='valley-records'?`[data-new-quest="${id}"]`:({'valley-query-lab':'#record-lab','valley-tables-lab':'#tables-lab','valley-integrity-lab':'#integrity-lab'}[id]??`#${id.slice('valley-'.length)}`)])):mountain?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,id.startsWith('mountain-')?`[data-mountain-quest="${id}"]`:`[data-expansion="${id}"]`])):archive?Object.fromEntries(groups.flatMap(g=>g.quests).map(id=>[id,id==='archive-search'||id==='archive-filter'?`[data-mid-quest="${id}"]`:id==='archive-searches'?`[data-new-quest="${id}"]`:id==='archive-search-lab'?'#search-lab':`#${id.slice('archive-'.length)}`])):windmillSource;
+ const buttons=Object.fromEntries(Object.entries(source).map(([id,selector])=>[id,scene.querySelector(selector)]));
+ const descriptions={
+  'windmill-lamp':'橋の安全を知らせる灯りを直します。',
+  'windmill-order':'橋の道具を使う順番を考えます。',
+  'windmill-signals':'橋と合図に応じた灯りの動きを確かめます。',
+  'windmill-copies':'知らせの三枚の控えを比べます。',
+  'windmill-pipeline':'二つの作業台で仕事を進めます。',
+  'windmill-recovery':'灯りの知らせを確かめて立て直します。',
+  'windmill-rle-encode':'続く色を短い札にまとめます。',
+  'windmill-rle-decode':'札から元の模様を戻します。',
+  'windmill-rle-compare':'まとめた札の長さを比べます。'
+ };
+ if(workshopRegion){for(const [id,button] of Object.entries(buttons))if(button)descriptions[id]=({'workshop-opening':'ノノに順番を伝えて灯りを工房へ届けます。','forest':'森の入口で薬草の届けものを手伝います。','branch':'木立の道を通って旅人に荷物を届けます。','loop':'工房の水路に灯りを届けます。'}[id]??(newEntrances[id]?.goal?`${newEntrances[id].goal}。`:button.closest('section.panel')?.querySelector(':scope > p')?.textContent??'工房の仕掛けを調べます。'));}
+ if(cityRegion){const detail={'city-sort':'市場で品札を順番に並べます。','city-queue':'ギルドで荷物を届いた順に運びます。','city-sorting-insertion':'札を挿し入れて並べる方法を調べます。','city-sorting-selection':'小さい札から選んで並べます。','city-sorting-compare':'二つの並べ方を比べます。'};Object.assign(descriptions,detail);}
+ if(riverRegion){for(const [id,button] of Object.entries(buttons))if(button)descriptions[id]=id==='river'?'水かさが違う日にも水辺の道を照らします。':newEntrances[id]?.goal?`${newEntrances[id].goal}。`:button.closest('section.panel')?.querySelector(':scope > p')?.textContent??'水辺の道具を確かめます。';}
+ if(harborRegion){for(const [id,button] of Object.entries(buttons))if(button)descriptions[id]=id==='harbor-message'?'旅人の家族へ無事を知らせます。':newEntrances[id]?.goal?`${newEntrances[id].goal}。`:button.closest('section.panel')?.querySelector(':scope > p')?.textContent??'港の作業を手伝います。';}
+ if(late){for(const [id,button] of Object.entries(buttons))if(button)descriptions[id]=(fourQuests[id]??newEntrances[id])?.goal?`${(fourQuests[id]??newEntrances[id]).goal}。`:button.closest('section.panel')?.querySelector(':scope > p')?.textContent??'相談を確かめます。';}
+ if(towerGate){for(const [id,button] of Object.entries(buttons))if(button)descriptions[id]=towerGateQuests[id]?.goal?`${towerGateQuests[id].goal}。`:button.closest('section.panel')?.querySelector(':scope > p')?.textContent??'知らせを確かめます。';}
+ if(forgeStation){for(const [id,button] of Object.entries(buttons))if(button)descriptions[id]=forgeStationQuests[id]?.goal?`${forgeStationQuests[id].goal}。`:newEntrances[id]?.goal?`${newEntrances[id].goal}。`:button.closest('section.panel')?.querySelector(':scope > p')?.textContent??'道具と記録を確かめます。';}
+ if(mountain){for(const id of groups.flatMap(g=>g.quests))descriptions[id]=(mountainQuests[id]??expansionQuests[id]).goal+'。';}
+ if(valley){for(const [id,button] of Object.entries(buttons))if(button)descriptions[id]=expansionQuests[id]?.goal?`${expansionQuests[id].goal}。`:newEntrances[id]?.goal?`${newEntrances[id].goal}。`:button.closest('section.panel')?.querySelector(':scope > p')?.textContent??'記録を確かめます。';}
+ if(archive){
+  Object.entries(buttons).forEach(([id,button])=>{if(button)descriptions[id]=button.closest('section.panel')?.querySelector(':scope > p')?.textContent??({
+   'archive-search':'本の記録から必要な番号を探します。','archive-filter':'山に届ける本を選びます。','archive-searches':'番号順の棚から探す範囲をしぼります。'
+  }[id]??'文庫で記録を整えます。');});
+ }
+ const originalHeading=[...scene.querySelectorAll('h2')].find(h=>h.textContent===(workshopRegion?'近くのお手伝い':mountain?'山道をたどる依頼':valley?'荷物と記録のお手伝い':'お手伝い'));
+ const oldCount=forgeStation?originalHeading?.nextElementSibling:null;
+ const originalActions=forgeStation?oldCount?.nextElementSibling:originalHeading?.nextElementSibling;
+ if(!originalHeading||!originalActions)return;
+ originalHeading.hidden=true;originalActions.hidden=true;if(oldCount)oldCount.hidden=true;
+ if(mountain){const searchHeading=[...scene.querySelectorAll('h2')].find(h=>h.textContent==='道の調べ方を学ぶ依頼');if(searchHeading){searchHeading.hidden=true;searchHeading.nextElementSibling.hidden=true;}}
+ for(const button of Object.values(buttons))button?.closest('section.panel')?.setAttribute('hidden','');
+ const travelHeading=[...scene.querySelectorAll('h2')].find(h=>h.textContent==='旅立ち');
+ if(travelHeading)travelHeading.textContent='移動';
+ const travelButton=scene.querySelector('#travel');if(travelButton)travelButton.textContent='地図を開く';
+ const crossButton=scene.querySelector('#cross');if(crossButton)crossButton.hidden=true;
+ const oldInstruction=[...scene.querySelectorAll('p')].find(p=>p.textContent===(mountain||valley?'手伝いたいことを選びましょう。どれからでも取り組めます。':'手伝いたいことを選びましょう。もう一方も後から選べます。'));
+ oldInstruction?.remove();
+ const entry=document.createElement('section');
+ const allComplete=groups.every(g=>g.complete),remaining=groups.reduce((n,g)=>n+g.remaining,0);
+ entry.innerHTML=`<h2>依頼</h2><button class="quest-nav-card" id="${region}-open-quests">${allComplete?'✓ ':''}依頼を見る${allComplete?'':remaining?`<span>受けられる未達成の依頼：${remaining}件</span>`:'<span>今受けられる依頼はありません</span>'}</button>`;
+ if(allComplete){entry.querySelector('button').setAttribute('aria-label','依頼を見る、すべて達成済み');entry.querySelector('button').classList.add('is-complete');}
+ originalHeading.before(entry);
+ const bridgeButton=scene.querySelector('#bridge');
+ if(bridgeButton){const actions=bridgeButton.parentElement;const heading=actions.previousElementSibling;entry.before(heading,actions);}
+ if(region==='garden'){const basicHeading=[...scene.querySelectorAll('h2')].find(h=>h.textContent==='庭で学ぶ：離散数学の基礎');basicHeading?.closest('section.panel')?.setAttribute('hidden','');}
+ if(late){const heading=[...scene.querySelectorAll('h2')].find(h=>h.textContent==='祭りへの準備');if(heading){let next=heading.nextElementSibling;entry.before(heading);while(next&&next.tagName!=='H2'){const following=next.nextElementSibling;entry.before(next);next=following;}if(state.fourFestivalSeen)scene.querySelector('#four-festival')?.setAttribute('hidden','');}}
+ if(towerGate){const milestoneHeading=[...scene.querySelectorAll('h2')].find(h=>h.textContent==='つながった知らせ');if(milestoneHeading){const message=milestoneHeading.nextElementSibling,actions=message?.nextElementSibling;entry.before(milestoneHeading,message,actions);}}
+ if(forgeStation){const milestoneHeading=[...scene.querySelectorAll('h2')].find(h=>h.textContent==='待つ土地への届け物');if(milestoneHeading){const message=milestoneHeading.nextElementSibling,actions=message?.nextElementSibling?.classList.contains('actions')?message.nextElementSibling:null;entry.before(milestoneHeading,message);if(actions)entry.before(actions);}}
+ if(mountain||valley){const historyHeading=[...scene.querySelectorAll('h2')].find(h=>h.textContent==='これまでの出来事');if(historyHeading){const actions=historyHeading.nextElementSibling;historyHeading.textContent=mountain?'山からの知らせ':'谷からの知らせ';if(mountain&&state.mountainEndingSeen)actions.querySelector('#ending')?.setAttribute('hidden','');if(mountain&&state.mountainCrossingSeen)actions.querySelector('#crossing')?.setAttribute('hidden','');if(valley&&state.valleyEndingSeen)actions.querySelector('#ending')?.setAttribute('hidden','');entry.before(historyHeading,actions);}}
+ const eventTitles=new Set(['橋の出来事','祭りへの準備','つながった知らせ','待つ土地への届け物','山からの知らせ','谷からの知らせ','灯花祭の準備']);
+ for(const heading of [...scene.children].filter(el=>el.tagName==='H2'&&eventTitles.has(el.textContent))){
+  const event=document.createElement('div');event.className='region-story-event';heading.before(event);
+  const title=document.createElement('h3');title.textContent=heading.textContent;heading.replaceWith(title);event.append(title);
+  let next=event.nextElementSibling;while(next&&next!==entry&&next.tagName!=='H2'&&!next.classList.contains('region-story-event')){const following=next.nextElementSibling;event.append(next);next=following;}
+ }
+ const panel=document.createElement('section');panel.className='scene windmill-quest-menu';panel.hidden=true;app.append(panel);
+ let groupPage=0;
+ function openMenu(groupId,page=groupPage){
+  if(!groupId)groupPage=page;
+  const group=groups.find(g=>g.id===groupId);
+  scene.hidden=true;
+  // Hide notices outside the scene while the temporary selection screen is open.
+  const others=[...app.children].filter(el=>el!==scene&&el!==panel);
+  others.forEach(el=>el.hidden=true);
+  panel.hidden=false;
+  if(!group){
+   panel.innerHTML=`<h1>${placeName}の依頼</h1><p>手伝いたいことを選びましょう。</p><p>✓ は、その種類の依頼をすべて達成した印です。</p><div class="quest-nav-list"></div><button id="windmill-menu-back">← ${placeName}へ戻る</button>`;
+   const list=panel.querySelector('.quest-nav-list');
+   const visibleGroups=groups.filter(g=>g.available.length||g.complete),pageSize=5;
+   visibleGroups.slice(groupPage*pageSize,(groupPage+1)*pageSize).forEach(g=>{
+    const button=document.createElement('button');button.className='quest-nav-card'+(g.complete?' is-complete':'');
+    button.textContent=`${g.complete?'✓ ':''}${g.title}`;
+    if(g.complete)button.setAttribute('aria-label',`${g.title}、すべて達成済み`);
+    if(!g.complete){const info=document.createElement('span');info.textContent=g.remaining?`受けられる未達成の依頼：${g.remaining}件`:'今受けられる依頼はありません';button.append(info);}
+    button.onclick=()=>openMenu(g.id);list.append(button);
+   });
+   if(!list.children.length)list.textContent='今受けられる依頼はありません。';
+   if(visibleGroups.length>pageSize){
+    const navigation=document.createElement('nav');navigation.className='actions';navigation.setAttribute('aria-label','依頼の種類のページ');
+    if(groupPage>0){const previous=document.createElement('button');previous.textContent='← 前の種類';previous.onclick=()=>openMenu(null,groupPage-1);navigation.append(previous);}
+    const label=document.createElement('span');label.textContent=`${groupPage+1} / ${Math.ceil(visibleGroups.length/pageSize)}`;navigation.append(label);
+    if((groupPage+1)*pageSize<visibleGroups.length){const next=document.createElement('button');next.textContent='次の種類 →';next.onclick=()=>openMenu(null,groupPage+1);navigation.append(next);}
+    list.after(navigation);
+   }
+   panel.querySelector('#windmill-menu-back').onclick=()=>{panel.hidden=true;scene.hidden=false;others.forEach(el=>el.hidden=false);entry.querySelector('button').focus();};
+  }else{
+   panel.innerHTML=`<h1>${group.title}</h1><p>✓ は達成済みの依頼です。</p><div class="quest-nav-list"></div><button id="windmill-menu-back">← 依頼の種類へ戻る</button>`;
+   const list=panel.querySelector('.quest-nav-list');
+   group.available.forEach(id=>{
+    const original=buttons[id],done=id==='workshop-opening'?state.executed:state.completed.includes(id);
+    if(!original&&!done)return;
+    const button=document.createElement('button');button.className='quest-nav-card'+(done?' is-complete':'');
+    const fallback=legacyQuestTitles[id]??fourQuests[id]?.title??expansionQuests[id]?.title??newEntrances[id]?.title;
+    const questTitle=id==='river'?'水辺の道を照らす':id==='city-sort'?'市場の品札を並べる':id==='city-queue'?'ギルドの荷物を届ける':original?.textContent.replace('（達成済み）','')??fallback;
+    const detail=descriptions[id]??'達成した依頼の記録です。';
+    const title=document.createElement('strong');title.textContent=(done?'✓ ':'')+questTitle;
+    if(done)button.setAttribute('aria-label',`${questTitle}、達成済み。${detail}`);
+    const desc=document.createElement('span');desc.textContent=detail;button.append(title,desc);
+    button.onclick=()=>{
+     if(original){original.click();return;}
+     panel.innerHTML='';const heading=document.createElement('h1');heading.textContent=questTitle;
+     const message=document.createElement('p');message.textContent='この依頼は達成済みです。もう一度挑戦できるようになるまで、冒険を進めましょう。';
+     const back=document.createElement('button');back.textContent='← 依頼の一覧へ戻る';back.onclick=()=>openMenu(group.id);
+     panel.append(heading,message,back);heading.tabIndex=-1;heading.focus();window.scrollTo(0,0);
+    };list.append(button);
+   });
+   if(group.available.length<group.quests.length){
+    const hint=document.createElement('p');
+    const messages=group.available.flatMap(id=>[...(buttons[id]?.closest('section.panel')?.querySelectorAll(':scope > p')??[])]).map(p=>p.textContent);
+    hint.textContent=messages.find(message=>/(二つ|２つ|2つ).*(相談|届|頼)/.test(message))??'この種類の依頼を進めると、新しい相談が届きます。';
+    list.after(hint);
+   }
+   panel.querySelector('#windmill-menu-back').onclick=()=>openMenu();
+  }
+  panel.querySelector('h1').tabIndex=-1;panel.querySelector('h1').focus();window.scrollTo(0,0);
+ }
+ entry.querySelector('button').onclick=()=>openMenu();
 }
 function searchLab(){
  const history=state.searchHistory??[],progress=replaySearch(history),current=searchCases[progress.stage];
@@ -609,6 +783,7 @@ function mountainRegion(){
   app.querySelector('#ending')?.addEventListener('click',()=>show('mountain-ending'));
   bindExpansionButtons();app.querySelector('#crossing')?.addEventListener('click',()=>show('mountain-crossing'));
   app.querySelector('#travel').onclick=()=>show('travel');
+  setupMidQuestNavigation('mountain');
 }
 function mountainQuest(){
   const id=state.mountainActive,quest=mountainQuests[id],route=state.mountainRoutes[id]??(state.mountainRoutes[id]=[]),result=mountainReplay(id,route);
@@ -634,10 +809,12 @@ function mountainResult(){
   app.querySelector('#back').onclick=()=>show('mountain');app.querySelector('#travel').onclick=()=>show('travel');
 }
 function mountainEnding(){
+  if(!state.mountainEndingSeen){state.mountainEndingSeen=true;persist();}
   app.innerHTML=`<section class="scene"><h1>山に知らせが届きました</h1><img src="./data/art/mountain-ending.png" alt="山の中継所で人々と喜ぶソラとノノ"><p>${state.bridgeOpen?'森からの本と、遠くからの知らせが、山の集落にも届きました。':'遠くからの知らせが、山の集落にも届きました。'}山の人たちは、次は向こうの谷へも道をつなぎたいと話しています。</p>${dialogue('sora','いろんな道を一緒に考えられてよかった。山の人たちも喜んでいるよ。ありがとう！')}${dialogue('nono',state.bridgeOpen?'森と里と山がつながったね！ 次はどこへ行けるかな？':'知らせが山の人たちにも届いたね！ 次はどこへ行けるかな？')}${warning()}<div class="actions"><button id="back" class="primary">中継所へ戻る</button><button id="travel">旅先を選ぶ</button></div></section>`;
   app.querySelector('#back').onclick=()=>show('mountain');app.querySelector('#travel').onclick=()=>show('travel');
 }
 function mountainCrossing(){
+  if(!state.mountainCrossingSeen){state.mountainCrossingSeen=true;persist();}
   app.innerHTML=`<section class="scene"><h1>山の先からの知らせ</h1><img src="./data/art/search-compare.png" alt="山の道を示す地図を見るソラとノノ">${dialogue('sora','道を調べる方法が分かったから、山の先にも知らせを届けられるよ。谷の記録所で、荷物の届け先を確かめる手が足りないそうなんだ。')}${dialogue('nono','谷にも困っている人がいるんだね。一緒に行こう！')}<p>山道の先、各地から荷物が集まる谷へ向かいましょう。</p>${warning()}<div class="actions"><button id="valley" class="primary">谷の記録所へ行く</button><button id="back">山の中継所へ戻る</button></div></section>`;
   app.querySelector('#valley').onclick=()=>show('valley');app.querySelector('#back').onclick=()=>show('mountain');
 }
@@ -660,6 +837,7 @@ function valleyRegion(){
    section.querySelector('#record-lab').onclick=()=>{state.recordHistory??=[];show('valley-query-lab');};
    section.querySelector('#tables-lab').onclick=()=>{state.tablesHistory??=[];show('valley-tables-lab');};section.querySelector('#integrity-lab')?.addEventListener('click',()=>{state.integrityHistory??=[];show('valley-integrity-lab');});
   }
+  setupMidQuestNavigation('valley');
 }
 function tablesLab(){
  const history=state.tablesHistory??[],p=replayTables(history),task=tableCases[p.scene],labels={union:'どちらかの名簿にある番号を集める（和）',intersection:'両方の名簿にある番号を集める（共通）',difference:'左にはあり、右にはない番号を集める（左から右を引く差）'};
@@ -739,6 +917,7 @@ function expansionResult(){
   app.innerHTML=`<section class="scene"><h1>${titles[id]}</h1><img src="./data/art/${id}.png" alt="${alts[id]}">${dialogue(speaker,lines[id])}${dialogue('nono','一緒にできてうれしいね！')}<p>${lessons[id]}</p>${warning()}<div class="actions"><button id="back" class="primary">${mountain?'山の中継所':'谷の記録所'}へ戻る</button><button id="travel">旅先を選ぶ</button></div></section>`;app.querySelector('#back').onclick=()=>show(mountain?'mountain':'valley');app.querySelector('#travel').onclick=()=>show('travel');
 }
 function valleyEnding(){
+  if(!state.valleyEndingSeen){state.valleyEndingSeen=true;persist();}
  app.innerHTML=`<section class="scene"><h1>谷から届けものが出発しました</h1><img src="./data/art/valley-ending.png" alt="谷の記録所で荷物を囲んで喜ぶユノとノノ"><p>届け先を確かめた荷物が、山や水辺へ出発します。各地の記録がつながり、待っている人たちへ届ける準備が整いました。</p>${dialogue('yuno','記録を一緒に確かめてくれてありがとう。これなら安心して送り出せるわ！')}${dialogue('nono','山を越えて、みんなのところに届くんだね！')}<div class="actions"><button id="back" class="primary">谷の記録所へ戻る</button><button id="travel">旅先を選ぶ</button></div></section>`;app.querySelector('#back').onclick=()=>show('valley');app.querySelector('#travel').onclick=()=>show('travel');
 }
 function towerGateRegion(place){
@@ -758,6 +937,8 @@ function towerGateRegion(place){
   if(!tower&&state.storyClimaxComplete&&festivalReady(state.completed)){const section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>関所に届いた新しい依頼</h2><p>大切な帳面を守る仕掛けを確かめましょう。</p><div class="actions"><button id="access-lab">本人確認と権限を確かめる${state.completed.includes('gate-access-lab')?'（達成済み）':''}</button><button id="paths-lab">二つの入口を確かめる${state.completed.includes('gate-paths-lab')?'（達成済み）':''}</button></div>`;app.querySelector('h2').before(section);section.querySelector('#access-lab').onclick=()=>{state.accessHistory??=[];show('gate-access-lab');};section.querySelector('#paths-lab').onclick=()=>{state.pathsHistory??=[];show('gate-paths-lab');};}
   app.querySelector('#milestone')?.addEventListener('click',()=>{state.towerGateSeen=true;show('tower-gate-ending');});
   app.querySelector('#travel').onclick=()=>show('travel');
+  if(state.towerGateSeen){const milestone=app.querySelector('#milestone');if(milestone){const message=milestone.parentElement.previousElementSibling;if(message)message.textContent='塔と関所の手がかりを谷に伝えました。';milestone.hidden=true;}}
+  setupMidQuestNavigation(place);
 }
 function accessLab(){
  const history=state.accessHistory??[],p=replayAccess(history),s=accessCases[p.scene],op=s?.operation==='read'?'閲覧':'更新';
@@ -857,6 +1038,8 @@ function forgeStationRegion(place){
  if(!forge&&state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['station-os-queue','station-os-storage'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>駅の共通窓口の依頼</h2><p>ハルと仕事の道具や記録を扱いましょう。</p><div class="actions"><button id="os-queue">印刷の依頼を受け付ける${state.completed.includes('station-os-queue')?'（達成済み）':''}</button><button id="os-storage">記録を保存して読み直す${state.completed.includes('station-os-storage')?'（達成済み）':''}</button>${ready?`<button id="os-access">記録の利用を確かめる${state.completed.includes('station-os-access')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つのお手伝いを終えると、記録の利用について相談が届きます。</p>'}`;app.querySelector('h2').before(section);for(const kind of ['queue','storage','access'])section.querySelector(`#os-${kind}`)?.addEventListener('click',()=>{const key={queue:'osQueueHistory',storage:'osStorageHistory',access:'osAccessHistory'}[kind];state[key]??=[];show(`station-os-${kind}`);});}
  if(!forge&&state.storyClimaxComplete&&festivalReady(state.completed)){const section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>駅に届いた新しい依頼</h2><p>仕事の進め方を比べましょう。</p><button id="scheduling-lab">仕事の順番を比べる${state.completed.includes('station-schedule-lab')?'（達成済み）':''}</button>`;app.querySelector('h2').before(section);section.querySelector('#scheduling-lab').onclick=()=>{state.schedulingHistory??=[];show('station-schedule-lab');};}
  app.querySelector('#milestone')?.addEventListener('click',()=>{state.forgeStationSeen=true;show('forge-station-ending');});app.querySelector('#travel').onclick=()=>show('travel');
+ if(state.forgeStationSeen){const milestone=app.querySelector('#milestone');if(milestone){const message=milestone.parentElement.previousElementSibling;if(message)message.textContent='道具は待つ土地へ送り出しました。';milestone.hidden=true;}}
+ setupMidQuestNavigation(region);
 }
 function schedulingLab(){
  const history=state.schedulingHistory??[],p=replayScheduling(history),task=schedulingCases[p.scene],plan=task?planSchedule(task):null,step=plan?.steps[p.step];
@@ -939,7 +1122,7 @@ function fourRegion(region){
  const r=fourRegions[region],person=fourPeople[region],count=festivalProgress(state.completed)[region];
  const intro=state.forgeStationSeen?person.intro:'ようこそ。ここでも祭りの準備を進めているんです。手伝ってもらえるとうれしいな。';
  const basicCount=gardenBasics.filter(id=>state.completed.includes(id)).length;
- app.innerHTML=`<section class="scene"><img src="./data/art/four-${region}.webp" alt="${r.name}の風景"><h1>${r.name}</h1><div class="characters tower-gate-characters"><figure><img src="./data/art/${person.image}" alt="${r.person}の全身"><figcaption><strong>${r.person}</strong><br>${person.description}</figcaption></figure></div>${dialogue(person.id,intro)}${dialogue('nono','どのお手伝いからでもいいんだね！')}<h2>お手伝い</h2><div class="actions">${Object.entries(r.quests).map(([id,q])=>`<button data-four-quest="${id}">${q.title}${state.completed.includes(id)?'（達成済み）':''}</button>`).join('')}${newButtons(region)}</div><h2>祭りへの準備</h2><p>${count===2?'この土地から二つの準備がそろいました。':`二つの準備を送りたいので、別のお手伝いをあと${2-count}件お願いします。`}</p>${festivalReady(state.completed)?`<p>${state.fourFestivalSeen?'祭りをもう一度見ることができます。':'四つの土地から準備が届き、祭りが始まります。'}</p><button id="four-festival">祭りの知らせを見る</button>`:''}<h2>旅立ち</h2>${warning()}<div class="actions"><button id="travel">旅先を選ぶ</button></div></section>`;
+ app.innerHTML=`<section class="scene"><img src="./data/art/four-${region}.webp" alt="${r.name}の風景"><h1>${r.name}</h1><div class="characters tower-gate-characters"><figure><img src="./data/art/${person.image}" alt="${r.person}の全身"><figcaption><strong>${r.person}</strong><br>${person.description}</figcaption></figure></div>${dialogue(person.id,intro)}${dialogue('nono','どのお手伝いからでもいいんだね！')}<h2>お手伝い</h2><div class="actions">${Object.entries(r.quests).map(([id,q])=>`<button data-four-quest="${id}">${q.title}${state.completed.includes(id)?'（達成済み）':''}</button>`).join('')}${newButtons(region)}</div><h2>祭りへの準備</h2><p>${count===2?'この土地から二つの準備がそろいました。':`二つの準備を送りたいので、別のお手伝いをあと${2-count}件お願いします。`}</p>${festivalReady(state.completed)?`<p>${state.fourFestivalSeen?'四つの土地の祭りが開かれました。':'四つの土地から準備が届き、祭りが始まります。'}</p><button id="four-festival">祭りの知らせを見る</button>`:''}<h2>旅立ち</h2>${warning()}<div class="actions"><button id="travel">旅先を選ぶ</button></div></section>`;
  if(region==='garden'&&state.storyClimaxComplete){
   const section=document.createElement('section');section.className='panel';
   section.innerHTML=`<h2>庭で学ぶ：離散数学の基礎</h2><p>「札の重なる場所」「二つの灯りの門」「星花の石飾り」で、集合・論理・組み合わせを試せます。以前のお手伝いも数えます。</p><p>${basicCount>=2?'庭の基礎のお手伝いは二つ終わっています。':`３件のうち${basicCount}件を達成。あと${2-basicCount}件で庭の基礎が一区切りです。`}</p>${!festivalReady(state.completed)?'<p>四つの土地それぞれで二つずつお手伝いをすると、その先の知らせが届きます。</p>':gardenAdvancedReady(state.completed)?`<h3>庭に届いた新しい依頼</h3><div class="actions">${Object.entries(gardenAdvanced).map(([id,q])=>`<button data-four-quest="${id}">${q.title}${state.completed.includes(id)?'（達成済み）':''}</button>`).join('')}</div>`:'<p>庭の基礎を二つ手伝うと、新しい依頼が届きます。</p>'}`;
@@ -1004,6 +1187,7 @@ function fourRegion(region){
  bindNewButtons();app.querySelectorAll('[data-four-quest]').forEach(b=>b.onclick=()=>{state.fourActive=b.dataset.fourQuest;state.fourDrafts??={};state.fourSelections??={};state.fourDrafts[state.fourActive]??=[];state.fourSelections[state.fourActive]??=[];show('four-quest');});
  app.querySelector('#travel').onclick=()=>show('travel');
  app.querySelector('#four-festival')?.addEventListener('click',()=>{state.fourFestivalSeen=true;state.fourFestivalFrom=region;show('four-festival');});
+ setupMidQuestNavigation(region);
 }
 function transactionLab(kind){
  const key={commit:'transactionCommitHistory',rollback:'transactionRollbackHistory',isolation:'transactionIsolationHistory'}[kind],id=`valley-transaction-${kind}`,title={commit:'移動をまとめて確定する',rollback:'途中の作業を取り消す',isolation:'別の人の読み取りを確かめる'}[kind],history=state[key]??[],p=replayTransaction(kind,history),cases=transactionCases[kind],c=cases[Math.min(p.scene,cases.length-1)],pair=xs=>`村A ${xs[0]}個、村B ${xs[1]}個`,phase={idle:'開始前',begun:'作業開始',debit:'村Aを更新済み',credit:'両方を更新済み',committed:'確定済み',rolledback:'取消し済み'}[p.phase];
@@ -1708,7 +1892,7 @@ function newResult(){const q=newEntrances[state.newActive];app.innerHTML=`<secti
 const finalePeople={workshop:['lira','工房から始まった旅が、こんなに広がったのね。'],river:['mizuho','川の向こうのみんなにも、この知らせを届けたいな。'],city:['mina','街のギルドからも、みんなの旅を応援するよ！'],harbor:['ren','港へ届いた知らせは、僕が次の人へ渡すよ！'],archive:['aoi','道がつながると、本もいろんな人に届けられるわね。'],windmill:['toma','旅の道具に困ったら、いつでも里へおいで。'],mountain:['sora','山道のことなら任せて。安心して通れる道を知らせるよ。'],valley:['yuno','届け先の記録は私が預かるわ。大切な荷物をつなぎましょう。'],sky:['alto','塔からも、みんなの知らせをつないでいくよ！'],mist:['shino','関所でも旅人を迎えるわ。道中、気をつけてね。'],forge:['akari','道具に困ったときは、鍛冶街にも声をかけてね。'],station:['haru','駅でもみんなの荷物を待っているよ。'],garden:['nagi','庭の花が咲いたら、みんなにも見に来てほしいな。'],observatory:['sena','空の様子も知らせるね。旅の日が晴れるといいな！'],tailor:['dario','旅の支度が必要なら、いつでも話を聞かせておくれ。'],guide:['marta','初めての土地でも、安心して歩けるように案内するわ。']};
 function finaleNotice(){
  if(!state||state.place==='world-finale'||!unlocked(state.completed))return;
- const places=['choices','river','city','harbor','mid-archive','mid-windmill','mountain','valley','sky','mist','forge','station',...fourRegionIds,'travel'];
+ const places=['choices','talk','river','city','harbor','mid-archive','mid-windmill','mountain','valley','sky','mist','forge','station',...fourRegionIds];
  if(!places.includes(state.place))return;
  const progress=worldRegionProgress(state.completed),ready=worldFinaleReady(state.completed);
  const section=document.createElement('section');section.className='panel story-progress';
@@ -1717,7 +1901,45 @@ function finaleNotice(){
  const helpedCount=storyRegions.filter(id=>progress[id]===2).length;
  const rumor=helpedCount<4?'旅人から、道しるべの向きが古いままの場所があると聞きました。':helpedCount<8?'別の土地からも、待っている手紙がなかなか届かないという話が聞こえてきました。':'各地の道しるべや配達の行き違いが重なっているようです。仲間と話を集め、力を合わせる準備をしましょう。';
  section.innerHTML=`<h2>各地をつなぐ知らせ</h2>${ready?`<p>${state.storyClimaxComplete?'みんなで届けた知らせを振り返れます。':'各地の仲間から集いへの知らせが届きました。好きなときに向かえます。'}</p><button id="world-finale-open">集いへ向かう</button>`:`<p>${rumor} 12の土地それぞれで二つのお手伝いをしましょう。</p><details><summary>お手伝いが二つ終わった地域（${helpedCount} / 12）</summary><ul>${names.map(p=>`<li>${p.name}：${progress[p.id]} / 2 件</li>`).join('')}</ul><p>まだ知らせの届いていない土地もあります。</p></details>`}`;
- app.append(section);section.querySelector('#world-finale-open')?.addEventListener('click',()=>{state.worldFinaleFrom=state.place;state.storyClimaxHistory??=[];state.storyClimaxComplete??=false;show('world-finale');});
+ if(['choices','talk','mid-windmill','mid-archive','mountain','valley','forge','station','sky','mist','harbor','river','city',...fourRegionIds].includes(state.place)){
+  const region=['choices','talk'].includes(state.place)?'workshop':state.place==='mid-windmill'?'windmill':state.place==='mid-archive'?'archive':['valley','forge','station','sky','mist','harbor','river','city',...fourRegionIds].includes(state.place)?state.place:'mountain';
+  section.querySelector('h2').textContent='知らせ・出来事';
+  const finaleButton=section.querySelector('#world-finale-open');
+  if(state.storyClimaxNoticeSeen||state.storyClimaxComplete){finaleButton?.setAttribute('hidden','');const message=section.querySelector('p');if(message)message.textContent=state.storyClimaxComplete?'これまでの出来事を振り返れます。':'集いへの知らせは、これまでの出来事から確認できます。';}
+  for(const event of app.querySelectorAll('.scene > .region-story-event')){const buttons=[...event.querySelectorAll('button')];buttons.forEach(button=>{button.classList.remove('primary');button.classList.add('quest-nav-card');});if(buttons.length&&buttons.every(button=>button.hidden)&&!event.querySelector('p'))event.hidden=true;section.append(event);}
+  finaleButton?.classList.add('quest-nav-card');
+  const historyButton=document.createElement('button');historyButton.className='quest-nav-card';historyButton.textContent='これまでの出来事を見る';section.append(historyButton);
+  app.querySelector(`#${region}-open-quests`).parentElement.before(section);
+  historyButton.addEventListener('click',()=>midHistory(section,region));
+ }else app.append(section);
+ section.querySelector('#world-finale-open')?.addEventListener('click',()=>{state.worldFinaleFrom=state.place;state.storyClimaxHistory??=[];state.storyClimaxComplete??=false;state.storyClimaxNoticeSeen=true;show('world-finale');});
+}
+function midHistory(notices,region){
+ const placeName=fourRegions[region]?.name??(region==='mountain'?'山の中継所':region==='valley'?'谷の記録所':region==='harbor'?'風の港町':region==='river'?'水辺の村':region==='workshop'?'精霊の工房':region==='city'?'灯花の街':region==='sky'?'空の中継塔':region==='mist'?'霧の関所':region==='forge'?'星鉄の鍛冶街':region==='station'?'風待ちの駅':region==='archive'?'森の文庫':'風車の里');
+ const scene=notices.closest('.scene');const panel=document.createElement('section');panel.className='scene windmill-history';
+ scene.hidden=true;app.append(panel);
+ function showHistory(){
+  panel.innerHTML=`<h1>これまでの出来事</h1><p>これまでに起きた出来事を振り返れます。</p><div class="quest-nav-list"></div><button id="history-back">← ${placeName}へ戻る</button>`;
+  const list=panel.querySelector('.quest-nav-list');
+  function add(label,description,action){const button=document.createElement('button');button.className='quest-nav-card';const title=document.createElement('strong');title.textContent=label;const text=document.createElement('span');text.textContent=description;button.append(title,text);button.onclick=action;list.append(button);}
+  if(state.bridgeOpen)add('橋の開通','森の文庫と風車の里を結ぶ橋が開きました。',()=>{
+   panel.innerHTML='<h1>橋の開通</h1><p>森の文庫と風車の里で準備を進め、人と精霊の力で橋が開きました。道がつながり、本や灯りを届けられるようになりました。</p><button id="history-list-back">← これまでの出来事へ戻る</button>';
+   panel.querySelector('#history-list-back').onclick=showHistory;panel.querySelector('h1').tabIndex=-1;panel.querySelector('h1').focus();
+  });
+  function summary(label,detail){add(label,detail,()=>{panel.innerHTML='';const heading=document.createElement('h1');heading.textContent=label;const text=document.createElement('p');text.textContent=detail;const back=document.createElement('button');back.textContent='← これまでの出来事へ戻る';back.onclick=showHistory;panel.append(heading,text,back);heading.tabIndex=-1;heading.focus();});}
+  if(state.cityFestivalSeen)summary('灯花祭の準備','街でのお手伝いが、灯花祭の準備につながりました。');
+  if(state.mountainEndingSeen)summary('山に知らせが届きました','山の集落に知らせが届き、次は谷へも道をつなぐ話が生まれました。');
+  if(state.mountainCrossingSeen)summary('山の先からの知らせ','山道の調べ方が分かり、谷の記録所からの知らせが届きました。');
+  if(state.valleyEndingSeen)summary('谷から届けものが出発しました','届け先を確かめた荷物が、山や水辺へ出発しました。');
+  if(state.towerGateSeen)summary('つながった二つの知らせ','塔と関所で知らせの行き先や送り主を確かめ、谷で手がかりを合わせました。');
+  if(state.forgeStationSeen)summary('待つ土地へ、道具を','鍛冶街で道具を直し、駅から待つ土地へ送り出しました。');
+  if(state.fourFestivalSeen)add('四つの土地の祭り','四つの土地から祭りの準備が届きました。',()=>{if(fourRegionIds.includes(region))state.fourFestivalFrom=region;show('four-festival');});
+  if(state.storyClimaxNoticeSeen||state.storyClimaxComplete)add('各地をつなぐ集い',state.storyClimaxComplete?'各地の仲間と力を合わせて知らせを届けました。':'各地の仲間と知らせを届ける準備を進めます。',()=>notices.querySelector('#world-finale-open').click());
+  if(!list.children.length)list.textContent='振り返れる出来事はまだありません。';
+  panel.querySelector('#history-back').onclick=()=>{panel.remove();scene.hidden=false;notices.querySelector('.quest-nav-card').focus();};
+  panel.querySelector('h1').tabIndex=-1;panel.querySelector('h1').focus();window.scrollTo(0,0);
+ }
+ showHistory();
 }
 function worldFinale(){
  const history=state.storyClimaxHistory??[],step=climaxSteps[history.length],done=climaxComplete(history),quest=step?.quest??3;

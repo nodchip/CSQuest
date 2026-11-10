@@ -1,0 +1,29 @@
+const catalogs={
+ forge:[
+  {id:'lights',title:'灯りと命令を調べる',local:true,quests:['forge-bits','forge-cpu']},
+  {id:'storage',title:'記憶の箱と棚を調べる',local:true,quests:['forge-memory','forge-cache']},
+  {id:'cache',title:'手元の記憶棚を調べる',quests:['forge-cache-temporal','forge-cache-spatial','forge-cache-mapping']},
+  {id:'cpu',title:'計算道具を動かす',quests:['forge-cpu-basic','forge-cpu-branch','forge-cpu-data']},
+  {id:'objects',title:'灯り道具を組み立てる',quests:['forge-objects-identity','forge-objects-encapsulation','forge-objects-interaction']},
+  {id:'numbers',title:'灯りの計数器を直す',quests:['forge-integer-unsigned','forge-integer-reading','forge-integer-addition']},
+  {id:'boxes',title:'記録の箱と番号札を調べる',quests:['forge-swap-lab','forge-pages-lab']},
+ ],
+ station:[
+  {id:'delivery',title:'荷物を送り出す',local:true,quests:['station-fcfs','station-round','station-sharing']},
+  {id:'tools',title:'道具と場所を使う',local:true,quests:['station-lock','station-memory']},
+  {id:'priority',title:'急ぎの荷物を選ぶ',quests:['station-heap-queue','station-heap-insert','station-heap-remove','station-schedule-lab']},
+  {id:'office',title:'駅の共通窓口を使う',quests:['station-os-queue','station-os-storage','station-os-access']},
+ ],
+};
+const prerequisites={
+ 'forge-cache-mapping':['forge-cache-temporal','forge-cache-spatial'],
+ 'forge-cpu-data':['forge-cpu-basic','forge-cpu-branch'],
+ 'forge-objects-interaction':['forge-objects-identity','forge-objects-encapsulation'],
+ 'forge-integer-addition':['forge-integer-unsigned','forge-integer-reading'],
+ 'station-heap-remove':['station-heap-queue','station-heap-insert'],
+ 'station-os-access':['station-os-queue','station-os-storage'],
+};
+export function forgeStationQuestGroups(region,completed,endgameAvailable){
+ const done=new Set(completed);
+ return catalogs[region].map(g=>{const available=g.quests.filter(id=>done.has(id)||(g.local||endgameAvailable)&&(!prerequisites[id]||prerequisites[id].every(x=>done.has(x))));return {...g,available,remaining:available.filter(id=>!done.has(id)).length,complete:g.quests.every(id=>done.has(id))};});
+}

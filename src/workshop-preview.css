@@ -87,3 +87,9 @@
 .climax-route .climax-hit,.climax-route .climax-map-choice .climax-hit{fill:transparent;stroke:none;pointer-events:all}
 .title-subtitle{display:block;margin-top:.35rem;font-size:.48em;line-height:1.4;letter-spacing:.04em}
 .mosaic-preview{margin:1rem 0;padding:.8rem;border:2px solid #849c81;border-radius:.7rem;background:#f1f6ee}.mosaic-row{display:flex;gap:.3rem;margin-top:.5rem}.mosaic-cell{display:grid;place-items:center;flex:1;min-height:4rem;text-align:center;border:2px solid #465946;border-radius:.3rem;line-height:1.2;font-weight:700}.mosaic-blue{background:#25609a;color:#fff}.mosaic-yellow{background:#fbe582;color:#27250d}.mosaic-red{background:#a52e35;color:#fff}.mosaic-white{background:#fff;color:#222}
+
+.quest-nav-list{display:grid;gap:.8rem;margin:1rem 0}.quest-nav-card{display:block;width:100%;text-align:left;border:2px solid #547a5e;border-radius:.5rem;padding:1rem;background:#fff}.quest-nav-card span,.quest-nav-card strong{display:block}.quest-nav-card span{font-size:.95rem;margin-top:.3rem}.quest-nav-card.is-complete{background:#eaf2e5}.windmill-quest-menu[hidden],.mid-scene [hidden],.mid-scene[hidden]{display:none!important}
+
+.scene [hidden],.scene[hidden]{display:none!important}
+
+.story-progress > .quest-nav-card{margin-top:.7rem}.region-story-event{margin:.8rem 0}.region-story-event h3{margin:.6rem 0}.region-story-event > .quest-nav-card{margin-top:.4rem}

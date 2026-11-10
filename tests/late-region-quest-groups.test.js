@@ -1,0 +1,47 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {lateRegionQuestGroups} from '../src/late-region-quest-groups.js';
+test('仕立て屋と案内所の依頼を重複なく分類し未開放も達成判定に含む',()=>{
+ for(const region of ['tailor','guide']){const groups=lateRegionQuestGroups(region,[],false),all=groups.flatMap(g=>g.quests),local=groups.filter(g=>g.local).flatMap(g=>g.quests);
+ assert.equal(new Set(all).size,all.length);assert.ok(all.length>local.length);
+ assert.equal(lateRegionQuestGroups(region,local,false).every(g=>g.complete),false);
+ assert.ok(lateRegionQuestGroups(region,all,true).every(g=>g.complete));}
+});
+test('追加依頼は対応する二件を達成してから開く',()=>{
+ for(const [r,id,needs] of [
+ ['tailor','tailor-regression',['tailor-boundary','tailor-validation']],
+ ['guide','guide-ethics-decision',['guide-ethics-impact','guide-ethics-questions']],
+ ['guide','guide-privacy-safeguards',['guide-privacy-collection','guide-privacy-identity']],
+ ['guide','guide-requirements-agreement',['guide-requirements-interview','guide-requirements-story']]]){
+ const available=done=>lateRegionQuestGroups(r,done,true).flatMap(g=>g.available).includes(id);
+ assert.equal(available([needs[0]]),false,id);assert.equal(available(needs),true,id);}
+});
+test('庭園の発展依頼は基礎二件と祭りの両方が必要',()=>{
+ const visible=(done,endgame)=>lateRegionQuestGroups('garden',done,endgame).flatMap(g=>g.available);
+ assert.equal(visible(['garden-sets'],true).includes('garden-shelter'),false);
+ assert.equal(visible(['garden-sets','garden-logic'],false).includes('garden-shelter'),false);
+ assert.equal(visible(['garden-sets','garden-logic'],true).includes('garden-shelter'),true);
+});
+test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',()=>{
+ for(const [r,count] of [['garden',25],['observatory',25]]){
+  const groups=lateRegionQuestGroups(r,[],false),all=groups.flatMap(g=>g.quests);
+  assert.equal(all.length,count);assert.equal(new Set(all).size,count);
+  assert.ok(lateRegionQuestGroups(r,all,true).every(g=>g.complete));
+ }
+ for(const [r,id,needs] of [
+  ['garden','garden-color-compare',['garden-color-light','garden-color-filter']],
+  ['garden','garden-image-resample',['garden-image-fit','garden-image-pixels']],
+  ['garden','garden-matrix-compare',['garden-matrix-shear','garden-matrix-rotate']],
+  ['garden','garden-vector-basis',['garden-vector-add','garden-vector-scale']],
+  ['garden','garden-quantifiers-nested',['garden-quantifiers-simple','garden-quantifiers-negation']],
+  ['garden','garden-relations-composition',['garden-relations-relation','garden-relations-function']],
+  ['observatory','observatory-supervised-separate',['observatory-supervised-train','observatory-supervised-evaluate']],
+  ['observatory','observatory-local-plateau',['observatory-local-climb','observatory-local-restart']],
+  ['observatory','observatory-agent-risk',['observatory-agent-rule','observatory-agent-observe']],
+  ['observatory','observatory-conflict',['observatory-layers','observatory-offline']],
+  ['observatory','observatory-probability-reports',['observatory-probability-weather','observatory-probability-draws']],
+  ['observatory','observatory-statistics-spread',['observatory-statistics-frequency','observatory-statistics-center']]]){
+  const visible=done=>lateRegionQuestGroups(r,done,true).flatMap(g=>g.available).includes(id);
+  assert.equal(visible([needs[0]]),false,id);assert.equal(visible(needs),true,id);
+ }
+});
