@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayDescentStep} from '../src/endgame-descent-step.js';
+test('学習率0.25では０→１→1.5、誤差４→１→0.25',()=>{assert.equal(replayDescentStep('small',['move:left']),null);let p=replayDescentStep('small',['move:right','move:right','check']);assert.deepEqual(p.results[0].history.map(h=>[h.from,h.slope,h.to,h.loss]),[[0,-4,1,1],[1,-2,1.5,0.25]]);assert.equal(p.done,true);});
+test('学習率１では０→４→０と行き来し誤差４のまま',()=>{let p=replayDescentStep('large',['move:right','move:left','check']);assert.deepEqual(p.results[0].history.map(h=>[h.from,h.slope,h.to,h.loss]),[[0,-4,4,4],[4,4,0,4]]);assert.equal(p.done,true);assert.equal(replayDescentStep('large',['move:right','move:right']),null);});
+test('２つを同じ初期位置から試し、２回後の誤差を比較',()=>{const h=['move:right','move:right','check','move:right','move:left','check'],p=replayDescentStep('compare',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.results.map(x=>[x.mode,x.w,x.loss]),[['small',1.5,0.25],['large',0,4]]);assert.equal(replayDescentStep('compare',[...h,'answer:large']),null);assert.equal(replayDescentStep('compare',[...h,'reset']),null);assert.equal(replayDescentStep('compare',[...h,'answer:small']).done,true);});
+test('途中保存と不正手順・リセットを検証',()=>{assert.equal(replayDescentStep('small',['check']),null);assert.equal(replayDescentStep('small',['move:right','move:right','move:right']),null);assert.equal(replayDescentStep('small',['move:right','reset']).state.w,0);assert.equal(replayDescentStep('small',{}),null);});
