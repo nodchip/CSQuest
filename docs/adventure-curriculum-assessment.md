@@ -101,3 +101,11 @@ MSF-Calculus 学習成果2c を導関数の前提練習に限定した修正は�
 2026-11-11、`review_candidate` が HCI-User 1d・1f・2、HCI-Evaluation 2e、SE-Requirements 3b を原典・固定例・既存検証と独立照合した。実際の面接・試験・分析は未評価。指摘に従い３行の元教材レビュー記録を既存の `four-regions-curriculum.md` に更新した。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
 
 HCI 関連の元教材レビュー記録と今回の対応付けレビューの参照修正は、`review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が AR-Performance-Energy トピック1・成果1 を原典・固定例・既存検証と独立照合した。成果1は一般の性能・エネルギー効率指標を論じないとの指摘に従い前提練習に限定した。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
+
+AR-Performance-Energy 成果1 を性能・エネルギー効率の指標を学ぶ前提練習に限定した修正は、`review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が SF-Security 2・2a、DM-Security 3・7、SEC-Engineering 2、SEC-Foundations 9 を原典・固定例・既存検証と独立照合した。実運用・一般の推論攻撃や設計・安全性保証は未評価。指摘に従い SEC-Foundations 9 の元教材の独立レビューを明記した。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
+
+SEC-Foundations 9 の元教材レビュー記録と今回の対応付けレビューの参照修正は、`review_candidate` が再確認した。

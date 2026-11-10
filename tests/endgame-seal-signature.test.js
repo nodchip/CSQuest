@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replaySealSignature} from '../src/endgame-seal-signature.js';
+test('同じ本文は有効、改変された本文は無効',()=>{const h=['key:mira','verify','answer:valid','key:mira','verify','answer:invalid'],p=replaySealSignature('integrity',h);assert.deepEqual(p.results.map(r=>r.verified),[true,false]);assert.equal(p.done,true);});
+test('異なる鍵では失敗し、別人の正しい鍵では成功',()=>{const h=['key:nono','verify','answer:invalid','key:nono','verify','answer:valid'],p=replaySealSignature('keys',h);assert.deepEqual(p.results.map(r=>r.verified),[false,true]);assert.equal(p.done,true);});
+test('検証成功でも別人の鍵と未確認の鍵の身元は異なる',()=>{const h=['key:nono','verify','answer:other','key:mira','verify'];let p=replaySealSignature('identity',JSON.parse(JSON.stringify(h)));assert.equal(p.verified,true);assert.equal(replaySealSignature('identity',[...h,'answer:mira']),null);p=replaySealSignature('identity',[...h,'answer:unknown']);assert.equal(p.done,true);assert.deepEqual(p.results.map(r=>r.answer),['other','unknown']);assert.equal(replaySealSignature('identity',[...h,'answer:unknown','reset']),null);});
+test('未検証・鍵変更・途中リセット',()=>{assert.equal(replaySealSignature('integrity',['answer:valid']),null);assert.equal(replaySealSignature('integrity',['verify']),null);assert.equal(replaySealSignature('integrity',['key:mira','verify','key:nono','answer:valid']),null);assert.deepEqual(replaySealSignature('integrity',['key:mira','verify','reset']).results,[]);});
