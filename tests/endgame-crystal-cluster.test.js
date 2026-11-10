@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayCrystalCluster} from '../src/endgame-crystal-cluster.js';
+const far=['set:0:a','set:1:a','set:2:b','set:3:b','check'];
+const near=['set:0:a','set:1:b','set:2:b','set:3:b','check'];
+const nearNext=['set:0:a','set:1:a','set:2:b','set:3:b','check'];
+test('離れた初期中心では２回で1.5と8.5に落ち着く',()=>{let p=replayCrystalCluster('far',far);assert.deepEqual(p.state.centers,[1.5,8.5]);p=replayCrystalCluster('far',[...far,...far,'next']);assert.deepEqual(p.results[0],{mode:'far',centers:[1.5,8.5],rounds:2});assert.equal(p.done,true);});
+test('近い初期中心は最初に１と19/3、その後に1.5と8.5',()=>{let p=replayCrystalCluster('near',near);assert.deepEqual(p.state.centers,[1,19/3]);p=replayCrystalCluster('near',[...near,...nearNext,...nearNext,'next']);assert.deepEqual(p.results[0],{mode:'near',centers:[1.5,8.5],rounds:3});assert.equal(p.done,true);});
+test('２つの開始位置を比較し、教師なしの前提を確かめる',()=>{const h=[...far,...far,'next',...near,...nearNext,...nearNext,'next'];const p=replayCrystalCluster('compare',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.results.map(r=>r.rounds),[2,3]);assert.equal(replayCrystalCluster('compare',[...h,'answer:supervised']),null);assert.equal(replayCrystalCluster('compare',[...h,'reset']),null);assert.equal(replayCrystalCluster('compare',[...h,'answer:unlabeled']).done,true);});
+test('誤分類・不完全な群・早い確定・リセット',()=>{assert.equal(replayCrystalCluster('far',['check']),null);assert.equal(replayCrystalCluster('far',['next']),null);assert.equal(replayCrystalCluster('far',['set:0:b','set:1:a','set:2:b','set:3:b','check']),null);assert.deepEqual(replayCrystalCluster('far',['set:0:a','reset']).state.assignments,[null,null,null,null]);});

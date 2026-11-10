@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'observatory',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#observatory-open-quests').click();for(let i=0;i<15;i++){const group=p.getByRole('button',{name:/水晶の集まりを探す/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-cluster-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);},far=['set:0:a','set:1:a','set:2:b','set:3:b','check'],near=['set:0:a','set:1:b','set:2:b','set:3:b','check'];
+   await open();if(await p.getByRole('button',{name:/二つの始め方を比べる/}).count())throw Error('advanced opened early');
+   stage='far';await p.getByRole('button',{name:/離れた中心から分ける/}).focus();await p.keyboard.press('Enter');await p.locator('[data-cluster-action="check"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('#cluster-status').innerText()).includes('確かめ'))throw Error('early check hint missing');await act('set:0:a');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('1：A'))throw Error('partial state lost');await sequence([...far.slice(1),...far,'next']);await p.locator('#cluster-finish').click();await p.locator('#cluster-back').click();await open();if(await p.getByRole('button',{name:/二つの始め方を比べる/}).count())throw Error('advanced opened after one');
+   stage='near';await p.getByRole('button',{name:/近い中心から分ける/}).click();await sequence([...near,...far,...far,'next']);await p.locator('#cluster-finish').click();await p.locator('#cluster-back').click();await open();
+   stage='compare';await p.getByRole('button',{name:/二つの始め方を比べる/}).click();await sequence([...far,...far,'next',...near,...far,...far,'next']);await act('answer:supervised');if(!(await p.locator('#cluster-status').innerText()).includes('確かめ'))throw Error('wrong comparison hint missing');await act('answer:unlabeled');if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#cluster-finish').click();const body=await p.locator('body').innerText();if(!body.includes('離れた中心：２回')||!body.includes('近い中心：３回'))throw Error('comparison missing');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#cluster-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/二つの始め方を比べる/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
