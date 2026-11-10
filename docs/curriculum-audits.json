@@ -1176,6 +1176,54 @@
       "topics": 27,
       "outcomes": 13,
       "scope_sha256": "7d7ab387357b003a2586735b8b0d58ac854c4597f8fcac9b48466f6645ea3fa4"
+    },
+    "FPL-OOP": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-oop.md",
+      "topics": 17,
+      "outcomes": 11,
+      "scope_sha256": "23e69be01c53f2dfbcef36cd1a24b592a7282073d620e6bab37427184636af8e"
+    },
+    "SEP-Professional-Ethics": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-professional-ethics.md",
+      "topics": 15,
+      "outcomes": 14,
+      "scope_sha256": "6505676baba7372e6ad6127c718d7ea24c4d43c9593c00c385994bc04d207d7c"
+    },
+    "SEC-Coding": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sec-coding.md",
+      "topics": 17,
+      "outcomes": 16,
+      "scope_sha256": "b037fb6ba9d26d01d096717cbec077d16da71eda0776f6e997f543ec739a8b9f"
+    },
+    "MSF-Linear": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-msf-linear.md",
+      "topics": 8,
+      "outcomes": 49,
+      "scope_sha256": "1a0469081d9c85d49eef941566fce42c205242120259fbd2b68dde86db7d9e28"
+    },
+    "SEP-Privacy": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-privacy.md",
+      "topics": 10,
+      "outcomes": 8,
+      "scope_sha256": "cf2c4f31ffc4df162b3ffbee7ea7600d2dcdc62624f83d00b9d78b869c635f1a"
+    },
+    "SEC-Crypto": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sec-crypto.md",
+      "topics": 26,
+      "outcomes": 12,
+      "scope_sha256": "532ec9e8af6d381e44b3ac7c66fb01cee329ba75e2e63f2dc799045eea56ad3b"
     }
   }
 }
