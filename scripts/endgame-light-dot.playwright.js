@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'garden',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#garden-open-quests').click();for(let i=0;i<25;i++){const group=p.getByRole('button',{name:/光の矢印と向きを調べる/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-lightdot-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/反対向きの光を探す/}).count())throw Error('advanced opened early');
+   stage='positive';await p.getByRole('button',{name:/同じ側の光を探す/}).click();await act('ray:moon');if(!(await p.locator('#lightdot-status').innerText()).includes('内積'))throw Error('wrong ray hint missing');await p.locator('[data-lightdot-action="ray:sun"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('[data-lightdot-action="dot:-5"]').evaluate(e=>document.activeElement===e)))throw Error('next action focus lost');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('太陽'))throw Error('partial state lost');await act('dot:2');await p.locator('#lightdot-finish').focus();await p.keyboard.press('Enter');if(!(await p.locator('#lightdot-status').evaluate(e=>document.activeElement===e)))throw Error('result focus lost');await p.locator('#lightdot-back').click();await open();if(await p.getByRole('button',{name:/反対向きの光を探す/}).count())throw Error('advanced opened after one');
+   stage='zero';await p.getByRole('button',{name:/直角の光を探す/}).click();await sequence(['ray:moon','dot:0']);await p.locator('#lightdot-finish').click();await p.locator('#lightdot-back').click();await open();
+   stage='negative';await p.getByRole('button',{name:/反対向きの光を探す/}).click();await sequence(['ray:shadow','dot:-5']);await act('angle:right');if(!(await p.locator('#lightdot-status').innerText()).includes('内積'))throw Error('wrong angle hint missing');await act('angle:greater');if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#lightdot-finish').click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#lightdot-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/反対向きの光を探す/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
