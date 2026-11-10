@@ -31,3 +31,5 @@
 - 案内所：CS2023「HCI-User」「HCI-Accessibility」「HCI-Evaluation」「HCI-Design」に関連する導入。[W3C WCAG 2.2: Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) は色だけに依存せず文字や形などを併用する考え方を説明している。一つの工夫で全員が利用できるとはしない。色以外の視覚的手がかりだけでは、支援技術や非視覚的な利用のすべてを満たすものではない。
 
 確認日：2026-11-08。各状況の正解と助言を読み合わせ、包含的論理和、反例の条件、分類の特徴、未使用事例、要望の聞き取り、観察と再評価、色以外の手がかりについて上記資料の考え方と突き合わせた。追加の授業内容や評価規準の完全性を確認したものではない。
+
+2026-11-11、実装・対応付け担当とは別の `review_candidate` が案内所の guide-observe・guide-needs・guide-access を CS2023 と [W3C の色の使用](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)・[操作対象の大きさ](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) に照らして独立レビューした。固定場面の正答・ヒント・保存と分類をコード上で確認し、関連13テストが成功。新規開始から四地域に到達した記録と検証用記録で各場面を操作した記録は別であり、今回ブラウザは再操作していない。実際の利用者調査や WCAG 適合は未評価。
