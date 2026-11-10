@@ -936,6 +936,14 @@
       "topics": 26,
       "outcomes": 6,
       "scope_sha256": "3a5236b9ddbe5bec9d47fdb85612f4bcbbd09ae74d9119255f0ca5c6097a9f90"
+    },
+    "SE-Refactoring": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-refactoring.md",
+      "topics": 12,
+      "outcomes": 6,
+      "scope_sha256": "f62316d4c2ef42a386cd66258cf12b970ee5876f29042799834e84c5f5b006f1"
     }
   }
 }

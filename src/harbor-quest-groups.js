@@ -4,12 +4,14 @@ const groups=[
  {id:'deadlock',title:'道具を借りる順番を考える',quests:['harbor-deadlock-cycle','harbor-deadlock-order','harbor-deadlock-fairness']},
  {id:'performance',title:'荷物を数える時間を調べる',quests:['harbor-performance-serial','harbor-performance-parallel','harbor-performance-overhead']},
  {id:'cooperation',title:'荷数の札と知らせをまとめる',quests:['harbor-count','harbor-join','harbor-lock']},
+ {id:'condition',title:'届く荷物を待つ',quests:['harbor-condition-wait','harbor-condition-notify','harbor-condition-recheck']},
 ];
 const prerequisites={
  'harbor-counting-pigeon':['harbor-counting-gear','harbor-counting-roles'],
  'harbor-deadlock-fairness':['harbor-deadlock-cycle','harbor-deadlock-order'],
  'harbor-performance-overhead':['harbor-performance-serial','harbor-performance-parallel'],
  'harbor-lock':['harbor-count','harbor-join'],
+ 'harbor-condition-recheck':['harbor-condition-wait','harbor-condition-notify'],
 };
 export function harborQuestGroups(completed,endgameAvailable){
  const done=new Set(completed);
