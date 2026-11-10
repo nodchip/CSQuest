@@ -13,6 +13,7 @@ test('追加依頼は対応する二件を達成してから開く',()=>{
  ['guide','guide-ethics-decision',['guide-ethics-impact','guide-ethics-questions']],
  ['guide','guide-privacy-safeguards',['guide-privacy-collection','guide-privacy-identity']],
  ['guide','guide-requirements-agreement',['guide-requirements-interview','guide-requirements-story']],
+ ['guide','guide-textcontrast-compare',['guide-textcontrast-normal','guide-textcontrast-large']],
  ['guide','guide-study-review',['guide-study-explain','guide-study-protect']]]){
  const available=done=>lateRegionQuestGroups(r,done,true).flatMap(g=>g.available).includes(id);
  assert.equal(available([needs[0]]),false,id);assert.equal(available(needs),true,id);}

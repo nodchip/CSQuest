@@ -38,6 +38,7 @@ const extra={
   {id:'usability',title:'案内の使いやすさを調べる',quests:['guide-accessibility-lab','guide-usability-lab']},
   {id:'privacy',title:'旅人の記録を守る',quests:['guide-privacy-collection','guide-privacy-identity','guide-privacy-safeguards']},
   {id:'requirements',title:'掲示板の相談を聞く',quests:['guide-requirements-interview','guide-requirements-story','guide-requirements-agreement']},
+  {id:'textcontrast',title:'案内板の文字の明るさを調べる',quests:['guide-textcontrast-normal','guide-textcontrast-large','guide-textcontrast-compare']},
   {id:'study-review',title:'調査の準備を相談する',quests:['guide-study-explain','guide-study-protect','guide-study-review']},
  ],
 };
@@ -70,6 +71,7 @@ const prerequisites={
  'guide-ethics-decision':['guide-ethics-impact','guide-ethics-questions'],
  'guide-privacy-safeguards':['guide-privacy-collection','guide-privacy-identity'],
  'guide-requirements-agreement':['guide-requirements-interview','guide-requirements-story'],
+ 'guide-textcontrast-compare':['guide-textcontrast-normal','guide-textcontrast-large'],
  'guide-study-review':['guide-study-explain','guide-study-protect'],
 };
 export function lateRegionQuestGroups(region,completed,endgameAvailable){
