@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayScatter} from '../src/endgame-scatter.js';
+const up=['select:A','point:1:1','select:B','point:2:2','select:C','point:3:3','check'];
+const down=['select:A','point:1:3','select:B','point:2:2','select:C','point:3:1','check'];
+const mixed=['select:A','point:1:3','select:B','point:2:1','select:C','point:3:2','check'];
+test('上がる例の札の組をそのまま位置に置く',()=>{assert.equal(replayScatter('rising',['point:1:1']),null);assert.equal(replayScatter('rising',['select:A','point:1:3']),null);let p=replayScatter('rising',up);assert.equal(p.done,true);assert.deepEqual(p.results[0].map(c=>[c.x,c.y]),[[1,1],[2,2],[3,3]]);});
+test('下がる例でも横と縦を入れ替えずに配置',()=>{const p=replayScatter('falling',down);assert.equal(p.done,true);assert.deepEqual(p.results[0].map(c=>[c.x,c.y]),[[1,3],[2,2],[3,1]]);});
+test('同じ周辺値でも組を変えると点は変わり、因果とは区別',()=>{const h=[...up,...mixed],p=replayScatter('compare',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.results[1].map(c=>[c.x,c.y]),[[1,3],[2,1],[3,2]]);assert.deepEqual(p.results[0].map(c=>c.y).sort(),p.results[1].map(c=>c.y).sort());assert.equal(replayScatter('compare',[...h,'answer:same']),null);assert.equal(replayScatter('compare',[...h,'answer:different','answer:caused']),null);assert.equal(replayScatter('compare',[...h,'answer:different','answer:no-cause']).done,true);});
+test('途中再開、重複配置・早すぎる確定・リセットの拒否と復元',()=>{let p=replayScatter('rising',['select:A','point:1:1']);assert.deepEqual(p.placed,{A:{x:1,y:1}});assert.equal(replayScatter('rising',['select:A','point:1:1','select:A']),null);assert.equal(replayScatter('rising',['check']),null);p=replayScatter('rising',['select:A','point:1:1','reset']);assert.deepEqual(p.placed,{});assert.equal(replayScatter('compare',[...up,...mixed,'reset']),null);});

@@ -33,3 +33,7 @@ DM-Core 5 の原典ページ修正は `review_candidate` が再確認した。
 2026-11-11、`review_candidate` が AL-Foundational 10、SF-Reliability 3、AI-Search 3c.i、SF-Foundations 2・10、GIT-Rendering 1b・4 の７件について原典、固定例、開放と既存検証を独立確認した。一般の設計・実装や証明などは未評価。今回の対応付けレビューは元教材のレビューとは別で、ブラウザ再操作や新規開始からの通し到達、完成を意味しない。
 
 2026-11-11、`review_candidate` が AL-Foundational 1a・3、FPL-Functional 3a、AI-Search 10d、SF-Foundations 8 の５件について原典、固定例、開放と既存検証を独立確認した。一般の設計・実装や証明などは未評価。今回の対応付けレビューは元教材のレビューとは別で、ブラウザ再操作や新規開始からの通し到達、完成を意味しない。
+
+2026-11-11、`review_candidate` が AL-Foundational 13・13a、AI-Search 1c、SDF-Algorithms 1、FPL-Functional 2 の５件について原典と固定例の対応を独立確認した。山の元教材自体の独立レビューは未確認で、今回の対応レビューとは別に扱う。過去の `four-regions-journey.playwright.js` の新規コンテキストからの通し記録を照合したが、今回ブラウザやテストは再実行していない。親子の重複、一般の実装・証明などの不足を残す。
+
+2026-11-11、`review_candidate` が AL-Foundational 1、AI-ML 1、PDC-Evaluation 2 の３件について原典、固定例、開放と既存検証を独立確認した。子項目との重複や一般の設計・実装・終了性などは未評価。今回の対応付けレビューは元教材のレビューとは別で、テストやブラウザの再実行、新規開始からの通し到達、完成を意味しない。

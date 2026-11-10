@@ -1,6 +1,7 @@
 const groups = [
   {id:'village', title:'里と橋を手入れする', quests:['windmill-lamp','windmill-order','windmill-signals']},
   {id:'reliability', title:'知らせと作業台を確かめる', quests:['windmill-copies','windmill-pipeline','windmill-recovery']},
+  {id:'scatter', title:'風と回転を図にする', quests:['windmill-scatter-rising','windmill-scatter-falling','windmill-scatter-compare']},
   {id:'patterns', title:'模様を届ける', quests:['windmill-rle-encode','windmill-rle-decode','windmill-rle-compare']},
 ];
 
@@ -13,6 +14,7 @@ export function windmillQuestGroups(completed, endgameAvailable) {
       if (group.id === 'village') return true;
       if (!endgameAvailable) return false;
       if (id === 'windmill-recovery') return done.has('windmill-copies') && done.has('windmill-pipeline');
+      if (id === 'windmill-scatter-compare') return done.has('windmill-scatter-rising') && done.has('windmill-scatter-falling');
       if (id === 'windmill-rle-compare') return done.has('windmill-rle-encode') && done.has('windmill-rle-decode');
       return true;
     });

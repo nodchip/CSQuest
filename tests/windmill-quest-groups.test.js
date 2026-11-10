@@ -12,10 +12,12 @@ test('前提の達成で追加の依頼が受けられる', () => {
   let groups=windmillQuestGroups([],true);
   assert.equal(groups[1].remaining,2);
   assert.equal(groups[2].remaining,2);
-  groups=windmillQuestGroups(['windmill-copies','windmill-pipeline','windmill-rle-encode','windmill-rle-decode'],true);
+  assert.equal(groups[3].remaining,2);
+  groups=windmillQuestGroups(['windmill-copies','windmill-pipeline','windmill-rle-encode','windmill-rle-decode','windmill-scatter-rising','windmill-scatter-falling'],true);
   assert.deepEqual(groups[1].available,['windmill-copies','windmill-pipeline','windmill-recovery']);
   assert.equal(groups[1].remaining,1);
   assert.equal(groups[2].remaining,1);
+  assert.equal(groups[3].remaining,1);
 });
 test('全依頼を達成すると各分類が達成済みになる', () => {
   const all=windmillQuestGroups([],true).flatMap(g=>g.quests);
