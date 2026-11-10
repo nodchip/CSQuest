@@ -1,5 +1,8 @@
 // Titles for achievements retained from earlier saves.
 export const legacyQuestTitles={
+  "mountain-astar-uniform": "かかった費用で道を探す",
+  "mountain-astar-astar": "費用と見積もりで道を探す",
+  "mountain-astar-compare": "二つの見積もりの使い方を比べる",
   "forest": "森の入口へ：薬草の届けもの",
   "branch": "木立の道へ：届けもの",
   "loop": "工房の水路へ：消えた灯り",

@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayAstarGuide} from '../src/endgame-astar-guide.js';
+test('累積費用は A、B、G の順で選び、費用３',()=>{const p=replayAstarGuide('uniform',['visit:A','visit:B','visit:G','check']);assert.deepEqual(p.results[0],{mode:'uniform',cost:3,order:['A','B','G'],parent:'A'});assert.equal(replayAstarGuide('uniform',['visit:B']),null);});
+test('A* は B を先に開き７の候補を後から３に改善する',()=>{let p=replayAstarGuide('astar',['visit:B']);assert.equal(p.state.open.G,7);assert.equal(replayAstarGuide('astar',['visit:B','visit:G']),null);p=replayAstarGuide('astar',['visit:B','visit:A']);assert.equal(p.state.open.G,3);assert.equal(p.state.parent.G,'A');p=replayAstarGuide('astar',['visit:B','visit:A','visit:G','check']);assert.equal(p.results[0].cost,3);});
+test('貪欲は費用７で終わるが A* は３で到達する',()=>{const h=['visit:B','visit:G','check','visit:B','visit:A','visit:G','check'];const p=replayAstarGuide('compare',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.results.map(x=>[x.mode,x.cost]),[['greedy',7],['astar',3]]);assert.equal(replayAstarGuide('compare',[...h,'answer:greedy']),null);assert.equal(replayAstarGuide('compare',[...h,'reset']),null);assert.equal(replayAstarGuide('compare',[...h,'answer:astar']).done,true);});
+test('途中リセットと未発見点・終了後の操作を拒否',()=>{assert.equal(replayAstarGuide('astar',['visit:G']),null);assert.deepEqual(replayAstarGuide('astar',['visit:B','reset']).state.open,{A:1,B:2});assert.equal(replayAstarGuide('uniform',['check']),null);assert.equal(replayAstarGuide('uniform',{}),null);});
