@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'river',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>p.locator(`[data-functional-action="${a}"]`).click(),finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#functional-finish').click();await p.locator('#functional-back').click();};
+   const map=async()=>{for(const x of ['op:inc','check','op:double','check'])await act(x);};
+   stage='map';await p.locator('#functional-map').click();await act('op:double');await act('check');if(!(await p.locator('#functional-status').innerText()).includes('目標'))throw Error('wrong result feedback missing');await act('undo');await act('op:inc');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('[2、4、3]'))throw Error('partial result not restored');for(const x of ['check','op:double','check'])await act(x);await finish();if(await p.locator('#functional-pipeline').count())throw Error('advanced opened after one');
+   await p.locator('#functional-map').click();await p.locator('#functional-restart').click();await map();await finish();if(await p.locator('#functional-pipeline').count())throw Error('replay opened advanced');
+   stage='fold';await p.locator('#functional-fold').click();await act('step');await act('check');if(!(await p.locator('#functional-status').innerText()).includes('残り'))throw Error('incomplete fold feedback missing');for(const x of ['step','step','check'])await act(x);if(!(await p.locator('body').innerText()).includes('現在の合計：0'))throw Error('empty initial sum missing');for(const x of ['check','step','step','check'])await act(x);await finish();if(!await p.locator('#functional-pipeline').isVisible())throw Error('advanced missing');
+   stage='pipeline';await p.locator('#functional-pipeline').click();for(const x of ['op:inc','op:filter','op:sum'])await act(x);if(!(await p.locator('body').innerText()).includes('現在の結果：9'))throw Error('wrong order result missing');await act('check');if(!(await p.locator('#functional-status').innerText()).includes('順番'))throw Error('wrong order feedback missing');for(const x of ['undo','undo','undo','op:filter','op:inc','op:sum','check','op:filter','op:inc','op:sum','check'])await act(x);await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#functional-pipeline').innerText()).includes('達成済み'))throw Error('completion not restored');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
