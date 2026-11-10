@@ -59,3 +59,7 @@ GIT-Visualization 3a のデータ構造化に関する前提練習への限定�
 2026-11-11、`review_candidate` が SEP-Privacy 8、SEC-SEP 1・4、PDC-Programs 1c・1d・4b の６件を原典・固定例・既存検証と独立照合した。1d は実際の順序保証を扱わないとの指摘を受けて前提練習に限定した。実務・実装や法域別の判断は未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
 
 PDC-Programs 1d の順序保証に関する前提練習への限定は `review_candidate` が修正後に再確認した。
+
+2026-11-11、`review_candidate` が HCI-Accessibility 2、HCI-Design 6b、SDF-Fundamentals 10、SE-Construction 5 の４件を原典・固定例・既存検証と独立照合した。実際の支援技術、規格適合、一般の不具合修正・実 IDE は未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
+
+2026-11-11、`review_candidate` が FPL-Types 8・8a、HCI-Evaluation 1、SE-Construction 10b、SDF-Fundamentals 12 の５件を原典・固定例・既存検証と独立照合した。一般の言語・実装や実際の利用者評価などは未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
