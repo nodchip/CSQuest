@@ -6,6 +6,7 @@ const groups={
   {id:'crypto',title:'知らせを守る',quests:['tower-crypto-encrypt','tower-crypto-digest','tower-crypto-integrity']},
   {id:'events',title:'知らせと灯りを動かす',quests:['tower-events-register','tower-events-toggle','tower-events-queue']},
   {id:'address',title:'宛先と送信口を確かめる',quests:['tower-name-lab','tower-queue-lab']},
+  {id:'congestion',title:'伝令路の混雑を調べる',quests:['tower-congestion-grow','tower-congestion-loss','tower-congestion-recover']},
   {id:'window',title:'三通の知らせを順に届ける',quests:['tower-window-clean','tower-window-gap','tower-window-retry']},
  ],
  mist:[
@@ -20,6 +21,7 @@ const prerequisites={
  'tower-layers-route':['tower-layers-wrap','tower-layers-relay'],
  'tower-crypto-integrity':['tower-crypto-encrypt','tower-crypto-digest'],
  'tower-events-queue':['tower-events-register','tower-events-toggle'],
+ 'tower-congestion-recover':['tower-congestion-grow','tower-congestion-loss'],
  'tower-window-retry':['tower-window-clean','tower-window-gap'],
  'gate-automata-both':['gate-automata-even','gate-automata-last'],
  'gate-injection-choose':['gate-injection-concat','gate-injection-bound'],

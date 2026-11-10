@@ -43,3 +43,7 @@ DM-Core 5 の原典ページ修正は `review_candidate` が再確認した。
 2026-11-11、`review_candidate` が GIT-Visualization 2・3b、MSF-Statistics 3、AI-ML 13、SDF-Practices 3 の５件を独立照合した。散布図は相関の方向・強さ自体を問わないとの指摘を受け、MSF の行を二変数の組の可視化という前提練習に限定した。一般の設計・実装や実データ分析は未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
 
 MSF-Statistics 3 の相関の前提練習への限定は、`review_candidate` が修正後に再確認した。
+
+2026-11-11、`review_candidate` が AL-Foundational 15、PDC-Coordination 1b、SE-Construction 9a、MSF-Statistics 学習成果 4f を独立照合した。循環の回避、未知の依存の発見、相関の方向・強さの理解を教材が問わないとの指摘を受け、後３件を前提練習に限定した。今回の対応付けレビューは元教材レビューやブラウザ再実行、完成を意味しない。
+
+循環回避・依存特定・相関の前提練習への限定は `review_candidate` が修正後に再確認した。
