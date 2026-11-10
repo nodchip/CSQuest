@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'choices',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#workshop-open-quests').click();for(let i=0;i<20;i++){const group=p.getByRole('button',{name:/同じ名前の光を調べる/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-scopelight-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/二つの探し方を比べる/}).count())throw Error('advanced opened early');
+   stage='lexical';await p.getByRole('button',{name:/定義した場所から箱を探す/}).focus();await p.keyboard.press('Enter');await p.locator('[data-scopelight-action="box:room"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('#scopelight-status').innerText()).includes('定義'))throw Error('wrong answer hint missing');await act('box:workshop');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('作業部屋から読み取りを呼びます'))throw Error('partial state lost');await act('box:workshop');await p.locator('#scopelight-finish').click();await p.locator('#scopelight-back').click();await open();if(await p.getByRole('button',{name:/二つの探し方を比べる/}).count())throw Error('advanced opened after one');
+   stage='dynamic';await p.getByRole('button',{name:/呼び出した場所から箱を探す/}).click();await sequence(['box:workshop','box:room']);await p.locator('#scopelight-finish').click();await p.locator('#scopelight-back').click();await open();
+   stage='compare';await p.getByRole('button',{name:/二つの探し方を比べる/}).click();await sequence(['box:workshop','box:room']);await act('answer:lexical');if(!(await p.locator('#scopelight-status').innerText()).includes('探す'))throw Error('wrong comparison hint missing');await act('answer:dynamic');if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#scopelight-finish').click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#scopelight-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/二つの探し方を比べる/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
