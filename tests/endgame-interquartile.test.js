@@ -1,0 +1,8 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayInterquartile,interquartileStats} from '../src/endgame-interquartile.js';
+const picks=xs=>xs.map(x=>`pick:${x}`),even=[1,2,3,4,5,6,7,8],odd=[1,2,3,4,5,6,7],extreme=[1,2,3,4,5,6,7,20];
+test('８件は上下４件の中央値が2.5と6.5',()=>{assert.deepEqual(interquartileStats(even),{q1:2.5,q3:6.5,iqr:4,range:7});const h=[...picks(even),'answer:2.5','answer:6.5','answer:4','check'];assert.equal(replayInterquartile('even',h).done,true);});
+test('７件では中央４を除き上下３件の中央値を使う',()=>{assert.deepEqual(interquartileStats(odd),{q1:2,q3:6,iqr:4,range:6});const h=[...picks(odd),'answer:2','answer:6','answer:4','check'];assert.equal(replayInterquartile('odd',h).done,true);});
+test('最大値の変更は範囲を７から19へ変えるが四分位範囲は４のまま',()=>{assert.deepEqual(interquartileStats(extreme),{q1:2.5,q3:6.5,iqr:4,range:19});const h=[...picks(even),'answer:2.5','answer:6.5','answer:4','answer:7','check',...picks(extreme),'answer:2.5','answer:6.5','answer:4','answer:19','check'];const p=replayInterquartile('compare',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.results.map(x=>[x.iqr,x.range]),[[4,7],[4,19]]);assert.equal(replayInterquartile('compare',[...h,'answer:different']),null);assert.equal(replayInterquartile('compare',[...h,'answer:same']).done,true);assert.equal(replayInterquartile('compare',[...h,'reset']),null);});
+test('途中再開と不正な順序・答え・早すぎる確認を拒否',()=>{assert.deepEqual(replayInterquartile('odd',['pick:1','pick:2']).sorted,[1,2]);assert.equal(replayInterquartile('odd',['pick:2']),null);assert.equal(replayInterquartile('odd',['check']),null);assert.equal(replayInterquartile('odd',[...picks(odd),'answer:2.5']),null);assert.deepEqual(replayInterquartile('odd',['pick:1','reset']).sorted,[]);});

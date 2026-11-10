@@ -47,3 +47,9 @@ MSF-Statistics 3 の相関の前提練習への限定は、`review_candidate` �
 2026-11-11、`review_candidate` が AL-Foundational 15、PDC-Coordination 1b、SE-Construction 9a、MSF-Statistics 学習成果 4f を独立照合した。循環の回避、未知の依存の発見、相関の方向・強さの理解を教材が問わないとの指摘を受け、後３件を前提練習に限定した。今回の対応付けレビューは元教材レビューやブラウザ再実行、完成を意味しない。
 
 循環回避・依存特定・相関の前提練習への限定は `review_candidate` が修正後に再確認した。
+
+2026-11-11、`review_candidate` が SF-Performance トピック2・成果2、GIT-Visualization 1・3a の４件を独立照合した。3a はデータを構造化する操作自体を行わないとの指摘に従い、組の重要性を知る前提練習に限定した。今回の対応付けレビューは元教材のレビュー、テスト・ブラウザの再実行や完成を意味しない。
+
+GIT-Visualization 3a のデータ構造化に関する前提練習への限定は、`review_candidate` が修正後に再確認した。
+
+2026-11-11、`review_candidate` が PDC-Coordination 2c・2d・3、SDF-Practices 1、SE-Validation 4c の５件を原典・固定例・既存検証と独立照合した。一般の処理・実装や実利用者調査などは未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
