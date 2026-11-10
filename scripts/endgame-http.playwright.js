@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'sky',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>{await p.locator(`[data-http-action="${a}"]`).click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error(`horizontal overflow after ${a}`);},seq=async xs=>{for(const a of xs)await act(a);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#http-finish').click();await p.locator('#http-back').click();};
+   const get=x=>[`path:${x}`,'method:GET','send','check'],request=[...get('river'),...get('hill'),...get('missing')];
+   stage='request';await p.locator('#http-request').click();await seq(['path:hill','method:GET','send','path:river','check']);if(!(await p.locator('#http-status').innerText()).includes('目標'))throw Error('wrong response accepted');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('丘の道は通れます'))throw Error('response not restored');await seq(['send','check',...get('hill'),'path:missing','method:GET','send']);if(!(await p.locator('body').innerText()).includes('状態 404'))throw Error('404 not displayed');await act('check');await finish();if(await p.locator('#http-repair').count())throw Error('advanced opened after one');
+   stage='replay';await p.locator('#http-request').click();await p.locator('#http-restart').click();await seq(request);await finish();if(await p.locator('#http-repair').count())throw Error('replay opened advanced');
+   stage='compare';await p.locator('#http-compare').click();await seq(['path:river','method:HEAD','send','check']);if(!(await p.locator('#http-status').innerText()).includes('両方'))throw Error('premature comparison accepted');await seq(['method:GET','send']);if(!(await p.locator('body').innerText()).includes('本文：送られていない'))throw Error('HEAD body absent not shown');await seq(['check','path:hill','method:GET','send','method:HEAD','send','check']);await finish();if(!await p.locator('#http-repair').isVisible())throw Error('advanced missing');
+   stage='repair';await p.locator('#http-repair').click();await act('judge:content');if(!(await p.locator('#http-status').innerText()).includes('状態'))throw Error('wrong diagnosis hint missing');await seq(['judge:missing',...get('hill'),'judge:content',...get('river')]);await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#http-repair').innerText()).includes('達成済み'))throw Error('completion not restored');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
