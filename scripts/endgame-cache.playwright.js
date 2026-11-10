@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'forge',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>{await p.locator(`[data-cache-action="${a}"]`).click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error(`horizontal overflow after ${a}`);},sequence=async xs=>{for(const a of xs)await act(a);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#cache-finish').click();await p.locator('#cache-back').click();};
+   const temporal=['miss','frame:0','miss','frame:1','hit','hit','next','miss','frame:0','miss','frame:1','miss','frame:0','miss','frame:1','next','miss','frame:0','miss','frame:1','hit','miss','frame:1','next'];
+   stage='temporal';await p.locator('#cache-temporal').click();await act('hit');if(!(await p.locator('#cache-status').innerText()).includes('確かめ'))throw Error('wrong prediction feedback missing');await act('miss');await act('frame:1');if(!(await p.locator('#cache-status').innerText()).includes('空棚'))throw Error('wrong frame feedback missing');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('どちらの棚へ'))throw Error('pending miss not restored');await sequence(temporal.slice(1));if(!(await p.locator('body').innerText()).includes('場面3は 1 / 4 回命中'))throw Error('LRU result missing');await finish();if(await p.locator('#cache-mapping').count())throw Error('advanced opened after one');
+   stage='replay';await p.locator('#cache-temporal').click();await p.locator('#cache-restart').click();await sequence(temporal);await finish();if(await p.locator('#cache-mapping').count())throw Error('replay opened advanced');
+   stage='spatial';await p.locator('#cache-spatial').click();await sequence(['miss','frame:0','hit','miss','frame:1','hit','next','miss','frame:0','miss','frame:1','miss','frame:0','miss','frame:0','next']);if(!(await p.locator('body').innerText()).includes('場面1は 2 / 4 回命中'))throw Error('spatial result missing');await finish();if(!await p.locator('#cache-mapping').isVisible())throw Error('advanced missing');
+   stage='mapping';await p.locator('#cache-mapping').click();await sequence(['miss','frame:0','miss','frame:0','miss','frame:0','miss','frame:0','next','miss','frame:0','miss','frame:1','hit','hit','next']);if(!(await p.locator('body').innerText()).includes('場面2は 2 / 4 回命中'))throw Error('associative result missing');await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#cache-mapping').innerText()).includes('達成済み'))throw Error('completion not restored');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
