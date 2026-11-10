@@ -4,6 +4,7 @@ const catalogs={
   {id:'storage',title:'記憶の箱と棚を調べる',local:true,quests:['forge-memory','forge-cache']},
   {id:'cache',title:'手元の記憶棚を調べる',quests:['forge-cache-temporal','forge-cache-spatial','forge-cache-mapping']},
   {id:'cpu',title:'計算道具を動かす',quests:['forge-cpu-basic','forge-cpu-branch','forge-cpu-data']},
+  {id:'switch',title:'スイッチの信号を整える',quests:['forge-switch-raw','forge-switch-filter','forge-switch-compare']},
   {id:'io',title:'装置の完成を受け取る',quests:['forge-io-poll','forge-io-interrupt','forge-io-compare']},
   {id:'objects',title:'灯り道具を組み立てる',quests:['forge-objects-identity','forge-objects-encapsulation','forge-objects-interaction']},
   {id:'numbers',title:'灯りの計数器を直す',quests:['forge-integer-unsigned','forge-integer-reading','forge-integer-addition']},
@@ -19,6 +20,7 @@ const catalogs={
 const prerequisites={
  'forge-cache-mapping':['forge-cache-temporal','forge-cache-spatial'],
  'forge-cpu-data':['forge-cpu-basic','forge-cpu-branch'],
+ 'forge-switch-compare':['forge-switch-raw','forge-switch-filter'],
  'forge-io-compare':['forge-io-poll','forge-io-interrupt'],
  'forge-objects-interaction':['forge-objects-identity','forge-objects-encapsulation'],
  'forge-integer-addition':['forge-integer-unsigned','forge-integer-reading'],
