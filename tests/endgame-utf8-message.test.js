@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayUtf8Message} from '../src/endgame-utf8-message.js';
+test('英字 A はUTF-8で41の１バイト',()=>{assert.deepEqual([...Buffer.from('A','utf8')],[0x41]);assert.equal(replayUtf8Message('ascii',['byte:41','check']).done,true);assert.equal(replayUtf8Message('ascii',['byte:E3']),null);});
+test('あはE3 81 82の３バイトで順を守る',()=>{assert.deepEqual([...Buffer.from('あ','utf8')],[0xE3,0x81,0x82]);assert.equal(replayUtf8Message('kana',['byte:E3','byte:82']),null);const p=replayUtf8Message('kana',['byte:E3','byte:81','byte:82','check']);assert.deepEqual(p.results[0].bytes,['E3','81','82']);});
+test('Aあ・あAは長さ同じで順序が異なる',()=>{const h=['byte:41','byte:E3','byte:81','byte:82','check','byte:E3','byte:81','byte:82','byte:41','check'],p=replayUtf8Message('combine',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.results.map(x=>x.bytes),[['41','E3','81','82'],['E3','81','82','41']]);assert.equal(replayUtf8Message('combine',[...h,'answer:different']),null);assert.equal(replayUtf8Message('combine',[...h,'answer:sameLength','answer:different']).done,true);assert.equal(replayUtf8Message('combine',[...h,'reset']),null);});
+test('途中再開、未完了・余分なバイト・やり直し',()=>{assert.equal(replayUtf8Message('kana',['byte:E3','check']),null);assert.equal(replayUtf8Message('ascii',['byte:41','byte:41']),null);assert.deepEqual(replayUtf8Message('kana',['byte:E3','undo']).bytes,[]);assert.equal(replayUtf8Message('ascii',['undo']),null);assert.equal(replayUtf8Message('kana',{}),null);});

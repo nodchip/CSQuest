@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'mid-archive',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#archive-open-quests').click();for(let i=0;i<15;i++){const group=p.getByRole('button',{name:/文字をバイトで届ける/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-utfmessage-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/文字の順とバイトを比べる/}).count())throw Error('advanced opened early');
+   stage='ascii';await p.getByRole('button',{name:/英字 A を届ける/}).focus();await p.keyboard.press('Enter');await p.locator('[data-utfmessage-action="byte:E3"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('#utfmessage-status').innerText()).includes('確かめ'))throw Error('wrong byte hint missing');await sequence(['byte:41','check']);await p.locator('#utfmessage-finish').click();await p.locator('#utfmessage-back').click();await open();if(await p.getByRole('button',{name:/文字の順とバイトを比べる/}).count())throw Error('advanced opened after one');
+   stage='kana';await p.getByRole('button',{name:/「あ」を届ける/}).click();await act('byte:E3');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('できたバイト：E3'))throw Error('partial state lost');await sequence(['byte:81','byte:82','check']);await p.locator('#utfmessage-finish').click();await p.locator('#utfmessage-back').click();await open();
+   stage='combine';await p.getByRole('button',{name:/文字の順とバイトを比べる/}).click();await sequence(['byte:41','byte:E3','byte:81','byte:82','check','byte:E3','byte:81','byte:82','byte:41','check']);await act('answer:differentLength');if(!(await p.locator('#utfmessage-status').innerText()).includes('確かめ'))throw Error('length hint missing');await sequence(['answer:sameLength','answer:different']);if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#utfmessage-finish').click();const body=await p.locator('body').innerText();if(!body.includes('Aあ：41 E3 81 82')||!body.includes('あA：E3 81 82 41'))throw Error('byte comparison missing');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#utfmessage-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/文字の順とバイトを比べる/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}

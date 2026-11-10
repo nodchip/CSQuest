@@ -1,5 +1,6 @@
 const groups = [
  {id:'local', title:'文庫と橋を手入れする', quests:['archive-search','archive-filter','archive-searches']},
+ {id:'utfmessage', title:'文字をバイトで届ける', quests:['archive-utfmessage-ascii','archive-utfmessage-kana','archive-utfmessage-combine']},
  {id:'bst-delete', title:'枝の札を取り除く', quests:['archive-bstd-leaf','archive-bstd-single','archive-bstd-two']},
  {id:'tree', title:'枝分かれ棚で探す', quests:['archive-search-lab','archive-tree-search','archive-tree-insert','archive-tree-compare']},
  {id:'complexity', title:'探し方を比べる', quests:['archive-complexity-linear','archive-complexity-binary','archive-complexity-compare']},
@@ -11,6 +12,7 @@ const groups = [
  {id:'versions', title:'道案内帳の版を整える', quests:['archive-version-snapshot','archive-version-merge','archive-version-release']},
 ];
 const prerequisites={
+ 'archive-utfmessage-combine':['archive-utfmessage-ascii','archive-utfmessage-kana'],
  'archive-bstd-two':['archive-bstd-leaf','archive-bstd-single'],
  'archive-tree-compare':['archive-tree-search','archive-tree-insert'],
  'archive-complexity-compare':['archive-complexity-linear','archive-complexity-binary'],
