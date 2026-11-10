@@ -128,3 +128,11 @@ MSF-Discrete 成果7c をグラフ表現の前提練習に限定し原典ペー�
 2026-11-11、`review_candidate` が AR-Representation 学習成果5 を原典・UTF-8 の固定例・既存検証と独立照合した。符号位置は与えられ、プレイヤーがバイト列を並べるとの指摘を反映した。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
 
 AR-Representation 成果5 の UTF-8 操作の記述修正は `review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が HCI-Design 成果2・2a・2c、HCI-Accessibility 成果2 を原典・固定例・既存検証と独立照合した。実利用者の調査や評価、一般の包括的設計は未評価。指摘に従い元教材レビューの参照と原典ページを整理した。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
+
+HCI の元教材レビュー参照と原典ページの修正は `review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が SDF-Practices 成果4、SDF-Fundamentals 成果12、SE-Construction 成果2、HCI-Evaluation 成果2 を原典・固定例・既存検証と独立照合し、原典ページを項目ごとに整理した。実コードや実利用者の評価は未評価。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
+
+SDF・SE・HCI の４成果の原典ページの修正は `review_candidate` が再確認した。

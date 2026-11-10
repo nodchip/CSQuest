@@ -1,0 +1,11 @@
+# AL-Strategies：品札の併合
+
+原典：[CS2023](https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf) 印字 pp.90–91 の AL-Strategies 1c（分割統治）の固定例。旧依頼55の `src/merge-sort.js` と同じ二例・同じ実装を現行の街から操作し、異なる教材として新たな内容を水増ししない。現行の挿入・選択ソートとの比較で、列を合わせる操作を追加した。二つの基礎を終えると比較が開く。
+
+一枚の列から開始し、隣接する二列の小さい先頭を取り、同値では左を取る。列の片側を使い切った残りは自動で連結。固定例は `3A 1B 3C 2D → 1B 2D 3A 3C`、`2A 1B 2C 1D → 1B 1D 2A 2C`。それぞれ五回の先頭比較。同じ値は元の順序を維持する。一般的な説明は [Princeton のマージソート教材](https://algs4.cs.princeton.edu/lectures/keynote/22Mergesort.pdf) 及び [bottom-up 実装](https://algs4.cs.princeton.edu/code/javadoc/edu/princeton/cs/algs4/MergeBU.html) を参照。
+
+四札の固定例であり、分割操作そのもの、任意の長さの実装、一般の正しさ・安定性の証明、計算量や他の分割統治法を評価しない。分割統治全体や CS2023 の成果全体を完成としない。
+
+実装担当とは別の `review_candidate` が原典・Princeton、固定２例の併合順と安定性、各画面の前提、誤答・履歴、分類と開放、旧記録の既定値を確認した。関連11テストも成功した。任意長・一般の証明や実装を検証したものではなく、レビュー担当自身はブラウザを操作していない。
+
+`scripts/endgame-merge-runs.playwright.js` は集いと４地域の達成状態を用意した検証用記録から、213・390・1200 px 幅で分類経由の到達、キーボード操作、誤答案内、途中保存・再開、段階開放と達成後の再開を確認した。新規開始からこの依頼への通し操作、実際のスクリーンリーダー音声や利用者による面白さの評価は未確認。
