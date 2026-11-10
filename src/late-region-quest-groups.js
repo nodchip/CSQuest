@@ -11,6 +11,7 @@ const extra={
   {id:'vector',title:'道しるべの矢印を作る',quests:['garden-vector-add','garden-vector-scale','garden-vector-basis']},
   {id:'quantifiers',title:'庭の灯りの知らせを確かめる',quests:['garden-quantifiers-simple','garden-quantifiers-negation','garden-quantifiers-nested']},
   {id:'relations',title:'花の届け先を結ぶ',quests:['garden-relations-relation','garden-relations-function','garden-relations-composition']},
+  {id:'modulo-wheel',title:'５つの灯りを巡る',quests:['garden-modulo-positive','garden-modulo-negative','garden-modulo-compare']},
   {id:'logic-rules',title:'花の記録から知らせを導く',quests:['garden-logic-derive','garden-logic-unify','garden-logic-combine']},
  ],
  observatory:[
@@ -47,6 +48,7 @@ const prerequisites={
  'garden-vector-basis':['garden-vector-add','garden-vector-scale'],
  'garden-quantifiers-nested':['garden-quantifiers-simple','garden-quantifiers-negation'],
  'garden-relations-composition':['garden-relations-relation','garden-relations-function'],
+ 'garden-modulo-compare':['garden-modulo-positive','garden-modulo-negative'],
  'garden-logic-combine':['garden-logic-derive','garden-logic-unify'],
  'observatory-cluster-compare':['observatory-cluster-far','observatory-cluster-near'],
  'observatory-derivative-compare':['observatory-derivative-after','observatory-derivative-before'],

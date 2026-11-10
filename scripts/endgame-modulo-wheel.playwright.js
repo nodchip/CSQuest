@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'garden',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#garden-open-quests').click();for(let i=0;i<15;i++){const group=p.getByRole('button',{name:/５つの灯りを巡る/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-modulo-wheel-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/二つの進み方を比べる/}).count())throw Error('advanced opened early');
+   stage='positive';await p.getByRole('button',{name:/８歩進んでみる/}).focus();await p.keyboard.press('Enter');await p.locator('[data-modulo-wheel-action="step:-2"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('#modulo-wheel-status').innerText()).includes('確かめ'))throw Error('wrong move hint missing');await act('step:8');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('現在の位置：3'))throw Error('partial state lost');await act('position:3');await p.locator('#modulo-wheel-finish').click();await p.locator('#modulo-wheel-back').click();await open();if(await p.getByRole('button',{name:/二つの進み方を比べる/}).count())throw Error('advanced opened after one');
+   stage='negative';await p.getByRole('button',{name:/２歩戻ってみる/}).click();await sequence(['step:-2','position:3']);await p.locator('#modulo-wheel-finish').click();await p.locator('#modulo-wheel-back').click();await open();
+   stage='compare';await p.getByRole('button',{name:/二つの進み方を比べる/}).click();await sequence(['step:-2','step:4','position:2','step:8','step:4','position:2']);await act('answer:different');if(!(await p.locator('#modulo-wheel-status').innerText()).includes('確かめ'))throw Error('wrong comparison hint missing');await act('answer:same');if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#modulo-wheel-finish').click();const body=await p.locator('body').innerText();if(!body.includes('合計 2、位置 2')||!body.includes('合計 12、位置 2'))throw Error('comparison result missing');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#modulo-wheel-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/二つの進み方を比べる/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
