@@ -5,7 +5,7 @@ test('sRGB contrast matches independently calculated values and thresholds',()=>
  assert.ok(Math.abs(contrastOnWhite('#777777')-4.4780894536)<1e-8);
  assert.ok(Math.abs(contrastOnWhite('#767676')-4.5422249596)<1e-8);
  assert.ok(Math.abs(contrastOnWhite('#aaaaaa')-2.3231230535)<1e-8);
- assert.throws(()=>contrastOnWhite('bad')); 
+ assert.throws(()=>contrastOnWhite('bad'));
 });
 test('normal and large examples have independent expected outcomes',()=>{
  assert.deepEqual(replayTextContrast('normal',['answer:fail','answer:pass']).results.map(x=>x.pass),[false,true]);
