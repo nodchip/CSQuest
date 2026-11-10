@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'sky',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>p.locator(`[data-events-action="${a}"]`).click(),finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#events-finish').click();await p.locator('#events-back').click();};
+   const register=async()=>{for(const x of ['bind:river:east','bind:port:west','fire:port','fire:river','check','bind:river:west','bind:port:east','fire:river','fire:port','check'])await act(x);};
+   stage='register';await p.locator('#events-register').click();await act('fire:river');if(!(await p.locator('body').innerText()).includes('水辺→処理なし'))throw Error('unregistered result missing');await act('check');if(!(await p.locator('#events-status').innerText()).includes('登録'))throw Error('wrong setup feedback missing');for(const x of ['bind:river:east','bind:port:west','fire:port'])await act(x);await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('港→西の灯りを点灯'))throw Error('registration history not restored');for(const x of ['fire:river','check','bind:river:west','bind:port:east','fire:river','fire:port','check'])await act(x);await finish();if(await p.locator('#events-queue').count())throw Error('advanced opened after one');
+   await p.locator('#events-register').click();await p.locator('#events-restart').click();await register();await finish();if(await p.locator('#events-queue').count())throw Error('replay opened advanced');
+   stage='toggle';await p.locator('#events-toggle').click();for(const x of ['rule:on','press','press','check'])await act(x);if(!(await p.locator('#events-status').innerText()).includes('反転'))throw Error('wrong rule feedback missing');for(const x of ['rule:toggle','press','press','check','rule:toggle','press','check'])await act(x);await finish();if(!await p.locator('#events-queue').isVisible())throw Error('advanced missing');
+   stage='queue';await p.locator('#events-queue').click();await act('dispatch');if(!(await p.locator('body').innerText()).includes('処理した順：A'))throw Error('first dispatch missing');await act('dispatch');await act('next');await act('dispatch');if(!(await p.locator('body').innerText()).includes('処理した順：B'))throw Error('reversed order missing');await act('dispatch');await act('next');await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#events-queue').innerText()).includes('達成済み'))throw Error('completion not restored');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
