@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'valley',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#valley-open-quests').click();for(let i=0;i<15;i++){const group=p.getByRole('button',{name:/未記入の数量を調べる/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-sqlnull-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/条件を組み合わせる/}).count())throw Error('advanced opened early');
+   stage='equal';await p.getByRole('button',{name:/５と同じ数量を調べる/}).focus();await p.keyboard.press('Enter');await p.locator('[data-sqlnull-action="truth:false"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('#sqlnull-status').innerText()).includes('確かめ'))throw Error('wrong hint missing');await act('truth:true');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('判定済み：1 / 3'))throw Error('partial state lost');await sequence(['truth:false','truth:unknown','toggle:C','check']);if(!(await p.locator('#sqlnull-status').innerText()).includes('確かめ'))throw Error('wrong selection hint missing');await sequence(['toggle:C','toggle:A','check']);await p.locator('#sqlnull-finish').click();await p.locator('#sqlnull-back').click();await open();if(await p.getByRole('button',{name:/条件を組み合わせる/}).count())throw Error('advanced opened after one');
+   stage='missing';await p.getByRole('button',{name:/未記入の行を探す/}).click();await sequence(['truth:false','truth:false','truth:true','toggle:C','check']);await p.locator('#sqlnull-finish').click();await p.locator('#sqlnull-back').click();await open();
+   stage='compound';await p.getByRole('button',{name:/条件を組み合わせる/}).click();await sequence(['truth:false','truth:true','truth:unknown','toggle:B','check','truth:true','truth:false','truth:true','toggle:A','toggle:C','check']);if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#sqlnull-finish').click();const body=await p.locator('body').innerText();if(!body.includes('B')||!body.includes('A・C'))throw Error('result missing');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#sqlnull-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/条件を組み合わせる/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}

@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replaySqlNull,sqlNullResult} from '../src/endgame-sql-null.js';
+test('等号では NULL は不明、真の A だけ残る',()=>{const h=['truth:true','truth:false','truth:unknown'];assert.equal(replaySqlNull('equal',[...h,'toggle:C','check']),null);const p=replaySqlNull('equal',[...h,'toggle:A','check']);assert.deepEqual(p.results[0],{condition:'equal',answers:['true','false','unknown'],selected:['A']});assert.equal(p.done,true);});
+test('IS NULL は未記入 C のみ真',()=>{const p=replaySqlNull('missing',['truth:false','truth:false','truth:true','toggle:C','check']);assert.deepEqual(p.results[0].selected,['C']);assert.equal(p.done,true);});
+test('NOT 不明は不明、OR で真を加えると真',()=>{assert.equal(sqlNullResult('not',null),'unknown');assert.equal(sqlNullResult('or',null),'true');const h=['truth:false','truth:true','truth:unknown','toggle:B','check','truth:true','truth:false','truth:true','toggle:C','toggle:A','check'];const p=replaySqlNull('compound',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.results.map(r=>r.selected),[['B'],['A','C']]);assert.equal(p.done,true);assert.equal(replaySqlNull('compound',[...h,'reset']),null);});
+test('途中保存・誤答・途中選択・リセット',()=>{assert.equal(replaySqlNull('equal',['truth:false']),null);assert.equal(replaySqlNull('equal',['toggle:A']),null);assert.equal(replaySqlNull('equal',['truth:true','check']),null);assert.deepEqual(replaySqlNull('equal',['truth:true','reset']).answers,[]);assert.equal(replaySqlNull('equal',{}),null);});

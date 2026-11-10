@@ -53,3 +53,9 @@ MSF-Statistics 3 の相関の前提練習への限定は、`review_candidate` �
 GIT-Visualization 3a のデータ構造化に関する前提練習への限定は、`review_candidate` が修正後に再確認した。
 
 2026-11-11、`review_candidate` が PDC-Coordination 2c・2d・3、SDF-Practices 1、SE-Validation 4c の５件を原典・固定例・既存検証と独立照合した。一般の処理・実装や実利用者調査などは未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
+
+2026-11-11、`review_candidate` が PDC-Programs 1a・1b・4a、FPL-Types 1、SDF-Fundamentals 6 の５件を原典・固定例・既存検証と独立照合した。実際の同時実行や一般の構築・実言語の利用などは未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
+
+2026-11-11、`review_candidate` が SEP-Privacy 8、SEC-SEP 1・4、PDC-Programs 1c・1d・4b の６件を原典・固定例・既存検証と独立照合した。1d は実際の順序保証を扱わないとの指摘を受けて前提練習に限定した。実務・実装や法域別の判断は未評価。今回の対応付けレビューは元教材レビューやテスト・ブラウザの再実行、完成を意味しない。
+
+PDC-Programs 1d の順序保証に関する前提練習への限定は `review_candidate` が修正後に再確認した。

@@ -3,6 +3,7 @@ const groups=[
  {id:'lists',title:'名簿と発送札を整える',quests:['valley-query-lab','valley-tables-lab','valley-integrity-lab']},
  {id:'relations',title:'記録の関係を整理する',quests:['valley-modeling-one','valley-modeling-many','valley-modeling-lookup']},
  {id:'transactions',title:'荷物の移動を記録する',quests:['valley-transaction-commit','valley-transaction-rollback','valley-transaction-isolation']},
+ {id:'sqlnull',title:'未記入の数量を調べる',quests:['valley-sqlnull-equal','valley-sqlnull-missing','valley-sqlnull-compound']},
  {id:'query-join',title:'荷物と届け先の表を調べる',quests:['valley-query-join','valley-query-select','valley-query-compose']},
  {id:'journal',title:'途切れた台帳を立て直す',quests:['valley-journal-undo','valley-journal-redo','valley-journal-decide']},
 ];
@@ -10,6 +11,7 @@ const prerequisites={
  'valley-integrity-lab':['valley-query-lab','valley-tables-lab'],
  'valley-modeling-lookup':['valley-modeling-one','valley-modeling-many'],
  'valley-transaction-isolation':['valley-transaction-commit','valley-transaction-rollback'],
+ 'valley-sqlnull-compound':['valley-sqlnull-equal','valley-sqlnull-missing'],
  'valley-query-compose':['valley-query-join','valley-query-select'],
  'valley-journal-decide':['valley-journal-undo','valley-journal-redo'],
 };
