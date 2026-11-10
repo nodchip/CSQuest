@@ -21,3 +21,7 @@
 2026-11-11、`review_candidate` が AI-Search 1b、AL-Foundational 6、DM-Security 学習成果 2、HCI-Evaluation 6b、MSF-Discrete 学習成果 1d・7a、PDC-Programs 3d、SF-Foundations 4 の８件について原典、固定例、開放条件と既存検証の対応を独立確認した。一般的な課題や実装・自由な説明は未評価。元教材のレビューと今回の対応付けレビューは別で、今回のブラウザ再操作や新規開始からの通し到達、完成を示さない。
 
 2026-11-11、`review_candidate` が MSF-Linear 2、FPL-Event-Driven 7、OS-Principles 6、GIT-Image 5b、AI-ML 3・7、PDC-Coordination 1 の７件について原典、現行の固定例、開放条件と既存検証の対応を独立確認した。実装や一般化などは未評価。元教材のレビューと今回の対応付けレビューは別で、今回のブラウザ再操作や新規開始からの通し到達、完成を示さない。
+
+2026-11-11、`review_candidate` が MSF-Discrete 学習成果 2a、AL-Foundational 11、PDC-Coordination 3d、GIT-Image 5a、PDC-Algorithms 3b、SE-Validation 3c の６件について原典・固定例・既存検証の対応を独立確認し、後の２件の原典ページ番号の誤りを指摘した。指摘に沿って226頁と246頁に修正した。今回ブラウザは再操作しておらず、固定例で一般の設計・実装・証明や新規開始からの通し到達を評価したものではない。
+
+上記２件の修正後のページ番号は、同じ `review_candidate` が原典と照らして再確認した。

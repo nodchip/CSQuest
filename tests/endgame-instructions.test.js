@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {instructionCases,replayInstructions} from '../src/endgame-instructions.js';
+test('名前では単位と真の意味を区別する',()=>{assert.equal(replayInstructions('name',['answer:seconds']),null);assert.equal(replayInstructions('name',['answer:minutes','answer:closed']),null);assert.equal(replayInstructions('name',['answer:minutes','answer:open']).done,true);});
+test('コメントは実際の動きと理由を区別する',()=>{assert.equal(replayInstructions('comment',['answer:repeat']),null);assert.equal(replayInstructions('comment',['answer:reason','answer:floor']),null);assert.equal(replayInstructions('comment',['answer:reason','answer:why']).done,true);});
+test('変更済み手順と未変更手順を区別し、古い説明を修正',()=>{const h=['answer:new'];assert.equal(replayInstructions('revise',JSON.parse(JSON.stringify(h))).scene,1);assert.equal(replayInstructions('revise',[...h,'answer:comment']),null);const done=replayInstructions('revise',[...h,'answer:both']);assert.equal(done.done,true);assert.equal(replayInstructions('revise',[...h,'answer:both','answer:both']),null);});
+test('問題・選択肢には対応する正答が１件ずつある',()=>{for(const cases of Object.values(instructionCases))for(const c of cases){assert.equal(c.choices.filter(([id])=>id===c.correct).length,1);assert.equal(new Set(c.choices.map(([id])=>id)).size,c.choices.length);}assert.equal(replayInstructions('name',{}),null);assert.equal(replayInstructions('unknown',[]),null);});
