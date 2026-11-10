@@ -6,6 +6,7 @@ const groups=[
  {id:'group-ledger',title:'地域ごとの数量を集計する',quests:['valley-groupledger-count','valley-groupledger-sum','valley-groupledger-compare']},
  {id:'sqlnull',title:'未記入の数量を調べる',quests:['valley-sqlnull-equal','valley-sqlnull-missing','valley-sqlnull-compound']},
  {id:'query-join',title:'荷物と届け先の表を調べる',quests:['valley-query-join','valley-query-select','valley-query-compose']},
+ {id:'ledgersplit',title:'村の台帳を分けて結ぶ',quests:['valley-ledgersplit-update','valley-ledgersplit-village','valley-ledgersplit-name']},
  {id:'journal',title:'途切れた台帳を立て直す',quests:['valley-journal-undo','valley-journal-redo','valley-journal-decide']},
 ];
 const prerequisites={
@@ -15,6 +16,7 @@ const prerequisites={
  'valley-groupledger-compare':['valley-groupledger-count','valley-groupledger-sum'],
  'valley-sqlnull-compound':['valley-sqlnull-equal','valley-sqlnull-missing'],
  'valley-query-compose':['valley-query-join','valley-query-select'],
+ 'valley-ledgersplit-name':['valley-ledgersplit-update','valley-ledgersplit-village'],
  'valley-journal-decide':['valley-journal-undo','valley-journal-redo'],
 };
 export function valleyQuestGroups(completed,endgameAvailable){
