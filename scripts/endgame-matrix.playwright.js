@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'garden',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const answer=async n=>{await p.locator('#matrix-answer').selectOption(String(n));await p.locator('#matrix-submit').click();},next=async()=>p.locator('[data-matrix-action="next"]').click(),finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#matrix-finish').click();await p.locator('#matrix-back').click();};
+   const shear=async()=>{for(const n of [4,1])await answer(n);await next();for(const n of [3,2])await answer(n);await next();};
+   stage='shear';await p.locator('#matrix-shear').click();const fits=await p.locator('figure').evaluate(el=>{const f=el.getBoundingClientRect(),s=el.querySelector('svg').getBoundingClientRect();return s.left>=f.left-1&&s.right<=f.right+1&&s.right<=document.documentElement.clientWidth+1;});if(!fits||await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('diagram overflow');await answer(3);if(!(await p.locator('#matrix-status').innerText()).includes('掛けて'))throw Error('wrong answer feedback missing');await p.locator('#matrix-answer').selectOption('4');await p.locator('#matrix-submit').focus();await p.keyboard.press('Enter');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('横は4'))throw Error('partial calculation not restored');await answer(1);if(!(await p.locator('figcaption').innerText()).includes('結果(4, 1)'))throw Error('result arrow missing');await next();for(const n of [3,2])await answer(n);await next();await finish();if(await p.locator('#matrix-compare').count())throw Error('advanced opened after one');
+   await p.locator('#matrix-shear').click();await p.locator('#matrix-restart').click();await shear();await finish();if(await p.locator('#matrix-compare').count())throw Error('replay opened advanced');
+   stage='rotate';await p.locator('#matrix-rotate').click();for(const n of [-1,2])await answer(n);await next();for(const n of [-1,-2])await answer(n);await next();await finish();if(!await p.locator('#matrix-compare').isVisible())throw Error('advanced missing');
+   stage='compare';await p.locator('#matrix-compare').click();for(const pair of [[4,1],[-1,4],[-1,2],[3,2]]){for(const n of pair)await answer(n);await next();}const result=await p.locator('#success-dialog').innerText();if(!result.includes('(-1, 4)')||!result.includes('(3, 2)'))throw Error('comparison results missing');await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#matrix-compare').innerText()).includes('達成済み'))throw Error('completion not restored');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
