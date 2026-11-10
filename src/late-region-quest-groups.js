@@ -28,6 +28,7 @@ const extra={
   {id:'usability',title:'案内の使いやすさを調べる',quests:['guide-accessibility-lab','guide-usability-lab']},
   {id:'privacy',title:'旅人の記録を守る',quests:['guide-privacy-collection','guide-privacy-identity','guide-privacy-safeguards']},
   {id:'requirements',title:'掲示板の相談を聞く',quests:['guide-requirements-interview','guide-requirements-story','guide-requirements-agreement']},
+  {id:'study-review',title:'調査の準備を相談する',quests:['guide-study-explain','guide-study-protect','guide-study-review']},
  ],
 };
 const prerequisites={
@@ -49,6 +50,7 @@ const prerequisites={
  'guide-ethics-decision':['guide-ethics-impact','guide-ethics-questions'],
  'guide-privacy-safeguards':['guide-privacy-collection','guide-privacy-identity'],
  'guide-requirements-agreement':['guide-requirements-interview','guide-requirements-story'],
+ 'guide-study-review':['guide-study-explain','guide-study-protect'],
 };
 export function lateRegionQuestGroups(region,completed,endgameAvailable){
  const done=new Set(completed),local=[...Object.keys(fourRegions[region].quests),...Object.entries(newEntrances).filter(([,q])=>q.region===region).map(([id])=>id)];

@@ -992,6 +992,22 @@
       "topics": 5,
       "outcomes": 5,
       "scope_sha256": "a86984fd1e9709514f8b5a60dd91bdc9cc530ca0193f88eefca432592654f782"
+    },
+    "MSF-Probability": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-msf-probability.md",
+      "topics": 6,
+      "outcomes": 17,
+      "scope_sha256": "f36512f304dc54c23fef6e055f9b590e81da1120b062b888d8f75ed96a47bda4"
+    },
+    "SPD-SEP/Interactive": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-sep-interactive.md",
+      "topics": 4,
+      "outcomes": 3,
+      "scope_sha256": "39512b8c0a77463d4647ec0119bd719339e662308cc3225abd1c886af344acd4"
     }
   }
 }
