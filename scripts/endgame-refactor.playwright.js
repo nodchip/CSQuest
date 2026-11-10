@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'choices',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#workshop-open-quests').click();for(let i=0;i<10;i++){const group=p.getByRole('button',{name:/仕分け機を整理して受け継ぐ/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many category pages');};
+   const act=async x=>p.locator(`[data-refactor-action="${x}"]`).click(),trials=async()=>{for(const x of ['try:0','try:1','try:2'])await act(x);};
+   await open();if(await p.getByRole('button',{name:/新しい名前を加える/}).count())throw Error('advanced opened early');
+   stage='structure';await p.getByRole('button',{name:/仕分け機の中を整理する/}).focus();await p.keyboard.press('Enter');await p.locator('[data-refactor-action="select:drop"]').focus();await p.keyboard.press('Enter');await trials();await act('check');if(!(await p.locator('#refactor-status').innerText()).includes('順'))throw Error('wrong answer hint missing');await act('select:extract');await act('try:0');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('確認済み'))throw Error('trial history lost');await act('try:1');await act('try:2');await act('check');await p.locator('#refactor-finish').click();await p.locator('#refactor-back').click();await open();if(await p.getByRole('button',{name:/新しい名前を加える/}).count())throw Error('advanced opened after one');
+   stage='interface';await p.getByRole('button',{name:/使い方を変えずに整える/}).click();await act('select:rename');await trials();if(!(await p.locator('body').innerText()).includes('名前が見つかりません'))throw Error('old name failure missing');await act('check');await act('select:preserve');await trials();await act('check');await p.locator('#refactor-finish').click();await p.locator('#refactor-back').click();await open();if(!await p.getByRole('button',{name:/新しい名前を加える/}).isVisible())throw Error('advanced missing');
+   stage='migration';await p.getByRole('button',{name:/新しい名前を加える/}).click();await act('select:alias');await trials();await act('check');if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#refactor-finish').click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#refactor-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/新しい名前を加える/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}

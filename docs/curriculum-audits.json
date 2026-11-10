@@ -944,6 +944,22 @@
       "topics": 12,
       "outcomes": 6,
       "scope_sha256": "f62316d4c2ef42a386cd66258cf12b970ee5876f29042799834e84c5f5b006f1"
+    },
+    "FPL-Logic": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-logic.md",
+      "topics": 14,
+      "outcomes": 6,
+      "scope_sha256": "01cacf427bef1cc9a973eb7cce5cb3a8855890e7f4de0a48f79779929293d707"
+    },
+    "GIT-SEP": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-sep.md",
+      "topics": 14,
+      "outcomes": 3,
+      "scope_sha256": "2af1708bf4b4b25431110106212c35a690ddc9cf27f525a9eba2f09fc18b21bb"
     }
   }
 }
