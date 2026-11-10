@@ -109,3 +109,8 @@ AR-Performance-Energy 成果1 を性能・エネルギー効率の指標を学�
 2026-11-11、`review_candidate` が SF-Security 2・2a、DM-Security 3・7、SEC-Engineering 2、SEC-Foundations 9 を原典・固定例・既存検証と独立照合した。実運用・一般の推論攻撃や設計・安全性保証は未評価。指摘に従い SEC-Foundations 9 の元教材の独立レビューを明記した。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
 
 SEC-Foundations 9 の元教材レビュー記録と今回の対応付けレビューの参照修正は、`review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が SEC-Crypto 7、SEC-Foundations 1、DM-Security 9 を原典・固定例・既存検証と独立照合した。SEC-Crypto 7 は実世界の用途を扱わないとの指摘に従い前提練習に限定した。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
+
+2026-11-11、`review_candidate` が FPL-Logic 1、AI-LRR 1・9 を原典・有限の論理教材・既存検証と独立照合した。一般の論理式・証明・実言語での作成は未評価。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
+SEC-Crypto 7 を実世界の用途を学ぶ前提練習に限定した修正は `review_candidate` が再確認した。
