@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);
+   const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'harbor',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const act=async a=>{await p.locator(`[data-counting-action="${a}"]`).click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error(`horizontal overflow after ${a}`);},seq=async xs=>{for(const a of xs)await act(a);},finish=async()=>{if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#counting-finish').click();await p.locator('#counting-back').click();};
+   const product=(a,b)=>Array.from({length:a},(_,i)=>Array.from({length:b},(_,j)=>`pick:A:${i}:${j}`)).flat(),gear=[...product(2,3),'check',...product(3,2),'check','pick:A:0','pick:A:1','pick:B:0','pick:B:1','pick:B:2','check'];
+   stage='gear';await p.locator('#counting-gear').click();await act('pick:A:0:0');await act('pick:A:0:0');if(!(await p.locator('#counting-status').innerText()).includes('同じ'))throw Error('duplicate hint missing');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('選んだ数：1'))throw Error('choice not restored');await seq(gear.slice(1));await finish();if(await p.locator('#counting-pigeon').count())throw Error('advanced opened after one');
+   stage='replay';await p.locator('#counting-gear').click();await p.locator('#counting-restart').click();await seq(gear);await finish();if(await p.locator('#counting-pigeon').count())throw Error('replay opened advanced');
+   stage='roles';await p.locator('#counting-roles').click();await act('pair:0:0');if(!(await p.locator('#counting-status').innerText()).includes('同じ人'))throw Error('same person hint missing');const pairs=(n,ordered)=>Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>i!==j&&(ordered||i<j)?`pair:${i}:${j}`:null).filter(Boolean)).flat();await seq([...pairs(3,true),'check',...pairs(3,false),'check',...pairs(4,true),'check',...pairs(4,false),'check']);await finish();if(!await p.locator('#counting-pigeon').isVisible())throw Error('advanced missing');
+   stage='pigeon';await p.locator('#counting-pigeon').click();await seq(['put:0','put:1','put:2','put:0','check','put:0','put:0','put:1','check']);if(!(await p.locator('#counting-status').innerText()).includes('重ならない'))throw Error('counterexample hint missing');await seq(['reset','put:0','put:1','put:2','check','put:0','put:1','put:1','check']);await finish();await p.reload();await p.locator('#continue').click();if(!(await p.locator('#counting-pigeon').innerText()).includes('達成済み'))throw Error('completion not restored');results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
