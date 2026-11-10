@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayRewardRoute} from '../src/endgame-reward-route.js';
+test('短い道の終点は報酬１、将来価値０で行動価値１',()=>{let p=replayRewardRoute('safe',['act:safe']);assert.deepEqual(p.state.last,{action:'safe',reward:1,next:'terminal',future:0,updated:1});assert.equal(replayRewardRoute('safe',['act:safe','check']).done,true);});
+test('部屋の報酬４を知ってから入口の価値が２になる',()=>{const h=['act:door','act:treasure','act:door'];let p=replayRewardRoute('room',h);assert.equal(p.state.q.treasure,4);assert.equal(p.state.q.door,2);assert.equal(p.state.place,'room');assert.equal(replayRewardRoute('room',[...h,'check']),null);p=replayRewardRoute('room',[...h,'act:treasure','check']);assert.equal(p.done,true);});
+test('両方を試した後、入口の値１と２を比較',()=>{const h=['act:safe','act:door','act:treasure','act:door','act:treasure','check'];const p=replayRewardRoute('compare',JSON.parse(JSON.stringify(h)));assert.deepEqual(p.state.q,{safe:1,door:2,treasure:4});assert.equal(p.ready,true);assert.equal(replayRewardRoute('compare',[...h,'answer:safe']),null);assert.equal(replayRewardRoute('compare',[...h,'reset']),null);assert.equal(replayRewardRoute('compare',[...h,'answer:door']).done,true);});
+test('無効な場所の行動・早い確認・リセット',()=>{assert.equal(replayRewardRoute('safe',['act:treasure']),null);assert.equal(replayRewardRoute('room',['check']),null);assert.equal(replayRewardRoute('safe',['act:safe','reset']).state.q.safe,0);assert.equal(replayRewardRoute('room',{}),null);});

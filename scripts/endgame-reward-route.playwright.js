@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'observatory',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#observatory-open-quests').click();for(let i=0;i<15;i++){const group=p.getByRole('button',{name:/報酬から道を学ぶ/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-reward-route-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/二つの道の価値を比べる/}).count())throw Error('advanced opened early');
+   stage='safe';await p.getByRole('button',{name:/近い道を試す/}).focus();await p.keyboard.press('Enter');await p.locator('[data-reward-route-action="check"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('#reward-route-status').innerText()).includes('確かめ'))throw Error('early check hint missing');await act('act:safe');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('近い道 1'))throw Error('partial state lost');await act('check');await p.locator('#reward-route-finish').click();await p.locator('#reward-route-back').click();await open();if(await p.getByRole('button',{name:/二つの道の価値を比べる/}).count())throw Error('advanced opened after one');
+   stage='room';await p.getByRole('button',{name:/部屋の先を試す/}).click();await sequence(['act:door','act:treasure','act:door','act:treasure','check']);await p.locator('#reward-route-finish').click();await p.locator('#reward-route-back').click();await open();
+   stage='compare';await p.getByRole('button',{name:/二つの道の価値を比べる/}).click();await sequence(['act:safe','act:door','act:treasure','act:door','act:treasure','check']);await act('answer:safe');if(!(await p.locator('#reward-route-status').innerText()).includes('確かめ'))throw Error('wrong comparison hint missing');await act('answer:door');if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#reward-route-finish').click();const body=await p.locator('body').innerText();if(!body.includes('近い道 1')||!body.includes('部屋への道 2'))throw Error('comparison result missing');if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#reward-route-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/二つの道の価値を比べる/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
