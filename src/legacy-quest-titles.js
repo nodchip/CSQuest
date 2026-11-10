@@ -1,5 +1,8 @@
 // Titles for achievements retained from earlier saves.
 export const legacyQuestTitles={
+  "mountain-primroads-forest": "五つの集落をつなぐ",
+  "mountain-primroads-ties": "同じ費用の道を選ぶ",
+  "mountain-primroads-compare": "二つの道のつなぎ方を比べる",
   "mountain-astar-uniform": "かかった費用で道を探す",
   "mountain-astar-astar": "費用と見積もりで道を探す",
   "mountain-astar-compare": "二つの見積もりの使い方を比べる",
