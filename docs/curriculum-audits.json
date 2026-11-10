@@ -1056,6 +1056,54 @@
       "topics": 14,
       "outcomes": 10,
       "scope_sha256": "19d9c5d06042b5dec5f4fa9012ddb143ab10bce583283453fc764e2f219f81ac"
+    },
+    "FPL-Formalism": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-formalism.md",
+      "topics": 13,
+      "outcomes": 6,
+      "scope_sha256": "2f4654954c7001d8d18b7f99874c8c9222130586cb2a408d9ca6d584cef08377"
+    },
+    "SEP-Context": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-context.md",
+      "topics": 8,
+      "outcomes": 11,
+      "scope_sha256": "38a6f3393cc4d92333c26493c69b0d917985cbe8deec69a0d94f0b0f09918d7a"
+    },
+    "SE-Construction": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-construction.md",
+      "topics": 28,
+      "outcomes": 11,
+      "scope_sha256": "d7cc0640d9585a19d1ddb662f5a02ba7050dad9dcc7d6341adbe068794fd0dcc"
+    },
+    "GIT-Shading": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-git-shading.md",
+      "topics": 18,
+      "outcomes": 8,
+      "scope_sha256": "d7f7e20cda63560e7c2b8d3dd67c7fe5b3b44397e0ca76e517193739dfe11b22"
+    },
+    "SEP-IP": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-ip.md",
+      "topics": 12,
+      "outcomes": 17,
+      "scope_sha256": "eab62eabc05cb37694371e9c59c3dc8bb1d21464b960117c5086677434327315"
+    },
+    "SE-Tools": {
+      "date": "2026-11-10",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-tools.md",
+      "topics": 11,
+      "outcomes": 7,
+      "scope_sha256": "10c7b8301701533bdb448b00f18dbd7754a0ffe82f8dcbce17ee30f7d48f53e3"
     }
   }
 }
