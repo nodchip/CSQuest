@@ -1465,14 +1465,14 @@ FPL-Semantics:トピック:Non-core:8,FPL,FPL-Semantics,トピック,Non-core,8,
 FPL-Semantics:学習成果:Non-core:1,FPL,FPL-Semantics,学習成果,Non-core,1,小さな言語の抽象構文木を描く,部分,75で固定された算術式の木を組む。任意の言語の木を描く能力は未評価。,coverage-fpl-semantics.md,25,原典照合結果は監査記録参照
 FPL-Semantics:学習成果:Non-core:2,FPL,FPL-Semantics,学習成果,Non-core,2,型検査や識別子の宣言位置への束縛解決などの文脈依存の静的解析を実装,部分,315で固定の式の型確認、308でスコープの模型を操作。解析器の実装は直接評価しない。,coverage-fpl-semantics.md,26,原典照合結果は監査記録参照
 FPL-Semantics:学習成果:Non-core:3,FPL,FPL-Semantics,学習成果,Non-core,3,属性文法を使って意味解析を記述,部分,315で提示された規則に従い２式の属性を選択。自由な仕様記述は評価しない。,coverage-fpl-semantics.md,27,原典照合結果は監査記録参照
-FPL-SEP:トピック:未記載:1,FPL,FPL-SEP,トピック,未記載,1,英語中心の言語の影響,部分,350で架空の利用者への翻訳を比較。言語構文や教育・開発環境の影響は未評価。,coverage-fpl-sep.md,9,原典照合結果は監査記録参照・区分を要確認
-FPL-SEP:トピック:未記載:2,FPL,FPL-SEP,トピック,未記載,2,障害のある人の包摂と支援技術,部分,350で読み上げ用の操作名を比較。実際の支援技術や多様な利用者による評価は未実施。,coverage-fpl-sep.md,10,原典照合結果は監査記録参照・区分を要確認
-FPL-SEP:トピック:未記載:3a,FPL,FPL-SEP,トピック,未記載,3a,構文とアクセシビリティ,部分,350で操作名を比較。構文自体の系統的な評価は未実施。,coverage-fpl-sep.md,11,原典照合結果は監査記録参照・区分を要確認
-FPL-SEP:トピック:未記載:3b,FPL,FPL-SEP,トピック,未記載,3b,文化差,部分,350で数字だけの日付と月の明示を比較。通貨や小数などは未評価。,coverage-fpl-sep.md,12,原典照合結果は監査記録参照・区分を要確認
-FPL-SEP:トピック:未記載:3c,FPL,FPL-SEP,トピック,未記載,3c,ニューロダイバーシティ,部分,350の解説で認知の違いへの配慮に言及。具体的な設計と評価は未実施。,coverage-fpl-sep.md,13,原典照合結果は監査記録参照・区分を要確認
-FPL-SEP:トピック:未記載:4,FPL,FPL-SEP,トピック,未記載,4,プログラミング用語の語源,未照合,対応教材を要照合。,coverage-fpl-sep.md,14,原典照合結果は監査記録参照・区分を要確認
-FPL-SEP:トピック:未記載:5,FPL,FPL-SEP,トピック,未記載,5,複数言語を支える UTF,部分,93の UTF-8 の固定例と350の翻訳選択。Unicode 全般や多言語対応の実装は未評価。,coverage-fpl-sep.md,15,原典照合結果は監査記録参照・区分を要確認
-FPL-SEP:学習成果:未記載:1,FPL,FPL-SEP,学習成果,未記載,1,包摂的で不快感を与えない言語を意識して設計,部分,350で架空の３人に関わる設定と利用者参加を選ぶ。実際の言語設計や影響を受ける人々による評価は未実施。,coverage-fpl-sep.md,21,原典照合結果は監査記録参照・区分を要確認
+FPL-SEP:トピック:Non-core:1,FPL,FPL-SEP,トピック,Non-core,1,英語中心の言語の影響,部分,350で架空の利用者への翻訳を比較。言語構文や教育・開発環境の影響は未評価。,coverage-fpl-sep.md,9,原典照合結果は監査記録参照
+FPL-SEP:トピック:Non-core:2,FPL,FPL-SEP,トピック,Non-core,2,障害のある人の包摂と支援技術,部分,350で読み上げ用の操作名を比較。実際の支援技術や多様な利用者による評価は未実施。,coverage-fpl-sep.md,10,原典照合結果は監査記録参照
+FPL-SEP:トピック:Non-core:3a,FPL,FPL-SEP,トピック,Non-core,3a,構文とアクセシビリティ,部分,350で操作名を比較。構文自体の系統的な評価は未実施。,coverage-fpl-sep.md,11,原典照合結果は監査記録参照
+FPL-SEP:トピック:Non-core:3b,FPL,FPL-SEP,トピック,Non-core,3b,文化差,部分,350で数字だけの日付と月の明示を比較。通貨や小数などは未評価。,coverage-fpl-sep.md,12,原典照合結果は監査記録参照
+FPL-SEP:トピック:Non-core:3c,FPL,FPL-SEP,トピック,Non-core,3c,ニューロダイバーシティ,部分,350の解説で認知の違いへの配慮に言及。具体的な設計と評価は未実施。,coverage-fpl-sep.md,13,原典照合結果は監査記録参照
+FPL-SEP:トピック:Non-core:4,FPL,FPL-SEP,トピック,Non-core,4,プログラミング用語の語源,未照合,対応教材を要照合。,coverage-fpl-sep.md,14,原典照合結果は監査記録参照
+FPL-SEP:トピック:Non-core:5,FPL,FPL-SEP,トピック,Non-core,5,複数言語を支える UTF,部分,93の UTF-8 の固定例と350の翻訳選択。Unicode 全般や多言語対応の実装は未評価。,coverage-fpl-sep.md,15,原典照合結果は監査記録参照
+FPL-SEP:学習成果:Non-core:1,FPL,FPL-SEP,学習成果,Non-core,1,包摂的で不快感を与えない言語を意識して設計,部分,350で架空の３人に関わる設定と利用者参加を選ぶ。実際の言語設計や影響を受ける人々による評価は未実施。,coverage-fpl-sep.md,21,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:1,FPL,FPL-Syntax,トピック,Non-core,1,正規文法と文脈自由文法,部分,31・314で有限状態と入れ子の固定例。両文法の一般的な比較は未評価。,coverage-fpl-syntax.md,9,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:2,FPL,FPL-Syntax,トピック,Non-core,2,仕様に基づく走査と構文解析,部分,313で字句、314・587で固定の解析。一般の仕様や実装は未評価。,coverage-fpl-syntax.md,10,原典照合結果は監査記録参照
 FPL-Syntax:トピック:Non-core:3,FPL,FPL-Syntax,トピック,Non-core,3,正規表現による字句解析,部分,154で正規表現、313で最長一致と予約語を別々に操作。一般の字句生成は未評価。,coverage-fpl-syntax.md,11,原典照合結果は監査記録参照
@@ -2150,39 +2150,39 @@ HCI-User:学習成果:KA Core:7,HCI,HCI-User,学習成果,KA Core,7,異なる利
 HCI-User:学習成果:KA Core:8,HCI,HCI-User,学習成果,KA Core,8,ニーズ発見の方法を比較,部分,188で面接・現場観察・試用、960で質問票の文面と招待方法を比較。実際の調査と一般の方法選択は未評価。,coverage-hci-user.md,57,原典照合結果は監査記録参照
 HCI-User:学習成果:KA Core:9,HCI,HCI-User,学習成果,KA Core,9,低技術・非技術の要素の有用性を考察,部分,188で紙と手作業の更新を扱う。実運用や他の選択肢は未評価。,coverage-hci-user.md,58,原典照合結果は監査記録参照
 HCI-User:学習成果:Non-core:10,HCI,HCI-User,学習成果,Non-core,10,複数利用者の状況で設計する影響,部分,188で旅人と維持担当の事情を確認。実際の複数利用者システムは未評価。,coverage-hci-user.md,59,原典照合結果は監査記録参照
-MSF-Calculus:トピック:未記載:1,MSF,MSF-Calculus,トピック,未記載,1,数列・級数・極限,部分,116で４歩の近づきと往復。一般の極限や級数は未評価。,coverage-msf-calculus.md,9,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:2,MSF,MSF-Calculus,トピック,未記載,2,一変数の導関数、計算規則と応用,部分,473で二次関数の差商を操作。一般の微分規則は未評価。,coverage-msf-calculus.md,10,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:3,MSF,MSF-Calculus,トピック,未記載,3,一変数の積分,部分,474で速度の長方形近似と基本定理の固定例。一般の積分規則は未評価。,coverage-msf-calculus.md,11,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:4,MSF,MSF-Calculus,トピック,未記載,4,媒介変数・極座標,部分,478で半径２の円を５角度で操作。一般の曲線は未評価。,coverage-msf-calculus.md,12,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:5,MSF,MSF-Calculus,トピック,未記載,5,テイラー級数,部分,476で指数関数を４次まで近似。一般の級数や誤差評価は未評価。,coverage-msf-calculus.md,13,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:6,MSF,MSF-Calculus,トピック,未記載,6,多変数微積分・偏微分・勾配,部分,477で二変数の二次関数を操作。一般の関数やベクトル値関数は未評価。,coverage-msf-calculus.md,14,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:7,MSF,MSF-Calculus,トピック,未記載,7,凸性・最適化・制約,部分,116で勾配降下、479で線形制約下の固定例。一般の凸性や制約は未評価。,coverage-msf-calculus.md,15,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:8,MSF,MSF-Calculus,トピック,未記載,8,常微分方程式・オイラー法・応用,部分,475で初期値問題を３刻み幅で近似。一般の方程式と安定性は未評価。,coverage-msf-calculus.md,16,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:トピック:未記載:9,MSF,MSF-Calculus,トピック,未記載,9,機械学習等への応用,部分,116で１データの誤差を最小化。一般の学習や多変数は未評価。,coverage-msf-calculus.md,17,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:1a,MSF,MSF-Calculus,学習成果,未記載,1a,無限集合と数列の違い,部分,依頼1210で同じ値の集合の異なる列、定数列と逆数列、項と極限を比較。一般の集合や自由な証明は未評価。,coverage-msf-calculus.md,23,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:1b,MSF,MSF-Calculus,学習成果,未記載,1b,極限の形式的定義,部分,1093で数列 1/n の３つの幅と開始番号を選び、任意の幅についての証明の札を並べる。一般の数列や関数の極限・自由な証明は未評価。,coverage-msf-calculus.md,24,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:1c,MSF,MSF-Calculus,学習成果,未記載,1c,数列・級数の極限を導出,部分,116で近づく数列の４歩を観察し、1093で 1/n → 0 の証明を並べる。一般の数列・級数の導出は未評価。,coverage-msf-calculus.md,25,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:1d,MSF,MSF-Calculus,学習成果,未記載,1d,収束と発散,部分,116で近づきと往復を比較し、1093で 1/n の収束と (−1)ⁿ が任意の実数に収束しない理由を比較。一般の数列の証明は未評価。,coverage-msf-calculus.md,26,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:1e,MSF,MSF-Calculus,学習成果,未記載,1e,ロピタルの定理などを適用,部分,1099で０/０・∞/∞、直接適用できない形と、導関数の比から結論できない例を比較。一般の関数や自由な導出は未評価。,coverage-msf-calculus.md,27,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:2a,MSF,MSF-Calculus,学習成果,未記載,2a,導関数を極限として説明,部分,473で差商の両側の変化を操作。一般の定義と自由な説明は未評価。,coverage-msf-calculus.md,28,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:2b,MSF,MSF-Calculus,学習成果,未記載,2b,関数としての導関数,部分,116で二次誤差の各位置の傾きを扱う。一般の関数は未評価。,coverage-msf-calculus.md,29,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:2c,MSF,MSF-Calculus,学習成果,未記載,2c,極限から基本的な導関数を計算,部分,473で二次関数の固定点を扱う。任意の関数・点は未評価。,coverage-msf-calculus.md,30,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:2d,MSF,MSF-Calculus,学習成果,未記載,2d,和・積・商の微分規則,部分,473で２辺が伸びる長方形の面積を分け、積の変化率の固定例を操作。和・商や一般の規則の適用は未評価。,coverage-msf-calculus.md,31,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:2e,MSF,MSF-Calculus,学習成果,未記載,2e,重要な関数の例を扱う,部分,473で二次関数の固定例。一般の関数は未評価。,coverage-msf-calculus.md,32,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:3a,MSF,MSF-Calculus,学習成果,未記載,3a,定積分と不定積分の定義,部分,474で区間の面積と位置の変化を比較。不定積分の一般の定義は未評価。,coverage-msf-calculus.md,33,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:3b,MSF,MSF-Calculus,学習成果,未記載,3b,積分規則を重要な関数に適用,部分,1100でべき・逆数・三角・指数の５固定例について原始関数と定積分を選択。一般の積分法や自由な計算は未評価。,coverage-msf-calculus.md,34,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:3c,MSF,MSF-Calculus,学習成果,未記載,3c,微積分の基本定理の利用,部分,474で速度と位置変化の固定例を比較。一般の証明は未評価。,coverage-msf-calculus.md,35,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:3d,MSF,MSF-Calculus,学習成果,未記載,3d,積分を問題に適用,部分,474で区間の移動距離を扱う。一般の問題は未評価。,coverage-msf-calculus.md,36,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:4a,MSF,MSF-Calculus,学習成果,未記載,4a,媒介変数による曲線,部分,478で円の固定例。一般の曲線は未評価。,coverage-msf-calculus.md,37,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:4b,MSF,MSF-Calculus,学習成果,未記載,4b,極座標を適用,部分,478で円の５角度を操作。一般の曲線は未評価。,coverage-msf-calculus.md,38,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:5a,MSF,MSF-Calculus,学習成果,未記載,5a,重要な関数のテイラー級数を導出,部分,476で指数関数の原点周りの固定近似。一般の導出は未評価。,coverage-msf-calculus.md,39,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:5b,MSF,MSF-Calculus,学習成果,未記載,5b,テイラー級数を近似に適用,部分,476で４次までの近似を比較。一般の誤差評価は未評価。,coverage-msf-calculus.md,40,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:6a,MSF,MSF-Calculus,学習成果,未記載,6a,偏微分と勾配を計算,部分,477で二変数二次関数の固定例を操作。一般の関数は未評価。,coverage-msf-calculus.md,41,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:6b,MSF,MSF-Calculus,学習成果,未記載,6b,ベクトル値関数と勾配表記,部分,1101で曲線の速度とスカラー関数の勾配、連鎖律の内積を３時刻で比較。一般のベクトル値関数、任意次元や自由な導出は未評価。,coverage-msf-calculus.md,42,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:6c,MSF,MSF-Calculus,学習成果,未記載,6c,最適化への応用,部分,116・477・479で固定条件の最小化を操作。一般の最適化は未評価。,coverage-msf-calculus.md,43,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:7a,MSF,MSF-Calculus,学習成果,未記載,7a,積分にオイラー法を適用,部分,475で増加率を用いた離散的な更新を操作。一般の積分への適用は未評価。,coverage-msf-calculus.md,44,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:7b,MSF,MSF-Calculus,学習成果,未記載,7b,一変数の微分方程式にオイラー法を適用,部分,475で初期値問題を３刻み幅で近似。一般の方程式は未評価。,coverage-msf-calculus.md,45,原典照合結果は監査記録参照・区分を要確認
-MSF-Calculus:学習成果:未記載:7c,MSF,MSF-Calculus,学習成果,未記載,7c,複数変数の微分方程式にオイラー法を適用,部分,1162の風を1163で２座標の同時更新に再利用し、３場・３刻みを厳密解と比較。一般の連立方程式・自由な導出は未評価。,coverage-msf-calculus.md,46,原典照合結果は監査記録参照・区分を要確認
+MSF-Calculus:トピック:KA Core:1,MSF,MSF-Calculus,トピック,KA Core,1,数列・級数・極限,部分,116で４歩の近づきと往復。一般の極限や級数は未評価。,coverage-msf-calculus.md,9,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:2,MSF,MSF-Calculus,トピック,KA Core,2,一変数の導関数、計算規則と応用,部分,473で二次関数の差商を操作。一般の微分規則は未評価。,coverage-msf-calculus.md,10,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:3,MSF,MSF-Calculus,トピック,KA Core,3,一変数の積分,部分,474で速度の長方形近似と基本定理の固定例。一般の積分規則は未評価。,coverage-msf-calculus.md,11,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:4,MSF,MSF-Calculus,トピック,KA Core,4,媒介変数・極座標,部分,478で半径２の円を５角度で操作。一般の曲線は未評価。,coverage-msf-calculus.md,12,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:5,MSF,MSF-Calculus,トピック,KA Core,5,テイラー級数,部分,476で指数関数を４次まで近似。一般の級数や誤差評価は未評価。,coverage-msf-calculus.md,13,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:6,MSF,MSF-Calculus,トピック,KA Core,6,多変数微積分・偏微分・勾配,部分,477で二変数の二次関数を操作。一般の関数やベクトル値関数は未評価。,coverage-msf-calculus.md,14,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:7,MSF,MSF-Calculus,トピック,KA Core,7,凸性・最適化・制約,部分,116で勾配降下、479で線形制約下の固定例。一般の凸性や制約は未評価。,coverage-msf-calculus.md,15,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:8,MSF,MSF-Calculus,トピック,KA Core,8,常微分方程式・オイラー法・応用,部分,475で初期値問題を３刻み幅で近似。一般の方程式と安定性は未評価。,coverage-msf-calculus.md,16,原典照合結果は監査記録参照
+MSF-Calculus:トピック:KA Core:9,MSF,MSF-Calculus,トピック,KA Core,9,機械学習等への応用,部分,116で１データの誤差を最小化。一般の学習や多変数は未評価。,coverage-msf-calculus.md,17,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:1a,MSF,MSF-Calculus,学習成果,KA Core,1a,無限集合と数列の違い,部分,依頼1210で同じ値の集合の異なる列、定数列と逆数列、項と極限を比較。一般の集合や自由な証明は未評価。,coverage-msf-calculus.md,23,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:1b,MSF,MSF-Calculus,学習成果,KA Core,1b,極限の形式的定義,部分,1093で数列 1/n の３つの幅と開始番号を選び、任意の幅についての証明の札を並べる。一般の数列や関数の極限・自由な証明は未評価。,coverage-msf-calculus.md,24,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:1c,MSF,MSF-Calculus,学習成果,KA Core,1c,数列・級数の極限を導出,部分,116で近づく数列の４歩を観察し、1093で 1/n → 0 の証明を並べる。一般の数列・級数の導出は未評価。,coverage-msf-calculus.md,25,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:1d,MSF,MSF-Calculus,学習成果,KA Core,1d,収束と発散,部分,116で近づきと往復を比較し、1093で 1/n の収束と (−1)ⁿ が任意の実数に収束しない理由を比較。一般の数列の証明は未評価。,coverage-msf-calculus.md,26,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:1e,MSF,MSF-Calculus,学習成果,KA Core,1e,ロピタルの定理などを適用,部分,1099で０/０・∞/∞、直接適用できない形と、導関数の比から結論できない例を比較。一般の関数や自由な導出は未評価。,coverage-msf-calculus.md,27,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:2a,MSF,MSF-Calculus,学習成果,KA Core,2a,導関数を極限として説明,部分,473で差商の両側の変化を操作。一般の定義と自由な説明は未評価。,coverage-msf-calculus.md,28,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:2b,MSF,MSF-Calculus,学習成果,KA Core,2b,関数としての導関数,部分,116で二次誤差の各位置の傾きを扱う。一般の関数は未評価。,coverage-msf-calculus.md,29,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:2c,MSF,MSF-Calculus,学習成果,KA Core,2c,極限から基本的な導関数を計算,部分,473で二次関数の固定点を扱う。任意の関数・点は未評価。,coverage-msf-calculus.md,30,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:2d,MSF,MSF-Calculus,学習成果,KA Core,2d,和・積・商の微分規則,部分,473で２辺が伸びる長方形の面積を分け、積の変化率の固定例を操作。和・商や一般の規則の適用は未評価。,coverage-msf-calculus.md,31,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:2e,MSF,MSF-Calculus,学習成果,KA Core,2e,重要な関数の例を扱う,部分,473で二次関数の固定例。一般の関数は未評価。,coverage-msf-calculus.md,32,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:3a,MSF,MSF-Calculus,学習成果,KA Core,3a,定積分と不定積分の定義,部分,474で区間の面積と位置の変化を比較。不定積分の一般の定義は未評価。,coverage-msf-calculus.md,33,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:3b,MSF,MSF-Calculus,学習成果,KA Core,3b,積分規則を重要な関数に適用,部分,1100でべき・逆数・三角・指数の５固定例について原始関数と定積分を選択。一般の積分法や自由な計算は未評価。,coverage-msf-calculus.md,34,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:3c,MSF,MSF-Calculus,学習成果,KA Core,3c,微積分の基本定理の利用,部分,474で速度と位置変化の固定例を比較。一般の証明は未評価。,coverage-msf-calculus.md,35,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:3d,MSF,MSF-Calculus,学習成果,KA Core,3d,積分を問題に適用,部分,474で区間の移動距離を扱う。一般の問題は未評価。,coverage-msf-calculus.md,36,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:4a,MSF,MSF-Calculus,学習成果,KA Core,4a,媒介変数による曲線,部分,478で円の固定例。一般の曲線は未評価。,coverage-msf-calculus.md,37,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:4b,MSF,MSF-Calculus,学習成果,KA Core,4b,極座標を適用,部分,478で円の５角度を操作。一般の曲線は未評価。,coverage-msf-calculus.md,38,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:5a,MSF,MSF-Calculus,学習成果,KA Core,5a,重要な関数のテイラー級数を導出,部分,476で指数関数の原点周りの固定近似。一般の導出は未評価。,coverage-msf-calculus.md,39,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:5b,MSF,MSF-Calculus,学習成果,KA Core,5b,テイラー級数を近似に適用,部分,476で４次までの近似を比較。一般の誤差評価は未評価。,coverage-msf-calculus.md,40,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:6a,MSF,MSF-Calculus,学習成果,KA Core,6a,偏微分と勾配を計算,部分,477で二変数二次関数の固定例を操作。一般の関数は未評価。,coverage-msf-calculus.md,41,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:6b,MSF,MSF-Calculus,学習成果,KA Core,6b,ベクトル値関数と勾配表記,部分,1101で曲線の速度とスカラー関数の勾配、連鎖律の内積を３時刻で比較。一般のベクトル値関数、任意次元や自由な導出は未評価。,coverage-msf-calculus.md,42,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:6c,MSF,MSF-Calculus,学習成果,KA Core,6c,最適化への応用,部分,116・477・479で固定条件の最小化を操作。一般の最適化は未評価。,coverage-msf-calculus.md,43,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:7a,MSF,MSF-Calculus,学習成果,KA Core,7a,積分にオイラー法を適用,部分,475で増加率を用いた離散的な更新を操作。一般の積分への適用は未評価。,coverage-msf-calculus.md,44,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:7b,MSF,MSF-Calculus,学習成果,KA Core,7b,一変数の微分方程式にオイラー法を適用,部分,475で初期値問題を３刻み幅で近似。一般の方程式は未評価。,coverage-msf-calculus.md,45,原典照合結果は監査記録参照
+MSF-Calculus:学習成果:KA Core:7c,MSF,MSF-Calculus,学習成果,KA Core,7c,複数変数の微分方程式にオイラー法を適用,部分,1162の風を1163で２座標の同時更新に再利用し、３場・３刻みを厳密解と比較。一般の連立方程式・自由な導出は未評価。,coverage-msf-calculus.md,46,原典照合結果は監査記録参照
 MSF-Discrete:トピック:CS Core / KA Core:1,MSF,MSF-Discrete,トピック,CS Core / KA Core,1,集合・関係・関数・濃度,部分,46・401〜403で有限集合、写像と対角線の例。一般の構築・証明は未評価。,coverage-msf-discrete.md,9,原典照合結果は監査記録参照
 MSF-Discrete:トピック:CS Core / KA Core:2,MSF,MSF-Discrete,トピック,CS Core / KA Core,2,再帰的な数学的定義,部分,33・408で並べ方と階段の数え上げ。一般の構造・漸化式は未評価。,coverage-msf-discrete.md,10,原典照合結果は監査記録参照
 MSF-Discrete:トピック:CS Core / KA Core:3,MSF,MSF-Discrete,トピック,CS Core / KA Core,3,帰納法・背理法等の証明法,部分,95・400・407で帰納と鳩の巣の例。一般的な証明の構築は未評価。,coverage-msf-discrete.md,11,原典照合結果は監査記録参照
@@ -3184,25 +3184,25 @@ SEC-Engineering:学習成果:KA Core:4,SEC,SEC-Engineering,学習成果,KA Core,
 SEC-Engineering:学習成果:KA Core:5,SEC,SEC-Engineering,学習成果,KA Core,5,対策の有効性を評価,部分,依頼328は効果を仮定して未対策の経路を表示し、329は設定修正前後の固定試験を実施。実際の検証は未対応,coverage-sec-engineering.md,29,原典照合結果は監査記録参照
 SEC-Engineering:学習成果:KA Core:6,SEC,SEC-Engineering,学習成果,KA Core,6,脆弱性を特定し軽減,部分,依頼328・329の露出経路と対策、805の認証時の番号変更と失効を固定模型で試す。実システムは未対応,coverage-sec-engineering.md,30,原典照合結果は監査記録参照
 SEC-Engineering:学習成果:KA Core:7,SEC,SEC-Engineering,学習成果,KA Core,7,データ科学・AI等の創発的な振る舞いを評価・予測,未照合,関連する依頼との対応は未確認。,coverage-sec-engineering.md,31,原典照合結果は監査記録参照
-SEC-Forensics:トピック:未記載:1,SEC,SEC-Forensics,トピック,未記載,1,デジタル調査の原則と方法,部分,286で受け渡し、834で架空の監査記録の時系列と不明点を確認。調査の全過程は未評価。,coverage-sec-forensics.md,9,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:トピック:未記載:2,SEC,SEC-Forensics,トピック,未記載,2,調査を支えるシステム設計,部分,195で監査項目を選択。実システムの設計・実装は未評価。,coverage-sec-forensics.md,10,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:トピック:未記載:3,SEC,SEC-Forensics,トピック,未記載,3,OS・ファイル・アプリ・Web・ネットワーク・モバイル・DB 等の調査,部分,195・834の架空の受付と台帳の監査記録。実データと各環境の調査は未評価。,coverage-sec-forensics.md,11,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:トピック:未記載:4,SEC,SEC-Forensics,トピック,未記載,4,調査への妨害と防止,未照合,対応教材を要照合。,coverage-sec-forensics.md,12,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:トピック:未記載:5,SEC,SEC-Forensics,トピック,未記載,5,インシデント対応の過程,部分,362で固定の窓口停止と未確認事項を分類。実際の対応過程は未評価。,coverage-sec-forensics.md,13,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:トピック:未記載:6,SEC,SEC-Forensics,トピック,未記載,6,証拠規則と法域差,未照合,対応教材を要照合。法域別判断は評価しない。,coverage-sec-forensics.md,14,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:トピック:未記載:7,SEC,SEC-Forensics,トピック,未記載,7,証拠の保護・管理・保管の連鎖・報告・証言,部分,286の２件の受け渡しと照合。法的要件、全工程や証言は未評価。,coverage-sec-forensics.md,15,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:1,SEC,SEC-Forensics,学習成果,未記載,1,デジタル調査と実施方法の説明,部分,286で保全の一部を操作。一般の説明は未評価。,coverage-sec-forensics.md,21,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:2,SEC,SEC-Forensics,学習成果,未記載,2,調査支援ソフトの設計・実装,未照合,代替教材を要照合。実ソフトの実装は評価しない。,coverage-sec-forensics.md,22,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:3,SEC,SEC-Forensics,学習成果,未記載,3,押収データの利用に関する法的要件,未照合,対応教材を要照合。,coverage-sec-forensics.md,23,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:4,SEC,SEC-Forensics,学習成果,未記載,4,取得から廃棄までの保管の連鎖,部分,286の２件の受け渡し。取得・廃棄を含む全工程は未評価。,coverage-sec-forensics.md,24,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:5,SEC,SEC-Forensics,学習成果,未記載,5,法令に従うドライブからの抽出,未照合,対応教材を要照合。,coverage-sec-forensics.md,25,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:6,SEC,SEC-Forensics,学習成果,未記載,6,専門家証言の責任,未照合,対応教材を要照合。,coverage-sec-forensics.md,26,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:7,SEC,SEC-Forensics,学習成果,未記載,7,イメージから検索語でデータを回復,未照合,対応教材を要照合。,coverage-sec-forensics.md,27,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:8,SEC,SEC-Forensics,学習成果,未記載,8,アプリ・Web 等の履歴から再構成,部分,834で架空の受付・台帳の３記録を時刻順に並べ、記録の空白を確認。実履歴や一般の再構成は未評価。,coverage-sec-forensics.md,28,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:9,SEC,SEC-Forensics,学習成果,未記載,9,ネットワーク通信の取得・分析,未照合,対応教材を要照合。,coverage-sec-forensics.md,29,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:10,SEC,SEC-Forensics,学習成果,未記載,10,モバイル調査の課題への対処,未照合,対応教材を要照合。,coverage-sec-forensics.md,30,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:11,SEC,SEC-Forensics,学習成果,未記載,11,ツールによる侵害調査,未照合,対応教材を要照合。,coverage-sec-forensics.md,31,原典照合結果は監査記録参照・区分を要確認
-SEC-Forensics:学習成果:未記載:12,SEC,SEC-Forensics,学習成果,未記載,12,調査妨害の特定と軽減,未照合,対応教材を要照合。,coverage-sec-forensics.md,32,原典照合結果は監査記録参照・区分を要確認
+SEC-Forensics:トピック:KA Core:1,SEC,SEC-Forensics,トピック,KA Core,1,デジタル調査の原則と方法,部分,286で受け渡し、834で架空の監査記録の時系列と不明点を確認。調査の全過程は未評価。,coverage-sec-forensics.md,9,原典照合結果は監査記録参照
+SEC-Forensics:トピック:KA Core:2,SEC,SEC-Forensics,トピック,KA Core,2,調査を支えるシステム設計,部分,195で監査項目を選択。実システムの設計・実装は未評価。,coverage-sec-forensics.md,10,原典照合結果は監査記録参照
+SEC-Forensics:トピック:KA Core:3,SEC,SEC-Forensics,トピック,KA Core,3,OS・ファイル・アプリ・Web・ネットワーク・モバイル・DB 等の調査,部分,195・834の架空の受付と台帳の監査記録。実データと各環境の調査は未評価。,coverage-sec-forensics.md,11,原典照合結果は監査記録参照
+SEC-Forensics:トピック:KA Core:4,SEC,SEC-Forensics,トピック,KA Core,4,調査への妨害と防止,未照合,対応教材を要照合。,coverage-sec-forensics.md,12,原典照合結果は監査記録参照
+SEC-Forensics:トピック:KA Core:5,SEC,SEC-Forensics,トピック,KA Core,5,インシデント対応の過程,部分,362で固定の窓口停止と未確認事項を分類。実際の対応過程は未評価。,coverage-sec-forensics.md,13,原典照合結果は監査記録参照
+SEC-Forensics:トピック:KA Core:6,SEC,SEC-Forensics,トピック,KA Core,6,証拠規則と法域差,未照合,対応教材を要照合。法域別判断は評価しない。,coverage-sec-forensics.md,14,原典照合結果は監査記録参照
+SEC-Forensics:トピック:KA Core:7,SEC,SEC-Forensics,トピック,KA Core,7,証拠の保護・管理・保管の連鎖・報告・証言,部分,286の２件の受け渡しと照合。法的要件、全工程や証言は未評価。,coverage-sec-forensics.md,15,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:1,SEC,SEC-Forensics,学習成果,KA Core,1,デジタル調査と実施方法の説明,部分,286で保全の一部を操作。一般の説明は未評価。,coverage-sec-forensics.md,21,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:2,SEC,SEC-Forensics,学習成果,KA Core,2,調査支援ソフトの設計・実装,未照合,代替教材を要照合。実ソフトの実装は評価しない。,coverage-sec-forensics.md,22,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:3,SEC,SEC-Forensics,学習成果,KA Core,3,押収データの利用に関する法的要件,未照合,対応教材を要照合。,coverage-sec-forensics.md,23,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:4,SEC,SEC-Forensics,学習成果,KA Core,4,取得から廃棄までの保管の連鎖,部分,286の２件の受け渡し。取得・廃棄を含む全工程は未評価。,coverage-sec-forensics.md,24,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:5,SEC,SEC-Forensics,学習成果,KA Core,5,法令に従うドライブからの抽出,未照合,対応教材を要照合。,coverage-sec-forensics.md,25,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:6,SEC,SEC-Forensics,学習成果,KA Core,6,専門家証言の責任,未照合,対応教材を要照合。,coverage-sec-forensics.md,26,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:7,SEC,SEC-Forensics,学習成果,KA Core,7,イメージから検索語でデータを回復,未照合,対応教材を要照合。,coverage-sec-forensics.md,27,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:8,SEC,SEC-Forensics,学習成果,KA Core,8,アプリ・Web 等の履歴から再構成,部分,834で架空の受付・台帳の３記録を時刻順に並べ、記録の空白を確認。実履歴や一般の再構成は未評価。,coverage-sec-forensics.md,28,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:9,SEC,SEC-Forensics,学習成果,KA Core,9,ネットワーク通信の取得・分析,未照合,対応教材を要照合。,coverage-sec-forensics.md,29,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:10,SEC,SEC-Forensics,学習成果,KA Core,10,モバイル調査の課題への対処,未照合,対応教材を要照合。,coverage-sec-forensics.md,30,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:11,SEC,SEC-Forensics,学習成果,KA Core,11,ツールによる侵害調査,未照合,対応教材を要照合。,coverage-sec-forensics.md,31,原典照合結果は監査記録参照
+SEC-Forensics:学習成果:KA Core:12,SEC,SEC-Forensics,学習成果,KA Core,12,調査妨害の特定と軽減,未照合,対応教材を要照合。,coverage-sec-forensics.md,32,原典照合結果は監査記録参照
 SEC-Foundations:トピック:CS Core:1,SEC,SEC-Foundations,トピック,CS Core,1,機密性・完全性・可用性、リスク、システム・攻撃者・利用者の視点,部分,493で３性質、328で資産・攻撃経路・架空の影響点と対策を比較。リスクや各視点の体系的検討は未評価。,coverage-sec-foundations.md,9,原典照合結果は監査記録参照
 SEC-Foundations:トピック:CS Core:2,SEC,SEC-Foundations,トピック,CS Core,2,認証・認可とアクセス制御,部分,11・490で本人確認結果と権限、329で設定修正前後を比較。実際の本人確認や権限設定は未評価。,coverage-sec-foundations.md,10,原典照合結果は監査記録参照
 SEC-Foundations:トピック:CS Core:3,SEC,SEC-Foundations,トピック,CS Core,3,脆弱性・脅威・攻撃面・攻撃経路,部分,328で受付・通信・保管の３経路と、鍵や設定の前提が崩れる場合を操作し、329で公開設定と鍵の漏出を扱う。一般の脆弱性分析や多様な攻撃面は未評価。,coverage-sec-foundations.md,11,原典照合結果は監査記録参照
@@ -3227,19 +3227,19 @@ SEC-Foundations:学習成果:KA Core:5,SEC,SEC-Foundations,学習成果,KA Core,
 SEC-Foundations:学習成果:KA Core:6,SEC,SEC-Foundations,学習成果,KA Core,6,機械学習を使った安全性低下の例,部分,495で分類に頼る見張りの見逃しを操作。実システムや一般の攻撃は未評価。,coverage-sec-foundations.md,35,原典照合結果は監査記録参照
 SEC-Foundations:学習成果:KA Core:7,SEC,SEC-Foundations,学習成果,KA Core,7,機械学習を使った防御改善の例,部分,496で学習済みと仮定した見張りの多数決を比較。実データや実際の改善は未評価。,coverage-sec-foundations.md,36,原典照合結果は監査記録参照
 SEC-Foundations:学習成果:KA Core:8,SEC,SEC-Foundations,学習成果,KA Core,8,ソフトウェアに影響するハードウェアの脆弱性,部分,494で投機実行後の痕跡と測定の模型を比較。実機や自由な説明は未評価。,coverage-sec-foundations.md,37,原典照合結果は監査記録参照
-SEC-Governance:トピック:未記載:1,SEC,SEC-Governance,トピック,未記載,1,重要資産の脅威からの保護,部分,328・353で架空の資産と経路・保管を比較。一般の資産と脅威の特定は未評価。,coverage-sec-governance.md,9,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:トピック:未記載:2,SEC,SEC-Governance,トピック,未記載,2,組織目標・リスク評価とガバナンス,部分,353で１日以内の目標と保管・訓練を比較。一般の方針策定・監督は未評価。,coverage-sec-governance.md,10,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:トピック:未記載:3,SEC,SEC-Governance,トピック,未記載,3,機密性・完全性・可用性・説明責任・真正性・信頼性の管理,部分,195の監査、353の復旧可能性と訓練。各性質の体系的管理は未評価。,coverage-sec-governance.md,11,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:トピック:未記載:4,SEC,SEC-Governance,トピック,未記載,4,組織・課題・システム別の方針,部分,353で復旧目標を選ぶ。方針の種類と運用全般は未評価。,coverage-sec-governance.md,12,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:トピック:未記載:5,SEC,SEC-Governance,トピック,未記載,5,基盤のリスクの特定・軽減,部分,328・329の脅威と対策、353の倉庫損失。一般の評価と導入は未評価。,coverage-sec-governance.md,13,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:トピック:未記載:6,SEC,SEC-Governance,トピック,未記載,6,データ収集・バックアップ・保存期間・クラウド・通知,部分,181・353のバックアップと復旧、1269の架空クラウド委託、1270の架空の通知方針。保存期間や実法令は未評価。,coverage-sec-governance.md,14,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:学習成果:未記載:1,SEC,SEC-Governance,学習成果,未記載,1,重要資産とその保護を説明,部分,328・353の固定例。自由な説明は未評価。,coverage-sec-governance.md,20,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:学習成果:未記載:2,SEC,SEC-Governance,学習成果,未記載,2,ガバナンス・管理・対策を例で区別,部分,353で目標・訓練・保管を比較。役割の一般的区別は未評価。,coverage-sec-governance.md,21,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:学習成果:未記載:3,SEC,SEC-Governance,学習成果,未記載,3,脅威を軽減する技術対策の説明・実装,部分,328・353で固定の対策を選択。実装は直接評価しない。,coverage-sec-governance.md,22,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:学習成果:未記載:4,SEC,SEC-Governance,学習成果,未記載,4,プログラム・DB の漏えいリスクの特定・評価,部分,329で固定の公開設定を試す。一般の評価は未評価。,coverage-sec-governance.md,23,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:学習成果:未記載:5,SEC,SEC-Governance,学習成果,未記載,5,方針に沿うバックアップ戦略の設計・実装,部分,353で固定の配置・訓練と目標を比較。実際の設計・実装は未評価。,coverage-sec-governance.md,24,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:学習成果:未記載:6,SEC,SEC-Governance,学習成果,未記載,6,法的要件に基づく漏えい通知方針の議論・実施,部分,1270で架空の期限と初報・補足を操作。実法令、実際の通知や自由な議論は未評価。,coverage-sec-governance.md,25,原典照合結果は監査記録参照・区分を要確認
-SEC-Governance:学習成果:未記載:7,SEC,SEC-Governance,学習成果,未記載,7,クラウド委託のリスクと利点,部分,1269で２契約の担当、設定・控え・停止を比較。実サービス、契約や一般のリスクは未評価。,coverage-sec-governance.md,26,原典照合結果は監査記録参照・区分を要確認
+SEC-Governance:トピック:KA Core:1,SEC,SEC-Governance,トピック,KA Core,1,重要資産の脅威からの保護,部分,328・353で架空の資産と経路・保管を比較。一般の資産と脅威の特定は未評価。,coverage-sec-governance.md,9,原典照合結果は監査記録参照
+SEC-Governance:トピック:KA Core:2,SEC,SEC-Governance,トピック,KA Core,2,組織目標・リスク評価とガバナンス,部分,353で１日以内の目標と保管・訓練を比較。一般の方針策定・監督は未評価。,coverage-sec-governance.md,10,原典照合結果は監査記録参照
+SEC-Governance:トピック:KA Core:3,SEC,SEC-Governance,トピック,KA Core,3,機密性・完全性・可用性・説明責任・真正性・信頼性の管理,部分,195の監査、353の復旧可能性と訓練。各性質の体系的管理は未評価。,coverage-sec-governance.md,11,原典照合結果は監査記録参照
+SEC-Governance:トピック:KA Core:4,SEC,SEC-Governance,トピック,KA Core,4,組織・課題・システム別の方針,部分,353で復旧目標を選ぶ。方針の種類と運用全般は未評価。,coverage-sec-governance.md,12,原典照合結果は監査記録参照
+SEC-Governance:トピック:KA Core:5,SEC,SEC-Governance,トピック,KA Core,5,基盤のリスクの特定・軽減,部分,328・329の脅威と対策、353の倉庫損失。一般の評価と導入は未評価。,coverage-sec-governance.md,13,原典照合結果は監査記録参照
+SEC-Governance:トピック:KA Core:6,SEC,SEC-Governance,トピック,KA Core,6,データ収集・バックアップ・保存期間・クラウド・通知,部分,181・353のバックアップと復旧、1269の架空クラウド委託、1270の架空の通知方針。保存期間や実法令は未評価。,coverage-sec-governance.md,14,原典照合結果は監査記録参照
+SEC-Governance:学習成果:KA Core:1,SEC,SEC-Governance,学習成果,KA Core,1,重要資産とその保護を説明,部分,328・353の固定例。自由な説明は未評価。,coverage-sec-governance.md,20,原典照合結果は監査記録参照
+SEC-Governance:学習成果:KA Core:2,SEC,SEC-Governance,学習成果,KA Core,2,ガバナンス・管理・対策を例で区別,部分,353で目標・訓練・保管を比較。役割の一般的区別は未評価。,coverage-sec-governance.md,21,原典照合結果は監査記録参照
+SEC-Governance:学習成果:KA Core:3,SEC,SEC-Governance,学習成果,KA Core,3,脅威を軽減する技術対策の説明・実装,部分,328・353で固定の対策を選択。実装は直接評価しない。,coverage-sec-governance.md,22,原典照合結果は監査記録参照
+SEC-Governance:学習成果:KA Core:4,SEC,SEC-Governance,学習成果,KA Core,4,プログラム・DB の漏えいリスクの特定・評価,部分,329で固定の公開設定を試す。一般の評価は未評価。,coverage-sec-governance.md,23,原典照合結果は監査記録参照
+SEC-Governance:学習成果:KA Core:5,SEC,SEC-Governance,学習成果,KA Core,5,方針に沿うバックアップ戦略の設計・実装,部分,353で固定の配置・訓練と目標を比較。実際の設計・実装は未評価。,coverage-sec-governance.md,24,原典照合結果は監査記録参照
+SEC-Governance:学習成果:KA Core:6,SEC,SEC-Governance,学習成果,KA Core,6,法的要件に基づく漏えい通知方針の議論・実施,部分,1270で架空の期限と初報・補足を操作。実法令、実際の通知や自由な議論は未評価。,coverage-sec-governance.md,25,原典照合結果は監査記録参照
+SEC-Governance:学習成果:KA Core:7,SEC,SEC-Governance,学習成果,KA Core,7,クラウド委託のリスクと利点,部分,1269で２契約の担当、設定・控え・停止を比較。実サービス、契約や一般のリスクは未評価。,coverage-sec-governance.md,26,原典照合結果は監査記録参照
 SEC-SEP:トピック:CS Core:1,SEC,SEC-SEP,トピック,CS Core,1,プライバシーの原則と実践,部分,194・352で架空の収集範囲を比較。一般の原則・実装は未評価。,coverage-sec-sep.md,9,原典照合結果は監査記録参照
 SEC-SEP:トピック:CS Core:2,SEC,SEC-SEP,トピック,CS Core,2,安全性・プライバシーの破綻による社会的影響,部分,362で架空の窓口停止と申請予定を比較。実社会への影響は未評価。,coverage-sec-sep.md,10,原典照合結果は監査記録参照
 SEC-SEP:トピック:CS Core:3,SEC,SEC-SEP,トピック,CS Core,3,セキュリティ・プライバシーの法令・規制,部分,1113で GDPR 適用を仮定したデータ最小化と初期設定、1191で３原則を比較。適用判断、法令全体と他法域は未評価。,coverage-sec-sep.md,11,原典照合結果は監査記録参照
@@ -3659,27 +3659,27 @@ SPD-Game:学習成果:KA Core:12,SPD,SPD-Game,学習成果,KA Core,12,ジャン�
 SPD-Game:学習成果:KA Core:13,SPD,SPD-Game,学習成果,KA Core,13,クロスプラットフォームの課題,未照合,ゲーム固有の課題の照合が必要。,coverage-spd-game.md,46,原典照合結果は監査記録参照
 SPD-Game:学習成果:KA Core:14,SPD,SPD-Game,学習成果,KA Core,14,ゲーム画面のアクセシビリティ改善,部分,117で音の字幕と、同時押し・順に押す代替操作を固定模型で比較。実機や当事者による評価、ゲーム全体の適合や自由な説明は未評価。,coverage-spd-game.md,47,原典照合結果は監査記録参照
 SPD-Game:学習成果:KA Core:15,SPD,SPD-Game,学習成果,KA Core,15,新しいプラットフォームを用いた遊びの創作,未照合,実機での創作は未評価。,coverage-spd-game.md,48,原典照合結果は監査記録参照
-SPD-Interactive:トピック:未記載:1a,SPD,SPD-Interactive,トピック,未記載,1a,データ分析プラットフォームとノートブック,部分,357 の３頁と保持状態の固定模型。実ツールやデータ取込みは未評価。,coverage-spd-interactive.md,9,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:1b-本体,SPD,SPD-Interactive,トピック,未記載,1b-本体,クラウド SQL・データ分析基盤,未照合,クラウド基盤自体の操作・設計は未確認。子項目とは別の固有内容として記録。,coverage-spd-interactive.md,10,原典照合結果は監査記録参照・番号を要確認・区分を要確認
-SPD-Interactive:トピック:未記載:1b-i,SPD,SPD-Interactive,トピック,未記載,1b-i,Spark 等の分散処理,部分,1192で Spark RDD の変換・アクションとキー別シャッフルを固定模型で操作。実クラスターや実運用は未評価。,coverage-spd-interactive.md,11,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:1b-ii,SPD,SPD-Interactive,トピック,未記載,1b-ii,データ可視化,部分,111・112 の固定表示、357 の平均の棒。実際のクラウド分析基盤は未評価。,coverage-spd-interactive.md,12,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:1c,SPD,SPD-Interactive,トピック,未記載,1c,データに基づく対話型プレゼンテーション,部分,357 で場所の切替と図の更新。プレゼン作成は未評価。,coverage-spd-interactive.md,13,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:1d-i,SPD,SPD-Interactive,トピック,未記載,1d-i,低遅延が必要な描画ツール,部分,843で筆の６入力と表示を刻ごとに比較。実際の入力・端末・表示遅延は未測定。,coverage-spd-interactive.md,14,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:1d-ii,SPD,SPD-Interactive,トピック,未記載,1d-ii,低遅延が必要なグラフィック設計ツール,未照合,設計ツールの操作と遅延は未確認。,coverage-spd-interactive.md,15,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:2a,SPD,SPD-Interactive,トピック,未記載,2a,生成 AI・大規模言語モデルへのプロンプト,未照合,実モデルを用いたプロンプトの作成・評価は未確認。,coverage-spd-interactive.md,16,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:3a,SPD,SPD-Interactive,トピック,未記載,3a,量子機械での論理演算のプログラム,部分,74 の固定された量子状態の模型。実機・プログラムは未評価。,coverage-spd-interactive.md,17,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:3b,SPD,SPD-Interactive,トピック,未記載,3b,量子サービス API,未照合,実 API の利用・代替は未確認。,coverage-spd-interactive.md,18,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:トピック:未記載:3c,SPD,SPD-Interactive,トピック,未記載,3c,信号・フーリエ解析と音声・無線の処理,部分,175 の２入力に対する４点変換の模型。実信号・音声・無線は未評価。,coverage-spd-interactive.md,19,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:1,SPD,SPD-Interactive,学習成果,未記載,1,大規模データを対話的に分析,部分,357 は４件の固定データのみ。大規模分析は未評価。,coverage-spd-interactive.md,25,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:2,SPD,SPD-Interactive,学習成果,未記載,2,演奏の伴奏を作る,部分,842で３種類の合成音を４拍・８位置に並べて２小節の伴奏を再生。ライブコーディングや実演奏との同期は未評価。,coverage-spd-interactive.md,26,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:3,SPD,SPD-Interactive,学習成果,未記載,3,報道目的の物語を構成するノートを作る,部分,840で架空の集計・未報告・原因不明を整理して記事の下書きを構成。実取材や自由な執筆は未評価。,coverage-spd-interactive.md,27,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:4,SPD,SPD-Interactive,学習成果,未記載,4,データを用いて探索的な図を作る対話型コードを実装,部分,357 の絞込み・平均・棒を操作。実コードや任意データは未評価。,coverage-spd-interactive.md,28,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:5,SPD,SPD-Interactive,学習成果,未記載,5,LLM を用いるプログラムを作る,未照合,実モデル・プログラムの利用と代替は未確認。,coverage-spd-interactive.md,29,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:6,SPD,SPD-Interactive,学習成果,未記載,6,AI と人が開発したプログラムを比較,部分,841で架空の人製・AI製の二候補に同じ固定試験を適用し、修正後を再試験。実プログラムの生成や一般的な比較は未評価。,coverage-spd-interactive.md,30,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:7,SPD,SPD-Interactive,学習成果,未記載,7,画面なしで人と対話するシステムを実装,未照合,実システムと代替は未確認。,coverage-spd-interactive.md,31,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:8,SPD,SPD-Interactive,学習成果,未記載,8,対話型分析と構築されたパイプライン等を比較,部分,357 で頁の状態と実行順を操作。両方式の体系的比較は未評価。,coverage-spd-interactive.md,32,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:9,SPD,SPD-Interactive,学習成果,未記載,9,ノートブックでプログラムを書く,未照合,実コード記述は対象外で、代替の範囲も未確認。,coverage-spd-interactive.md,33,原典照合結果は監査記録参照・区分を要確認
-SPD-Interactive:学習成果:未記載:10,SPD,SPD-Interactive,学習成果,未記載,10,量子プラットフォームでゲートの結果を示す,部分,74 の固定模型。実サービスでの操作は未評価。,coverage-spd-interactive.md,34,原典照合結果は監査記録参照・区分を要確認
+SPD-Interactive:トピック:Non-core:1a,SPD,SPD-Interactive,トピック,Non-core,1a,データ分析プラットフォームとノートブック,部分,357 の３頁と保持状態の固定模型。実ツールやデータ取込みは未評価。,coverage-spd-interactive.md,9,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:1b-本体,SPD,SPD-Interactive,トピック,Non-core,1b-本体,クラウド SQL・データ分析基盤,未照合,クラウド基盤自体の操作・設計は未確認。子項目とは別の固有内容として記録。,coverage-spd-interactive.md,10,原典照合結果は監査記録参照・番号を要確認
+SPD-Interactive:トピック:Non-core:1b-i,SPD,SPD-Interactive,トピック,Non-core,1b-i,Spark 等の分散処理,部分,1192で Spark RDD の変換・アクションとキー別シャッフルを固定模型で操作。実クラスターや実運用は未評価。,coverage-spd-interactive.md,11,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:1b-ii,SPD,SPD-Interactive,トピック,Non-core,1b-ii,データ可視化,部分,111・112 の固定表示、357 の平均の棒。実際のクラウド分析基盤は未評価。,coverage-spd-interactive.md,12,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:1c,SPD,SPD-Interactive,トピック,Non-core,1c,データに基づく対話型プレゼンテーション,部分,357 で場所の切替と図の更新。プレゼン作成は未評価。,coverage-spd-interactive.md,13,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:1d-i,SPD,SPD-Interactive,トピック,Non-core,1d-i,低遅延が必要な描画ツール,部分,843で筆の６入力と表示を刻ごとに比較。実際の入力・端末・表示遅延は未測定。,coverage-spd-interactive.md,14,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:1d-ii,SPD,SPD-Interactive,トピック,Non-core,1d-ii,低遅延が必要なグラフィック設計ツール,未照合,設計ツールの操作と遅延は未確認。,coverage-spd-interactive.md,15,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:2a,SPD,SPD-Interactive,トピック,Non-core,2a,生成 AI・大規模言語モデルへのプロンプト,未照合,実モデルを用いたプロンプトの作成・評価は未確認。,coverage-spd-interactive.md,16,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:3a,SPD,SPD-Interactive,トピック,Non-core,3a,量子機械での論理演算のプログラム,部分,74 の固定された量子状態の模型。実機・プログラムは未評価。,coverage-spd-interactive.md,17,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:3b,SPD,SPD-Interactive,トピック,Non-core,3b,量子サービス API,未照合,実 API の利用・代替は未確認。,coverage-spd-interactive.md,18,原典照合結果は監査記録参照
+SPD-Interactive:トピック:Non-core:3c,SPD,SPD-Interactive,トピック,Non-core,3c,信号・フーリエ解析と音声・無線の処理,部分,175 の２入力に対する４点変換の模型。実信号・音声・無線は未評価。,coverage-spd-interactive.md,19,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:1,SPD,SPD-Interactive,学習成果,Non-core,1,大規模データを対話的に分析,部分,357 は４件の固定データのみ。大規模分析は未評価。,coverage-spd-interactive.md,25,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:2,SPD,SPD-Interactive,学習成果,Non-core,2,演奏の伴奏を作る,部分,842で３種類の合成音を４拍・８位置に並べて２小節の伴奏を再生。ライブコーディングや実演奏との同期は未評価。,coverage-spd-interactive.md,26,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:3,SPD,SPD-Interactive,学習成果,Non-core,3,報道目的の物語を構成するノートを作る,部分,840で架空の集計・未報告・原因不明を整理して記事の下書きを構成。実取材や自由な執筆は未評価。,coverage-spd-interactive.md,27,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:4,SPD,SPD-Interactive,学習成果,Non-core,4,データを用いて探索的な図を作る対話型コードを実装,部分,357 の絞込み・平均・棒を操作。実コードや任意データは未評価。,coverage-spd-interactive.md,28,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:5,SPD,SPD-Interactive,学習成果,Non-core,5,LLM を用いるプログラムを作る,未照合,実モデル・プログラムの利用と代替は未確認。,coverage-spd-interactive.md,29,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:6,SPD,SPD-Interactive,学習成果,Non-core,6,AI と人が開発したプログラムを比較,部分,841で架空の人製・AI製の二候補に同じ固定試験を適用し、修正後を再試験。実プログラムの生成や一般的な比較は未評価。,coverage-spd-interactive.md,30,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:7,SPD,SPD-Interactive,学習成果,Non-core,7,画面なしで人と対話するシステムを実装,未照合,実システムと代替は未確認。,coverage-spd-interactive.md,31,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:8,SPD,SPD-Interactive,学習成果,Non-core,8,対話型分析と構築されたパイプライン等を比較,部分,357 で頁の状態と実行順を操作。両方式の体系的比較は未評価。,coverage-spd-interactive.md,32,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:9,SPD,SPD-Interactive,学習成果,Non-core,9,ノートブックでプログラムを書く,未照合,実コード記述は対象外で、代替の範囲も未確認。,coverage-spd-interactive.md,33,原典照合結果は監査記録参照
+SPD-Interactive:学習成果:Non-core:10,SPD,SPD-Interactive,学習成果,Non-core,10,量子プラットフォームでゲートの結果を示す,部分,74 の固定模型。実サービスでの操作は未評価。,coverage-spd-interactive.md,34,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:1a,SPD,SPD-Mobile,トピック,KA Core,1a,モバイルの言語,部分,1325で指定された Kotlin と Swift の例を言語として選ぶ。実言語の記述・一般の比較は未評価。,coverage-spd-mobile.md,9,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:1b,SPD,SPD-Mobile,トピック,KA Core,1b,開発環境,部分,1325で Android Studio・Xcode とビルド、仮想端末・実機の確認計画を比較。実環境の操作は未評価。,coverage-spd-mobile.md,10,原典照合結果は監査記録参照
 SPD-Mobile:トピック:KA Core:2a,SPD,SPD-Mobile,トピック,KA Core,2a,UI の制約,部分,394で対象の大きさと間隔の固定比較。実端末・利用者は未評価。,coverage-spd-mobile.md,11,原典照合結果は監査記録参照
@@ -3707,24 +3707,24 @@ SPD-Mobile:学習成果:KA Core:2,SPD,SPD-Mobile,学習成果,KA Core,2,位置�
 SPD-Mobile:学習成果:KA Core:3,SPD,SPD-Mobile,学習成果,KA Core,3,センサーデータの遠隔記録,部分,1324で固定の温度を圏外で記録し、模擬受付へ同一番号で再送。実センサー・通信・サーバーは未評価。,coverage-spd-mobile.md,38,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:4,SPD,SPD-Mobile,学習成果,KA Core,4,電話・メッセージアプリ,部分,1327で伝言アプリの一連の状態を模型で操作。電話や実アプリの設計・実装は未評価。,coverage-spd-mobile.md,39,原典照合結果は監査記録参照
 SPD-Mobile:学習成果:KA Core:5,SPD,SPD-Mobile,学習成果,KA Core,5,ネイティブと共通開発の長短,部分,1325でコード共有、端末固有機能、対応状況と試験を固定条件で比較。一般的・実測に基づく評価は未実施。,coverage-spd-mobile.md,40,原典照合結果は監査記録参照
-SPD-Robot:トピック:未記載:1,SPD,SPD-Robot,トピック,未記載,1,ロボットのプラットフォームと機器の種類,部分,依頼691で架空の車輪型・飛行型と観測器を比較。実際の機器全般は未確認。,coverage-spd-robot.md,11,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:2,SPD,SPD-Robot,トピック,未記載,2,センサー、組込み計算、動作器,部分,依頼28・690・691で観測と移動の固定模型を操作。実機の計算・信号処理は扱わない。,coverage-spd-robot.md,12,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:3,SPD,SPD-Robot,トピック,未記載,3,ロボット用言語とライブラリ,部分,依頼690で Python と rclpy、C++ と rclcpp の組を選ぶ。実言語・ライブラリの利用や一般のロボット用言語は未評価。,coverage-spd-robot.md,13,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:4,SPD,SPD-Robot,トピック,未記載,4,ロボットのソフトウェア構成,部分,依頼690で送信・購読の名前と型、目的に応じたトピック・サービス・アクションの選択を扱う。実際の ROS 実装や構成全般は未評価。,coverage-spd-robot.md,14,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:5,SPD,SPD-Robot,トピック,未記載,5,プラットフォームの制約と設計,部分,依頼71・691で移動、力、地形などの架空の制約を比較。現実の制約や設計全般は未確認。,coverage-spd-robot.md,15,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:6,SPD,SPD-Robot,トピック,未記載,6,物理系や模擬系との接続,部分,依頼28・71の格子模型を操作。外部システムや実機との接続は扱わない。,coverage-spd-robot.md,16,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:7a,SPD,SPD-Robot,トピック,未記載,7a,順運動学,部分,依頼183で２関節の角度から関節・先端位置を計算。90度刻みの平面模型で、一般の姿勢や実機は未対応。,coverage-spd-robot.md,17,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:7b,SPD,SPD-Robot,トピック,未記載,7b,逆運動学,部分,依頼184で２目標それぞれの２姿勢と、長さによる到達不能を調べる。限られた角度・平面模型で、一般の解法や関節制限は未対応。,coverage-spd-robot.md,18,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:7c,SPD,SPD-Robot,トピック,未記載,7c,動力学,部分,依頼395で一定の制動力と質量から減速度・停止距離を比較。１次元の固定模型で、関節トルク、重力、摩擦や実機の動力学は未対応。,coverage-spd-robot.md,19,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:7d,SPD,SPD-Robot,トピック,未記載,7d,ナビゲーションと経路計画,部分,依頼28・71で固定された格子を移動。一般の経路計画や連続空間は未確認。,coverage-spd-robot.md,20,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:7e,SPD,SPD-Robot,トピック,未記載,7e,把持と操作,部分,依頼691で２接触の摩擦上限、荷物の重さと破損限界を比べる。静止時の固定模型で、接触形状・動作中の力や実機は未対応。,coverage-spd-robot.md,21,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:トピック:未記載:8,SPD,SPD-Robot,トピック,未記載,8,安全性と相互作用,部分,依頼395で静止した人と観測器の遮蔽に関する固定条件を比較。実環境の安全性は評価しない。,coverage-spd-robot.md,22,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:学習成果:未記載:1,SPD,SPD-Robot,学習成果,未記載,1,所与のロボットでアプリを設計・実装する,未照合,依頼28はゲーム内の固定模型。実機上のアプリ実装は扱わない。,coverage-spd-robot.md,28,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:学習成果:未記載:2,SPD,SPD-Robot,学習成果,未記載,2,Arduino ロボットを組み立て迷路走行をプログラムする,未照合,実機の組立てや実言語によるプログラミングは扱わない。,coverage-spd-robot.md,29,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:学習成果:未記載:3,SPD,SPD-Robot,学習成果,未記載,3,ロボット用の言語・技法と汎用開発を比較する,未照合,対応する教材・検証を確認できていない。,coverage-spd-robot.md,30,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:学習成果:未記載:4,SPD,SPD-Robot,学習成果,未記載,4,ロボット設計と物理系・模擬系への接続の理由を説明する,部分,固定格子の模擬を操作する例がある。接続の設計や自由な説明能力は評価しない。,coverage-spd-robot.md,31,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:学習成果:未記載:5,SPD,SPD-Robot,学習成果,未記載,5,ROS の構成要素と接続を設計する,部分,依頼690で２つの係の話題・型と、３目的に対する通信方法を選ぶ固定模型。実際の ROS の構成・実装は評価しない。,coverage-spd-robot.md,32,原典照合結果は監査記録参照・区分を要確認
-SPD-Robot:学習成果:未記載:6,SPD,SPD-Robot,学習成果,未記載,6,プラットフォームが課す制約を議論する,部分,依頼71・691で力や通行の制約を体験。現実の制約全般や自由な議論は評価しない。,coverage-spd-robot.md,33,原典照合結果は監査記録参照・区分を要確認
+SPD-Robot:トピック:KA Core:1,SPD,SPD-Robot,トピック,KA Core,1,ロボットのプラットフォームと機器の種類,部分,依頼691で架空の車輪型・飛行型と観測器を比較。実際の機器全般は未確認。,coverage-spd-robot.md,11,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:2,SPD,SPD-Robot,トピック,KA Core,2,センサー、組込み計算、動作器,部分,依頼28・690・691で観測と移動の固定模型を操作。実機の計算・信号処理は扱わない。,coverage-spd-robot.md,12,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:3,SPD,SPD-Robot,トピック,KA Core,3,ロボット用言語とライブラリ,部分,依頼690で Python と rclpy、C++ と rclcpp の組を選ぶ。実言語・ライブラリの利用や一般のロボット用言語は未評価。,coverage-spd-robot.md,13,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:4,SPD,SPD-Robot,トピック,KA Core,4,ロボットのソフトウェア構成,部分,依頼690で送信・購読の名前と型、目的に応じたトピック・サービス・アクションの選択を扱う。実際の ROS 実装や構成全般は未評価。,coverage-spd-robot.md,14,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:5,SPD,SPD-Robot,トピック,KA Core,5,プラットフォームの制約と設計,部分,依頼71・691で移動、力、地形などの架空の制約を比較。現実の制約や設計全般は未確認。,coverage-spd-robot.md,15,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:6,SPD,SPD-Robot,トピック,KA Core,6,物理系や模擬系との接続,部分,依頼28・71の格子模型を操作。外部システムや実機との接続は扱わない。,coverage-spd-robot.md,16,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:7a,SPD,SPD-Robot,トピック,KA Core,7a,順運動学,部分,依頼183で２関節の角度から関節・先端位置を計算。90度刻みの平面模型で、一般の姿勢や実機は未対応。,coverage-spd-robot.md,17,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:7b,SPD,SPD-Robot,トピック,KA Core,7b,逆運動学,部分,依頼184で２目標それぞれの２姿勢と、長さによる到達不能を調べる。限られた角度・平面模型で、一般の解法や関節制限は未対応。,coverage-spd-robot.md,18,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:7c,SPD,SPD-Robot,トピック,KA Core,7c,動力学,部分,依頼395で一定の制動力と質量から減速度・停止距離を比較。１次元の固定模型で、関節トルク、重力、摩擦や実機の動力学は未対応。,coverage-spd-robot.md,19,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:7d,SPD,SPD-Robot,トピック,KA Core,7d,ナビゲーションと経路計画,部分,依頼28・71で固定された格子を移動。一般の経路計画や連続空間は未確認。,coverage-spd-robot.md,20,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:7e,SPD,SPD-Robot,トピック,KA Core,7e,把持と操作,部分,依頼691で２接触の摩擦上限、荷物の重さと破損限界を比べる。静止時の固定模型で、接触形状・動作中の力や実機は未対応。,coverage-spd-robot.md,21,原典照合結果は監査記録参照
+SPD-Robot:トピック:KA Core:8,SPD,SPD-Robot,トピック,KA Core,8,安全性と相互作用,部分,依頼395で静止した人と観測器の遮蔽に関する固定条件を比較。実環境の安全性は評価しない。,coverage-spd-robot.md,22,原典照合結果は監査記録参照
+SPD-Robot:学習成果:KA Core:1,SPD,SPD-Robot,学習成果,KA Core,1,所与のロボットでアプリを設計・実装する,未照合,依頼28はゲーム内の固定模型。実機上のアプリ実装は扱わない。,coverage-spd-robot.md,28,原典照合結果は監査記録参照
+SPD-Robot:学習成果:KA Core:2,SPD,SPD-Robot,学習成果,KA Core,2,Arduino ロボットを組み立て迷路走行をプログラムする,未照合,実機の組立てや実言語によるプログラミングは扱わない。,coverage-spd-robot.md,29,原典照合結果は監査記録参照
+SPD-Robot:学習成果:KA Core:3,SPD,SPD-Robot,学習成果,KA Core,3,ロボット用の言語・技法と汎用開発を比較する,未照合,対応する教材・検証を確認できていない。,coverage-spd-robot.md,30,原典照合結果は監査記録参照
+SPD-Robot:学習成果:KA Core:4,SPD,SPD-Robot,学習成果,KA Core,4,ロボット設計と物理系・模擬系への接続の理由を説明する,部分,固定格子の模擬を操作する例がある。接続の設計や自由な説明能力は評価しない。,coverage-spd-robot.md,31,原典照合結果は監査記録参照
+SPD-Robot:学習成果:KA Core:5,SPD,SPD-Robot,学習成果,KA Core,5,ROS の構成要素と接続を設計する,部分,依頼690で２つの係の話題・型と、３目的に対する通信方法を選ぶ固定模型。実際の ROS の構成・実装は評価しない。,coverage-spd-robot.md,32,原典照合結果は監査記録参照
+SPD-Robot:学習成果:KA Core:6,SPD,SPD-Robot,学習成果,KA Core,6,プラットフォームが課す制約を議論する,部分,依頼71・691で力や通行の制約を体験。現実の制約全般や自由な議論は評価しない。,coverage-spd-robot.md,33,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:1a,SPD,SPD-SEP/Game,トピック,Non-core,1a,創作の知的財産権の所有、生成 AI など,未照合,対応例を要照合。,coverage-spd-sep-game.md,9,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:1b,SPD,SPD-SEP/Game,トピック,Non-core,1b,利用許諾、例外、ライセンスと権利の執行,部分,依頼399で販売用の架空素材に CC BY・BY-NC の条件を比較。例外や執行は未対応,coverage-spd-sep-game.md,10,原典照合結果は監査記録参照
 SPD-SEP/Game:トピック:Non-core:2a,SPD,SPD-SEP/Game,トピック,Non-core,2a,ゲーム UI の要件、使いやすさと評価,未照合,対応例を要照合。,coverage-spd-sep-game.md,11,原典照合結果は監査記録参照

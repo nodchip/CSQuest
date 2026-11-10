@@ -11,3 +11,5 @@
 実装担当とは別の `review_candidate` が原典、上記資料と [STRIPS 原論文](https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/strips.pdf)、固定例の前提・状態への追加と削除・無関係な事実の保持、複数の有効な手順、説明、分類と保存をコード上で確認した。一般の探索器や PDDL による実装を評価したものではない。レビュー担当自身はブラウザを操作していない。
 
 `tests/endgame-planning.test.js` は前提違反、効果の追加・削除と他の状態の保持、可能行動なし、初期状態に応じた複数の有効順序、途中履歴と修正を確認する。`tests/late-region-quest-groups.test.js` は分類と開放を確認する。`scripts/endgame-planning.playwright.js` は集いと４地域などの達成を用意した検証用記録から、213・390・1200 px 幅で分類からの到達、キーボードによる依頼と回答、誤答の案内、途中復元、段階開放、３依頼の達成と達成後の再開を確認した。新規開始からこの依頼群までの通し操作、実際のスクリーンリーダー音声、利用者による面白さの評価は未確認。
+
+2026-11-11、GitHub Pages に反映された `588fe9a` でも同スクリプトを独立した検証用記録で再実行し、３幅すべて成功した。

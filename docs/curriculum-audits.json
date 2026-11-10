@@ -1224,6 +1224,110 @@
       "topics": 26,
       "outcomes": 12,
       "scope_sha256": "532ec9e8af6d381e44b3ac7c66fb01cee329ba75e2e63f2dc799045eea56ad3b"
+    },
+    "SEC-Engineering": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sec-engineering.md",
+      "topics": 11,
+      "outcomes": 7,
+      "scope_sha256": "cc321b9ab3d72c8dd4aaffcaacf804f8a21e27b3b646ec164c9ae6875a1444b8"
+    },
+    "SEP-DEIA": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-deia.md",
+      "topics": 9,
+      "outcomes": 11,
+      "scope_sha256": "3b73622d9a8ae8b80e99072a8f646d20bd75dadcfe1a1d80fe1c5ba952fc2e4c"
+    },
+    "SPD-SEP/Game": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-sep-game.md",
+      "topics": 11,
+      "outcomes": 15,
+      "scope_sha256": "4aa57e8645a9967594272f7a33a9657b2a754afb9a8ac8af0ad1d0091bdf40e1"
+    },
+    "FPL-SEP": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-fpl-sep.md",
+      "topics": 7,
+      "outcomes": 1,
+      "scope_sha256": "39c9df5fca57cf805340a29286f1700896a515406aeff2821c6161c40d2d47f0"
+    },
+    "SEC-Governance": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sec-governance.md",
+      "topics": 6,
+      "outcomes": 7,
+      "scope_sha256": "54bc81b803e85a54bdb38891b28da59cecb51dd3090f1aa55476b6ab059560e4"
+    },
+    "SPD-Robot": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-robot.md",
+      "topics": 12,
+      "outcomes": 6,
+      "scope_sha256": "6a4604d49e00d5a76da2f892d97c61355cf6111f0c52fa3f7de972d5a067bb2c"
+    },
+    "SEC-Forensics": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sec-forensics.md",
+      "topics": 7,
+      "outcomes": 12,
+      "scope_sha256": "48261227414e89ad1c3a02cd809267bba77e3332b3c0c41ab737c5f14a1e8eb7"
+    },
+    "SPD-Interactive": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-spd-interactive.md",
+      "topics": 11,
+      "outcomes": 10,
+      "scope_sha256": "db0ce054a070a280882105bca927b77490813f20ea3cfd5f07b3aff5e923ac27"
+    },
+    "MSF-Calculus": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-msf-calculus.md",
+      "topics": 9,
+      "outcomes": 24,
+      "scope_sha256": "2108f5325dd53990cf3fdbf71b3697d42b8a0879388b6d378ac82638cbd568a6"
+    },
+    "AI-ML": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-ai-ml.md",
+      "topics": 147,
+      "outcomes": 17,
+      "scope_sha256": "9d5ced7174af39c9b9eaf816f0aaf4ed27ea53bfc52401e9ed98d088cc6a2e91"
+    },
+    "MSF-Discrete": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-msf-discrete.md",
+      "topics": 8,
+      "outcomes": 33,
+      "scope_sha256": "9422d60f7a9c2d6fc406e04c0940517d68042b1692a5c2280d50823af0c3965f"
+    },
+    "MSF-Statistics": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-msf-statistics.md",
+      "topics": 6,
+      "outcomes": 24,
+      "scope_sha256": "8d0851a1ae139aac2422c357f31ca0e244a9d3c8fe39c4015d8d9232e8705e6b"
+    },
+    "SEC-Foundations": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sec-foundations.md",
+      "topics": 16,
+      "outcomes": 8,
+      "scope_sha256": "998437c4509dd50e61b85dceadde6885dc7025cf073c13e2267a792de6cfb99f"
     }
   }
 }

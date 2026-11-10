@@ -12,6 +12,7 @@ const groups={
   {id:'local',title:'送り主と記録を確かめる',local:true,quests:['gate-verify','gate-access','gate-integrity']},
   {id:'automata',title:'関所の合図機を作る',quests:['gate-automata-even','gate-automata-last','gate-automata-both']},
   {id:'security',title:'帳面を守る仕掛けを確かめる',quests:['gate-access-lab','gate-paths-lab']},
+  {id:'injection',title:'名前の札を安全に調べる',quests:['gate-injection-concat','gate-injection-bound','gate-injection-choose']},
  ],
 };
 const prerequisites={
@@ -21,6 +22,7 @@ const prerequisites={
  'tower-events-queue':['tower-events-register','tower-events-toggle'],
  'tower-window-retry':['tower-window-clean','tower-window-gap'],
  'gate-automata-both':['gate-automata-even','gate-automata-last'],
+ 'gate-injection-choose':['gate-injection-concat','gate-injection-bound'],
 };
 export function towerGateQuestGroups(region,completed,endgameAvailable){
  const done=new Set(completed);
