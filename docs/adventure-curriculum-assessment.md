@@ -136,3 +136,11 @@ HCI の元教材レビュー参照と原典ページの修正は `review_candida
 2026-11-11、`review_candidate` が SDF-Practices 成果4、SDF-Fundamentals 成果12、SE-Construction 成果2、HCI-Evaluation 成果2 を原典・固定例・既存検証と独立照合し、原典ページを項目ごとに整理した。実コードや実利用者の評価は未評価。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
 
 SDF・SE・HCI の４成果の原典ページの修正は `review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が AL-Foundational 12b、AL-Strategies 1、SDF-Algorithms 成果3 を原典・固定例・既存検証と独立照合し、原典ページを項目ごとに修正した。一般の計算量・分割・自由説明は未評価。今回の対応付けレビューは元教材レビューやブラウザの再実行、完成を意味しない。
+
+併合ソート関連３行の原典ページの修正は `review_candidate` が再確認した。
+
+2026-11-11、`review_candidate` が MSF-Linear 成果5b・5d・5e と２直線の固定例を独立照合した。指摘に従い、一般の定義・部分空間への計算・最小二乗との関係の説明を各成果に個別に未評価と記録した。今回ブラウザは再操作していない。
+
+MSF-Linear 成果5b・5d・5e の未評価範囲の個別追記は `review_candidate` が再確認した。
