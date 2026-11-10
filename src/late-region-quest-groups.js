@@ -6,6 +6,7 @@ const extra={
   {id:'garden-advanced',title:'花の札と灯りの条件を考える',advanced:true,quests:gardenAdvancedIds},
   {id:'color',title:'光と色を作る',quests:['garden-color-light','garden-color-filter','garden-color-compare']},
   {id:'image',title:'灯り絵を作る',quests:['garden-image-fit','garden-image-pixels','garden-image-resample']},
+  {id:'depth',title:'重なる灯りを描く',quests:['garden-depth-painter','garden-depth-buffer','garden-depth-equal']},
   {id:'matrix',title:'庭の矢印を動かす',quests:['garden-matrix-shear','garden-matrix-rotate','garden-matrix-compare']},
   {id:'vector',title:'道しるべの矢印を作る',quests:['garden-vector-add','garden-vector-scale','garden-vector-basis']},
   {id:'quantifiers',title:'庭の灯りの知らせを確かめる',quests:['garden-quantifiers-simple','garden-quantifiers-negation','garden-quantifiers-nested']},
@@ -34,6 +35,7 @@ const extra={
 const prerequisites={
  'garden-color-compare':['garden-color-light','garden-color-filter'],
  'garden-image-resample':['garden-image-fit','garden-image-pixels'],
+ 'garden-depth-equal':['garden-depth-painter','garden-depth-buffer'],
  'garden-matrix-compare':['garden-matrix-shear','garden-matrix-rotate'],
  'garden-vector-basis':['garden-vector-add','garden-vector-scale'],
  'garden-quantifiers-nested':['garden-quantifiers-simple','garden-quantifiers-negation'],

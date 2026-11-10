@@ -1128,6 +1128,54 @@
       "topics": 14,
       "outcomes": 10,
       "scope_sha256": "f309f74d02b0ec8b9db6c7bcf6a1a73560033c9dededacfcb2131cbd45709aa5"
+    },
+    "PDC-Programs": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-pdc-programs.md",
+      "topics": 23,
+      "outcomes": 5,
+      "scope_sha256": "b06fdbad4bb8e22a429b3a7449df225dc4de52fb4c50bbcba393368db8cb120b"
+    },
+    "SEP-Security": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-security.md",
+      "topics": 10,
+      "outcomes": 8,
+      "scope_sha256": "70301a8a3cd05f882ea30ed2deea580feb71a0990cf85c91650d858178060747"
+    },
+    "SE-Design": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-design.md",
+      "topics": 28,
+      "outcomes": 12,
+      "scope_sha256": "51530e6a11689c23da790507858d1c4291611cbfc4d2e59c03fde7cb1b603bf5"
+    },
+    "SEP-Sustainability": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-sep-sustainability.md",
+      "topics": 6,
+      "outcomes": 8,
+      "scope_sha256": "46710ca9b900e32b659ba9bb51171968ac7d46ddbac617fd93fbadde9d1bbaf3"
+    },
+    "SE-Validation": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-se-validation.md",
+      "topics": 53,
+      "outcomes": 31,
+      "scope_sha256": "7dd3c352e405cf105df626151065db98c9d98a9d28a82355c512769ca9994d2c"
+    },
+    "PDC-Communication": {
+      "date": "2026-11-11",
+      "source": "https://ieeecs-media.computer.org/media/education/reports/CS2023.pdf",
+      "document": "docs/curriculum-audit-pdc-communication.md",
+      "topics": 27,
+      "outcomes": 13,
+      "scope_sha256": "7d7ab387357b003a2586735b8b0d58ac854c4597f8fcac9b48466f6645ea3fa4"
     }
   }
 }
