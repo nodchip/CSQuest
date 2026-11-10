@@ -19,6 +19,7 @@ const extra={
   {id:'layers',title:'旅先の観測帳を扱う',quests:['observatory-layers','observatory-offline','observatory-conflict']},
   {id:'probability',title:'観測の札の確かさを調べる',quests:['observatory-probability-weather','observatory-probability-draws','observatory-probability-reports']},
   {id:'statistics',title:'観測記録を整理する',quests:['observatory-statistics-frequency','observatory-statistics-center','observatory-statistics-spread']},
+  {id:'variance',title:'観測のばらつきを調べる',requiresStatistics:true,quests:['observatory-variance-deviation','observatory-variance-variance','observatory-variance-compare']},
  ],
  tailor:[{id:'testing',title:'道具を試して直す',quests:['tailor-boundary','tailor-validation','tailor-regression']}],
  guide:[
@@ -41,6 +42,7 @@ const prerequisites={
  'observatory-conflict':['observatory-layers','observatory-offline'],
  'observatory-probability-reports':['observatory-probability-weather','observatory-probability-draws'],
  'observatory-statistics-spread':['observatory-statistics-frequency','observatory-statistics-center'],
+ 'observatory-variance-compare':['observatory-variance-deviation','observatory-variance-variance'],
  'tailor-regression':['tailor-boundary','tailor-validation'],
  'guide-ethics-decision':['guide-ethics-impact','guide-ethics-questions'],
  'guide-privacy-safeguards':['guide-privacy-collection','guide-privacy-identity'],
@@ -50,5 +52,6 @@ export function lateRegionQuestGroups(region,completed,endgameAvailable){
  const done=new Set(completed),local=[...Object.keys(fourRegions[region].quests),...Object.entries(newEntrances).filter(([,q])=>q.region===region).map(([id])=>id)];
  const titles={tailor:['旅の持ち物を作る','作った道具を試す','仕立ての相談'],guide:['旅人の声と道しるべ','案内を使って確かめる','旅人の知らせを預かる'],garden:['花の札を整える','灯りの門を確かめる','花壇の絵を作る'],observatory:['雲を見分け予測する','予測を確かめる','観測道具を選ぶ']}[region];
  const basics=[];for(let i=0;i<local.length;i+=2)basics.push({id:`local-${i}`,title:titles[i/2],local:true,quests:local.slice(i,i+2)});
- return [...basics,...extra[region]].map(g=>{const available=g.quests.filter(id=>done.has(id)||(g.local||endgameAvailable&&(!g.advanced||gardenAdvancedReady(completed)))&&(!prerequisites[id]||prerequisites[id].every(x=>done.has(x))));return {...g,available,remaining:available.filter(id=>!done.has(id)).length,complete:g.quests.every(id=>done.has(id))};});
+ const statisticsReady=['observatory-statistics-frequency','observatory-statistics-center','observatory-statistics-spread'].filter(id=>done.has(id)).length>=2;
+ return [...basics,...extra[region]].map(g=>{const available=g.quests.filter(id=>done.has(id)||(g.local||endgameAvailable&&(!g.advanced||gardenAdvancedReady(completed))&&(!g.requiresStatistics||statisticsReady))&&(!prerequisites[id]||prerequisites[id].every(x=>done.has(x))));return {...g,available,remaining:available.filter(id=>!done.has(id)).length,complete:g.quests.every(id=>done.has(id))};});
 }

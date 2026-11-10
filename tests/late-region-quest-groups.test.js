@@ -23,7 +23,7 @@ test('庭園の発展依頼は基礎二件と祭りの両方が必要',()=>{
  assert.equal(visible(['garden-sets','garden-logic'],true).includes('garden-shelter'),true);
 });
 test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',()=>{
- for(const [r,count] of [['garden',25],['observatory',25]]){
+ for(const [r,count] of [['garden',25],['observatory',28]]){
   const groups=lateRegionQuestGroups(r,[],false),all=groups.flatMap(g=>g.quests);
   assert.equal(all.length,count);assert.equal(new Set(all).size,count);
   assert.ok(lateRegionQuestGroups(r,all,true).every(g=>g.complete));
@@ -44,4 +44,21 @@ test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',
   const visible=done=>lateRegionQuestGroups(r,done,true).flatMap(g=>g.available).includes(id);
   assert.equal(visible([needs[0]]),false,id);assert.equal(visible(needs),true,id);
  }
+});
+test('分散の依頼は統計の異なる２件の後に開き、地図の全達成にも含まれる',()=>{
+ const ids=['observatory-statistics-frequency','observatory-statistics-center','observatory-statistics-spread'];
+ const base=['observatory-variance-deviation','observatory-variance-variance'],advanced='observatory-variance-compare';
+ const group=(done,endgame=true)=>lateRegionQuestGroups('observatory',done,endgame).find(g=>g.id==='variance');
+ assert.deepEqual(group([ids[0],ids[0]]).available,[]);
+ for(let i=0;i<3;i++)for(let j=i+1;j<3;j++){
+  const done=[ids[i],ids[j]];
+  assert.deepEqual(group(done,false).available,[]);
+  assert.deepEqual(group(done).available,base);
+  assert.equal(group([...done,base[0]]).available.includes(advanced),false);
+  assert.equal(group([...done,...base]).available.includes(advanced),true);
+ }
+ const all=lateRegionQuestGroups('observatory',[],true).flatMap(g=>g.quests);
+ assert.equal(lateRegionQuestGroups('observatory',all.filter(id=>!id.startsWith('observatory-variance-')),true).every(g=>g.complete),false);
+ assert.equal(lateRegionQuestGroups('observatory',all,true).every(g=>g.complete),true);
+ assert.ok(group([advanced],false).available.includes(advanced));
 });
