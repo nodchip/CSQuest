@@ -5,7 +5,7 @@ async page=>{
   try{
    await p.goto(new URL('./',page.url()).href);
    const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'observatory',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
-   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
    stage='forecast';await p.locator('#forecast-lab').click();await p.locator('[data-forecast="sun"]').click();if(!(await p.locator('#forecast-status').innerText()).includes('確かめ'))throw Error('wrong choice not explained');
    await p.locator('[data-forecast="rain"]').click();await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('進み具合：1 / 8'))throw Error('progress not restored');
    for(const choice of ['sun','rain','rain','rain','rain','cloud','uncertain'])await p.locator(`[data-forecast="${choice}"]`).click();if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#forecast-finish').click();if(!(await p.locator('body').innerText()).includes('独立した最終評価'))throw Error('evaluation limit missing');await p.locator('#forecast-back').click();

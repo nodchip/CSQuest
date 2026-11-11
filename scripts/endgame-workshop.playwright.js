@@ -9,7 +9,7 @@ async page=>{
     const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');
     return {place:'choices',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};
    });
-   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
    stage='entry';await p.locator('#flower-lab').click();await p.locator('[data-flower-add="loop"]').click();await p.locator('#flower-start').click();
    if(!(await p.locator('#flower-retry').getAttribute('aria-label')).includes('繰り返しは一組'))throw Error('empty trace error not announced');
    await p.locator('#flower-retry').click();await p.locator('#flower-undo').click();

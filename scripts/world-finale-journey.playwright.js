@@ -36,12 +36,12 @@ async page => {
   stage='tailor';await travel('tailor');await fourQuest('tailor-testing');await fourQuest('tailor-needs');
   stage='guide';await travel('guide');await fourQuest('guide-access');await newQuest('guide-privacy');
   const entries=['observatory-evaluate','archive-searches','forge-bits','valley-records','river-signals','garden-mosaic','guide-access','garden-sets','tower-forward','station-sharing','harbor-parallel','workshop-steps','tailor-testing','gate-access','guide-privacy','windmill-signals','observatory-devices'];
-  const beforeFinale=await p.evaluate(()=>JSON.parse(localStorage.getItem('csquest-workshop-journey-v1')));
+  const beforeFinale=await p.evaluate(()=>JSON.parse(localStorage.getItem('csquest-workshop-journey-story-v2')));
   const allEntries=entries.every(id=>beforeFinale.completed.includes(id));
   if(defer&&(!allEntries||beforeFinale.worldFinaleSeen))throw Error('17分野の入口を一区切りより前に遊べませんでした。');
   if(defer)await finale();
   stage='garden-again';await travel('garden');const basics=(await p.locator('body').innerText()).includes('基礎の一区切りです');
-  const state=await p.evaluate(()=>JSON.parse(localStorage.getItem('csquest-workshop-journey-v1')));
+  const state=await p.evaluate(()=>JSON.parse(localStorage.getItem('csquest-workshop-journey-story-v2')));
   return {ok:state.worldFinaleSeen&&ending.includes('つながった道')&&basics&&allEntries&&errors.length===0,stage,defer,reverse,ending,basics,allEntries,completed:state.completed,place:state.place,errors};
  }catch(e){return {ok:false,stage,error:String(e),heading:await p.locator('h1').allTextContents(),body:(await p.locator('body').innerText()).slice(0,1200),errors};}
  finally{await c.close();}

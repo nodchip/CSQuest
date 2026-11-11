@@ -10,7 +10,7 @@ async page=>{
     const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');
     return {place:'garden',program:['forward','forward'],executed:true,completed:[...new Set(w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)))],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};
    });
-   const save=async completed=>{await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),{...base,completed});await p.reload();await p.locator('#continue').click();};
+   const save=async completed=>{await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),{...base,completed});await p.reload();await p.locator('#continue').click();};
    const shown=async()=>p.locator('[data-four-quest="garden-shelter"]').count();
    stage='four-region gate';await save([...base.completed,'garden-sets','garden-logic']);if(await shown())throw Error('other regions incomplete');
    const other=['observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'];

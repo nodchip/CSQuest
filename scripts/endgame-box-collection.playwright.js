@@ -4,7 +4,7 @@ async page=>{
   const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
   try{
    await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'choices',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
-   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
    const open=async()=>{await p.locator('#workshop-open-quests').click();for(let i=0;i<20;i++){const group=p.getByRole('button',{name:/つながる箱を片付ける/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
    const act=async x=>p.locator(`[data-boxcollection-action="${x}"]`).click(),seq=async xs=>{for(const x of xs)await act(x);};
    await open();if(await p.getByRole('button',{name:/参照の数と到達を比べる/}).count())throw Error('advanced opened early');

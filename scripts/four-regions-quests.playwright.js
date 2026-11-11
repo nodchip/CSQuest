@@ -10,7 +10,7 @@ async page => {
   for(const q of quests){
    stage=q.id;
    const save={...fixture,place:'four-quest',fourActive:q.id,fourDrafts:{[q.id]:[]},fourSelections:{[q.id]:[]}};
-   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),save);await p.reload();await p.locator('#continue').click();
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),save);await p.reload();await p.locator('#continue').click();
    await p.locator('#four-check').click();const wrong=(await p.locator('#four-status').innerText()).includes('もう一度');
    const first=q.answers[0][0];await p.locator(`[data-four-choice="${first}"]`).click();await p.reload();await p.locator('#continue').click();
    const restored=await p.locator(`[data-four-choice="${first}"]`).getAttribute('aria-pressed')==='true';

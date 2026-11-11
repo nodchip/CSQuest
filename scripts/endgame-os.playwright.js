@@ -6,7 +6,7 @@ async page=>{
   try{
    await p.goto(new URL('./',page.url()).href);
    const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'station',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
-   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
    stage='schedule';await p.locator('#scheduling-lab').click();await p.locator('[data-scheduling="run:B"]').click();if(!(await p.locator('#scheduling-status').innerText()).includes('到着順'))throw Error('wrong choice not explained');
    await p.locator('[data-scheduling="run:A"]').click();await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('今は 1 刻'))throw Error('schedule not restored');
    const actions='AABABAAABBBABBBAABABA';for(const id of actions)await p.locator(`[data-scheduling="run:${id}"]`).click();

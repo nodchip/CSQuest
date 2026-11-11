@@ -10,7 +10,7 @@ async page=>{
     const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');
     return {place:'mid-archive',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};
    });
-   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
    stage='entry';await p.locator('#search-lab').click();
    await p.locator('[data-shelf="1"]').click();if(!(await p.locator('#search-status').innerText()).includes('選び直し'))throw Error('wrong selection not explained');
    await p.locator('[data-shelf="0"]').click();await p.reload();await p.locator('#continue').click();

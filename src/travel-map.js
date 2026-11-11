@@ -55,3 +55,14 @@ export function travelNotice(id,state){
  return '';
 }
 export function validTravelVisits(value){return Array.isArray(value)&&new Set(value).size===value.length&&value.every(id=>travelIds.includes(id));}
+
+// A baseline is recorded when an old save is first read, so past unlocks do
+// not become notifications. Pending notifications and map marks are separate.
+export function updateTravelUnlocks(state){
+ const available=availableTravelPlaces(state).map(p=>p.id);
+ if(state.travelKnown===undefined){state.travelKnown=available;state.travelPending=[];state.travelNew=[];return;}
+ const known=new Set(state.travelKnown),fresh=available.filter(id=>!known.has(id));
+ state.travelKnown=[...new Set([...state.travelKnown,...available])];
+ state.travelPending=[...new Set([...(state.travelPending??[]),...fresh])];
+ state.travelNew=[...new Set([...(state.travelNew??[]),...fresh.filter(id=>!(state.mapVisited??[]).includes(id))])];
+}

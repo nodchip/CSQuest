@@ -93,3 +93,5 @@
 .scene [hidden],.scene[hidden]{display:none!important}
 
 .story-progress > .quest-nav-card{margin-top:.7rem}.region-story-event{margin:.8rem 0}.region-story-event h3{margin:.6rem 0}.region-story-event > .quest-nav-card{margin-top:.4rem}
+
+.travel-unlock-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:.8rem}.travel-unlock-list li{margin:0;padding:.5rem;border:2px solid #9bb598;border-radius:.7rem;background:#fffef1;text-align:center}.travel-unlock-list img{display:block;width:100%;height:clamp(6rem,20vh,10rem);object-fit:cover;border-radius:.4rem;margin-bottom:.35rem}.travel-unlock .actions{margin-top:1rem}

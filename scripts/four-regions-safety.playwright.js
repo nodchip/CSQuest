@@ -1,6 +1,6 @@
 // Preservation and travel-cancellation checks in isolated browser contexts.
 async page => {
- const url=new URL('./',page.url()).href,key='csquest-workshop-journey-v1',report={};
+ const url=new URL('./',page.url()).href,key='csquest-workshop-journey-story-v2',report={};
  for(const mode of ['invalid','quota','travel']){
   const c=await page.context().browser().newContext({viewport:{width:390,height:844}}),p=await c.newPage();
   try{

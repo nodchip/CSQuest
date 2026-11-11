@@ -5,7 +5,7 @@ async page=>{
   try{
    await p.goto(new URL('./',page.url()).href);
    const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'observatory',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs','observatory-statistics-frequency'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
-   const save='csquest-workshop-journey-v1';await p.evaluate(([k,v])=>localStorage.setItem(k,JSON.stringify(v)),[save,fixture]);await p.reload();await p.locator('#continue').click();
+   const save='csquest-workshop-journey-story-v2';await p.evaluate(([k,v])=>localStorage.setItem(k,JSON.stringify(v)),[save,fixture]);await p.reload();await p.locator('#continue').click();
    const findGroup=async()=>{await p.locator('#observatory-open-quests').click();for(let i=0;i<10;i++){const group=p.getByRole('button',{name:/観測のばらつきを調べる/});if(await group.count())return group;const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())return null;await next.click();}throw Error('too many category pages');};
    if(await findGroup())throw Error('opened after one statistics quest');
    await p.evaluate(k=>{const s=JSON.parse(localStorage.getItem(k));s.completed.push('observatory-statistics-center');localStorage.setItem(k,JSON.stringify(s));},save);await p.reload();await p.locator('#continue').click();

@@ -4,12 +4,14 @@ async page=>{
  p.on('pageerror',e=>errors.push(String(e)));let stage='start';
  try{
   await p.goto(new URL('./',page.url()).href);
-  const click=async s=>p.locator(s).click({timeout:10000});
+  const dismiss=async()=>{for(let i=0;i<8;i++){if(await p.locator('#story-conversation-next').count())await p.locator('#story-conversation-next').click();else if(await p.locator('#unlock-continue').count())await p.locator('#unlock-continue').click();else break;}};
+  const click=async s=>{await dismiss();await p.locator(s).click({timeout:10000});};
   const actions=async (attr,values)=>{for(const x of values)await click(`[${attr}="${x}"]`);};
   const choose=async(region,id,selector)=>{
+   await dismiss();
    const title=({river:'水辺の道を照らす','city-sort':'市場の品札を並べる','city-queue':'ギルドの荷物を届ける'})[id]??(await p.locator(selector).textContent()).replace('（達成済み）','').trim();
    const group=await p.evaluate(async({region,id})=>{
-    const done=JSON.parse(localStorage.getItem('csquest-workshop-journey-v1')).completed;
+    const done=JSON.parse(localStorage.getItem('csquest-workshop-journey-story-v2')).completed;
     let groups;
     if(['garden','observatory','tailor','guide'].includes(region))groups=(await import('./src/late-region-quest-groups.js')).lateRegionQuestGroups(region,done,true);
     else if(['forge','station'].includes(region))groups=(await import('./src/forge-station-quest-groups.js')).forgeStationQuestGroups(region,done,true);
@@ -26,13 +28,13 @@ async page=>{
    }
    throw Error('分類のページが多すぎます');
   };
-  const travel=async id=>{await click(await p.locator('#travel').count()?'#travel':'#back');await click(`[data-travel-place="${id}"]`);await click('#travel-depart');};
+  const travel=async id=>{await dismiss();await click(await p.locator('#travel').count()?'#travel':'#back');await click(`[data-travel-place="${id}"]`);await click('#travel-depart');};
   const journey=async moves=>{await click('#accept');await actions('data-command',moves);await click('#execute');await click('#return');await click('#back');};
   const newQuest=async id=>{const q=await p.evaluate(async id=>(await import('./src/new-entrances.js')).newEntrances[id],id);await choose(q.region,id,`[data-new-quest="${id}"]`);for(const s of q.scenarios){for(const n of s.answer)await click(`[data-new-choice="${n}"]`);await click('#new-check');}await click('#finish');await click('#new-back');};
   const midQuest=async (id,moves)=>{await choose(id.split('-')[0],id,`[data-mid-quest="${id}"]`);await actions('data-mid-action',moves);await click('#finish');await click('#back');};
   const fsQuest=async(id,moves)=>{await choose(id.split('-')[0],id,`[data-fs-quest="${id}"]`);await actions('data-fs-action',moves);await click('#finish');await click('#back');};
   stage='opening';await click('#new');await click('#next');await click('#accept');await actions('data-command',['forward','forward']);await click('#execute');await click('#return');await click('#back');
-  stage='workshop';await choose('workshop','forest','#outside');await click('#forest-accept');await actions('data-command',['forward','right','forward']);await click('#execute');await click('#return');await click('#back');await choose('workshop','branch','[data-encounter="branch"]');await journey(['forward','ifWall','forward']);await newQuest('workshop-steps');
+  const skipKaede=new URL(page.url()).searchParams.has('skip-kaede');stage='workshop';if(!skipKaede){await choose('workshop','forest','#outside');await click('#forest-accept');await actions('data-command',['forward','right','forward']);await click('#execute');await click('#return');await click('#back');}await choose('workshop','branch','[data-encounter="branch"]');await journey(['forward','ifWall','forward']);if(skipKaede){await choose('workshop','loop','[data-encounter="loop"]');await journey(['twice','right','twice']);}await newQuest('workshop-steps');
   const visits={
    river:async()=>{stage='river';await travel('river');await choose('river','river','#help');await journey(['forward','ifWall','forward']);await newQuest('river-signals');},
    harbor:async()=>{stage='harbor';await travel('harbor');await choose('harbor','harbor-message','#help');await actions('data-point',['light','hill','home']);await click('#finish');await click('#back');await newQuest('harbor-parallel');},
@@ -47,15 +49,15 @@ async page=>{
   stage='mist';await travel('mist');for(const [id,path] of Object.entries({'gate-verify':['directory','call:trusted','confirmed'],'gate-access':['cycle:ren','cycle:yuno','cycle:yuno','check']})){await choose(id.startsWith('tower-')?'sky':'mist',id,`[data-tg-quest="${id}"]`);await actions('data-tg-action',path);await click('#finish');await click('#back');}
   stage='forge';await travel('forge');await fsQuest('forge-bits',['toggle:0','toggle:2','check','toggle:1','toggle:2','check']);await fsQuest('forge-cpu',['fetch','decode','execute','fetch','decode','execute']);
   stage='station';await travel('station');await fsQuest('station-fcfs',['B','C','A']);await newQuest('station-sharing');
-  stage='climax';await click('#world-finale-open');const steps=await p.evaluate(async()=>(await import('./src/story-climax.js')).climaxSteps);for(let i=0;i<steps.length;i++){await click(`[data-climax-action="${steps[i].answer}"]`);if(i===steps.length-1||steps[i+1].quest!==steps[i].quest)await click('#climax-continue');}await click('#climax-finish');
-  stage='four-regions';if(!(await p.locator('.travel-scene').innerText()).includes('今いる場所：風待ちの駅'))throw Error('集いの後に旅の出発地点が変わりました');const regions=await p.evaluate(async()=>{const m=await import('./src/four-regions.js'),needed={garden:'garden-sets',observatory:'observatory-evaluate',tailor:'tailor-testing',guide:'guide-access'};return m.fourRegionIds.map(region=>{const entries=Object.entries(m.fourRegions[region].quests),chosen=entries.slice(0,2),required=entries.find(([id])=>id===needed[region]);if(required&&!chosen.some(([id])=>id===required[0]))chosen.push(required);return {region,quests:chosen.map(([id,q])=>({id,answers:q.scenarios.map(s=>s.answer)}))};});});
+  stage='climax';await dismiss();await p.getByRole('button',{name:'これまでの出来事を見る'}).click();await p.getByRole('button',{name:/各地をつなぐ集い/}).click();const steps=await p.evaluate(async()=>(await import('./src/story-climax.js')).climaxSteps);for(let i=0;i<steps.length;i++){await click(`[data-climax-action="${steps[i].answer}"]`);if(i===steps.length-1||steps[i+1].quest!==steps[i].quest)await click('#climax-continue');}await click('#climax-finish');
+  stage='four-regions';if(await p.locator('#unlock-map').count())await p.locator('#unlock-map').click();if(!(await p.locator('.travel-scene').innerText()).includes('今いる場所：風待ちの駅'))throw Error('集いの後に旅の出発地点が変わりました');const regions=await p.evaluate(async()=>{const m=await import('./src/four-regions.js'),needed={garden:'garden-sets',observatory:'observatory-evaluate',tailor:'tailor-testing',guide:'guide-access'};return m.fourRegionIds.map(region=>{const entries=Object.entries(m.fourRegions[region].quests),chosen=entries.slice(0,2),required=entries.find(([id])=>id===needed[region]);if(required&&!chosen.some(([id])=>id===required[0]))chosen.push(required);return {region,quests:chosen.map(([id,q])=>({id,answers:q.scenarios.map(s=>s.answer)}))};});});
   for(const [index,r] of regions.entries()){if(index)await click('#travel');await click(`[data-travel-place="${r.region}"]`);await click('#travel-depart');for(const q of r.quests){await choose(r.region,q.id,`[data-four-quest="${q.id}"]`);for(const answer of q.answers){for(const i of answer)await click(`[data-four-choice="${i}"]`);await click('#four-check');}await click('#finish');await click('#four-back');}const extra={garden:'garden-mosaic',observatory:'observatory-devices',guide:'guide-privacy'}[r.region];if(extra)await newQuest(extra);}
   stage='endgame';await travel('garden');await choose('garden','garden-shelter','[data-four-quest="garden-shelter"]');for(const answer of [[1,2,3],[2],[1]]){for(const i of answer)await click(`[data-four-choice="${i}"]`);await click('#four-check');}await click('#finish');await click('#four-back');
   await choose('garden','garden-counterexample','[data-four-quest="garden-counterexample"]');if(!await p.locator('[data-four-choice]').count())throw Error('以前のお手伝いに戻れません');
-  const saved=await p.evaluate(()=>JSON.parse(localStorage.getItem('csquest-workshop-journey-v1')));
+  const saved=await p.evaluate(()=>JSON.parse(localStorage.getItem('csquest-workshop-journey-story-v2')));
   const entries=['observatory-evaluate','archive-searches','forge-bits','valley-records','river-signals','garden-mosaic','guide-access','garden-sets','tower-forward','station-sharing','harbor-parallel','workshop-steps','tailor-testing','gate-access','guide-privacy','windmill-signals','observatory-devices'];
-  const missing=entries.filter(id=>!saved.completed.includes(id));
-  return {ok:saved.storyClimaxComplete&&saved.completed.includes('garden-shelter')&&regions.every(r=>r.quests.every(q=>saved.completed.includes(q.id)))&&!errors.length&&!missing.length,stage,reverse,completed:saved.completed.length,missing,errors};
+  const missing=entries.filter(id=>!saved.completed.includes(id));const expectedStories=['workshop','river','city','harbor','archive','windmill','mountain','valley','sky','mist','forge','station'];const missingStories=expectedStories.filter(id=>!(skipKaede&&id==='workshop')&&!saved.storyHeard?.includes(id));
+  return {ok:saved.storyClimaxComplete&&saved.storyReflectionSeen&&saved.storyGatheringSeen&&!missingStories.length&&saved.completed.includes('garden-shelter')&&regions.every(r=>r.quests.every(q=>saved.completed.includes(q.id)))&&!errors.length&&!missing.length,stage,reverse,completed:saved.completed.length,missing,missingStories,errors};
  }catch(e){return {ok:false,stage,error:String(e),heading:await p.locator('h1').allTextContents(),body:(await p.locator('body').innerText()).slice(0,1500),errors};}
  finally{await c.close();}
 }

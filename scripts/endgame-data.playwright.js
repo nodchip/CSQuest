@@ -6,7 +6,7 @@ async page=>{
   try{
    await p.goto(new URL('./',page.url()).href);
    const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'valley',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs','valley-query-lab'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
-   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-story-v2',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
    if(await p.locator('#integrity-lab').count())throw Error('next stage opened with one quest');
    stage='tables';await p.locator('#tables-lab').click();await p.locator('[data-table="check"]').click();if(!(await p.locator('#tables-status').innerText()).includes('見比べ'))throw Error('wrong set not explained');
    await p.locator('[data-table="choose:10"]').click();await p.reload();await p.locator('#continue').click();if(await p.locator('[data-table="choose:10"]').getAttribute('aria-pressed')!=='true')throw Error('selection not restored');
