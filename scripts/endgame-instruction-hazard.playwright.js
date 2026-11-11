@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'forge',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#forge-open-quests').click();for(let i=0;i<25;i++){const group=p.getByRole('button',{name:/重なる命令を調べる/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-instructionhazard-action="${x}"]`).click();
+   await open();if(await p.getByRole('button',{name:/結果を直接渡す/}).count())throw Error('advanced opened early');
+   stage='unsafe';await p.getByRole('button',{name:/待たずに動かす/}).click();await p.locator('[data-instructionhazard-action="tick"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('[data-instructionhazard-action="tick"]').evaluate(e=>document.activeElement===e)))throw Error('tick focus lost');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('経過 1 刻'))throw Error('partial state lost');for(let i=0;i<3;i++)await act('tick');await act('answer:3');if(!(await p.locator('#instructionhazard-status').innerText()).includes('命令２'))throw Error('wrong answer hint missing');await act('answer:1');await p.locator('#instructionhazard-finish').focus();await p.keyboard.press('Enter');if(!(await p.locator('#instructionhazard-status').evaluate(e=>document.activeElement===e)))throw Error('result focus lost');await p.locator('#instructionhazard-back').click();await open();if(await p.getByRole('button',{name:/結果を直接渡す/}).count())throw Error('advanced opened after one');
+   stage='stall';await p.getByRole('button',{name:/前の結果を待つ/}).click();for(let i=0;i<5;i++)await act('tick');await act('answer:3');await p.locator('#instructionhazard-finish').click();await p.locator('#instructionhazard-back').click();await open();
+   stage='forward';await p.getByRole('button',{name:/結果を直接渡す/}).click();for(let i=0;i<4;i++)await act('tick');if(!(await p.locator('body').innerText()).includes('命令２が使う赤は 2'))throw Error('forwarded operand missing');await act('answer:3');await p.locator('#instructionhazard-finish').click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#instructionhazard-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/結果を直接渡す/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
