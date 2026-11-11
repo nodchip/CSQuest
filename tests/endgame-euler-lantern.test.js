@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayEulerLantern as replay,advanceEulerLantern as advance} from '../src/endgame-euler-lantern.js';
+test('explicit updates match exact rational independent expectations',()=>{for(const [kind,n,want,answer] of [['coarse',1,2,'2'],['half',2,2.25,'2.25'],['fine',4,2.44140625,'closer']]){const h=Array(n).fill('step'),p=replay(kind,h);assert.equal(p.value,want);assert.equal(p.time,1);assert.ok(replay(kind,[...h,`answer:${answer}`]).done);assert.ok(p.value<Math.E);}assert.ok(Math.abs(2.44140625-Math.E)<Math.abs(2.25-Math.E));});
+test('wrong early answers, excess steps, post-completion, reset and resumed state',()=>{assert.equal(replay('coarse',['answer:2']),null);assert.equal(replay('half',['step','step','step']),null);assert.equal(replay('fine',[...Array(4).fill('step'),'answer:exact']),null);assert.equal(replay('coarse',['step','answer:2','step']),null);let h=[];for(let i=0;i<30;i++){h=advance('half',h,'step');h=advance('half',h,'reset');assert.deepEqual(h,[]);}h=advance('fine',h,'step');assert.equal(replay('fine',JSON.parse(JSON.stringify(h))).value,1.25);});
