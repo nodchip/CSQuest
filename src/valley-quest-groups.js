@@ -1,4 +1,5 @@
 const groups=[
+ {id:'twophasejourney',title:'二つの村へ決定を届ける',quests:['valley-twophasejourney-crash','valley-twophasejourney-reject','valley-twophasejourney-compare']},
  {id:'distributedjourney',title:'二つの村の記録を結ぶ',quests:['valley-distributedjourney-all','valley-distributedjourney-semi','valley-distributedjourney-compare']},
  {id:'quorumjourney',title:'三つの写しを読んで比べる',quests:['valley-quorumjourney-overlap','valley-quorumjourney-single','valley-quorumjourney-compare']},
  {id:'shardjourney',title:'二つの棚への振り分けを調べる',quests:['valley-shardjourney-parity','valley-shardjourney-range','valley-shardjourney-compare']},
@@ -16,6 +17,7 @@ const groups=[
  {id:'journal',title:'途切れた台帳を立て直す',quests:['valley-journal-undo','valley-journal-redo','valley-journal-decide']},
 ];
 const prerequisites={
+ 'valley-twophasejourney-compare':['valley-twophasejourney-crash','valley-twophasejourney-reject'],
  'valley-distributedjourney-compare':['valley-distributedjourney-all','valley-distributedjourney-semi'],
  'valley-quorumjourney-compare':['valley-quorumjourney-overlap','valley-quorumjourney-single'],
  'valley-shardjourney-compare':['valley-shardjourney-parity','valley-shardjourney-range'],
