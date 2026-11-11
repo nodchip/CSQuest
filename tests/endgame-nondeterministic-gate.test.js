@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayNondeterministicGate as replay,advanceNondeterministicGate as advance} from '../src/endgame-nondeterministic-gate.js';
+const first=['toggle:1','toggle:2','check'],second=['toggle:1','toggle:4','check'],third=['toggle:1','toggle:2','check'];
+test('all reachable states retained and final acceptance checked',()=>{const a=replay('one',[...first,'answer:reject']);assert.deepEqual(a.trace,[1,3]);assert.equal(a.done,true);const b=replay('accept',[...first,...second,'answer:accept']);assert.deepEqual(b.trace,[1,3,5]);assert.equal(b.done,true);const c=replay('reject',[...first,...second,...third,'answer:reject']);assert.deepEqual(c.trace,[1,3,5,3]);assert.equal(c.done,true);});
+test('partial selection, wrong answer and post-completion rejected; repeated reset and restore',()=>{assert.equal(replay('one',['toggle:2','check']),null);assert.equal(replay('accept',[...first,...second,'answer:reject']),null);assert.equal(replay('one',[...first,'answer:reject','reset']),null);let h=[];for(let i=0;i<40;i++){h=advance('one',h,'toggle:1');h=advance('one',h,'reset');assert.equal(replay('one',JSON.parse(JSON.stringify(h))).selected,0);}for(const x of [...first,'answer:reject'])h=advance('one',h,x);assert.equal(replay('one',h).done,true);});

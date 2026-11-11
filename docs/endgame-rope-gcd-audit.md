@@ -6,3 +6,5 @@
 - 画面の数字の候補は固定された一部であり、すべての正数・共通約数の列挙ではない。正の整数の小例であり、０・負数の入力、一般の停止・正当性の自由な証明や実言語の実装は評価しない。旧教材・本教材の存在を原典全体の完成とはしない。
 
 2026-11-11、実装担当と別の `signed_review` が原典と [Elementary Number Theory の互除法](https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_%28Barrus_and_Clark%29/01%3A_Chapters/1.08%3A_The_Euclidean_Algorithm) に照らし、固定３例の除算・共通約数・画面・保存・開放を独立レビューした。親担当が準備済み記録から幅 213・390・1200 px の山の分類に到達し、誤答、キーボード、途中保存・再開、開放条件、達成後の保存をブラウザ確認した。新規開始からの通し操作、スクリーンリーダー音声、利用者による面白さは未確認。
+
+2026-11-11、main `6b95fc1` の [GitHub Actions](https://github.com/nodchip/CSQuest/actions/runs/42949185380) 成功後、公開サイトでも準備済み記録から幅 213・390・1200 px の分類到達、操作、誤答、保存・再開、達成を確認した。新規開始からの通し到達と利用者による面白さはこの確認に含まれない。
