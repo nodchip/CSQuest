@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {samplePairs,sampleValues,replaySamplingBias as replay,advanceSamplingBias as advance} from '../src/endgame-sampling-bias.js';
+test('all six distinct nonreplacement pairs have the independently expected means',()=>{assert.deepEqual(samplePairs.map(pair=>(sampleValues[pair[0]]+sampleValues[pair[1]])/2),[2,4,4,4,4,6]);assert.equal(sampleValues.reduce((a,b)=>a+b)/4,4);assert.equal(replay('near',['pick:0','answer:2']).done,true);assert.deepEqual(replay('pairs',[...samplePairs.map((_,i)=>`pick:${i}`),'answer:4']).means,[2,4,4,4,4,6]);});
+test('invalid answers, duplicate choices, completed actions and resumed reset',()=>{assert.equal(replay('near',['answer:2']),null);assert.equal(replay('near',['pick:0','answer:4']),null);assert.equal(replay('pairs',['pick:0','pick:0']),null);assert.equal(replay('compare',['answer:method','answer:method']),null);let h=[];for(let i=0;i<30;i++){h=advance('pairs',h,'pick:0');h=advance('pairs',h,'reset');assert.deepEqual(h,[]);}h=advance('pairs',h,'pick:1');assert.deepEqual(replay('pairs',JSON.parse(JSON.stringify(h))).means,[4]);});
