@@ -1,5 +1,8 @@
 // Titles for achievements retained from earlier saves.
 export const legacyQuestTitles={
+  "mountain-ropegcd-first": "二本の綱を切り分ける",
+  "mountain-ropegcd-second": "別の綱を切り分ける",
+  "mountain-ropegcd-third": "長い綱を切り分ける",
   "mountain-primroads-forest": "五つの集落をつなぐ",
   "mountain-primroads-ties": "同じ費用の道を選ぶ",
   "mountain-primroads-compare": "二つの道のつなぎ方を比べる",

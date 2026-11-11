@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayRopeGcd as replay,advanceRopeGcd as advance} from '../src/endgame-rope-gcd.js';
+const cases={first:[['remainder:12','remainder:6','remainder:0','answer:6'],6],second:[['remainder:11','remainder:1','remainder:0','answer:1'],1],third:[['remainder:6','remainder:0','answer:6'],6]};
+test('fixed remainders and gcd independently checked by exhaustive divisors',()=>{for(const [k,[actions,gcd]] of Object.entries(cases)){const x=replay(k,actions);assert.equal(x.done,true);assert.equal(x.a,gcd);const initial={first:[48,18],second:[35,12],third:[54,24]}[k],divisors=Array.from({length:Math.min(...initial)},(_,i)=>i+1).filter(n=>initial.every(v=>v%n===0));assert.equal(divisors.at(-1),gcd);for(const row of x.trace)assert.equal(row.a,row.q*row.b+row.r);}});
+test('wrong remainder, premature and post-completion rejected; repeated reset and restore',()=>{assert.equal(replay('first',['remainder:6']),null);assert.equal(replay('first',['answer:6']),null);assert.equal(replay('first',[...cases.first[0],'reset']),null);let h=[];for(let i=0;i<40;i++){h=advance('first',h,'remainder:12');h=advance('first',h,'reset');assert.deepEqual(replay('first',JSON.parse(JSON.stringify(h))).trace,[]);}for(const a of cases.first[0])h=advance('first',h,a);assert.equal(replay('first',h).done,true);});
