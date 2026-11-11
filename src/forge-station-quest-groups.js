@@ -23,6 +23,7 @@ const catalogs={
   {id:'tools',title:'道具と場所を使う',local:true,quests:['station-lock','station-memory']},
   {id:'priority',title:'急ぎの荷物を選ぶ',quests:['station-heap-queue','station-heap-insert','station-heap-remove','station-schedule-lab']},
   {id:'cowpages',title:'親子の頁を調べる',quests:['station-cowpages-shared','station-cowpages-cow','station-cowpages-compare']},
+  {id:'tlbjourney',title:'変換の控えを切り替える',quests:['station-tlbjourney-unsafe','station-tlbjourney-flush','station-tlbjourney-tagged']},
   {id:'ringparcel',title:'輪につながる荷物棚を調べる',quests:['station-ringparcel-wrap','station-ringparcel-full','station-ringparcel-compare']},
   {id:'spacefit',title:'続き箱を確保する',quests:['station-spacefit-first','station-spacefit-best','station-spacefit-compare']},
   {id:'agingwork',title:'待つ仕事の順番を調べる',quests:['station-agingwork-fixed','station-agingwork-aging','station-agingwork-compare']},
@@ -31,6 +32,7 @@ const catalogs={
  ],
 };
 const prerequisites={
+ 'station-tlbjourney-tagged':['station-tlbjourney-unsafe','station-tlbjourney-flush'],
  'station-ringparcel-compare':['station-ringparcel-wrap','station-ringparcel-full'],
  'forge-lampneg-counter':['forge-lampneg-and','forge-lampneg-or'],
  'forge-carrysigns-compare':['forge-carrysigns-signed','forge-carrysigns-unsigned'],

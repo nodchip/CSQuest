@@ -9,3 +9,5 @@ CS2023 MSF-Statistics 2d（印字190–191頁）の信頼区間の入口とし�
 参考：[NIST Engineering Statistics Handbook — Confidence Limits for the Mean](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm)。
 
 2026-11-11、実装担当と別の `signed_review` が原典と [NIST の区間推定資料](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm) に照らし、等確率の復元抽出16組と両端込みの被覆10/16、固定区間と被覆率の区別、画面・保存・開放を独立レビューした。親担当の初回ブラウザ確認で水辺の画面に存在しない見出しを参照するエラーを発見し、修正後に独立再レビューを受けた。同じ幅 213・390・1200 px で新依頼の分類到達、誤答、キーボード、途中保存・再開、開放条件、達成後の保存を再確認し、既存の水門の依頼にも到達できることを確認した。新規開始からの通し操作、既存水門依頼の全操作、スクリーンリーダー音声、利用者による面白さは未確認。
+
+2026-11-11、main `d8bf967` の [GitHub Actions](https://github.com/nodchip/CSQuest/actions/runs/42958813430) 成功後、公開サイトでも準備済み記録から幅 213・390・1200 px の分類到達、操作、誤答、保存・再開、達成を確認した。新規開始からの通し到達と利用者による面白さはこの確認に含まれない。

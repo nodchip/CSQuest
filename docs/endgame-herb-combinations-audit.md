@@ -9,3 +9,5 @@
 一次教育資料：[Discrete Mathematics: An Open Introduction — Binomial Coefficients](https://discrete.openmathbooks.org/dmoi2/sec_counting-binom.html)。
 
 2026-11-11、実装担当と別の `signed_review` が原典と [Discrete Mathematics: An Open Introduction](https://discrete.openmathbooks.org/dmoi2/sec_counting-binom.html) に照らし、６組・Ｄの有無の３＋３・三角形の値・境界、画面・保存・開放を独立レビューした。親担当が準備済み記録から幅 213・390・1200 px の水辺の分類に到達し、誤答、キーボード、途中保存・再開、開放条件、達成後の保存をブラウザ確認した。新規開始からの通し操作、スクリーンリーダー音声、利用者による面白さは未確認。
+
+2026-11-11、main `d8bf967` の [GitHub Actions](https://github.com/nodchip/CSQuest/actions/runs/42958813430) 成功後、公開サイトでも準備済み記録から幅 213・390・1200 px の分類到達、操作、誤答、保存・再開、達成を確認した。新規開始からの通し到達と利用者による面白さはこの確認に含まれない。

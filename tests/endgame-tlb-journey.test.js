@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayTlbJourney as replay,advanceTlbJourney as advance} from '../src/endgame-tlb-journey.js';
+const histories={unsafe:['read:miss:1','switch','read:hit:1','switch','read:hit:1'],flush:['read:miss:1','switch','read:miss:2','switch','read:miss:1'],tagged:['read:miss:1','switch','read:miss:2','switch','read:hit:1']};
+test('independent expected frames and hit counts for three fixed policies',()=>{for(const [k,h] of Object.entries(histories)){let reads=[];for(let i=0;i<h.length;i++){const state=replay(k,h.slice(0,i+1));if(i%2===0)reads.push([state.last.hit,state.last.frame]);}assert.deepEqual(reads,{unsafe:[[false,1],[true,1],[true,1]],flush:[[false,1],[false,2],[false,1]],tagged:[[false,1],[false,2],[true,1]]}[k]);assert.ok(replay(k,[...h,'check']).done);}});
+test('wrong answer, premature switch, post completion, reset and saved partial state',()=>{assert.equal(replay('flush',['read:hit:1']),null);assert.equal(replay('tagged',['switch']),null);assert.equal(replay('unsafe',[...histories.unsafe,'check','switch']),null);let h=[];for(let i=0;i<30;i++){h=advance('tagged',h,'read:miss:1');h=advance('tagged',h,'reset');assert.deepEqual(h,[]);}h=advance('tagged',h,'read:miss:1');assert.deepEqual(replay('tagged',JSON.parse(JSON.stringify(h))).entries,{'Ｐ':1});});

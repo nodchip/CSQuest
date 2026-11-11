@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import {strict as assert} from 'node:assert';
 import {forgeStationQuestGroups} from '../src/forge-station-quest-groups.js';
 test('鍛冶街と駅の依頼は重複せず未開放も全達成の判定に含める',()=>{
- for(const [region,count] of [['forge',48],['station',27]]){
+ for(const [region,count] of [['forge',48],['station',30]]){
   const groups=forgeStationQuestGroups(region,[],false),all=groups.flatMap(g=>g.quests);
   assert.equal(all.length,count);assert.equal(new Set(all).size,count);
   const local=groups.filter(g=>g.local).flatMap(g=>g.quests);
@@ -26,6 +26,7 @@ test('追加の相談は対応する二件を終えてから開く',()=>{
   ['forge','forge-objects-interaction',['forge-objects-identity','forge-objects-encapsulation']],
   ['forge','forge-roundstone-compare',['forge-roundstone-even','forge-roundstone-odd']],
   ['forge','forge-integer-addition',['forge-integer-unsigned','forge-integer-reading']],
+  ['station','station-tlbjourney-tagged',['station-tlbjourney-unsafe','station-tlbjourney-flush']],
   ['station','station-ringparcel-compare',['station-ringparcel-wrap','station-ringparcel-full']],
   ['station','station-heap-remove',['station-heap-queue','station-heap-insert']],
   ['station','station-cowpages-compare',['station-cowpages-shared','station-cowpages-cow']],
