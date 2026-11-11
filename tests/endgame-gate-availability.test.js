@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayGateAvailability as replay,advanceGateAvailability as advance} from '../src/endgame-gate-availability.js';
+const run=[...Array(4).fill('tick:none'),...Array(4).fill('tick:limit')];
+test('fixed case outcomes and per-source rules independently expected',()=>{for(const [kind,want] of [['single',4],['distributed',1],['shared',0]]){const p=replay(kind,run);assert.equal(p.unlimited.served.filter(x=>x.kind==='village').length,1);assert.equal(p.limited.served.filter(x=>x.kind==='village').length,want);assert.equal(p.limited.dropped.filter(x=>x.kind==='village').length,4-want);assert.ok(replay(kind,[...run,`answer:${want}`]).done);}});
+test('premature, wrong, duplicate completed and reset / saved histories',()=>{assert.equal(replay('single',['tick:limit']),null);assert.equal(replay('shared',[...run,'answer:4']),null);assert.equal(replay('single',[...run,'answer:4','tick:none']),null);let h=[];for(let i=0;i<30;i++){h=advance('single',h,'tick:none');h=advance('single',h,'reset');assert.deepEqual(h,[]);}h=advance('distributed',h,'tick:none');assert.equal(replay('distributed',JSON.parse(JSON.stringify(h))).none,1);});

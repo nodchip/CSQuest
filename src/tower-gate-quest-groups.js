@@ -20,12 +20,14 @@ const groups={
   {id:'automata',title:'関所の合図機を作る',quests:['gate-automata-even','gate-automata-last','gate-automata-both']},
   {id:'security',title:'帳面を守る仕掛けを確かめる',quests:['gate-access-lab','gate-paths-lab']},
   {id:'nfagate',title:'分かれる門の行き先を調べる',quests:['gate-nfagate-one','gate-nfagate-accept','gate-nfagate-reject']},
+  {id:'availability',title:'押し寄せる知らせと受付を調べる',quests:['gate-availability-single','gate-availability-distributed','gate-availability-shared']},
   {id:'gatetests',title:'関所の試験石を選ぶ',quests:['gate-gatetests-outcomes','gate-gatetests-lower','gate-gatetests-both']},
   {id:'signature',title:'署名と鍵を確かめる',quests:['gate-sealsig-integrity','gate-sealsig-keys','gate-sealsig-identity']},
   {id:'injection',title:'名前の札を安全に調べる',quests:['gate-injection-concat','gate-injection-bound','gate-injection-choose']},
  ],
 };
 const prerequisites={
+ 'gate-availability-shared':['gate-availability-single','gate-availability-distributed'],
  'tower-http-repair':['tower-http-request','tower-http-compare'],
  'tower-layers-route':['tower-layers-wrap','tower-layers-relay'],
  'tower-crypto-integrity':['tower-crypto-encrypt','tower-crypto-digest'],
