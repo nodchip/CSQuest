@@ -1,0 +1,4 @@
+export const boundNumbers=[1,2,2,2,4,6];
+export const boundTargets={duplicate:2,gap:3,end:7};
+export function replayLowerBound(kind,history){if(!Object.hasOwn(boundTargets,kind)||!Array.isArray(history)||history.length>8)return null;let lo=0,hi=boundNumbers.length,done=false;const target=boundTargets[kind],checked=[];for(const action of history){if(typeof action!=='string'||done)return null;const mid=Math.floor((lo+hi)/2);if(lo<hi&&action===`probe:${mid}`){const value=boundNumbers[mid];checked.push({index:mid,value,lo,hi});if(value<target)lo=mid+1;else hi=mid;continue;}if(lo===hi&&action===`answer:${lo}`){done=true;continue;}return null;}return {lo,hi,target,checked,done};}
+export function advanceLowerBound(kind,history,action){const p=replayLowerBound(kind,history);if(!p||p.done)return null;const next=action==='reset'?[]:[...history,action];return replayLowerBound(kind,next)?next:null;}
