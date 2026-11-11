@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'forge',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#forge-open-quests').click();for(let i=0;i<25;i++){const group=p.getByRole('button',{name:/負の数を灯りで表す/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-signedlamps-action="${x}"]`).click(),sequence=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/負の８を表せるか調べる/}).count())throw Error('advanced opened early');
+   stage='minus';await p.getByRole('button',{name:/負の３を表す/}).click();await act('check');if(!(await p.locator('#signedlamps-status').innerText()).includes('範囲'))throw Error('wrong answer hint missing');await p.locator('[data-signedlamps-action="toggle:sign:0"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('[data-signedlamps-action="toggle:sign:0"]').evaluate(e=>document.activeElement===e)))throw Error('lamp focus lost');await p.reload();await p.locator('#continue').click();if(await p.locator('[data-signedlamps-action="toggle:sign:0"]').getAttribute('aria-pressed')!=='true')throw Error('partial state lost');await sequence(['toggle:sign:2','toggle:sign:3','toggle:twos:0','toggle:twos:1','toggle:twos:3','check']);await p.locator('#signedlamps-finish').focus();await p.keyboard.press('Enter');if(!(await p.locator('#signedlamps-status').evaluate(e=>document.activeElement===e)))throw Error('result focus lost');await p.locator('#signedlamps-back').click();await open();if(await p.getByRole('button',{name:/負の８を表せるか調べる/}).count())throw Error('advanced opened after one');
+   stage='zero';await p.getByRole('button',{name:/同じ灯りを読み比べる/}).click();await sequence(['toggle:sign:0','toggle:twos:0','check']);await p.locator('#signedlamps-finish').click();await p.locator('#signedlamps-back').click();await open();
+   stage='limit';await p.getByRole('button',{name:/負の８を表せるか調べる/}).click();await sequence(['none:sign','toggle:twos:0','check']);if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#signedlamps-finish').click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#signedlamps-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/負の８を表せるか調べる/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
