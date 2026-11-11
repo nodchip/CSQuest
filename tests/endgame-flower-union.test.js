@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {flowerSets,replayFlowerUnion as replay} from '../src/endgame-flower-union.js';
+const pick=ns=>ns.map(n=>`pick:${n}`);
+test('fixed sets, unions and pair intersections independently verified',()=>{assert.deepEqual(new Set([...flowerSets.A,...flowerSets.B]),new Set([1,4,5,7,2,6]));assert.deepEqual(flowerSets.A.filter(x=>flowerSets.B.includes(x)),[4,7]);assert.deepEqual(flowerSets.A.filter(x=>flowerSets.C.includes(x)),[5,7]);assert.deepEqual(flowerSets.B.filter(x=>flowerSets.C.includes(x)),[6,7]);assert.equal(replay('two',[...pick([1,2,4,5,6,7]),'check']).done,true);assert.equal(replay('overlap',[...pick([4,5,6,7]),'check','answer:6']).done,true);assert.equal(replay('three',[...pick([1,2,3,4,5,6,7]),'check','answer:7']).done,true);});
+test('missing, extra, wrong answer and post-completion rejected; replay and reset',()=>{assert.equal(replay('two',[...pick([1,2,4,5,6]),'check']),null);assert.equal(replay('overlap',[...pick([4,5,6,7]),'check','answer:4']),null);assert.equal(replay('three',[...pick([1,2,3,4,5,6,7]),'check','answer:6']),null);assert.equal(replay('two',[...pick([1,2,4,5,6,7]),'check','reset']),null);assert.deepEqual(replay('three',['pick:1','pick:4']).selected,[1,4]);assert.deepEqual(replay('three',['pick:1','reset']).selected,[]);});

@@ -25,7 +25,7 @@ test('庭園の発展依頼は基礎二件と祭りの両方が必要',()=>{
  assert.equal(visible(['garden-sets','garden-logic'],true).includes('garden-shelter'),true);
 });
 test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',()=>{
- for(const [r,count] of [['garden',46],['observatory',58]]){
+ for(const [r,count] of [['garden',49],['observatory',58]]){
   const groups=lateRegionQuestGroups(r,[],false),all=groups.flatMap(g=>g.quests);
   assert.equal(all.length,count);assert.equal(new Set(all).size,count);
   assert.ok(lateRegionQuestGroups(r,all,true).every(g=>g.complete));
@@ -37,6 +37,7 @@ test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',
   ['garden','garden-matrix-compare',['garden-matrix-shear','garden-matrix-rotate']],
   ['garden','garden-pixelwindow-sharp',['garden-pixelwindow-box','garden-pixelwindow-gaussian']],
   ['garden','garden-lightdot-negative',['garden-lightdot-positive','garden-lightdot-zero']],
+  ['garden','garden-flowerunion-three',['garden-flowerunion-two','garden-flowerunion-overlap']],
   ['garden','garden-squareinduction-proof',['garden-squareinduction-one','garden-squareinduction-two']],
   ['garden','garden-rayprojection-compare',['garden-rayprojection-axis','garden-rayprojection-diagonal']],
   ['garden','garden-vector-basis',['garden-vector-add','garden-vector-scale']],
