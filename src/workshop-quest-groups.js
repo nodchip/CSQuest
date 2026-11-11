@@ -1,5 +1,6 @@
 const groups=[
  {id:'start',title:'工房の近くを手伝う',local:true,quests:['workshop-opening','forest','branch','loop','workshop-steps']},
+ {id:'lambdajourney',title:'名前を守って巻物を簡約する',quests:['workshop-lambdajourney-simple','workshop-lambdajourney-capture','workshop-lambdajourney-compare']},
  {id:'streamjourney',title:'灯の列を取り出す',quests:['workshop-streamjourney-eager','workshop-streamjourney-lazy','workshop-streamjourney-infinite']},
  {id:'closurejourney',title:'倍率を覚える封印を作る',quests:['workshop-closurejourney-first','workshop-closurejourney-second','workshop-closurejourney-compare']},
  {id:'fiblantern',title:'灯の数と記録を調べる',quests:['workshop-fiblantern-plain','workshop-fiblantern-memo','workshop-fiblantern-compare']},
@@ -14,6 +15,7 @@ const groups=[
  {id:'flower',title:'花びらの仕分け機を作る',quests:['workshop-flower-lab']},
 ];
 const prerequisites={
+ 'workshop-lambdajourney-compare':['workshop-lambdajourney-simple','workshop-lambdajourney-capture'],
  'workshop-streamjourney-infinite':['workshop-streamjourney-eager','workshop-streamjourney-lazy'],
  'workshop-closurejourney-compare':['workshop-closurejourney-first','workshop-closurejourney-second'],
  'workshop-fiblantern-compare':['workshop-fiblantern-plain','workshop-fiblantern-memo'],
