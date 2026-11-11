@@ -7,3 +7,5 @@
 固定表には同一の重複行がなく多重度は未評価。任意の SQL 記述・実 DB 操作・一般の条件や NULL 演算は評価しない。物理的な実行順序は断定しない。[SQLite SELECT](https://www.sqlite.org/lang_select.html)、[PostgreSQL の結合表](https://www.postgresql.org/docs/current/queries-table-expressions.html) を参照。
 
 2026-11-11、実装担当と別の `signed_review` が原典と SQLite・PostgreSQL の一次資料に照らし、３結果・NULL の UNKNOWN・ON 不一致と一対多、画面・保存・開放を独立レビューし、SQLite の一時 DB でも検算した。親担当が準備済み記録から幅 213・390・1200 px の谷の分類に到達し、誤答、キーボード、途中保存・再開、開放条件、達成後の保存をブラウザ確認した。新規開始からの通し操作、スクリーンリーダー音声、利用者による面白さは未確認。
+
+公開確認：GitHub Pages の 8b8bcc3（Actions 42963037603 成功）で、集いと４地域の達成状態を用意した記録から、幅 213・390・1200 px のブラウザ検証スクリプトが成功。新規開始からの通し到達はこの確認に含めない。

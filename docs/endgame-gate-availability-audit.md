@@ -7,3 +7,5 @@
 固定の到着順・容量・処理・４刻と再送なしの模型。実ネットワーク、実際の攻撃や性能、多様な対策・制限方式、長時間の動作を評価せず、DDoS 全般を防げるとはしない。[CISA の DDoS 説明](https://www.cisa.gov/sites/default/files/2024-03/understanding-and-responding-to-distributed-denial-of-service-attacks_508c.pdf)、[Cloudflare の制限特性](https://developers.cloudflare.com/waf/rate-limiting-rules/parameters/)を参照。
 
 2026-11-11、実装担当と別の `signed_review` が原典と [Cloudflare の送信元制限資料](https://developers.cloudflare.com/waf/rate-limiting-rules/parameters/) に照らし、到着・制限・待合・処理の順と６試行の固定結果、観察用ラベルの限界、画面・保存・開放を独立レビューした。親担当が準備済み記録から幅 213・390・1200 px の関所の分類に到達し、誤答、キーボード、途中保存・再開、開放条件、達成後の保存をブラウザ確認した。新規開始からの通し操作、スクリーンリーダー音声、利用者による面白さは未確認。
+
+公開確認：GitHub Pages の 8b8bcc3（Actions 42963037603 成功）で、集いと４地域の達成状態を用意した記録から、幅 213・390・1200 px のブラウザ検証スクリプトが成功。新規開始からの通し到達はこの確認に含めない。
