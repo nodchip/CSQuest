@@ -1,5 +1,6 @@
 const groups=[
  {id:'start',title:'工房の近くを手伝う',local:true,quests:['workshop-opening','forest','branch','loop','workshop-steps']},
+ {id:'sharingjourney',title:'精霊の計算を分け合う',quests:['workshop-sharingjourney-value','workshop-sharingjourney-name','workshop-sharingjourney-need']},
  {id:'lambdajourney',title:'名前を守って巻物を簡約する',quests:['workshop-lambdajourney-simple','workshop-lambdajourney-capture','workshop-lambdajourney-compare']},
  {id:'streamjourney',title:'灯の列を取り出す',quests:['workshop-streamjourney-eager','workshop-streamjourney-lazy','workshop-streamjourney-infinite']},
  {id:'closurejourney',title:'倍率を覚える封印を作る',quests:['workshop-closurejourney-first','workshop-closurejourney-second','workshop-closurejourney-compare']},
@@ -15,6 +16,7 @@ const groups=[
  {id:'flower',title:'花びらの仕分け機を作る',quests:['workshop-flower-lab']},
 ];
 const prerequisites={
+ 'workshop-sharingjourney-need':['workshop-sharingjourney-value','workshop-sharingjourney-name'],
  'workshop-lambdajourney-compare':['workshop-lambdajourney-simple','workshop-lambdajourney-capture'],
  'workshop-streamjourney-infinite':['workshop-streamjourney-eager','workshop-streamjourney-lazy'],
  'workshop-closurejourney-compare':['workshop-closurejourney-first','workshop-closurejourney-second'],
