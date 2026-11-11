@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {foldScores,replayFoldChoice as replay,advanceFoldChoice as advance} from '../src/endgame-fold-choice.js';
+const A=['fold:A:1','fold:A:2','fold:A:3'],B=['fold:B:1','fold:B:2','fold:B:3'];
+test('each held-out fold once, fixed scores and later held-out test',()=>{assert.equal(foldScores.A.reduce((a,b)=>a+b,0),6);assert.equal(foldScores.B.reduce((a,b)=>a+b,0),8);assert.equal(replay('fold',[...A,'check']).done,true);assert.equal(replay('compare',[...B,'choose:B']).done,true);const s=replay('test',[...A,...B,'choose:B','test','check']);assert.equal(s.done,true);assert.equal(s.tested,true);});
+test('invalid ordering, duplicate folds and test leakage blocked; repeated reset restores',()=>{assert.equal(replay('fold',['fold:A:1','fold:A:1']),null);assert.equal(replay('test',['test']),null);assert.equal(replay('test',[...A,...B,'choose:A']),null);assert.equal(replay('test',[...A,...B,'choose:B','fold:A:1']),null);assert.equal(replay('test',[...A,...B,'choose:B','test','check','reset']),null);let h=[];for(let i=0;i<40;i++){h=advance('fold',h,'fold:A:1');h=advance('fold',h,'reset');assert.deepEqual(replay('fold',JSON.parse(JSON.stringify(h))).recorded.A,[]);}for(const a of [...A,'check'])h=advance('fold',h,a);assert.equal(replay('fold',h).done,true);});
