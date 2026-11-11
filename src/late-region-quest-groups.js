@@ -3,6 +3,7 @@ import {fourRegions} from './four-regions.js';
 import {newEntrances} from './new-entrances.js';
 const extra={
  garden:[
+  {id:'svdjourney',title:'二方向に映す鏡を調べる',quests:['garden-svdjourney-turn','garden-svdjourney-flat','garden-svdjourney-compare']},
   {id:'spanjourney',title:'二本の光で目印を目指す',quests:['garden-spanjourney-basis','garden-spanjourney-repeat','garden-spanjourney-outside']},
   {id:'eigenjourney',title:'光の矢印と鏡を調べる',quests:['garden-eigenjourney-stretch','garden-eigenjourney-flatten','garden-eigenjourney-rotate']},
   {id:'garden-advanced',title:'花の札と灯りの条件を考える',advanced:true,quests:gardenAdvancedIds},
@@ -60,6 +61,7 @@ const extra={
  ],
 };
 const prerequisites={
+ 'garden-svdjourney-compare':['garden-svdjourney-turn','garden-svdjourney-flat'],
  'observatory-pcajourney-compare':['observatory-pcajourney-diagonal','observatory-pcajourney-horizontal'],
  'garden-spanjourney-outside':['garden-spanjourney-basis','garden-spanjourney-repeat'],
  'garden-eigenjourney-rotate':['garden-eigenjourney-stretch','garden-eigenjourney-flatten'],
