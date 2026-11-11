@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayIpv4Pieces as replay,advanceIpv4Pieces as advance} from '../src/endgame-ipv4-pieces.js';
+const h={capacity:['size:976'],parts:['size:976','size:976','size:528'],offset:['frag:0:1','frag:122:1','frag:244:0']};
+test('independent lengths, offsets and flags',()=>{const mtu=1000,header=20,payload=2480,first=Math.floor((mtu-header)/8)*8,parts=[first,first,payload-2*first];assert.deepEqual(parts,[976,976,528]);assert.deepEqual(parts.map(x=>x+header),[996,996,548]);assert.deepEqual([0,parts[0]/8,(parts[0]+parts[1])/8],[0,122,244]);assert.equal(parts.reduce((a,b)=>a+b),payload);for(const k of Object.keys(h))assert.ok(replay(k,[...h[k],'check']).done);});
+test('wrong, premature, post-completion, resets and saved progress',()=>{assert.equal(replay('capacity',['size:980']),null);assert.equal(replay('offset',['frag:0:0']),null);assert.equal(replay('parts',['check']),null);assert.equal(replay('capacity',[...h.capacity,'check','size:976']),null);let a=[];for(let i=0;i<30;i++){a=advance('parts',a,'size:976');a=advance('parts',a,'reset');assert.deepEqual(a,[]);}a=advance('offset',a,'frag:0:1');assert.equal(replay('offset',JSON.parse(JSON.stringify(a))).step,1);});

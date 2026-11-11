@@ -1,0 +1,3 @@
+const plans={capacity:['size:976'],parts:['size:976','size:976','size:528'],offset:['frag:0:1','frag:122:1','frag:244:0']};
+export function replayIpv4Pieces(kind,history){if(!Object.hasOwn(plans,kind)||!Array.isArray(history)||history.length>5)return null;let step=0,done=false;for(const action of history){if(typeof action!=='string'||done)return null;if(step<plans[kind].length&&action===plans[kind][step]){step++;continue;}if(step===plans[kind].length&&action==='check'){done=true;continue;}return null;}return {step,done};}
+export function advanceIpv4Pieces(kind,history,action){const p=replayIpv4Pieces(kind,history);if(!p||p.done)return null;const next=action==='reset'?[]:[...history,action];return replayIpv4Pieces(kind,next)?next:null;}
