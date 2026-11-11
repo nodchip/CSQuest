@@ -22,6 +22,7 @@ const extra={
  ],
  observatory:[
   {id:'cluster',title:'水晶の集まりを探す',quests:['observatory-cluster-far','observatory-cluster-near','observatory-cluster-compare']},
+  {id:'lightintegral',title:'速さから道のりを調べる',quests:['observatory-lightintegral-left','observatory-lightintegral-right','observatory-lightintegral-compare']},
   {id:'derivative',title:'精霊の瞬間の速さを調べる',quests:['observatory-derivative-after','observatory-derivative-before','observatory-derivative-compare']},
   {id:'reward-route',title:'報酬から道を学ぶ',quests:['observatory-reward-safe','observatory-reward-room','observatory-reward-compare']},
   {id:'descent',title:'誤差の谷を進む',quests:['observatory-descent-small','observatory-descent-large','observatory-descent-compare']},
@@ -55,6 +56,7 @@ const extra={
  ],
 };
 const prerequisites={
+ 'observatory-lightintegral-compare':['observatory-lightintegral-left','observatory-lightintegral-right'],
  'observatory-threedraws-atleast':['observatory-threedraws-one','observatory-threedraws-two'],
  'garden-color-compare':['garden-color-light','garden-color-filter'],
  'garden-image-resample':['garden-image-fit','garden-image-pixels'],
