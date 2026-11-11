@@ -2,6 +2,7 @@ const catalogs={
  forge:[
   {id:'lights',title:'灯りと命令を調べる',local:true,quests:['forge-bits','forge-cpu']},
   {id:'storage',title:'記憶の箱と棚を調べる',local:true,quests:['forge-memory','forge-cache']},
+  {id:'cacheways',title:'巻物棚の組を調べる',quests:['forge-cacheways-direct','forge-cacheways-two','forge-cacheways-compare']},
   {id:'sharingshelves',title:'二人の記録棚を調べる',quests:['forge-sharingshelves-packed','forge-sharingshelves-separate','forge-sharingshelves-compare']},
   {id:'instructionhazard',title:'重なる命令を調べる',quests:['forge-instructionhazard-unsafe','forge-instructionhazard-stall','forge-instructionhazard-forward']},
   {id:'signedlamps',title:'負の数を灯りで表す',quests:['forge-signedlamps-minus','forge-signedlamps-zero','forge-signedlamps-limit']},
@@ -27,6 +28,7 @@ const catalogs={
  ],
 };
 const prerequisites={
+ 'forge-cacheways-compare':['forge-cacheways-direct','forge-cacheways-two'],
  'forge-sharingshelves-compare':['forge-sharingshelves-packed','forge-sharingshelves-separate'],
  'forge-instructionhazard-forward':['forge-instructionhazard-unsafe','forge-instructionhazard-stall'],
  'forge-signedlamps-limit':['forge-signedlamps-minus','forge-signedlamps-zero'],
