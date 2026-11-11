@@ -1,5 +1,6 @@
 const groups=[
  {id:'start',title:'工房の近くを手伝う',local:true,quests:['workshop-opening','forest','branch','loop','workshop-steps']},
+ {id:'closurejourney',title:'倍率を覚える封印を作る',quests:['workshop-closurejourney-first','workshop-closurejourney-second','workshop-closurejourney-compare']},
  {id:'fiblantern',title:'灯の数と記録を調べる',quests:['workshop-fiblantern-plain','workshop-fiblantern-memo','workshop-fiblantern-compare']},
  {id:'recursion',title:'入れ子の箱を調べる',quests:['workshop-recursion-sum','workshop-recursion-tree','workshop-recursion-repair']},
  {id:'invariant',title:'札を数える仕掛けを確かめる',quests:['workshop-invariant-trace','workshop-invariant-proof','workshop-invariant-compare']},
@@ -12,6 +13,7 @@ const groups=[
  {id:'flower',title:'花びらの仕分け機を作る',quests:['workshop-flower-lab']},
 ];
 const prerequisites={
+ 'workshop-closurejourney-compare':['workshop-closurejourney-first','workshop-closurejourney-second'],
  'workshop-fiblantern-compare':['workshop-fiblantern-plain','workshop-fiblantern-memo'],
  'workshop-recursion-repair':['workshop-recursion-sum','workshop-recursion-tree'],
  'workshop-invariant-compare':['workshop-invariant-trace','workshop-invariant-proof'],
