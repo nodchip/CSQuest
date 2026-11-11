@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayOneBox as replay} from '../src/endgame-one-box.js';
+const P='producer',C='consumer';
+test('empty consumer waits and is released on notification',()=>{const s=replay('empty',[C,P,P,P]);assert.equal(s.seenConsumer,true);assert.equal(s.state.consumer.blocked,false);assert.equal(s.state.consumer.phase,'work');assert.equal(s.state.buffer,'月');assert.equal(s.state.full,0);assert.equal(replay('empty',[C,P,P,P,'check']).done,true);assert.equal(replay('empty',[C,P,P,P,C,'check']).done,true);});
+test('full producer waits and resumes after consumer signals',()=>{const s=replay('full',[P,P,P,P,C,C,C]);assert.equal(s.seenProducer,true);assert.equal(s.state.producer.blocked,false);assert.equal(s.state.producer.phase,'work');assert.deepEqual(s.state.received,['月']);assert.equal(replay('full',[P,P,P,P,C,C,C,'check']).done,true);});
+test('two items delivered in order, invalid operations rejected, reset restores',()=>{const sequence=[P,P,P,C,C,C,P,P,P,C,C,C];const s=replay('deliver',[...sequence,'check']);assert.deepEqual(s.state.received,['月','星']);assert.equal(s.state.empty,1);assert.equal(s.state.full,0);assert.equal(s.done,true);assert.equal(replay('empty',[C,C]),null);assert.equal(replay('full',[P,P,P,'check']),null);assert.equal(replay('deliver',[...sequence,'check',P]),null);assert.equal(replay('empty',[C,'reset']).state.consumer.blocked,false);});
