@@ -1,0 +1,4 @@
+export const leftJoinRows=['A:赤','A:青','A:なし','B:青','B:なし','C:なし'];
+export const leftJoinResults={all:['A:赤','A:青','B:青','C:なし'],on:['A:赤','B:なし','C:なし'],where:['A:赤']};
+export function replayLeftJoin(kind,history){if(!Object.hasOwn(leftJoinResults,kind)||!Array.isArray(history)||history.length>8)return null;let seen=[],done=false;for(const action of history){if(typeof action!=='string'||done)return null;const m=/^row:([0-5]):(yes|no)$/.exec(action);if(m&&!seen.includes(Number(m[1]))&&leftJoinResults[kind].includes(leftJoinRows[Number(m[1])])===(m[2]==='yes')){seen.push(Number(m[1]));continue;}if(seen.length===6&&action==='check'){done=true;continue;}return null;}return {seen,done};}
+export function advanceLeftJoin(kind,history,action){const p=replayLeftJoin(kind,history);if(!p||p.done)return null;const next=action==='reset'?[]:[...history,action];return replayLeftJoin(kind,next)?next:null;}
