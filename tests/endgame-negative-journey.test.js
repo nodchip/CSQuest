@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayNegativeJourney as replay,advanceNegativeJourney as advance} from '../src/endgame-negative-journey.js';
+const greedy=['node:S','node:A','node:G'],round=['edge:sa','edge:sb','edge:ag','edge:ba'],relax=[...round,...round,...round];
+test('independent enumeration finds 3 while early finalization finds 4',()=>{const pathCosts=[2+2,5-4+2];assert.equal(Math.min(...pathCosts),3);assert.equal(replay('greedy',greedy).trial.dist.G,4);const r=replay('relax',relax);assert.equal(r.trial.dist.G,3);assert.equal(r.trial.done,true);assert.ok(replay('greedy',[...greedy,'check']).done);assert.ok(replay('relax',[...relax,'check']).done);});
+test('reject wrong choice, repeat, premature completion, completed input; reset and restore',()=>{assert.equal(replay('greedy',['node:A']),null);assert.equal(replay('relax',['edge:sa','edge:sa']),null);assert.equal(replay('relax',['check']),null);assert.equal(replay('compare',['answer:negative','answer:negative']),null);let h=[];for(let i=0;i<30;i++){h=advance('relax',h,'edge:sa');h=advance('relax',h,'reset');assert.deepEqual(h,[]);}h=advance('greedy',h,'node:S');assert.equal(replay('greedy',JSON.parse(JSON.stringify(h))).trial.dist.A,2);});

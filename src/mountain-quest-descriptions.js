@@ -1,0 +1,4 @@
+import {mountainQuests} from './mountain.js';
+import {expansionQuests} from './adventure-expansion.js';
+const descriptions={'mountain-astar-uniform':'かかった費用の小さい候補を調べます。','mountain-astar-astar':'費用と残りの見積もりを合わせます。','mountain-astar-compare':'見積もりの使い方を比べます。','mountain-ropegcd-first':'二本の綱の共通の長さを調べます。','mountain-ropegcd-second':'割り切れない綱の長さを調べます。','mountain-ropegcd-third':'別の綱を同じ長さに切ります。','mountain-primroads-forest':'五つの集落を道でつなぎます。','mountain-primroads-ties':'同じ費用の道を選んでつなぎます。','mountain-primroads-compare':'二つの道のつなぎ方を比べます。','mountain-negativejourney-greedy':'返礼のある道で小さい候補から確定します。','mountain-negativejourney-relax':'返礼のある道を繰り返し確認します。','mountain-negativejourney-compare':'二つの道の費用を比べます。'};
+export function mountainQuestDescription(id){const goal=(mountainQuests[id]??expansionQuests[id])?.goal;return descriptions[id]??(goal?`${goal}。`:'山道の費用を調べます。');}
