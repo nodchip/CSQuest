@@ -4,6 +4,7 @@ const groups=[
  {id:'invariant',title:'札を数える仕掛けを確かめる',quests:['workshop-invariant-trace','workshop-invariant-proof','workshop-invariant-compare']},
  {id:'debug',title:'花を数える装置を直す',quests:['workshop-debug-trace','workshop-debug-breakpoint','workshop-debug-repair']},
  {id:'instructions',title:'指示書の名前と説明を整える',quests:['workshop-instructions-name','workshop-instructions-comment','workshop-instructions-revise']},
+ {id:'boxcollection',title:'つながる箱を片付ける',quests:['workshop-boxcollection-chain','workshop-boxcollection-cycle','workshop-boxcollection-compare']},
  {id:'scopelight',title:'同じ名前の光を調べる',quests:['workshop-scopelight-lexical','workshop-scopelight-dynamic','workshop-scopelight-compare']},
  {id:'refactor',title:'仕分け機を整理して受け継ぐ',quests:['workshop-refactor-structure','workshop-refactor-interface','workshop-refactor-migration']},
  {id:'flower',title:'花びらの仕分け機を作る',quests:['workshop-flower-lab']},
@@ -13,6 +14,7 @@ const prerequisites={
  'workshop-invariant-compare':['workshop-invariant-trace','workshop-invariant-proof'],
  'workshop-debug-repair':['workshop-debug-trace','workshop-debug-breakpoint'],
  'workshop-instructions-revise':['workshop-instructions-name','workshop-instructions-comment'],
+ 'workshop-boxcollection-compare':['workshop-boxcollection-chain','workshop-boxcollection-cycle'],
  'workshop-scopelight-compare':['workshop-scopelight-lexical','workshop-scopelight-dynamic'],
  'workshop-refactor-migration':['workshop-refactor-structure','workshop-refactor-interface'],
 };

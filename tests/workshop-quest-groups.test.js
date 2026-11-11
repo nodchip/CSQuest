@@ -3,7 +3,7 @@ import {strict as assert} from 'node:assert';
 import {workshopQuestGroups} from '../src/workshop-quest-groups.js';
 test('工房の初回依頼を実行済み状態から数え、未開放を達成扱いにしない',()=>{
  const groups=workshopQuestGroups(['forest','branch','loop','workshop-steps'],false,true),all=groups.flatMap(g=>g.quests);
- assert.equal(all.length,24);assert.equal(new Set(all).size,24);assert.equal(groups[0].complete,true);assert.equal(groups.every(g=>g.complete),false);
+ assert.equal(all.length,27);assert.equal(new Set(all).size,27);assert.equal(groups[0].complete,true);assert.equal(groups.every(g=>g.complete),false);
  assert.ok(workshopQuestGroups(all.filter(x=>x!=='workshop-opening'),true,true).every(g=>g.complete));
  assert.equal(workshopQuestGroups(all.filter(x=>x!=='workshop-opening'),true,false)[0].complete,false);
 });
@@ -13,6 +13,7 @@ test('発展依頼はそれぞれ二件の達成後に開く',()=>{
  ['workshop-recursion-repair',['workshop-recursion-sum','workshop-recursion-tree']],
  ['workshop-invariant-compare',['workshop-invariant-trace','workshop-invariant-proof']],
  ['workshop-debug-repair',['workshop-debug-trace','workshop-debug-breakpoint']],
+ ['workshop-boxcollection-compare',['workshop-boxcollection-chain','workshop-boxcollection-cycle']],
  ['workshop-scopelight-compare',['workshop-scopelight-lexical','workshop-scopelight-dynamic']],
  ['workshop-refactor-migration',['workshop-refactor-structure','workshop-refactor-interface']]]){
  const has=done=>workshopQuestGroups(done,true,true).flatMap(g=>g.available).includes(id);

@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {refCounts} from '../src/reference-counting.js';
+import {replayBoxCollection as replay,advanceBoxCollection as advance} from '../src/endgame-box-collection.js';
+const marks=x=>x.map(v=>`toggle:${v}`),chain=[...marks(['A','B','C','D']),'check','sweep:E','finish'],cycle=[...marks(['A','B']),'check','sweep:C','sweep:D','sweep:E','finish'],compare=['release','collect:A','finish-ref','trace','sweep:B','sweep:C','finish'];
+test('reachability follows directed references, unreachable cycles and reference counts',()=>{assert.equal(replay('chain',chain).done,true);assert.equal(replay('cycle',cycle).done,true);const before=replay('compare',compare.slice(0,3));assert.deepEqual(before.ref.live,['B','C']);assert.deepEqual(refCounts(before.ref),{B:1,C:1});assert.equal(replay('compare',compare).done,true);});
+test('reject incorrect markings, reachable sweeps and incomplete runs; reset and saved resume',()=>{assert.equal(replay('chain',[...marks(['A','B']),'check']),null);assert.equal(replay('cycle',[...marks(['A','B']),'check','sweep:B']),null);assert.equal(replay('compare',['release','finish-ref']),null);assert.equal(replay('compare',[...compare,'reset']),null);let h=[];for(let i=0;i<40;i++){h=advance('chain',h,'toggle:A');h=advance('chain',h,'reset');assert.deepEqual(replay('chain',JSON.parse(JSON.stringify(h))).selected,[]);}for(const a of chain)h=advance('chain',h,a);assert.equal(replay('chain',h).done,true);});
