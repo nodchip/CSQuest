@@ -1,0 +1,5 @@
+import {createProcessFork,processForkStep} from './process-fork.js';
+const plans={private:['fork','childWrite','parentInspect'],offset:['fork','childRead','parentRead'],life:['fork','exec','wait','exit','wait']};
+const answers={private:'private',offset:'C',life:'replace'};
+export function replayForkTales(kind,history){if(!Object.hasOwn(plans,kind)||!Array.isArray(history)||history.length>7)return null;let state=createProcessFork(),step=0,done=false;for(const action of history){if(typeof action!=='string'||done)return null;if(step<plans[kind].length&&action===`do:${plans[kind][step]}`){const next=processForkStep(state,plans[kind][step]);if(!next||next.last?.type==='unavailable')return null;state=next;step++;continue;}if(step===plans[kind].length&&action===`answer:${answers[kind]}`){done=true;continue;}return null;}return {state,step,done};}
+export function advanceForkTales(kind,history,action){const p=replayForkTales(kind,history);if(!p||p.done)return null;const next=action==='reset'?[]:[...history,action];return replayForkTales(kind,next)?next:null;}
