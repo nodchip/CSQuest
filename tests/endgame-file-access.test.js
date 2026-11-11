@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {fileAccessCases,replayFileAccess as replay,advanceFileAccess as advance} from '../src/endgame-file-access.js';
+test('independent access decisions for known-name parent and file permissions',()=>{assert.deepEqual(fileAccessCases.read.map(c=>Boolean(c.dir&1)&&Boolean(c.file&4)),[true,false]);assert.deepEqual(fileAccessCases.remove.map(c=>Boolean(c.dir&1)&&Boolean(c.dir&2)),[false,true]);assert.ok(replay('read',['guess:yes','guess:no','check']).done);assert.ok(replay('remove',['guess:no','guess:yes','check']).done);assert.ok(replay('compare',['answer:parent']).done);});
+test('wrong, premature and completed actions; reset and saved state',()=>{assert.equal(replay('read',['guess:no']),null);assert.equal(replay('remove',['check']),null);assert.equal(replay('compare',['answer:parent','answer:parent']),null);let h=[];for(let i=0;i<30;i++){h=advance('remove',h,'guess:no');h=advance('remove',h,'reset');assert.deepEqual(h,[]);}h=advance('read',h,'guess:yes');assert.equal(replay('read',JSON.parse(JSON.stringify(h))).step,1);});

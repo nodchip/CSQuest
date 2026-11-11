@@ -9,6 +9,7 @@ const groups = [
  {id:'avlbranches', title:'傾いた鍵の樹を整える', quests:['archive-avlbranches-ll','archive-avlbranches-rr','archive-avlbranches-lr']},
  {id:'shelfresize',title:'大きくした棚を調べる',quests:['archive-shelfresize-copy','archive-shelfresize-rehash','archive-shelfresize-compare']},
  {id:'quickstones', title:'魔石を基準で分ける', quests:['archive-quickstones-first','archive-quickstones-middle','archive-quickstones-duplicates']},
+ {id:'fileaccess',title:'書庫の扉と本の許可を調べる',quests:['archive-fileaccess-read','archive-fileaccess-remove','archive-fileaccess-compare']},
  {id:'filenames',title:'本の名前と開いた参照を調べる',quests:['archive-filenames-alias','archive-filenames-open','archive-filenames-release']},
  {id:'lowerbound',title:'番号以上の最初の札を探す',quests:['archive-lowerbound-duplicate','archive-lowerbound-gap','archive-lowerbound-end']},
  {id:'treeorders', title:'枝の灯りを順に巡る', quests:['archive-treeorders-pre','archive-treeorders-in','archive-treeorders-post']},
@@ -20,6 +21,7 @@ const groups = [
  {id:'versions', title:'道案内帳の版を整える', quests:['archive-version-snapshot','archive-version-merge','archive-version-release']},
 ];
 const prerequisites={
+ 'archive-fileaccess-compare':['archive-fileaccess-read','archive-fileaccess-remove'],
  'archive-filenames-release':['archive-filenames-alias','archive-filenames-open'],
  'archive-lowerbound-end':['archive-lowerbound-duplicate','archive-lowerbound-gap'],
  'archive-utfmessage-combine':['archive-utfmessage-ascii','archive-utfmessage-kana'],
