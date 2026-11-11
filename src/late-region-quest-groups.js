@@ -3,6 +3,7 @@ import {fourRegions} from './four-regions.js';
 import {newEntrances} from './new-entrances.js';
 const extra={
  garden:[
+  {id:'spanjourney',title:'二本の光で目印を目指す',quests:['garden-spanjourney-basis','garden-spanjourney-repeat','garden-spanjourney-outside']},
   {id:'eigenjourney',title:'光の矢印と鏡を調べる',quests:['garden-eigenjourney-stretch','garden-eigenjourney-flatten','garden-eigenjourney-rotate']},
   {id:'garden-advanced',title:'花の札と灯りの条件を考える',advanced:true,quests:gardenAdvancedIds},
   {id:'color',title:'光と色を作る',quests:['garden-color-light','garden-color-filter','garden-color-compare']},
@@ -58,6 +59,7 @@ const extra={
  ],
 };
 const prerequisites={
+ 'garden-spanjourney-outside':['garden-spanjourney-basis','garden-spanjourney-repeat'],
  'garden-eigenjourney-rotate':['garden-eigenjourney-stretch','garden-eigenjourney-flatten'],
  'observatory-eulerlantern-fine':['observatory-eulerlantern-coarse','observatory-eulerlantern-half'],
  'observatory-lightintegral-compare':['observatory-lightintegral-left','observatory-lightintegral-right'],
