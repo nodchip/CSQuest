@@ -41,18 +41,18 @@ import {lampStates,truthForLampNegation,replayLampNegation,advanceLampNegation} 
 import {replayCarrySigns,advanceCarrySigns} from './endgame-carry-signs.js';
 import {combinationPairs,replayHerbCombinations,advanceHerbCombinations} from './endgame-herb-combinations.js';
 import {samplePairs,sampleValues,replaySamplingBias,advanceSamplingBias} from './endgame-sampling-bias.js';
-import {legacyQuestTitles} from './legacy-quest-titles.js?v=region-navigation83';
-import {workshopQuestGroups} from './workshop-quest-groups.js?v=region-navigation83';
-import {cityQuestGroups} from './city-quest-groups.js?v=region-navigation83';
-import {riverQuestGroups} from './river-quest-groups.js?v=region-navigation83';
-import {harborQuestGroups} from './harbor-quest-groups.js?v=region-navigation83';
-import {lateRegionQuestGroups} from './late-region-quest-groups.js?v=region-navigation83';
-import {towerGateQuestGroups} from './tower-gate-quest-groups.js?v=region-navigation83';
-import {forgeStationQuestGroups} from './forge-station-quest-groups.js?v=region-navigation83';
-import {valleyQuestGroups} from './valley-quest-groups.js?v=region-navigation83';
-import {mountainQuestGroups,mountainQuestSelector} from './mountain-quest-groups.js?v=region-navigation83';
-import {archiveQuestGroups} from './archive-quest-groups.js?v=region-navigation83';
-import {windmillQuestGroups} from './windmill-quest-groups.js?v=region-navigation83';
+import {legacyQuestTitles} from './legacy-quest-titles.js?v=region-navigation84';
+import {workshopQuestGroups} from './workshop-quest-groups.js?v=region-navigation84';
+import {cityQuestGroups} from './city-quest-groups.js?v=region-navigation84';
+import {riverQuestGroups} from './river-quest-groups.js?v=region-navigation84';
+import {harborQuestGroups} from './harbor-quest-groups.js?v=region-navigation84';
+import {lateRegionQuestGroups} from './late-region-quest-groups.js?v=region-navigation84';
+import {towerGateQuestGroups} from './tower-gate-quest-groups.js?v=region-navigation84';
+import {forgeStationQuestGroups} from './forge-station-quest-groups.js?v=region-navigation84';
+import {valleyQuestGroups} from './valley-quest-groups.js?v=region-navigation84';
+import {mountainQuestGroups,mountainQuestSelector} from './mountain-quest-groups.js?v=region-navigation84';
+import {archiveQuestGroups} from './archive-quest-groups.js?v=region-navigation84';
+import {windmillQuestGroups} from './windmill-quest-groups.js?v=region-navigation84';
 import {worldRegionProgress,worldFinaleReady,storyRegions} from './world-progress.js?v=story-climax1';
 import {storyClueDetails,storyClueRegions,storyReflectionReady,validStoryHeard} from './adventure-rumors.js?v=story-introduction1';
 import {climaxSteps,validClimaxHistory,tryClimaxAction,climaxComplete} from './story-climax.js';
@@ -232,7 +232,7 @@ import {travelPlaces,travelIds,legacyTravelIds,availableTravelPlaces,travelNotic
 import {forgeStationQuests,forgeStationIds,forgeStationConverged,forgeStationReplay,validForgeStationDrafts} from './forge-station.js?v=wording-world1';
 import {commands,levels,runScenarios} from './engine.js';
 import {journeyQuests,workshopQuestIds,unlocked,completeQuest,emptyDraft,validDraft} from './workshop-journey-data.js?v=wording-workshop1';
-import {cityQuestIds,recommend,validAnnouncements,restoreCitySort,restoreCityQueue} from './workshop-city.js';
+import {cityQuestIds,validAnnouncements,restoreCitySort,restoreCityQueue} from './workshop-city.js';
 import {containerEvents,containerStep} from './containers.js';
 import {harborNodes,harborUnlocked,validHarborRoute,harborNext,harborDelivered} from './harbor-route.js';
 import {midQuests,midIds,recordNumbers,windTasks,midUnlocked,bridgeReady,midReplay,validMidDrafts} from './midgame.js';
@@ -812,13 +812,6 @@ function persist(){
 function warning(){return error?`<p class="notice" role="status">${error}</p>`:'';}
 function show(place){if(place==='outside')state.storyKaedeMet=true;if(place==='travel'){const origin=state.place==='world-finale'?(state.worldFinaleFrom==='travel'?state.travelFrom:state.worldFinaleFrom):state.place;state.travelFrom=travelOrigins.includes(origin)?origin:'choices';}const destination=travelPlaces.find(p=>p.target===place);if(destination){state.mapVisited??=[];if(!state.mapVisited.includes(destination.id))state.mapVisited.push(destination.id);state.travelNew=(state.travelNew??[]).filter(id=>id!==destination.id);}state.place=place;persist();render();window.scrollTo(0,0);}
 function dialogue(id,line){const who={lira:'リラ',nono:'ノノ',kaede:'カエデ',mizuho:'ミズホ',mina:'ミナ',sara:'サラ',ren:'レン',aoi:'アオイ',toma:'ゲン',sora:'ソラ',yuno:'ユノ',alto:'アルト',shino:'シノ',akari:'アカリ',haru:'ハル',nagi:'ナギ',sena:'セナ',dario:'ダリオ',marta:'マルタ'}[id];return `<div class="speech"><span class="portrait ${id}" role="img" aria-label="${who}の顔"></span><p class="dialogue"><strong>${who}</strong><br>「${line}」</p></div>`;}
-function advice(place,speaker){
-  const suggestion=recommend(place,state.completed),key=suggestion?`${place}:${suggestion[0]}`:null;
-  let line='';
-  if(key&&!state.announced.includes(key)){state.announced.push(key);persist();line=dialogue(speaker,`次は『${suggestion[1]}』を手伝ってみない？ ほかのことを選んでも大丈夫だよ。`);}
-  return `<div class="advice"><div id="advice-response" role="status">${line}</div><button id="ask-advice">次のおすすめを聞く</button></div>`;
-}
-function bindAdvice(place,speaker){app.querySelector('#ask-advice').onclick=()=>{const suggestion=recommend(place,state.completed);app.querySelector('#advice-response').innerHTML=dialogue(speaker,suggestion?`『${suggestion[1]}』を手伝ってみない？ 好きな依頼を選んでね。`:'この場所で紹介できる依頼は、今は全部お手伝い済みだよ。');};}
 function title(){
   app.innerHTML=`<section class="scene title-screen"><img src="./data/art/spirit-workshop.png" alt="森のそばの精霊の工房"><h1>CS QUEST<span class="title-subtitle">～はじまりの工房～</span></h1><p>精霊とともに、小さな冒険へ。</p><p>この冒険は開発中です。遊べる地域は今後増えていきます。</p>${warning()}<div class="actions"><button class="${state?'':'primary'}" id="new">冒険を始める</button><button id="continue" ${state?'':'disabled'}>続きから</button><button id="settings">設定</button></div><details><summary>この体験版について</summary><p>風景・人物のイラストは CS Quest のために画像生成ツールを使って制作しました。学習内容の参考：<a href="https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm">Computer Science Curricula 2023</a>。</p></details></section>`;
   app.querySelector('#new').onclick=()=>{if(state&&!window.confirm('体験版の現在の冒険を最初から始めます。よろしいですか？'))return;state={mapVisited:['workshop'],legacyUnlocked:[],place:'world',program:[],executed:false,forestProgram:[],forestExecuted:false,completed:[],drafts:{},activeQuest:null,citySort:[],cityQueue:[],cityQuest:null,cityFrom:'city-guild',announced:[],harborRoute:[],midActive:null,midDrafts:{},bridgeOpen:false,bridgeFrom:'archive',mountainActive:null,mountainRoutes:{},expansionActive:null,expansionDrafts:{}};persist();render();};
@@ -860,8 +853,8 @@ function choices(){
   const count=[...workshopQuestIds,'workshop-steps'].filter(id=>state.completed.includes(id)).length;
   const ready=unlocked(state.completed);
   const journeyAdvice=ready?'ノノとなら、少し遠くまで行けそうね。川向こうの村にも、灯りに困っている人がいるそうよ。':count?'ありがとう。ほかにも困っている人がいるみたい。一緒に様子を見に行きましょう。':'ノノ、ほかの道も歩いてみたいのね。まずは近くで困っている人たちを手伝いながら、一緒に道に慣れていきましょう。';
-  app.innerHTML=`<section class="scene"><img src="./data/art/spirit-workshop.png" alt="森のそばの精霊の工房"><h1>精霊の工房</h1>${dialogue('lira',journeyAdvice)}${advice('workshop','lira')}<h2>工房で過ごす</h2><div class="actions"><button id="talk">ノノと話す</button></div><h2>近くのお手伝い</h2><div class="actions"><button id="outside">森の入口へ：薬草の届けもの${state.completed.includes('forest')?'（達成済み）':''}</button><button data-encounter="branch">木立の道へ：届けもの${state.completed.includes('branch')?'（達成済み）':''}</button><button data-encounter="loop">工房の水路へ：消えた灯り${state.completed.includes('loop')?'（達成済み）':''}</button>${newButtons('workshop')}</div>${ready?'<h2>旅立ち</h2><div class="actions"><button id="travel">旅先を選ぶ</button></div>':''}${selection}${warning()}<p><button id="title">タイトルへ戻る</button></p></section>`;
-  bindNewButtons();bindAdvice('workshop','lira');
+  app.innerHTML=`<section class="scene"><img src="./data/art/spirit-workshop.png" alt="森のそばの精霊の工房"><h1>精霊の工房</h1>${dialogue('lira',journeyAdvice)}<h2>工房で過ごす</h2><div class="actions"><button id="talk">ノノと話す</button></div><h2>近くのお手伝い</h2><div class="actions"><button id="outside">森の入口へ：薬草の届けもの${state.completed.includes('forest')?'（達成済み）':''}</button><button data-encounter="branch">木立の道へ：届けもの${state.completed.includes('branch')?'（達成済み）':''}</button><button data-encounter="loop">工房の水路へ：消えた灯り${state.completed.includes('loop')?'（達成済み）':''}</button>${newButtons('workshop')}</div>${ready?'<h2>旅立ち</h2><div class="actions"><button id="travel">旅先を選ぶ</button></div>':''}${selection}${warning()}<p><button id="title">タイトルへ戻る</button></p></section>`;
+  bindNewButtons();
   if(state.storyClimaxComplete&&festivalReady(state.completed)){
    const ready=['workshop-instructions-name','workshop-instructions-comment'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>指示書の名前と説明を整える依頼</h2><p>リラと、引き継ぐ人に伝わる指示書を作りましょう。</p><div class="actions"><button id="instructions-name">意味が伝わる名前を選ぶ${state.completed.includes('workshop-instructions-name')?'（達成済み）':''}</button><button id="instructions-comment">手順の理由を伝える${state.completed.includes('workshop-instructions-comment')?'（達成済み）':''}</button>${ready?`<button id="instructions-revise">変わった手順と説明をそろえる${state.completed.includes('workshop-instructions-revise')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つの依頼を終えると、変更された手順の相談が届きます。</p>'}`;app.querySelector('h2').before(section);for(const kind of ['name','comment','revise'])section.querySelector(`#instructions-${kind}`)?.addEventListener('click',()=>{const key={name:'instructionsNameHistory',comment:'instructionsCommentHistory',revise:'instructionsReviseHistory'}[kind];state[key]??=[];show(`workshop-instructions-${kind}`);});
   }
@@ -982,13 +975,13 @@ function travel(){
 }
 
 function river(){
-  app.innerHTML=`<section class="scene river-scene"><img src="./data/art/river-village.png" alt="川と橋のある水辺の村"><h1>水辺の村</h1>${dialogue('nono','川がきらきらしてる！ あそこにいる人に話しかけてみよう。')}<p>村では道を照らす灯りが消え、川の水かさによって道が変わるようです。</p>${advice('river','nono')}${warning()}<div class="actions"><button id="help" class="primary">村の世話役に話す${state.completed.includes('river')?'（依頼達成済み）':''}</button>${newButtons('river')}<button id="travel">旅先を選ぶ</button><button id="back">工房へ戻る</button></div></section>`;
+  app.innerHTML=`<section class="scene river-scene"><img src="./data/art/river-village.png" alt="川と橋のある水辺の村"><h1>水辺の村</h1>${dialogue('nono','川がきらきらしてる！ あそこにいる人に話しかけてみよう。')}<p>村では道を照らす灯りが消え、川の水かさによって道が変わるようです。</p>${warning()}<div class="actions"><button id="help" class="primary">村の世話役に話す${state.completed.includes('river')?'（依頼達成済み）':''}</button>${newButtons('river')}<button id="travel">旅先を選ぶ</button><button id="back">工房へ戻る</button></div></section>`;
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['river-herbcomb-list','river-herbcomb-sort'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>薬草の組み合わせを調べる依頼</h2><p>ミズホと薬草の組み合わせを数えましょう。</p><div class="actions"><button id="herbcomb-list">薬草の組を集める</button><button id="herbcomb-sort">薬草の組を分ける</button>${ready?'<button id="herbcomb-triangle">三角の数をつなぐ</button>':''}</div>`;app.querySelector('h1').after(section);for(const kind of ['list','sort','triangle'])section.querySelector(`#herbcomb-${kind}`)?.addEventListener('click',()=>{const key={list:'herbCombListHistory',sort:'herbCombSortHistory',triangle:'herbCombTriangleHistory'}[kind];state[key]??=[];show(`river-herbcomb-${kind}`);});}
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['river-samplingbias-near','river-samplingbias-pairs'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>薬草の選び方を調べる依頼</h2><p>ミズホと薬草を選んで比べましょう。</p><div class="actions"><button id="samplingbias-near">手前の薬草を調べる</button><button id="samplingbias-pairs">薬草の組を調べる</button>${ready?'<button id="samplingbias-compare">選び方を比べる</button>':''}</div>`;app.querySelector('h1').after(section);for(const kind of ['near','pairs','compare'])section.querySelector(`#samplingbias-${kind}`)?.addEventListener('click',()=>{const key={near:'samplingBiasNearHistory',pairs:'samplingBiasPairsHistory',compare:'samplingBiasCompareHistory'}[kind];state[key]??=[];show(`river-samplingbias-${kind}`);});}
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['river-intervalsample-inside','river-intervalsample-outside'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>薬草の標本と区間を調べる依頼</h2><p>ミズホと標本を入れ替えて調べましょう。</p><div class="actions"><button id="intervalsample-inside">二本の長さから区間を作る</button><button id="intervalsample-outside">別の二本で区間を作る</button>${ready?'<button id="intervalsample-coverage">すべての標本で区間を比べる</button>':''}</div>`;app.querySelector('h1').after(section);for(const kind of ['inside','outside','coverage'])section.querySelector(`#intervalsample-${kind}`)?.addEventListener('click',()=>{const key={inside:'intervalSampleInsideHistory',outside:'intervalSampleOutsideHistory',coverage:'intervalSampleCoverageHistory'}[kind];state[key]??=[];show(`river-intervalsample-${kind}`);});}
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['river-functional-map','river-functional-fold'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>水辺の数札の依頼</h2><p>ミズホと一緒に数の列を整理しましょう。</p><div class="actions"><button id="functional-map">札を一つずつ変える${state.completed.includes('river-functional-map')?'（達成済み）':''}</button><button id="functional-fold">札の数をまとめる${state.completed.includes('river-functional-fold')?'（達成済み）':''}</button>${ready?`<button id="functional-pipeline">道具を順番に使う${state.completed.includes('river-functional-pipeline')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つのお手伝いを終えると、道具を組み合わせる相談が届きます。</p>'}`;app.querySelector('h1').after(section);for(const kind of ['map','fold','pipeline'])section.querySelector(`#functional-${kind}`)?.addEventListener('click',()=>{const key={map:'functionalMapHistory',fold:'functionalFoldHistory',pipeline:'functionalPipelineHistory'}[kind];state[key]??=[];show(`river-functional-${kind}`);});}
   if(state.storyClimaxComplete&&festivalReady(state.completed)){const ready=['river-type-tools','river-type-record'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>水門に届いた新しい依頼</h2><p>水門で使う札と道具を確かめましょう。</p><div class="actions"><button id="type-tools">札を道具に合わせる${state.completed.includes('river-type-tools')?'（達成済み）':''}</button><button id="type-record">水門の点検票を作る${state.completed.includes('river-type-record')?'（達成済み）':''}</button>${ready?`<button id="type-branch">型を調べる時を比べる${state.completed.includes('river-type-branch')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つのお手伝いを終えると、水門の点検に新しい依頼が届きます。</p>'}`;app.querySelector('h1').after(section);for(const [button,key,place] of [['type-tools','typeToolsHistory','river-type-tools'],['type-record','typeRecordHistory','river-type-record'],['type-branch','typeBranchHistory','river-type-branch']])section.querySelector(`#${button}`)?.addEventListener('click',()=>{state[key]??=[];show(place);});}
-  bindNewButtons();bindAdvice('river','nono');app.querySelector('#travel').onclick=()=>show('travel');
+  bindNewButtons();app.querySelector('#travel').onclick=()=>show('travel');
   app.querySelector('#help').onclick=()=>{state.activeQuest='river';show('encounter');};app.querySelector('#back').onclick=()=>show('choices');
   const actions=app.querySelector('#help').parentElement,heading=document.createElement('h2'),travelHeading=document.createElement('h2'),travelActions=document.createElement('div');
   heading.textContent='お手伝い';actions.before(heading);travelHeading.textContent='移動';travelActions.className='actions';travelActions.append(app.querySelector('#travel'));actions.after(travelHeading,travelActions);
@@ -1027,11 +1020,11 @@ function cityPerson(place){
   const guild=place==='city-guild',speaker=guild?'mina':'sara',name=guild?'ミナ':'サラ',role=guild?'ギルドの受付と荷物の担当':'市場で品物を扱う商人';
   const line=guild?'ようこそ！ 市場にもギルドにも手伝ってほしい仕事があるんだ。':'いらっしゃい。品物を手に取ってもらいやすいように並べたいの。';
   const sortDone=state.completed.includes('city-sort'),queueDone=state.completed.includes('city-queue');
-  app.innerHTML=`<section class="scene"><h1>${guild?'冒険者ギルド':'市場'}</h1><div class="characters"><figure><img src="./data/art/${speaker}.png" alt="${role}${name}の全身"><figcaption><strong>${name}</strong><br>${role}</figcaption></figure></div>${dialogue(speaker,line)}${advice('city',speaker)}<p>${guild?'手伝いたい仕事を選んでね。':'市場の品札を並べる仕事を手伝えます。'}</p><div class="actions"><button data-city-quest="city-sort">市場の品札を並べる${sortDone?'（達成済み）':''}</button>${guild?`<button data-city-quest="city-queue">ギルドの荷物を届ける${queueDone?'（達成済み）':''}</button>`:''}<button id="back">街へ戻る</button></div>${warning()}</section>`;
+  app.innerHTML=`<section class="scene"><h1>${guild?'冒険者ギルド':'市場'}</h1><div class="characters"><figure><img src="./data/art/${speaker}.png" alt="${role}${name}の全身"><figcaption><strong>${name}</strong><br>${role}</figcaption></figure></div>${dialogue(speaker,line)}<p>${guild?'手伝いたい仕事を選んでね。':'市場の品札を並べる仕事を手伝えます。'}</p><div class="actions"><button data-city-quest="city-sort">市場の品札を並べる${sortDone?'（達成済み）':''}</button>${guild?`<button data-city-quest="city-queue">ギルドの荷物を届ける${queueDone?'（達成済み）':''}</button>`:''}<button id="back">街へ戻る</button></div>${warning()}</section>`;
   if(!guild&&state.storyClimaxComplete&&festivalReady(state.completed)){
    const ready=['city-sorting-insertion','city-sorting-selection'].every(id=>state.completed.includes(id)),section=document.createElement('section');section.className='panel';section.innerHTML=`<h2>市場の並べ方の依頼</h2><p>サラと一緒に品札を並べる手順を試しましょう。</p><div class="actions"><button id="sorting-insertion">札を挿し入れて並べる${state.completed.includes('city-sorting-insertion')?'（達成済み）':''}</button><button id="sorting-selection">小さい札を選んで並べる${state.completed.includes('city-sorting-selection')?'（達成済み）':''}</button>${ready?`<button id="sorting-compare">二つの並べ方を比べる${state.completed.includes('city-sorting-compare')?'（達成済み）':''}</button>`:''}</div>${ready?'':'<p>二つのお手伝いを終えると、並べ方を比べる相談が届きます。</p>'}`;app.querySelector('h1').after(section);for(const kind of ['insertion','selection','compare'])section.querySelector(`#sorting-${kind}`)?.addEventListener('click',()=>{const key={insertion:'sortingInsertionHistory',selection:'sortingSelectionHistory',compare:'sortingCompareHistory'}[kind];state[key]??=[];show(`city-sorting-${kind}`);});
   }
-  bindAdvice('city',speaker);app.querySelectorAll('[data-city-quest]').forEach(button=>button.onclick=()=>{state.cityQuest=button.dataset.cityQuest;state.cityFrom=place;show('city-quest');});app.querySelector('#back').onclick=()=>show('city');
+  app.querySelectorAll('[data-city-quest]').forEach(button=>button.onclick=()=>{state.cityQuest=button.dataset.cityQuest;state.cityFrom=place;show('city-quest');});app.querySelector('#back').onclick=()=>show('city');
 }
 function cityQuest(){
   const sorting=state.cityQuest==='city-sort',speaker=sorting?'sara':'mina',questTitle=sorting?'市場の品札を並べよう':'荷物を届いた順に届けよう';
@@ -1294,6 +1287,7 @@ function setupMidQuestNavigation(region){
   panel.querySelector('h1').tabIndex=-1;panel.querySelector('h1').focus();window.scrollTo(0,0);
  }
  entry.querySelector('button').onclick=()=>openMenu();
+
 }
 function searchLab(){
  const history=state.searchHistory??[],progress=replaySearch(history),current=searchCases[progress.stage];
