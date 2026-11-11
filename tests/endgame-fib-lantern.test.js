@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {fibExpected} from '../src/fib-tabling.js';
+import {replayFibLantern as replay,advanceFibLantern as advance} from '../src/endgame-fib-lantern.js';
+test('independent recursive counts and memoized state for F(5)',()=>{const simple=n=>n<2?{v:n,c:1}:(()=>{const a=simple(n-1),b=simple(n-2);return {v:a.v+b.v,c:1+a.c+b.c};})();assert.deepEqual(simple(5),{v:5,c:15});for(const [mode,calls,computations,hits] of [['plain',15,15,0],['memo',9,6,3]]){let h=[],p=replay(mode,h);while(p.state.result===null){h=advance(mode,h,`do:${fibExpected(p.state)}`);p=replay(mode,h);}assert.deepEqual([p.state.result,p.state.calls,p.state.computations,p.state.hits],[5,calls,computations,hits]);assert.ok(replay(mode,[...h,'check']).done);}});
+test('reject invalid and premature operations; reset and saved history',()=>{assert.equal(replay('plain',['do:base']),null);assert.equal(replay('memo',['check']),null);assert.equal(replay('compare',['answer:reuse','answer:reuse']),null);let h=[];for(let i=0;i<30;i++){h=advance('memo',h,'do:expand');h=advance('memo',h,'reset');assert.deepEqual(h,[]);}h=advance('memo',h,'do:expand');assert.equal(replay('memo',JSON.parse(JSON.stringify(h))).state.stack.length,2);});
