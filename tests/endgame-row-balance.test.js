@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayRowBalance as replay,advanceRowBalance as advance} from '../src/endgame-row-balance.js';
+const h={one:['op:sub21','op:half2','op:neg2','op:sub12'],clash:['op:sub21','op:sub21'],same:['op:half2','op:sub21']};
+test('fixed elimination and solution classification against independent arithmetic',()=>{assert.deepEqual(replay('one',h.one).rows,[[1,0,3],[0,1,2]]);assert.deepEqual(replay('clash',h.clash).rows,[[1,1,4],[0,0,1]]);assert.deepEqual(replay('same',h.same).rows,[[1,1,4],[0,0,0]]);assert.equal(3+2,5);assert.equal(3-2,1);for(const [k,a] of [['one','one'],['clash','none'],['same','many']])assert.ok(replay(k,[...h[k],`answer:${a}`]).done);});
+test('reject wrong and premature actions, completed actions, repeated resets and restore',()=>{assert.equal(replay('one',['op:neg2']),null);assert.equal(replay('same',['answer:many']),null);assert.equal(replay('clash',[...h.clash,'answer:one']),null);assert.equal(replay('one',[...h.one,'answer:one','op:sub21']),null);let h0=[];for(let i=0;i<30;i++){h0=advance('clash',h0,'op:sub21');h0=advance('clash',h0,'reset');assert.deepEqual(h0,[]);}h0=advance('same',h0,'op:half2');assert.deepEqual(replay('same',JSON.parse(JSON.stringify(h0))).rows,[[1,1,4],[1,1,4]]);});

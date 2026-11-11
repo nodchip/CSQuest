@@ -1,0 +1,5 @@
+import {createRowTrial,rowStep,rowForm} from './row-elimination.js';
+const plans={one:['sub21','half2','neg2','sub12'],clash:['sub21','sub21'],same:['half2','sub21']};
+const answer={one:'one',clash:'none',same:'many'};
+export function replayRowBalance(kind,history){if(!Object.hasOwn(plans,kind)||!Array.isArray(history)||history.length>8)return null;let trial=createRowTrial(kind),step=0,done=false;for(const action of history){if(typeof action!=='string'||done)return null;if(step<plans[kind].length&&action===`op:${plans[kind][step]}`){const next=rowStep(trial,plans[kind][step]);if(next.history.length!==trial.history.length+1)return null;trial=next;step++;continue;}if(step===plans[kind].length&&action===`answer:${answer[kind]}`&&rowForm(trial)===answer[kind]){done=true;continue;}return null;}return {rows:trial.rows.map(row=>row.map(n=>n===0?0:n)),step,done};}
+export function advanceRowBalance(kind,history,action){const p=replayRowBalance(kind,history);if(!p||p.done)return null;const next=action==='reset'?[]:[...history,action];return replayRowBalance(kind,next)?next:null;}

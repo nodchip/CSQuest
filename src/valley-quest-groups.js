@@ -4,6 +4,7 @@ const groups=[
  {id:'relations',title:'記録の関係を整理する',quests:['valley-modeling-one','valley-modeling-many','valley-modeling-lookup']},
  {id:'transactions',title:'荷物の移動を記録する',quests:['valley-transaction-commit','valley-transaction-rollback','valley-transaction-isolation']},
  {id:'group-ledger',title:'地域ごとの数量を集計する',quests:['valley-groupledger-count','valley-groupledger-sum','valley-groupledger-compare']},
+ {id:'rowbalance',title:'二つの天秤の約束を調べる',quests:['valley-rowbalance-one','valley-rowbalance-clash','valley-rowbalance-same']},
  {id:'leftjoin',title:'薬草と札を左結合する',quests:['valley-leftjoin-all','valley-leftjoin-on','valley-leftjoin-where']},
  {id:'sqlnull',title:'未記入の数量を調べる',quests:['valley-sqlnull-equal','valley-sqlnull-missing','valley-sqlnull-compound']},
  {id:'query-join',title:'荷物と届け先の表を調べる',quests:['valley-query-join','valley-query-select','valley-query-compose']},
@@ -11,6 +12,7 @@ const groups=[
  {id:'journal',title:'途切れた台帳を立て直す',quests:['valley-journal-undo','valley-journal-redo','valley-journal-decide']},
 ];
 const prerequisites={
+ 'valley-rowbalance-same':['valley-rowbalance-one','valley-rowbalance-clash'],
  'valley-leftjoin-where':['valley-leftjoin-all','valley-leftjoin-on'],
  'valley-integrity-lab':['valley-query-lab','valley-tables-lab'],
  'valley-modeling-lookup':['valley-modeling-one','valley-modeling-many'],
