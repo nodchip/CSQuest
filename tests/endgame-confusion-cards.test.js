@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {confusionCell,replayConfusionCards as replay,advanceConfusionCards as advance} from '../src/endgame-confusion-cards.js';
+const narrow=['tp','tp','tp','fn','fp','tn','tn','tn'],wide=['tp','tp','tp','tp','fp','fp','tn','tn'],actions=a=>a.map(x=>`place:${x}`);
+test('independent expected cells, precision and recall for both fixed predictions',()=>{for(const [k,c] of [['narrow',narrow],['wide',wide]]){assert.deepEqual(Array.from({length:8},(_,i)=>confusionCell(k,i+1)),c);assert.equal(replay(k,[...actions(c),'check']).done,true);}assert.equal(replay('compare',['recall:wide','precision:narrow']).done,true);});
+test('wrong bucket, premature and post-completion actions rejected; repeated reset and restore',()=>{assert.equal(replay('narrow',['place:tn']),null);assert.equal(replay('wide',['check']),null);assert.equal(replay('compare',['recall:narrow']),null);assert.equal(replay('compare',['recall:wide','precision:narrow','reset']),null);let h=[];for(let i=0;i<40;i++){h=advance('narrow',h,'place:tp');h=advance('narrow',h,'reset');assert.deepEqual(replay('narrow',JSON.parse(JSON.stringify(h))).cards,[]);}for(const a of [...actions(narrow),'check'])h=advance('narrow',h,a);assert.equal(replay('narrow',h).done,true);});
