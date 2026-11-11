@@ -37,6 +37,7 @@ const extra={
   {id:'forecast',title:'雲の予測を比べる',quests:['observatory-forecast-lab','observatory-errors-lab']},
   {id:'layers',title:'旅先の観測帳を扱う',quests:['observatory-layers','observatory-offline','observatory-conflict']},
   {id:'event-independence',title:'晴れと鐘の印を比べる',quests:['observatory-eventindependence-balanced','observatory-eventindependence-linked','observatory-eventindependence-disjoint']},
+  {id:'threedraws',title:'三回の灯りの確率を調べる',quests:['observatory-threedraws-one','observatory-threedraws-two','observatory-threedraws-atleast']},
   {id:'warningprior',title:'警報と故障の割合を比べる',quests:['observatory-warningprior-rare','observatory-warningprior-common','observatory-warningprior-compare']},
   {id:'probability',title:'観測の札の確かさを調べる',quests:['observatory-probability-weather','observatory-probability-draws','observatory-probability-reports']},
   {id:'statistics',title:'観測記録を整理する',quests:['observatory-statistics-frequency','observatory-statistics-center','observatory-statistics-spread']},
@@ -54,6 +55,7 @@ const extra={
  ],
 };
 const prerequisites={
+ 'observatory-threedraws-atleast':['observatory-threedraws-one','observatory-threedraws-two'],
  'garden-color-compare':['garden-color-light','garden-color-filter'],
  'garden-image-resample':['garden-image-fit','garden-image-pixels'],
  'garden-depth-equal':['garden-depth-painter','garden-depth-buffer'],

@@ -26,7 +26,7 @@ test('庭園の発展依頼は基礎二件と祭りの両方が必要',()=>{
  assert.equal(visible(['garden-sets','garden-logic'],true).includes('garden-shelter'),true);
 });
 test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',()=>{
- for(const [r,count] of [['garden',52],['observatory',64]]){
+ for(const [r,count] of [['garden',52],['observatory',67]]){
   const groups=lateRegionQuestGroups(r,[],false),all=groups.flatMap(g=>g.quests);
   assert.equal(all.length,count);assert.equal(new Set(all).size,count);
   assert.ok(lateRegionQuestGroups(r,all,true).every(g=>g.complete));
@@ -62,6 +62,7 @@ test('庭園と観測所の依頼は重複せず発展依頼の条件を保つ',
   ['observatory','observatory-planning-plan',['observatory-planning-rules','observatory-planning-steps']],
   ['observatory','observatory-conflict',['observatory-layers','observatory-offline']],
   ['observatory','observatory-eventindependence-disjoint',['observatory-eventindependence-balanced','observatory-eventindependence-linked']],
+  ['observatory','observatory-threedraws-atleast',['observatory-threedraws-one','observatory-threedraws-two']],
   ['observatory','observatory-warningprior-compare',['observatory-warningprior-rare','observatory-warningprior-common']],
   ['observatory','observatory-probability-reports',['observatory-probability-weather','observatory-probability-draws']],
   ['observatory','observatory-statistics-spread',['observatory-statistics-frequency','observatory-statistics-center']]]){
