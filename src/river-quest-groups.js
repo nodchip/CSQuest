@@ -1,10 +1,12 @@
 const groups=[
  {id:'local',title:'村の道と水門を手伝う',local:true,quests:['river','river-signals']},
  {id:'types',title:'水門の札と道具を確かめる',quests:['river-type-tools','river-type-record','river-type-branch']},
+ {id:'intervalsample',title:'薬草の標本と区間を調べる',quests:['river-intervalsample-inside','river-intervalsample-outside','river-intervalsample-coverage']},
  {id:'numbers',title:'水辺の数札を整理する',quests:['river-functional-map','river-functional-fold','river-functional-pipeline']},
 ];
 const prerequisites={
  'river-type-branch':['river-type-tools','river-type-record'],
+ 'river-intervalsample-coverage':['river-intervalsample-inside','river-intervalsample-outside'],
  'river-functional-pipeline':['river-functional-map','river-functional-fold'],
 };
 export function riverQuestGroups(completed,endgameAvailable){
