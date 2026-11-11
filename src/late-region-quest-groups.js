@@ -23,6 +23,7 @@ const extra={
   {id:'logic-rules',title:'花の記録から知らせを導く',quests:['garden-logic-derive','garden-logic-unify','garden-logic-combine']},
  ],
  observatory:[
+  {id:'pcajourney',title:'水晶の記録を一本の軸に写す',quests:['observatory-pcajourney-diagonal','observatory-pcajourney-horizontal','observatory-pcajourney-compare']},
   {id:'cluster',title:'水晶の集まりを探す',quests:['observatory-cluster-far','observatory-cluster-near','observatory-cluster-compare']},
   {id:'eulerlantern',title:'育つ灯火を予測する',quests:['observatory-eulerlantern-coarse','observatory-eulerlantern-half','observatory-eulerlantern-fine']},
   {id:'lightintegral',title:'速さから道のりを調べる',quests:['observatory-lightintegral-left','observatory-lightintegral-right','observatory-lightintegral-compare']},
@@ -59,6 +60,7 @@ const extra={
  ],
 };
 const prerequisites={
+ 'observatory-pcajourney-compare':['observatory-pcajourney-diagonal','observatory-pcajourney-horizontal'],
  'garden-spanjourney-outside':['garden-spanjourney-basis','garden-spanjourney-repeat'],
  'garden-eigenjourney-rotate':['garden-eigenjourney-stretch','garden-eigenjourney-flatten'],
  'observatory-eulerlantern-fine':['observatory-eulerlantern-coarse','observatory-eulerlantern-half'],
