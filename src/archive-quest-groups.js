@@ -1,4 +1,5 @@
 const groups = [
+ {id:'listjourney',title:'記録の鎖を残す',quests:['archive-listjourney-mutable','archive-listjourney-persistent','archive-listjourney-compare']},
  {id:'bloomjourney',title:'印で巻物を探す',quests:['archive-bloomjourney-register','archive-bloomjourney-absent','archive-bloomjourney-candidate']},
  {id:'local', title:'文庫と橋を手入れする', quests:['archive-search','archive-filter','archive-searches']},
  {id:'utfmessage', title:'文字をバイトで届ける', quests:['archive-utfmessage-ascii','archive-utfmessage-kana','archive-utfmessage-combine']},
@@ -23,6 +24,7 @@ const groups = [
  {id:'versions', title:'道案内帳の版を整える', quests:['archive-version-snapshot','archive-version-merge','archive-version-release']},
 ];
 const prerequisites={
+ 'archive-listjourney-compare':['archive-listjourney-mutable','archive-listjourney-persistent'],
  'archive-bloomjourney-candidate':['archive-bloomjourney-register','archive-bloomjourney-absent'],
  'archive-bayesscrolls-order':['archive-bayesscrolls-training','archive-bayesscrolls-classify'],
  'archive-fileaccess-compare':['archive-fileaccess-read','archive-fileaccess-remove'],
