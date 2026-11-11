@@ -1,4 +1,5 @@
 const groups=[
+ {id:'shardjourney',title:'二つの棚への振り分けを調べる',quests:['valley-shardjourney-parity','valley-shardjourney-range','valley-shardjourney-compare']},
  {id:'replicajourney',title:'二つの台帳と伝令を調べる',quests:['valley-replicajourney-stale','valley-replicajourney-delivery','valley-replicajourney-compare']},
  {id:'delivery',title:'荷物と届け先を確かめる',quests:['data-record','data-filter','data-join','valley-records']},
  {id:'lists',title:'名簿と発送札を整える',quests:['valley-query-lab','valley-tables-lab','valley-integrity-lab']},
@@ -13,6 +14,7 @@ const groups=[
  {id:'journal',title:'途切れた台帳を立て直す',quests:['valley-journal-undo','valley-journal-redo','valley-journal-decide']},
 ];
 const prerequisites={
+ 'valley-shardjourney-compare':['valley-shardjourney-parity','valley-shardjourney-range'],
  'valley-replicajourney-compare':['valley-replicajourney-stale','valley-replicajourney-delivery'],
  'valley-rowbalance-same':['valley-rowbalance-one','valley-rowbalance-clash'],
  'valley-leftjoin-where':['valley-leftjoin-all','valley-leftjoin-on'],
