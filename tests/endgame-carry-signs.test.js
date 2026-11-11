@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {fourBitExample,replayCarrySigns as replay,advanceCarrySigns as advance} from '../src/endgame-carry-signs.js';
+test('each fixed example matches independent integer arithmetic and its overflow interpretation',()=>{for(const [kind,a,b,signedOverflow] of [['signed',7,1,true],['unsigned',15,1,false]]){const v=fourBitExample(kind);assert.equal(parseInt(v.result.join(''),2),(a+b)%16);assert.equal(v.carry,+(a+b>=16));assert.equal(v.signedOverflow,signedOverflow);assert.equal(replay(kind,[...v.steps.map(x=>`bit:${x.sum}`),`answer:${kind}`]).done,true);}});
+test('invalid bit and classification, completion, reset and saved partial progress',()=>{assert.equal(replay('signed',['bit:1']),null);assert.equal(replay('unsigned',['answer:unsigned']),null);assert.equal(replay('compare',['answer:different','answer:different']),null);let h=[];for(let i=0;i<30;i++){h=advance('signed',h,'bit:0');h=advance('signed',h,'reset');assert.deepEqual(h,[]);}h=advance('unsigned',h,'bit:0');assert.deepEqual(replay('unsigned',JSON.parse(JSON.stringify(h))).bits,[0]);});
