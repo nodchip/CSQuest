@@ -13,6 +13,7 @@ const groups={
   {id:'dns-expiry',title:'住所の控えの期限を調べる',quests:['tower-dnsexpiry-short','tower-dnsexpiry-long','tower-dnsexpiry-compare']},
   {id:'route-prefix',title:'宛先の先頭から道を選ぶ',quests:['tower-routeprefix-specific','tower-routeprefix-fallback','tower-routeprefix-compare']},
   {id:'congestion',title:'伝令路の混雑を調べる',quests:['tower-congestion-grow','tower-congestion-loss','tower-congestion-recover']},
+  {id:'handshaketowers',title:'二つの塔で番号を合わせる',quests:['tower-handshaketowers-first','tower-handshaketowers-second','tower-handshaketowers-compare']},
   {id:'window',title:'三通の知らせを順に届ける',quests:['tower-window-clean','tower-window-gap','tower-window-retry']},
  ],
  mist:[
@@ -27,6 +28,7 @@ const groups={
  ],
 };
 const prerequisites={
+ 'tower-handshaketowers-compare':['tower-handshaketowers-first','tower-handshaketowers-second'],
  'gate-availability-shared':['gate-availability-single','gate-availability-distributed'],
  'tower-http-repair':['tower-http-request','tower-http-compare'],
  'tower-layers-route':['tower-layers-wrap','tower-layers-relay'],
