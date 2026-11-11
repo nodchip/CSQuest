@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {replayDialogRoute as replay,advanceDialogRoute as advance} from '../src/endgame-dialog-route.js';
+const entry=['open','focus:confirm'],cycle=['open','focus:confirm','tab','tab','shift-tab','escape','return:opener'],fallback=['open','focus:confirm','remove','escape','return:heading'];
+test('entry, tab wrap and alternate return in fixed scenario',()=>{assert.equal(replay('entry',entry).done,true);assert.equal(replay('cycle',cycle).done,true);assert.equal(replay('fallback',fallback).done,true);});
+test('wrong focus, order and post-completion rejected; repeated reset and saved resume',()=>{assert.equal(replay('entry',['open','focus:outside']),null);assert.equal(replay('cycle',['open','focus:confirm','escape']),null);assert.equal(replay('fallback',['open','focus:confirm','remove','escape','return:opener']),null);assert.equal(replay('entry',[...entry,'reset']),null);let h=[];for(let i=0;i<40;i++){h=advance('entry',h,'open');h=advance('entry',h,'reset');assert.equal(replay('entry',JSON.parse(JSON.stringify(h))).step,0);}for(const a of entry)h=advance('entry',h,a);assert.equal(replay('entry',h).done,true);});
+test('forward and reverse wraps can be saved and resumed',()=>{for(const n of [3,4,5]){const h=JSON.parse(JSON.stringify(cycle.slice(0,n)));assert.equal(replay('cycle',h).step,n);assert.equal(replay('cycle',[...h,...cycle.slice(n)]).done,true);}assert.equal(replay('cycle',['open','focus:confirm','tab','tab','tab']),null);});

@@ -48,6 +48,7 @@ const extra={
   {id:'privacy',title:'旅人の記録を守る',quests:['guide-privacy-collection','guide-privacy-identity','guide-privacy-safeguards']},
   {id:'requirements',title:'掲示板の相談を聞く',quests:['guide-requirements-interview','guide-requirements-story','guide-requirements-agreement']},
   {id:'textcontrast',title:'案内板の文字の明るさを調べる',quests:['guide-textcontrast-normal','guide-textcontrast-large','guide-textcontrast-compare']},
+  {id:'dialogroute',title:'確認窓の操作位置を調べる',quests:['guide-dialogroute-entry','guide-dialogroute-cycle','guide-dialogroute-fallback']},
   {id:'study-review',title:'調査の準備を相談する',quests:['guide-study-explain','guide-study-protect','guide-study-review']},
  ],
 };
@@ -90,6 +91,7 @@ const prerequisites={
  'guide-privacy-safeguards':['guide-privacy-collection','guide-privacy-identity'],
  'guide-requirements-agreement':['guide-requirements-interview','guide-requirements-story'],
  'guide-textcontrast-compare':['guide-textcontrast-normal','guide-textcontrast-large'],
+ 'guide-dialogroute-fallback':['guide-dialogroute-entry','guide-dialogroute-cycle'],
  'guide-study-review':['guide-study-explain','guide-study-protect'],
 };
 export function lateRegionQuestGroups(region,completed,endgameAvailable){
