@@ -2,10 +2,10 @@ import {test} from 'node:test';
 import {strict as assert} from 'node:assert';
 import {archiveQuestGroups} from '../src/archive-quest-groups.js';
 
-test('文庫の依頼は重複なく55件あり未開放が残ると全体は未達成',()=>{
+test('文庫の依頼は重複なく58件あり未開放が残ると全体は未達成',()=>{
  const groups=archiveQuestGroups(['archive-search','archive-filter','archive-searches'],false);
  const all=groups.flatMap(g=>g.quests);
- assert.equal(all.length,55);assert.equal(new Set(all).size,55);
+ assert.equal(all.length,58);assert.equal(new Set(all).size,58);
  assert.equal(groups.reduce((n,g)=>n+g.remaining,0),0);
  assert.equal(groups.every(g=>g.complete),false);
 });
@@ -24,6 +24,7 @@ test('すべて達成した分類だけに完了が付く',()=>{
 });
 test('各発展依頼は対応する二つがそろうまで開かない',()=>{
  const prerequisites={
+  'archive-filenames-release':['archive-filenames-alias','archive-filenames-open'],
   'archive-lowerbound-end':['archive-lowerbound-duplicate','archive-lowerbound-gap'],
   'archive-utfmessage-combine':['archive-utfmessage-ascii','archive-utfmessage-kana'],
   'archive-bstd-two':['archive-bstd-leaf','archive-bstd-single'],

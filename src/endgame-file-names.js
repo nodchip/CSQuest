@@ -1,0 +1,5 @@
+import {createFiles,stepFiles} from './files.js';
+const plans={alias:['link','removeSun'],open:['link','open','removeSun','removeMoon','read'],release:['link','open','removeSun','removeMoon','read','close']};
+const answers={alias:'moon',open:'opened',release:'reusable'};
+export function replayFileNames(kind,history){if(!Object.hasOwn(plans,kind)||!Array.isArray(history)||history.length>8)return null;let state=createFiles(),step=0,done=false;for(const action of history){if(typeof action!=='string'||done)return null;if(step<plans[kind].length&&action===`do:${plans[kind][step]}`){try{state=stepFiles(state,plans[kind][step]);}catch{return null;}step++;continue;}if(step===plans[kind].length&&action===`answer:${answers[kind]}`){done=true;continue;}return null;}return {state,step,done};}
+export function advanceFileNames(kind,history,action){const p=replayFileNames(kind,history);if(!p||p.done)return null;const next=action==='reset'?[]:[...history,action];return replayFileNames(kind,next)?next:null;}
