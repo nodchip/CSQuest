@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import {strict as assert} from 'node:assert';
 import {forgeStationQuestGroups} from '../src/forge-station-quest-groups.js';
 test('鍛冶街と駅の依頼は重複せず未開放も全達成の判定に含める',()=>{
- for(const [region,count] of [['forge',36],['station',21]]){
+ for(const [region,count] of [['forge',39],['station',21]]){
   const groups=forgeStationQuestGroups(region,[],false),all=groups.flatMap(g=>g.quests);
   assert.equal(all.length,count);assert.equal(new Set(all).size,count);
   const local=groups.filter(g=>g.local).flatMap(g=>g.quests);
@@ -12,6 +12,7 @@ test('鍛冶街と駅の依頼は重複せず未開放も全達成の判定に�
 });
 test('追加の相談は対応する二件を終えてから開く',()=>{
  for(const [region,id,needs] of [
+  ['forge','forge-sharingshelves-compare',['forge-sharingshelves-packed','forge-sharingshelves-separate']],
   ['forge','forge-instructionhazard-forward',['forge-instructionhazard-unsafe','forge-instructionhazard-stall']],
   ['forge','forge-signedlamps-limit',['forge-signedlamps-minus','forge-signedlamps-zero']],
   ['forge','forge-writepolicy-compare',['forge-writepolicy-through','forge-writepolicy-back']],
