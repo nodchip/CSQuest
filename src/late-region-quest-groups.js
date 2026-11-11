@@ -3,6 +3,7 @@ import {fourRegions} from './four-regions.js';
 import {newEntrances} from './new-entrances.js';
 const extra={
  garden:[
+  {id:'eigenjourney',title:'光の矢印と鏡を調べる',quests:['garden-eigenjourney-stretch','garden-eigenjourney-flatten','garden-eigenjourney-rotate']},
   {id:'garden-advanced',title:'花の札と灯りの条件を考える',advanced:true,quests:gardenAdvancedIds},
   {id:'color',title:'光と色を作る',quests:['garden-color-light','garden-color-filter','garden-color-compare']},
   {id:'image',title:'灯り絵を作る',quests:['garden-image-fit','garden-image-pixels','garden-image-resample']},
@@ -57,6 +58,7 @@ const extra={
  ],
 };
 const prerequisites={
+ 'garden-eigenjourney-rotate':['garden-eigenjourney-stretch','garden-eigenjourney-flatten'],
  'observatory-eulerlantern-fine':['observatory-eulerlantern-coarse','observatory-eulerlantern-half'],
  'observatory-lightintegral-compare':['observatory-lightintegral-left','observatory-lightintegral-right'],
  'observatory-threedraws-atleast':['observatory-threedraws-one','observatory-threedraws-two'],
