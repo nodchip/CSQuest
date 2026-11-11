@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import {strict as assert} from 'node:assert';
 import {towerGateQuestGroups} from '../src/tower-gate-quest-groups.js';
 test('塔と関所の依頼には未開放分も含まれる',()=>{
- for(const [region,count] of [['sky',35],['mist',14]]){
+ for(const [region,count] of [['sky',35],['mist',17]]){
   const groups=towerGateQuestGroups(region,[],false),all=groups.flatMap(g=>g.quests),local=groups.filter(g=>g.local).flatMap(g=>g.quests);
   assert.equal(all.length,count);assert.equal(new Set(all).size,count);
   assert.equal(towerGateQuestGroups(region,local,false).every(g=>g.complete),false);
@@ -22,6 +22,7 @@ test('各発展依頼は対応する二件の達成後に開く',()=>{
  ['sky','tower-congestion-recover',['tower-congestion-grow','tower-congestion-loss']],
  ['sky','tower-window-retry',['tower-window-clean','tower-window-gap']],
  ['mist','gate-automata-both',['gate-automata-even','gate-automata-last']],
+ ['mist','gate-gatetests-both',['gate-gatetests-outcomes','gate-gatetests-lower']],
  ['mist','gate-sealsig-identity',['gate-sealsig-integrity','gate-sealsig-keys']],
  ['mist','gate-injection-choose',['gate-injection-concat','gate-injection-bound']]]){
   const has=done=>towerGateQuestGroups(region,done,true).flatMap(g=>g.available).includes(id);
