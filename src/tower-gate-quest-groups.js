@@ -1,5 +1,6 @@
 const groups={
  sky:[
+  {id:'pagerankjourney',title:'三つの塔を巡る光を調べる',quests:['tower-pagerankjourney-east','tower-pagerankjourney-west','tower-pagerankjourney-compare']},
   {id:'local',title:'知らせを中継する',local:true,quests:['tower-forward','tower-packets','tower-retry']},
   {id:'http',title:'塔の記録を受け取る',quests:['tower-http-request','tower-http-compare','tower-http-repair']},
   {id:'layers',title:'重ねた荷札を届ける',quests:['tower-layers-wrap','tower-layers-relay','tower-layers-route']},
@@ -30,6 +31,7 @@ const groups={
  ],
 };
 const prerequisites={
+ 'tower-pagerankjourney-compare':['tower-pagerankjourney-east','tower-pagerankjourney-west'],
  'tower-clockjourney-ambiguity':['tower-clockjourney-even','tower-clockjourney-asymmetric'],
  'tower-ipv4pieces-offset':['tower-ipv4pieces-capacity','tower-ipv4pieces-parts'],
  'tower-handshaketowers-compare':['tower-handshaketowers-first','tower-handshaketowers-second'],
