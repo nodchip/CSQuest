@@ -1,0 +1,18 @@
+async page=>{
+ const results=[];
+ for(const width of [213,390,1200]){
+  const c=await page.context().browser().newContext({viewport:{width,height:900}}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(String(e)));let stage='fixture';
+  try{
+   await p.goto(new URL('./',page.url()).href);const fixture=await p.evaluate(async()=>{const w=await import('./src/world-progress.js'),s=await import('./src/story-climax.js');return {place:'mid-archive',program:['forward','forward'],executed:true,completed:[...new Set([...w.storyRegions.flatMap(r=>w.worldRegionQuests[r].slice(0,2)),'garden-sets','garden-logic','observatory-classify','observatory-predict','tailor-design','tailor-testing','guide-needs','guide-signs'])],storyClimaxHistory:s.climaxSteps.map(x=>x.answer),storyClimaxComplete:true};});
+   await p.evaluate(v=>localStorage.setItem('csquest-workshop-journey-v1',JSON.stringify(v)),fixture);await p.reload();await p.locator('#continue').click();
+   const open=async()=>{await p.locator('#archive-open-quests').click();for(let i=0;i<25;i++){const group=p.getByRole('button',{name:/魔石を基準で分ける/});if(await group.count()){await group.click();return;}const next=p.getByRole('button',{name:'次の種類 →'});if(!await next.count())throw Error('category missing');await next.click();}throw Error('too many pages');};
+   const act=async x=>p.locator(`[data-quickstones-action="${x}"]`).click(),seq=async xs=>{for(const x of xs)await act(x);};
+   await open();if(await p.getByRole('button',{name:/同じ数の魔石を分ける/}).count())throw Error('advanced opened early');
+   stage='first';await p.getByRole('button',{name:/先頭を基準に分ける/}).click();await act('less');if(!(await p.locator('#quickstones-status').innerText()).includes('大小'))throw Error('wrong choice hint missing');await p.locator('[data-quickstones-action="greater"]').focus();await p.keyboard.press('Enter');if(!(await p.locator('[data-quickstones-action="less"]').evaluate(e=>document.activeElement===e)))throw Error('next action focus lost');await p.reload();await p.locator('#continue').click();if(!(await p.locator('body').innerText()).includes('比較 1 回'))throw Error('partial state lost');await seq(Array(20).fill('greater'));await act('check');await p.locator('#quickstones-finish').focus();await p.keyboard.press('Enter');if(!(await p.locator('#quickstones-status').evaluate(e=>document.activeElement===e)))throw Error('result focus lost');await p.locator('#quickstones-back').click();await open();if(await p.getByRole('button',{name:/同じ数の魔石を分ける/}).count())throw Error('advanced opened after one');
+   stage='middle';await p.getByRole('button',{name:/中央を基準に分ける/}).click();await seq(['less','less','less','greater','greater','greater','less','greater','less','greater']);await act('check');await p.locator('#quickstones-finish').click();await p.locator('#quickstones-back').click();await open();
+   stage='duplicates';await p.getByRole('button',{name:/同じ数の魔石を分ける/}).click();await seq(['less','equal','less','less','equal','greater','less','greater']);await act('check');if(!await p.locator('#success-dialog').isVisible())throw Error('success missing');await p.locator('#quickstones-finish').click();if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth))throw Error('horizontal overflow');await p.locator('#quickstones-back').click();await p.reload();await p.locator('#continue').click();await open();if(!(await p.getByRole('button',{name:/同じ数の魔石を分ける/}).getAttribute('aria-label'))?.includes('達成済み'))throw Error('completion lost');
+   results.push({width,ok:errors.length===0,errors});
+  }catch(e){results.push({width,ok:false,stage,error:String(e),errors});}finally{await c.close();}
+ }
+ return {ok:results.every(r=>r.ok),results};
+}
