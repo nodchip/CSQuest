@@ -5,6 +5,7 @@ const catalogs={
   {id:'cacheways',title:'巻物棚の組を調べる',quests:['forge-cacheways-direct','forge-cacheways-two','forge-cacheways-compare']},
   {id:'sharingshelves',title:'二人の記録棚を調べる',quests:['forge-sharingshelves-packed','forge-sharingshelves-separate','forge-sharingshelves-compare']},
   {id:'instructionhazard',title:'重なる命令を調べる',quests:['forge-instructionhazard-unsafe','forge-instructionhazard-stall','forge-instructionhazard-forward']},
+  {id:'lampneg',title:'灯りの条件を言い換える',quests:['forge-lampneg-and','forge-lampneg-or','forge-lampneg-counter']},
   {id:'carrysigns',title:'繰り上がりと範囲を調べる',quests:['forge-carrysigns-signed','forge-carrysigns-unsigned','forge-carrysigns-compare']},
   {id:'signedlamps',title:'負の数を灯りで表す',quests:['forge-signedlamps-minus','forge-signedlamps-zero','forge-signedlamps-limit']},
   {id:'writepolicy',title:'記憶の写しを書き戻す',quests:['forge-writepolicy-through','forge-writepolicy-back','forge-writepolicy-compare']},
@@ -29,6 +30,7 @@ const catalogs={
  ],
 };
 const prerequisites={
+ 'forge-lampneg-counter':['forge-lampneg-and','forge-lampneg-or'],
  'forge-carrysigns-compare':['forge-carrysigns-signed','forge-carrysigns-unsigned'],
  'forge-cacheways-compare':['forge-cacheways-direct','forge-cacheways-two'],
  'forge-sharingshelves-compare':['forge-sharingshelves-packed','forge-sharingshelves-separate'],
