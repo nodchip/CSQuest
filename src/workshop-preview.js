@@ -44,6 +44,7 @@ import {samplePairs,sampleValues,replaySamplingBias,advanceSamplingBias} from '.
 import {legacyQuestTitles} from './legacy-quest-titles.js?v=region-navigation84';
 import {workshopQuestGroups} from './workshop-quest-groups.js?v=region-navigation84';
 import {cityQuestGroups} from './city-quest-groups.js?v=region-navigation84';
+import {questGroupPlans,unlockedQuestGroups,updateQuestGroupNotices,validQuestGroupNotices} from './quest-group-unlocks.js?v=quest-groups1';
 import {riverQuestGroups} from './river-quest-groups.js?v=region-navigation84';
 import {harborQuestGroups} from './harbor-quest-groups.js?v=region-navigation84';
 import {lateRegionQuestGroups} from './late-region-quest-groups.js?v=region-navigation84';
@@ -794,6 +795,11 @@ try{
     for(const key of ['travelKnown','travelPending','travelNew'])if(saved[key]!==undefined&&!validTravelVisits(saved[key]))throw Error('invalid');
     if(saved.travelKnown!==undefined){state.travelKnown=[...saved.travelKnown];state.travelPending=[...(saved.travelPending??[])];state.travelNew=[...(saved.travelNew??[])];}
     updateTravelUnlocks(state);
+    if(saved.questGroups!==undefined){
+      if(!validQuestGroupNotices(saved.questGroups))throw Error('invalid');
+      state.questGroups=structuredClone(saved.questGroups);
+    }
+    updateQuestGroupNotices(state,allQuestGroups(state),saved.questGroups===undefined);
     const storyHeard=saved.storyHeard??[],storyReflectionSeen=saved.storyReflectionSeen??false,storyGatheringSeen=saved.storyGatheringSeen??false,storyKaedeMet=saved.storyKaedeMet??false;
     if(!validStoryHeard(storyHeard)||typeof storyReflectionSeen!=='boolean'||typeof storyGatheringSeen!=='boolean'||typeof storyKaedeMet!=='boolean')throw Error('invalid');
     state.storyHeard=[...storyHeard];state.storyReflectionSeen=storyReflectionSeen;state.storyGatheringSeen=storyGatheringSeen;state.storyKaedeMet=storyKaedeMet;
@@ -804,8 +810,20 @@ try{
   if(raw!==null){const value=JSON.parse(raw);if(!value||!['normal','large'].includes(value.size)||!['normal','high'].includes(value.contrast)||!['off','system','on'].includes(value.motion??'on'))throw Error('invalid');settings={...value,motion:value.motion??'on'};}
 }catch{settingsProtected=true;}
 function applySettings(){document.documentElement.dataset.size=settings.size;document.documentElement.dataset.contrast=settings.contrast;document.documentElement.dataset.motion=settings.motion;}
+function allQuestGroups(adventure){
+ const done=adventure.completed,endgame=!!adventure.storyClimaxComplete&&festivalReady(done);
+ return {
+  workshop:workshopQuestGroups(done,endgame,adventure.executed),city:cityQuestGroups(done,endgame),
+  river:riverQuestGroups(done,endgame),harbor:harborQuestGroups(done,endgame),
+  archive:archiveQuestGroups(done,endgame),windmill:windmillQuestGroups(done,endgame),
+  mountain:mountainQuestGroups(done,endgame),valley:valleyQuestGroups(done,endgame),
+  ...Object.fromEntries(['sky','mist'].map(region=>[region,towerGateQuestGroups(region,done,endgame)])),
+  ...Object.fromEntries(['forge','station'].map(region=>[region,forgeStationQuestGroups(region,done,endgame)])),
+  ...Object.fromEntries(fourRegionIds.map(region=>[region,lateRegionQuestGroups(region,done,endgame)]))
+ };
+}
 function persist(){
-  if(state)updateTravelUnlocks(state);
+  if(state){updateTravelUnlocks(state);updateQuestGroupNotices(state,allQuestGroups(state));}
   if(saveProtected){error='冒険の記録を読み込めないため、元の記録を保護しています。今回の進行は保存されません。';return;}
   try{localStorage.setItem(saveKey,JSON.stringify(state));error='';}catch{error='冒険を保存できません。再読み込みすると進行が失われます。';}
 }
@@ -1135,8 +1153,10 @@ function midRegion(region){
 function setupMidQuestNavigation(region){
  const workshopRegion=region==='workshop',cityRegion=region==='city',riverRegion=region==='river',harborRegion=region==='harbor',late=fourRegionIds.includes(region),mountain=region==='mountain',valley=region==='valley',towerGate=region==='sky'||region==='mist',forgeStation=region==='forge'||region==='station',scene=app.querySelector(mountain||valley||forgeStation||towerGate||late||harborRegion||riverRegion||cityRegion||workshopRegion?'.scene':'.mid-scene'),archive=region==='archive';
  const placeName=late?fourRegions[region].name:workshopRegion?'精霊の工房':cityRegion?'灯花の街':riverRegion?'水辺の村':harborRegion?'風の港町':mountain?'山の中継所':valley?'谷の記録所':region==='sky'?'空の中継塔':region==='mist'?'霧の関所':region==='forge'?'星鉄の鍛冶街':region==='station'?'風待ちの駅':archive?'森の文庫':'風車の里';
- const endgameAvailable=!!state.storyClimaxComplete&&festivalReady(state.completed);
- const groups=workshopRegion?workshopQuestGroups(state.completed,endgameAvailable,state.executed):cityRegion?cityQuestGroups(state.completed,endgameAvailable):riverRegion?riverQuestGroups(state.completed,endgameAvailable):harborRegion?harborQuestGroups(state.completed,endgameAvailable):late?lateRegionQuestGroups(region,state.completed,endgameAvailable):mountain?mountainQuestGroups(state.completed,endgameAvailable):towerGate?towerGateQuestGroups(region,state.completed,endgameAvailable):forgeStation?forgeStationQuestGroups(region,state.completed,endgameAvailable):(valley?valleyQuestGroups:archive?archiveQuestGroups:windmillQuestGroups)(state.completed,endgameAvailable);
+ const groups=allQuestGroups(state)[region];
+ const completed=workshopRegion&&state.executed?[...state.completed,'workshop-opening']:state.completed;
+ const unlocked=new Set([...unlockedQuestGroups(groups,questGroupPlans[region],completed).map(group=>group.id),...(state.questGroups?.known[region]??[])]);
+ const availableGroups=groups.filter(group=>unlocked.has(group.id));
  const windmillSource={
   'windmill-lamp':'[data-mid-quest="windmill-lamp"]',
   'windmill-order':'[data-mid-quest="windmill-order"]',
@@ -1208,8 +1228,9 @@ function setupMidQuestNavigation(region){
  const oldInstruction=[...scene.querySelectorAll('p')].find(p=>p.textContent===(mountain||valley?'手伝いたいことを選びましょう。どれからでも取り組めます。':'手伝いたいことを選びましょう。もう一方も後から選べます。'));
  oldInstruction?.remove();
  const entry=document.createElement('section');
- const allComplete=groups.every(g=>g.complete),remaining=groups.reduce((n,g)=>n+g.remaining,0);
- entry.innerHTML=`<h2>依頼</h2><button class="quest-nav-card" id="${region}-open-quests">${allComplete?'✓ ':''}依頼を見る${allComplete?'':remaining?`<span>受けられる未達成の依頼：${remaining}件</span>`:'<span>今受けられる依頼はありません</span>'}</button>`;
+ const allComplete=groups.every(g=>g.complete),remaining=availableGroups.reduce((n,g)=>n+g.remaining,0);
+ const pending=state.questGroups?.pending[region]?.length>0;
+ entry.innerHTML=`<h2>依頼</h2>${pending?'<p>新しい相談が届いています。</p>':''}<button class="quest-nav-card" id="${region}-open-quests">${allComplete?'✓ ':''}依頼を見る${allComplete?'':remaining?`<span>受けられる未達成の依頼：${remaining}件</span>`:'<span>今受けられる依頼はありません</span>'}</button>`;
  if(allComplete){entry.querySelector('button').setAttribute('aria-label','依頼を見る、すべて達成済み');entry.querySelector('button').classList.add('is-complete');}
  originalHeading.before(entry);
  const bridgeButton=scene.querySelector('#bridge');
@@ -1238,7 +1259,8 @@ function setupMidQuestNavigation(region){
   if(!group){
    panel.innerHTML=`<h1>${placeName}の依頼</h1><p>手伝いたいことを選びましょう。</p><p>✓ は、その種類の依頼をすべて達成した印です。</p><div class="quest-nav-list"></div><button id="windmill-menu-back">← ${placeName}へ戻る</button>`;
    const list=panel.querySelector('.quest-nav-list');
-   const visibleGroups=groups.filter(g=>g.available.length||g.complete),pageSize=5;
+   const visibleGroups=availableGroups.filter(g=>g.available.length||g.complete),pageSize=5;
+   if(availableGroups.length<groups.length){const hint=document.createElement('p');hint.textContent='お手伝いを進めると、ほかの相談も届きます。';list.before(hint);}
    visibleGroups.slice(groupPage*pageSize,(groupPage+1)*pageSize).forEach(g=>{
     const button=document.createElement('button');button.className='quest-nav-card'+(g.complete?' is-complete':'');
     button.textContent=`${g.complete?'✓ ':''}${g.title}`;
@@ -1286,7 +1308,10 @@ function setupMidQuestNavigation(region){
   }
   panel.querySelector('h1').tabIndex=-1;panel.querySelector('h1').focus();window.scrollTo(0,0);
  }
- entry.querySelector('button').onclick=()=>openMenu();
+ entry.querySelector('button').onclick=()=>{
+  if(state.questGroups?.pending[region]?.length){state.questGroups.pending[region]=[];persist();entry.querySelector('p')?.remove();}
+  openMenu();
+ };
 
 }
 function searchLab(){
