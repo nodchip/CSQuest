@@ -6,7 +6,7 @@ import {readFile} from 'node:fs/promises';
 test('production build serves the workshop adventure at the top and retains old source URLs',async()=>{
   execFileSync(process.execPath,['scripts/build.mjs']);
   const html=await readFile('dist/index.html','utf8');
-  assert.match(html,/src="\.\/src\/workshop-preview\.js\?v=quest-groups1"/);
+  assert.match(html,/src="\.\/src\/workshop-preview\.js\?v=gathering-release1"/);
   assert.match(html,/href="\.\/src\/workshop-preview\.css\?v=region-navigation84"/);
   assert.match(html,/id="preview"/);
   assert.doesNotMatch(html,/id="app"/);
@@ -14,4 +14,6 @@ test('production build serves the workshop adventure at the top and retains old 
   assert.ok(bundle.includes('room-scan-privacy'));
   assert.ok((await readFile('dist/src/app.js','utf8')).includes('room-scan-privacy'));
   assert.ok((await readFile('dist/sources.html','utf8')).includes('style.css?v='));
+  assert.ok((await readFile('dist/debug-gathering.html','utf8')).includes('./src/debug-gathering.js'));
+  assert.ok((await readFile('dist/src/debug-gathering.js','utf8')).includes('csquest-debug-gathering-v1'));
 });
