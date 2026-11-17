@@ -38,7 +38,7 @@ async page=>{
   const visits={
    river:async()=>{stage='river';await travel('river');await choose('river','river','#help');await journey(['forward','ifWall','forward']);await newQuest('river-signals');},
    harbor:async()=>{stage='harbor';await travel('harbor');await choose('harbor','harbor-message','#help');await actions('data-point',['light','hill','home']);await click('#finish');await click('#back');await newQuest('harbor-parallel');},
-   city:async()=>{stage='city';await travel('city');await choose('city','city-sort','#market');await click('[data-city-quest="city-sort"]');await actions('data-swap',[0,1,2,1,0]);await click('#finish');await click('#back');await choose('city','city-queue','#guild');await click('[data-city-quest="city-queue"]');for(const s of ['#queue-put','#queue-put','#queue-put','[data-take="A"]','#queue-put','[data-take="B"]','[data-take="C"]','[data-take="D"]'])await click(s);await click('#finish');await click('#back');},
+   city:async()=>{stage='city';await travel('city');await choose('city','city-sort','#market');await actions('data-swap',[0,1,2,1,0]);await click('#finish');await click('#back');await choose('city','city-queue','#guild');for(const s of ['#queue-put','#queue-put','#queue-put','[data-take="A"]','#queue-put','[data-take="B"]','[data-take="C"]','[data-take="D"]'])await click(s);await click('#finish');await click('#back');},
   };
   const reverse=new URL(page.url()).searchParams.has('reverse');for(const id of reverse?['city','harbor','river']:['river','harbor','city'])await visits[id]();
   stage='archive';await travel('archive');await midQuest('archive-search',['pick:0','pick:4']);await midQuest('archive-filter',['book','mountain','test']);await newQuest('archive-searches');
