@@ -11,11 +11,16 @@ const bundle=result.outputFiles[0].contents;
 const digest=createHash('sha256').update(bundle).digest('hex').slice(0,16);
 const bundleName=`app.js?v=${digest}`;
 await writeFile(`${out}/app.js`,bundle);
+const workshop=await build({entryPoints:['src/workshop-preview.js'],bundle:true,format:'esm',platform:'browser',write:false,charset:'utf8',minify:true,logLevel:'warning'});
+const workshopBundle=workshop.outputFiles[0].contents;
+const workshopDigest=createHash('sha256').update(workshopBundle).digest('hex').slice(0,16);
+await writeFile(`${out}/workshop.js`,workshopBundle);
 const css=await readFile('style.css');
 const cssName=`style.css?v=${createHash('sha256').update(css).digest('hex').slice(0,16)}`;
 for(const name of ['index.html','sources.html','workshop-preview.html','debug-gathering.html']){
   let html=await readFile(name,'utf8');
   html=html.replace('href="style.css"',`href="${cssName}"`);
+  html=html.replace(/src="\.\/src\/workshop-preview\.js\?v=[^"]+"/,`src="./workshop.js?v=${workshopDigest}"`);
   await writeFile(`${out}/${name}`,html);
 }
 console.log(`Built ${bundleName} (${bundle.byteLength} bytes) and ${cssName}`);

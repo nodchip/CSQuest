@@ -6,7 +6,8 @@ import {readFile} from 'node:fs/promises';
 test('production build serves the workshop adventure at the top and retains old source URLs',async()=>{
   execFileSync(process.execPath,['scripts/build.mjs']);
   const html=await readFile('dist/index.html','utf8');
-  assert.match(html,/src="\.\/src\/workshop-preview\.js\?v=city-entry1"/);
+  assert.match(html,/src="\.\/workshop\.js\?v=[a-f0-9]+"/);
+  assert.ok((await readFile('dist/workshop.js','utf8')).includes('csquest-workshop-journey-story-v2'));
   assert.match(html,/href="\.\/src\/workshop-preview\.css\?v=region-navigation84"/);
   assert.match(html,/id="preview"/);
   assert.doesNotMatch(html,/id="app"/);

@@ -254,12 +254,13 @@ if(debugGathering){
  link.href=location.pathname;link.textContent='デバッグを終了して通常の冒険へ';header.append(reset,link,status);
  new MutationObserver(()=>{for(const dialog of document.querySelectorAll('dialog[open]'))if(!dialog.querySelector('[data-debug-reset]')){const button=document.createElement('button');button.type='button';button.dataset.debugReset='';button.textContent=reset.textContent;button.onclick=reset.onclick;dialog.append(button);}}).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['open']});
 }
-let state=null,saveProtected=false,settingsProtected=false,settings={size:'normal',contrast:'normal',motion:'on'};
+let state=null,saveProtected=false,settingsProtected=false,settings={size:'normal',contrast:'normal',motion:'on'},lastSaved=null,saveConflict=false;
 const travelOrigins=[...fourRegionIds,'four-result','four-festival','choices','talk','river','city','harbor','harbor-result','mid-archive','mid-windmill','mid-result','mid-bridge','mountain','mountain-result','mountain-ending','mountain-crossing','valley','valley-ending','expansion-result','sky','mist','tower-gate-result','tower-gate-ending','forge','station','forge-station-result','forge-station-ending'];
 let statisticsPick=null,requirementsPick=null;
 let error='';
 try{
   const raw=localStorage.getItem(saveKey);
+  lastSaved=raw;
   if(raw!==null){
     const saved=JSON.parse(raw);
     const places=[...fourRegionIds,'four-quest','four-result','four-festival','new-quest','new-result','world-finale','archive-search-lab','world','introduction','quest','opening-done','choices','talk','outside','forest-quest','forest-done','encounter','journey-quest','journey-done','travel','river','city','city-guild','city-market','city-quest','city-result','city-festival','harbor','harbor-quest','harbor-result','mid-archive','mid-windmill','mid-quest','mid-result','mid-bridge','mountain','mountain-quest','mountain-result','mountain-ending','mountain-crossing','valley','valley-ending','expansion-quest','expansion-result','sky','mist','tower-gate-quest','tower-gate-result','tower-gate-ending','forge','station','forge-station-quest','forge-station-result','forge-station-ending'];
@@ -834,15 +835,18 @@ function allQuestGroups(adventure){
 function persist(){
   if(state){updateTravelUnlocks(state);updateQuestGroupNotices(state,allQuestGroups(state));}
   if(saveProtected){error='冒険の記録を読み込めないため、元の記録を保護しています。今回の進行は保存されません。';return;}
-  try{localStorage.setItem(saveKey,JSON.stringify(state));error='';}catch{error='冒険を保存できません。再読み込みすると進行が失われます。';}
+  try{if(saveConflict||localStorage.getItem(saveKey)!==lastSaved){showSaveConflict();return;}const next=JSON.stringify(state);localStorage.setItem(saveKey,next);lastSaved=next;error='';}catch{error='冒険を保存できません。再読み込みすると進行が失われます。';}
 }
+function showSaveConflict(){saveConflict=true;error='別のタブで冒険の記録が更新されたため、このタブの進行は保存されません。最新の記録を使うには再読み込みしてください。';let notice=document.querySelector('#save-conflict');if(!notice){notice=document.createElement('p');notice.id='save-conflict';notice.className='notice';notice.setAttribute('role','alert');app.before(notice);}notice.textContent=error;}
+window.addEventListener('storage',event=>{if((event.key===saveKey||event.key===null)&&event.newValue!==lastSaved)showSaveConflict();});
 function warning(){return error?`<p class="notice" role="status">${error}</p>`:'';}
-function show(place){if(place==='outside')state.storyKaedeMet=true;if(place==='travel'){const origin=state.place==='world-finale'?(state.worldFinaleFrom==='travel'?state.travelFrom:state.worldFinaleFrom):state.place;state.travelFrom=travelOrigins.includes(origin)?origin:'choices';}const destination=travelPlaces.find(p=>p.target===place);if(destination){state.mapVisited??=[];if(!state.mapVisited.includes(destination.id))state.mapVisited.push(destination.id);state.travelNew=(state.travelNew??[]).filter(id=>id!==destination.id);}state.place=place;persist();render();window.scrollTo(0,0);}
+function focusNewView(){if(document.activeElement!==document.body)return;const heading=app.querySelector('h1');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}}
+function show(place){if(place==='outside')state.storyKaedeMet=true;if(place==='travel'){const origin=state.place==='world-finale'?(state.worldFinaleFrom==='travel'?state.travelFrom:state.worldFinaleFrom):state.place;state.travelFrom=travelOrigins.includes(origin)?origin:'choices';}const destination=travelPlaces.find(p=>p.target===place);if(destination){state.mapVisited??=[];if(!state.mapVisited.includes(destination.id))state.mapVisited.push(destination.id);state.travelNew=(state.travelNew??[]).filter(id=>id!==destination.id);}state.place=place;persist();render();focusNewView();window.scrollTo(0,0);}
 function dialogue(id,line){const who={lira:'リラ',nono:'ノノ',kaede:'カエデ',mizuho:'ミズホ',mina:'ミナ',sara:'サラ',ren:'レン',aoi:'アオイ',toma:'ゲン',sora:'ソラ',yuno:'ユノ',alto:'アルト',shino:'シノ',akari:'アカリ',haru:'ハル',nagi:'ナギ',sena:'セナ',dario:'ダリオ',marta:'マルタ'}[id];return `<div class="speech"><span class="portrait ${id}" role="img" aria-label="${who}の顔"></span><p class="dialogue"><strong>${who}</strong><br>「${line}」</p></div>`;}
 function title(){
   app.innerHTML=`<section class="scene title-screen"><img src="./data/art/spirit-workshop.png" alt="森のそばの精霊の工房"><h1>CS QUEST<span class="title-subtitle">～はじまりの工房～</span></h1><p>精霊とともに、小さな冒険へ。</p><p>この冒険は開発中です。遊べる地域は今後増えていきます。</p>${warning()}<div class="actions"><button class="${state?'':'primary'}" id="new">冒険を始める</button><button id="continue" ${state?'':'disabled'}>続きから</button><button id="settings">設定</button></div><details><summary>この体験版について</summary><p>風景・人物のイラストは CS Quest のために画像生成ツールを使って制作しました。学習内容の参考：<a href="https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm">Computer Science Curricula 2023</a>。</p></details></section>`;
-  app.querySelector('#new').onclick=()=>{if(state&&!window.confirm('体験版の現在の冒険を最初から始めます。よろしいですか？'))return;state={mapVisited:['workshop'],legacyUnlocked:[],place:'world',program:[],executed:false,forestProgram:[],forestExecuted:false,completed:[],drafts:{},activeQuest:null,citySort:[],cityQueue:[],cityQuest:null,cityFrom:'city-guild',announced:[],harborRoute:[],midActive:null,midDrafts:{},bridgeOpen:false,bridgeFrom:'archive',mountainActive:null,mountainRoutes:{},expansionActive:null,expansionDrafts:{}};persist();render();};
-  app.querySelector('#continue').onclick=render;
+  app.querySelector('#new').onclick=()=>{if(state&&!window.confirm('体験版の現在の冒険を最初から始めます。よろしいですか？'))return;state={mapVisited:['workshop'],legacyUnlocked:[],place:'world',program:[],executed:false,forestProgram:[],forestExecuted:false,completed:[],drafts:{},activeQuest:null,citySort:[],cityQueue:[],cityQuest:null,cityFrom:'city-guild',announced:[],harborRoute:[],midActive:null,midDrafts:{},bridgeOpen:false,bridgeFrom:'archive',mountainActive:null,mountainRoutes:{},expansionActive:null,expansionDrafts:{}};persist();render();focusNewView();};
+  app.querySelector('#continue').onclick=()=>{render();focusNewView();};
   app.querySelector('#settings').onclick=settingScreen;
 }
 function settingScreen(){
@@ -3922,7 +3926,8 @@ function storyConversation(kind,region){
  app.innerHTML=`<section class="scene"><h1>${heading}</h1>${dialogue(speaker,line)}${kind==='gathering'?dialogue('nono','みんなに相談して、手紙を届けよう！'):''}<p>${kind==='gathering'?'あとから地域の「知らせ・出来事」からも向かえます。':'聞いた話は、これまでの出来事から振り返れます。'}</p>${warning()}${kind==='gathering'?'<div class="actions"><button id="story-gathering-open" class="primary">仲間に相談する</button><button id="story-conversation-next">あとで</button></div>':'<button id="story-conversation-next" class="primary">続きを見る</button>'}</section>`;
  app.querySelector('#story-conversation-next').onclick=()=>{if(kind==='clue'){state.storyHeard??=[];if(!state.storyHeard.includes(region))state.storyHeard.push(region);}else if(kind==='reflection')state.storyReflectionSeen=true;else state.storyGatheringSeen=true;persist();render();};app.querySelector('#story-gathering-open')?.addEventListener('click',openGathering);app.querySelector(kind==='gathering'?'#story-gathering-open':'#story-conversation-next').focus({preventScroll:true});
 }
-function render(){
+function render(){renderView();focusNewView();}
+function renderView(){
   if(state&&!state.storyClimaxComplete){const place=state.place,atHub=[...travelPlaces.map(p=>p.target),'travel'].includes(place),region=atHub?storyRegionAt(place):null,progress=worldRegionProgress(state.completed),heard=state.storyHeard??[];
    if(region&&storyClueDetails[region]&&!heard.includes(region)&&(region==='workshop'?state.completed.includes('forest'):progress[region]>=1)){storyConversation('clue',region);return;}
    if(atHub&&!state.storyReflectionSeen&&storyReflectionReady(heard)){storyConversation('reflection');return;}
